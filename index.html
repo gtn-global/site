@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海鑫汇 · 出海决策简报 Global Talent Network</title>
+<meta name="description" content="海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* 全球运营中心坐席国旗：圆形→长方形，整体放大 1.5 倍 */
+span.ops-center-flag{width:45px;height:30px;border-radius:0;}
+@media (max-width:640px){
+  span.ops-center-flag{width:36px;height:24px;}
+}
+
+/* 修正：中国 / 马来西亚 / 新加坡 / 哈萨克斯坦 国旗为正确图案（SVG 覆盖 style.css 的近似色块） */
+span.ops-center-flag.flag-cn,
+span.ops-center-flag.flag-my,
+span.ops-center-flag.flag-sg,
+span.ops-center-flag.flag-kz{
+  background-color:transparent;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+span.ops-center-flag.flag-cn::after,
+span.ops-center-flag.flag-my::after,
+span.ops-center-flag.flag-kz::after{
+  content:none;display:none;
+}
+
+/* 中国：红底 + 一颗大星 + 四颗小星（一角指向大星） */
+span.ops-center-flag.flag-cn{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='rgb(222,41,16)'/%3E%3Cg fill='rgb(255,222,0)'%3E%3Cpolygon points='0,-3 0.674,-0.927 2.854,-0.927 1.09,0.354 1.763,2.427 0,1.146 -1.763,2.427 -1.09,0.354 -2.854,-0.927 -0.674,-0.927' transform='translate(5,5)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(10,2) rotate(239)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(12,4) rotate(262)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(12,7) rotate(286)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(10,9) rotate(309)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 马来西亚：14 道红白横条 + 左上蓝底白新月白星 */
+span.ops-center-flag.flag-my{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='rgb(206,17,38)'/%3E%3Cg fill='rgb(255,255,255)'%3E%3Crect y='1.4286' width='30' height='1.4286'/%3E%3Crect y='4.2857' width='30' height='1.4286'/%3E%3Crect y='7.1429' width='30' height='1.4286'/%3E%3Crect y='10' width='30' height='1.4286'/%3E%3Crect y='12.857' width='30' height='1.4286'/%3E%3Crect y='15.714' width='30' height='1.4286'/%3E%3Crect y='18.571' width='30' height='1.4286'/%3E%3C/g%3E%3Crect x='0' y='0' width='15' height='10' fill='rgb(1,14,140)'/%3E%3Ccircle cx='5' cy='5' r='3' fill='rgb(255,255,255)'/%3E%3Ccircle cx='6.2' cy='5' r='2.6' fill='rgb(1,14,140)'/%3E%3Cpolygon points='0,-1.2 0.706,-0.971 1.14,-0.371 0.706,0.371 1.14,0.971 0,1.2 -1.14,0.971 -0.706,0.371 -1.14,-0.371 -0.706,-0.971' transform='translate(9,5)' fill='rgb(255,255,255)'/%3E%3C/svg%3E");
+}
+
+/* 新加坡 / 哈萨克斯坦：直接引用 flags/ 目录里现成且正确的标准国旗文件 */
+/* ⚠️ 受保护：新加坡 (.flag-sg) 与哈萨克斯坦 (.flag-kz) 国旗统一使用 flags/sg.svg / flags/kz.svg，已被 style.css !important 锁死，禁止改为自绘 SVG 或近似色块。 */
+span.ops-center-flag.flag-sg{
+  background:transparent url("flags/sg.svg") no-repeat center/cover;
+}
+span.ops-center-flag.flag-kz{
+  background:transparent url("flags/kz.svg") no-repeat center/cover;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "海鑫汇",
+  "alternateName": ["海鑫汇 GTN", "海鑫汇·全球国际化人才联盟", "Global Talent Network"],
+  "description": "海鑫汇（Global Talent Network）是中国企业出海决策咨询机构，核心服务为出海决策诊断，同时运营全球国际化青年人才与创业生态网络，连接中国出海企业与海外资源。",
+  "knowsAbout": ["企业出海", "出海决策咨询", "跨境电商", "制造业全球化", "教育出海", "AI硬科技出海", "全球化投资"]
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="wordmark"><img src="logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="sub">GLOBAL TALENT NETWORK</span></a>
+    <div class="desk-clock">
+      <span>ALA <b id="clock-ala">--:--</b></span>
+      <span>SIN <b id="clock-sin">--:--</b></span>
+      <span>BER <b id="clock-ber">--:--</b></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#home" class="active">首页<span class="en">HOME</span></a>
+      <a href="#offer">服务<span class="en">OFFER</span></a>
+      <a href="#proof">案例证明<span class="en">PROOF</span></a>
+      <a href="#content-hub">内容<span class="en">CONTENT</span></a>
+      <a href="#ecosystem">生态<span class="en">ECOSYSTEM</span></a>
+      <a href="#contact">联系<span class="en">CONTACT</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 01 HOME ============ -->
+<section class="section" id="home">
+  <div class="eyebrow">01 — 首页 / HOME</div>
+  <div class="hero-head reveal">
+    <h1 class="headline">出海要不要走、走哪条路，我先帮你想清楚</h1>
+    <p class="subline">Global Expansion Clarity: Where and Whether.</p>
+  </div>
+  <p class="lede reveal">很多企业不是没有海外机会，而是不确定第一个市场该选哪里、第一步该怎么走。国家选错、模式选错、合作伙伴选错，都会变成长期投入和试错成本。海鑫汇帮企业在行动前把选项、风险、成本摊开，给出一个经得住推敲的判断——而不是一场游学或一次论坛。过去两年，我们组织50+场企业游学与产业调研、国际调研，覆盖20+国家与地区，连接1000+参与者，持续积累不同市场的一线信息与真实案例。</p>
+  <div class="reveal" style="margin-top:32px;">
+    <div class="cta-row">
+      <a href="https://moonlit-selkie-af0b28.netlify.app/" target="_blank" rel="noopener" class="radar-cta">3分钟自测出海 readiness · 看看你适不适合直接预约首诊 <span class="en">→ OPEN RADAR CHART</span></a>
+      <a href="#contact" class="btn-seal">预约免费首诊 <span class="en">→ BOOK A FREE INITIAL DIAGNOSTIC</span></a>
+    </div>
+  </div>
+
+  <!-- 决策情境手风琴 -->
+  <div class="subhead reveal">行业出海决策情境<span class="en">INDUSTRY DECISION SCENARIOS</span></div>
+  <p class="note reveal internal-note">以下为脱敏整理的行业决策情境，部分基于实地调研与交流整理，非全部为付费咨询客户。<br>The following are anonymized industry decision scenarios, based partly on field research and exchanges — not all are paid consulting clients.</p>
+
+  <div class="accordion-group reveal" id="situation-accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">新能源 · 电池与储能</span>
+        <h4>被链主拉着一起出海，跟不跟？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>某新能源车企的二级电池组件供应商，链主已决定在印尼建厂，抛来"跟不跟"的问题。跟，意味着重资产投入和陌生的东南亚合规环境；不跟，可能被这条供应链边缘化。</p>
+        <p>真正要判断的不是"东南亚政策好不好"，而是绑定单一链主出海，风险敞口多大、有没有退出机制。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">工程机械 · 智能装备</span>
+        <h4>中亚订单不断找上门，是设代理还是自己下场？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>一家工程机械厂商，通过展会和熟人渠道，中亚方向的询盘持续增加，但企业没有海外团队。选择代理商，快但利润和控制权都让出去；自建团队，慢且要承担陌生市场的用人和合规风险。</p>
+        <p>要判断的是订单的持续性能不能支撑自建团队的固定成本，而不是"要不要出海"这个已经不需要讨论的问题。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">光伏 · 新能源发电设备</span>
+        <h4>组件卖得动，但认证和关税壁垒该怎么绕？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>光伏组件企业面对海外市场的技术认证周期长、部分市场存在关税或反倾销壁垒，产品有竞争力，但"从哪个市场切入、走不走本地化组装"这类路径选择没有内部共识。</p>
+        <p>要判断的是先打政策友好、认证成本低的市场，还是直接啃利润更高但壁垒更高的市场。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">消费电子 · 智能硬件</span>
+        <h4>独立站流量起来了，要不要重仓海外仓？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>智能硬件品牌靠独立站和社媒起量，物流时效开始影响转化率，海外仓能提升体验，但意味着提前锁定库存资金和选址风险。</p>
+        <p>要判断的是当前流量增长是否稳定到值得押注重资产物流，还是先用第三方海外仓验证需求再决定。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">AI大模型 · 商业化路径</span>
+        <h4>大模型能力有了，卖API还是卖产品？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>我们与智谱 Z.AI 有过合作交流，围绕大模型企业出海的商业化路径展开——是把底层能力做成API卖给海外开发者，还是包装成产品直接面向海外企业客户。前者技术壁垒高但客单价低、回款周期长；后者更快形成现金流，但要承担本地化和获客的重资产投入。</p>
+        <p>这类企业出海的决策难点，往往不在"技术强不强"，而在选哪种商业化路径能撑住海外获客成本。</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="tag tag-research">AI工具 · 生态化路径</span>
+        <h4>设计工具出海，先卖软件还是先建生态？</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>我们与群核科技（旗下"酷家乐"）有过合作交流，其3D家装设计SaaS产品已服务全球多国设计师与家装企业。这类企业出海的关键分歧是：先把工具产品本地化卖出去，见效快；还是先搭建本地设计师/装企生态、让工具跟着生态渗透，周期长但壁垒更高。</p>
+        <p>核心问题是：工具本身的技术优势，能不能转化成本地生态里的话语权，而不只是一个"好用但可替代"的软件。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid2">
+    <div class="card card-alt reveal" data-fill="HOME-CASE-A">
+      <h4>某家居安防企业 · 出海咨询 <span class="en-block">HOME &amp; SECURITY — OUTBOUND CONSULTING</span></h4>
+      <p>某家居安防企业，围绕海外产能布局与渠道建设开展专项咨询，目前项目正在推进。因涉及企业海外战略规划，客户信息按照商业惯例暂不公开。</p>
+    </div>
+    <div class="card card-alt reveal" data-fill="HOME-CASE-B">
+      <h4>某汽车制造企业 · 出海咨询 <span class="en-block">AUTOMOTIVE OEM — OUTBOUND CONSULTING</span></h4>
+      <p>某汽车制造企业，围绕海外本地化落地路径开展战略判断与方案分析。因涉及企业全球化布局信息，客户名称暂不公开。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 OFFER ============ -->
+<section class="section" id="offer">
+  <div class="eyebrow">02 — 深度诊断怎么做 / OFFER</div>
+  <h2 class="headline reveal">先判断你的问题值不值得深入</h2>
+  <p class="subline reveal">Before you invest in the wrong market.</p>
+  <p class="lede reveal">当你已经面对具体的海外选择——去哪个国家、用代理还是自建、重资产还是轻资产——仅靠公开信息无法判断时，才需要进入下一步。首屏预约的是免费首诊（30–45分钟），先判断你的问题值不值得深入；如果值得，进入唯一收费环节：深度诊断，结合一线情报、活动网络与顾问资源，对具体决策做判断，产出一份简要的书面判断报告。</p>
+
+  <div class="card card-alt reveal" data-fill="OFFER-DEEP">
+    <span class="tag tag-fill">付费环节 · 唯一收费步骤 / PAID STEP</span>
+    <h4>深度诊断 <span class="en-inline">DEEP DIAGNOSTIC</span></h4>
+    <dl>
+      <dt>形式</dt><dd>1–2次深度访谈，围绕具体决策展开</dd>
+      <dt>内容</dt><dd>结合一线情报、活动网络与顾问资源，对具体决策做判断</dd>
+      <dt>产出</dt><dd>一份简要书面判断报告——关键风险点、可行路径、建议的下一步</dd>
+      <dt>费用</dt><dd class="placeholder-copy">按行业与决策复杂度面议，首诊后给出报价（价格区间待补）</dd>
+    </dl>
+  </div>
+  <p class="note reveal internal-note">该流程仍在跑通阶段，目前完整走完全流程的付费案例仅一例，正在复盘中，详见案例证明板块。<br>This process is still being validated — only one client has completed the full paid flow so far, and that debrief is still in progress; see the Proof section.</p>
+
+</section>
+
+<!-- ============ 02-B CONTENT HUB 标题（原样，置于背景图之外） ============ -->
+<section class="section" id="content-hub-head">
+  <div class="eyebrow">03 — 一手调研与判断记录 / CONTENT</div>
+  <h2 class="headline">企业出海前，可以参考的真实案例与判断</h2>
+  <p class="subline">Real cases and judgments worth referencing before you go global.</p>
+</section>
+
+<!-- ============ 02-B CONTENT HUB ============ -->
+<section class="section" id="content-hub">
+  <!-- 背景轮播层（6张图） -->
+  <div class="hub-bg-carousel">
+    <div class="hub-slides">
+      <div class="hub-slide active" style="background-image:url('carousel/carousel-01.png');"></div>
+      <div class="hub-slide" style="background-image:url('carousel/carousel-02.png');"></div>
+      <div class="hub-slide" style="background-image:url('carousel/carousel-03.png');"></div>
+      <div class="hub-slide" style="background-image:url('carousel/carousel-04.png');"></div>
+      <div class="hub-slide" style="background-image:url('carousel/carousel-05.png');"></div>
+      <div class="hub-slide" style="background-image:url('carousel/carousel-06.png');"></div>
+    </div>
+    <div class="hub-overlay"></div>
+    <div class="hub-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+  </div>
+
+  <!-- 内容层（原有内容，类名不变） -->
+  <div class="hub-content">
+    <p class="lede">这里记录企业游学、海外调研、产业调研和专家观点，帮助企业在行动前了解不同市场的真实情况。</p>
+
+    <div class="grid3">
+      <a class="card" href="events-index.html">
+        <h4>实地调研 <span class="en-inline">FIELD RESEARCH</span></h4>
+        <p>50+场企业游学与产业调研记录</p>
+      </a>
+      <a class="card" href="advisors-index.html">
+        <h4>专家判断 <span class="en-inline">ADVISOR VIEWS</span></h4>
+        <p>30+位签约顾问的具名观点</p>
+      </a>
+      <a class="card" href="news-index.html">
+        <h4>合作动态 <span class="en-inline">PARTNERSHIPS</span></h4>
+        <p>海鑫汇与机构合作的公开记录</p>
+      </a>
+    </div>
+
+    <!-- Logo 跑马灯（图片由 JS 自动探测 logo-01~logo-99，你只需往文件夹加图并按编号命名） -->
+    <div class="logo-marquee">
+      <div class="marquee-track" id="hubMarqueeTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 PROOF ============ -->
+<section class="section" id="proof">
+  <div class="eyebrow">04 — 案例与资源 / PROOF</div>
+  <h2 class="headline reveal">我们接触过哪些真实出海场景</h2>
+  <p class="subline reveal">The real outbound situations we've seen.</p>
+  <p class="lede reveal internal-note">这里记录企业游学、海外调研、产业调研以及专家顾问网络等真实积累。</p>
+
+
+  <p class="lede reveal">为了理解不同市场的真实情况，我们走访了20多个国家和地区、组织50+场企业游学与产业调研——这些数字背后是真实见过的出海场景，也是判断的依据：</p>
+  <div class="stat-line reveal">
+    <div class="stat-item">
+      <div class="stat-num"><span class="stat-count" data-count="50">0</span><span class="stat-plus">+</span></div>
+      <div class="stat-cap">出海企业调研</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="stat-count" data-count="20">0</span><span class="stat-plus">+</span></div>
+      <div class="stat-cap">国家 · 地区</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="stat-count" data-count="1000">0</span><span class="stat-plus">+</span></div>
+      <div class="stat-cap">人次</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="stat-count" data-count="30">0</span><span class="stat-plus">+</span></div>
+      <div class="stat-cap">签约顾问</div>
+    </div>
+  </div>
+
+  <div class="footprint-wall reveal">
+    <img src="clients/footprints.jpg" alt="海鑫汇出海调研足迹" loading="lazy">
+  </div>
+  <div class="subhead reveal">企业游学与产业调研<span class="en">EVENT RECORD</span></div>
+  <div class="event-breakdown reveal">
+    <a href="events-index.html#tour"><div class="n">8</div><div class="t">企业游学与产业调研<span class="en">Study Tours</span></div></a>
+    <a href="events-index.html#forum"><div class="n">4</div><div class="t">出海论坛<span class="en">Forums</span></div></a>
+    <a href="events-index.html#review"><div class="n">4</div><div class="t">出海读书会<span class="en">Reading Sessions</span></div></a>
+    <a href="events-index.html#salon"><div class="n">18</div><div class="t">出海沙龙<span class="en">Salons</span></div></a>
+    <a href="events-index.html#exchange"><div class="n">9</div><div class="t">国际调研<span class="en">Exchanges</span></div></a>
+    <a href="events-index.html#visit"><div class="n">11</div><div class="t">海外调研<span class="en">Field Visits</span></div></a>
+  </div>
+  <p class="note reveal internal-note">注：对外统一表述为"50+场"（与视频号title口径一致），历史活动持续累加、不封顶。参与方含佩蒂股份、纽威股份、智谱、群核科技等上市公司及商协会（历史活动记录，非独家合作声明）。<br>Note: public-facing copy uses "50+" (matching the video-channel title); the historical event count keeps growing. Participants include listed companies and business associations such as 佩蒂股份, 纽威股份, 智谱, and 群核科技 (historical record, not a claim of exclusive partnership).</p>
+
+  <div class="subhead reveal">产业专家顾问网络<span class="en">ADVISOR PROGRAM</span></div>
+  <p class="lede reveal" style="margin-top:0;font-size:14.5px;">目前已建立30+位产业专家顾问网络，覆盖制造、科技、消费品等多个行业。部分顾问来自上市公司及知名企业，部分为跨国投资人、产业高手。</p>
+  <div class="reveal" style="margin-top:20px;">
+    <a href="advisors-index.html" class="btn-outline">查看全部30+位专家顾问 <span class="en">→ VIEW ALL 30+ ADVISORS</span></a>
+  </div>
+
+  <div class="advisor-grid-2col reveal">
+
+    <a class="advisor-cell" data-fill="ADV-01" href="experts/donglixin/index.html" title="查看董立鑫专家详情">
+      <span class="avatar-ring"><img src="adv/donglixin.jpg" alt="董立鑫" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>董立鑫 <span class="role">· 中国企业出海决策顾问</span></h4>
+        <p class="bio">海鑫汇 Global Talent Network 创始人、和君咨询合伙人，WTC Singapore 秘书长兼COO。15年欧美企业国际组织经历，专注中国企业出海决策。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-02" href="experts/wang-gaoge/index.html" title="查看王高歌专家详情">
+      <span class="avatar-ring"><img src="adv/adv-02.jpg" alt="王高歌" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>王高歌 <span class="role">· 企业全球化战略顾问</span></h4>
+        <p class="bio">和君咨询合伙人，专注企业管理咨询与中国企业全球化，具备国际化战略制定与出海咨询服务能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-03" href="experts/zhao-weidong/index.html" title="查看赵伟栋专家详情">
+      <span class="avatar-ring"><img src="adv/adv-03.jpg" alt="赵伟栋" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>赵伟栋 <span class="role">· 企业重组投资顾问</span></h4>
+        <p class="bio">北京博雅春芽投资有限公司 创始人、董事长；专注困境投资与价值创造，具备全球化投资与企业重组的实战能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-04" href="experts/zhang-guosheng/index.html" title="查看张国胜专家详情">
+      <span class="avatar-ring"><img src="adv/adv-04.jpg" alt="张国胜" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>张国胜 <span class="role">· 上市公司投资负责人</span></h4>
+        <p class="bio">苏州安洁科技股份有限公司 投资负责人；专注制造业全球化与企业国际化，具备全球制造布局与供应链出海的实战能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-05" href="experts/zhang-le/index.html" title="查看张乐专家详情">
+      <span class="avatar-ring"><img src="adv/adv-05.jpg" alt="张乐" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>张乐 <span class="role">· 上市公司营销总经理</span></h4>
+        <p class="bio">群核科技（00068.HK）电商事业部营销总经理；专注跨境电商增长与企业出海，具备品牌全球化与海外营销的实战能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-06" href="experts/tang-zhaobo/index.html" title="查看唐照波专家详情">
+      <span class="avatar-ring"><img src="adv/adv-06.jpg" alt="唐照波" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>唐照波 <span class="role">· 上市公司董事会秘书</span></h4>
+        <p class="bio">佩蒂股份（300673.SZ）副总经理、董事会秘书；专注中国宠物品牌全球化与国际市场实践，具备宠物产业出海的实战经验。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-07" href="experts/tian-guo/index.html" title="查看田果专家详情">
+      <span class="avatar-ring"><img src="adv/adv-07.jpg" alt="田果" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>田果 <span class="role">· 上市公司董事</span></h4>
+        <p class="bio">北京水木梧桐创业投资管理有限公司 合伙人；专注AI时代硬科技全球化，具备中国科技企业出海与全球竞争洞察能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-08" href="experts/zhang-chenggang/index.html" title="查看张成刚专家详情">
+      <span class="avatar-ring"><img src="adv/adv-08.jpg" alt="张成刚" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>张成刚 <span class="role">· 产业与就业研究专家</span></h4>
+        <p class="bio">中国新就业形态研究中心主任；专注中国企业全球化与工业化发展路径，具备企业国际化战略洞察能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-09" href="experts/li-guo/index.html" title="查看李果专家详情">
+      <span class="avatar-ring"><img src="adv/adv-09.jpg" alt="李果" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>李果 <span class="role">· AI产业投资顾问</span></h4>
+        <p class="bio">北京华夏青云数据信息科技有限公司 CEO；专注人形机器人、世界模型与AI投融资趋势，具备AI产业与人才投资洞察能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-10" href="experts/chen-jiale/index.html" title="查看陈佳乐专家详情">
+      <span class="avatar-ring"><img src="adv/adv-10.jpg" alt="陈佳乐" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>陈佳乐 <span class="role">· 低空经济产业顾问</span></h4>
+        <p class="bio">通航未来航空发展集团 总裁助理兼产教融合管理部总监；专注低空经济全球化与无人机产业出海，具备低空经济国际合作洞察能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-11" href="experts/zhang-yali/index.html" title="查看张雅莉专家详情">
+      <span class="avatar-ring"><img src="adv/adv-11.jpg" alt="张雅莉" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>张雅莉 <span class="role">· 财富配置顾问</span></h4>
+        <p class="bio">头部券商 首席顾问（全球财富配置与家族办公室方向）；专注全球财富配置与家族财富传承，具备跨境资产与家族办公室服务实战能力。</p>
+      </span>
+    </a>
+
+    <a class="advisor-cell" data-fill="ADV-12" href="experts/zhang-guanghui/index.html" title="查看张光辉专家详情">
+      <span class="avatar-ring"><img src="adv/adv-01.jpg" alt="张光辉" onerror="this.style.display='none'"></span>
+      <span class="advisor-cell-body">
+        <h4>张光辉 <span class="role">· 教育出海战略顾问</span></h4>
+        <p class="bio">中教易尔（上海）教育科技有限公司创始人，专注教育出海中亚实践与国际教育合作，任和君商学院出海班导师，推动国际教育合作与招才引智。</p>
+      </span>
+    </a>
+
+  </div>
+
+
+  <p class="note reveal internal-note">此处展示11位真实签约顾问（ADV-01~11），以双栏网格呈现，点击跳转各专家个人页；完整30+位名单见 advisors-index.html。<br>These 11 signed advisors (ADV-01–11) are shown in a 2-column grid linking to each expert's profile page; the full list of 30+ lives in advisors-index.html.</p>
+
+  <div class="subhead reveal">政府与机构对接 / 游学记录<span class="en">GOVERNMENT &amp; INSTITUTIONAL TRACK RECORD</span></div>
+  <p class="lede reveal" style="margin-top:0;font-size:14.5px;">按四类分组，每条鼠标悬停即展开，显示代表性真实活动，完整清单见对应列表页。</p>
+  <div class="reveal" style="margin-top:20px;">
+    <a href="news-index.html" class="btn-outline">查看全部新闻报道 <span class="en">→ VIEW ALL NEWS COVERAGE</span></a>
+  </div>
+
+  <div class="accordion-group reveal" id="govtrack-accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <h4>使领馆 / 商务参赞对接</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="mini-event-list">
+          <li><a href="https://mp.weixin.qq.com/s/x2jFPJ2zl-6zbAb12MqdJw" target="_blank" rel="noopener">哈萨克斯坦国际交流｜中亚市场考察与中国企业出海合作</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/7cj-dDC7Ohv5nI6BjEPpMQ" target="_blank" rel="noopener">法国与芬兰市场交流｜欧洲产业合作与企业出海新机遇</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/06Ir69gN3IWKQhPIl8b-vQ" target="_blank" rel="noopener">走进墨西哥大使馆｜中国企业进入拉美市场交流活动</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/1QhQCUGYYrRoU95wFCrBaw" target="_blank" rel="noopener">走进伊拉克大使馆｜中伊产业合作与市场发展交流</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/ConIcqErRfCSxqL0uwOVhg" target="_blank" rel="noopener">菲律宾市场交流｜菲律宾驻华参赞解读投资与商业机会</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/_Zb9t6QsRZaLoYLQXeDpXA" target="_blank" rel="noopener">塞尔维亚市场交流｜中国企业进入欧洲的新机遇</a></li>
+        </ul>
+        <a href="events-index.html#exchange" class="card-cta">查看全部9场国际交流 → events-index.html</a>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <h4>上市公司 / 企业游学</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="mini-event-list">
+          <li><a href="https://mp.weixin.qq.com/s/pM2tiSMZjLjONy1a4E3GNQ" target="_blank" rel="noopener">中国宠物食品龙头佩蒂股份（300673.SZ）全球化布局考察｜海鑫汇企业游学</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/sompSOvS-zKY1PqY6cEIuw" target="_blank" rel="noopener">走进环球慧思｜北京市专精特新企业实践考察AI如何赋能跨境出海</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/tjZijuVOsctrVHU8Ll_VUg" target="_blank" rel="noopener">走进群核科技（00068.HK）｜杭州科技六小龙与AI产业全球化实践考察</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/flHg2RfCNk1BqrZAQ8XcXw" target="_blank" rel="noopener">走进纽威股份（603699.SH）｜中国工业阀门龙头企业全球化实践考察</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/PWwDda6M1YhJk4N1wpL2pw" target="_blank" rel="noopener">走进智谱AI（02513.HK）｜中国大模型企业AI商业化与全球化实践考察</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/Ih9-BP_zfZiwyu_iEXH69w" target="_blank" rel="noopener">走进博彦科技（002649.SZ）北京全球总部｜数字化服务与企业全球化实践考察</a></li>
+        </ul>
+        <a href="events-index.html#tour" class="card-cta">查看全部8场企业游学 → events-index.html</a>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <h4>海外考察</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="mini-event-list">
+          <li><a href="https://mp.weixin.qq.com/s/_hmfryJoZ78nMmxYaOy7fQ" target="_blank" rel="noopener">匈牙利产业考察｜中国企业进入中东欧市场实践调研</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/jOhi3AWsacIUeaPgXQYB7A" target="_blank" rel="noopener">越南胡志明市产业考察｜中国企业全球化实践调研报告</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/nxcOphcfhCEXHHnhPEkFFQ" target="_blank" rel="noopener">TikTok马来西亚考察｜中国互联网企业全球化实践研究</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/NonTUyqDcr_nqSzfUfVKXw" target="_blank" rel="noopener">马来西亚新山市场考察｜东南亚产业与商业机会调研</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/g1tV01lZ_ODc525pU8VtUw" target="_blank" rel="noopener">新加坡产业考察｜博彦科技（002649.SZ）国际化实践启发</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/XGVUuXZ0AxrwqDWFvM_xSQ" target="_blank" rel="noopener">泰国曼谷产业考察｜群核科技（00068.HK）东南亚市场实践研究</a></li>
+        </ul>
+        <a href="events-index.html#visit" class="card-cta">查看全部11场海外考察 → events-index.html</a>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <h4>新闻报道</h4>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <ul class="mini-event-list">
+          <li><a href="https://schpa.uibe.edu.cn/xyxw/fe18ce32b0fb4bb890c4c23302691cb3.htm" target="_blank" rel="noopener">对外经济贸易大学政府管理学院（官网）｜政府管理学院参访和君集团：报道董立鑫作为校友分享职业经历</a></li>
+          <li><a href="https://szyjy.uibe.edu.cn/xwsd/xwdt/5a043422a96b485db52b52752d83a7e7.htm" target="_blank" rel="noopener">对外经济贸易大学（深圳研究院校网）｜深圳跨境电商研讨会：董立鑫作为组织者参与活动</a></li>
+          <li><a href="https://www.10100.com/article/5521480" target="_blank" rel="noopener">大数跨境（行业媒体）｜首届和君小镇出海峰会报道：董立鑫在会上发表观点</a></li>
+          <li><a href="https://m.hejun.com/page92?article_id=3402" target="_blank" rel="noopener">和君集团（官网）｜董立鑫在"第二届和君小镇·中国企业出海交流会"上担任主持并发表主题演讲</a></li>
+          <li><a href="https://sie.uibe.edu.cn/xwgg2/xyxw2/dfbb4f47fc264c3bac34a79c2870cd22.htm" target="_blank" rel="noopener">对外经济贸易大学国际学院（官网）｜"企业面对面"讲座：邀请董立鑫为留学生开展讲座</a></li>
+          <li><a href="http://www.wtca.cn/content/details_26_9271.html" target="_blank" rel="noopener">世界贸易中心协会 WTCA（官网）｜提及董立鑫被任命为 WTC Singapore 秘书长兼首席运营官</a></li>
+        </ul>
+        <a href="news-index.html" class="card-cta">查看全部21条媒体报道 → news-index.html</a>
+      </div>
+    </div>
+  <p class="note reveal internal-note">四类内容均为真实活动/真实报道与原文链接（使领馆/企业游学/海外考察数据源见 events-index.html，新闻报道数据源见 news-index.html）；新闻报道6条按可被搜索引擎/AI抓取收录的官网链接优先选取（对外经济贸易大学官网、和君集团官网、WTCA官网等），未选入微信公众号类链接（不可被外部抓取收录）。<br>All four categories link to real events/coverage with source URLs. The 6 news items were prioritized for crawlability (university/company/association official domains) over WeChat-only articles, which external search and AI engines cannot index.</p>
+
+  </div>
+</section>
+
+<!-- ============ 03-B ECOSYSTEM (A: 生态网络) ============ -->
+<section class="section" id="ecosystem">
+  <div class="eyebrow">05 — 海鑫汇生态 / ECOSYSTEM</div>
+  <h2 class="headline reveal">进入海外市场，需要哪些本地连接</h2>
+  <p class="subline reveal">A network built across multiple institutions and partners.</p>
+  <p class="lede reveal">企业进入陌生市场时，最缺的不是动力，而是当地可信的合作伙伴、渠道和信息来源——这些资源用来降低进入成本和试错风险。海鑫汇连接当地企业、行业机构与市场资源，帮助企业进入陌生市场时建立可靠合作关系。</p>
+  <div class="ops-head-row reveal">
+    <div class="subhead">海鑫汇全球运营中心<span class="en">GLOBAL OPERATIONS CENTER</span></div>
+    <a href="ecosystem-index.html" class="btn-outline btn-subhead">进入生态成员页 <span class="en">→ EXPLORE ECOSYSTEM</span></a>
+  </div>
+
+  <div class="ops-center-grid reveal">
+    <a class="ops-center-card" data-fill="OPS-01" href="member/迟文劼/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心/secretary-general.jpg" alt="Helen 迟文劼" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>Helen 迟文劼</h4>
+      <p>运营中心主任</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-02" href="member/刘栗铭/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/刘栗铭/beijing.jpg" alt="刘栗铭" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>刘栗铭</h4>
+      <p>北京 · 中国</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-03" href="member/运营中心杭州/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心杭州/hangzhou.jpg" alt="柯梦琪 Maggie" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>Maggie 柯梦琪</h4>
+      <p>杭州 · 中国</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-04" href="member/于溪东/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心苏州/suzhou.jpg" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>于溪东</h4>
+      <p>苏州 · 中国</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-05" href="experts/zhang-guanghui/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="adv/adv-01.jpg" alt="张光辉" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>张光辉</h4>
+      <p>成都 · 中国</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-11" href="member/ningbo/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/ningbo/ningbo.jpg" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-cn" aria-label="中国"></span>
+      </div>
+      <h4>Andy-张东裕</h4>
+      <p>宁波 · 中国</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-06" href="member/运营中心东京/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心日本/tokyo.jpg" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-jp" aria-label="日本"></span>
+      </div>
+      <h4>名城悠真</h4>
+      <p>日本</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-07" href="member/运营中心吉隆坡/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心马来西亚/kualalumpur.jpg" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-my" aria-label="马来西亚"></span>
+      </div>
+      <h4>[姓名 TBD]</h4>
+      <p>马来西亚</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-08" href="member/运营中心新加坡/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心新加坡/singapore.jpg" alt="蔡慧敏 Claudia" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-sg" aria-label="新加坡"></span>
+      </div>
+      <h4>Claudia 蔡慧敏</h4>
+      <p>新加坡</p>
+    </a>
+    <a class="ops-center-card" data-fill="OPS-09" href="member/武群威/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/武群威/图片4.jpg" alt="武群威" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-kz" aria-label="哈萨克斯坦"></span>
+      </div>
+      <h4>武群威</h4>
+      <p>哈萨克斯坦</p>
+    </a>
+
+    <a class="ops-center-card" data-fill="OPS-10" href="member/运营中心莫斯科/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心俄罗斯/moscow.jpg" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-ru" aria-label="俄罗斯"></span>
+      </div>
+      <h4>李春瑾</h4>
+      <p>俄罗斯</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 04 ABOUT & CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="eyebrow">06 — 关于我 · 联系 / ABOUT &amp; CONTACT</div>
+  <h2 class="headline reveal">海鑫汇创始人——董立鑫</h2>
+  <p class="subline reveal">The person behind the judgment — Bruce Dong.</p>
+  <p class="lede reveal">陪伴中国企业判断海外机会和进入路径，是海鑫汇做这件事的方式——不是卖课程或资源，而是在决策关口提供判断。想先看清深度诊断具体怎么收费，先去<a href="#offer" class="inline-link">服务板块</a>看一遍；以下表单对应的是<strong>免费首诊</strong>预约，不是付费的深度诊断入口。</p>
+
+  <div class="about-grid reveal">
+    <div class="photo-box" data-fill="ABOUT-PHOTO"><img src="adv/donglixin.jpg" alt="董立鑫" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="bio">
+      <h4>董立鑫 · 中国企业出海决策顾问</h4>
+      <dl class="role-list">
+        <div class="role-row"><dt>决策顾问</dt><dd>中国企业出海</dd></div>
+        <div class="role-row"><dt>创始人</dt><dd>海鑫汇 Global Talent Network</dd></div>
+        <div class="role-row"><dt>合伙人</dt><dd>和君咨询</dd></div>
+        <div class="role-row"><dt>秘书长</dt><dd>WTC Singapore</dd></div>
+      </dl>
+      <div class="media-row">
+        <a class="media-link" href="https://profile.zjurl.cn/rogue/ugc/profile/?active_tab=dongtai&app_name=news_article&device_id=65&media_id=1652500213415950&module_name=iOS_tt_url&request_source=1&share_token=23778718-F8A8-4917-A2D2-F5AAAAEBCFA4&tt_from=copy_link&upstream_biz=iOS_url&user_id=6972580048&utm_campaign=client_share&utm_medium=toutiao_ios&utm_source=copy_link&version_code=17.7.0&version_name=170700" target="_blank" rel="noopener">头条号</a>
+        <a class="media-link" href="https://xhslink.cn/m/6SRRS3X4FvO" target="_blank" rel="noopener">小红书</a>
+        <a class="media-link" href="https://author.baidu.com/home?context=%7B%22app_id%22%3A1864539194023029%7D&wfr=bjh" target="_blank" rel="noopener">百家号</a>
+        <a class="media-link" href="https://mp.163.com/subscribe_v4/index.html#/home?wemediaId=W5946293963768904831#/" target="_blank" rel="noopener">网易号</a>
+        <a class="media-link" href="https://www.zhihu.com/people/dong-li-xin-52" target="_blank" rel="noopener">知乎</a>
+        <a class="media-link" href="https://weibo.com/u/1933473085" target="_blank" rel="noopener">微博</a>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-wrap reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <p class="hidden" style="display:none;">
+      <label>请勿填写 Don't fill this out: <input name="bot-field"></label>
+    </p>
+    <div class="subhead" style="margin-top:0;">预约免费首诊<span class="en">BOOK A FREE INITIAL DIAGNOSTIC</span></div>
+    <div class="form-grid">
+      <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
+      <div class="field"><label>公司名称 Company</label><input type="text" name="company" placeholder="请输入公司名称 / Company name"></div>
+      <div class="field"><label>所在行业 Industry</label><input type="text" name="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing"></div>
+      <div class="field">
+        <label>出海所处阶段 Stage</label>
+        <select name="stage">
+          <option>尚未启动 · 考虑中 / Not started · exploring</option>
+          <option>已启动 · 想优化 / Underway · want to optimize</option>
+          <option>遇到具体问题 · 需要判断 / Facing a specific issue · need judgment</option>
+        </select>
+      </div>
+      <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID"></div>
+      <div class="field full"><label>简述你的诉求 Brief</label><textarea name="brief" placeholder="简单描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea></div>
+    </div>
+    <div class="form-submit">
+      <button type="submit" class="btn-seal">提交预约 <span class="en">→ SUBMIT</span></button>
+    </div>
+  </form>
+</section>
+
+<footer class="footer">
+  &copy; 2026 海鑫汇 HAIXINHUI GLOBAL TALENT NETWORK. 版权所有。
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
