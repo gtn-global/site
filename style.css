@@ -399,6 +399,57 @@ textarea{resize:vertical;min-height:88px;}
 .expert-tags .tag{position:static;margin:0;}
 .expert-body .lede p + p{margin-top:14px;}
 
+/* ===== GTN Content Standard v1.0：专家独立页统一模块（legacy-expert 唯一权威布局） ===== */
+.expert-hero{display:block;}
+.expert-body .en{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--ink-faint);text-transform:uppercase;display:block;margin-top:4px;}
+.lede p{font-size:15px;color:var(--ink-soft);line-height:1.8;margin:16px 0 0;}
+
+/* AI Summary */
+.ai-summary{border:1px solid var(--rule);background:var(--paper);padding:24px 26px;}
+.ai-summary .ai-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;color:var(--seal);border:1px solid var(--seal);padding:3px 8px;margin-bottom:14px;text-transform:uppercase;}
+.ai-summary p{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin:0;}
+.ai-summary p + p{margin-top:12px;}
+
+/* Professional Focus */
+.focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px;}
+.focus-card{border:1px solid var(--rule);background:var(--paper);padding:20px;transition:border-color .2s,box-shadow .2s;}
+.focus-card:hover{border-color:var(--seal);box-shadow:var(--shadow);}
+.focus-card h4{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:600;margin:0;}
+.focus-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.65;margin:10px 0 0;}
+
+/* External Verification */
+.ext-verif{margin-top:22px;display:flex;flex-direction:column;gap:10px;}
+.ext-item{display:flex;align-items:baseline;gap:14px;padding:14px 18px;border:1px solid var(--rule);background:var(--paper);}
+.ext-item .ext-source{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--seal);flex:0 0 132px;}
+.ext-item .ext-title{flex:1 1 auto;font-size:13.5px;color:var(--ink);line-height:1.55;}
+.ext-item .ext-link{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);text-decoration:none;white-space:nowrap;}
+.ext-item .ext-link:hover{color:var(--seal);}
+
+/* Related Organizations */
+.rel-orgs{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.rel-org{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--paper);padding:10px 16px;text-decoration:none;color:var(--ink);font-size:13.5px;transition:border-color .2s,color .2s;}
+.rel-org:hover{border-color:var(--seal);color:var(--seal);}
+.rel-org .org-en{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--ink-faint);}
+
+/* Related Pages */
+.rel-pages{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.rel-page{display:block;border:1px solid var(--rule);background:var(--paper);padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s;}
+.rel-page:hover{border-color:var(--seal);box-shadow:var(--shadow);}
+.rel-page .rp-k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:1px;color:var(--seal);text-transform:uppercase;}
+.rel-page h4{font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin:8px 0 0;}
+.rel-page p{font-size:12.5px;color:var(--ink-soft);margin:6px 0 0;line-height:1.55;}
+
+/* GTN Relationship / Connect */
+.gtn-relationship{border-top:1px solid var(--rule);margin-top:52px;padding-top:36px;}
+.gtn-note{font-size:14px;color:var(--ink-soft);line-height:1.8;max-width:780px;}
+
+@media (max-width:640px){
+  .expert-hero{flex-direction:column;}
+  .focus-grid,.rel-pages{grid-template-columns:1fr;}
+  .ext-item{flex-direction:column;gap:6px;}
+  .ext-item .ext-source{flex:0 0 auto;}
+}
+
 /* ============ 顾问手风琴 + 政府机构手风琴：悬停展开（复用已有 accordion 视觉，仅按 id 限定范围新增悬停规则；不影响 situation-accordion 的点击展开） ============ */
 #advisor-accordion .accordion-trigger,
 #govtrack-accordion .accordion-trigger{cursor:default;}
@@ -676,3 +727,61 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
     gap: 16px;
   }
 }
+
+/* ============ 专家独立页统一布局（全部 <body class="legacy-expert"> 页共用单一权威规则） ============ */
+.legacy-expert .section.expert-hero{display:block;}
+.legacy-expert .expert-avatar{width:96px;height:96px;margin:24px 0 0;border-radius:8px;object-fit:cover;display:block;}
+.legacy-expert .ai-header-block{margin-top:20px;padding:16px 20px;border-left:3px solid var(--seal);background:var(--paper-alt);font-family:'Noto Serif SC',serif;font-size:15px;color:var(--ink);line-height:1.7;max-width:780px;}
+.legacy-expert .expert-tags{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;}
+.legacy-expert .expert-body{display:block;max-width:1120px;}
+.legacy-expert .section.expert-hero{padding-bottom:22px;}
+.legacy-expert .section.expert-body{padding-top:0;}
+.legacy-expert .expert-body .subhead:first-of-type{margin-top:4px;}
+.legacy-expert .expert-body .subhead{margin-top:38px;}
+
+/* ===== Language Switch（多语言页面统一切换组件，全站复用） =====
+   用法：放在任意 position:relative 的 hero 容器内，默认绝对定位于右上角。
+   结构：
+   <div class="lang-switch">
+     <span class="lang-current">中文</span>
+     <span class="lang-sep">|</span>
+     <a class="lang-link" href="./en/">English</a>
+   </div>
+   当前语言用 .lang-current（不可点击、高亮），另一语言用 .lang-link（可点击）。
+*/
+.lang-switch{
+  position:absolute;
+  top:0;
+  right:0;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:1px;
+  z-index:5;
+}
+.lang-switch .lang-current{
+  color:var(--seal);
+  font-weight:600;
+  cursor:default;
+}
+.lang-switch .lang-link{
+  color:var(--ink-faint);
+  text-decoration:none;
+  transition:color .2s;
+}
+.lang-switch .lang-link:hover{
+  color:var(--seal);
+}
+.lang-switch .lang-sep{
+  color:var(--rule);
+}
+/* 当 hero 无相对定位容器时，允许以普通流 inline-flex 显示（附加类 .inline） */
+.lang-switch.inline{
+  position:static;
+  margin-left:auto;
+}
+
+/* 专家页 hero 需作为定位上下文，使语言切换落在标题区右上角 */
+.legacy-expert .section.expert-hero{position:relative;}
