@@ -1,0 +1,23 @@
+# 自动校验工作流（GitHub Actions，标准目录，非独立运维文件）
+# 作用：每次 push 到 master 后，GitHub 自动跑 generate-sitemap.js 的校验段，
+#       发现需人工处理的问题即标红失败（与 Netlify build 双重兜底）。
+# 不依赖任何人工/智能体操作；逻辑说明见《海鑫汇GTN-网站运维 Handoff.md》五-B 节。
+
+name: verify-site
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 生成 sitemap/llms 并校验
+        run: node generate-sitemap.js

@@ -6,21 +6,38 @@
 // given page doesn't have all the same elements.
 // ============================================================
 
-// ---- desk clock: Almaty (Central Asia) + Singapore (SE Asia) ----
-function updateClocks(){
+// ---- desk clock: rendered entirely from JS so a single change here
+//      propagates to every page (no per-HTML hardcoding) ----
+// 国家顺序 / 文案 / 时区都只在这里定义一次。
+const CLOCK_ZONES = [
+  { label: '哈萨克斯坦', tz: 'Asia/Almaty' },
+  { label: '新加坡',     tz: 'Asia/Singapore' },
+  { label: '德国',       tz: 'Europe/Berlin' },
+  { label: '日本',       tz: 'Asia/Tokyo' }
+];
+
+function renderClocks(){
+  const root = document.querySelector('.desk-clock');
+  if(!root) return;
   const now = new Date();
-  const ala = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Almaty',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
-  const sin = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Singapore',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
-  const ber = new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
-  const elAla = document.getElementById('clock-ala');
-  const elSin = document.getElementById('clock-sin');
-  const elBer = document.getElementById('clock-ber');
-  if(elAla) elAla.textContent = ala;
-  if(elSin) elSin.textContent = sin;
-  if(elBer) elBer.textContent = ber;
+
+  // 仅在首次构建 DOM 结构（避免每 30s 重建节点）
+  if(!root.dataset.built){
+    root.innerHTML = CLOCK_ZONES.map((z, i) =>
+      '<span><span class="clk-label">' + z.label + '</span> ' +
+      '<b data-tz="' + z.tz + '">--:--</b></span>'
+    ).join('');
+    root.dataset.built = '1';
+  }
+
+  root.querySelectorAll('b[data-tz]').forEach(b => {
+    b.textContent = new Intl.DateTimeFormat('zh-CN',{
+      timeZone: b.dataset.tz, hour:'2-digit', minute:'2-digit', hour12:false
+    }).format(now);
+  });
 }
-updateClocks();
-setInterval(updateClocks, 30000);
+renderClocks();
+setInterval(renderClocks, 30000);
 
 // ---- scroll reveal (fade-up on entry into viewport) ----
 const revealEls = document.querySelectorAll('.reveal');

@@ -42,7 +42,10 @@ a{color:inherit;}
 .logo-wordmark{height:26px;width:auto;display:block;}
 .wordmark .sub{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2.5px;color:var(--ink-faint);font-weight:400;margin-top:3px;}
 .desk-clock{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);}
+.desk-clock span{display:flex;align-items:baseline;gap:6px;}
 .desk-clock span b{color:var(--ink);font-weight:500;}
+/* 时钟国家标签：中文国名，与时间同一行 */
+.desk-clock .clk-label{display:inline;font-family:'Noto Serif SC',serif;font-size:11px;letter-spacing:.5px;color:var(--ink);}
 .nav-links{display:flex;gap:26px;font-size:13.5px;}
 .nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s;text-align:center;}
 .nav-links a .en{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:1px;color:var(--ink-faint);margin-top:1px;text-align:center;}
@@ -785,3 +788,6 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 
 /* 专家页 hero 需作为定位上下文，使语言切换落在标题区右上角 */
 .legacy-expert .section.expert-hero{position:relative;}
+
+/* 运营中心人物页（无图版，参考 member/迟文劼 结构）：统一用 .section + .eyebrow + .headline
+   + .subline + .lede + .ops-detail(头像圆环) + .detail-block(分段 h3 + 段落)。无图时沿用此原样。 */
