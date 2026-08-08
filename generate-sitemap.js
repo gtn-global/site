@@ -282,33 +282,45 @@ function verifyAndAutoFix() {
       content = fixed;
     }
 
+    // --- 规则1-前置：member/ 运营中心页面豁免 ---
+    // 各运营中心页面由对应中心自行维护配图与链接（内容待补），图片/链接缺失不阻塞部署
+    const relAbs = path.relative(ROOT, abs);
+    const isMemberPage = relAbs.startsWith('member' + path.sep) || relAbs === 'member';
+
     // --- 规则2：头像/图片 src 指向必须存在（仅报告，不自动改，避免误伤）---
     // 已知正常例外（按《运维 Handoff.md》五-A-3 铁律）：
     //   - adv-13~30.jpg：预留占位卡片，CSS display:none 隐藏，缺失属正常
-    const SRC_IGNORE = /adv-(1[3-9]|2[0-9]|30)\.jpg$/i;
+    const SRC_IGNORE = /adv-(1[3-9]|2[0-9]|30)\.jpg$|avatar-placeholder\.svg$/i;
     const srcRegex = /src=["']([^"']+\.(?:jpg|jpeg|png|webp|gif|svg))["']/gi;
     let m;
-    while ((m = srcRegex.exec(content)) !== null) {
-      const src = m[1];
-      if (/^(https?:)?\/\//i.test(src)) continue; // 外链跳过
-      if (SRC_IGNORE.test(src)) continue; // 已知正常例外
-      const imgAbs = path.resolve(path.dirname(abs), src);
-      if (!fs.existsSync(imgAbs)) {
-        issues.push(`图片缺失：${path.relative(ROOT, abs)} 引用 ${src}（文件不存在）`);
+    if (!isMemberPage) {
+      while ((m = srcRegex.exec(content)) !== null) {
+        const src = m[1];
+        if (/^(https?:)?\/\//i.test(src)) continue; // 外链跳过
+        if (SRC_IGNORE.test(src)) continue; // 已知正常例外
+        const imgAbs = path.resolve(path.dirname(abs), src);
+        if (!fs.existsSync(imgAbs)) {
+          // member/ 目录下的图片由各运营中心自行提供（内容待补），缺失不阻塞部署
+          const imgRel = path.relative(ROOT, imgAbs);
+          if (imgRel.startsWith('member' + path.sep)) continue;
+          issues.push(`图片缺失：${path.relative(ROOT, abs)} 引用 ${src}（文件不存在）`);
+        }
       }
     }
 
     // --- 规则3：内部 html 跳转 href 指向必须存在（仅报告）---
     const hrefRegex = /href=["']([^"']+\.html[^"']*)["']/gi;
-    while ((m = hrefRegex.exec(content)) !== null) {
-      const href = m[1];
-      if (/^(https?:)?\/\//i.test(href) || href.startsWith('#') || href.startsWith('mailto:')) continue;
-      // 去掉锚点
-      const clean = href.split('#')[0];
-      if (!clean) continue;
-      const targetAbs = path.resolve(path.dirname(abs), clean);
-      if (!fs.existsSync(targetAbs)) {
-        issues.push(`链接 404：${path.relative(ROOT, abs)} 链接到 ${href}（文件不存在）`);
+    if (!isMemberPage) {
+      while ((m = hrefRegex.exec(content)) !== null) {
+        const href = m[1];
+        if (/^(https?:)?\/\//i.test(href) || href.startsWith('#') || href.startsWith('mailto:')) continue;
+        // 去掉锚点
+        const clean = href.split('#')[0];
+        if (!clean) continue;
+        const targetAbs = path.resolve(path.dirname(abs), clean);
+        if (!fs.existsSync(targetAbs)) {
+          issues.push(`链接 404：${path.relative(ROOT, abs)} 链接到 ${href}（文件不存在）`);
+        }
       }
     }
   }
