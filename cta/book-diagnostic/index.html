@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预约免费首诊 · GTN | 海鑫汇</title>
+<meta name="description" content="海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.">
+<meta property="og:title" content="预约免费首诊 · 海鑫汇 GTN">
+<meta property="og:description" content="30–45分钟免费首诊，先判断你的出海决策问题值不值得深入。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gtn-global.netlify.app/cta/book-diagnostic/">
+<meta property="og:image" content="https://gtn-global.netlify.app/og-image.jpg">
+<link rel="stylesheet" href="../../style.css">
+<style>
+/* Form page specifics */
+.form-wrap{padding:30px;margin-top:34px;box-shadow:var(--shadow);}
+.form-wrap .subhead{font-family:'Noto Serif SC',serif;font-size:18px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
+.form-wrap .subhead .en{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-faint);letter-spacing:1px;margin-top:3px;font-weight:400;}
+.form-submit{margin-top:30px;}
+.field input,.field select,.field textarea{font-size:14px;padding:11px 13px;border:1px solid var(--rule);background:var(--paper-alt);color:var(--ink);border-radius:0;transition:border-color .15s,background .15s;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--seal);background:#fff;}
+.field textarea{min-height:96px;resize:vertical;line-height:1.6;}
+.footer{margin-top:60px;}
+@media (max-width:680px){.form-grid{grid-template-columns:1fr;}.subline{white-space:normal;}.section{padding:40px 20px;}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../../index.html" class="wordmark"><img src="../../logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="sub">GLOBAL TALENT NETWORK</span></a>
+    <a href="../../index.html" class="subpage-back">← 返回首页 <span class="en">BACK TO HOME</span></a>
+  </div>
+</header>
+
+<section class="section" id="book">
+  <div class="eyebrow">预约 · BOOK A DIAGNOSTIC</div>
+  <h2 class="headline">预约免费首诊</h2>
+  <p class="subline">A free 30–45 min initial diagnostic.</p>
+  <p class="lede">首诊是免费的。我们先花 30–45 分钟，判断你当前面对的出海决策问题值不值得深入——去哪个市场、用代理还是自建、重资产还是轻资产。如果值得，再进入唯一收费环节「深度诊断」。以下表单提交后，海鑫汇会与你联系安排时间。</p>
+
+  <form class="form-wrap" name="cta-book-diagnostic" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <p class="hidden" style="display:none;">
+      <label>请勿填写 Don't fill this out: <input name="bot-field"></label>
+    </p>
+    <div class="subhead" style="margin-top:0;">预约免费首诊<span class="en">BOOK A FREE INITIAL DIAGNOSTIC</span></div>
+    <div class="form-grid">
+      <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
+      <div class="field"><label>公司名称 Company</label><input type="text" name="company" placeholder="请输入公司名称 / Company name"></div>
+      <div class="field"><label>所在行业 Industry</label><input type="text" name="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing"></div>
+      <div class="field">
+        <label>出海所处阶段 Stage</label>
+        <select name="stage">
+          <option value="exploring">尚未启动 · 考虑中 / Not started · exploring</option>
+          <option value="underway">已启动 · 想优化 / Underway · want to optimize</option>
+          <option value="issue">遇到具体问题 · 需要判断 / Facing a specific issue · need judgment</option>
+        </select>
+      </div>
+      <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID"></div>
+      <div class="field full"><label>简述你的诉求 Brief</label><textarea name="brief" placeholder="简单描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea></div>
+    </div>
+    <div class="form-submit">
+      <button type="submit" class="btn-seal">提交预约 <span class="en">→ SUBMIT</span></button>
+      <a href="../../index.html#offer" class="btn-outline">了解深度诊断 <span class="en">→ WHAT IS DEEP DIAGNOSTIC</span></a>
+    </div>
+  </form>
+
+  <!-- INTERNAL NOTE: 提交后可在 Netlify 后台「Forms」面板查看（表单名：cta-book-diagnostic）。此表单对应免费首诊，非付费深度诊断入口。
+       Submissions appear in the Netlify site dashboard under Forms (form name: cta-book-diagnostic). This books the free initial diagnostic, not the paid deep diagnostic. -->
+</section>
+
+<footer class="footer" data-depth="2"></footer>
+
+<script src="../../script.js" defer></script>
+</body>
+</html>

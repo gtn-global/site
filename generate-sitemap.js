@@ -30,6 +30,7 @@ const BASE = 'https://gtn-global.netlify.app';
 const SKIP_DIRS = new Set([
   'node_modules', '.git', '.codebuddy',
   'carousel', 'clients', 'flags', 'logo',
+  '_demo', // 各板块的样板/模板页，不是真实页面，永不收录
 ]);
 
 // 这些扩展名不是页面，跳过

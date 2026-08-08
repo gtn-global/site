@@ -65,14 +65,21 @@ if(sections.length && navLinks.length){
 }
 
 // ---- 手风琴（首页行业决策情境 + 政府/机构对接）----
-// 交互：鼠标悬停（mouseenter）展开，移出保持展开；
-// 悬停到另一项时切换，不自动收起，便于点击内部链接/选中文字。
+// 交互：鼠标悬停（mouseenter）展开，悬停到另一项时切换；
+// 鼠标离开整个手风琴容器（mouseleave）时全部收起，避免移走后仍摊开。
 // ⚠️ 严格禁止 click 作为展开条件。
 function initAccordion(rootId){
   const root = document.getElementById(rootId);
   if(!root) return;
   const items = root.querySelectorAll('.accordion-item');
   if(!items.length) return;
+  const closeAll = ()=>{
+    items.forEach(it=>{
+      it.classList.remove('open');
+      const t = it.querySelector('.accordion-trigger');
+      if(t) t.setAttribute('aria-expanded', 'false');
+    });
+  };
   items.forEach(item=>{
     const trigger = item.querySelector('.accordion-trigger');
     if(!trigger) return;
@@ -89,9 +96,12 @@ function initAccordion(rootId){
       trigger.setAttribute('aria-expanded', 'true');
     });
   });
+  // 鼠标移出手风琴区域：全部收起
+  root.addEventListener('mouseleave', closeAll);
 }
 initAccordion('situation-accordion');
 initAccordion('govtrack-accordion');
+initAccordion('decision-accordion');
 
 // ---- 行业决策情境：绿色胶囊统一为最宽宽度 ----
 // 运行时测量每个胶囊真实渲染宽度，取最大值套用到全部，保证等长对齐。
@@ -132,7 +142,7 @@ if(document.fonts && document.fonts.ready){
 
   function start() {
     if (timer) clearInterval(timer);
-    timer = setInterval(next, 5000);
+    timer = setInterval(next, 4000);
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
@@ -242,3 +252,27 @@ if(document.fonts && document.fonts.ready){
     nums.forEach(animate);
   }
 })();
+
+// ---- 统一 footer：内容只在这里定义一次，所有页面（含三级页）共用 ----
+const FOOTER_LINKS = [
+  { label: '深度诊断', href: 'index.html#offer' },
+  { label: '专家顾问', href: 'advisors-index.html' },
+  { label: '全球生态', href: 'ecosystem-index.html' },
+  { label: '活动记录', href: 'events-index.html' },
+  { label: '新闻报道', href: 'news-index.html' }
+];
+
+function renderFooter(){
+  const root = document.querySelector('.footer');
+  if(!root) return;
+  const depth = parseInt(root.dataset.depth || '0', 10);
+  const prefix = '../'.repeat(depth);
+  const linksHtml = FOOTER_LINKS.map(l =>
+    '<a href="' + prefix + l.href + '">' + l.label + '</a>'
+  ).join(' · ');
+  root.innerHTML =
+    '<div class="footer-brand">&copy; 2026 海鑫汇 Global Talent Network (GTN). 版权所有 All rights reserved.</div>' +
+    '<nav class="footer-links">' + linksHtml + '</nav>' +
+    '<div class="footer-meta">ALA · SIN · BER</div>';
+}
+renderFooter();

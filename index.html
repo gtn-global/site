@@ -47,15 +47,66 @@ span.ops-center-flag.flag-sg{
 span.ops-center-flag.flag-kz{
   background:transparent url("flags/kz.svg") no-repeat center/cover;
 }
+/* 行业胶囊词云 */
+.capsule-group{display:flex;flex-wrap:nowrap;gap:10px;margin-bottom:18px;}
+.capsule{display:inline-flex;align-items:center;border:1px solid rgba(0,150,136,.25);border-radius:0;overflow:hidden;background:rgba(0,150,136,.03);}
+.capsule .capsule-cn{padding:9px 10px 9px 15px;font-size:14.5px;font-weight:600;color:var(--ink);background:rgba(0,150,136,.05);}
+.capsule .capsule-en{padding:9px 15px 9px 10px;font-size:11.5px;color:var(--ink);font-family:'IBM Plex Mono',monospace;letter-spacing:.3px;}
+/* 触发按钮内胶囊：不换行 + 小字 + 紧凑间距 */
+.accordion-trigger .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:nowrap;}
+.accordion-trigger .capsule .capsule-cn{font-size:11.5px;font-weight:600;padding:4px 5px 4px 8px;}
+.accordion-trigger .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "海鑫汇",
-  "alternateName": ["海鑫汇 GTN", "海鑫汇·全球国际化人才联盟", "Global Talent Network"],
+  "alternateName": ["海鑫汇 GTN", "GTN", "Global Talent Network", "Global Talent Network (GTN)"],
   "description": "海鑫汇（Global Talent Network）是中国企业出海决策咨询机构，核心服务为出海决策诊断，同时运营全球国际化青年人才与创业生态网络，连接中国出海企业与海外资源。",
-  "knowsAbout": ["企业出海", "出海决策咨询", "跨境电商", "制造业全球化", "教育出海", "AI硬科技出海", "全球化投资"]
+  "knowsAbout": ["企业出海", "出海决策咨询", "跨境电商", "制造业全球化", "教育出海", "AI硬科技出海", "全球化投资"],
+  "founder": {"@type": "Person", "name": "董立鑫", "alternateName": "Bruce Dong", "url": "https://gtn-global.netlify.app/experts/donglixin/index.html"},
+  "foundingDate": "2024"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "企业现在适合出海吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从竞争力、目标市场需求、持续投入能力与进入时机，判断企业是否已经具备全球化基础。海鑫汇 GTN 提供完整判断框架，帮助企业评估出海时机是否成熟。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第一个海外市场应该选择哪里？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从产业属性、资源条件、目标市场需求与本地化要求出发，选定最稳的全球化起点。海鑫汇 GTN 结合全球运营中心网络，帮助企业判断第一个市场的选择。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "出口代理还是海外建厂？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "出口、代理和海外建厂没有绝对优劣，不同模式适用于企业不同的发展阶段。企业应结合市场成熟度、投入能力、运营资源以及长期战略目标，选择当前最适合自己的全球化路径，并随着业务发展逐步升级布局。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "海外布局最大的风险是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从合规、现金流、本地化与组织能力四个维度，识别并前置管理全球化过程中的关键风险。海鑫汇 GTN 帮助企业在进入市场前，把风险摊开评估。"
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -84,10 +135,11 @@ span.ops-center-flag.flag-kz{
     <p class="subline">Global Expansion Clarity: Where and Whether.</p>
   </div>
   <p class="lede reveal">很多企业不是没有海外机会，而是不确定第一个市场该选哪里、第一步该怎么走。国家选错、模式选错、合作伙伴选错，都会变成长期投入和试错成本。海鑫汇帮企业在行动前把选项、风险、成本摊开，给出一个经得住推敲的判断——而不是一场游学或一次论坛。过去两年，我们组织50+场企业游学与产业调研、国际调研，覆盖20+国家与地区，连接1000+参与者，持续积累不同市场的一线信息与真实案例。</p>
+
   <div class="reveal" style="margin-top:32px;">
     <div class="cta-row">
-      <a href="https://moonlit-selkie-af0b28.netlify.app/" target="_blank" rel="noopener" class="radar-cta">3分钟自测出海 readiness · 看看你适不适合直接预约首诊 <span class="en">→ OPEN RADAR CHART</span></a>
-      <a href="#contact" class="btn-seal">预约免费首诊 <span class="en">→ BOOK A FREE INITIAL DIAGNOSTIC</span></a>
+      <a href="cta/self-test/index.html" class="radar-cta">3分钟自测出海 readiness · 看看你适不适合直接预约首诊 <span class="en">→ OPEN SELF-TEST</span></a>
+      <a href="cta/book-diagnostic/index.html" class="btn-seal">预约免费首诊 <span class="en">→ BOOK A FREE INITIAL DIAGNOSTIC</span></a>
     </div>
   </div>
 
@@ -99,88 +151,115 @@ span.ops-center-flag.flag-kz{
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">新能源 · 电池与储能</span>
-        <h4>被链主拉着一起出海，跟不跟？</h4>
+        <span class="tag tag-research">新能源 · 全球化</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">储能</span><span class="capsule-en">energy storage</span></span>
+          <span class="capsule"><span class="capsule-cn">充电桩</span><span class="capsule-en">EV charger</span></span>
+          <span class="capsule"><span class="capsule-cn">锂电</span><span class="capsule-en">lithium battery</span></span>
+          <span class="capsule"><span class="capsule-cn">逆变器</span><span class="capsule-en">inverter</span></span>
+          <span class="capsule"><span class="capsule-cn">离网系统</span><span class="capsule-en">off-grid system</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>某新能源车企的二级电池组件供应商，链主已决定在印尼建厂，抛来"跟不跟"的问题。跟，意味着重资产投入和陌生的东南亚合规环境；不跟，可能被这条供应链边缘化。</p>
-        <p>真正要判断的不是"东南亚政策好不好"，而是绑定单一链主出海，风险敞口多大、有没有退出机制。</p>
+        <p>中国出海第一梯队，覆盖锂电、光伏、储能、新能源汽车、充电设施，搜索量长期很高，也是全球投资热点。可以连接东南亚、中东、欧洲等运营中心。</p>
+        <p>海鑫汇 GTN 结合全球运营网络和产业专家资源，帮助企业评估市场机会，制定更稳健的国际化发展路径。</p>
+        <a class="card-cta" href="industries/new-energy/index.html" data-industry-link="新能源产业全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">工程机械 · 智能装备</span>
-        <h4>中亚订单不断找上门，是设代理还是自己下场？</h4>
+        <span class="tag tag-research">智能制造 · 全球化</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">注塑机</span><span class="capsule-en">injection molding machine</span></span>
+          <span class="capsule"><span class="capsule-cn">折弯机</span><span class="capsule-en">press brake</span></span>
+          <span class="capsule"><span class="capsule-cn">激光切割机</span><span class="capsule-en">laser cutter</span></span>
+          <span class="capsule"><span class="capsule-cn">工业机器人</span><span class="capsule-en">industrial robot</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>一家工程机械厂商，通过展会和熟人渠道，中亚方向的询盘持续增加，但企业没有海外团队。选择代理商，快但利润和控制权都让出去；自建团队，慢且要承担陌生市场的用人和合规风险。</p>
-        <p>要判断的是订单的持续性能不能支撑自建团队的固定成本，而不是"要不要出海"这个已经不需要讨论的问题。</p>
+        <p>覆盖工业设备、自动化、机器人、机械装备、精密制造等，B2B 企业非常多，也是 GTN 最容易承接咨询的一类企业。</p>
+        <p>海鑫汇 GTN 为智能制造企业提供市场分析、资源对接和全球运营支持，助力制造能力走向国际市场。</p>
+        <a class="card-cta" href="industries/intelligent-manufacturing/index.html" data-industry-link="智能制造全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">光伏 · 新能源发电设备</span>
-        <h4>组件卖得动，但认证和关税壁垒该怎么绕？</h4>
+        <span class="tag tag-research">医疗器械 · 生物医药</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">超声诊断仪</span><span class="capsule-en">ultrasound scanner</span></span>
+          <span class="capsule"><span class="capsule-cn">血糖试纸</span><span class="capsule-en">glucose test strip</span></span>
+          <span class="capsule"><span class="capsule-cn">血压计</span><span class="capsule-en">blood pressure monitor</span></span>
+          <span class="capsule"><span class="capsule-cn">制氧机</span><span class="capsule-en">oxygen concentrator</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>光伏组件企业面对海外市场的技术认证周期长、部分市场存在关税或反倾销壁垒，产品有竞争力，但"从哪个市场切入、走不走本地化组装"这类路径选择没有内部共识。</p>
-        <p>要判断的是先打政策友好、认证成本低的市场，还是直接啃利润更高但壁垒更高的市场。</p>
+        <p>医疗器械、IVD、医美、生物技术、制药等企业近几年全球化需求持续增长，虽然合规要求高，但企业更愿意寻求专业咨询。</p>
+        <p>海鑫汇 GTN 联合专业顾问与合规资源，帮助医疗健康企业稳妥推进全球化布局。</p>
+        <a class="card-cta" href="industries/medical-biotech/index.html" data-industry-link="医疗器械与生物医药全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">消费电子 · 智能硬件</span>
-        <h4>独立站流量起来了，要不要重仓海外仓？</h4>
+        <span class="tag tag-research">消费品牌 · 国际化</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">蓝牙音箱</span><span class="capsule-en">bluetooth speaker</span></span>
+          <span class="capsule"><span class="capsule-cn">智能门锁</span><span class="capsule-en">smart lock</span></span>
+          <span class="capsule"><span class="capsule-cn">投影仪</span><span class="capsule-en">projector</span></span>
+          <span class="capsule"><span class="capsule-cn">便携储能</span><span class="capsule-en">portable power station</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>智能硬件品牌靠独立站和社媒起量，物流时效开始影响转化率，海外仓能提升体验，但意味着提前锁定库存资金和选址风险。</p>
-        <p>要判断的是当前流量增长是否稳定到值得押注重资产物流，还是先用第三方海外仓验证需求再决定。</p>
+        <p>包括消费电子、家居、美妆、食品、生活用品、新消费品牌等。这类企业数量庞大，关注品牌国际化、渠道建设、本地化运营，搜索需求一直很高。</p>
+        <p>海鑫汇 GTN 结合海外市场资源和行业经验，帮助企业建立更加可持续的品牌国际化战略。</p>
+        <a class="card-cta" href="industries/consumer-brands/index.html" data-industry-link="消费品牌国际化">查看完整分析 &rarr;</a>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">AI大模型 · 商业化路径</span>
-        <h4>大模型能力有了，卖API还是卖产品？</h4>
+        <span class="tag tag-research">跨国资本 · 并购</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">目标筛选</span><span class="capsule-en">target screening</span></span>
+          <span class="capsule"><span class="capsule-cn">估值建模</span><span class="capsule-en">financial modeling</span></span>
+          <span class="capsule"><span class="capsule-cn">现金流预测</span><span class="capsule-en">cash flow forecast</span></span>
+          <span class="capsule"><span class="capsule-cn">交割管理</span><span class="capsule-en">closing management</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>我们与智谱 Z.AI 有过合作交流，围绕大模型企业出海的商业化路径展开——是把底层能力做成API卖给海外开发者，还是包装成产品直接面向海外企业客户。前者技术壁垒高但客单价低、回款周期长；后者更快形成现金流，但要承担本地化和获客的重资产投入。</p>
-        <p>这类企业出海的决策难点，往往不在"技术强不强"，而在选哪种商业化路径能撑住海外获客成本。</p>
+        <p>全球化不仅是产品和市场的拓展，更是资本和资源的全球配置。无论是海外投资、跨境并购、产业合作还是国际资本对接，都需要系统性的战略规划和专业支持。</p>
+        <p>海鑫汇 GTN 依托全球合作伙伴和专家网络，为企业提供跨境投资与资源整合服务。</p>
+        <a class="card-cta" href="industries/cross-border-capital/index.html" data-industry-link="跨国资本与并购">查看完整分析 &rarr;</a>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag tag-research">AI工具 · 生态化路径</span>
-        <h4>设计工具出海，先卖软件还是先建生态？</h4>
+        <span class="tag tag-research">国际人才 · 职教</span>
+        <div class="capsule-group">
+          <span class="capsule"><span class="capsule-cn">外派合规</span><span class="capsule-en">expatriate compliance</span></span>
+          <span class="capsule"><span class="capsule-cn">薪酬调研</span><span class="capsule-en">salary benchmarking</span></span>
+          <span class="capsule"><span class="capsule-cn">继任计划</span><span class="capsule-en">succession planning</span></span>
+          <span class="capsule"><span class="capsule-cn">签证服务</span><span class="capsule-en">visa services</span></span>
+        </div>
         <span class="accordion-icon">+</span>
       </button>
       <div class="accordion-content">
-        <p>我们与群核科技（旗下"酷家乐"）有过合作交流，其3D家装设计SaaS产品已服务全球多国设计师与家装企业。这类企业出海的关键分歧是：先把工具产品本地化卖出去，见效快；还是先搭建本地设计师/装企生态、让工具跟着生态渗透，周期长但壁垒更高。</p>
-        <p>核心问题是：工具本身的技术优势，能不能转化成本地生态里的话语权，而不只是一个"好用但可替代"的软件。</p>
+        <p>企业全球化的竞争，最终是人才和组织能力的竞争。跨文化团队建设、国际人才培养、职业教育合作以及海外人才发展，正在成为企业全球布局的重要组成部分。</p>
+        <p>海鑫汇 GTN 联合教育机构、行业专家和国际资源，帮助企业建立面向全球发展的组织能力。</p>
+        <a class="card-cta" href="industries/talent-development/index.html" data-industry-link="职业教育与人才发展">查看完整分析 &rarr;</a>
       </div>
     </div>
 
   </div>
 
-  <div class="grid2">
-    <div class="card card-alt reveal" data-fill="HOME-CASE-A">
-      <h4>某家居安防企业 · 出海咨询 <span class="en-block">HOME &amp; SECURITY — OUTBOUND CONSULTING</span></h4>
-      <p>某家居安防企业，围绕海外产能布局与渠道建设开展专项咨询，目前项目正在推进。因涉及企业海外战略规划，客户信息按照商业惯例暂不公开。</p>
-    </div>
-    <div class="card card-alt reveal" data-fill="HOME-CASE-B">
-      <h4>某汽车制造企业 · 出海咨询 <span class="en-block">AUTOMOTIVE OEM — OUTBOUND CONSULTING</span></h4>
-      <p>某汽车制造企业，围绕海外本地化落地路径开展战略判断与方案分析。因涉及企业全球化布局信息，客户名称暂不公开。</p>
-    </div>
-  </div>
 </section>
 
 <!-- ============ 02 OFFER ============ -->
@@ -190,15 +269,92 @@ span.ops-center-flag.flag-kz{
   <p class="subline reveal">Before you invest in the wrong market.</p>
   <p class="lede reveal">当你已经面对具体的海外选择——去哪个国家、用代理还是自建、重资产还是轻资产——仅靠公开信息无法判断时，才需要进入下一步。首屏预约的是免费首诊（30–45分钟），先判断你的问题值不值得深入；如果值得，进入唯一收费环节：深度诊断，结合一线情报、活动网络与顾问资源，对具体决策做判断，产出一份简要的书面判断报告。</p>
 
+  <!-- ============ 01-B DECISION ENTRY（知识入口：4 决策问题） ============ -->
+  <section class="section" id="decision-entry" style="padding-top:0;">
+    <div class="subhead reveal">出海前，先问自己四个问题<span class="en">FOUR QUESTIONS TO ASK BEFORE YOU GO GLOBAL</span></div>
+
+    <div class="accordion-group decision-accordion reveal" id="decision-accordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="tag">WHEN</span>
+          <h4>企业现在适合出海吗？ <span class="en-inline">IS NOW THE RIGHT TIME?</span></h4>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>从竞争力、目标市场需求、持续投入能力与进入时机，判断是否已经具备全球化基础。</p>
+          <a class="card-cta" href="questions/企业现在适合出海吗/index.html">查看判断框架 &rarr;</a>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="tag">WHERE</span>
+          <h4>第一个海外市场应该选择哪里？ <span class="en-inline">WHERE TO START?</span></h4>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>从产业属性、资源条件、目标市场需求与本地化要求，选定最稳的全球化起点。</p>
+          <a class="card-cta" href="questions/第一个海外市场应该选择哪里/index.html">查看判断框架 &rarr;</a>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="tag">WHAT</span>
+          <h4>出口代理还是海外建厂？ <span class="en-inline">EXPORT OR BUILD?</span></h4>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>从投入能力、供应链与本地化要求，权衡出口、代理与海外建厂等不同进入方式。</p>
+          <a class="card-cta" href="questions/出口代理还是海外建厂/index.html">查看判断框架 &rarr;</a>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="tag">WHY</span>
+          <h4>海外布局最大的风险是什么？ <span class="en-inline">WHAT IS THE RISK?</span></h4>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>从合规、现金流、本地化与组织能力，识别并前置管理全球化过程中的关键风险。</p>
+          <a class="card-cta" href="questions/海外布局最大的风险是什么/index.html">查看判断框架 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="card card-alt reveal" data-fill="OFFER-DEEP">
-    <span class="tag tag-fill">付费环节 · 唯一收费步骤 / PAID STEP</span>
     <h4>深度诊断 <span class="en-inline">DEEP DIAGNOSTIC</span></h4>
-    <dl>
-      <dt>形式</dt><dd>1–2次深度访谈，围绕具体决策展开</dd>
-      <dt>内容</dt><dd>结合一线情报、活动网络与顾问资源，对具体决策做判断</dd>
-      <dt>产出</dt><dd>一份简要书面判断报告——关键风险点、可行路径、建议的下一步</dd>
-      <dt>费用</dt><dd class="placeholder-copy">按行业与决策复杂度面议，首诊后给出报价（价格区间待补）</dd>
-    </dl>
+    <div class="process-timeline">
+      <div class="timeline-step">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-body">
+          <h5>3分钟自测</h5>
+          <p>看看你适不适合直接预约首诊</p>
+          <a href="cta/self-test/index.html" class="capsule-cta">开始自测</a>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-body">
+          <h5>深度访谈</h5>
+          <p>1–2次深度访谈，围绕具体决策展开</p>
+          <a href="cta/book-diagnostic/index.html" class="capsule-cta">免费预约</a>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-body">
+          <h5>判断过程</h5>
+          <p>结合一线情报、活动网络与顾问资源，对具体决策做判断</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-body">
+          <h5>书面产出</h5>
+          <p>一份简要书面判断报告——关键风险点、可行路径、建议的下一步</p>
+        </div>
+      </div>
+    </div>
   </div>
   <p class="note reveal internal-note">该流程仍在跑通阶段，目前完整走完全流程的付费案例仅一例，正在复盘中，详见案例证明板块。<br>This process is still being validated — only one client has completed the full paid flow so far, and that debrief is still in progress; see the Proof section.</p>
 
@@ -293,12 +449,12 @@ span.ops-center-flag.flag-kz{
   </div>
   <div class="subhead reveal">企业游学与产业调研<span class="en">EVENT RECORD</span></div>
   <div class="event-breakdown reveal">
-    <a href="events-index.html#tour"><div class="n">8</div><div class="t">企业游学与产业调研<span class="en">Study Tours</span></div></a>
+    <a href="events-index.html#tour"><div class="n">7</div><div class="t">企业游学与产业调研<span class="en">Study Tours</span></div></a>
     <a href="events-index.html#forum"><div class="n">4</div><div class="t">出海论坛<span class="en">Forums</span></div></a>
-    <a href="events-index.html#review"><div class="n">4</div><div class="t">出海读书会<span class="en">Reading Sessions</span></div></a>
-    <a href="events-index.html#salon"><div class="n">18</div><div class="t">出海沙龙<span class="en">Salons</span></div></a>
+    <a href="events-index.html#review"><div class="n">4</div><div class="t">出海智阅会<span class="en">Reading Sessions</span></div></a>
+    <a href="events-index.html#salon"><div class="n">17</div><div class="t">出海沙龙<span class="en">Salons</span></div></a>
     <a href="events-index.html#exchange"><div class="n">9</div><div class="t">国际调研<span class="en">Exchanges</span></div></a>
-    <a href="events-index.html#visit"><div class="n">11</div><div class="t">海外调研<span class="en">Field Visits</span></div></a>
+    <a href="events-index.html#visit"><div class="n">9</div><div class="t">海外调研<span class="en">Field Visits</span></div></a>
   </div>
   <p class="note reveal internal-note">注：对外统一表述为"50+场"（与视频号title口径一致），历史活动持续累加、不封顶。参与方含佩蒂股份、纽威股份、智谱、群核科技等上市公司及商协会（历史活动记录，非独家合作声明）。<br>Note: public-facing copy uses "50+" (matching the video-channel title); the historical event count keeps growing. Participants include listed companies and business associations such as 佩蒂股份, 纽威股份, 智谱, and 群核科技 (historical record, not a claim of exclusive partnership).</p>
 
@@ -409,7 +565,7 @@ span.ops-center-flag.flag-kz{
   </div>
 
 
-  <p class="note reveal internal-note">此处展示11位真实签约顾问（ADV-01~11），以双栏网格呈现，点击跳转各专家个人页；完整30+位名单见 advisors-index.html。<br>These 11 signed advisors (ADV-01–11) are shown in a 2-column grid linking to each expert's profile page; the full list of 30+ lives in advisors-index.html.</p>
+  <p class="note reveal internal-note">此处展示12位真实签约顾问（ADV-01~12），以双栏网格呈现，点击跳转各专家个人页；完整30+位名单见 advisors-index.html。<br>These 12 signed advisors (ADV-01–12) are shown in a 2-column grid linking to each expert's profile page; the full list of 30+ lives in advisors-index.html.</p>
 
   <div class="subhead reveal">政府与机构对接 / 游学记录<span class="en">GOVERNMENT &amp; INSTITUTIONAL TRACK RECORD</span></div>
   <p class="lede reveal" style="margin-top:0;font-size:14.5px;">按四类分组，每条鼠标悬停即展开，显示代表性真实活动，完整清单见对应列表页。</p>
@@ -487,7 +643,7 @@ span.ops-center-flag.flag-kz{
           <li><a href="https://sie.uibe.edu.cn/xwgg2/xyxw2/dfbb4f47fc264c3bac34a79c2870cd22.htm" target="_blank" rel="noopener">对外经济贸易大学国际学院（官网）｜"企业面对面"讲座：邀请董立鑫为留学生开展讲座</a></li>
           <li><a href="http://www.wtca.cn/content/details_26_9271.html" target="_blank" rel="noopener">世界贸易中心协会 WTCA（官网）｜提及董立鑫被任命为 WTC Singapore 秘书长兼首席运营官</a></li>
         </ul>
-        <a href="news-index.html" class="card-cta">查看全部21条媒体报道 → news-index.html</a>
+        <a href="news-index.html" class="card-cta">查看全部18条媒体报道 → news-index.html</a>
       </div>
     </div>
   <p class="note reveal internal-note">四类内容均为真实活动/真实报道与原文链接（使领馆/企业游学/海外考察数据源见 events-index.html，新闻报道数据源见 news-index.html）；新闻报道6条按可被搜索引擎/AI抓取收录的官网链接优先选取（对外经济贸易大学官网、和君集团官网、WTCA官网等），未选入微信公众号类链接（不可被外部抓取收录）。<br>All four categories link to real events/coverage with source URLs. The 6 news items were prioritized for crawlability (university/company/association official domains) over WeChat-only articles, which external search and AI engines cannot index.</p>
@@ -596,6 +752,35 @@ span.ops-center-flag.flag-kz{
       <h4>李春瑾</h4>
       <p>俄罗斯</p>
     </a>
+
+    <a class="ops-center-card" data-fill="OPS-12" href="member/运营中心中东/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心中东/孙圆儿.jpg" alt="孙圆儿" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-ae" aria-label="中东"></span>
+      </div>
+      <h4>孙圆儿</h4>
+      <p>中东</p>
+    </a>
+
+    <a class="ops-center-card" data-fill="OPS-13" href="member/运营中心墨西哥/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心墨西哥/刘志中.jpg" alt="刘志中" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-mx" aria-label="墨西哥"></span>
+      </div>
+      <h4>刘志中</h4>
+      <p>墨西哥</p>
+    </a>
+
+    <a class="ops-center-card" data-fill="OPS-14" href="member/运营中心巴基斯坦/index.html" style="text-decoration:none;color:inherit;display:block;">
+      <div class="ops-center-photo">
+        <img class="avatar-lg" src="member/运营中心巴基斯坦/吕晓明.jpg" alt="吕晓明" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';">
+        <span class="ops-center-flag flag-pk" aria-label="巴基斯坦"></span>
+      </div>
+      <h4>吕晓明</h4>
+      <p>巴基斯坦</p>
+    </a>
+
+
   </div>
 </section>
 
@@ -653,9 +838,7 @@ span.ops-center-flag.flag-kz{
   </form>
 </section>
 
-<footer class="footer">
-  &copy; 2026 海鑫汇 HAIXINHUI GLOBAL TALENT NETWORK. 版权所有。
-</footer>
+<footer class="footer"></footer>
 
 <script src="script.js"></script>
 </body>

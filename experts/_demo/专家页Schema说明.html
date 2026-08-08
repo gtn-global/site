@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专家页 Person Schema 说明与示范 ｜ 海鑫汇 GTN</title>
+  <meta name="description" content="本页说明什么是 Person Schema、它如何帮助 AI 发现并理解海鑫汇专家顾问，并列出现有 12 位专家顾问的结构化数据草案。">
+  <style>
+    :root {
+      --color-bg: #0e1116;
+      --color-panel: #161b22;
+      --color-border: #2a313c;
+      --color-gold: #c9a86a;
+      --color-gold-soft: #e3cfa0;
+      --color-text: #e6e9ef;
+      --color-text-dim: #9aa4b2;
+      --color-white: #f5f7fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: "Noto Sans SC", -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+
+    .eyebrow {
+      color: var(--color-gold);
+      letter-spacing: 3px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: var(--color-white);
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 21px;
+      color: var(--color-gold-soft);
+      margin: 48px 0 14px;
+      border-left: 3px solid var(--color-gold);
+      padding-left: 12px;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: var(--color-white);
+      margin: 26px 0 10px;
+    }
+
+    p { color: var(--color-text); }
+
+    .dim { color: var(--color-text-dim); }
+
+    .note {
+      background: var(--color-panel);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .warn {
+      border-left-color: #d9534f;
+    }
+
+    code, .mono {
+      font-family: "SF Mono", "JetBrains Mono", Consolas, Menlo, monospace;
+      background: #0b0e13;
+      border: 1px solid var(--color-border);
+      border-radius: 5px;
+      padding: 1px 6px;
+      font-size: 13px;
+      color: var(--color-gold-soft);
+    }
+
+    pre {
+      background: #0b0e13;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #cfd8e3;
+    }
+
+    pre .k { color: #8ab4f8; }
+    pre .s { color: #c9a86a; }
+    pre .c { color: #6b7686; font-style: italic; }
+
+    .expert {
+      background: var(--color-panel);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+
+    .expert .name {
+      font-size: 18px;
+      color: var(--color-white);
+      font-weight: 600;
+    }
+
+    .expert .title {
+      color: var(--color-gold-soft);
+      font-size: 14px;
+      margin: 4px 0 12px;
+    }
+
+    .tag-row { margin: 10px 0; }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-dim);
+      margin: 3px 4px 3px 0;
+    }
+
+    .tag.ind { color: var(--color-gold-soft); border-color: #4a4030; background: rgba(201,168,106,.08); }
+
+    .flag {
+      color: #d9a441;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13.5px;
+    }
+
+    th, td {
+      border: 1px solid var(--color-border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #11151c; color: var(--color-gold-soft); font-weight: 600; }
+
+    a { color: var(--color-gold-soft); }
+
+    .back {
+      display: inline-block;
+      margin-top: 40px;
+      color: var(--color-text-dim);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back:hover { color: var(--color-gold-soft); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="eyebrow">DEMO · 内部说明页 / INTERNAL REFERENCE</div>
+    <h1>给专家页加 Person Schema —— 是什么、干什么</h1>
+    <p class="dim">本页用于向团队说明结构化数据（Person Schema）的原理与价值，并示范海鑫汇 GTN 现有 12 位专家顾问的结构化数据草案。<br>注意：本页为说明/评审用途，非对外正式页面。</p>
+
+    <h2>一、是什么</h2>
+    <p>
+      Schema（结构化数据）是嵌在 HTML 里的一段机器可读的 JSON（<span class="mono">JSON-LD</span> 格式），用标准词汇（<a href="https://schema.org" target="_blank" rel="noopener">schema.org</a>）告诉 AI："这个页面上的人是谁、是什么身份、擅长什么"。
+    </p>
+    <p>
+      海鑫汇主站 <code>index.html</code> 里已经有一个 <code>Organization</code> 的 JSON-LD（声明"海鑫汇是一个组织"）。但专家页（如 <code>experts/donglixin/index.html</code>）目前大部分已带有 ProfilePage + Person 的 JSON-LD——对 AI 来说，这些结构化数据能明确"某人是海鑫汇的专家顾问、是什么身份、knowsAbout 哪些领域"。
+    </p>
+
+    <div class="note">
+      示意（以创始人为例，姓名严格取自已确认页面）：
+      <pre><span class="c">// 嵌在 &lt;head&gt; 中的 JSON-LD 示意</span>
+{
+  <span class="k">"@type"</span>: <span class="s">"Person"</span>,
+  <span class="k">"name"</span>: <span class="s">"董立鑫"</span>,
+  <span class="k">"jobTitle"</span>: <span class="s">"海鑫汇 Global Talent Network 创始人"</span>,
+  <span class="k">"affiliation"</span>: { <span class="k">"@type"</span>: <span class="s">"Organization"</span>, <span class="k">"name"</span>: <span class="s">"海鑫汇 Global Talent Network"</span> },
+  <span class="k">"knowsAbout"</span>: [<span class="s">"企业全球化"</span>, <span class="s">"国际商业连接"</span>, <span class="s">"产业数字化"</span>],
+  <span class="k">"url"</span>: <span class="s">"https://gtn-global.netlify.app/experts/donglixin/"</span>
+}</pre>
+    </div>
+
+    <h2>二、干什么（具体动作）</h2>
+    <p>如果授权执行，我会做三件事：</p>
+    <ol>
+      <li>读现有专家页，提取每位专家的真实姓名、职务、专长领域（以页面实际内容为准，<strong>不自行编造</strong>）。</li>
+      <li>在每位专家页的 <code>&lt;head&gt;</code> 里确保有一段 <code>Person</code> JSON-LD（现有页已含，可补充 <code>affiliation</code> 字段以链向组织）。</li>
+      <li>把专家与组织的关系链起来（<code>affiliation</code> 指向海鑫汇），强化 GTN 的"实体关系"。</li>
+    </ol>
+
+    <div class="note">
+      <strong>对 GEO 的意义：</strong>当用户问 ChatGPT "中国机械企业出海该找什么专家"，AI 能从结构化数据确认"某人是海鑫汇的全球化战略专家，knowsAbout 出海"——从而更可能引用/推荐该专家与海鑫汇网站。这比 sitemap 更直接地影响 AI 引用。
+    </div>
+
+    <div class="note warn">
+      <strong>监管边界（重要）：</strong>专家中部分人为上市公司高管，受法规监管。现有专家页文字均经你 Word 稿逐字确认，<strong>绝不动原文</strong>。Person Schema 中的 <code>name</code> / <code>jobTitle</code> / <code>knowsAbout</code> 仅取自你已确认页面，不新增任何对外表述。产业归属标签仅作草案，须由你拍板后方可写入。
+    </div>
+
+    <h2>三、12 位专家顾问 Person Schema 草案</h2>
+    <p class="dim">以下姓名与职务严格取自各专家已确认页面；<span class="flag">⚠ 产业标签</span> 为草案建议，需你确认（结合你补充：张乐 = 家居建材/空间/AI + 跨境电商；王高歌 = 智能制造/汽车/机器人/低空）。</p>
+
+    <div class="expert">
+      <div class="name">董立鑫</div>
+      <div class="title">海鑫汇 Global Talent Network（GTN）创始人</div>
+      <div class="tag-row"><span class="tag">企业全球化</span><span class="tag">国际商业连接</span><span class="tag">产业数字化</span><span class="tag">未来人才发展</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：跨领域 / 平台型（不绑单一产业）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">陈佳乐</div>
+      <div class="title">低空经济与无人机专家</div>
+      <div class="tag-row"><span class="tag">低空经济</span><span class="tag">无人机</span><span class="tag">eVTOL</span><span class="tag">航空</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：低空经济（词库无，建议新增 GTN Low-altitude / Aero）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">李果</div>
+      <div class="title">人形机器人与 AI 投融资专家</div>
+      <div class="tag-row"><span class="tag">人形机器人</span><span class="tag">世界模型</span><span class="tag">大模型</span><span class="tag">AI 投融资</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN AI + GTN Robotics（词库有）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">唐照波</div>
+      <div class="title">宠物品牌全球化专家（佩蒂股份 300673.SZ）</div>
+      <div class="tag-row"><span class="tag">宠物品牌</span><span class="tag">宠物食品</span><span class="tag">品牌全球化</span><span class="tag">海外市场</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Consumer Brands（词库有）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">田果</div>
+      <div class="title">AI 硬科技全球化专家</div>
+      <div class="tag-row"><span class="tag">人工智能</span><span class="tag">硬科技</span><span class="tag">半导体</span><span class="tag">机器人</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN AI + GTN Smart Hardware（半导体建议并入或新增）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">王高歌</div>
+      <div class="title">和君咨询合伙人 · 企业管理咨询专家</div>
+      <div class="tag-row"><span class="tag">管理咨询</span><span class="tag">企业全球化</span><span class="tag">国际化战略</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：智能制造 / 汽车 / 机器人 / 低空（你补充）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">张成刚</div>
+      <div class="title">企业全球化战略专家</div>
+      <div class="tag-row"><span class="tag">企业全球化</span><span class="tag">工业化</span><span class="tag">国际市场</span><span class="tag">中国制造</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Manufacturing（词库有）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">张光辉</div>
+      <div class="title">中教易尔（上海）教育科技有限公司创始人</div>
+      <div class="tag-row"><span class="tag">教育出海</span><span class="tag">国际教育合作</span><span class="tag">哈萨克斯坦</span><span class="tag">中亚</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Education（词库无，建议新增；或作横向能力）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">张国胜</div>
+      <div class="title">制造业全球化专家（安洁科技 002635）</div>
+      <div class="tag-row"><span class="tag">制造业全球化</span><span class="tag">供应链</span><span class="tag">工业升级</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Manufacturing（词库有）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">张乐</div>
+      <div class="title">跨境电商增长专家</div>
+      <div class="tag-row"><span class="tag">跨境电商</span><span class="tag">品牌出海</span><span class="tag">海外营销</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：家居建材 / 空间 / AI + GTN Cross-border E-commerce（你补充）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">张雅莉</div>
+      <div class="title">全球财富与家族办公室专家</div>
+      <div class="tag-row"><span class="tag">全球财富配置</span><span class="tag">家族财富</span><span class="tag">财富传承</span><span class="tag">家族办公室</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Wealth / 金融服务（词库无，建议新增；横向金融能力）</span></div>
+    </div>
+
+    <div class="expert">
+      <div class="name">赵伟栋</div>
+      <div class="title">北京博雅春芽投资有限公司创始人、董事长 · 投资与价值创造专家</div>
+      <div class="tag-row"><span class="tag">困境投资</span><span class="tag">价值创造</span><span class="tag">破产重整</span><span class="tag">全球化投资</span></div>
+      <div class="tag-row"><span class="tag ind">⚠ 产业：GTN Investment（页面已引用 ../../industries/投资/）</span></div>
+    </div>
+
+    <h2>四、产业标签草案汇总（需你拍板）</h2>
+    <table>
+      <thead>
+        <tr><th>产业（建议命名）</th><th>对应专家</th><th>词库是否已有</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GTN AI</td><td>李果、田果</td><td>✅ 有</td></tr>
+        <tr><td>GTN Robotics</td><td>李果</td><td>✅ 有</td></tr>
+        <tr><td>GTN Manufacturing</td><td>张成刚、张国胜</td><td>✅ 有</td></tr>
+        <tr><td>GTN Cross-border E-commerce</td><td>张乐</td><td>✅ 有</td></tr>
+        <tr><td>GTN Consumer Brands</td><td>唐照波</td><td>✅ 有</td></tr>
+        <tr><td>GTN New Energy</td><td>（暂无专家页，可预留）</td><td>✅ 有</td></tr>
+        <tr><td>GTN Healthcare</td><td>（暂无专家页，可预留）</td><td>✅ 有</td></tr>
+        <tr><td>GTN Smart Hardware</td><td>田果（硬科技/半导体）</td><td>✅ 有</td></tr>
+        <tr><td>GTN Low-altitude（陈佳乐）</td><td>陈佳乐</td><td>❌ 需新增</td></tr>
+        <tr><td>GTN Investment（赵伟栋）</td><td>赵伟栋</td><td>❌ 页面已用"投资"</td></tr>
+        <tr><td>GTN Education（张光辉）</td><td>张光辉</td><td>❌ 需新增</td></tr>
+        <tr><td>智能制造 / 汽车 / 机器人 / 低空（王高歌）</td><td>王高歌</td><td>⚠ 你补充，待归类</td></tr>
+        <tr><td>家居建材 / 空间 / AI（张乐）</td><td>张乐</td><td>⚠ 你补充，待归类</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>落到两个方向：</strong><br>
+      <strong>方向 A（首页产业板块 + 专家匹配）：</strong>需你在主 <code>index.html</code> 建 6–8 个产业板块；每个专家页需有你确认的产业归属标记（写进 Person Schema 的 <code>knowsAbout</code> 或自定义字段），点击产业即可匹配显示。标记值须由你拍板。<br>
+      <strong>方向 B（公开报道外链）：</strong>你已提供唐照波、王高歌（3 条）、赵伟栋的官网报道链接，本批已按方向 B 加到对应专家 <code>index.html</code> 的"更多报道"区块（仅加外链，不动原文）。其余专家暂无公开官网报道。
+    </div>
+
+    <a class="back" href="../index.html">&larr; 返回海鑫汇 GTN 主页</a>
+  </div>
+</body>
+
+</html>

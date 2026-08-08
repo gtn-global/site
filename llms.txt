@@ -1,6 +1,6 @@
 # 海鑫汇（海鑫汇 GTN · Global Talent Network）
 
-> 海鑫汇，全称海鑫汇·全球国际化人才联盟（英文 Global Talent Network，简称 GTN），是面向中国企业出海的决策咨询与全球化人才服务机构。两期累计签约 30+ 位专家顾问，均为上市公司或知名企业高管，均已获公开展示授权。业务覆盖出海决策咨询、跨境电商、制造业全球化、AI 硬科技、低空经济、教育出海、投资与财富配置等领域。运营节点：阿拉木图（ALA）· 新加坡（SIN）· 柏林（BER）。
+> 海鑫汇，全称海鑫汇·全球国际化人才联盟（英文 Global Talent Network，简称 GTN），是面向中国企业出海的决策咨询与全球化人才服务机构。两期累计签约 30+ 位专家顾问，均为上市公司或知名企业高管，均已获公开展示授权。业务覆盖出海决策咨询、跨境电商、制造业全球化、AI 硬科技、低空经济、教育出海、投资与财富配置等领域。运营节点：哈萨克斯坦（KZ）· 新加坡（SG）· 德国（DE）。
 
 > 本文件由 generate-sitemap.js 在每次部署时自动生成，请勿手动编辑；新增页面后重新部署即自动收录。
 
@@ -30,27 +30,43 @@
 - [张若一 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E5%BC%A0%E8%8B%A5%E4%B8%80/)：张若一（德国），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [李妮芳 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E6%9D%8E%E5%A6%AE%E8%8A%B3/)：李妮芳（美国·墨西哥），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [武群威 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E6%AD%A6%E7%BE%A4%E5%A8%81/)：武群威（哈萨克斯坦），海鑫汇·国际留学生项目·和君商学院出海班成员。
-- [运营中心 · Operations Hubs — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83/)：海鑫汇全球运营网络覆盖日本、马来西亚、新加坡、俄罗斯、哈萨克斯坦五大海外节点，以及北京、杭州、苏州、成都等国内运营中心。The Global Operations Network behind 海鑫汇, spanning China and overseas hubs.
-- [俄罗斯 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%BF%84%E7%BD%97%E6%96%AF/)：海鑫汇俄罗斯运营中心（俄罗斯）——负责人与职能介绍，素材录入后替换占位内容。
-- [北京 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%8C%97%E4%BA%AC/)：海鑫汇北京运营中心（中国）——负责人与职能介绍，素材录入后替换占位内容。
-- [哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%93%88%E8%90%A8%E5%85%8B%E6%96%AF%E5%9D%A6/)：海鑫汇哈萨克斯坦运营中心（哈萨克斯坦）——中亚运营网络关键节点。
-- [宁波 · 运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%AE%81%E6%B3%A2/)：宁波（中国），海鑫汇·全球运营中心·宁波运营中心。
-- [成都 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%88%90%E9%83%BD/)：海鑫汇成都运营中心（中国）——负责西南区域运营协调与人才对接。
-- [新加坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%96%B0%E5%8A%A0%E5%9D%A1/)：海鑫汇新加坡运营中心（新加坡）——负责人 Claudia 蔡慧敏，负责东南亚运营协调与跨境项目落地。
-- [日本 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%97%A5%E6%9C%AC/)：海鑫汇日本运营中心（日本）——负责人与职能介绍，素材录入后替换占位内容。
-- [柯梦琪 · 运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%9D%AD%E5%B7%9E/)：柯梦琪（中国·杭州），海鑫汇 · 杭州运营中心负责人。
-- [苏州 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E8%8B%8F%E5%B7%9E/)：海鑫汇苏州运营中心（中国）——负责人与职能介绍，素材录入后替换占位内容。
-- [马来西亚 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A/)：海鑫汇马来西亚运营中心（马来西亚）——负责人与职能介绍，素材录入后替换占位内容。
-- [Helen 迟文劼 · 运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%9F%E6%96%87%E5%8A%BC/)：Helen 迟文劼（中国·北京），海鑫汇 · 运营中心主任。
+- [运营中心 — 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83/)：海鑫汇全球运营中心网络：覆盖中亚、中东欧、东南亚、中东、拉美及中国主要出海城市，为企业提供属地化落地、本地资源对接和跨国运营支撑。
+- [孙圆儿 · 中东运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%B8%AD%E4%B8%9C/)：孙圆儿，海鑫汇中东运营中心负责人。覆盖海湾地区，聚焦能源转型、数字基建和跨境投资服务。
+- [俄罗斯运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%BF%84%E7%BD%97%E6%96%AF/)：海鑫汇俄罗斯运营中心，覆盖欧亚地区，聚焦能源、工业设备、工程承包等中资企业出海俄罗斯的市场对接服务。
+- [匈牙利运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%8C%88%E7%89%99%E5%88%A9/)：海鑫汇匈牙利运营中心，覆盖中东欧地区，聚焦新能源汽车、电池制造和工业自动化等中资企业出海欧洲的重要枢纽。
+- [北京运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%8C%97%E4%BA%AC/)：海鑫汇北京运营中心，覆盖华北地区，聚焦智能制造、AI 大模型产业出海、高端服务业等领域。
+- [哈萨克斯坦运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%93%88%E8%90%A8%E5%85%8B%E6%96%AF%E5%9D%A6/)：海鑫汇哈萨克斯坦运营中心，覆盖中亚地区，聚焦能源、基建、农业技术和贸易物流。
+- [刘志中 · 墨西哥运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%A2%A8%E8%A5%BF%E5%93%A5/)：刘志中，海鑫汇墨西哥运营中心负责人。覆盖拉美，聚焦汽车产业链、自动化装备和数字化供应链。
+- [Andy 张东裕 · 宁波运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%AE%81%E6%B3%A2/)：Andy 张东裕，海鑫汇宁波运营中心负责人。覆盖长三角南翼，专注跨境贸易、制造业出海和中小企业国际化。
+- [吕晓明 · 巴基斯坦运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%B7%B4%E5%9F%BA%E6%96%AF%E5%9D%A6/)：吕晓明，海鑫汇巴基斯坦运营中心负责人。覆盖南亚，聚焦基建、能源和跨境贸易。
+- [成都运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%88%90%E9%83%BD/)：海鑫汇成都运营中心，覆盖西南地区，聚焦新能源、智能装备和军工产业链出海。
+- [Claudia 蔡慧敏 · 新加坡运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%96%B0%E5%8A%A0%E5%9D%A1/)：Claudia 蔡慧敏，海鑫汇新加坡运营中心负责人。聚焦东南亚区域总部和高净值家办服务。
+- [日本运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%97%A5%E6%9C%AC/)：海鑫汇日本运营中心，覆盖东亚市场，聚焦先进制造、医疗健康、消费品牌等领域。
+- [柯梦琪 · 杭州运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%9D%AD%E5%B7%9E/)：柯梦琪，海鑫汇杭州运营中心负责人。覆盖江浙沪地区，聚焦智能硬件、跨境电商、出海电商运营。
+- [苏州运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E8%8B%8F%E5%B7%9E/)：海鑫汇苏州运营中心，覆盖长三角地区，聚焦高端制造、新能源和创新材料等中资企业出海的生态服务。
+- [马来西亚运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A/)：海鑫汇马来西亚运营中心，覆盖东南亚地区，聚焦智能制造、电子产业链和伊斯兰金融等中资企业出海马来西亚的市场对接服务。
+- [迟文劼 · 运营中心主任 — 海鑫汇](https://gtn-global.netlify.app/member/%E8%BF%9F%E6%96%87%E5%8A%BC/)：迟文劼（波兰华沙），海鑫汇运营中心主任。负责全球运营中心网络设计、标准建设和跨国项目协调。
 - [钱天漪 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E9%92%B1%E5%A4%A9%E6%BC%AA/)：钱天漪（美国），海鑫汇·国际留学生项目·和君商学院出海班成员。
-- [高佳晖 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E9%AB%98%E4%BD%B3%E6%99%96/)：高佳晖（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
+- [高佳晖 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/%E9%AB%98%E4%BD%B3%E6%99%96/)：高佳晖（哈萨克斯坦），海鑫汇·国际留学生项目·和君商学院出海班成员。
 
 
 ## 核心页面
 
-- [海鑫汇专家顾问网络 — 海鑫汇](https://gtn-global.netlify.app/advisors-index.html)：海鑫汇（海鑫汇 GTN，全称海鑫汇·全球国际化人才联盟，英文 Global Talent Network）专家顾问网络——两期累计签约30+位产业专家与投资人，均为上市公司或知名企业高管，已获授权公开展示。Directory of 30+ signed advisors backing 海鑫汇 Global Talent Network's outbound consulting practice.
+- [海鑫汇专家顾问网络 — 海鑫汇](https://gtn-global.netlify.app/advisors-index.html)：海鑫汇（海鑫汇 GTN，英文 Global Talent Network）专家顾问网络——两期累计签约30+位产业专家与投资人，均为上市公司或知名企业高管，已获授权公开展示。Directory of 30+ signed advisors backing 海鑫汇 Global Talent Network's outbound consulting practice.
+- [预约免费首诊 · GTN | 海鑫汇](https://gtn-global.netlify.app/cta/book-diagnostic/)：海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.
+- [出海健康度自测 · GTN | 海鑫汇](https://gtn-global.netlify.app/cta/self-test/)：海鑫汇出海健康度自测——五个核心维度、15 道题目，快速判断企业全球化准备度。Outbound readiness self-assessment.
 - [全球生态成员 · Global Ecosystem — 海鑫汇](https://gtn-global.netlify.app/ecosystem-index.html)：海鑫汇全球生态名录——覆盖日本、马来西亚、新加坡、哈萨克斯坦等地的国际留学生、海外渠道、商协会与运营团队。The Global Talent Ecosystem behind 海鑫汇, spanning talent, channels, and operators across multiple countries.
 - [50+场活动全记录 · All 50+ Events — 海鑫汇](https://gtn-global.netlify.app/events-index.html)：海鑫汇50+场出海活动全记录——企业游学、出海论坛、出海智阅会、出海沙龙、国际交流与海外考察，附原始报道链接。Complete record of 50+ outbound events hosted by 海鑫汇, spanning study tours, forums, salons, and field visits.
 - [海鑫汇 Global Talent Network](https://gtn-global.netlify.app/index.html)：海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.
-- [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gtn-global.netlify.app/news-index.html)：海鑫汇新闻报道与活动报道汇编——媒体来源、报道标题与原文链接，覆盖海鑫汇媒体生态、和君集团、世界贸易中心协会 WTCA 新加坡及高校校友报道。News coverage and event reports on 海鑫汇 and its partners, with original source links.
+- [消费品牌国际化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
+- [跨国资本与并购 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
+- [智能制造全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/intelligent-manufacturing/)：智能制造企业出海，从产品出口到建立海外市场与本地服务能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外客户与区域资源。
+- [医疗器械与生物医药全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/medical-biotech/)：医疗器械与生物医药企业出海，从合规准入到建立本地市场与长期经营能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
+- [新能源产业全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/new-energy/)：[一句话：新能源产业全球化时，企业常见的决策问题与 GTN 的判断逻辑、可连接的专家与运营中心资源。]
+- [职业教育与人才发展 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/talent-development/)：[一句话：职业教育与人才发展时，企业常见的决策问题与 GTN 的判断逻辑、可连接的专家与运营中心资源。]
+- [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gtn-global.netlify.app/news-index.html)：海鑫汇与和君集团、学术机构、国际组织的关系型报道，及行业媒体报道，附原文链接。News coverage and event reports on 海鑫汇 and its partners, with original source links.
+- [企业现在适合出海吗？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/)：并不是所有企业都应该马上出海。海鑫汇 GTN 从竞争力、目标市场需求、持续投入能力、进入时机四个核心维度，帮助企业判断是否已经具备全球化发展的基础。
+- [出口代理还是海外建厂？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/%E5%87%BA%E5%8F%A3%E4%BB%A3%E7%90%86%E8%BF%98%E6%98%AF%E6%B5%B7%E5%A4%96%E5%BB%BA%E5%8E%82/)：进入海外市场，未必意味着立刻建厂。海鑫汇 GTN 从投入能力、供应链与本地化要求出发，帮助企业权衡出口、代理与海外建厂等不同进入方式的取舍。
+- [海外布局最大的风险是什么？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/%E6%B5%B7%E5%A4%96%E5%B8%83%E5%B1%80%E6%9C%80%E5%A4%A7%E7%9A%84%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88/)：海外布局的风险，往往不在市场本身，而在组织与认知。海鑫汇 GTN 从合规、现金流、本地化与组织能力出发，帮助企业识别并前置管理全球化过程中的关键风险。
+- [第一个海外市场应该选择哪里？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%B7%E5%A4%96%E5%B8%82%E5%9C%BA%E5%BA%94%E8%AF%A5%E9%80%89%E6%8B%A9%E5%93%AA%E9%87%8C/)：选择第一个海外市场，往往比进入多个市场更重要。海鑫汇 GTN 从产业属性、资源条件、目标市场需求与本地化要求出发，帮助企业判断最合适作为全球化起点的区域。
 

@@ -3,155 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>运营中心 · Operations Hubs — 海鑫汇</title>
-<meta name="description" content="海鑫汇全球运营网络覆盖日本、马来西亚、新加坡、俄罗斯、哈萨克斯坦五大海外节点，以及北京、杭州、苏州、成都等国内运营中心。The Global Operations Network behind 海鑫汇, spanning China and overseas hubs.">
-<link rel="stylesheet" href="../../style.css">
+<title>运营中心 — 海鑫汇 Global Talent Network</title>
+<meta name="description" content="海鑫汇全球运营中心网络：覆盖中亚、中东欧、东南亚、中东、拉美及中国主要出海城市，为企业提供属地化落地、本地资源对接和跨国运营支撑。">
+<link rel="stylesheet" href="../style.css">
+<style>
+/* ── 三级页面页内布局 ── */
+.page-body { max-width: 1100px; margin: 0 auto; }
+
+/* 介绍区 */
+.intro-wrap { margin-bottom: 40px; }
+.intro-wrap .intro-label {
+  font-family: 'Noto Serif SC', serif; font-size: 14px; font-weight: 600;
+  color: var(--brass, #8A6D3B); margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.intro-wrap .intro-text {
+  color: var(--ink-soft, #5b6470); line-height: 1.9; font-size: 15px; max-width: 700px;
+}
+
+/* Grid 卡片区 */
+.ops-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px; margin: 32px 0;
+}
+.ops-card {
+  border: 1px solid var(--rule); border-radius: 6px; padding: 24px;
+  background: var(--paper);
+  text-decoration: none; color: var(--ink);
+  transition: box-shadow .2s, border-color .2s;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.ops-card:hover { box-shadow: 0 4px 16px rgba(30,37,48,.1); border-color: var(--brass, #8A6D3B); }
+
+.ops-card .card-avatar {
+  width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 1.5px solid var(--brass, #8A6D3B);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper-alt, #F7F6F3);
+}
+.ops-card .card-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-info { flex: 1; min-width: 0; }
+.card-info .card-title { font-family: 'Noto Serif SC', serif; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.card-info .card-loc  { font-size: 12px; color: var(--ink-soft, #5b6470); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.card-info .card-loc .flag-icon { width: 18px; height: 12px; border-radius: 1px; }
+.card-info .card-tags { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.card-info .card-tags span {
+  font-size: 11px; padding: 3px 10px; border: 1px solid var(--rule);
+  border-radius: 12px; color: var(--ink-soft, #5b6470);
+}
+
+.footer-links { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 14px; }
+.footer-links a { color: var(--brass, #8A6D3B); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-links .sep { margin: 0 10px; color: var(--rule); }
+</style>
 </head>
 <body>
 
-<div class="demo-ribbon">DEMO · 内部评审版本 — 非最终上线页面 / INTERNAL REVIEW DRAFT — NOT FOR PUBLIC RELEASE · 2026-08-02</div>
-
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="../../index.html" class="wordmark"><img src="../../logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="sub">GLOBAL TALENT NETWORK</span></a>
-    <div class="desk-clock"></div>
-    <a href="../../ecosystem-index.html" class="subpage-back">&larr; 返回生态 <span class="en">BACK TO ECOSYSTEM</span></a>
+    <a href="../index.html" class="wordmark"><img src="../logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="sub">GLOBAL TALENT NETWORK</span></a>
+    <a href="../ecosystem-index.html" class="subpage-back">&larr; 返回生态 <span class="en">BACK TO ECOSYSTEM</span></a>
   </div>
 </header>
 
 <section class="section">
   <div class="eyebrow">运营中心 / OPERATIONS HUBS</div>
-  <h1 class="headline reveal">我们的全球运营网络</h1>
-  <p class="subline reveal">The Global Operations Network</p>
-  <p class="lede reveal">覆盖日本、马来西亚、新加坡、俄罗斯、哈萨克斯坦五大海外节点及北京、杭州、苏州、成都等国内运营中心；每位负责人与一句话简介待素材录入后替换（对应 ecosystem-index 运营中心卡片）。</p>
 
-  <div class="eco-ops reveal" id="eco-ops">
-    <div class="ops-grid">
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;"></span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/cn.svg" alt="中国" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 中国</div>
-        <h4>北京</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
+  <div class="page-body">
+    <div class="intro-wrap reveal">
+      <div class="intro-label">关于运营中心 / ABOUT</div>
+      <div class="intro-text">
+        <p>海鑫汇在全球关键市场设立运营中心，覆盖中亚、中东欧、东南亚、中东、拉美及中国主要出海城市。每个中心由熟悉本地商业环境的负责人带领，为企业提供属地化落地、本地资源对接、政策解读和跨国运营支撑。不同城市节点各有侧重，但都嵌入同一套协作网络——企业在一个中心获得支持，即可触达全球资源。</p>
       </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
+    </div>
 
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/cn.svg" alt="中国" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 中国</div>
-        <h4>杭州</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
+    <div class="ops-grid reveal">
+      <a href="运营中心杭州/" class="ops-card">
+        <div class="card-avatar"><img src="运营中心杭州/cmq.jpg" alt="柯梦琪" onerror="this.style.display='none'"></div>
+        <div class="card-info">
+          <div class="card-title">杭州运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 柯梦琪 · 杭州</div>
+          <div class="card-tags"><span>智能硬件</span><span>跨境电商</span><span>AI</span></div>
+        </div>
+      </a>
+      <a href="运营中心宁波/" class="ops-card">
+        <div class="card-avatar"><img src="运营中心宁波/图片1.jpg" alt="Andy" onerror="this.style.display='none'"></div>
+        <div class="card-info">
+          <div class="card-title">宁波运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> Andy 张东裕 · 宁波</div>
+          <div class="card-tags"><span>跨境贸易</span><span>制造业出海</span></div>
+        </div>
+      </a>
+      <a href="运营中心苏州/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="苏州"></div>
+        <div class="card-info">
+          <div class="card-title">苏州运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 苏州</div>
+          <div class="card-tags"><span>高端制造</span><span>新能源</span><span>创新材料</span></div>
+        </div>
+      </a>
+      <a href="运营中心北京/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="北京"></div>
+        <div class="card-info">
+          <div class="card-title">北京运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 北京</div>
+          <div class="card-tags"><span>智能制造</span><span>AI 大模型</span></div>
+        </div>
+      </a>
+      <a href="运营中心成都/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="成都"></div>
+        <div class="card-info">
+          <div class="card-title">成都运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 成都</div>
+          <div class="card-tags"><span>新能源</span><span>智能装备</span></div>
+        </div>
+      </a>
+      <a href="运营中心巴基斯坦/" class="ops-card">
+        <div class="card-avatar"><img src="运营中心巴基斯坦/avatar-lv.jpg" alt="吕晓明" onerror="this.style.display='none'"></div>
+        <div class="card-info">
+          <div class="card-title">巴基斯坦运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 吕晓明 · 伊斯兰堡</div>
+          <div class="card-tags"><span>基建</span><span>能源</span><span>贸易</span></div>
+        </div>
+      </a>
+      <a href="运营中心新加坡/" class="ops-card">
+        <div class="card-avatar"><img src="运营中心新加坡/avatar-ch.jpg" alt="Claudia" onerror="this.style.display='none'"></div>
+        <div class="card-info">
+          <div class="card-title">新加坡运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> Claudia 蔡慧敏 · 新加坡</div>
+          <div class="card-tags"><span>家办</span><span>财富管理</span></div>
+        </div>
+      </a>
+      <a href="运营中心墨西哥/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="刘志中"></div>
+        <div class="card-info">
+          <div class="card-title">墨西哥运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 刘志中 · 墨西哥城</div>
+          <div class="card-tags"><span>汽车产业链</span><span>自动化</span></div>
+        </div>
+      </a>
+      <a href="运营中心中东/" class="ops-card">
+        <div class="card-avatar"><img src="运营中心中东/avatar-syr.jpg" alt="孙圆儿" onerror="this.style.display='none'"></div>
+        <div class="card-info">
+          <div class="card-title">中东运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 孙圆儿 · 迪拜</div>
+          <div class="card-tags"><span>能源转型</span><span>数字基建</span></div>
+        </div>
+      </a>
+      <a href="运营中心俄罗斯/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="俄罗斯"></div>
+        <div class="card-info">
+          <div class="card-title">俄罗斯运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 莫斯科</div>
+          <div class="card-tags"><span>能源</span><span>工业设备</span></div>
+        </div>
+      </a>
+      <a href="运营中心哈萨克斯坦/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="哈萨克斯坦"></div>
+        <div class="card-info">
+          <div class="card-title">哈萨克斯坦运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 阿拉木图</div>
+          <div class="card-tags"><span>能源</span><span>基建</span><span>物流</span></div>
+        </div>
+      </a>
+      <a href="运营中心马来西亚/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="马来西亚"></div>
+        <div class="card-info">
+          <div class="card-title">马来西亚运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 吉隆坡</div>
+          <div class="card-tags"><span>电子产业链</span><span>智能制造</span></div>
+        </div>
+      </a>
+      <a href="运营中心日本/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="日本"></div>
+        <div class="card-info">
+          <div class="card-title">日本运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 东京</div>
+          <div class="card-tags"><span>先进制造</span><span>消费品牌</span></div>
+        </div>
+      </a>
+      <a href="运营中心匈牙利/" class="ops-card">
+        <div class="card-avatar"><img src="../images/avatar-placeholder.svg" alt="匈牙利"></div>
+        <div class="card-info">
+          <div class="card-title">匈牙利运营中心</div>
+          <div class="card-loc"><span class="flag-icon" style="background:var(--brass);">&nbsp;</span> 布达佩斯</div>
+          <div class="card-tags"><span>新能源汽车</span><span>电池制造</span></div>
+        </div>
+      </a>
+    </div>
 
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/cn.svg" alt="中国" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 中国</div>
-        <h4>苏州</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/cn.svg" alt="中国" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 中国</div>
-        <h4>成都</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/sg.svg" alt="新加坡" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 新加坡</div>
-        <h4>新加坡</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/jp.svg" alt="日本" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 日本</div>
-        <h4>东京</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/my.svg" alt="马来西亚" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 马来西亚</div>
-        <h4>吉隆坡</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/my.svg" alt="马来西亚" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 马来西亚</div>
-        <h4>槟城</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
-      <div class="ops-card">
-        <span class="avatar-ring" style="display:block;width:88px;height:88px;border-radius:50%;border:2px solid var(--brass,#8A6D3B);background:var(--paper-alt,#F7F6F3);position:relative;margin:0 auto 14px;box-shadow:0 2px 10px rgba(30,37,48,.10);">
-          <span style="display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;">
-
-          </span>
-          <span style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:30px;height:20px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(30,37,48,.18);border:1px solid var(--rule);z-index:2;overflow:hidden;border-radius:2px;">
-            <img src="../../flags/ru.svg" alt="俄罗斯" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </span>
-        </span>
-        <div class="ops-name" style="font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;margin-bottom:2px;">[负责人姓名] 俄罗斯</div>
-        <h4>莫斯科</h4>
-        <div class="ops-bio" style="font-size:12px;color:var(--ink-soft,#5b6470);line-height:1.5;margin-top:6px;">[一句话简介]</div>
-      </div>
+    <div class="footer-links">
+      <a href="../index.html#about">了解海鑫汇 &rarr;</a>
+      <span class="sep">|</span>
+      <a href="../ecosystem-index.html">查看生态全景 &rarr;</a>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  海鑫汇全球出海决策台 &mdash; 页面为结构与内容demo，供内部评审，非最终上线版本<br>
-  GLOBAL TALENT NETWORK &mdash; structure &amp; content demo for internal review, not the final live version<br>
-  ALA · SIN · BER
-</footer>
-
-<script src="../../script.js"></script>
+<footer class="footer" data-depth="1"></footer>
+<script src="../script.js"></script>
 </body>
 </html>
