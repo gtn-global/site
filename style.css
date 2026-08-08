@@ -534,8 +534,6 @@ textarea{resize:vertical;min-height:88px;}
 /* ============ 统一大头像尺寸（顾问手风琴展开态 + 全球运营中心共用，同一个尺寸） ============ */
 .avatar-lg{width:130px;height:130px;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--paper-alt);flex:0 0 auto;display:block;}
 
-/* ============ 内部标注：保留在文件里但不向用户展示（hidden，需要恢复时去掉此类即可） ============ */
-.internal-note{display:none;}
 
 /* ============ 顾问手风琴专属：收起态小头像 + 姓名/职位，展开态大头像 + 简介 ============ */
 .accordion-avatar{flex:0 0 auto;width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--paper-alt);}
