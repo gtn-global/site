@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -7,10 +7,17 @@
 <meta name="description" content="运营中心人物页统一模板：负责人 + 覆盖范围 + 重点产业 + 相关问题链接 + CTA。">
 <link rel="stylesheet" href="../../style.css">
 <style>
-  /* ── 内容统一容器 ── */
+  /* ── 内容统一容器：顶到最左，不放限制容器 ── */
   .page-body {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* ── eyebrow 与下方内容间空出半个头像圆（40px） ── */
+  .eyebrow {
+    margin-bottom: 40px;
+    text-align: left;
   }
 
   /* ── 顶部身份区（一行布局）── */
@@ -219,7 +226,7 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a href="../../index.html" class="wordmark"><img src="../../logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="sub">GLOBAL TALENT NETWORK</span></a>
-    <a href="../ecosystem-index.html" class="subpage-back">&larr; 返回生态 <span class="en">BACK TO ECOSYSTEM</span></a>
+    <a href="../../ecosystem-index.html" class="subpage-back">&larr; 返回生态 <span class="en">BACK TO ECOSYSTEM</span></a>
   </div>
 </header>
 
@@ -245,7 +252,7 @@
     </div>
     <!-- 联系按钮 -->
     <div class="cta-col">
-      <a href="#" class="cta-btn">联系 → CONTACT</a>
+      <a href="../../cta/book-diagnostic/index.html" class="cta-btn">联系 → CONTACT</a>
     </div>
   </div>
 
@@ -272,10 +279,12 @@
     <div class="block-sec">
       <div class="block-label">重点产业</div>
       <div class="pill-row">
-        <a class="pill" href="../industries/【产业页】/index.html">GTN AI</a>
-        <a class="pill" href="../industries/【产业页】/index.html">GTN New Energy</a>
-        <a class="pill" href="../industries/【产业页】/index.html">GTN Manufacturing</a>
-        <a class="pill" href="../industries/【产业页】/index.html">GTN Cross-border E-commerce</a>
+        <a class="pill" href="../../industries/new-energy/index.html">GTN New Energy</a>
+        <a class="pill" href="../../industries/intelligent-manufacturing/index.html">GTN Manufacturing</a>
+        <a class="pill" href="../../industries/consumer-brands/index.html">GTN Consumer Brands</a>
+        <a class="pill" href="../../industries/medical-biotech/index.html">GTN Healthcare</a>
+        <a class="pill" href="../../industries/cross-border-capital/index.html">GTN Cross-border Capital</a>
+        <a class="pill" href="../../industries/talent-development/index.html">GTN Talent Development</a>
       </div>
     </div>
 
@@ -295,7 +304,7 @@
         <span class="qa-arrow">→</span>
       </a>
       <a class="qa-row" href="../industries/【产业页】/index.html">
-        <span>← 返回产业页（从哪来，回哪去）</span>
+        <span>← 返回产业页</span>
         <span class="qa-arrow">←</span>
       </a>
     </div>
@@ -308,7 +317,7 @@
     <!-- 底部双链接 -->
     <div class="footer-links">
       <a href="../../index.html#contact">了解海鑫汇 →</a>
-      <a href="../ecosystem-index.html">查看全部运营中心 →</a>
+      <a href="../../ecosystem-index.html">查看全部运营中心 →</a>
     </div>
 
   </div>

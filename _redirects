@@ -1,8 +1,65 @@
-﻿# Netlify 301 redirects (permanent).
+# Netlify 301 redirects (permanent).
+# member 目录中文文件夹 -> 英文重命名 301 重定向
 
-/member/ningbo/   /member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%AE%89%E6%B3%A2/   301
-/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%B8%9C%E4%BA%AC/   /member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%97%A5%E6%9C%AC/   301
-/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%90%89%E9%9A%86%E5%9D%9D/   /member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A/   301
-/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E8%8E%AB%E6%96%AF%E7%A7%91/   /member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%BF%84%E7%BD%97%E6%96%AF/   301
+/member/%E8%BF%9F%E6%96%87%E5%8A%BC/   /member/chi-wenjie/   301
+/member/迟文劼/   /member/chi-wenjie/   301
+/member/%E9%AB%98%E4%BD%B3%E6%99%96/   /member/gao-jiahui/   301
+/member/高佳晖/   /member/gao-jiahui/   301
+/member/%E6%9D%8E%E5%A6%AE%E8%8A%B3/   /member/li-nifang/   301
+/member/李妮芳/   /member/li-nifang/   301
+/member/%E5%88%98%E6%A0%97%E9%93%AD/   /member/liu-liming/   301
+/member/刘栗铭/   /member/liu-liming/   301
+/member/%E9%92%B1%E5%A4%A9%E6%BC%AA/   /member/qian-tianyi/   301
+/member/钱天漪/   /member/qian-tianyi/   301
+/member/%E6%AD%A6%E7%BE%A4%E5%A8%81/   /member/wu-qunwei/   301
+/member/武群威/   /member/wu-qunwei/   301
+/member/%E4%BA%8E%E6%BA%AA%E4%B8%9C/   /member/yu-xidong/   301
+/member/于溪东/   /member/yu-xidong/   301
+/member/%E5%BC%A0%E7%AB%8B%E6%98%82/   /member/zhang-liang/   301
+/member/张立昂/   /member/zhang-liang/   301
+/member/%E5%BC%A0%E8%8B%A5%E4%B8%80/   /member/zhang-ruoyi/   301
+/member/张若一/   /member/zhang-ruoyi/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83/   /member/ops-hub/   301
+/member/运营中心/   /member/ops-hub/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%B7%B4%E5%9F%BA%E6%96%AF%E5%9D%A6/   /member/ops-pakistan/   301
+/member/运营中心巴基斯坦/   /member/ops-pakistan/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%8C%97%E4%BA%AC/   /member/ops-beijing/   301
+/member/运营中心北京/   /member/ops-beijing/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%88%90%E9%83%BD/   /member/ops-chengdu/   301
+/member/运营中心成都/   /member/ops-chengdu/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%BF%84%E7%BD%97%E6%96%AF/   /member/ops-russia/   301
+/member/运营中心俄罗斯/   /member/ops-russia/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%93%88%E8%90%A8%E5%85%8B%E6%96%AF%E5%9D%A6/   /member/ops-kazakhstan/   301
+/member/运营中心哈萨克斯坦/   /member/ops-kazakhstan/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%9D%AD%E5%B7%9E/   /member/ops-hangzhou/   301
+/member/运营中心杭州/   /member/ops-hangzhou/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A/   /member/ops-malaysia/   301
+/member/运营中心马来西亚/   /member/ops-malaysia/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%A2%A8%E8%A5%BF%E5%93%A5/   /member/ops-mexico/   301
+/member/运营中心墨西哥/   /member/ops-mexico/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%AE%81%E6%B3%A2/   /member/ops-ningbo/   301
+/member/运营中心宁波/   /member/ops-ningbo/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%97%A5%E6%9C%AC/   /member/ops-japan/   301
+/member/运营中心日本/   /member/ops-japan/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E8%8B%8F%E5%B7%9E/   /member/ops-suzhou/   301
+/member/运营中心苏州/   /member/ops-suzhou/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E6%96%B0%E5%8A%A0%E5%9D%A1/   /member/ops-singapore/   301
+/member/运营中心新加坡/   /member/ops-singapore/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E5%8C%88%E7%89%99%E5%88%A9/   /member/ops-hungary/   301
+/member/运营中心匈牙利/   /member/ops-hungary/   301
+/member/%E8%BF%90%E8%90%A5%E4%B8%AD%E5%BF%83%E4%B8%AD%E4%B8%9C/   /member/ops-mena/   301
+/member/运营中心中东/   /member/ops-mena/   301
+
+# 其他历史重定向
 /experts/experts-demo.html   /   301
 /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97.html   /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   301
+
+# questions 目录中文文件夹 -> 英文重命名 301 重定向
+/questions/%E5%87%BA%E5%8F%A3%E4%BB%A3%E7%90%86%E8%BF%98%E6%98%AF%E6%B5%B7%E5%A4%96%E5%BB%BA%E5%8E%82/   /questions/export-or-build/   301
+/questions/出口代理还是海外建厂/   /questions/export-or-build/   301
+/questions/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%B7%E5%A4%96%E5%B8%82%E5%9C%BA%E5%BA%94%E8%AF%A5%E9%80%89%E6%8B%A9%E5%93%AA%E9%87%8C/   /questions/first-market/   301
+/questions/第一个海外市场应该选择哪里/   /questions/first-market/   301
+/questions/%E6%B5%B7%E5%A4%96%E5%B8%83%E5%B1%80%E6%9C%80%E5%A4%A7%E7%9A%84%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88/   /questions/overseas-risks/   301
+/questions/海外布局最大的风险是什么/   /questions/overseas-risks/   301
+/questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   /questions/ready-to-go-global/   301
+/questions/企业现在适合出海吗/   /questions/ready-to-go-global/   301

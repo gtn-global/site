@@ -150,7 +150,94 @@ const GROUP_LABEL = {
   home: '## 核心页面',
 };
 
+/**
+ * 注入 SEO 元标签（canonical + Open Graph + schema.org JSON-LD）
+ * 在生成 sitemap/llms 之前执行，保证新页面也带完整元标签。
+ * 复用本脚本已有的 collectPages / toUrl / encodeUrlPath / SKIP_DIRS / BASE。
+ * 已含 <link rel="canonical"> 的页面跳过（幂等，可重复跑）。
+ * 仅改 <head>，不动 css/js/正文。
+ */
+function getPageMeta(html) {
+  const t = html.match(/<title>([\s\S]*?)<\/title>/i);
+  const d = html.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i);
+  const clean = (s) => (s || '').replace(/\s+/g, ' ').trim();
+  return { title: clean(t ? t[1] : ''), desc: clean(d ? d[1] : '') };
+}
+
+function parsePerson(title) {
+  let name = '', job = '';
+  if (title) {
+    name = title.split(/[·\-—|]/)[0].trim();
+    const m = title.match(/·\s*([^—|]+)/);
+    if (m) job = m[1].replace(/—.*$/, '').trim();
+  }
+  return { name, job };
+}
+
+function buildSchema(relHtml, meta) {
+  const rel = relHtml.split('/');
+  let data;
+  if (rel[0] === 'member' || rel[0] === 'experts') {
+    const { name, job } = parsePerson(meta.title);
+    data = {
+      '@context': 'https://schema.org', '@type': 'Person',
+      'name': name || meta.title,
+      'jobTitle': job || '',
+      'worksFor': { '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' }
+    };
+  } else if (rel[0] === 'industries') {
+    data = {
+      '@context': 'https://schema.org', '@type': 'Service',
+      'name': meta.title, 'description': meta.desc,
+      'provider': { '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' }
+    };
+  } else if (relHtml === 'index.html') {
+    data = [
+      { '@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' },
+      { '@context': 'https://schema.org', '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/', 'alternateName': '海鑫汇' }
+    ];
+  } else {
+    data = {
+      '@context': 'https://schema.org', '@type': 'WebPage',
+      'name': meta.title, 'description': meta.desc, 'url': ''
+    };
+  }
+  return Array.isArray(data) ? data : [data];
+}
+
+function injectSeoMeta() {
+  const pages = [];
+  collectPages(ROOT, '', pages);
+  const unique = Array.from(new Set(pages)).sort();
+  let injected = 0, skipped = 0;
+  for (const rel of unique) {
+    const abs = path.join(ROOT, ...rel.split('/'));
+    let html = fs.readFileSync(abs, 'utf-8');
+    if (/<link\s+rel=["']canonical["']/i.test(html)) { skipped++; continue; }
+    const canonical = BASE + encodeUrlPath(toUrl(rel));
+    const meta = getPageMeta(html);
+    const schemaJson = buildSchema(rel, meta).map(s => JSON.stringify(s, null, 2)).join(',\n');
+    const schemaBlock = `<script type="application/ld+json">\n[\n${schemaJson}\n]\n</script>`;
+    const ogBlock = [
+      `<link rel="canonical" href="${canonical}">`,
+      `<meta property="og:type" content="website">`,
+      `<meta property="og:title" content="${meta.title.replace(/"/g, '&quot;')}">`,
+      `<meta property="og:description" content="${meta.desc.replace(/"/g, '&quot;')}">`,
+      `<meta property="og:url" content="${canonical}">`,
+      `<meta property="og:site_name" content="Global Talent Network (GTN)">`,
+      `<meta name="twitter:card" content="summary_large_image">`
+    ].join('\n  ');
+    const headEnd = html.indexOf('</head>');
+    if (headEnd === -1) continue;
+    html = html.slice(0, headEnd) + `  ${ogBlock}\n  ${schemaBlock}\n</head>` + html.slice(headEnd + '</head>'.length);
+    fs.writeFileSync(abs, html, 'utf-8');
+    injected++;
+  }
+  console.log(`[seo-meta] 注入 ${injected} 个，跳过(已有canonical) ${skipped} 个。`);
+}
+
 function build() {
+  injectSeoMeta();   // 先给全站真实页补 canonical/og/schema，再生成 sitemap/llms
   const pages = [];
   collectPages(ROOT, '', pages);
 
