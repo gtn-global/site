@@ -463,14 +463,92 @@ textarea{resize:vertical;min-height:88px;}
   .nav-links a .en{display:none;}
   /* 移动端优化：hero 标题允许换行，避免裁切 */
   .hero-head .headline{white-space:normal;}
+
+  /* 移动端优化：section 内边距收窄，正文更透气 */
+  .section{padding:40px 18px;}
+  .eyebrow{margin-bottom:16px;}
+
+  /* 移动端优化：大标题与副标缩放，避免溢出 */
+  .headline{font-size:clamp(24px,6.4vw,32px);line-height:1.35;}
+  .subhead{font-size:17px;}
+  .subhead .en{font-size:9px;letter-spacing:1px;}
+
   /* 移动端优化：内容轮播首屏降高，更早露出正文 */
   #content-hub{height:42vh;min-height:300px;}
-  /* 移动端优化：手风琴触发区换行 + 胶囊换行 + 触控热区 */
-  .accordion-trigger{min-height:44px;padding:10px 0;flex-wrap:wrap;align-items:center;}
+  /* 内容轮播三卡在窄屏单列，避免挤压 */
+  .grid3{grid-template-columns:1fr;gap:14px;}
+
+  /* 移动端优化：首页双 CTA 全宽堆叠，不溢出 */
+  .cta-row{flex-direction:column;align-items:stretch;gap:12px;}
+  .radar-cta,.btn-seal{justify-content:center;width:100%;}
+
+  /* 移动端优化：运营中心标题行堆叠，按钮不再错位上移 */
+  .ops-head-row{flex-direction:column;align-items:flex-start;gap:14px;margin-top:36px;}
+  .ops-head-row .subhead{margin:0;}
+  .ops-head-row .btn-subhead{transform:none;margin:0;}
+
+  /* 移动端优化：活动分布 6 列 → 3 列 */
+  .event-breakdown{grid-template-columns:repeat(3,1fr);}
+
+  /* 移动端优化：stat-line 4 列 → 2 列，数字降号，CTA 整理 */
+  .stat-line{grid-template-columns:repeat(2,1fr);gap:18px 12px;}
+  .stat-line .stat-item{border-left:none;padding:4px 4px;}
+  .stat-line .stat-num{font-size:36px;}
+  .stat-line .stat-plus{font-size:28px;}
+  .stat-line .stat-cap{font-size:13.5px;}
+  .btn-outline .en{display:inline;font-size:9px;margin-left:4px;}
+
+  /* 移动端优化：顾问网络双栏 → 单栏，头像缩、bio 行高优化、整卡可点热区 */
+  .advisor-grid-2col{grid-template-columns:1fr;gap:10px;}
+  .advisor-cell{align-items:center;padding:12px 14px;}
+  .advisor-cell .avatar-ring{flex:0 0 60px;width:60px;height:60px;}
+  .advisor-cell-body h4{font-size:15px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;}
+  .advisor-cell-body .role{margin-left:0;font-size:11.5px;}
+  .advisor-cell-body .bio{font-size:12.5px;line-height:1.6;margin-top:8px;}
+
+  /* 移动端优化：两处手风琴统一触控热区 44px + 英文/胶囊换行对齐 */
+  .accordion-trigger{min-height:44px;padding:12px 0;flex-wrap:wrap;align-items:center;gap:10px;}
   .accordion-trigger .capsule-group{flex-wrap:wrap;gap:6px;}
-  #situation-accordion .accordion-trigger .tag{margin-bottom:6px;}
+  .accordion-icon{margin-left:auto;flex:0 0 auto;}
+
+  /* 决策手风琴：英文副标换行 + 缩小，不再与中文挤一行 */
+  #decision-accordion .accordion-trigger h4{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;}
+  #decision-accordion .accordion-trigger h4 .en-inline{display:block;width:100%;font-size:9.5px;margin-left:0;color:var(--ink-faint);letter-spacing:.5px;}
+  #decision-accordion .accordion-trigger .tag{font-size:11px;width:auto;padding:3px 8px;}
+
+  /* 产业情境手风琴：tag 与胶囊手机端换行堆叠，tag 略收 */
+  #situation-accordion .accordion-trigger .tag{font-size:14px;min-width:0;margin-bottom:4px;flex:1 1 100%;text-align:left;}
   #situation-accordion .accordion-trigger .capsule-group{flex:1 1 100%;order:3;}
   #situation-accordion .accordion-icon{margin-left:auto;}
+
+  /* 移动端优化：表单提交按钮全宽 */
+  .form-submit .btn-seal{width:100%;justify-content:center;}
+}
+
+/* ============ 极小屏（≤480px，如 iPhone SE）收尾优化 ============ */
+@media (max-width:480px){
+  /* section 边距再收窄 */
+  .section{padding:34px 16px;}
+  /* 主标题再缩，避免长标题溢出 */
+  .headline{font-size:clamp(22px,6vw,28px);}
+  .subhead{font-size:16px;}
+  /* 运营中心 2 列，照片再缩 */
+  .ops-center-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;}
+  .ops-center-photo{width:72px;height:72px;}
+  .ops-center-card h4{font-size:13.5px;}
+  /* stat-line 在极小屏数字再降 */
+  .stat-line .stat-num{font-size:32px;}
+  .stat-line .stat-plus{font-size:26px;}
+  /* 顾问卡头像再缩，名字与职务分两行更清晰 */
+  .advisor-cell .avatar-ring{flex:0 0 54px;width:54px;height:54px;}
+  .advisor-cell-body h4{font-size:14px;}
+  .advisor-cell-body .role{display:block;margin-left:0;margin-top:2px;}
+  /* 决策手风琴英文副标再缩 */
+  #decision-accordion .accordion-trigger h4 .en-inline{font-size:9px;}
+  /* event-breakdown 极小屏改 2 列，数字不挤 */
+  .event-breakdown{grid-template-columns:repeat(2,1fr);}
+  /* 内容轮播卡片内边距收窄 */
+  .grid3 .card{padding:20px 18px;}
 }
 
 /* ============ NEW: 专家独立页 ============ */
