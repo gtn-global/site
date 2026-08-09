@@ -506,23 +506,31 @@ textarea{resize:vertical;min-height:88px;}
   .advisor-cell-body .role{margin-left:0;font-size:11.5px;}
   .advisor-cell-body .bio{font-size:12.5px;line-height:1.6;margin-top:8px;}
 
-  /* 移动端优化：两处手风琴统一触控热区 44px + 英文/胶囊换行对齐 */
-  .accordion-trigger{min-height:44px;padding:12px 0;flex-wrap:wrap;align-items:center;gap:10px;}
+  /* 移动端优化：两处手风琴统一触控热区 + 收紧间距 */
+  .accordion-trigger{min-height:44px;padding:10px 14px;flex-wrap:wrap;align-items:center;gap:10px;}
   .accordion-trigger .capsule-group{flex-wrap:wrap;gap:6px;}
-  .accordion-icon{margin-left:auto;flex:0 0 auto;}
+  .accordion-icon{margin-left:auto;flex:0 0 auto;font-size:18px;}
 
-  /* 决策手风琴：英文副标换行 + 缩小，不再与中文挤一行 */
-  #decision-accordion .accordion-trigger h4{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;}
-  #decision-accordion .accordion-trigger h4 .en-inline{display:block;width:100%;font-size:9.5px;margin-left:0;color:var(--ink-faint);letter-spacing:.5px;}
-  #decision-accordion .accordion-trigger .tag{font-size:11px;width:auto;padding:3px 8px;}
+  /* 决策手风琴重写：紧凑布局 — tag 居左小方块 + 标题+英文副标换行 */
+  #decision-accordion .accordion-trigger{align-items:flex-start;gap:12px;padding:12px 16px;}
+  #decision-accordion .accordion-trigger .tag{font-size:9.5px;letter-spacing:.6px;width:46px;text-align:center;padding:4px 2px;flex-shrink:0;border-radius:2px;}
+  #decision-accordion .accordion-trigger h4{display:flex;flex-direction:column;gap:1px;flex:1 1 auto;margin:0;min-width:0;}
+  #decision-accordion .accordion-trigger h4 > span:first-child,
+  #decision-accordion .accordion-trigger h4 > :not(.en-inline){font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink);}
+  #decision-accordion .accordion-trigger h4 .en-inline{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.4px;color:var(--ink-faint);margin-top:2px;text-transform:uppercase;white-space:normal;line-height:1.25;}
 
   /* 产业情境手风琴：tag 与胶囊手机端换行堆叠，tag 略收 */
   #situation-accordion .accordion-trigger .tag{font-size:14px;min-width:0;margin-bottom:4px;flex:1 1 100%;text-align:left;}
   #situation-accordion .accordion-trigger .capsule-group{flex:1 1 100%;order:3;}
   #situation-accordion .accordion-icon{margin-left:auto;}
 
-  /* 移动端优化：表单提交按钮全宽 */
-  .form-submit .btn-seal{width:100%;justify-content:center;}
+  /* 移动端优化：表单收窄 + 输入框不溢出 + 提交按钮全宽 */
+  .form-wrap{margin-top:36px;padding:20px 16px;border-radius:4px;}
+  .form-grid{grid-template-columns:1fr;gap:12px;}
+  input,select,textarea{width:100%;max-width:100%;box-sizing:border-box;font-size:14px;padding:10px 12px;}
+  textarea{min-height:80px;}
+  .form-submit{margin-top:18px;flex-direction:column;align-items:stretch;}
+  .form-submit .btn-seal{width:100%;justify-content:center;padding:13px 20px;}
 }
 
 /* ============ 极小屏（≤480px，如 iPhone SE）收尾优化 ============ */
