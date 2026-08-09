@@ -278,9 +278,6 @@ textarea{resize:vertical;min-height:88px;}
 .role-row:last-child{border-bottom:none;}
 .role-row dt{flex:0 0 64px;font-family:'Noto Serif SC',serif;font-weight:600;font-size:14px;color:var(--ink);}
 .role-row dd{margin:0;font-size:14px;color:var(--ink-soft);}
-/* 单行无标签角色：左对齐、占满整行 */
-.role-row-single{display:block;padding:6px 0;}
-.role-row-single dd{margin:0;font-size:14px;color:var(--ink-soft);text-align:left;}
 .media-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 .media-link{display:inline-flex;align-items:center;padding:7px 14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font-size:13px;text-decoration:none;transition:border-color .2s,color .2s;}
 .media-link:hover{border-color:var(--seal);color:var(--seal);}
@@ -459,6 +456,21 @@ textarea{resize:vertical;min-height:88px;}
   .advisor-full-grid{grid-template-columns:1fr;}
   .impact-grid,.news-grid,.eco-grid,.ops-grid{grid-template-columns:1fr;}
   .client-wall{grid-template-columns:repeat(5,1fr);gap:3px;}
+
+  /* 移动端优化：页眉导航堆叠（只显中文，不撞行） */
+  .topbar-inner{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 16px;}
+  .nav-links{flex-wrap:wrap;gap:10px 14px;font-size:12px;width:100%;}
+  .nav-links a .en{display:none;}
+  /* 移动端优化：hero 标题允许换行，避免裁切 */
+  .hero-head .headline{white-space:normal;}
+  /* 移动端优化：内容轮播首屏降高，更早露出正文 */
+  #content-hub{height:42vh;min-height:300px;}
+  /* 移动端优化：手风琴触发区换行 + 胶囊换行 + 触控热区 */
+  .accordion-trigger{min-height:44px;padding:10px 0;flex-wrap:wrap;align-items:center;}
+  .accordion-trigger .capsule-group{flex-wrap:wrap;gap:6px;}
+  #situation-accordion .accordion-trigger .tag{margin-bottom:6px;}
+  #situation-accordion .accordion-trigger .capsule-group{flex:1 1 100%;order:3;}
+  #situation-accordion .accordion-icon{margin-left:auto;}
 }
 
 /* ============ NEW: 专家独立页 ============ */
@@ -582,6 +594,12 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
   .ops-center-photo{width:78px;height:78px;}
   span.ops-center-flag{width:24px;height:24px;}
   .ops-center-grid{grid-template-columns:repeat(3,1fr);gap:22px 12px;}
+}
+/* 移动端优化：≤480px 运营中心降为 2 列，更宽松 */
+@media (max-width:480px){
+  .ops-center-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;}
+  .ops-center-photo{width:72px;height:72px;}
+  .ops-center-card h4{font-size:13.5px;}
 }
 
 /* ===== #content-hub 背景轮播（6张图）+ 跑马灯 ===== */
