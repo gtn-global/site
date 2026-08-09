@@ -213,14 +213,77 @@ a:hover { text-decoration: underline; }
   padding-top: 32px;
   border-top: 1px solid var(--ev-border);
 }
-.ev-related__group { margin-bottom: 24px; }
+.ev-related__group { margin-bottom: 32px; }
 .ev-related__label {
   font-size: 12px;
   color: var(--ev-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
+
+/* ---- 圆形头像 + 姓名行（借自 industries 结构，配色沿用 events 蓝调） ---- */
+.ev-person-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.ev-avatar-img {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--ev-accent);
+}
+.ev-person-link {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ev-text-primary);
+}
+.ev-person-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.ev-person-tag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--ev-accent);
+}
+
+/* ---- 方形小标签（方角，横向排列不换行） ---- */
+.ev-pill-square-wrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-left: 56px;
+}
+/* 产业块无头像，标签行不缩进 */
+.ev-pill-square-wrap--flush { margin-left: 0; margin-top: 6px; }
+.ev-industry-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.ev-pill-square {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--ev-accent);
+  background: var(--ev-accent-bg);
+  padding: 3px 9px;
+  border-radius: 2px;
+  border: 1px solid var(--ev-border-strong);
+  white-space: nowrap;
+}
+
+/* ---- 旧版圆角胶囊（保留以兼容已生成页面） ---- */
 .ev-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .ev-pill {
   display: inline-flex;
