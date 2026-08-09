@@ -278,6 +278,9 @@ textarea{resize:vertical;min-height:88px;}
 .role-row:last-child{border-bottom:none;}
 .role-row dt{flex:0 0 64px;font-family:'Noto Serif SC',serif;font-weight:600;font-size:14px;color:var(--ink);}
 .role-row dd{margin:0;font-size:14px;color:var(--ink-soft);}
+/* 单行无标签角色：左对齐、占满整行 */
+.role-row-single{display:block;padding:6px 0;}
+.role-row-single dd{margin:0;font-size:14px;color:var(--ink-soft);text-align:left;}
 .media-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 .media-link{display:inline-flex;align-items:center;padding:7px 14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font-size:13px;text-decoration:none;transition:border-color .2s,color .2s;}
 .media-link:hover{border-color:var(--seal);color:var(--seal);}
