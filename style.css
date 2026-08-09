@@ -967,3 +967,158 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 .footer-links a{color:var(--ink-soft,#5b6470);text-decoration:none;}
 .footer-links a:hover{color:var(--brass,#8A6D3B);text-decoration:underline;}
 .footer-meta{letter-spacing:1px;opacity:.6;}
+
+/* ============================================================
+   移动端统一响应式（≤640px）— 纯 CSS 适配，不闪屏、不损权重
+   覆盖：导航 / hero / CTA / 决策手风琴 / 产业手风琴 / content-hub /
+   stat-line / 顾问网格 / 运营中心 / 表单 / 多列网格 / 通用间距
+   ============================================================ */
+@media (max-width:640px){
+
+  /* —— 通用：section 内边距收窄、正文更透气 —— */
+  .section{padding:40px 18px;}
+  .eyebrow{margin-bottom:16px;}
+  .lede{font-size:15px;line-height:1.7;}
+  .subhead{font-size:17px;}
+  .subhead .en{font-size:9px;letter-spacing:1px;}
+
+  /* —— 导航：堆叠 + 隐藏桌面时钟 + 只显中文 —— */
+  .topbar-inner{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 16px;}
+  .desk-clock{display:none;}
+  .nav-links{flex-wrap:wrap;gap:10px 14px;font-size:12px;width:100%;}
+  .nav-links a .en{display:none;}
+
+  /* —— Hero：标题允许换行并缩放，副标题不再 nowrap 溢出 —— */
+  .hero-head .headline{white-space:normal;font-size:clamp(24px,6.4vw,30px);line-height:1.35;}
+  .subline{white-space:normal;}
+
+  /* —— CTA 行：全宽堆叠，按钮不再超宽 —— */
+  .cta-row{flex-direction:column;align-items:stretch;gap:12px;}
+  .radar-cta,.btn-seal{width:100%;justify-content:center;font-size:13.5px;}
+  .radar-cta .en,.btn-seal .en{display:inline;font-size:9px;margin-left:6px;letter-spacing:.3px;}
+
+  /* —— 决策手风琴（#decision-accordion）：紧凑重写 —— */
+  #decision-accordion .accordion-trigger{
+    align-items:flex-start;gap:12px;padding:12px 16px;flex-wrap:wrap;min-height:44px;
+  }
+  #decision-accordion .accordion-trigger .tag{
+    font-size:9.5px;letter-spacing:.6px;width:46px;text-align:center;
+    padding:4px 2px;flex-shrink:0;border-radius:2px;
+  }
+  #decision-accordion .accordion-trigger h4{
+    display:flex;flex-direction:column;gap:1px;flex:1 1 auto;margin:0;min-width:0;
+  }
+  #decision-accordion .accordion-trigger h4 > :not(.en-inline){
+    font-family:'Noto Serif SC',serif;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink);
+  }
+  #decision-accordion .accordion-trigger h4 .en-inline{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;
+    letter-spacing:.4px;color:var(--ink-faint);margin-top:2px;text-transform:uppercase;line-height:1.25;
+  }
+  #decision-accordion .accordion-icon{margin-left:auto;flex:0 0 auto;align-self:flex-start;}
+
+  /* —— 产业手风琴（#situation-accordion）：tag 缩、胶囊强制换行（HTML 内联 nowrap 需覆盖） —— */
+  #situation-accordion .accordion-trigger{
+    flex-wrap:wrap;align-items:center;gap:10px;padding:12px 16px;min-height:44px;
+  }
+  #situation-accordion .accordion-trigger .tag{
+    font-size:13px;font-weight:600;min-width:0;width:auto;max-width:100%;
+    padding:4px 10px;flex:0 0 auto;
+  }
+  #situation-accordion .accordion-trigger .capsule-group{
+    flex:1 1 100%;order:3;flex-wrap:wrap !important;gap:6px !important;
+  }
+  #situation-accordion .accordion-trigger .capsule{
+    flex:0 0 auto;max-width:100%;
+  }
+  #situation-accordion .accordion-trigger .capsule .capsule-cn{
+    font-size:12px !important;padding:5px 9px !important;
+  }
+  #situation-accordion .accordion-icon{margin-left:auto;flex:0 0 auto;}
+
+  /* —— Content Hub：降高 + 三卡单列 —— */
+  #content-hub{height:52vh;min-height:340px;}
+  .grid3{grid-template-columns:1fr;gap:14px;}
+  .grid3 .card{padding:22px 18px;}
+  .content-hub-links{gap:10px;}
+  .hub-link{
+    grid-template-columns:auto 1fr auto;gap:6px 12px;padding:16px 18px;
+  }
+  .hub-t{grid-column:2;}
+  .hub-en{grid-column:2;}
+  .hub-desc{grid-column:1 / -1;margin-top:6px;}
+
+  /* —— stat-line：4 列 → 2 列，数字降号 —— */
+  .stat-line{grid-template-columns:repeat(2,1fr);gap:18px 12px;}
+  .stat-line .stat-item{border-left:none;padding:4px;}
+  .stat-line .stat-num{font-size:36px;}
+  .stat-line .stat-plus{font-size:28px;}
+  .stat-line .stat-cap{font-size:13.5px;}
+
+  /* —— 顾问网络（.advisor-grid-2col）：双栏 → 单列 —— */
+  .advisor-grid-2col{grid-template-columns:1fr;gap:10px;}
+  .advisor-cell{align-items:center;padding:12px 14px;}
+  .advisor-cell .avatar-ring{flex:0 0 60px;width:60px;height:60px;}
+  .advisor-cell-body h4{font-size:15px;}
+  .advisor-cell-body .role{margin-left:6px;font-size:11.5px;}
+  .advisor-cell-body .bio{font-size:12.5px;line-height:1.6;margin-top:8px;}
+
+  /* —— 运营中心：标题行堆叠，按钮不再错位上移 —— */
+  .ops-head-row{flex-direction:column;align-items:flex-start;gap:14px;margin-top:36px;}
+  .ops-head-row .subhead{margin:0;}
+  .ops-head-row .btn-subhead{transform:none;margin:0;align-self:flex-start;}
+
+  /* —— 多列网格统一降列 —— */
+  .impact-grid,.news-grid,.eco-grid,.ops-grid,.rel-pages{grid-template-columns:1fr;}
+  .client-wall{grid-template-columns:repeat(5,1fr);gap:3px;}
+  .event-breakdown{grid-template-columns:repeat(3,1fr);gap:14px 8px;}
+  .event-breakdown .n{font-size:22px;}
+
+  /* —— 表单：收窄 + 输入框不溢出 + 提交全宽 —— */
+  .form-wrap{margin-top:36px;padding:20px 16px;border-radius:4px;}
+  .form-grid{grid-template-columns:1fr;gap:12px;}
+  input,select,textarea{
+    width:100%;max-width:100%;box-sizing:border-box;font-size:14px;padding:10px 12px;
+  }
+  textarea{min-height:80px;}
+  .form-submit{margin-top:18px;flex-direction:column;align-items:stretch;}
+  .form-submit .btn-seal{width:100%;justify-content:center;padding:13px 20px;}
+
+  /* —— 通用手风琴与悬停展开态在窄屏保持可读 —— */
+  .accordion-content{padding:0 16px;}
+  .accordion-content p{font-size:13.5px;}
+}
+
+/* ============================================================
+   极小屏（≤480px）收尾 — 针对 iPhone SE 等窄屏进一步缩放
+   ============================================================ */
+@media (max-width:480px){
+  .section{padding:34px 16px;}
+  .headline{font-size:clamp(22px,6vw,27px);}
+  .subhead{font-size:16px;}
+
+  /* 决策手风琴英文副标再缩 */
+  #decision-accordion .accordion-trigger h4 .en-inline{font-size:9px;}
+  #decision-accordion .accordion-trigger .tag{width:42px;font-size:9px;}
+
+  /* stat-line 数字再降 */
+  .stat-line .stat-num{font-size:32px;}
+  .stat-line .stat-plus{font-size:26px;}
+
+  /* 顾问卡头像再缩 */
+  .advisor-cell .avatar-ring{flex:0 0 54px;width:54px;height:54px;}
+  .advisor-cell-body h4{font-size:14px;}
+  .advisor-cell-body .role{display:block;margin-left:0;margin-top:2px;}
+
+  /* event-breakdown 极小屏改 2 列 */
+  .event-breakdown{grid-template-columns:repeat(2,1fr);}
+  .client-wall{grid-template-columns:repeat(4,1fr);}
+
+  /* 运营中心 2 列，照片再缩 */
+  .ops-center-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;}
+  .ops-center-photo{width:72px;height:72px;}
+  .ops-center-card h4{font-size:13.5px;}
+
+  /* CTA 英文在极窄屏隐藏，避免挤 */
+  .radar-cta .en,.btn-seal .en{font-size:8.5px;}
+}
