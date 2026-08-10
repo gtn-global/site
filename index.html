@@ -52,10 +52,12 @@ span.ops-center-flag.flag-kz{
 .capsule{display:inline-flex;align-items:center;border:1px solid rgba(0,150,136,.25);border-radius:0;overflow:hidden;background:rgba(0,150,136,.03);}
 .capsule .capsule-cn{padding:9px 10px 9px 15px;font-size:14.5px;font-weight:600;color:var(--ink);background:rgba(0,150,136,.05);}
 .capsule .capsule-en{padding:9px 15px 9px 10px;font-size:11.5px;color:var(--ink);font-family:'IBM Plex Mono',monospace;letter-spacing:.3px;}
-/* 触发按钮内胶囊：小字 + 紧凑间距；默认允许换行，避免平/大屏手机（641–860px）横向溢出 */
-.accordion-trigger .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:wrap;}
-.accordion-trigger .capsule .capsule-cn{font-size:11.5px;font-weight:600;padding:4px 5px 4px 8px;}
-.accordion-trigger .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
+/* 触发按钮内胶囊 / 展开内容内胶囊：小字 + 紧凑间距；默认允许换行，避免平/大屏手机（641–860px）横向溢出 */
+.accordion-trigger .capsule-group,.accordion-content .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:wrap;}
+.accordion-trigger .capsule .capsule-cn,.accordion-content .capsule .capsule-cn{font-size:11.5px;font-weight:600;padding:4px 5px 4px 8px;}
+.accordion-trigger .capsule .capsule-en,.accordion-content .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
+/* 展开内容内胶囊恢复一点下间距（原内容区无 margin-bottom） */
+.accordion-content .capsule-group{margin-bottom:14px;}
 </style>
 <script type="application/ld+json">
 {
@@ -176,6 +178,10 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">新能源 · 全球化</span>
+        <p>中国出海第一梯队，覆盖锂电、光伏、储能、新能源汽车、充电设施，搜索量长期很高，也是全球投资热点。可以连接东南亚、中东、欧洲等运营中心。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">储能</span></span>
           <span class="capsule"><span class="capsule-cn">充电桩</span></span>
@@ -183,11 +189,7 @@ span.ops-center-flag.flag-kz{
           <span class="capsule"><span class="capsule-cn">逆变器</span></span>
           <span class="capsule"><span class="capsule-cn">离网系统</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>中国出海第一梯队，覆盖锂电、光伏、储能、新能源汽车、充电设施，搜索量长期很高，也是全球投资热点。可以连接东南亚、中东、欧洲等运营中心。</p>
-        <p>海鑫汇 GTN 结合全球运营网络和产业专家资源，帮助企业评估市场机会，制定更稳健的国际化发展路径。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 结合全球运营网络和产业专家资源，帮助企业评估市场机会，制定更稳健的国际化发展路径。</p>
         <a class="card-cta" href="industries/new-energy/index.html" data-industry-link="新能源产业全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -195,17 +197,17 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">智能制造 · 全球化</span>
+        <p>覆盖工业设备、自动化、机器人、机械装备、精密制造等，B2B 企业非常多，也是 GTN 最容易承接咨询的一类企业。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">注塑机</span></span>
           <span class="capsule"><span class="capsule-cn">折弯机</span></span>
           <span class="capsule"><span class="capsule-cn">激光切割机</span></span>
           <span class="capsule"><span class="capsule-cn">工业机器人</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>覆盖工业设备、自动化、机器人、机械装备、精密制造等，B2B 企业非常多，也是 GTN 最容易承接咨询的一类企业。</p>
-        <p>海鑫汇 GTN 为智能制造企业提供市场分析、资源对接和全球运营支持，助力制造能力走向国际市场。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 为智能制造企业提供市场分析、资源对接和全球运营支持，助力制造能力走向国际市场。</p>
         <a class="card-cta" href="industries/intelligent-manufacturing/index.html" data-industry-link="智能制造全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -213,17 +215,17 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">医疗器械 · 生物医药</span>
+        <p>医疗器械、IVD、医美、生物技术、制药等企业近几年全球化需求持续增长，虽然合规要求高，但企业更愿意寻求专业咨询。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">超声诊断仪</span></span>
           <span class="capsule"><span class="capsule-cn">血糖试纸</span></span>
           <span class="capsule"><span class="capsule-cn">血压计</span></span>
           <span class="capsule"><span class="capsule-cn">制氧机</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>医疗器械、IVD、医美、生物技术、制药等企业近几年全球化需求持续增长，虽然合规要求高，但企业更愿意寻求专业咨询。</p>
-        <p>海鑫汇 GTN 联合专业顾问与合规资源，帮助医疗健康企业稳妥推进全球化布局。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 联合专业顾问与合规资源，帮助医疗健康企业稳妥推进全球化布局。</p>
         <a class="card-cta" href="industries/medical-biotech/index.html" data-industry-link="医疗器械与生物医药全球化">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -231,17 +233,17 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">消费品牌 · 国际化</span>
+        <p>包括消费电子、家居、美妆、食品、生活用品、新消费品牌等。这类企业数量庞大，关注品牌国际化、渠道建设、本地化运营，搜索需求一直很高。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">蓝牙音箱</span></span>
           <span class="capsule"><span class="capsule-cn">智能门锁</span></span>
           <span class="capsule"><span class="capsule-cn">投影仪</span></span>
           <span class="capsule"><span class="capsule-cn">便携储能</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>包括消费电子、家居、美妆、食品、生活用品、新消费品牌等。这类企业数量庞大，关注品牌国际化、渠道建设、本地化运营，搜索需求一直很高。</p>
-        <p>海鑫汇 GTN 结合海外市场资源和行业经验，帮助企业建立更加可持续的品牌国际化战略。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 结合海外市场资源和行业经验，帮助企业建立更加可持续的品牌国际化战略。</p>
         <a class="card-cta" href="industries/consumer-brands/index.html" data-industry-link="消费品牌国际化">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -249,17 +251,17 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">跨国资本 · 并购</span>
+        <p>全球化不仅是产品和市场的拓展，更是资本和资源的全球配置。无论是海外投资、跨境并购、产业合作还是国际资本对接，都需要系统性的战略规划和专业支持。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">目标筛选</span></span>
           <span class="capsule"><span class="capsule-cn">估值建模</span></span>
           <span class="capsule"><span class="capsule-cn">现金流预测</span></span>
           <span class="capsule"><span class="capsule-cn">交割管理</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>全球化不仅是产品和市场的拓展，更是资本和资源的全球配置。无论是海外投资、跨境并购、产业合作还是国际资本对接，都需要系统性的战略规划和专业支持。</p>
-        <p>海鑫汇 GTN 依托全球合作伙伴和专家网络，为企业提供跨境投资与资源整合服务。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 依托全球合作伙伴和专家网络，为企业提供跨境投资与资源整合服务。</p>
         <a class="card-cta" href="industries/cross-border-capital/index.html" data-industry-link="跨国资本与并购">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -267,17 +269,17 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="tag tag-research">国际人才 · 职教</span>
+        <p>企业全球化的竞争，最终是人才和组织能力的竞争。跨文化团队建设、国际人才培养、职业教育合作以及海外人才发展，正在成为企业全球布局的重要组成部分。</p>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
         <div class="capsule-group">
           <span class="capsule"><span class="capsule-cn">外派合规</span></span>
           <span class="capsule"><span class="capsule-cn">薪酬调研</span></span>
           <span class="capsule"><span class="capsule-cn">继任计划</span></span>
           <span class="capsule"><span class="capsule-cn">签证服务</span></span>
         </div>
-        <span class="accordion-icon">+</span>
-      </button>
-      <div class="accordion-content">
-        <p>企业全球化的竞争，最终是人才和组织能力的竞争。跨文化团队建设、国际人才培养、职业教育合作以及海外人才发展，正在成为企业全球布局的重要组成部分。</p>
-        <p>海鑫汇 GTN 联合教育机构、行业专家和国际资源，帮助企业建立面向全球发展的组织能力。</p>
+        <p style="margin-bottom:14px;">海鑫汇 GTN 联合教育机构、行业专家和国际资源，帮助企业建立面向全球发展的组织能力。</p>
         <a class="card-cta" href="industries/talent-development/index.html" data-industry-link="职业教育与人才发展">查看完整分析 &rarr;</a>
       </div>
     </div>
@@ -301,8 +303,8 @@ span.ops-center-flag.flag-kz{
     <div class="accordion-group decision-accordion reveal" id="decision-accordion">
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
-          <span class="tag">WHEN</span>
-          <h4>企业现在适合出海吗？ <span class="en-inline">IS NOW THE RIGHT TIME?</span></h4>
+        <span class="tag">IS NOW THE RIGHT TIME?</span>
+        <h4>企业现在适合出海吗？</h4>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content">
@@ -312,8 +314,8 @@ span.ops-center-flag.flag-kz{
       </div>
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
-          <span class="tag">WHERE</span>
-          <h4>第一个海外市场应该选择哪里？ <span class="en-inline">WHERE TO START?</span></h4>
+          <span class="tag">WHERE TO START?</span>
+          <h4>第一个海外市场应该选择哪里？</h4>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content">
@@ -323,8 +325,8 @@ span.ops-center-flag.flag-kz{
       </div>
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
-          <span class="tag">WHAT</span>
-          <h4>出口代理还是海外建厂？ <span class="en-inline">EXPORT OR BUILD?</span></h4>
+          <span class="tag">EXPORT OR BUILD?</span>
+          <h4>出口代理还是海外建厂？</h4>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content">
@@ -334,8 +336,8 @@ span.ops-center-flag.flag-kz{
       </div>
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
-          <span class="tag">WHY</span>
-          <h4>海外布局最大的风险是什么？ <span class="en-inline">WHAT IS THE RISK?</span></h4>
+          <span class="tag">WHAT IS THE RISK?</span>
+          <h4>海外布局最大的风险是什么？</h4>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content">
