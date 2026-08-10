@@ -869,8 +869,8 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 /* 响应式：移动端调整高度和间距 */
 @media (max-width: 768px) {
   #content-hub {
-    height: 70vh;
-    min-height: 400px;
+    height: 56vh;
+    min-height: 360px;
   }
   #content-hub .hub-content {
     padding: 30px 16px;

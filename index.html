@@ -52,8 +52,8 @@ span.ops-center-flag.flag-kz{
 .capsule{display:inline-flex;align-items:center;border:1px solid rgba(0,150,136,.25);border-radius:0;overflow:hidden;background:rgba(0,150,136,.03);}
 .capsule .capsule-cn{padding:9px 10px 9px 15px;font-size:14.5px;font-weight:600;color:var(--ink);background:rgba(0,150,136,.05);}
 .capsule .capsule-en{padding:9px 15px 9px 10px;font-size:11.5px;color:var(--ink);font-family:'IBM Plex Mono',monospace;letter-spacing:.3px;}
-/* 触发按钮内胶囊：不换行 + 小字 + 紧凑间距 */
-.accordion-trigger .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:nowrap;}
+/* 触发按钮内胶囊：小字 + 紧凑间距；默认允许换行，避免平/大屏手机（641–860px）横向溢出 */
+.accordion-trigger .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:wrap;}
 .accordion-trigger .capsule .capsule-cn{font-size:11.5px;font-weight:600;padding:4px 5px 4px 8px;}
 .accordion-trigger .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
 </style>
@@ -143,8 +143,8 @@ span.ops-center-flag.flag-kz{
     <nav class="nav-links">
       <a href="#home" class="active">首页<span class="en">HOME</span></a>
       <a href="#offer">服务<span class="en">OFFER</span></a>
-      <a href="#proof">案例证明<span class="en">PROOF</span></a>
-      <a href="#content-hub">内容<span class="en">CONTENT</span></a>
+      <a href="#content-hub">调研<span class="en">CONTENT</span></a>
+      <a href="#proof">案例<span class="en">PROOF</span></a>
       <a href="#ecosystem">生态<span class="en">ECOSYSTEM</span></a>
       <a href="#contact">联系<span class="en">CONTACT</span></a>
     </nav>
@@ -168,10 +168,10 @@ span.ops-center-flag.flag-kz{
   </div>
 
   <!-- 决策情境手风琴 -->
-  <div class="subhead reveal">行业出海决策情境<span class="en">INDUSTRY DECISION SCENARIOS</span></div>
-  
+  <div style="max-width:1120px;margin:0 auto;padding:28px 28px 0;">
+    <div class="subhead reveal">行业出海决策情境<span class="en">INDUSTRY DECISION SCENARIOS</span></div>
 
-  <div class="accordion-group reveal" id="situation-accordion">
+    <div class="accordion-group reveal" id="situation-accordion">
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
@@ -283,6 +283,7 @@ span.ops-center-flag.flag-kz{
     </div>
 
   </div>
+</div>
 
 </section>
 

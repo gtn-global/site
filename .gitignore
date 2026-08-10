@@ -22,3 +22,6 @@ clients/footprints/
 .env
 *.key
 *.pem
+
+# 演示 / 草稿页（_demo 文件夹及内部文件，不部署到对外网站）
+_demo/
