@@ -1028,9 +1028,8 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
   }
   #situation-accordion .accordion-trigger h4,
   #situation-accordion .accordion-trigger p{
-    flex:1 1 auto;min-width:0;font-size:14px;line-height:1.5;margin:0;
+    flex:1 1 auto;min-width:0;font-size:14px;line-height:1.5;margin:0;color:var(--ink);
   }
-  #situation-accordion .accordion-icon{margin-left:auto;flex:0 0 auto;align-self:flex-start;}
   /* 展开内容内的胶囊云：手机端清爽换行，与触发条左右对齐 */
   #situation-accordion .accordion-content .capsule-group{
     flex-wrap:wrap;gap:6px;margin-bottom:14px;
