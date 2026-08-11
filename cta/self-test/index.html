@@ -46,17 +46,15 @@
 .st-restart{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 
 /* 方法论段 + demo 并排 */
-.self-test-methodology-demo{max-width:1000px;margin:36px auto 0;display:flex;gap:32px;align-items:flex-start;}
+.self-test-methodology-demo{max-width:1000px;margin:36px auto 0;display:flex;gap:32px;align-items:stretch;}
 .self-test-methodology{flex:1 1 auto;padding:22px 26px;background:var(--paper);border:1px solid var(--rule);}
 .self-test-methodology h2{font-family:'Noto Serif SC',serif;font-size:17px;color:var(--ink);margin-bottom:8px;}
 .self-test-methodology p{font-size:13px;line-height:1.6;color:var(--ink);margin:3px 0;}
 .self-test-methodology strong{color:var(--seal);}
 
-/* demo 雷达图示例（右侧） */
-.self-test-demo{flex:0 0 320px;padding:24px;background:var(--paper-alt);border:1px solid var(--rule);text-align:center;position:sticky;top:24px;}
-.self-test-demo img{max-width:280px;width:100%;height:auto;border-radius:6px;}
-.self-test-demo .demo-placeholder{max-width:280px;margin:0 auto;padding:48px 20px;background:var(--paper);border:1px dashed var(--rule);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.5px;}
-.self-test-demo .demo-caption{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);letter-spacing:.5px;margin-top:12px;}
+/* demo 雷达图示例（右侧，去外框，svg 与左侧等高） */
+.self-test-demo{flex:0 0 320px;display:flex;align-items:center;justify-content:center;}
+.self-test-demo img{width:100%;height:100%;object-fit:contain;display:block;}
 
 /* 付费墙 */
 .st-paywall{margin-top:28px;display:flex;gap:22px;align-items:center;padding:22px 24px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:8px;}
@@ -69,7 +67,7 @@
   .st-paywall{flex-direction:column;text-align:center;}
   .self-test-methodology-demo{flex-direction:column;gap:20px;}
   .self-test-demo{flex:1 1 auto;position:static;}
-  .self-test-methodology,.self-test-demo{padding:20px;}
+  .self-test-methodology{padding:20px;}
 }
 </style>
   <link rel="canonical" href="https://gtn-global.netlify.app/cta/self-test/">
@@ -105,7 +103,7 @@
     <div class="eyebrow">自测 · READINESS SELF-TEST</div>
     <h2 class="headline">出海健康度自测</h2>
     <p class="subline">Five dimensions · 15 questions · where you stand.</p>
-    <p class="lede">五个核心维度、15 道题目，快速判断企业当前的全球化准备度。完成后生成五维雷达图与优先行动建议——这只是通用自测，不能替代针对你具体情形的深度诊断。</p>
+    <p class="lede">五个核心维度、15 道题目，快速判断企业当前的全球化准备度。完成后生成五维雷达图与优先行动建议——这只是通用自测，不能替代针对你具体情形的深度诊断。3分钟自测，1元获得你的出海准备度评分 + 关键短板 + 优先级建议。</p>
 
     <div class="self-test-methodology-demo">
       <div class="self-test-methodology">
@@ -119,8 +117,7 @@
         <p>完成15道题目后，系统会生成五维雷达图和针对性的优先行动建议。</p>
       </div>
       <div class="self-test-demo">
-        <img src="self-test-radar-demo.svg" alt="出海健康度自测雷达图示例" style="max-width:360px;width:100%;">
-        <p class="demo-caption">这是示例结果，你的雷达图会因回答不同而不同</p>
+        <img src="self-test-radar-demo.svg" alt="出海健康度自测雷达图示例">
       </div>
     </div>
 

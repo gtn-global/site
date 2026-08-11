@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>预约免费首诊 · GTN | 海鑫汇</title>
-<meta name="description" content="海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.">
-<meta property="og:title" content="预约免费首诊 · 海鑫汇 GTN">
-<meta property="og:description" content="30–45分钟免费首诊，先判断你的出海决策问题值不值得深入。">
+<title>预约首诊 · 99元/1小时 | 海鑫汇 GTN</title>
+<meta name="description" content="海鑫汇首诊预约——99元/1小时，和董立鑫一对一拆解你的业务现状，找到最值得先解决的一个问题。Outbound paid diagnostic booking.">
+<meta property="og:title" content="预约首诊 · 99元/1小时 | 海鑫汇 GTN">
+<meta property="og:description" content="99元/1小时，和董立鑫一对一拆解你的出海业务现状，找到最值得先解决的一个问题。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gtn-global.netlify.app/cta/book-diagnostic/">
 <meta property="og:image" content="https://gtn-global.netlify.app/og-image.jpg">
@@ -17,6 +17,10 @@
 .form-wrap .subhead{font-family:'Noto Serif SC',serif;font-size:18px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
 .form-wrap .subhead .en{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-faint);letter-spacing:1px;margin-top:3px;font-weight:400;}
 .form-submit{margin-top:30px;}
+.book-qr{margin-top:34px;display:flex;gap:22px;align-items:center;padding:22px 24px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:8px;}
+.book-qr-img{width:130px;height:130px;object-fit:cover;border-radius:6px;flex-shrink:0;}
+.book-qr-text p{font-size:14.5px;line-height:1.8;color:var(--ink);margin:4px 0;}
+.book-qr-text strong{color:var(--seal);}
 .field input,.field select,.field textarea{font-size:14px;padding:11px 13px;border:1px solid var(--rule);background:var(--paper-alt);color:var(--ink);border-radius:0;transition:border-color .15s,background .15s;}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--seal);background:#fff;}
 .field textarea{min-height:96px;resize:vertical;line-height:1.6;}
@@ -25,7 +29,7 @@
 </style>
   <link rel="canonical" href="https://gtn-global.netlify.app/cta/book-diagnostic/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="预约免费首诊 · GTN | 海鑫汇">
+  <meta property="og:title" content="预约首诊 · 99元/1小时 | 海鑫汇 GTN">
   <meta property="og:description" content="海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.">
   <meta property="og:url" content="https://gtn-global.netlify.app/cta/book-diagnostic/">
   <meta property="og:site_name" content="Global Talent Network (GTN)">
@@ -35,8 +39,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "预约免费首诊 · GTN | 海鑫汇",
-  "description": "海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.",
+  "name": "预约首诊 · 99元/1小时 | 海鑫汇 GTN",
+  "description": "海鑫汇首诊预约——99元/1小时，和董立鑫一对一拆解你的业务现状，找到最值得先解决的一个问题。Outbound paid diagnostic booking.",
   "url": ""
 }
 ]
@@ -55,9 +59,9 @@
   <div class="eyebrow">预约 · BOOK A DIAGNOSTIC</div>
   <h2 class="headline">预约首诊</h2>
   <p class="subline">A paid 1-hour diagnostic · 99元/1小时.</p>
-  <p class="lede">首诊是围绕你具体出海决策的一对一深度访谈，99元/1小时——不卖方案、不卖资源，只判断你的问题是否值得深入，以及下一步往哪走。提交后，海鑫汇会在一个工作日内与你联系确认时间与支付方式。</p>
+  <p class="lede">首诊是围绕你具体出海决策的一对一深度访谈，99元/1小时——由董立鑫本人与你一对一，不卖方案、不卖资源，只判断你的问题是否值得深入，以及下一步往哪走。提交后，董立鑫会在一个工作日内与你联系确认时间与支付方式；也可以直接扫码添加微信，备注「首诊」优先对接。</p>
 
-  <form class="form-wrap" name="cta-book-diagnostic" method="POST" action="/cta/book-diagnostic/success.html" data-netlify="true" netlify-honeypot="bot-field">
+  <form class="form-wrap" name="cta-book-diagnostic" method="POST" action="success.html" data-netlify="true" netlify-honeypot="bot-field">
     <p class="hidden" style="display:none;">
       <label>请勿填写 Don't fill this out: <input name="bot-field"></label>
     </p>
@@ -83,8 +87,13 @@
     </div>
   </form>
 
-  <!-- INTERNAL NOTE: 提交后可在 Netlify 后台「Forms」面板查看（表单名：cta-book-diagnostic）。此表单对应免费首诊，非付费深度诊断入口。
-       Submissions appear in the Netlify site dashboard under Forms (form name: cta-book-diagnostic). This books the free initial diagnostic, not the paid deep diagnostic. -->
+  <div class="book-qr">
+    <img src="../donglixin_qrcode.jpg" alt="扫码添加董立鑫微信" class="book-qr-img">
+    <div class="book-qr-text">
+      <p><strong>直接扫码添加董立鑫微信</strong></p>
+      <p>备注「首诊」，可优先对接并确认时间与支付方式。</p>
+    </div>
+  </div>
 </section>
 
 <footer class="footer" data-depth="2"></footer>

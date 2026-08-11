@@ -58,6 +58,14 @@ span.ops-center-flag.flag-kz{
 .accordion-trigger .capsule .capsule-en,.accordion-content .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
 /* 展开内容内胶囊恢复一点下间距（原内容区无 margin-bottom） */
 .accordion-content .capsule-group{margin-bottom:14px;}
+
+/* 预约表单标题 */
+.cta-form-title{font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.cta-form-title .en{display:block;font-size:11px;font-weight:400;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
+@media(max-width:640px){
+  .cta-form-title{font-size:20px;}
+  .cta-form-title .en{font-size:9px;letter-spacing:1px;}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -163,9 +171,15 @@ span.ops-center-flag.flag-kz{
   <p class="lede reveal">很多企业不是没有海外机会，而是不确定第一个市场该选哪里、第一步该怎么走。国家选错、模式选错、合作伙伴选错，都会变成长期投入和试错成本。海鑫汇帮企业在行动前把选项、风险、成本摊开，给出一个经得住推敲的判断——而不是一场游学或一次论坛。过去两年，我们组织50+场企业游学与产业调研、国际调研，覆盖20+国家与地区，连接1000+参与者，持续积累不同市场的一线信息与真实案例。</p>
 
   <div class="reveal" style="margin-top:32px;">
-    <div class="cta-row">
-      <a href="cta/self-test/index.html" class="radar-cta">3分钟自测出海 readiness · 1元解锁你的准备度画像 <span class="en">→ OPEN SELF-TEST</span></a>
-      <a href="cta/book-diagnostic/index.html" class="btn-seal">预约首诊 · 99元/1小时 <span class="en">→ BOOK A DIAGNOSTIC</span></a>
+    <div class="cta-pair">
+      <div class="cta-block">
+        <div class="cta-question">你现在，准备好出海了吗？</div>
+        <a href="cta/self-test/index.html" class="radar-cta">开始自测</a>
+      </div>
+      <div class="cta-block">
+        <div class="cta-question">不确定问题出在哪里？</div>
+        <a href="cta/book-diagnostic/index.html" class="btn-seal">预约首诊</a>
+      </div>
     </div>
   </div>
 
@@ -288,7 +302,7 @@ span.ops-center-flag.flag-kz{
   <div class="eyebrow">02 — 深度诊断怎么做 / OFFER</div>
   <h2 class="headline reveal">先判断你的问题值不值得深入</h2>
   <p class="subline reveal">Before you invest in the wrong market.</p>
-  <p class="lede reveal">当你已经面对具体的海外选择——去哪个国家、用代理还是自建、重资产还是轻资产——仅靠公开信息无法判断时，才需要进入下一步。3分钟自测（1元）先看你当前的准备度画像；如果需要更深入的判断，预约首诊（99元/1小时），围绕具体决策展开一对一深度访谈，结合一线情报、活动网络与顾问资源，对具体决策做判断，产出一份简要的书面判断报告。</p>
+  <p class="lede reveal">当你已经面对具体的海外选择——去哪个国家、用代理还是自建、重资产还是轻资产——仅靠公开信息无法判断时，才需要进入下一步。3分钟自测（1元）先测出你当前的出海准备度评分与关键短板；如果需要更深入的判断，预约首诊（99元/1小时），和董立鑫一对一拆解你的业务现状，找到最值得先解决的一个问题，结合一线情报、活动网络与顾问资源，对具体决策做出判断，产出一份简要的书面判断报告。</p>
 
   <!-- ============ 01-B DECISION ENTRY（知识入口：4 决策问题） ============ -->
   <section class="section" id="decision-entry" style="padding-top:0;">
@@ -349,7 +363,7 @@ span.ops-center-flag.flag-kz{
         <div class="timeline-marker">1</div>
         <div class="timeline-body">
           <h5>3分钟自测</h5>
-          <p>1元解锁你的出海准备度雷达图</p>
+          <p class="nowrap-line">当前的出海准备度评分 + 关键短板</p>
           <a href="cta/self-test/index.html" class="capsule-cta">开始自测</a>
         </div>
       </div>
@@ -357,7 +371,7 @@ span.ops-center-flag.flag-kz{
         <div class="timeline-marker">2</div>
         <div class="timeline-body">
           <h5>深度访谈</h5>
-          <p>99元/1小时，围绕具体决策展开深度访谈</p>
+          <p class="nowrap-line">一对一拆解你的业务现状</p>
           <a href="cta/book-diagnostic/index.html" class="capsule-cta">立即预约</a>
         </div>
       </div>
@@ -800,9 +814,9 @@ span.ops-center-flag.flag-kz{
 <!-- ============ 04 ABOUT & CONTACT ============ -->
 <section class="section" id="contact">
   <div class="eyebrow">06 — 关于我 · 联系 / ABOUT &amp; CONTACT</div>
-  <h2 class="headline reveal"><a href="experts/donglixin/index.html" class="inline-link">海鑫汇创始人——董立鑫</a></h2>
+  <h2 class="headline reveal"><a href="experts/donglixin/index.html" class="inline-link">海鑫汇创始人兼CEO——董立鑫</a></h2>
   <p class="subline reveal">The person behind the judgment — Bruce Dong.</p>
-  <p class="lede reveal">陪伴中国企业判断海外机会和进入路径，是海鑫汇做这件事的方式——不是卖课程或资源，而是在决策关口提供判断。想先看清楚各环节怎么收费，先去<a href="#offer" class="inline-link">服务板块</a>看一遍；以下表单提交后，我们会与你联系确认时间与支付方式。</p>
+  <p class="lede reveal">陪伴中国企业判断海外机会和进入路径，是海鑫汇做这件事的方式——不是卖课程或资源，而是在决策关口提供判断。想先看清楚各环节怎么收费，先去<a href="#offer" class="inline-link">服务板块</a>看一遍；需要更深入的判断，点上方「预约首诊」，提交后由董立鑫本人与你联系，确认时间与支付方式。</p>
 
   <div class="about-grid reveal">
     <div class="photo-box" data-fill="ABOUT-PHOTO"><a href="experts/donglixin/index.html"><img src="experts/donglixin/donglixin.jpg" alt="董立鑫" style="width:100%;height:100%;object-fit:cover;"></a></div>
@@ -810,9 +824,9 @@ span.ops-center-flag.flag-kz{
       <h4><a href="experts/donglixin/index.html" class="inline-link">董立鑫</a> · 中国企业出海决策顾问</h4>
       <dl class="role-list">
         <div class="role-row"><dt>决策顾问</dt><dd>中国企业出海</dd></div>
-        <div class="role-row"><dt>创始人</dt><dd>海鑫汇 Global Talent Network</dd></div>
+        <div class="role-row"><dt>创始人兼CEO</dt><dd>海鑫汇 Global Talent Network</dd></div>
         <div class="role-row"><dt>合伙人</dt><dd>和君咨询</dd></div>
-        <div class="role-row"><dt>秘书长</dt><dd>WTC Singapore</dd></div>
+        <div class="role-row"><dt>Secretary-General & COO</dt><dd>WTC Singapore</dd></div>
       </dl>
       <div class="media-row">
         <a class="media-link" href="https://profile.zjurl.cn/rogue/ugc/profile/?active_tab=dongtai&app_name=news_article&device_id=65&media_id=1652500213415950&module_name=iOS_tt_url&request_source=1&share_token=23778718-F8A8-4917-A2D2-F5AAAAEBCFA4&tt_from=copy_link&upstream_biz=iOS_url&user_id=6972580048&utm_campaign=client_share&utm_medium=toutiao_ios&utm_source=copy_link&version_code=17.7.0&version_name=170700" target="_blank" rel="noopener">头条号</a>
@@ -825,33 +839,62 @@ span.ops-center-flag.flag-kz{
     </div>
   </div>
 
-  <form class="form-wrap reveal" name="cta-book-diagnostic" method="POST" action="cta/book-diagnostic/success.html" data-netlify="true" netlify-honeypot="bot-field">
-    <p class="hidden" style="display:none;">
-      <label>请勿填写 Don't fill this out: <input name="bot-field"></label>
-    </p>
-    <div class="subhead" style="margin-top:0;">预约免费首诊<span class="en">BOOK A FREE INITIAL DIAGNOSTIC</span></div>
-    <div class="form-grid">
-      <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
-      <div class="field"><label>公司名称 Company</label><input type="text" name="company" placeholder="请输入公司名称 / Company name"></div>
-      <div class="field"><label>所在行业 Industry</label><input type="text" name="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing"></div>
-      <div class="field">
-        <label>出海所处阶段 Stage</label>
-        <select name="stage">
-          <option>尚未启动 · 考虑中 / Not started · exploring</option>
-          <option>已启动 · 想优化 / Underway · want to optimize</option>
-          <option>遇到具体问题 · 需要判断 / Facing a specific issue · need judgment</option>
-        </select>
+
+
+  <div class="cta-form form-wrap reveal">
+    <h3 class="cta-form-title">预约首诊<span class="en">A paid 1-hour diagnostic · 99元/1小时.</span></h3>
+
+    <form action="cta/book-diagnostic/success.html" method="POST" id="diagnosticForm" class="contact-form" onsubmit="setTimeout(function(){location.href='cta/book-diagnostic/success.html';},1200);">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name">姓名 Name</label>
+          <input type="text" name="name" id="name" placeholder="请输入姓名 / Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="company">公司名称 Company</label>
+          <input type="text" name="company" id="company" placeholder="请输入公司名称 / Company name" required />
+        </div>
+
+        <div class="field">
+          <label for="industry">所在行业 Industry</label>
+          <input type="text" name="industry" id="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing" required />
+        </div>
+
+        <div class="field">
+          <label for="stage">出海所处阶段 Stage</label>
+          <select name="stage" id="stage" required>
+            <option value="" disabled selected>尚未启动 · 考虑中 / Not started · exploring</option>
+            <option value="planning">规划中 · 已立项 / Planning · committed</option>
+            <option value="testing">试水阶段 · 小规模测试 / Testing · pilot phase</option>
+            <option value="scaling">扩张中 · 多国运营 / Scaling · multi-market ops</option>
+            <option value="established">已成熟 · 深度本地化 / Established · localized</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="contact">联系方式 Contact（手机或微信 / Phone or WeChat）</label>
+          <input type="text" name="contact" id="contact" placeholder="手机号或微信号 / Phone or WeChat ID" required />
+        </div>
+
+        <div class="field full">
+          <label for="brief">简述你的诉求 Brief</label>
+          <textarea name="brief" id="brief" rows="4" placeholder="简述描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea>
+        </div>
+
       </div>
-      <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID"></div>
-      <div class="field full"><label>简述你的诉求 Brief</label><textarea name="brief" placeholder="简单描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea></div>
-    </div>
-    <div class="form-submit">
-      <button type="submit" class="btn-seal">提交预约 <span class="en">→ SUBMIT</span></button>
-    </div>
-  </form>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit btn-seal">提交预约 → SUBMIT</button>
+      </div>
+
+    </form>
+  </div>
 </section>
 
-<footer class="footer"></footer>
+<footer class="footer" data-depth="0"></footer>
 
 <script src="script.js"></script>
 </body>

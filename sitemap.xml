@@ -15,6 +15,12 @@
   </url>
 
   <url>
+    <loc>https://gtn-global.netlify.app/cta/book-diagnostic/success.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://gtn-global.netlify.app/cta/self-test/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -28,6 +34,12 @@
 
   <url>
     <loc>https://gtn-global.netlify.app/events-index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/exchange-09-sino-africa-jmj/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -76,6 +88,59 @@
 
   <url>
     <loc>https://gtn-global.netlify.app/events/media-08-wtc-singapore/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/tour-01-peidi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/tour-03-manycore/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/tour-04-neway/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/tour-05-zai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.netlify.app/events/tour-07-beyondsoft/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

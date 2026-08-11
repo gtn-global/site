@@ -8,8 +8,8 @@
 ## 专家顾问
 
 - [陈佳乐｜低空经济全球化与无人机产业出海｜海鑫汇](https://gtn-global.netlify.app/experts/chen-jiale/)：海鑫汇专家顾问陈佳乐是低空经济与无人机专家，专注低空经济全球化与无人机产业出海，具备低空经济国际合作洞察能力。
-- [Bruce Dong｜Founder of Global Talent Network (GTN)｜Globalization Strategy Advisor](https://gtn-global.netlify.app/experts/donglixin/en/)：Bruce Dong (Dong Lixin) is the Founder of Global Talent Network (GTN), a platform focused on connecting global talents, industries, and future opportunities. He also serves as Secretary General & COO of WTC Singapore and Partner at Hejun Consulting, with 20 years of experience across German manufacturing, China's digital economy, and international business networks.
-- [董立鑫｜海鑫汇 Global Talent Network（GTN）创始人｜中国企业全球化与人才连接实践者](https://gtn-global.netlify.app/experts/donglixin/)：董立鑫是海鑫汇 Global Talent Network（GTN）创始人，长期关注中国企业全球化、国际商业连接与未来人才发展。同时担任和君咨询合伙人、世界贸易中心协会WTCA新加坡世贸WTC Singapore 秘书长兼首席运营，拥有德国制造企业、中国互联网及产业数字化领域 20 年实践经验。
+- [Bruce Dong｜Founder & CEO of Global Talent Network (GTN)｜Globalization Strategy Advisor](https://gtn-global.netlify.app/experts/donglixin/en/)：Bruce Dong (Dong Lixin) is the Founder & CEO of Global Talent Network (GTN), a platform focused on connecting global talents, industries, and future opportunities. He also serves as Secretary General & COO of WTC Singapore and Partner at Hejun Consulting, with 20 years of experience across German manufacturing, China's digital economy, and international business networks.
+- [董立鑫｜海鑫汇 Global Talent Network（GTN）创始人兼CEO｜中国企业全球化与人才连接实践者](https://gtn-global.netlify.app/experts/donglixin/)：董立鑫是海鑫汇 Global Talent Network（GTN）创始人兼CEO，长期关注中国企业全球化、国际商业连接与未来人才发展。同时担任 和君咨询合伙人、新加坡世贸秘书长兼首席运营官（Secretary-General &amp; COO, WTC Singapore），拥有德国制造企业、中国互联网及产业数字化领域 20 年实践经验。
 - [李果｜人形机器人、世界模型与AI投融资趋势｜海鑫汇](https://gtn-global.netlify.app/experts/li-guo/)：海鑫汇专家顾问李果是人形机器人与AI投融资专家，专注人形机器人、世界模型与AI投融资趋势，具备AI产业与人才投资洞察能力。
 - [唐照波｜中国宠物品牌全球化与国际市场实践｜海鑫汇](https://gtn-global.netlify.app/experts/tang-zhaobo/)：海鑫汇专家顾问唐照波是宠物品牌全球化专家，专注中国宠物品牌全球化与国际市场实践，具备宠物产业出海的实战经验。
 - [田果｜AI时代硬科技全球化发展机遇｜海鑫汇](https://gtn-global.netlify.app/experts/tian-guo/)：海鑫汇专家顾问田果是AI硬科技全球化专家，专注AI时代硬科技全球化，具备中国科技企业出海与全球竞争洞察能力。
@@ -24,7 +24,7 @@
 
 ## 运营中心
 
-- [Helen 迟文劼 · 运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/chi-wenjie/)：Helen 迟文劼（中国·北京），海鑫汇 · 运营中心主任。
+- [Helen 迟文劼 · 运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/chi-wenjie/)：Helen 迟文劼（中国·北京），海鑫汇 · 运营中心主任。首都经济贸易大学国际贸易硕士，英语专业八级，曾任职德国西马格、奥科机械及英国 Systematic Review Solutions。
 - [高佳晖 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/gao-jiahui/)：高佳晖（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [李妮芳 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/li-nifang/)：李妮芳（美国·墨西哥），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [刘栗铭 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/liu-liming/)：刘栗铭（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
@@ -38,7 +38,7 @@
 - [吉隆坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-malaysia/)：海鑫汇吉隆坡运营中心（马来西亚）——负责人与职能介绍，素材录入后替换占位内容。
 - [孙圆儿 · 中东运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-mena/)：孙圆儿，海鑫汇中东运营中心负责人。覆盖海湾地区，聚焦能源转型、数字基建和跨境投资服务。
 - [刘志中 · 墨西哥运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-mexico/)：刘志中，海鑫汇墨西哥运营中心负责人。覆盖拉美，聚焦汽车产业链、自动化装备和数字化供应链。
-- [Andy 张东裕 · 宁波运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-ningbo/)：Andy 张东裕，海鑫汇宁波运营中心负责人。覆盖长三角南翼，专注跨境贸易、制造业出海和中小企业国际化。
+- [Andy 张东裕 · 宁波运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-ningbo/)：Andy 张东裕，海鑫汇宁波运营中心负责人，环世物流背景，深耕跨境物流与供应链管理。覆盖长三角南翼，专注制造业出海、跨境贸易与中小企业国际化。
 - [吕晓明 · 巴基斯坦运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-pakistan/)：吕晓明，海鑫汇巴基斯坦运营中心负责人。覆盖南亚，聚焦基建、能源和跨境贸易。
 - [莫斯科 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-russia/)：海鑫汇莫斯科运营中心（俄罗斯）——负责人与职能介绍，素材录入后替换占位内容。
 - [新加坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-singapore/)：海鑫汇新加坡运营中心（新加坡）——负责人 Claudia 蔡慧敏，负责东南亚运营协调与跨境项目落地。
@@ -53,18 +53,27 @@
 ## 核心页面
 
 - [海鑫汇专家顾问网络 — 海鑫汇](https://gtn-global.netlify.app/advisors-index.html)：海鑫汇（海鑫汇 GTN，英文 Global Talent Network）专家顾问网络——两期累计签约30+位产业专家与投资人，均为上市公司或知名企业高管，已获授权公开展示。Directory of 30+ signed advisors backing 海鑫汇 Global Talent Network's outbound consulting practice.
-- [预约免费首诊 · GTN | 海鑫汇](https://gtn-global.netlify.app/cta/book-diagnostic/)：海鑫汇免费首诊预约——30–45分钟，先判断你的全球化决策问题值不值得深入。Outbound initial diagnostic booking.
+- [预约首诊 · 99元/1小时 | 海鑫汇 GTN](https://gtn-global.netlify.app/cta/book-diagnostic/)：海鑫汇首诊预约——99元/1小时，和董立鑫一对一拆解你的业务现状，找到最值得先解决的一个问题。Outbound paid diagnostic booking.
+- [预约成功 · GTN | 海鑫汇](https://gtn-global.netlify.app/cta/book-diagnostic/success.html)：你的首诊预约已提交，海鑫汇将尽快与你联系确认时间与支付方式。
 - [出海健康度自测 · GTN | 海鑫汇](https://gtn-global.netlify.app/cta/self-test/)：海鑫汇出海健康度自测——五个核心维度、15 道题目，快速判断企业全球化准备度。Outbound readiness self-assessment.
 - [全球生态成员 · Global Ecosystem — 海鑫汇](https://gtn-global.netlify.app/ecosystem-index.html)：海鑫汇全球生态名录——覆盖日本、马来西亚、新加坡、哈萨克斯坦等地的国际留学生、海外渠道、商协会与运营团队。The Global Talent Ecosystem behind 海鑫汇, spanning talent, channels, and operators across multiple countries.
 - [50+场活动全记录 · All 50+ Events — 海鑫汇](https://gtn-global.netlify.app/events-index.html)：海鑫汇50+场出海活动全记录——企业游学、出海论坛、出海智阅会、出海沙龙、国际交流与海外考察，附原始报道链接。Complete record of 50+ outbound events hosted by 海鑫汇, spanning study tours, forums, salons, and field visits.
-- [董立鑫从贸大学子到全球战略顾问的职业跃迁与人才赋能实践 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-01-uibe-career/)：对外经济贸易大学政府管理学院校友、海鑫汇创始人、和君咨询合伙人董立鑫以“从贸大学子到全球战略顾问——我的职业跃迁之路”为主题分享职业发展经历，并在圆桌论坛中围绕就业选择与职业发展为在校学生提供指导。同时作为圆桌论坛主持人，邀请柬埔寨东盟银行
-- [董立鑫聚焦中国企业全球化与跨境增长，在深组织跨境电商产业交流并发布海鑫汇出海洞察 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-02-shenzhen-crossborder/)：海鑫汇创始人，和君咨询合伙人董立鑫，在深圳组织跨境电商研讨会并作主题分享，与福建米多多网络科技、埃塞俄比亚 Abriham Ebabu 博士及实然咨询、智造加、海宠科技、环世物流、杭州科技六小龙·群核科技·酷家乐棚拍等企业和机构代表交流，并
-- [董立鑫聚焦家居建材全球化，提出企业出海三大核心命题 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-03-hejun-home-summit/)：海鑫汇创始人，和君咨询合伙人董立鑫发起并承办首届和君小镇出海峰会，与和君商学董事长李鹏飞、对外经济贸易大学李海莲教授及韩国 Coupang、小数汇智、大健云仓等机构，来自非洲喀麦隆、南美墨西哥、东南亚泰国的代表共同探讨家居建材企业高质量出海
-- [董立鑫聚焦中国企业全球化转型，提出从“草莽出海”迈向专业化全球经营的系统方法 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-04-pro-outbound/)：海鑫汇创始人，和君咨询合伙人董立鑫发起并承办第二届和君小镇·中国企业出海交流会。和君集团董事长王明夫、对外经济贸易大学深圳研究院执行院长刘琳、世界贸易中心协会亚太区商贸服务顾问委员会主席朱小兰，以及比亚迪、欣旺达、中国汽车工业协会、杭州科技
-- [董立鑫解读家具建材全球化增长趋势与高质量出海路径 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-05-furniture-2024/)：海鑫汇创始人、和君咨询合伙人董立鑫亮相和君发起的“2024 家具建材高质出海峰会”，围绕全球家具建材市场增长、企业出海目标市场定位、进入路径设计及关键资源获取等核心问题，结合 18 国海外实战经验分享家具建材企业突破内卷、拓展国际市场的全球
-- [董立鑫受聘对外经贸大学国际学院校外实践导师，助力国际化人才培养 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-06-uibe-mentor/)：海鑫汇创始人、和君咨询合伙人董立鑫受聘为对外经济贸易大学国际学院校外实践导师，将依托其企业全球化与国际咨询实践经验参与国际化人才培养、实践教学与职业发展指导，推动高校人才培养与企业全球化实践深度衔接。
-- [董立鑫为贸大国际学院留学生解读 AI 赋能企业全球化 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-07-uibe-ai-lecture/)：海鑫汇创始人、和君咨询合伙人董立鑫受邀为对外经济贸易大学国际学院留学生开展“AI 驱动企业全球化拓展”专题讲座，结合企业全球化实践与人工智能发展趋势，分享 AI 赋能市场洞察、海外业务拓展及全球化经营的实践方法，帮助国际化人才理解 AI 时
-- [董立鑫出任新加坡世界贸易中心秘书长兼首席运营官，链接中国、东盟与全球资本创新生态 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-08-wtc-singapore/)：海鑫汇创始人董立鑫（Bruce Dong）获任新加坡世界贸易中心（WTC Singapore）秘书长兼首席运营官，与 WTCA 全球理事李明星、副总裁王迅及 WTC Singapore 理事长兼董事长张克、首席代表兼 CEO 朱小兰共同推动
+- [董立鑫与 JMJ CEO Patrice 达成战略合作，共促中非商业与投资交流 | 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/exchange-09-sino-africa-jmj/)：2024年9月7日中非合作论坛峰会期间，海鑫汇创始人兼CEO、和君咨询合伙人董立鑫与 JMJ CEO Patrice Yantho 在北京就推动中国与非洲商业合作与投资交流达成战略合作。海鑫汇运营中心主任 Helen 迟文劼亦参与相关国际合作与资源对接。
+- [董立鑫从贸大学子到全球战略顾问的职业跃迁与人才赋能实践 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-01-uibe-career/)：对外经济贸易大学政府管理学院校友、海鑫汇创始人兼CEO、和君咨询合伙人董立鑫以“从贸大学子到全球战略顾问——我的职业跃迁之路”为主题分享职业发展经历，并在圆桌论坛中围绕就业选择与职业发展为在校学生提供指导。同时作为圆桌论坛主持人，邀请柬埔寨东盟银行
+- [董立鑫聚焦中国企业全球化与跨境增长，在深组织跨境电商产业交流并发布海鑫汇出海洞察 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-02-shenzhen-crossborder/)：海鑫汇创始人兼CEO，和君咨询合伙人董立鑫，在深圳组织跨境电商研讨会并作主题分享，与福建米多多网络科技、埃塞俄比亚 Abriham Ebabu 博士及实然咨询、智造加、海宠科技、环世物流、杭州科技六小龙·群核科技·酷家乐棚拍等企业和机构代表交流，并
+- [董立鑫聚焦家居建材全球化，提出企业出海三大核心命题 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-03-hejun-home-summit/)：海鑫汇创始人兼CEO，和君咨询合伙人董立鑫发起并承办首届和君小镇出海峰会，与和君商学董事长李鹏飞、对外经济贸易大学李海莲教授及韩国 Coupang、小数汇智、大健云仓等机构，来自非洲喀麦隆、南美墨西哥、东南亚泰国的代表共同探讨家居建材企业高质量出海
+- [董立鑫聚焦中国企业全球化转型，提出从“草莽出海”迈向专业化全球经营的系统方法 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-04-pro-outbound/)：海鑫汇创始人兼CEO，和君咨询合伙人董立鑫发起并承办第二届和君小镇·中国企业出海交流会。和君集团董事长王明夫、对外经济贸易大学深圳研究院执行院长刘琳、世界贸易中心协会亚太区商贸服务顾问委员会主席朱小兰，以及比亚迪、欣旺达、中国汽车工业协会、杭州科技
+- [董立鑫解读家具建材全球化增长趋势与高质量出海路径 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-05-furniture-2024/)：海鑫汇创始人兼CEO、和君咨询合伙人董立鑫亮相和君发起的“2024 家具建材高质出海峰会”，围绕全球家具建材市场增长、企业出海目标市场定位、进入路径设计及关键资源获取等核心问题，结合 18 国海外实战经验分享家具建材企业突破内卷、拓展国际市场的全球
+- [董立鑫受聘对外经贸大学国际学院校外实践导师，助力国际化人才培养 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-06-uibe-mentor/)：海鑫汇创始人兼CEO、和君咨询合伙人董立鑫受聘为对外经济贸易大学国际学院校外实践导师，将依托其企业全球化与国际咨询实践经验参与国际化人才培养、实践教学与职业发展指导，推动高校人才培养与企业全球化实践深度衔接。
+- [董立鑫为贸大国际学院留学生解读 AI 赋能企业全球化 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-07-uibe-ai-lecture/)：海鑫汇创始人兼CEO、和君咨询合伙人董立鑫受邀为对外经济贸易大学国际学院留学生开展“AI 驱动企业全球化拓展”专题讲座，结合企业全球化实践与人工智能发展趋势，分享 AI 赋能市场洞察、海外业务拓展及全球化经营的实践方法，帮助国际化人才理解 AI 时
+- [董立鑫出任新加坡世界贸易中心秘书长兼首席运营官，链接中国、东盟与全球资本创新生态 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-08-wtc-singapore/)：海鑫汇创始人兼CEO董立鑫（Bruce Dong）获任新加坡世界贸易中心（WTC Singapore）秘书长兼首席运营官，与 WTCA 全球理事李明星、副总裁王迅及 WTC Singapore 理事长兼董事长张克、首席代表兼 CEO 朱小兰共同推动
+- [Yangpu District Government (English) Reports Bruce Dong at CIFTIS 2025 | Global Talent Network · Media Coverage](https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/)：The English portal of the Yangpu District Government (English Yangpu) reports on Bruce Dong — Founder & CEO of Global Talent Network (GTN) and partner at Hejun Consulting — attending CIFTIS 2025 as Executive Secretary-General of the UIBE Apollo Investment Club Global Expansion Committee, on Chinese enterprises going global.
+- [杨浦区政府英文门户报道：董立鑫以UIBE阿波罗出海专委会执行秘书长身份出席CIFTIS 2025 | 海鑫汇 媒体报道](https://gtn-global.netlify.app/events/media-09-yangpu-gov/)：杨浦区政府英文门户（English Yangpu）报道海鑫汇创始人兼CEO、和君咨询合伙人董立鑫以对外经贸大学阿波罗投资俱乐部出海专委会执行秘书长身份，参加 CIFTIS 2025 中国国际服务贸易交易会，探讨中国企业出海。
+- [走进佩蒂股份（300673.SZ）｜中国宠物行业出海龙头全球化产能布局纪实｜海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/tour-01-peidi/)：海鑫汇组织走进佩蒂股份（300673.SZ）跨境出海专题游学，解析中国宠物行业出海龙头企业在越南、柬埔寨、新西兰的全球化产能布局与合规经营实践。
+- [走进群核科技（00068.HK）｜杭州六小龙首家上市空间智能企业全球化实践｜海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/tour-03-manycore/)：海鑫汇·与君出海联合主办原乡沙龙第134期，走进杭州科技六小龙首家上市企业群核科技（00068.HK），解析空间智能技术与中国科技企业全球化路径。
+- [走进纽威股份（603699.SH）｜中国工业阀门龙头全球化布局纪实｜海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/tour-04-neway/)：海鑫汇联合和君商学院19届出海班走进纽威股份（603699）苏州总部，解析中国工业阀门龙头企业全球化布局与B2B、B2C数字化运营实践。
+- [走进智谱Z.AI（02513.HK）｜清华系大模型企业GLM系列技术与出海视角｜海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/tour-05-zai/)：海鑫汇GTN联合和勤易专精特新企业家俱乐部走进智谱AI北京总部，解析GLM系列大模型技术进展与中国AI企业全球化路径。
+- [走进博彦科技（002649.SZ）｜AI+数智技术赋能中国企业出海破局｜海鑫汇 Global Talent Network](https://gtn-global.netlify.app/events/tour-07-beyondsoft/)：海鑫汇GTN联合UIBE阿波罗投资俱乐部走进博彦科技全球总部，聚焦AI数智技术赋能、企业出海破局与跨境投资赛道三大议题。
 - [海鑫汇 Global Talent Network](https://gtn-global.netlify.app/index.html)：海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.
 - [消费品牌国际化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
 - [跨国资本与并购 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
