@@ -44,7 +44,30 @@
 .st-advice{margin-top:20px;font-size:14.5px;line-height:1.8;color:var(--ink);}
 .st-hidden{display:none;}
 .st-restart{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
-@media (max-width:680px){.section{padding:40px 20px;}}
+
+/* 方法论段 */
+.self-test-methodology{max-width:820px;margin:36px auto 0;padding:28px 30px;background:var(--paper);border:1px solid var(--rule);}
+.self-test-methodology h2{font-family:'Noto Serif SC',serif;font-size:20px;color:var(--ink);margin-bottom:10px;}
+.self-test-methodology p{font-size:14.5px;line-height:1.9;color:var(--ink);margin:6px 0;}
+.self-test-methodology strong{color:var(--seal);}
+
+/* demo 雷达图示例 */
+.self-test-demo{max-width:820px;margin:28px auto 0;padding:24px 30px;background:var(--paper-alt);border:1px solid var(--rule);text-align:center;}
+.self-test-demo img{max-width:400px;width:100%;height:auto;border-radius:6px;}
+.self-test-demo .demo-placeholder{max-width:400px;margin:0 auto;padding:48px 20px;background:var(--paper);border:1px dashed var(--rule);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.5px;}
+.self-test-demo .demo-caption{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);letter-spacing:.5px;margin-top:12px;}
+
+/* 付费墙 */
+.st-paywall{margin-top:28px;display:flex;gap:22px;align-items:center;padding:22px 24px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:8px;}
+.st-paywall-qr{width:130px;height:130px;object-fit:cover;border-radius:6px;flex-shrink:0;}
+.st-paywall-text p{font-size:14.5px;line-height:1.8;color:var(--ink);margin:4px 0;}
+.st-paywall-text strong{color:var(--seal);}
+
+@media (max-width:680px){
+  .section{padding:40px 20px;}
+  .st-paywall{flex-direction:column;text-align:center;}
+  .self-test-methodology,.self-test-demo{padding:20px;}
+}
 </style>
   <link rel="canonical" href="https://gtn-global.netlify.app/cta/self-test/">
   <meta property="og:type" content="website">
@@ -81,6 +104,22 @@
     <p class="subline">Five dimensions · 15 questions · where you stand.</p>
     <p class="lede">五个核心维度、15 道题目，快速判断企业当前的全球化准备度。完成后生成五维雷达图与优先行动建议——这只是通用自测，不能替代针对你具体情形的深度诊断。</p>
 
+    <div class="self-test-methodology">
+      <h2>出海健康度自测的五个维度</h2>
+      <p>本测评从以下五个维度评估企业当前的全球化准备度：</p>
+      <p><strong>市场认知</strong>　对目标市场的需求、竞争格局、进入壁垒是否有基本判断</p>
+      <p><strong>产品适配</strong>　产品/服务是否需要本地化调整，调整成本是否可控</p>
+      <p><strong>资源储备</strong>　资金、人才、供应链是否具备支撑海外布局的基础条件</p>
+      <p><strong>合规准备</strong>　对目标市场的法规、税务、劳工等合规要求是否有认知</p>
+      <p><strong>组织能力</strong>　团队是否具备跨文化协作与远程管理海外业务的能力</p>
+      <p>完成15道题目后，系统会生成五维雷达图和针对性的优先行动建议。</p>
+    </div>
+
+    <div class="self-test-demo">
+      <div class="demo-placeholder">示例雷达图（占位 · 待补充 self-test-radar-demo.svg）</div>
+      <p class="demo-caption">这是示例结果，你的雷达图会因回答不同而不同</p>
+    </div>
+
     <div class="st-progress" id="stProgress">
       进度 <span id="stCount">0</span>/15
       <div class="bar"><i id="stBar"></i></div>
@@ -101,8 +140,15 @@
       <div class="st-chart"><canvas id="stCanvas" width="420" height="420"></canvas></div>
       <ul class="st-dim-list" id="stDimList"></ul>
       <div class="st-advice" id="stAdvice"></div>
+      <div class="st-paywall">
+        <img src="../donglixin_qrcode.jpg" alt="扫码添加董立鑫微信支付1元并获取完整解读" class="st-paywall-qr">
+        <div class="st-paywall-text">
+          <p><strong>支付 1 元，解锁完整解读</strong></p>
+          <p>扫码添加董立鑫微信，支付 1 元后发送你的自测得分截图，即可获取完整五维解读与优先行动建议。</p>
+        </div>
+      </div>
       <div class="st-restart">
-        <a href="../../index.html#offer" class="btn-outline">预约免费首诊，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
+        <a href="book-diagnostic/index.html" class="btn-outline">预约首诊 · 99元/1小时，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
         <button type="button" class="btn-seal" id="stRestart">重新测评</button>
       </div>
     </div>
