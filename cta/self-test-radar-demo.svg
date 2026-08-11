@@ -1,0 +1,82 @@
+<svg width="480" height="480" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .axis-line { stroke: #d8dce0; stroke-width: 1; }
+      .grid-line { stroke: #e5e8eb; stroke-width: 1; fill: none; }
+      .data-fill { fill: #1f6f5c; fill-opacity: 0.18; }
+      .data-line { stroke: #1f6f5c; stroke-width: 2.5; fill: none; }
+      .data-point { fill: #1f6f5c; }
+      .label-text { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; fill: #2b2f33; font-weight: 500; }
+      .score-text { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12px; fill: #6b7280; }
+      .sample-badge-bg { fill: #f2b705; }
+      .sample-badge-text { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 13px; font-weight: 700; fill: #2b2f33; }
+      .caption-text { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12px; fill: #9aa0a6; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="480" height="480" fill="#ffffff"/>
+
+  <!-- SAMPLE badge -->
+  <g transform="translate(390, 24)">
+    <rect x="-58" y="-16" width="76" height="26" rx="13" class="sample-badge-bg"/>
+    <text x="-20" y="2" class="sample-badge-text" text-anchor="middle">示例 SAMPLE</text>
+  </g>
+
+  <!-- radar grid: 5 axes, pentagon, 4 rings -->
+  <g transform="translate(240,250)">
+    <!-- rings at 25/50/75/100% -->
+    <polygon class="grid-line" points="0,-150 142.7,-46.4 88.2,121.4 -88.2,121.4 -142.7,-46.4" />
+    <polygon class="grid-line" points="0,-112.5 107,-34.8 66.2,91 -66.2,91 -107,-34.8" />
+    <polygon class="grid-line" points="0,-75 71.4,-23.2 44.1,60.7 -44.1,60.7 -71.4,-23.2" />
+    <polygon class="grid-line" points="0,-37.5 35.7,-11.6 22,30.3 -22,30.3 -35.7,-11.6" />
+
+    <!-- axes -->
+    <line class="axis-line" x1="0" y1="0" x2="0" y2="-150"/>
+    <line class="axis-line" x1="0" y1="0" x2="142.7" y2="-46.4"/>
+    <line class="axis-line" x1="0" y1="0" x2="88.2" y2="121.4"/>
+    <line class="axis-line" x1="0" y1="0" x2="-88.2" y2="121.4"/>
+    <line class="axis-line" x1="0" y1="0" x2="-142.7" y2="-46.4"/>
+
+    <!-- data polygon: 市场认知72 产品适配55 资源储备40 合规准备35 组织能力60 (uneven, has clear weak points) -->
+    <polygon class="data-fill" points="
+      0,-108
+      82.8,-26.9
+      35.3,48.6
+      -30.9,42.5
+      -100,-32.5
+    "/>
+    <polyline class="data-line" points="
+      0,-108
+      82.8,-26.9
+      35.3,48.6
+      -30.9,42.5
+      -100,-32.5
+      0,-108
+    "/>
+    <circle class="data-point" cx="0" cy="-108" r="4"/>
+    <circle class="data-point" cx="82.8" cy="-26.9" r="4"/>
+    <circle class="data-point" cx="35.3" cy="48.6" r="4"/>
+    <circle class="data-point" cx="-30.9" cy="42.5" r="4"/>
+    <circle class="data-point" cx="-100" cy="-32.5" r="4"/>
+
+    <!-- axis labels -->
+    <text class="label-text" x="0" y="-165" text-anchor="middle">市场认知</text>
+    <text class="score-text" x="0" y="-148" text-anchor="middle">72</text>
+
+    <text class="label-text" x="168" y="-42" text-anchor="start">产品适配</text>
+    <text class="score-text" x="168" y="-25" text-anchor="start">55</text>
+
+    <text class="label-text" x="104" y="150" text-anchor="middle">资源储备</text>
+    <text class="score-text" x="104" y="167" text-anchor="middle">40</text>
+
+    <text class="label-text" x="-104" y="150" text-anchor="middle">合规准备</text>
+    <text class="score-text" x="-104" y="167" text-anchor="middle">35</text>
+
+    <text class="label-text" x="-168" y="-42" text-anchor="end">组织能力</text>
+    <text class="score-text" x="-168" y="-25" text-anchor="end">60</text>
+  </g>
+
+  <!-- caption -->
+  <text class="caption-text" x="240" y="460" text-anchor="middle">这是示例结果，你的雷达图会因回答不同而不同</text>
+</svg>
