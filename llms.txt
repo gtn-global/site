@@ -31,7 +31,6 @@
 - [北京 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-beijing/)：海鑫汇北京运营中心（中国）——负责人与职能介绍，素材录入后替换占位内容。
 - [成都 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-chengdu/)：海鑫汇成都运营中心（中国）——负责西南区域运营协调与人才对接。
 - [杭州 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-hangzhou/)：海鑫汇杭州运营中心（中国）——负责人Maggie 柯梦琪，负责杭州及周边区域运营协调与人才对接。
-- [运营中心 · Operations Hubs — 海鑫汇](https://gtn-global.netlify.app/member/ops-hub/)：海鑫汇全球运营网络——北京、杭州、苏州、成都四大国内运营中心，以及新加坡、东京、吉隆坡、槟城、莫斯科五大海外运营节点。The Global Operations Network behind 海鑫汇, spanning China and overseas hubs.
 - [匈牙利运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-hungary/)：海鑫汇匈牙利运营中心，覆盖中东欧地区，聚焦新能源汽车、电池制造和工业自动化等中资企业出海欧洲的重要枢纽。
 - [东京 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-japan/)：海鑫汇东京运营中心（日本）——负责人与职能介绍，素材录入后替换占位内容。
 - [哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-kazakhstan/)：海鑫汇哈萨克斯坦运营中心（哈萨克斯坦）——中亚运营网络关键节点。

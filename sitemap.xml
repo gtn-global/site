@@ -319,12 +319,6 @@
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-hub/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://gtn-global.netlify.app/member/ops-hungary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
