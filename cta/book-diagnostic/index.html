@@ -61,10 +61,7 @@
   <p class="subline">A paid 1-hour diagnostic · 99元/1小时.</p>
   <p class="lede">首诊是围绕你具体出海决策的一对一深度访谈，99元/1小时——由董立鑫本人与你一对一，不卖方案、不卖资源，只判断你的问题是否值得深入，以及下一步往哪走。提交后，董立鑫会在一个工作日内与你联系确认时间与支付方式；也可以直接扫码添加微信，备注「首诊」优先对接。</p>
 
-  <form class="form-wrap" name="cta-book-diagnostic" method="POST" action="success.html" data-netlify="true" netlify-honeypot="bot-field">
-    <p class="hidden" style="display:none;">
-      <label>请勿填写 Don't fill this out: <input name="bot-field"></label>
-    </p>
+  <form class="form-wrap" name="cta-book-diagnostic" method="POST" action="success.html" id="diagnosticForm" onsubmit="setTimeout(function(){location.href='success.html';},200);">
     <div class="subhead" style="margin-top:0;">预约首诊<span class="en">BOOK A DIAGNOSTIC · 99元/1小时</span></div>
     <div class="form-grid">
       <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
@@ -73,9 +70,11 @@
       <div class="field">
         <label>出海所处阶段 Stage</label>
         <select name="stage">
-          <option value="exploring">尚未启动 · 考虑中 / Not started · exploring</option>
-          <option value="underway">已启动 · 想优化 / Underway · want to optimize</option>
-          <option value="issue">遇到具体问题 · 需要判断 / Facing a specific issue · need judgment</option>
+          <option value="" disabled selected>请选择阶段 / Select stage</option>
+          <option value="planning">规划中 · 已立项 / Planning · committed</option>
+          <option value="testing">试水阶段 · 小规模测试 / Testing · pilot phase</option>
+          <option value="scaling">扩张中 · 多国运营 / Scaling · multi-market ops</option>
+          <option value="established">已成熟 · 深度本地化 / Established · localized</option>
         </select>
       </div>
       <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID"></div>
