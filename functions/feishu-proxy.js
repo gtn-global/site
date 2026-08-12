@@ -38,13 +38,18 @@ async function ensureField(token, appToken, tableId, fieldName, type = 1) {
     { headers: { Authorization: 'Bearer ' + token } }
   );
   const listJ = await listR.json();
-  const exists = (listJ.data || []).find((f) => f.field_name === fieldName);
-  if (exists) return;
-  await fetch(`${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/fields`, {
+  const exists = (listJ.data || {}).items || [];
+  const found = exists.find((f) => f.field_name === fieldName);
+  if (found) return found.field_id;
+  // 创建新字段
+  const createR = await fetch(`${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/fields`, {
     method: 'POST',
     headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
     body: JSON.stringify({ field_name: fieldName, type }),
   });
+  const createJ = await createR.json();
+  if (createJ.code === 0 && createJ.data) return createJ.data.field_id;
+  throw new Error('create field fail: ' + JSON.stringify(createJ));
 }
 
 function mapRecord(data) {
@@ -62,12 +67,23 @@ function mapRecord(data) {
 }
 
 async function writeRecord(token, appToken, tableId, record) {
+  // 先确保所有字段存在，获取 field_id 映射
+  const fieldMap = {};
+  for (const key of Object.keys(record)) {
+    const fid = await ensureField(token, appToken, tableId, key, 1);
+    fieldMap[key] = fid;
+  }
+  // 用 field_id 构建 fields 对象
+  const fieldsPayload = {};
+  for (const [key, val] of Object.entries(record)) {
+    fieldsPayload[fieldMap[key]] = val;
+  }
   const r = await fetch(
     `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records`,
     {
       method: 'POST',
       headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fields: record }),
+      body: JSON.stringify({ fields: fieldsPayload }),
     }
   );
   return r.json();
@@ -94,9 +110,6 @@ export async function onRequestPost(context) {
     const appToken = (env.FEISHU_BASE_APP_TOKEN || '').trim();
     const tableId = await getFirstTable(token, appToken);
     const record = mapRecord(data);
-    for (const key of Object.keys(record)) {
-      await ensureField(token, appToken, tableId, key, 1);
-    }
     const res = await writeRecord(token, appToken, tableId, record);
     if (res.code !== 0) {
       return new Response(JSON.stringify({ ok: false, error: res }), {
