@@ -114,6 +114,27 @@ export async function onRequestPost(context) {
   }
 }
 
+export async function onRequestGet(context) {
+  const env = context.env;
+  const steps = [];
+  try {
+    const token = await getTenantToken(env);
+    steps.push('token OK');
+    const appToken = env.FEISHU_BASE_APP_TOKEN;
+    const tableId = await getFirstTable(token, appToken);
+    steps.push('table OK: ' + tableId);
+    return new Response(JSON.stringify({ ok: true, steps }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (e) {
+    return new Response(JSON.stringify({ ok: false, steps, error: String(e.message || e) }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+}
+
 export async function onRequestOptions() {
   return new Response(null, {
     status: 204,
