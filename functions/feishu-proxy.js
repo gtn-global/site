@@ -118,10 +118,13 @@ export async function onRequestGet(context) {
   const env = context.env;
   const steps = [];
   try {
-    // debug: 输出环境变量是否存在（不输出值）
-    steps.push('APP_ID: ' + (env.FEISHU_APP_ID ? 'SET' : 'MISSING'));
-    steps.push('SECRET: ' + (env.FEISHU_APP_SECRET ? 'SET' : 'MISSING'));
-    steps.push('TOKEN: ' + (env.FEISHU_BASE_APP_TOKEN ? 'SET' : 'MISSING'));
+    // debug: 输出环境变量长度（不输出值本身）
+    const aid = env.FEISHU_APP_ID || '';
+    const sec = env.FEISHU_APP_SECRET || '';
+    const tok = env.FEISHU_BASE_APP_TOKEN || '';
+    steps.push('APP_ID len=' + aid.length + ' first5=' + aid.slice(0, 5));
+    steps.push('SECRET len=' + sec.length + ' first5=' + sec.slice(0, 5));
+    steps.push('TOKEN len=' + tok.length + ' first5=' + tok.slice(0, 5));
     const token = await getTenantToken(env);
     steps.push('token OK');
     const appToken = env.FEISHU_BASE_APP_TOKEN;
