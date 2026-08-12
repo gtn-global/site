@@ -11,10 +11,12 @@
 const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
 
 async function getTenantToken(env) {
+  const appId = (env.FEISHU_APP_ID || '').trim();
+  const appSecret = (env.FEISHU_APP_SECRET || '').trim();
   const r = await fetch(`${FEISHU_BASE}/auth/v3/tenant_access_token/internal`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ app_id: env.FEISHU_APP_ID, app_secret: env.FEISHU_APP_SECRET }),
+    body: JSON.stringify({ app_id: appId, app_secret: appSecret }),
   });
   const j = await r.json();
   if (j.code !== 0) throw new Error('token fail: ' + JSON.stringify(j));
@@ -89,7 +91,7 @@ export async function onRequestPost(context) {
   }
   try {
     const token = await getTenantToken(env);
-    const appToken = env.FEISHU_BASE_APP_TOKEN;
+    const appToken = (env.FEISHU_BASE_APP_TOKEN || '').trim();
     const tableId = await getFirstTable(token, appToken);
     const record = mapRecord(data);
     for (const key of Object.keys(record)) {
@@ -118,16 +120,9 @@ export async function onRequestGet(context) {
   const env = context.env;
   const steps = [];
   try {
-    // debug: 输出环境变量长度（不输出值本身）
-    const aid = env.FEISHU_APP_ID || '';
-    const sec = env.FEISHU_APP_SECRET || '';
-    const tok = env.FEISHU_BASE_APP_TOKEN || '';
-    steps.push('APP_ID len=' + aid.length + ' first5=' + aid.slice(0, 5));
-    steps.push('SECRET len=' + sec.length + ' first5=' + sec.slice(0, 5));
-    steps.push('TOKEN len=' + tok.length + ' first5=' + tok.slice(0, 5));
     const token = await getTenantToken(env);
     steps.push('token OK');
-    const appToken = env.FEISHU_BASE_APP_TOKEN;
+    const appToken = (env.FEISHU_BASE_APP_TOKEN || '').trim();
     const tableId = await getFirstTable(token, appToken);
     steps.push('table OK: ' + tableId);
     return new Response(JSON.stringify({ ok: true, steps }), {
