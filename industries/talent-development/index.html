@@ -64,7 +64,20 @@
   .cta-card strong{color:var(--ink);}
   .cta-card a{color:var(--brass);text-decoration:underline;text-underline-offset:3px;}
   .pill-wrap{display:flex;gap:5px;white-space:nowrap;}
-  .pill{font-size:10px;letter-spacing:0.5px;color:var(--brass,#8A6D3B);background:rgba(138,109,59,.06);padding:3px 9px;border-radius:2px;border:1px solid rgba(138,109,59,.15);white-space:nowrap;}
+  .pill{font-size:10px;letter-spacing:0.5px;color:var(--brass,#8A6D3B);background:rgba(138,109,59,.06);padding:3px 9px;border-radius:2px;    border:1px solid rgba(138,109,59,.15);white-space:nowrap;}
+  @media (max-width:600px){
+    .section{padding:32px 18px 48px;}
+    .headline{font-size:26px;}
+    .lede{font-size:15px;}
+    .topbar-inner{padding:12px 16px;gap:10px;}
+    .wordmark .sub{font-size:10px;letter-spacing:1px;}
+    .subpage-back{font-size:12px;padding:5px 10px;}
+    .person-row{flex-direction:column;gap:16px;align-items:flex-start;}
+    .person-link{flex-wrap:wrap;gap:4px 8px;}
+    .person-name{font-size:14px;}
+    .pill-wrap{flex-wrap:wrap;white-space:normal;margin-top:4px;width:100%;}
+    .pill{white-space:normal;}
+  }
 </style>
   <link rel="canonical" href="https://gtn-global.netlify.app/industries/talent-development/">
   <meta property="og:type" content="website">
@@ -152,19 +165,6 @@
 
     <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink,#1E2530);">05 相关专家</h3>
     <div class="person-row">
-      <img class="avatar-img" src="../../experts/donglixin/donglixin.jpg" alt="董立鑫" onerror="this.outerHTML='<span class=\'avatar\'>董</span>'">
-      <a href="../../experts/donglixin/index.html" class="person-link">
-        <span class="person-name">董立鑫 Bruce Dong</span>
-        <span class="person-tag">FOUNDER</span>
-      </a>
-      <div class="pill-wrap">
-        <span class="pill">全球人才</span>
-        <span class="pill">组织能力</span>
-        <span class="pill">职业教育</span>
-        <span class="pill">跨文化管理</span>
-      </div>
-    </div>
-    <div class="person-row">
       <img class="avatar-img" src="../../experts/zhang-chenggang/adv-08.jpg" alt="张成刚" onerror="this.outerHTML='<span class=\'avatar\'>张</span>'">
       <a href="../../experts/zhang-chenggang/index.html" class="person-link">
         <span class="person-name">张成刚</span>
@@ -188,6 +188,19 @@
         <span class="pill">国际办学</span>
         <span class="pill">职教合作</span>
         <span class="pill">海外人才</span>
+      </div>
+    </div>
+    <div class="person-row">
+      <img class="avatar-img" src="../../experts/donglixin/donglixin.jpg" alt="董立鑫" onerror="this.outerHTML='<span class=\'avatar\'>董</span>'">
+      <a href="../../experts/donglixin/index.html" class="person-link">
+        <span class="person-name">董立鑫 Bruce Dong</span>
+        <span class="person-tag">FOUNDER</span>
+      </a>
+      <div class="pill-wrap">
+        <span class="pill">全球人才</span>
+        <span class="pill">组织能力</span>
+        <span class="pill">职业教育</span>
+        <span class="pill">跨文化管理</span>
       </div>
     </div>
 
