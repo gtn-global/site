@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="wtc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F2042" />
-      <stop offset="100%" stop-color="#061026" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2148" />
+      <stop offset="100%" stop-color="#050E20" />
     </linearGradient>
-    <radialGradient id="gold-glow" cx="85%" cy="15%" r="65%">
-      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#061026" stop-opacity="0" />
+    <radialGradient id="glow" cx="78%" cy="22%" r="70%">
+      <stop offset="0%" stop-color="#C8A45C" stop-opacity="0.22" />
+      <stop offset="55%" stop-color="#C8A45C" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#050E20" stop-opacity="0" />
     </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E7C884" />
+      <stop offset="100%" stop-color="#B68A3E" />
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#wtc-bg)" />
-  <rect width="1200" height="630" fill="url(#gold-glow)" />
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
 
-  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#C5A059" stroke-opacity="0.25" stroke-width="1" />
-  <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#C5A059" stroke-opacity="0.1" stroke-width="1" />
-
-  <g transform="translate(100, 100)">
-    <text x="0" y="25" fill="#C5A059" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" letter-spacing="2">海鑫汇 · Global Talent Network</text>
-    <g transform="translate(720, 0)">
-      <rect width="200" height="36" fill="none" stroke="#C5A059" stroke-opacity="0.4" stroke-width="1" />
-      <text x="100" y="23" fill="#C5A059" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="2">KNOWLEDGE HUB</text>
-    </g>
+  <!-- 细金框 -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#C8A45C" stroke-opacity="0.22" stroke-width="1" />
+  <!-- 左上角品牌角标（小字，不抢主标题） -->
+  <g transform="translate(80, 96)">
+    <text x="0" y="0" fill="url(#gold)" font-family="'Noto Serif SC', Georgia, 'Songti SC', serif" font-size="22" font-weight="700" letter-spacing="3">海鑫汇 Global Talent Network</text>
+    <text x="0" y="30" fill="#8FA3BF" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="4">Explore the World · Connect the Future</text>
   </g>
 
-  <g transform="translate(100, 250)">
-    <text fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">
-      <tspan x="0" dy="0">海鑫汇 Global Talent Network</tspan>
-      <tspan x="0" dy="64" fill="#C5A059" font-size="40">· 连接全球产业专家</tspan>
+  <!-- 主标题：一句价值主张，衬线大字 -->
+  <g transform="translate(80, 300)">
+    <text fill="#FFFFFF" font-family="'Noto Serif SC', Georgia, 'Songti SC', serif" font-size="68" font-weight="700" letter-spacing="2">
+      <tspan x="0" dy="0">链接全球人才与未来机会</tspan>
     </text>
-    <rect x="0" y="150" width="60" height="4" fill="#C5A059" />
-    <text fill="#A3B1C6" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" line-height="1.6">
-      <tspan x="0" dy="210">汇聚全球产业专家，连接人才、企业与出海机遇。</tspan>
-    </text>
+    <rect x="4" y="48" width="72" height="4" fill="url(#gold)" />
+    <text x="0" y="104" fill="#C8A45C" font-family="'Noto Serif SC', Georgia, serif" font-size="30" font-weight="400" letter-spacing="1">人才 · 产业 · 世界 · 未来</text>
   </g>
 
-  <g transform="translate(100, 560)">
-    <text x="0" y="0" fill="#C5A059" font-family="system-ui, sans-serif" font-size="18" font-weight="500" letter-spacing="1.5">GTN-GLOBAL.NETLIFY.APP</text>
-  </g>
+  <!-- 底部域名 -->
+  <text x="80" y="556" fill="#7E92AE" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="400" letter-spacing="2">GTN-GLOBAL.NETLIFY.APP</text>
 </svg>
+
