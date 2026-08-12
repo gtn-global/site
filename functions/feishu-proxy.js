@@ -10,12 +10,12 @@ const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
 const FIELD_MAP = {
   name: 'fld3tTQNy8',
   company: 'fldtxRnIYU',
-  industry: 'fldU0dgggA',
-  stage: 'flds5Xu4Hc',
-  contact_info: 'fldp9wYb2N',
-  brief: 'fldxK7mZ3Q',
-  submitted_at: 'fldvWn8R1T',
-  source: 'fldqL4c6Xy',
+  industry: 'fldTNxvn6m',
+  stage: 'fldkiTKrD3',
+  contact_info: 'fldTcYrxej',
+  brief: 'fldLgOeJGU',
+  submitted_at: 'fldSOfF5Hn',
+  source: 'fldd5KFw5B',
 };
 
 const TABLE_ID = 'tblrGIjSqluaF5Gx';
