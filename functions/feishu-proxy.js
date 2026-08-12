@@ -6,20 +6,6 @@
 
 const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
 
-// 字段名 → 飞书 field_id 映射（已创建，无需重复 ensureField）
-const FIELD_MAP = {
-  name: 'fld3tTQNy8',
-  company: 'fldtxRnIYU',
-  industry: 'fldTNxvn6m',
-  stage: 'fldkiTKrD3',
-  contact_info: 'fldTcYrxej',
-  brief: 'fldLgOeJGU',
-  submitted_at: 'fldSOfF5Hn',
-  source: 'fldd5KFw5B',
-};
-
-const TABLE_ID = 'tblrGIjSqluaF5Gx';
-
 function withTimeout(ms) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), ms);
@@ -47,23 +33,23 @@ async function getTenantToken(env) {
 
 function mapRecord(data) {
   const now = new Date().toISOString().replace('T', ' ').slice(0, 19);
-  const fields = {};
-  fields[FIELD_MAP.name] = String(data.name || '').slice(0, 200);
-  fields[FIELD_MAP.company] = String(data.company || '').slice(0, 200);
-  fields[FIELD_MAP.industry] = String(data.industry || '').slice(0, 200);
-  fields[FIELD_MAP.stage] = String(data.stage || '').slice(0, 100);
-  fields[FIELD_MAP.contact_info] = String(data.contact_info || '').slice(0, 200);
-  fields[FIELD_MAP.brief] = String(data.brief || '').slice(0, 2000);
-  fields[FIELD_MAP.submitted_at] = now;
-  fields[FIELD_MAP.source] = String(data.source || 'book-diagnostic').slice(0, 100);
-  return fields;
+  return {
+    name: String(data.name || '').slice(0, 200),
+    company: String(data.company || '').slice(0, 200),
+    industry: String(data.industry || '').slice(0, 200),
+    stage: String(data.stage || '').slice(0, 100),
+    contact_info: String(data.contact_info || '').slice(0, 200),
+    brief: String(data.brief || '').slice(0, 2000),
+    submitted_at: now,
+    source: String(data.source || 'book-diagnostic').slice(0, 100),
+  };
 }
 
-async function writeRecord(token, appToken, fields) {
+async function writeRecord(token, appToken, tableId, fields) {
   const { signal, clear } = withTimeout(8000);
   try {
     const r = await fetch(
-      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${TABLE_ID}/records`,
+      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records`,
       {
         method: 'POST',
         headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
@@ -96,8 +82,9 @@ export async function onRequestPost(context) {
   try {
     const appToken = (env.FEISHU_BASE_APP_TOKEN || '').trim();
     const token = await getTenantToken(env);
+    const tableId = await getFirstTable(token, appToken);
     const fields = mapRecord(data);
-    const res = await writeRecord(token, appToken, fields);
+    const res = await writeRecord(token, appToken, tableId, fields);
     if (res.code !== 0) {
       return new Response(JSON.stringify({ ok: false, error: res }), {
         status: 502,
