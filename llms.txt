@@ -28,18 +28,18 @@
 - [高佳晖 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/gao-jiahui/)：高佳晖（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [李妮芳 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/li-nifang/)：李妮芳（美国·墨西哥），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [刘栗铭 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/liu-liming/)：刘栗铭（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
-- [北京 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-beijing/)：海鑫汇北京运营中心（中国）——负责人与职能介绍，素材录入后替换占位内容。
+- [刘栗铭 · 北京运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-beijing/)：刘栗铭，海鑫汇北京运营中心负责人。深耕中英跨境与欧洲市场，聚焦合规化运营与长期信任建立，支持企业稳健落地。
 - [成都 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-chengdu/)：海鑫汇成都运营中心（中国）——负责西南区域运营协调与人才对接。
 - [杭州 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-hangzhou/)：海鑫汇杭州运营中心（中国）——负责人Maggie 柯梦琪，负责杭州及周边区域运营协调与人才对接。
 - [匈牙利运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-hungary/)：海鑫汇匈牙利运营中心，覆盖中东欧地区，聚焦新能源汽车、电池制造和工业自动化等中资企业出海欧洲的重要枢纽。
-- [东京 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-japan/)：海鑫汇东京运营中心（日本）——负责人与职能介绍，素材录入后替换占位内容。
+- [名城悠真 · 东京运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-japan/)：名城悠真，海鑫汇东京运营中心负责人。覆盖日本市场，聚焦本地化运营、企业对接与项目落地支持。
 - [哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-kazakhstan/)：海鑫汇哈萨克斯坦运营中心（哈萨克斯坦）——中亚运营网络关键节点。
-- [吉隆坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-malaysia/)：海鑫汇吉隆坡运营中心（马来西亚）——负责人与职能介绍，素材录入后替换占位内容。
+- [Henry Lin · 吉隆坡运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-malaysia/)：Henry Lin，海鑫汇吉隆坡运营中心负责人。覆盖马来西亚及东南亚市场，聚焦本地化运营、企业对接与项目落地支持。
 - [孙圆儿 · 中东运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-mena/)：孙圆儿，海鑫汇中东运营中心负责人。覆盖海湾地区，聚焦能源转型、数字基建和跨境投资服务。
 - [刘志中 · 墨西哥运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-mexico/)：刘志中，海鑫汇墨西哥运营中心负责人。覆盖拉美，聚焦汽车产业链、自动化装备和数字化供应链。
 - [Andy 张东裕 · 宁波运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-ningbo/)：Andy 张东裕，海鑫汇宁波运营中心负责人，环世物流背景，深耕跨境物流与供应链管理。覆盖长三角南翼，专注制造业出海、跨境贸易与中小企业国际化。
 - [吕晓明 · 巴基斯坦运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-pakistan/)：吕晓明，海鑫汇巴基斯坦运营中心负责人。覆盖南亚，聚焦基建、能源和跨境贸易。
-- [莫斯科 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-russia/)：海鑫汇莫斯科运营中心（俄罗斯）——负责人与职能介绍，素材录入后替换占位内容。
+- [李春瑾 · 莫斯科运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-russia/)：李春瑾，海鑫汇莫斯科运营中心负责人。覆盖俄罗斯及独联体市场，聚焦本地化运营、企业对接与项目落地支持。
 - [新加坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.netlify.app/member/ops-singapore/)：海鑫汇新加坡运营中心（新加坡）——负责人 Claudia 蔡慧敏，负责东南亚运营协调与跨境项目落地。
 - [于溪东 · 苏州运营中心 — 海鑫汇](https://gtn-global.netlify.app/member/ops-suzhou/)：于溪东，海鑫汇（Global Talent Network）苏州运营中心负责人，南开企管博士、和君商学院出海班学员，牵头共建苏州运营中心。
 - [钱天漪 · 出海班 — 海鑫汇](https://gtn-global.netlify.app/member/qian-tianyi/)：钱天漪（美国），海鑫汇·国际留学生项目·和君商学院出海班成员。

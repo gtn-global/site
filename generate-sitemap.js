@@ -424,6 +424,24 @@ function verifyAndAutoFix() {
     issues.push(`sitemap 漏收 ${missing.length} 个页面（示例：${missing.slice(0, 3).join('、')}）`);
   }
 
+  // --- 规则5：占位符检测（部署前兜底，防止 [xxx]/TBD/待素材 流到线上）---
+  // 命中即拦截部署，避免再出现"占位符公开上线、靠人工点才发现"的情况。
+  // 已知待补内容用 <!--TBD ...--> ... <!--/TBD--> 注释包裹，此处跳过，不阻塞部署；素材到位后移除注释即可。
+  // 仅匹配"中文括注型占位"（如 [负责人姓名]、[一句话简介]、[职能介绍 TBD]），
+  // 排除代码变量（如 [idx]、[slug]）、JSON 数组（如 ["A","B"]）、纯数字索引（如 [0]）。
+  const PLACEHOLDER = /\[[一-龥][^\[\]]{0,38}\]|\[[一-龥]+\]|待素材|占位|素材录入后替换|非最终上线版本|内部评审/i;
+  for (const abs of htmlFiles) {
+    let c;
+    try { c = fs.readFileSync(abs, 'utf-8'); } catch (e) { continue; }
+    // 去掉所有 <!--TBD ...--> ... <!--/TBD--> 块（含其中内容），仅对剩余可见文本做占位符判定
+    const stripped = c.replace(/<!--\s*TBD[\s\S]*?\/TBD\s*-->/gi, '');
+    const rel = path.relative(ROOT, abs);
+    const hit = stripped.match(PLACEHOLDER);
+    if (hit) {
+      issues.push(`占位符未替换：${rel} 仍含 "${hit[0]}"（上线前必须替换；若确为待补，用 <!--TBD ...--> 包裹）`);
+    }
+  }
+
   return { issues, autoFixed };
 }
 
