@@ -118,6 +118,10 @@ export async function onRequestGet(context) {
   const env = context.env;
   const steps = [];
   try {
+    // debug: 输出环境变量是否存在（不输出值）
+    steps.push('APP_ID: ' + (env.FEISHU_APP_ID ? 'SET' : 'MISSING'));
+    steps.push('SECRET: ' + (env.FEISHU_APP_SECRET ? 'SET' : 'MISSING'));
+    steps.push('TOKEN: ' + (env.FEISHU_BASE_APP_TOKEN ? 'SET' : 'MISSING'));
     const token = await getTenantToken(env);
     steps.push('token OK');
     const appToken = env.FEISHU_BASE_APP_TOKEN;
