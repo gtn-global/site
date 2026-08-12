@@ -61,7 +61,7 @@
   <p class="subline">A paid 1-hour diagnostic · 99元/1小时.</p>
   <p class="lede">首诊是围绕你具体出海决策的一对一深度访谈，99元/1小时——由董立鑫本人与你一对一，不卖方案、不卖资源，只判断你的问题是否值得深入，以及下一步往哪走。提交后，董立鑫会在一个工作日内与你联系确认时间与支付方式；也可以直接扫码添加微信，备注「首诊」优先对接。</p>
 
-  <form class="form-wrap" name="cta-book-diagnostic" method="GET" action="success.html" id="diagnosticForm" onsubmit="location.href='success.html'; return false;">
+  <form class="form-wrap" name="cta-book-diagnostic" method="POST" id="diagnosticForm" data-proxy="https://gtn-global.pages.dev/feishu-proxy">
     <div class="subhead" style="margin-top:0;">预约首诊<span class="en">BOOK A DIAGNOSTIC · 99元/1小时</span></div>
     <div class="form-grid">
       <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
@@ -98,5 +98,26 @@
 <footer class="footer" data-depth="2"></footer>
 
 <script src="../../script.js" defer></script>
+<script>
+(function(){
+  var form = document.getElementById('diagnosticForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var proxy = form.getAttribute('data-proxy');
+    if(!proxy || proxy.indexOf('YOUR_SUBDOMAIN')>-1){ location.href='success.html'; return; }
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function(v,k){ data[k]=v; });
+    data.source = 'book-diagnostic';
+    fetch(proxy, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(){ location.href='success.html'; })
+      .catch(function(){ location.href='success.html'; });
+  });
+})();
+</script>
 </body>
 </html>
