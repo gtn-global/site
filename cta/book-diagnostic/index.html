@@ -64,12 +64,12 @@
   <form class="form-wrap" name="cta-book-diagnostic" method="POST" id="diagnosticForm" data-proxy="https://gtn-global.pages.dev/feishu-proxy">
     <div class="subhead" style="margin-top:0;">预约首诊<span class="en">BOOK A DIAGNOSTIC · 99元/1小时</span></div>
     <div class="form-grid">
-      <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name"></div>
-      <div class="field"><label>公司名称 Company</label><input type="text" name="company" placeholder="请输入公司名称 / Company name"></div>
+      <div class="field"><label>姓名 Name</label><input type="text" name="name" placeholder="请输入姓名 / Your name" required></div>
+      <div class="field"><label>公司名称 Company</label><input type="text" name="company" placeholder="请输入公司名称 / Company name" required></div>
       <div class="field"><label>所在行业 Industry</label><input type="text" name="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing"></div>
       <div class="field">
         <label>出海所处阶段 Stage</label>
-        <select name="stage">
+        <select name="stage" required>
           <option value="" disabled selected>请选择阶段 / Select stage</option>
           <option value="planning">规划中 · 已立项 / Planning · committed</option>
           <option value="testing">试水阶段 · 小规模测试 / Testing · pilot phase</option>
@@ -77,9 +77,10 @@
           <option value="established">已成熟 · 深度本地化 / Established · localized</option>
         </select>
       </div>
-      <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID"></div>
+      <div class="field full"><label>联系方式 Contact（手机或微信 / Phone or WeChat）</label><input type="text" name="contact_info" placeholder="手机号或微信号 / Phone or WeChat ID" required></div>
       <div class="field full"><label>简述你的诉求 Brief</label><textarea name="brief" placeholder="简单描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea></div>
     </div>
+    <div id="formMsg" style="margin-top:14px;font-size:13.5px;line-height:1.6;"></div>
     <div class="form-submit">
       <button type="submit" class="btn-seal">提交预约 <span class="en">→ SUBMIT</span></button>
       <a href="../../index.html#offer" class="btn-outline">了解深度诊断 <span class="en">→ WHAT IS DEEP DIAGNOSTIC</span></a>
@@ -102,10 +103,16 @@
 (function(){
   var form = document.getElementById('diagnosticForm');
   if(!form) return;
+  var msg = document.getElementById('formMsg');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var proxy = form.getAttribute('data-proxy');
     if(!proxy || proxy.indexOf('YOUR_SUBDOMAIN')>-1){ location.href='success.html'; return; }
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    msg.style.color = '#555';
+    msg.textContent = '提交中…';
     var fd = new FormData(form);
     var data = {};
     fd.forEach(function(v,k){ data[k]=v; });
@@ -114,8 +121,23 @@
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(data)
-    }).then(function(){ location.href='success.html'; })
-      .catch(function(){ location.href='success.html'; });
+    }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j.ok){
+          location.href='success.html';
+        } else {
+          btn.disabled = false;
+          btn.style.opacity = '1';
+          msg.style.color = '#c0392b';
+          msg.textContent = '提交失败：' + (res.j.error ? JSON.stringify(res.j.error) : '未知错误') + '。请稍后重试，或直接扫码添加微信预约。';
+        }
+      })
+      .catch(function(err){
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        msg.style.color = '#c0392b';
+        msg.textContent = '网络错误，提交未成功。请稍后重试，或直接扫码添加微信预约。';
+      });
   });
 })();
 </script>
