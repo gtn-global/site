@@ -2,9 +2,16 @@
  * 海鑫汇 GTN · 表单 → 飞书多维表格 中转（Cloudflare Pages Functions）
  * 部署：放进仓库根目录 functions/ 文件夹，推送到 Cloudflare Pages 后自动生效。
  * 访问地址：https://gtn-global.pages.dev/feishu-proxy
+ *
+ * 环境变量（Cloudflare Pages → Settings → Environment variables）：
+ *   FEISHU_APP_ID        飞书应用 App ID
+ *   FEISHU_APP_SECRET    飞书应用 App Secret
+ *   FEISHU_BASE_APP_TOKEN 多维表格 app_token（base 链接里 base/ 之后那段）
  */
 
-const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
+const FEISHU_BASE = 'https://open.feishu.cn';
+const APP_TOKEN = 'RhGzbMLULaYG5TsmDGfcWN7snVg'; // gobeyond.feishu.cn/base/... 的 app_token
+const TABLE_ID = 'tblrGIjSqluaF5Gx';             // 预约记录表 table_id
 
 function withTimeout(ms) {
   const ctrl = new AbortController();
@@ -13,43 +20,40 @@ function withTimeout(ms) {
 }
 
 async function getTenantToken(env) {
-  const appId = (env.FEISHU_APP_ID || '').trim();
-  const appSecret = (env.FEISHU_APP_SECRET || '').trim();
   const { signal, clear } = withTimeout(8000);
   try {
-    const r = await fetch(`${FEISHU_BASE}/auth/v3/tenant_access_token/internal`, {
+    const r = await fetch(`${FEISHU_BASE}/open-apis/auth/v3/tenant_access_token/internal`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ app_id: appId, app_secret: appSecret }),
+      body: JSON.stringify({ app_id: env.FEISHU_APP_ID, app_secret: env.FEISHU_APP_SECRET }),
       signal,
     });
     const j = await r.json();
-    if (j.code !== 0) throw new Error('token fail: ' + JSON.stringify(j));
+    if (j.code !== 0) throw new Error('token failed: ' + JSON.stringify(j));
     return j.tenant_access_token;
   } finally {
     clear();
   }
 }
 
-function mapRecord(data) {
-  const now = new Date().toISOString().replace('T', ' ').slice(0, 19);
-  return {
-    name: String(data.name || '').slice(0, 200),
-    company: String(data.company || '').slice(0, 200),
-    industry: String(data.industry || '').slice(0, 200),
-    stage: String(data.stage || '').slice(0, 100),
-    contact_info: String(data.contact_info || '').slice(0, 200),
-    brief: String(data.brief || '').slice(0, 2000),
-    submitted_at: now,
-    source: String(data.source || 'book-diagnostic').slice(0, 100),
-  };
-}
-
-async function writeRecord(token, appToken, tableId, fields) {
+async function listFields(token) {
   const { signal, clear } = withTimeout(8000);
   try {
     const r = await fetch(
-      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records`,
+      `${FEISHU_BASE}/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/fields`,
+      { headers: { Authorization: 'Bearer ' + token }, signal }
+    );
+    return await r.json();
+  } finally {
+    clear();
+  }
+}
+
+async function writeRecord(token, fields) {
+  const { signal, clear } = withTimeout(8000);
+  try {
+    const r = await fetch(
+      `${FEISHU_BASE}/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records`,
       {
         method: 'POST',
         headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
@@ -57,78 +61,68 @@ async function writeRecord(token, appToken, tableId, fields) {
         signal,
       }
     );
-    return r.json();
+    return await r.json();
   } finally {
     clear();
   }
 }
 
+// 表单字段(name/company/industry/stage/contact/brief) → 飞书表字段
+// 飞书列名需与实际表一致；这里用常见中文列名，若不符请按实际改。
+function mapRecord(d) {
+  return {
+    '姓名': d.name || '',
+    '公司': d.company || '',
+    '行业': d.industry || '',
+    '阶段': d.stage || '',
+    '联系方式': d.contact || '',
+    '诉求': d.brief || '',
+    '提交时间': new Date().toISOString(),
+    '来源': d.source || '官网首页',
+  };
+}
+
 export async function onRequestPost(context) {
   const env = context.env;
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  };
-  let data;
   try {
-    data = await context.request.json();
-  } catch (e) {
-    return new Response(JSON.stringify({ ok: false, error: 'bad json' }), {
-      status: 400,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
-  }
-  try {
-    const appToken = (env.FEISHU_BASE_APP_TOKEN || '').trim();
     const token = await getTenantToken(env);
-    const tableId = await getFirstTable(token, appToken);
-    const fields = mapRecord(data);
-    const res = await writeRecord(token, appToken, tableId, fields);
-    if (res.code !== 0) {
-      return new Response(JSON.stringify({ ok: false, error: res }), {
-        status: 502,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    let body;
+    try {
+      body = await context.request.json();
+    } catch (e) {
+      return new Response(JSON.stringify({ ok: false, error: 'body not json' }), {
+        status: 400, headers: { 'Content-Type': 'application/json' },
       });
     }
-    return new Response(JSON.stringify({ ok: true, record_id: res.data.record_id }), {
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    const fields = mapRecord(body);
+    const res = await writeRecord(token, fields);
+    if (res.code !== 0) {
+      return new Response(JSON.stringify({ ok: false, feishu: res }), {
+        status: 502, headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    return new Response(JSON.stringify({ ok: true, record_id: res.data?.record?.record_id }), {
+      status: 200, headers: { 'Content-Type': 'application/json' },
     });
   } catch (e) {
     return new Response(JSON.stringify({ ok: false, error: String(e.message || e) }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status: 500, headers: { 'Content-Type': 'application/json' },
     });
   }
 }
 
+// GET：返回该表字段清单，便于核对列名
 export async function onRequestGet(context) {
   const env = context.env;
-  const steps = [];
   try {
     const token = await getTenantToken(env);
-    steps.push('token OK');
-    steps.push('table: ' + TABLE_ID);
-    return new Response(JSON.stringify({ ok: true, steps }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
+    const res = await listFields(token);
+    return new Response(JSON.stringify({ ok: true, fields: res.data?.items?.map(f => f.field_name) || res }, null, 2), {
+      status: 200, headers: { 'Content-Type': 'application/json' },
     });
   } catch (e) {
-    return new Response(JSON.stringify({ ok: false, steps, error: String(e.message || e) }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
+    return new Response(JSON.stringify({ ok: false, error: String(e.message || e) }), {
+      status: 500, headers: { 'Content-Type': 'application/json' },
     });
   }
-}
-
-export async function onRequestOptions() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
