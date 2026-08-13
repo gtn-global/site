@@ -78,8 +78,8 @@
 - [跨国资本与并购 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
 - [智能制造全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/intelligent-manufacturing/)：智能制造企业出海，从产品出口到建立海外市场与本地服务能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外客户与区域资源。
 - [医疗器械与生物医药全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/medical-biotech/)：医疗器械与生物医药企业出海，从合规准入到建立本地市场与长期经营能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
-- [新能源产业全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/new-energy/)：[一句话：新能源产业全球化时，企业常见的决策问题与 GTN 的判断逻辑、可连接的专家与运营中心资源。]
-- [职业教育与人才发展 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/talent-development/)：[一句话：职业教育与人才发展时，企业常见的决策问题与 GTN 的判断逻辑、可连接的专家与运营中心资源。]
+- [新能源产业全球化 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/new-energy/)：新能源出海最容易踩的坑是“先建厂还是先找渠道”判断错位。海鑫汇结合锂电、光伏、储能领域专家与东南亚、中东运营网络，帮企业理清进入路径与风险优先级。
+- [职业教育与人才发展 · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/industries/talent-development/)：企业出海最容易被低估的是人才和组织能力的准备。海鑫汇连接教育出海、外派合规与国际人才培养资源，帮企业在扩张前把组织短板摸清楚。
 - [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gtn-global.netlify.app/news-index.html)：海鑫汇与和君集团、学术机构、国际组织的关系型报道，及行业媒体报道，附原文链接。News coverage and event reports on 海鑫汇 and its partners, with original source links.
 - [出口代理还是海外建厂？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/export-or-build/)：进入海外市场，未必意味着立刻建厂。海鑫汇 GTN 从投入能力、供应链与本地化要求出发，帮助企业权衡出口、代理与海外建厂等不同进入方式的取舍。
 - [第一个海外市场应该选择哪里？ · 海鑫汇 Global Talent Network](https://gtn-global.netlify.app/questions/first-market/)：选择第一个海外市场，往往比进入多个市场更重要。海鑫汇 GTN 从产业属性、资源条件、目标市场需求与本地化要求出发，帮助企业判断最合适作为全球化起点的区域。
