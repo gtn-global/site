@@ -3,443 +3,443 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://gtn-global.netlify.app/advisors-index.html</loc>
+    <loc>https://gtn-global.pages.dev/advisors-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/cta/book-diagnostic/</loc>
+    <loc>https://gtn-global.pages.dev/cta/book-diagnostic/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/cta/book-diagnostic/success.html</loc>
+    <loc>https://gtn-global.pages.dev/cta/book-diagnostic/success.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/cta/self-test/</loc>
+    <loc>https://gtn-global.pages.dev/cta/self-test/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/ecosystem-index.html</loc>
+    <loc>https://gtn-global.pages.dev/ecosystem-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events-index.html</loc>
+    <loc>https://gtn-global.pages.dev/events-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/exchange-09-sino-africa-jmj/</loc>
+    <loc>https://gtn-global.pages.dev/events/exchange-09-sino-africa-jmj/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-01-uibe-career/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-01-uibe-career/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-02-shenzhen-crossborder/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-02-shenzhen-crossborder/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-03-hejun-home-summit/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-03-hejun-home-summit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-04-pro-outbound/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-04-pro-outbound/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-05-furniture-2024/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-05-furniture-2024/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-06-uibe-mentor/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-06-uibe-mentor/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-07-uibe-ai-lecture/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-07-uibe-ai-lecture/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-08-wtc-singapore/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-08-wtc-singapore/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/</loc>
+    <loc>https://gtn-global.pages.dev/events/media-09-yangpu-gov/en/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
+    <loc>https://gtn-global.pages.dev/events/media-09-yangpu-gov/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.pages.dev/events/media-09-yangpu-gov/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.pages.dev/events/media-09-yangpu-gov/"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/media-09-yangpu-gov/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://gtn-global.netlify.app/events/media-09-yangpu-gov/"/>
+    <loc>https://gtn-global.pages.dev/events/media-09-yangpu-gov/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.pages.dev/events/media-09-yangpu-gov/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.pages.dev/events/media-09-yangpu-gov/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gtn-global.pages.dev/events/media-09-yangpu-gov/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/tour-01-peidi/</loc>
+    <loc>https://gtn-global.pages.dev/events/tour-01-peidi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/tour-03-manycore/</loc>
+    <loc>https://gtn-global.pages.dev/events/tour-03-manycore/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/tour-04-neway/</loc>
+    <loc>https://gtn-global.pages.dev/events/tour-04-neway/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/tour-05-zai/</loc>
+    <loc>https://gtn-global.pages.dev/events/tour-05-zai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/events/tour-07-beyondsoft/</loc>
+    <loc>https://gtn-global.pages.dev/events/tour-07-beyondsoft/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/chen-jiale/</loc>
+    <loc>https://gtn-global.pages.dev/experts/chen-jiale/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/donglixin/en/</loc>
+    <loc>https://gtn-global.pages.dev/experts/donglixin/en/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/donglixin/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/experts/donglixin/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/experts/donglixin/"/>
+    <loc>https://gtn-global.pages.dev/experts/donglixin/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.pages.dev/experts/donglixin/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.pages.dev/experts/donglixin/"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/donglixin/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.netlify.app/experts/donglixin/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.netlify.app/experts/donglixin/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://gtn-global.netlify.app/experts/donglixin/"/>
+    <loc>https://gtn-global.pages.dev/experts/donglixin/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gtn-global.pages.dev/experts/donglixin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gtn-global.pages.dev/experts/donglixin/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gtn-global.pages.dev/experts/donglixin/"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/li-guo/</loc>
+    <loc>https://gtn-global.pages.dev/experts/li-guo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/tang-zhaobo/</loc>
+    <loc>https://gtn-global.pages.dev/experts/tang-zhaobo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/tian-guo/</loc>
+    <loc>https://gtn-global.pages.dev/experts/tian-guo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/wang-gaoge/</loc>
+    <loc>https://gtn-global.pages.dev/experts/wang-gaoge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhang-chenggang/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhang-chenggang/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhang-guanghui/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhang-guanghui/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhang-guosheng/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhang-guosheng/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhang-le/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhang-le/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhang-yali/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhang-yali/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/experts/zhao-weidong/</loc>
+    <loc>https://gtn-global.pages.dev/experts/zhao-weidong/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/index.html</loc>
+    <loc>https://gtn-global.pages.dev/index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/consumer-brands/</loc>
+    <loc>https://gtn-global.pages.dev/industries/consumer-brands/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/cross-border-capital/</loc>
+    <loc>https://gtn-global.pages.dev/industries/cross-border-capital/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/intelligent-manufacturing/</loc>
+    <loc>https://gtn-global.pages.dev/industries/intelligent-manufacturing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/medical-biotech/</loc>
+    <loc>https://gtn-global.pages.dev/industries/medical-biotech/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/new-energy/</loc>
+    <loc>https://gtn-global.pages.dev/industries/new-energy/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/industries/talent-development/</loc>
+    <loc>https://gtn-global.pages.dev/industries/talent-development/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/chi-wenjie/</loc>
+    <loc>https://gtn-global.pages.dev/member/chi-wenjie/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/gao-jiahui/</loc>
+    <loc>https://gtn-global.pages.dev/member/gao-jiahui/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/li-nifang/</loc>
+    <loc>https://gtn-global.pages.dev/member/li-nifang/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/liu-liming/</loc>
+    <loc>https://gtn-global.pages.dev/member/liu-liming/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-beijing/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-beijing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-chengdu/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-chengdu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-hangzhou/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-hangzhou/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-hungary/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-hungary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-japan/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-japan/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-kazakhstan/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-kazakhstan/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-malaysia/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-malaysia/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-mena/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-mena/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-mexico/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-mexico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-ningbo/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-ningbo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-pakistan/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-pakistan/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-russia/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-russia/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-singapore/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-singapore/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/ops-suzhou/</loc>
+    <loc>https://gtn-global.pages.dev/member/ops-suzhou/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/qian-tianyi/</loc>
+    <loc>https://gtn-global.pages.dev/member/qian-tianyi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/wu-qunwei/</loc>
+    <loc>https://gtn-global.pages.dev/member/wu-qunwei/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/yu-xidong/</loc>
+    <loc>https://gtn-global.pages.dev/member/yu-xidong/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/zhang-liang/</loc>
+    <loc>https://gtn-global.pages.dev/member/zhang-liang/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/member/zhang-ruoyi/</loc>
+    <loc>https://gtn-global.pages.dev/member/zhang-ruoyi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/news-index.html</loc>
+    <loc>https://gtn-global.pages.dev/news-index.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/questions/export-or-build/</loc>
+    <loc>https://gtn-global.pages.dev/questions/export-or-build/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/questions/first-market/</loc>
+    <loc>https://gtn-global.pages.dev/questions/first-market/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/questions/overseas-risks/</loc>
+    <loc>https://gtn-global.pages.dev/questions/overseas-risks/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://gtn-global.netlify.app/questions/ready-to-go-global/</loc>
+    <loc>https://gtn-global.pages.dev/questions/ready-to-go-global/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
