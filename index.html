@@ -843,7 +843,7 @@ span.ops-center-flag.flag-kz{
   <div class="cta-form form-wrap reveal">
     <h3 class="cta-form-title">预约首诊<span class="en">A paid 1-hour diagnostic · 99元/1小时.</span></h3>
 
-    <form action="cta/book-diagnostic/success.html" method="POST" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).finally(function(){ location.href='cta/book-diagnostic/success.html'; });">
+    <form action="cta/book-diagnostic/success.html" method="POST" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); }).then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); }).catch(function(e){ console.error('提交异常:',e); alert('提交失败：'+e.message); }).finally(function(){ location.href='cta/book-diagnostic/success.html'; });">
 
       <div class="form-grid">
 
