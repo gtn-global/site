@@ -55,7 +55,7 @@ async function writeRecord(token, fields) {
   const { signal, clear } = withTimeout(8000);
   try {
     const r = await fetch(
-      `${FEISHU_BASE}/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records`,
+      `${FEISHU_BASE}/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records`,
       {
         method: 'POST',
         headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
