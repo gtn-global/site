@@ -1,7 +1,7 @@
 /**
- * 海鑫汇 GTN · 表单 → 飞书多维表格 中转（Cloudflare Pages Functions）
- * 部署：放进仓库根目录 functions/ 文件夹，推送到 Cloudflare Pages 后自动生效。
- * 访问地址：https://gtn-global.pages.dev/feishu-proxy
+ * 海鑫汇 GTN · 表单 → 飞书多维表格 中转（Netlify Functions）
+ * 部署：放进仓库根目录 functions/ 文件夹，推送到 Netlify 后自动生效。
+ * 访问地址：https://gtn-global.netlify.app/feishu-proxy
  */
 
 const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
