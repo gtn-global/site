@@ -28,7 +28,9 @@ async function getTenantToken(env) {
       body: JSON.stringify({ app_id: env.FEISHU_APP_ID, app_secret: env.FEISHU_APP_SECRET }),
       signal,
     });
-    const j = await r.json();
+    const text = await r.text();
+    let j;
+    try { j = JSON.parse(text); } catch (e) { throw new Error('token not json: ' + text.slice(0, 200)); }
     if (j.code !== 0) throw new Error('token failed: ' + JSON.stringify(j));
     return j.tenant_access_token;
   } finally {
@@ -61,7 +63,8 @@ async function writeRecord(token, fields) {
         signal,
       }
     );
-    return await r.json();
+    const text = await r.text();
+    try { return JSON.parse(text); } catch (e) { throw new Error('write not json: ' + text.slice(0, 200)); }
   } finally {
     clear();
   }
