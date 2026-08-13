@@ -68,17 +68,17 @@ async function writeRecord(token, fields) {
 }
 
 // 表单字段(name/company/industry/stage/contact/brief) → 飞书表字段
-// 飞书列名需与实际表一致；这里用常见中文列名，若不符请按实际改。
+// 飞书表真实列名：name/company/industry/stage/contact_info/brief/submitted_at/source
 function mapRecord(d) {
   return {
-    '姓名': d.name || '',
-    '公司': d.company || '',
-    '行业': d.industry || '',
-    '阶段': d.stage || '',
-    '联系方式': d.contact || '',
-    '诉求': d.brief || '',
-    '提交时间': new Date().toISOString(),
-    '来源': d.source || '官网首页',
+    name: d.name || '',
+    company: d.company || '',
+    industry: d.industry || '',
+    stage: d.stage || '',
+    contact_info: d.contact || '',
+    brief: d.brief || '',
+    submitted_at: new Date().toISOString(),
+    source: d.source || '官网首页',
   };
 }
 
