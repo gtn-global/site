@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+/* 字体自托管：原 Google Fonts @import 改为本地 local-fonts.css，避免境内 gstatic 被墙导致首屏白屏/加载慢。更新字体请重跑 fontfetch.js。 */
+@import url('local-fonts.css');
 
 :root{
   --paper:#FFFFFF;
