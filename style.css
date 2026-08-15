@@ -423,21 +423,16 @@ textarea{resize:vertical;min-height:88px;}
 .member{position:relative;width:80px;height:80px;}
 .member-avatar{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px dashed rgba(255,255,255,.4);background:#444;}
 .member-flag{position:absolute;bottom:-4px;right:-4px;width:32px;height:32px;border-radius:50%;border:2px solid #1a1a1a;background-size:cover;background-position:center;box-shadow:0 1px 3px rgba(0,0,0,.4);}
-.flag-my{background:linear-gradient(#0A1A6E 50%, #fff 50%);position:relative;}
-.flag-my::after{content:"";position:absolute;left:0;top:50%;width:100%;height:50%;background:linear-gradient(#C00 50%, #fff 50%);}
+/* 国旗统一引用 flags/*.svg 标准文件（去掉近似色块/自绘 SVG） */
+.flag-my{background:transparent url("flags/my.svg") no-repeat center/cover !important;}
 /* ⚠️ 受保护：新加坡国旗一律使用 flags/sg.svg（已确认正确）。禁止修改此规则、禁止改为自绘 SVG 或近似色块。 */
 .flag-sg{background:transparent url("flags/sg.svg") no-repeat center/cover !important;}
-.flag-jp{background:#fff;position:relative;}
-.flag-jp::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:#BC002D;transform:translate(-50%,-50%);}
+.flag-jp{background:transparent url("flags/jp.svg") no-repeat center/cover !important;}
 .flag-pk{background:transparent url("flags/pk.svg") no-repeat center/cover !important;}
 /* ⚠️ 受保护：哈萨克斯坦国旗一律使用 flags/kz.svg（已确认正确）。禁止修改此规则、禁止改为自绘 SVG 或近似色块（原 #00AFCA+黄点近似写法已废弃）。 */
 .flag-kz{background:transparent url("flags/kz.svg") no-repeat center/cover !important;}
-.flag-de{background:linear-gradient(#000 33.33%,#D00 33.33% 66.66%,#FFCE00 66.66%);}
-.flag-hu{background:linear-gradient(#CD2A3E 33.33%,#fff 33.33% 66.66%,#436F4D 66.66%);}
 .flag-mx{background:transparent url("flags/mx.svg") no-repeat center/cover !important;}
 .flag-ae{background:transparent url("flags/ae.svg") no-repeat center/cover !important;}
-.flag-us{background:repeating-linear-gradient(#B22234 0 14.28%,#fff 14.28% 28.56%);position:relative;}
-.flag-us::after{content:"";position:absolute;left:0;top:0;width:42%;height:54%;background:#3C3B6E;}
 
 /* ============ NEW: inline link ============ */
 .inline-link{color:var(--seal);text-decoration:none;border-bottom:1px solid var(--seal);}
@@ -667,10 +662,9 @@ textarea{resize:vertical;min-height:88px;}
 .mini-event-list a{color:var(--ink);text-decoration:none;}
 .mini-event-list a:hover{color:var(--seal);}
 
-/* ============ 国旗色块库新增：中国 / 俄罗斯（原有 flag-my/flag-sg/flag-jp/flag-kz/flag-mx/flag-pk/flag-ae 已统一到上方国旗色块库） ============ */
-.flag-cn{background:#DE2910;position:relative;}
-.flag-cn::after{content:"";position:absolute;left:8px;top:8px;width:9px;height:9px;border-radius:50%;background:#FFDE00;}
-.flag-ru{background:linear-gradient(#fff 33.33%, #0039A6 33.33% 66.66%, #D52B1E 66.66%);}
+/* ============ 国旗：中国 / 俄罗斯（统一引用真实 svg 文件） ============ */
+.flag-cn{background:transparent url("flags/cn.svg") no-repeat center/cover !important;}
+.flag-ru{background:transparent url("flags/ru.svg") no-repeat center/cover !important;}
 
 /* ============ 海鑫汇全球运营中心（9城市/国家坐席） ============ */
 .ops-center-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:32px 20px;margin-top:32px;}

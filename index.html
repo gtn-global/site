@@ -19,6 +19,7 @@
 <meta name="twitter:title" content="海鑫汇 Global Talent Network · 出海决策台">
 <meta name="twitter:description" content="面向中国企业的出海决策诊断服务，连接全球产业专家与真实市场情报。">
 <meta name="twitter:image" content="https://gtn-global.pages.dev/assets/img/og-image.webp">
+<meta property="og:site_name" content="Global Talent Network (GTN)">
 <link rel="stylesheet" href="style.css">
 <style>
 /* 全球运营中心坐席国旗：圆形→长方形，整体放大 1.5 倍 */
@@ -43,18 +44,14 @@ span.ops-center-flag.flag-kz::after{
   content:none;display:none;
 }
 
-/* 中国：红底 + 一颗大星 + 四颗小星（一角指向大星） */
-span.ops-center-flag.flag-cn{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='rgb(222,41,16)'/%3E%3Cg fill='rgb(255,222,0)'%3E%3Cpolygon points='0,-3 0.674,-0.927 2.854,-0.927 1.09,0.354 1.763,2.427 0,1.146 -1.763,2.427 -1.09,0.354 -2.854,-0.927 -0.674,-0.927' transform='translate(5,5)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(10,2) rotate(239)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(12,4) rotate(262)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(12,7) rotate(286)'/%3E%3Cpolygon points='0,-1 0.588,-0.809 0.951,-0.309 0.951,0.309 0.588,0.809 0,1 -0.588,0.809 -0.951,0.309 -0.951,-0.309 -0.588,-0.809' transform='translate(10,9) rotate(309)'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* 马来西亚：14 道红白横条 + 左上蓝底白新月白星 */
-span.ops-center-flag.flag-my{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='rgb(206,17,38)'/%3E%3Cg fill='rgb(255,255,255)'%3E%3Crect y='1.4286' width='30' height='1.4286'/%3E%3Crect y='4.2857' width='30' height='1.4286'/%3E%3Crect y='7.1429' width='30' height='1.4286'/%3E%3Crect y='10' width='30' height='1.4286'/%3E%3Crect y='12.857' width='30' height='1.4286'/%3E%3Crect y='15.714' width='30' height='1.4286'/%3E%3Crect y='18.571' width='30' height='1.4286'/%3E%3C/g%3E%3Crect x='0' y='0' width='15' height='10' fill='rgb(1,14,140)'/%3E%3Ccircle cx='5' cy='5' r='3' fill='rgb(255,255,255)'/%3E%3Ccircle cx='6.2' cy='5' r='2.6' fill='rgb(1,14,140)'/%3E%3Cpolygon points='0,-1.2 0.706,-0.971 1.14,-0.371 0.706,0.371 1.14,0.971 0,1.2 -1.14,0.971 -0.706,0.371 -1.14,-0.371 -0.706,-0.971' transform='translate(9,5)' fill='rgb(255,255,255)'/%3E%3C/svg%3E");
-}
-
-/* 新加坡 / 哈萨克斯坦：直接引用 flags/ 目录里现成且正确的标准国旗文件 */
+/* 国旗统一引用 flags/ 目录里现成且正确的标准国旗文件（去掉近似手绘/自绘 SVG） */
 /* ⚠️ 受保护：新加坡 (.flag-sg) 与哈萨克斯坦 (.flag-kz) 国旗统一使用 flags/sg.svg / flags/kz.svg，已被 style.css !important 锁死，禁止改为自绘 SVG 或近似色块。 */
+span.ops-center-flag.flag-cn{ background:transparent url("flags/cn.svg") no-repeat center/cover !important; }
+span.ops-center-flag.flag-my{ background:transparent url("flags/my.svg") no-repeat center/cover !important; }
+span.ops-center-flag.flag-jp{ background:transparent url("flags/jp.svg") no-repeat center/cover !important; }
+span.ops-center-flag.flag-ru{ background:transparent url("flags/ru.svg") no-repeat center/cover !important; }
+span.ops-center-flag.flag-ae{ background:transparent url("flags/ae.svg") no-repeat center/cover !important; }
+span.ops-center-flag.flag-pk{ background:transparent url("flags/pk.svg") no-repeat center/cover !important; }
 span.ops-center-flag.flag-sg{
   background:transparent url("flags/sg.svg") no-repeat center/cover;
 }
@@ -101,6 +98,26 @@ span.ops-center-flag.flag-kz{
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "董立鑫",
+  "alternateName": "Bruce Dong",
+  "givenName": "Lixin",
+  "familyName": "Dong",
+  "jobTitle": "创始人 / Founder",
+  "description": "海鑫汇（Global Talent Network, GTN）创始人，专注中国企业出海决策咨询与全球国际化人才生态网络建设。",
+  "url": "https://gtn-global.pages.dev/experts/donglixin/",
+  "image": "https://gtn-global.pages.dev/logo/dong-lixin.webp",
+  "worksFor": {"@type": "Organization", "name": "海鑫汇", "alternateName": ["Global Talent Network", "GTN"]},
+  "sameAs": [
+    "https://www.linkedin.com/in/bruce-dong-2b0672141/",
+    "https://baike.baidu.com/item/%E8%91%A3%E7%AB%8B%E9%91%AB/68529588",
+    "https://gtn-global.pages.dev/experts/donglixin/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -138,13 +155,7 @@ span.ops-center-flag.flag-kz{
   ]
 }
 </script>
-  <link rel="canonical" href="https://gtn-global.pages.dev/index.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="海鑫汇 Global Talent Network">
-  <meta property="og:description" content="海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.">
-  <meta property="og:url" content="https://gtn-global.pages.dev/">
-  <meta property="og:site_name" content="Global Talent Network (GTN)">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://gtn-global.pages.dev/">
   <script type="application/ld+json">
 [
 {
@@ -160,7 +171,7 @@ span.ops-center-flag.flag-kz{
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" loading="lazy"><span class="sub">GLOBAL TALENT NETWORK</span></a>
+    <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="sub">GLOBAL TALENT NETWORK</span></a>
     <div class="desk-clock"></div>
     <nav class="nav-links">
       <a href="#home" class="active">首页<span class="en">HOME</span></a>
@@ -420,11 +431,11 @@ span.ops-center-flag.flag-kz{
   <div class="hub-bg-carousel">
     <div class="hub-slides">
       <div class="hub-slide active" style="background-image:url('carousel/carousel-01.webp');"></div>
-      <div class="hub-slide" style="background-image:url('carousel/carousel-02.webp');"></div>
-      <div class="hub-slide" style="background-image:url('carousel/carousel-03.webp');"></div>
-      <div class="hub-slide" style="background-image:url('carousel/carousel-04.webp');"></div>
-      <div class="hub-slide" style="background-image:url('carousel/carousel-05.webp');"></div>
-      <div class="hub-slide" style="background-image:url('carousel/carousel-06.webp');"></div>
+      <div class="hub-slide" data-bg="carousel/carousel-02.webp"></div>
+      <div class="hub-slide" data-bg="carousel/carousel-03.webp"></div>
+      <div class="hub-slide" data-bg="carousel/carousel-04.webp"></div>
+      <div class="hub-slide" data-bg="carousel/carousel-05.webp"></div>
+      <div class="hub-slide" data-bg="carousel/carousel-06.webp"></div>
     </div>
     <div class="hub-overlay"></div>
     <div class="hub-dots">
@@ -623,12 +634,12 @@ span.ops-center-flag.flag-kz{
         <ul class="mini-event-list">
           <li><a href="https://mp.weixin.qq.com/s/x2jFPJ2zl-6zbAb12MqdJw" target="_blank" rel="noopener">哈萨克斯坦国际交流｜中亚市场考察与中国企业出海合作</a></li>
           <li><a href="https://mp.weixin.qq.com/s/7cj-dDC7Ohv5nI6BjEPpMQ" target="_blank" rel="noopener">法国与芬兰市场交流｜欧洲产业合作与企业出海新机遇</a></li>
-          <li><a href="https://mp.weixin.qq.com/s/06Ir69gN3IWKQhPIl8b-vQ" target="_blank" rel="noopener">走进墨西哥大使馆｜中国企业进入拉美市场交流活动</a></li>
-          <li><a href="https://mp.weixin.qq.com/s/1QhQCUGYYrRoU95wFCrBaw" target="_blank" rel="noopener">走进伊拉克大使馆｜中伊产业合作与市场发展交流</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/06Ir69gN3IWKQhPIl8b-vQ" target="_blank" rel="noopener">走进墨西哥驻华大使馆｜中国企业进入拉美（墨西哥）市场合作交流</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/1QhQCUGYYrRoU95wFCrBaw" target="_blank" rel="noopener">走进伊拉克驻华大使馆｜中伊（伊拉克）产业合作与战后重建市场交流</a></li>
           <li><a href="https://mp.weixin.qq.com/s/ConIcqErRfCSxqL0uwOVhg" target="_blank" rel="noopener">菲律宾市场交流｜菲律宾驻华参赞解读投资与商业机会</a></li>
           <li><a href="https://mp.weixin.qq.com/s/_Zb9t6QsRZaLoYLQXeDpXA" target="_blank" rel="noopener">塞尔维亚市场交流｜中国企业进入欧洲的新机遇</a></li>
         </ul>
-        <a href="events-index.html#exchange" class="card-cta">查看全部10场国际交流 → events-index.html</a>
+        <a href="events-index.html#exchange" class="card-cta">查看全部9场国际交流 → events-index.html</a>
       </div>
     </div>
 
@@ -736,7 +747,7 @@ span.ops-center-flag.flag-kz{
     </a>
     <a class="ops-center-card" data-fill="OPS-11" href="member/ops-ningbo/index.html" style="text-decoration:none;color:inherit;display:block;">
       <div class="ops-center-photo">
-        <img class="avatar-lg" src="member/ops-ningbo/ningbo.webp" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
+        <img class="avatar-lg" src="member/ops-ningbo/ningbo.webp" alt="Andy-张东裕" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
         <span class="ops-center-flag flag-cn" aria-label="中国"></span>
       </div>
       <h4>Andy-张东裕</h4>
@@ -752,7 +763,7 @@ span.ops-center-flag.flag-kz{
     </a>
     <a class="ops-center-card" data-fill="OPS-06" href="member/ops-japan/index.html" style="text-decoration:none;color:inherit;display:block;">
       <div class="ops-center-photo">
-        <img class="avatar-lg" src="member/ops-japan/tokyo.webp" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
+        <img class="avatar-lg" src="member/ops-japan/tokyo.webp" alt="名城悠真" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
         <span class="ops-center-flag flag-jp" aria-label="日本"></span>
       </div>
       <h4>名城悠真</h4>
@@ -760,7 +771,7 @@ span.ops-center-flag.flag-kz{
     </a>
     <a class="ops-center-card" data-fill="OPS-07" href="member/ops-malaysia/index.html" style="text-decoration:none;color:inherit;display:block;">
       <div class="ops-center-photo">
-        <img class="avatar-lg" src="member/ops-malaysia/kualalumpur.webp" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
+        <img class="avatar-lg" src="member/ops-malaysia/kualalumpur.webp" alt="Henry Lin" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
         <span class="ops-center-flag flag-my" aria-label="马来西亚"></span>
       </div>
       <h4>Henry Lin</h4>
@@ -785,7 +796,7 @@ span.ops-center-flag.flag-kz{
 
     <a class="ops-center-card" data-fill="OPS-10" href="member/ops-russia/index.html" style="text-decoration:none;color:inherit;display:block;">
       <div class="ops-center-photo">
-        <img class="avatar-lg" src="member/ops-russia/moscow.webp" alt="" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
+        <img class="avatar-lg" src="member/ops-russia/moscow.webp" alt="李春瑾" onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';" loading="lazy">
         <span class="ops-center-flag flag-ru" aria-label="俄罗斯"></span>
       </div>
       <h4>李春瑾</h4>
@@ -849,7 +860,7 @@ span.ops-center-flag.flag-kz{
   <div class="cta-form form-wrap reveal">
     <h3 class="cta-form-title">预约首诊<span class="en">A paid 1-hour diagnostic · 99元/1小时.</span></h3>
 
-    <form action="cta/book-diagnostic/success.html" method="GET" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); }).then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); }).catch(function(e){ console.error('提交异常:',e); alert('提交失败：'+e.message); }).finally(function(){ location.href='cta/book-diagnostic/success.html'; }); return false;">
+    <form action="cta/book-diagnostic/success.html" method="GET" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); }).then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); location.href='cta/book-diagnostic/success.html'; }).catch(function(e){ console.error('提交异常:',e); alert('提交失败：'+e.message); }); return false;">
 
       <div class="form-grid">
 
@@ -901,6 +912,6 @@ span.ops-center-flag.flag-kz{
 
 <footer class="footer" data-depth="0"></footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

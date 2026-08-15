@@ -128,14 +128,23 @@ if(document.fonts && document.fonts.ready){
   if (!slides.length) return;
   var current = 0, timer = null;
 
+  function loadSlide(slide) {
+    if (slide && slide.dataset.bg && !slide.style.backgroundImage) {
+      slide.style.backgroundImage = 'url(\'' + slide.dataset.bg + '\')';
+    }
+  }
+
   function goTo(index) {
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     slides.forEach(function(s) { s.classList.remove('active'); });
     dots.forEach(function(d) { d.classList.remove('active'); });
+    loadSlide(slides[index]);
     slides[index].classList.add('active');
     dots[index].classList.add('active');
     current = index;
+    // 预载下一张，避免切换时闪白
+    loadSlide(slides[(index + 1) % slides.length]);
   }
 
   function next() { goTo(current + 1); }
