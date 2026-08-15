@@ -45,6 +45,18 @@
   </url>
 
   <url>
+    <loc>https://gtn-global.pages.dev/events/forum-05-hejun-town-damai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.pages.dev/events/interview-05-overseas-damai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://gtn-global.pages.dev/events/media-01-uibe-career/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -307,19 +319,7 @@
   </url>
 
   <url>
-    <loc>https://gtn-global.pages.dev/member/ops-chengdu/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://gtn-global.pages.dev/member/ops-hangzhou/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gtn-global.pages.dev/member/ops-hungary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -349,12 +349,6 @@
   </url>
 
   <url>
-    <loc>https://gtn-global.pages.dev/member/ops-mexico/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://gtn-global.pages.dev/member/ops-ningbo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -368,6 +362,12 @@
 
   <url>
     <loc>https://gtn-global.pages.dev/member/ops-russia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gtn-global.pages.dev/member/ops-shenzhen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

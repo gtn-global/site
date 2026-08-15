@@ -29,17 +29,15 @@
 - [李妮芳 · 出海班 — 海鑫汇](https://gtn-global.pages.dev/member/li-nifang/)：李妮芳（美国·墨西哥），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [刘栗铭 · 出海班 — 海鑫汇](https://gtn-global.pages.dev/member/liu-liming/)：刘栗铭（英国），海鑫汇·国际留学生项目·和君商学院出海班成员。
 - [刘栗铭 · 北京运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-beijing/)：刘栗铭，海鑫汇北京运营中心负责人。深耕中英跨境与欧洲市场，聚焦合规化运营与长期信任建立，支持企业稳健落地。
-- [成都 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.pages.dev/member/ops-chengdu/)：海鑫汇成都运营中心（中国）——负责西南区域运营协调与人才对接。
 - [杭州 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.pages.dev/member/ops-hangzhou/)：海鑫汇杭州运营中心（中国）——负责人Maggie 柯梦琪，负责杭州及周边区域运营协调与人才对接。
-- [匈牙利运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-hungary/)：海鑫汇匈牙利运营中心，覆盖中东欧地区，聚焦新能源汽车、电池制造和工业自动化等中资企业出海欧洲的重要枢纽。
 - [名城悠真 · 东京运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-japan/)：名城悠真，海鑫汇东京运营中心负责人。覆盖日本市场，聚焦本地化运营、企业对接与项目落地支持。
 - [哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.pages.dev/member/ops-kazakhstan/)：海鑫汇哈萨克斯坦运营中心（哈萨克斯坦）——中亚运营网络关键节点。
 - [Henry Lin · 吉隆坡运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-malaysia/)：Henry Lin，海鑫汇吉隆坡运营中心负责人。覆盖马来西亚及东南亚市场，聚焦本地化运营、企业对接与项目落地支持。
 - [孙圆儿 · 中东运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-mena/)：孙圆儿，海鑫汇中东运营中心负责人。覆盖海湾地区，聚焦能源转型、数字基建和跨境投资服务。
-- [许蕾 Mariana · 墨西哥运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-mexico/)：许蕾 Mariana，海鑫汇墨西哥运营中心负责人。覆盖拉美，聚焦汽车产业链、自动化装备和数字化供应链。
 - [Andy 张东裕 · 宁波运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-ningbo/)：Andy 张东裕，海鑫汇宁波运营中心负责人，环世物流背景，深耕跨境物流与供应链管理。覆盖长三角南翼，专注制造业出海、跨境贸易与中小企业国际化。
 - [吕晓明 · 巴基斯坦运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-pakistan/)：吕晓明，海鑫汇巴基斯坦运营中心负责人。覆盖南亚，聚焦基建、能源和跨境贸易。
 - [李春瑾 · 莫斯科运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-russia/)：李春瑾，海鑫汇莫斯科运营中心负责人。覆盖俄罗斯及独联体市场，聚焦本地化运营、企业对接与项目落地支持。
+- [陈俊文（大麦哥）｜海鑫汇·深圳运营中心负责人 — 海鑫汇](https://gtn-global.pages.dev/member/ops-shenzhen/)：陈俊文（大麦哥），海鑫汇（Global Talent Network）深圳运营中心负责人。深耕外贸长期主义，实战落地赋能企业出海，聚焦华南外贸产业生态共建。
 - [新加坡 运营中心 · Operations Hub — 海鑫汇](https://gtn-global.pages.dev/member/ops-singapore/)：海鑫汇新加坡运营中心（新加坡）——负责人 Claudia 蔡慧敏，负责东南亚运营协调与跨境项目落地。
 - [于溪东 · 苏州运营中心 — 海鑫汇](https://gtn-global.pages.dev/member/ops-suzhou/)：于溪东，海鑫汇（Global Talent Network）苏州运营中心负责人，南开企管博士、和君商学院出海班学员，牵头共建苏州运营中心。
 - [钱天漪 · 出海班 — 海鑫汇](https://gtn-global.pages.dev/member/qian-tianyi/)：钱天漪（美国），海鑫汇·国际留学生项目·和君商学院出海班成员。
@@ -56,8 +54,10 @@
 - [预约成功 · GTN | 海鑫汇](https://gtn-global.pages.dev/cta/book-diagnostic/success.html)：你的首诊预约已提交，海鑫汇将尽快与你联系确认时间与支付方式。
 - [出海健康度自测 · GTN | 海鑫汇](https://gtn-global.pages.dev/cta/self-test/)：海鑫汇出海健康度自测——五个核心维度、15 道题目，快速判断企业全球化准备度。Outbound readiness self-assessment.
 - [全球生态成员 · Global Ecosystem — 海鑫汇](https://gtn-global.pages.dev/ecosystem-index.html)：海鑫汇全球生态名录——覆盖日本、马来西亚、新加坡、哈萨克斯坦等地的国际留学生、海外渠道、商协会与运营团队。The Global Talent Ecosystem behind 海鑫汇, spanning talent, channels, and operators across multiple countries.
-- [50+场活动全记录 · All 50+ Events — 海鑫汇](https://gtn-global.pages.dev/events-index.html)：海鑫汇50+场出海活动全记录——企业游学、出海论坛、出海智阅会、出海沙龙、国际交流与海外考察，附原始报道链接。Complete record of 50+ outbound events hosted by 海鑫汇, spanning study tours, forums, salons, and field visits.
+- [50+场活动全记录 · All 50+ Events — 海鑫汇](https://gtn-global.pages.dev/events-index.html)：海鑫汇50+场出海活动全记录——企业游学、出海论坛、出海访谈、出海智阅会、出海沙龙、国际交流与海外考察，附原始报道链接。Complete record of 50+ outbound events hosted by 海鑫汇, spanning study tours, forums, interviews, salons, and field visits.
 - [董立鑫与 JMJ CEO Patrice 达成战略合作，共促中非商业与投资交流 | 海鑫汇 Global Talent Network](https://gtn-global.pages.dev/events/exchange-09-sino-africa-jmj/)：2024年9月7日中非合作论坛峰会期间，海鑫汇创始人兼CEO、和君咨询合伙人董立鑫与 JMJ CEO Patrice Yantho 在北京就推动中国与非洲商业合作与投资交流达成战略合作。海鑫汇运营中心主任 Helen 迟文劼亦参与相关国际合作与资源对接。
+- [从“陪跑”到“领跑”——我在和君小镇出海交流会的思考 | 海鑫汇 出海论坛](https://gtn-global.pages.dev/events/forum-05-hejun-town-damai/)：第二届海鑫汇出海年会暨和君小镇中国企业出海交流会现场记录。天成集团企业出海国际营销陪跑导师陈俊文（大麦哥）分享对圆桌对话《重构海外用户连接》的思考，以及从“陪跑”到“领跑”的出海观察。
+- [中国企业出海如何避坑？28个海外市场一线考察的实战结论 | 海鑫汇 出海沙龙](https://gtn-global.pages.dev/events/interview-05-overseas-damai/)：海鑫汇出海沙龙实录：出海企业家访谈第三期，大麦哥基于28个海外市场一线考察，总结中国企业出海的避坑要点、本地化打法与风险清单。
 - [董立鑫从贸大学子到全球战略顾问的职业跃迁与人才赋能实践 | 海鑫汇 媒体报道](https://gtn-global.pages.dev/events/media-01-uibe-career/)：对外经济贸易大学政府管理学院校友、海鑫汇创始人兼CEO、和君咨询合伙人董立鑫以“从贸大学子到全球战略顾问——我的职业跃迁之路”为主题分享职业发展经历，并在圆桌论坛中围绕就业选择与职业发展为在校学生提供指导。同时作为圆桌论坛主持人，邀请柬埔寨东盟银行
 - [董立鑫聚焦中国企业全球化与跨境增长，在深组织跨境电商产业交流并发布海鑫汇出海洞察 | 海鑫汇 媒体报道](https://gtn-global.pages.dev/events/media-02-shenzhen-crossborder/)：海鑫汇创始人兼CEO，和君咨询合伙人董立鑫，在深圳组织跨境电商研讨会并作主题分享，与福建米多多网络科技、埃塞俄比亚 Abriham Ebabu 博士及实然咨询、智造加、海宠科技、环世物流、杭州科技六小龙·群核科技·酷家乐棚拍等企业和机构代表交流，并
 - [董立鑫聚焦家居建材全球化，提出企业出海三大核心命题 | 海鑫汇 媒体报道](https://gtn-global.pages.dev/events/media-03-hejun-home-summit/)：海鑫汇创始人兼CEO，和君咨询合伙人董立鑫发起并承办首届和君小镇出海峰会，与和君商学董事长李鹏飞、对外经济贸易大学李海莲教授及韩国 Coupang、小数汇智、大健云仓等机构，来自非洲喀麦隆、南美墨西哥、东南亚泰国的代表共同探讨家居建材企业高质量出海
