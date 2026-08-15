@@ -173,7 +173,7 @@ if(document.fonts && document.fonts.ready){
 
   var MAX = 99;          // 最多探测到 logo-99
   var BASE = 'logo/logo-';
-  var SUFFIX = '.png';
+  var SUFFIX = '.webp';
   var found = [];
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
