@@ -43,6 +43,7 @@ function toUrl(relPath) {
   // 统一用 / 分隔
   const p = relPath.split(path.sep).join('/');
   if (p === '' || p === '/') return '/';
+  if (p === 'index.html') return '/'; // 根目录首页
   if (p.endsWith('/index.html')) {
     return '/' + p.slice(0, -'index.html'.length); // 去掉 index.html，保留结尾 /
   }
@@ -85,6 +86,8 @@ function collectPages(dir, relBase, pages) {
       // 排除内部说明/演示页（如 *-demo.html、*-demo-en.html、*说明*.html），不进入线上 sitemap
       if (/-demo.*\.html$/.test(ent.name)) continue;
       if (/说明.*\.html$/.test(ent.name)) continue;
+      // 排除 noindex 的提交成功页等（不应被收录）
+      if (/^success\.html$/i.test(ent.name)) continue;
       // 记录页面（rel 为相对 ROOT 的路径，使用 / 分隔）
       pages.push(rel.split(path.sep).join('/'));
     }
@@ -134,13 +137,36 @@ function readPageMeta(relHtmlPath) {
  *  - experts/xxx/index.html        -> 专家页 (priority 0.7)
  *  - member/运营中心xxx/index.html -> 运营中心页 (priority 0.7)
  *  - 根 index.html                  -> 首页 (priority 1.0)
- *  - 根 xxx-index.html / 其他 html  -> 索引/核心页 (priority 0.6)
+ *  - 根 xxx-index.html              -> 索引/列表核心页 (priority 0.8)
+ *  - 根 其他 html                   -> 核心页 (priority 0.7)
  */
 function classify(relHtmlPath, urlPath) {
   if (urlPath === '/') return { group: 'home', priority: '1.0' };
   if (/^experts\//.test(relHtmlPath)) return { group: 'expert', priority: '0.7' };
   if (/^member\//.test(relHtmlPath)) return { group: 'hub', priority: '0.7' };
-  return { group: 'index', priority: '0.6' };
+  if (/-index\.html$/.test(relHtmlPath)) return { group: 'index', priority: '0.8' };
+  return { group: 'index', priority: '0.7' };
+}
+
+/**
+ * 取页面文件的真实最后修改时间（git 最后提交日期），用于 sitemap 的 <lastmod>。
+ * 无 git 信息时回退到文件 mtime。返回 YYYY-MM-DD。
+ */
+function lastmodOf(relHtmlPath) {
+  const abs = path.join(ROOT, ...relHtmlPath.split('/'));
+  try {
+    const out = require('child_process').execSync(
+      `git log -1 --format=%cd --date=short -- "${abs.replace(/\\/g, '/')}"`,
+      { cwd: ROOT, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'] }
+    ).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(out)) return out;
+  } catch (e) { /* 忽略，走回退 */ }
+  try {
+    const t = fs.statSync(abs).mtime;
+    return t.toISOString().slice(0, 10);
+  } catch (e) {
+    return new Date().toISOString().slice(0, 10);
+  }
 }
 
 const GROUP_LABEL = {
@@ -255,6 +281,7 @@ function build() {
     const cls = classify(rel, urlPath);
     const meta = readPageMeta(rel);
     const label = meta.title || loc;
+    const lastmod = lastmodOf(rel);
 
     // 累积 llms.txt 条目
     const bullet = `- [${label}](${loc})${meta.desc ? '：' + meta.desc : ''}`;
@@ -280,10 +307,12 @@ function build() {
         `  <url>\n    <loc>${enLoc}</loc>\n` +
         `    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}"/>\n` +
         `    <xhtml:link rel="alternate" hreflang="zh-CN" href="${zhLoc}"/>\n` +
+        `    <lastmod>${lastmod}</lastmod>\n` +
         `    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`
       );
     }
 
+    lines.push(`    <lastmod>${lastmod}</lastmod>`);
     lines.push(`    <changefreq>${cls.group === 'home' ? 'weekly' : 'monthly'}</changefreq>`);
     lines.push(`    <priority>${cls.priority}</priority>`);
     lines.push(`  </url>`);

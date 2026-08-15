@@ -16,6 +16,7 @@
   --shadow:0 1px 3px rgba(30,37,48,.06), 0 8px 24px rgba(30,37,48,.04);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+img{max-width:100%;height:auto;} /* 兜底：width/height 属性仅用于预留长宽比防 CLS，实际缩放由 CSS 控制 */
 html{scroll-behavior:smooth;}
 body{background:var(--paper);color:var(--ink);font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.8;font-size:15.5px;-webkit-font-smoothing:antialiased;}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}*{animation:none !important;transition:none !important;}}

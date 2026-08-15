@@ -1,0 +1,19 @@
+
+=== GTN 站点交互预检 preflight ===
+
+1) 表单提交逻辑（共 3 个）
+  ✓ cta/book-diagnostic/index.html: 无 action 的纯前端表单，跳过提交校验
+  ✓ cta/self-test/index.html: 无 action 的纯前端表单，跳过提交校验
+  ✓ index.html: action="cta/book-diagnostic/success.html" 目标存在
+  ✓ index.html: method=GET
+  ✓ index.html: onsubmit 含 return false
+
+2) 关键 select 选项数
+  ✓ cta/book-diagnostic/index.html: select[stage] 含 4 个业务选项（达标）
+
+3) success 页按钮英文对齐
+  ✓ success.html: 无污染规则 .success-wrap .en{display:block}
+  ✓ success.html: 按钮 .en 有专用对齐规则 .actions a > .en
+
+=== 结果 ===
+✓ 全部通过，可以 push。
