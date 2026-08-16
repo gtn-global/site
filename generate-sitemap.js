@@ -287,6 +287,19 @@ function build() {
     const bullet = `- [${label}](${loc})${meta.desc ? '：' + meta.desc : ''}`;
     llmsGroups[cls.group].push(bullet);
 
+    // BUG-08 修复：若本页本身是某个中文页的 en/ 子页（X/en/index.html 且 X/index.html 存在），
+    // 它的 sitemap <url> 条目会在处理中文对应页 X/index.html 时，通过下面的 hasEnSibling 分支
+    // 生成一次（带正确的 zh-CN/en/x-default 互相 hreflang）。collectPages 递归时会把这个 en/index.html
+    // 当作普通页面再收录一次，如果不跳过，就会在 sitemap 里重复出现两条同一 URL：
+    // 一条没有 hreflang 标注、一条有。这里直接跳过，只保留 hasEnSibling 生成的那条。
+    // （llms.txt 的 bullet 在上面已经加过了，不受影响，英文页仍然会出现在 llms.txt 里。）
+    const enSelfMatch = rel.match(/^(.*\/)?en\/index\.html$/);
+    if (enSelfMatch) {
+      const zhSiblingRel = (enSelfMatch[1] || '') + 'index.html';
+      const zhSiblingAbs = path.join(ROOT, ...zhSiblingRel.split('/'));
+      if (fs.existsSync(zhSiblingAbs)) continue;
+    }
+
     const enRel = hasEnSibling(rel);
     const lines = [];
     lines.push(`  <url>`);

@@ -157,6 +157,19 @@ a:hover { text-decoration: underline; }
 .ev-meta__label { color: var(--ev-text-muted); }
 
 /* ---- 图片 ---- */
+/* 并排多图容器（如 exchange-01 / exchange-10 的图1 + 图2） */
+.ev-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.ev-photos .ev-hero-img {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0;        /* 让大尺寸原图可以缩到 50% */
+  width: auto;
+  margin-bottom: 0;
+}
 .ev-hero-img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -206,30 +219,6 @@ a:hover { text-decoration: underline; }
   border-top: 1px solid var(--ev-border);
 }
 .ev-source a { color: var(--ev-text-muted); text-decoration: underline; }
-
-/* ---- 受访嘉宾信息块 ---- */
-.ev-guest {
-  margin: 36px 0 8px;
-  padding: 20px 24px;
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--ev-border);
-  border-left: 2px solid var(--color-gold);
-  border-radius: 6px;
-}
-.ev-guest h2 {
-  font-family: var(--font-display);
-  font-size: 18px;
-  color: var(--ev-text-primary);
-  margin: 0 0 10px;
-  letter-spacing: 1px;
-}
-.ev-guest p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--ev-text-primary);
-  margin: 0;
-}
-.ev-guest strong { color: var(--color-gold-soft); font-weight: 600; }
 
 /* ---- 相关内容区块 ---- */
 .ev-related {
@@ -363,7 +352,6 @@ a:hover { text-decoration: underline; }
   .ev-main { padding: 32px 16px 56px; }
   .ev-title { font-size: 22px; }
   .ev-cta { flex-direction: column; align-items: flex-start; }
-  .ev-photos { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ---- 无障碍：减少动效 ---- */
@@ -387,32 +375,6 @@ a:focus-visible, button:focus-visible {
   object-fit: cover;
   border-radius: var(--ev-radius);
   margin: 28px 0;
-}
-
-/* ---- 照片并排（2 张以内并排，移动端堆叠） ---- */
-.ev-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 28px 0;
-}
-.ev-photos .ev-hero-img {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 360px;
-  object-fit: cover;
-}
-
-/* ---- 单张照片（不裁切，按原始比例完整显示） ---- */
-.ev-photo-solo {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  margin: 28px auto;
-  border-radius: var(--ev-radius);
-  box-shadow: 0 8px 28px rgba(0,0,0,.35);
 }
 .ev-body figure {
   margin: 28px 0;

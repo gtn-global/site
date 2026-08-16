@@ -262,12 +262,45 @@ if(document.fonts && document.fonts.ready){
   }
 })();
 
+// ---- 首页「活动分类计数」自动同步：数字只以 events-index.html 为唯一真源 ----
+// events-index.html 每个分类块 <div class="category-block" id="tour">...<span class="count">N 场 / N EVENTS</span>
+// 改完 events-index.html（增删一行）后，首页数字会自动跟著变，不必再手动改 index.html。
+function syncEventBreakdown(){
+  const wrap = document.querySelector('.event-breakdown');
+  if(!wrap) return; // 仅首页有此区块
+  const parse = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const out = {};
+    doc.querySelectorAll('.category-block').forEach(block => {
+      const type = block.id;
+      if(!type) return;
+      const c = block.querySelector('.count');
+      if(c){
+        const m = (c.textContent || '').match(/(\d+)/);
+        if(m) out[type] = m[1];
+      }
+    });
+    return out;
+  };
+  fetch('events-index.html', { cache: 'no-store' })
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(html => {
+      const counts = parse(html);
+      wrap.querySelectorAll('a[data-type]').forEach(a => {
+        const n = counts[a.getAttribute('data-type')];
+        if(n) a.querySelector('.n').textContent = n;
+      });
+    })
+    .catch(() => { /* 失败则用 index.html 中的兜底数字，不报错 */ });
+}
+syncEventBreakdown();
+
 // ---- 统一 footer：内容只在这里定义一次，所有页面（含三级页）共用 ----
 const FOOTER_LINKS = [
-  { label: '深度诊断', href: 'index.html#offer' },
+  { label: '深度诊断', href: 'cta/book-diagnostic/index.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
   { label: '全球生态', href: 'ecosystem-index.html' },
-  { label: '活动记录', href: 'events-index.html' },
+  { label: '出海调研', href: 'events-index.html' },
   { label: '新闻报道', href: 'news-index.html' }
 ];
 
