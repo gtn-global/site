@@ -1,1 +1,0 @@
-cmd /c whisper C:\Users\bruce\Desktop\bruce\GTN-site\gtn-global-site\gtn-global-site-3.0\events\interview-07-pakistan\segs\seg_3.wav --model small --language zh --beam_size 1 --output_format txt --output_dir C:\Users\bruce\Desktop\bruce\GTN-site\gtn-global-site\gtn-global-site-3.0\events\interview-07-pakistan\segs --verbose False
