@@ -43,6 +43,8 @@ a{color:inherit;}
 .wordmark{font-family:'Noto Serif SC',serif;font-weight:700;font-size:19px;letter-spacing:.5px;line-height:1.2;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px;}
 .logo-wordmark{height:26px;width:auto;display:block;}
 .wordmark .sub{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2.5px;color:var(--ink-faint);font-weight:400;margin-top:3px;}
+.wordmark .wm-text{display:flex;flex-direction:column;justify-content:center;}
+.wordmark .slogan{font-family:'Noto Serif SC',serif;font-size:10px;font-weight:400;letter-spacing:1px;color:var(--ink-faint);margin-top:2px;line-height:1.2;white-space:nowrap;}
 .desk-clock{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);}
 .desk-clock span{display:flex;align-items:baseline;gap:6px;}
 .desk-clock span b{color:var(--ink);font-weight:500;}
