@@ -386,6 +386,16 @@ a:focus-visible, button:focus-visible {
   height: auto;
   border-radius: var(--ev-radius);
 }
+.ev-figure {
+  margin: 28px 0;
+}
+.ev-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--ev-radius);
+}
 .ev-body figcaption {
   margin-top: 10px;
   font-size: 13px;
