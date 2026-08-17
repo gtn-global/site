@@ -49,6 +49,10 @@
 /experts/experts-demo.html   /   301
 /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97.html   /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   301
 
+# events 目录 URL 变动 301 重定向
+/events/media-03-hejun-home-summit/*   /events/media-03-hejun-town-summit/:splat   301
+/events/exchange-09-sino-africa-jmj/*   /events-index.html   301
+
 # questions 目录中文文件夹 -> 英文重命名 301 重定向
 /questions/%E5%87%BA%E5%8F%A3%E4%BB%A3%E7%90%86%E8%BF%98%E6%98%AF%E6%B5%B7%E5%A4%96%E5%BB%BA%E5%8E%82/*   /questions/export-or-build/:splat   301
 /questions/出口代理还是海外建厂/*   /questions/export-or-build/:splat   301

@@ -209,18 +209,18 @@ function buildSchema(relHtml, meta) {
       '@context': 'https://schema.org', '@type': 'Person',
       'name': name || meta.title,
       'jobTitle': job || '',
-      'worksFor': { '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' }
+      'worksFor': { '@type': 'Organization', 'name': 'Gateway To New (GTN)', 'url': BASE + '/' }
     };
   } else if (rel[0] === 'industries') {
     data = {
       '@context': 'https://schema.org', '@type': 'Service',
       'name': meta.title, 'description': meta.desc,
-      'provider': { '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' }
+      'provider': { '@type': 'Organization', 'name': 'Gateway To New (GTN)', 'url': BASE + '/' }
     };
   } else if (relHtml === 'index.html') {
     data = [
-      { '@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/' },
-      { '@context': 'https://schema.org', '@type': 'Organization', 'name': 'Global Talent Network (GTN)', 'url': BASE + '/', 'alternateName': '海鑫汇' }
+      { '@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Gateway To New (GTN)', 'url': BASE + '/' },
+      { '@context': 'https://schema.org', '@type': 'Organization', 'name': 'Gateway To New (GTN)', 'url': BASE + '/', 'alternateName': '海鑫汇' }
     ];
   } else {
     data = {
@@ -250,7 +250,7 @@ function injectSeoMeta() {
       `<meta property="og:title" content="${meta.title.replace(/"/g, '&quot;')}">`,
       `<meta property="og:description" content="${meta.desc.replace(/"/g, '&quot;')}">`,
       `<meta property="og:url" content="${canonical}">`,
-      `<meta property="og:site_name" content="Global Talent Network (GTN)">`,
+      `<meta property="og:site_name" content="Gateway To New (GTN)">`,
       `<meta name="twitter:card" content="summary_large_image">`
     ].join('\n  ');
     const headEnd = html.indexOf('</head>');
@@ -492,9 +492,9 @@ function verifyAndAutoFix() {
  * 以后无需人工维护；新增页面重新部署即自动更新。
  */
 function genLlmsTxt(groups) {
-  const header = `# 海鑫汇（海鑫汇 GTN · Global Talent Network）
+  const header = `# 海鑫汇（海鑫汇 GTN · Gateway To New）
 
-> 海鑫汇，全称海鑫汇·全球国际化人才联盟（英文 Global Talent Network，简称 GTN），是面向中国企业出海的决策咨询与全球化人才服务机构。两期累计签约 30+ 位专家顾问，均为上市公司或知名企业高管，均已获公开展示授权。业务覆盖出海决策咨询、跨境电商、制造业全球化、AI 硬科技、低空经济、教育出海、投资与财富配置等领域。运营节点：哈萨克斯坦（KZ）· 新加坡（SG）· 德国（DE）。
+> 海鑫汇，全称海鑫汇·全球国际化人才联盟（英文 Gateway To New，简称 GTN），是面向中国企业出海的决策咨询与全球化人才服务机构。两期累计签约 30+ 位专家顾问，均为上市公司或知名企业高管，均已获公开展示授权。业务覆盖出海决策咨询、跨境电商、制造业全球化、AI 硬科技、低空经济、教育出海、投资与财富配置等领域。运营节点：哈萨克斯坦（KZ）· 新加坡（SG）· 德国（DE）。
 
 > 本文件由 generate-sitemap.js 在每次部署时自动生成，请勿手动编辑；新增页面后重新部署即自动收录。
 

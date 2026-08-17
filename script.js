@@ -313,7 +313,7 @@ function renderFooter(){
     '<a href="' + prefix + l.href + '">' + l.label + '</a>'
   ).join(' · ');
   root.innerHTML =
-    '<div class="footer-brand">&copy; 2026 海鑫汇 Global Talent Network (GTN). 版权所有 All rights reserved.</div>' +
+    '<div class="footer-brand">&copy; 2026 海鑫汇 Gateway To New (GTN). 版权所有 All rights reserved.</div>' +
     '<nav class="footer-links">' + linksHtml + '</nav>' +
     '<div class="footer-meta">ALA · SIN · BER</div>';
 }

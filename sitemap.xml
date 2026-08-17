@@ -52,13 +52,6 @@
   </url>
 
   <url>
-    <loc>https://gtn-global.pages.dev/events/exchange-09-sino-africa-jmj/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://gtn-global.pages.dev/events/forum-05-hejun-town-damai/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -108,6 +101,13 @@
   </url>
 
   <url>
+    <loc>https://gtn-global.pages.dev/events/interview-07-pakistan/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gtn-global.pages.dev/events/interview-08-thailand-narrowgate/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -129,8 +129,8 @@
   </url>
 
   <url>
-    <loc>https://gtn-global.pages.dev/events/media-03-hejun-home-summit/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://gtn-global.pages.dev/events/media-03-hejun-town-summit/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
