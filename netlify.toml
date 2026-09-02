@@ -9,3 +9,11 @@
   # 校验发现需人工处理的问题时脚本非零退出 → Netlify 自动拦截本次部署，不会发错版本。
   # 此机制不依赖任何人工/智能体操作；详见《海鑫汇GTN-网站运维 Handoff.md》五-B 节。
   command = "node generate-sitemap.js"
+
+# 全站跳转到新主域名 gatewaytonew.com（旧 netlify 域名访客统一跳转）
+# 放在 netlify.toml 而非 _redirects：Cloudflare Pages 只读 _redirects，若放 _redirects 会自循环。
+[[redirects]]
+  from = "/*"
+  to = "https://gatewaytonew.com/:splat"
+  status = 301
+  force = true
