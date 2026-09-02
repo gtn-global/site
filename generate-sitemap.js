@@ -24,7 +24,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const BASE = 'https://gtn-global.pages.dev';
+const BASE = 'https://gatewaytonew.com';
 
 // 这些目录只是静态资源，不是可访问页面，跳过
 const SKIP_DIRS = new Set([
@@ -375,7 +375,7 @@ ${urlEls.join('\n\n')}
  * 本函数返回发现的问题数；>0 时脚本以非零码退出，Netlify/GitHub 会拦部署。
  */
 const OLD_DOMAIN = 'gtn.me';
-const CANON_DOMAIN = 'gtn-global.pages.dev';
+const CANON_DOMAIN = 'gatewaytonew.com';
 
 function verifyAndAutoFix() {
   const issues = [];

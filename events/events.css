@@ -170,6 +170,25 @@ a:hover { text-decoration: underline; }
   width: auto;
   margin-bottom: 0;
 }
+.ev-photo {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0;
+  margin: 0;
+}
+.ev-photo figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ev-text-soft, #9aa4b2);
+  text-align: center;
+}
+.ev-subhead {
+  font-family: var(--ev-font-display, 'Noto Serif SC', serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ev-gold, #C9A86A);
+  margin: 36px 0 16px;
+  letter-spacing: 1px;
+}
 .ev-hero-img {
   width: 100%;
   aspect-ratio: 16 / 9;
