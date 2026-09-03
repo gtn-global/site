@@ -6,8 +6,9 @@
 *.md.txt
 *.txt
 
-# 但 llms.txt 是站点发布所需的机器可读索引，需保留
+# 但 llms.txt / robots.txt 是站点发布所需的机器可读索引与爬虫规则，需保留
 !llms.txt
+!robots.txt
 
 # 设计源文件
 海鑫汇.ai
