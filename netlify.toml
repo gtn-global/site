@@ -17,3 +17,10 @@
   to = "https://gatewaytonew.com/:splat"
   status = 301
   force = true
+
+# 百度站点验证文件：强制以 .html 原路径 200 返回，禁止 Pretty URLs 的 308 跳转（否则百度校验器报"无法连接"）
+[[redirects]]
+  from = "/baidu_verify_codeva-vBQIDsI7r2.html"
+  to = "/baidu_verify_codeva-vBQIDsI7r2.html"
+  status = 200
+  force = true
