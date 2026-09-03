@@ -63,4 +63,7 @@
 /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   /questions/ready-to-go-global/   301
 /questions/企业现在适合出海吗/*   /questions/ready-to-go-global/:splat   301
 
+# Google Search Console 站点验证文件：强制以 .html 原路径 200 返回，禁止 SPA fallback 兜底到首页
+/googlec337c8b7a58761fe.html   /googlec337c8b7a58761fe.html   200!
+
 # === 鍏ㄧ珯杩佺Щ鍒版柊涓诲煙鍚?gatewaytonew.com (2026-09-03) ===
