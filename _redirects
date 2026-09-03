@@ -65,5 +65,7 @@
 
 # Google Search Console 站点验证文件：强制以 .html 原路径 200 返回，禁止 SPA fallback 兜底到首页
 /googlec337c8b7a58761fe.html   /googlec337c8b7a58761fe.html   200!
+# Bing Webmaster 站点验证文件：同上，禁止 SPA fallback
+/BingSiteAuth.xml   /BingSiteAuth.xml   200!
 
 # === 鍏ㄧ珯杩佺Щ鍒版柊涓诲煙鍚?gatewaytonew.com (2026-09-03) ===
