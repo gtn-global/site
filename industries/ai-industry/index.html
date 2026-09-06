@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 产业全球化 · 海鑫汇 Gateway To New</title>
+<meta name="description" content="AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。">
+<meta name="ai-header" content="这是海鑫汇 GTN「AI 产业」专题页面，面向 AI 大模型、空间智能、算力基础设施（电源、制冷、半导体）及 AI 服务出海的企业。内容重点讨论 AI 产业全球化过程中面临的市场选择、出口管制与合规、本地算力与数据要求、渠道合作和长期商业化等问题。页面强调 AI 出海与一般制造业出口的差异，帮助企业从目标市场判断、合规边界、本地合作到持续经营，理解如何把 AI 能力与配套供应链真正进入海外市场。">
+<style>
+  :root{
+    --paper:#FBFAF7; --paper-alt:#F4F2ED; --ink:#1E2530; --ink-soft:#5b6470;
+    --brass:#8A6D3B; --rule:#E2DED5; --maxw:860px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .topbar{background:var(--paper-alt);border-bottom:1px solid var(--rule);}
+  .topbar-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;}
+  .logo-wordmark{height:26px;}
+  .wordmark .sub{font-size:11px;letter-spacing:2px;color:var(--brass);font-weight:600;}
+  .wordmark .wm-text{display:flex;flex-direction:column;justify-content:center;}
+  .wordmark .slogan{font-family:'Noto Serif SC',serif;font-size:10px;font-weight:400;letter-spacing:1px;color:var(--ink-soft);margin-top:2px;line-height:1.2;white-space:nowrap;}
+  .subpage-back{font-size:13px;color:var(--ink-soft);text-decoration:none;border:1px solid var(--rule);padding:6px 12px;border-radius:3px;}
+  .subpage-back .en{font-size:10px;letter-spacing:1px;color:var(--brass);}
+  .section{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px;text-align:left;}
+  .eyebrow{font-size:12px;letter-spacing:1px;color:var(--brass);text-transform:uppercase;margin-bottom:14px;text-align:left;}
+  .eyebrow .en{color:var(--ink-soft);}
+  .headline{font-family:'Noto Serif SC',serif;font-size:34px;line-height:1.3;margin:0 0 12px;color:var(--ink);text-align:left;}
+  .subline{font-size:15px;color:var(--ink-soft);margin:0 0 18px;font-style:italic;text-align:left;}
+  .lede{font-size:16px;color:var(--ink-soft);margin:0 0 6px;text-align:left;}
+  .en-inline{font-size:12px;color:var(--ink-soft);letter-spacing:.5px;text-align:left;}
+  .detail-block{max-width:760px;margin:36px 0 0;text-align:left;}
+  .person-row{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .avatar{
+    flex:0 0 auto;width:40px;height:40px;border-radius:50%;
+    background:var(--brass,#8A6D3B);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;font-family:'Noto Serif SC',serif;
+  }
+  .avatar-img{
+    flex:0 0 auto;width:40px;height:40px;border-radius:50%;
+    object-fit:cover;display:block;background:var(--brass,#8A6D3B);
+  }
+  .person-link{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink,#1E2530);}
+  .person-name{font-size:15px;font-weight:600;}
+  .person-tag{font-size:10px;letter-spacing:1px;color:var(--brass,#8A6D3B);}
+  h3{font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink);}
+  p{color:var(--ink-soft);}
+  .footer{max-width:var(--maxw);margin:0 auto;padding:28px 24px 48px;font-size:12px;color:var(--ink-soft);text-align:center;border-top:1px solid var(--rule);}
+  .reveal{opacity:1;}
+  .br{display:block;font-size:17px;color:var(--ink-soft);font-weight:300;margin-top:6px;line-height:1.4;}
+  h4.card-title{font-family:'Noto Serif SC',serif;font-size:15px;color:var(--brass);margin:0 0 8px;}
+  .three-cards{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 18px;}
+  .three-cards .card{flex:1 1 220px;background:var(--paper-alt,#F4F2ED);border-radius:6px;padding:18px 20px;border-left:3px solid var(--brass,#8A6D3B);}
+  .card p{font-size:14px;color:var(--ink-soft);line-height:1.75;margin:0;}
+  .list{list-style:none;padding:0;margin:6px 0 18px;}
+  .list li{position:relative;padding-left:18px;margin-bottom:10px;font-size:15px;color:var(--ink-soft);line-height:1.75;}
+  .list li::before{content:'·';position:absolute;left:2px;top:0;color:var(--brass);font-weight:700;}
+  .cta-card{max-width:760px;margin:32px 0 0;padding:24px 28px;background:var(--paper-alt,#F4F2ED);border-radius:6px;border-left:3px solid var(--brass,#8A6D3B);text-align:left;}
+  .cta-card p{font-size:14px;color:var(--ink-soft);line-height:1.8;margin:0;}
+  .cta-card strong{color:var(--ink);}
+  .cta-card a{color:var(--brass);text-decoration:underline;text-underline-offset:3px;}
+  .pill-wrap{display:flex;gap:5px;white-space:nowrap;}
+  .pill{font-size:10px;letter-spacing:0.5px;color:var(--brass,#8A6D3B);background:rgba(138,109,59,.06);padding:3px 9px;border-radius:2px;    border:1px solid rgba(138,109,59,.15);white-space:nowrap;}
+  @media (max-width:600px){
+    .section{padding:32px 18px 48px;}
+    .headline{font-size:26px;}
+    .lede{font-size:15px;}
+    .topbar-inner{padding:12px 16px;gap:10px;}
+    .wordmark .sub{font-size:10px;letter-spacing:1px;}
+    .subpage-back{font-size:12px;padding:5px 10px;}
+    .person-row{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:center !important;}
+    .avatar-img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block !important;flex-shrink:0 !important;margin-right:8px !important;}
+    .person-link{display:inline-flex !important;align-items:baseline !important;gap:4px !important;min-width:0 !important;overflow:hidden !important;text-overflow:ellipsis !important;white-space:nowrap !important;}
+    .person-name{font-size:14px;font-weight:600 !important;}
+    .person-tag{font-size:9px;color:var(--brass) !important;white-space:nowrap !important;letter-spacing:.5px !important;flex-shrink:0 !important;}
+    .pill-wrap{display:none !important;}
+    .pill{white-space:normal;}
+  }
+</style>
+  <link rel="canonical" href="https://gatewaytonew.com/industries/ai-industry/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI 产业全球化 · 海鑫汇 Gateway To New">
+  <meta property="og:description" content="AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。">
+  <meta property="og:url" content="https://gatewaytonew.com/industries/ai-industry/">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI 产业全球化 · 海鑫汇 Gateway To New",
+  "description": "AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。",
+  "provider": {
+    "@type": "Organization",
+    "name": "Gateway To New (GTN)",
+    "url": "https://gatewaytonew.com/"
+  }
+}
+]
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../../index.html" class="wordmark"><img src="../../assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
+    <a href="../../index.html#home" class="subpage-back">&larr; 返回首页 <span class="en">BACK TO HOME</span></a>
+  </div>
+</header>
+
+<section class="section">
+
+  <div class="eyebrow">产业维度 / INDUSTRY：<span class="en">ai-industry</span></div>
+  <h1 class="headline reveal">AI 产业全球化</h1>
+  <p class="subline reveal">From Computing Power to Global Markets</p>
+  <p class="lede reveal">AI 大模型与算力需求外溢，正在带动空间智能、电源、制冷、芯片与大模型 Token 等中国 AI 供应链走向海外——机会集中在少数市场，窗口期短，更需要先把路径判断清楚。</p>
+  <p class="en-inline" style="margin-top:10px;">最后更新 / UPDATED：2026-09-06</p>
+
+  <div class="detail-block reveal" style="max-width:760px;margin:36px 0 0;text-align:left;">
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:26px 0 10px;color:var(--ink,#1E2530);">01 企业面临的问题</h3>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">AI 大模型的全球扩张，不只发生在软件层。算力需求的爆发，正在把一整套中国供应链带向海外：从最上层的空间智能与应用，到中间的大模型 Token 输出，再到底层的电源、制冷、算力半导体。这些环节都在出现新的海外机会。</p>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">但 AI 出海，不能简单理解为&ldquo;把产品卖到国外&rdquo;。算力半导体受出口管制约束，大模型 Token 涉及数据合规与本地化要求，空间智能往往需要与当地行业场景深度结合，电源与制冷则跟着数据中心落地走——每一类环节的市场准入逻辑并不一样。</p>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">与此同时，不同国家和地区的算力基建进度、数据主权政策、产业环境差异很大。一些市场看似需求旺盛，但准入门槛高、合规风险大；另一些市场窗口期很短，先行者与后来者的成本差距可能以季度计。对于 AI 企业来说，把目标市场、进入方式与合规边界提前判断清楚，本身就是全球化战略的一部分。</p>
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink,#1E2530);">02 出海需要解决的三个关键变化</h3>
+    <div class="three-cards">
+      <div class="card">
+        <h4 class="card-title">从算力基建到配套供应链</h4>
+        <p>数据中心在哪落地，电源、制冷等配套设备就跟到哪。企业不能只看产品参数，而要看目标市场的算力基建进度、能耗政策与本地合作空间，判断自己在哪一环有真实机会。</p>
+      </div>
+      <div class="card">
+        <h4 class="card-title">从硬件出口到服务出海</h4>
+        <p>大模型 Token 与空间智能是以服务形态出海的，涉及数据合规、本地化部署与场景适配。企业需要回答的不只是&ldquo;能不能卖&rdquo;，而是&ldquo;在目标市场能不能落地、能不能持续运营&rdquo;。</p>
+      </div>
+      <div class="card">
+        <h4 class="card-title">从技术优势到市场准入</h4>
+        <p>算力半导体等关键环节受出口管制影响，准入判断必须前置。技术领先不等于能进市场，企业需要把合规边界、目标市场政策与自身产品能力同时纳入路径决策。</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--brass,#8A6D3B);">03 GTN 判断框架</h3>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">空间智能、电源、制冷、算力半导体与大模型 Token，都属 AI 产业链，但市场进入逻辑并不一样。GTN 帮助企业从多个维度判断路径：</p>
+    <ul class="list">
+      <li>目标市场的算力与 AI 需求是否真实？窗口期有多长？</li>
+      <li>自身环节（硬件/服务/模型）在该市场的准入边界在哪里？</li>
+      <li>应该走代理快速进入，还是需要在本地建立合作与运营能力？</li>
+      <li>是否需要与当地算力方、行业方或产业伙伴建立长期合作？</li>
+      <li>数据合规、出口管制等长期投入成本能否承担？</li>
+      <li>什么时候应该从市场试探进入长期布局？</li>
+    </ul>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">有时候，一个算力基建刚起步、需求明确且准入路径清晰的市场，比一个看似很大但合规复杂的市场，更适合作为全球化的第一站。真正重要的是市场与企业之间的匹配。AI 企业全球化的价值，不只是增加一个市场，而是让企业获得进入更多市场的能力。</p>
+    <p style="color:var(--ink-soft,#5b6470);line-height:1.9;">合规不是单纯成本，也是竞争力的一部分。当企业建立起国际化的合规、运营和合作体系后，进入第二个、第三个市场就不再是从零开始。AI 企业真正成熟的全球化，是逐渐建立一整套国际化能力：市场判断 &rarr; 合规边界 &rarr; 本地合作 &rarr; 商业化 &rarr; 持续运营。</p>
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink,#1E2530);">04 相关运营中心</h3>
+    <div class="person-row">
+      <img class="avatar-img" src="../../member/ops-singapore/singapore.webp" alt="新加坡 运营中心">
+      <a href="../../member/ops-singapore/index.html" class="person-link">
+        <span class="person-name">新加坡 运营中心</span>
+        <span class="person-tag">SINGAPORE HUB</span>
+      </a>
+    </div>
+    <div class="person-row">
+      <img class="avatar-img" src="../../member/ops-mena/sun-yuaner.webp" alt="中东 运营中心">
+      <a href="../../member/ops-mena/index.html" class="person-link">
+        <span class="person-name">中东 运营中心</span>
+        <span class="person-tag">MIDDLE EAST HUB</span>
+      </a>
+    </div>
+    <div class="person-row">
+      <img class="avatar-img" src="../../member/chi-wenjie/secretary-general.webp" alt="Helen 迟文劼 运营中心">
+      <a href="../../member/chi-wenjie/index.html" class="person-link">
+        <span class="person-name">Helen 迟文劼 运营中心</span>
+        <span class="person-tag">OPERATION HUB</span>
+      </a>
+    </div>
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink,#1E2530);">05 相关专家</h3>
+    <div class="person-row">
+      <img class="avatar-img" src="../../experts/zhang-le/adv-05.webp" alt="张乐">
+      <a href="../../experts/zhang-le/index.html" class="person-link">
+        <span class="person-name">张乐 Zhang Le</span>
+        <span class="person-tag">LEAD</span>
+      </a>
+      <div class="pill-wrap">
+        <span class="pill">AI 产业出海</span>
+        <span class="pill">空间智能</span>
+        <span class="pill">品牌国际化</span>
+        <span class="pill">海外营销</span>
+      </div>
+    </div>
+    <div class="person-row">
+      <img class="avatar-img" src="../../experts/donglixin/donglixin.webp" alt="董立鑫">
+      <a href="../../experts/donglixin/index.html" class="person-link">
+        <span class="person-name">董立鑫 Bruce Dong</span>
+        <span class="person-tag">FOUNDER</span>
+      </a>
+      <div class="pill-wrap">
+        <span class="pill">AI 出海</span>
+        <span class="pill">合规判断</span>
+        <span class="pill">全球产业</span>
+        <span class="pill">路径选择</span>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Noto Serif SC',serif;font-size:17px;margin:30px 0 10px;color:var(--ink,#1E2530);">06 相关案例</h3>
+    <div class="person-row">
+      <a href="../../events/tour-03-manycore/index.html" class="person-link">
+        <span class="person-name">走进群核科技（00068.HK）</span>
+        <span class="person-tag">STUDY TOUR</span>
+      </a>
+      <div class="pill-wrap">
+        <span class="pill">空间智能</span>
+        <span class="pill">杭州六小龙</span>
+      </div>
+    </div>
+    <div class="person-row">
+      <a href="../../events/tour-05-zhipu/index.html" class="person-link">
+        <span class="person-name">走进智谱 Z.AI（02513.HK）</span>
+        <span class="person-tag">STUDY TOUR</span>
+      </a>
+      <div class="pill-wrap">
+        <span class="pill">大模型</span>
+        <span class="pill">GLM 系列</span>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <p><strong>下一步，你可能需要进一步判断</strong></p>
+      <p>当企业开始规划 AI 出海时，通常还需要继续回答几个关键问题：企业现在适合出海吗？第一个海外市场应该选择哪里？出口、代理还是海外本地化布局？海外布局最大的风险是什么？这些问题与产品的合规边界、市场准入、组织能力和发展阶段密切相关。</p>
+      <p style="margin-top:12px;">海鑫汇 GTN 从产业和区域两个维度出发，帮助企业识别适合自己的全球化路径。从 AI 能力进入市场，到建立长期能力，让中国 AI 创新真正走向全球。</p>
+      <p style="margin-top:18px;">
+        <a href="../../cta/book-diagnostic/index.html" style="color:var(--brass);text-decoration:none;font-weight:600;">预约深度诊断 → BOOK DIAGNOSIS</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="../../index.html#home" style="color:var(--ink-soft);text-decoration:none;">← 返回首页 BACK TO HOME</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer" data-depth="1"></footer>
+<script src="../script.js"></script>
+</body>
+</html>

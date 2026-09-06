@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
@@ -101,14 +101,14 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/forum-05-hejun-town-damai/</loc>
+    <loc>https://gatewaytonew.com/events/forum-05-hejun-town-chenjunwen/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/interview-01-huanqiu-logistics/</loc>
+    <loc>https://gatewaytonew.com/events/interview-01-global-logistics/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -136,7 +136,7 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/interview-05-overseas-damai/</loc>
+    <loc>https://gatewaytonew.com/events/interview-05-overseas-chenjunwen/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -253,7 +253,7 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/salon-09-hejun-salon/</loc>
+    <loc>https://gatewaytonew.com/events/salon-09-hejun/</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -309,7 +309,7 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/tour-05-zai/</loc>
+    <loc>https://gatewaytonew.com/events/tour-05-zhipu/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -318,55 +318,6 @@
   <url>
     <loc>https://gatewaytonew.com/events/tour-07-beyondsoft/</loc>
     <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-01-hungary/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-02-hochiminh/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-03-tiktok-malaysia/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-04-johor-malaysia/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-05-boyuan-singapore/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-06-kukahome-thailand/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/visit-07-malaysia-indonesia/</loc>
-    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -496,7 +447,7 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/industries/medical-biotech/</loc>
+    <loc>https://gatewaytonew.com/industries/ai-industry/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -695,4 +646,220 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-02-2012-cologne-heidelberg-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-03-2012-fensterbau-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-04-2013-kuala-lumpur-malaysia/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-05-2013-male-maldives/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-06-2014-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-07-2015-brussels-belgium/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-08-2015-amsterdam-netherlands/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-09-2015-paris-france/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-10-2015-luxembourg/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-11-2015-okinawa-japan/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-12-2016-nuremberg-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-13-2016-munich-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-14-2016-bosch-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-15-2016-mercedes-museum-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-16-2016-roto-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-17-2016-frankfurt-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-18-2017-vienna-austria/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-19-2017-karlovy-vary-czech/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-20-2017-prague-czech/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-21-2017-ck-czech/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-22-2017-budweiser-czech/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-23-2017-bratislava-slovakia/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-24-2017-budapest-hungary/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-25-2017-budapest-old-palace-hungary/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-26-2018-nuremberg-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-27-2018-munich-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-28-2018-stuttgart-germany/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-29-2019-jeju-korea/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-30-2025-hochiminh-vietnam/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-31-2025-tiktok-kuala-lumpur-malaysia/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-32-2025-johor-malaysia/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-33-2025-beyondsoft-singapore/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-34-2025-coohom-bangkok-thailand/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-35-2025-kuala-lumpur-malaysia/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gatewaytonew.com/events/visit-36-2026-budapest-hungary/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
