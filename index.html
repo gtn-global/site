@@ -222,8 +222,9 @@ span.ops-center-flag.flag-kz{
       <a href="#method">判断<span class="en">METHOD</span></a>
       <a href="#proof">印证<span class="en">PROOF</span></a>
       <a href="#industry">产业<span class="en">INDUSTRY</span></a>
-      <a href="#region">区域<span class="en">REGION</span></a>
+
       <a href="#contact">联系<span class="en">CONTACT</span></a>
+      <a href="#region">区域<span class="en">REGION</span></a>
     </nav>
   </div>
 </header>
@@ -714,6 +715,101 @@ span.ops-center-flag.flag-kz{
   </div>
 </section>
 
+<!-- ============ 06 CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="eyebrow">06 — 关于我 · 联系 / ABOUT &amp; CONTACT</div>
+  <h2 class="headline reveal"><a href="experts/donglixin/index.html" class="inline-link">海鑫汇创始人兼CEO——董立鑫</a></h2>
+  <p class="subline reveal">The person behind the judgment — Bruce Dong.</p>
+  <p class="lede reveal">陪伴中国企业判断海外机会和进入路径，是海鑫汇做这件事的方式——不是卖课程或资源，而是在决策关口提供判断。想先看清楚各环节怎么收费，先去<a href="#offer" class="inline-link">服务板块</a>看一遍；需要更深入的判断，点上方「预约首诊」，提交后由董立鑫本人与你联系，确认时间与支付方式。</p>
+
+  <div class="about-grid reveal">
+    <div class="photo-box" data-fill="ABOUT-PHOTO"><a href="experts/donglixin/index.html"><img src="experts/donglixin/donglixin.webp" alt="董立鑫" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="948" height="948"></a></div>
+    <div class="bio">
+      <h4><a href="experts/donglixin/index.html" class="inline-link">董立鑫</a> · 中国企业出海决策顾问</h4>
+      <dl class="role-list">
+        <div class="role-row"><dt>决策顾问</dt><dd>中国企业出海</dd></div>
+        <div class="role-row"><dt>创始人兼CEO</dt><dd>海鑫汇 Gateway To New</dd></div>
+        <div class="role-row"><dt>合伙人</dt><dd>和君咨询</dd></div>
+        <div class="role-row"><dt>Secretary-General & COO</dt><dd>WTC Singapore</dd></div>
+      </dl>
+      <div class="media-row">
+        <a class="media-link" href="https://profile.zjurl.cn/rogue/ugc/profile/?active_tab=dongtai&app_name=news_article&device_id=65&media_id=1652500213415950&module_name=iOS_tt_url&request_source=1&share_token=23778718-F8A8-4917-A2D2-F5AAAAEBCFA4&tt_from=copy_link&upstream_biz=iOS_url&user_id=6972580048&utm_campaign=client_share&utm_medium=toutiao_ios&utm_source=copy_link&version_code=17.7.0&version_name=170700" target="_blank" rel="noopener">头条号</a>
+        <a class="media-link" href="https://xhslink.cn/m/6SRRS3X4FvO" target="_blank" rel="noopener">小红书</a>
+        <a class="media-link" href="https://author.baidu.com/home?context=%7B%22app_id%22%3A1864539194023029%7D&wfr=bjh" target="_blank" rel="noopener">百家号</a>
+        <a class="media-link" href="https://mp.163.com/subscribe_v4/index.html#/home?wemediaId=W5946293963768904831#/" target="_blank" rel="noopener">网易号</a>
+        <a class="media-link" href="https://www.zhihu.com/people/dong-li-xin-52" target="_blank" rel="noopener">知乎</a>
+        <a class="media-link" href="https://weibo.com/u/1933473085" target="_blank" rel="noopener">微博</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="reveal" style="margin-top:20px;">
+    <a href="news-index.html" class="btn-outline">相关新闻 · 出海洞察 <span class="en">→ NEWS &amp; INSIGHTS</span></a>
+  </div>
+
+  <div class="cta-form form-wrap reveal">
+    <h3 class="cta-form-title">预约首诊<span class="en">A paid 1-hour diagnostic · 99元/1小时.</span></h3>
+
+    <form action="cta/book-diagnostic/success.html" method="GET" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); }).then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); location.href='cta/book-diagnostic/success.html'; }).catch(function(e){ console.error('提交异常:',e); alert('提交失败：'+e.message); }); return false;">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name">姓名 Name</label>
+          <input type="text" name="name" id="name" placeholder="请输入姓名 / Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="company">公司名称 Company</label>
+          <input type="text" name="company" id="company" placeholder="请输入公司名称 / Company name" required />
+        </div>
+
+        <div class="field">
+          <label for="industry">所在行业 Industry</label>
+          <input type="text" name="industry" id="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing" required />
+        </div>
+
+        <div class="field">
+          <label for="stage">出海所处阶段 Stage</label>
+          <select name="stage" id="stage" required>
+            <option value="" disabled selected>尚未启动 · 考虑中 / Not started · exploring</option>
+            <option value="planning">规划中 · 已立项 / Planning · committed</option>
+            <option value="testing">试水阶段 · 小规模测试 / Testing · pilot phase</option>
+            <option value="scaling">扩张中 · 多国运营 / Scaling · multi-market ops</option>
+            <option value="established">已成熟 · 深度本地化 / Established · localized</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="contact">联系方式 Contact（手机或微信 / Phone or WeChat）</label>
+          <input type="text" name="contact" id="contact" placeholder="手机号或微信号 / Phone or WeChat ID" required />
+        </div>
+
+        <div class="field full">
+          <label for="brief">简述你的诉求 Brief</label>
+          <textarea name="brief" id="brief" rows="4" placeholder="简述描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea>
+        </div>
+
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit btn-seal">提交预约 → SUBMIT</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="carousel-strip reveal" style="margin-top:36px;">
+    <img src="carousel/carousel-01.webp" alt="出海现场 1" loading="lazy">
+    <img src="carousel/carousel-02.webp" alt="出海现场 2" loading="lazy">
+    <img src="carousel/carousel-03.webp" alt="出海现场 3" loading="lazy">
+    <img src="carousel/carousel-04.webp" alt="出海现场 4" loading="lazy">
+    <img src="carousel/carousel-05.webp" alt="出海现场 5" loading="lazy">
+  </div>
+</section>
+
 <!-- ============ 05 REGION ============ -->
 <section class="section" id="region">
   <div class="eyebrow">05 — 区域维度 / REGION</div>
@@ -916,100 +1012,6 @@ span.ops-center-flag.flag-kz{
 
 </section>
 
-<!-- ============ 06 CONTACT ============ -->
-<section class="section" id="contact">
-  <div class="eyebrow">06 — 关于我 · 联系 / ABOUT &amp; CONTACT</div>
-  <h2 class="headline reveal"><a href="experts/donglixin/index.html" class="inline-link">海鑫汇创始人兼CEO——董立鑫</a></h2>
-  <p class="subline reveal">The person behind the judgment — Bruce Dong.</p>
-  <p class="lede reveal">陪伴中国企业判断海外机会和进入路径，是海鑫汇做这件事的方式——不是卖课程或资源，而是在决策关口提供判断。想先看清楚各环节怎么收费，先去<a href="#offer" class="inline-link">服务板块</a>看一遍；需要更深入的判断，点上方「预约首诊」，提交后由董立鑫本人与你联系，确认时间与支付方式。</p>
-
-  <div class="about-grid reveal">
-    <div class="photo-box" data-fill="ABOUT-PHOTO"><a href="experts/donglixin/index.html"><img src="experts/donglixin/donglixin.webp" alt="董立鑫" style="width:100%;height:100%;object-fit:cover;" loading="lazy" width="948" height="948"></a></div>
-    <div class="bio">
-      <h4><a href="experts/donglixin/index.html" class="inline-link">董立鑫</a> · 中国企业出海决策顾问</h4>
-      <dl class="role-list">
-        <div class="role-row"><dt>决策顾问</dt><dd>中国企业出海</dd></div>
-        <div class="role-row"><dt>创始人兼CEO</dt><dd>海鑫汇 Gateway To New</dd></div>
-        <div class="role-row"><dt>合伙人</dt><dd>和君咨询</dd></div>
-        <div class="role-row"><dt>Secretary-General & COO</dt><dd>WTC Singapore</dd></div>
-      </dl>
-      <div class="media-row">
-        <a class="media-link" href="https://profile.zjurl.cn/rogue/ugc/profile/?active_tab=dongtai&app_name=news_article&device_id=65&media_id=1652500213415950&module_name=iOS_tt_url&request_source=1&share_token=23778718-F8A8-4917-A2D2-F5AAAAEBCFA4&tt_from=copy_link&upstream_biz=iOS_url&user_id=6972580048&utm_campaign=client_share&utm_medium=toutiao_ios&utm_source=copy_link&version_code=17.7.0&version_name=170700" target="_blank" rel="noopener">头条号</a>
-        <a class="media-link" href="https://xhslink.cn/m/6SRRS3X4FvO" target="_blank" rel="noopener">小红书</a>
-        <a class="media-link" href="https://author.baidu.com/home?context=%7B%22app_id%22%3A1864539194023029%7D&wfr=bjh" target="_blank" rel="noopener">百家号</a>
-        <a class="media-link" href="https://mp.163.com/subscribe_v4/index.html#/home?wemediaId=W5946293963768904831#/" target="_blank" rel="noopener">网易号</a>
-        <a class="media-link" href="https://www.zhihu.com/people/dong-li-xin-52" target="_blank" rel="noopener">知乎</a>
-        <a class="media-link" href="https://weibo.com/u/1933473085" target="_blank" rel="noopener">微博</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="reveal" style="margin-top:20px;">
-    <a href="news-index.html" class="btn-outline">相关新闻 · 出海洞察 <span class="en">→ NEWS &amp; INSIGHTS</span></a>
-  </div>
-
-  <div class="cta-form form-wrap reveal">
-    <h3 class="cta-form-title">预约首诊<span class="en">A paid 1-hour diagnostic · 99元/1小时.</span></h3>
-
-    <form action="cta/book-diagnostic/success.html" method="GET" id="diagnosticForm" class="contact-form" onsubmit="event.preventDefault(); var f=this; var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact:f.contact.value,brief:f.brief.value,source:'官网首页'}; fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); }).then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); location.href='cta/book-diagnostic/success.html'; }).catch(function(e){ console.error('提交异常:',e); alert('提交失败：'+e.message); }); return false;">
-
-      <div class="form-grid">
-
-        <div class="field">
-          <label for="name">姓名 Name</label>
-          <input type="text" name="name" id="name" placeholder="请输入姓名 / Your name" required />
-        </div>
-
-        <div class="field">
-          <label for="company">公司名称 Company</label>
-          <input type="text" name="company" id="company" placeholder="请输入公司名称 / Company name" required />
-        </div>
-
-        <div class="field">
-          <label for="industry">所在行业 Industry</label>
-          <input type="text" name="industry" id="industry" placeholder="如：精密制造 / 消费品 e.g. Precision manufacturing" required />
-        </div>
-
-        <div class="field">
-          <label for="stage">出海所处阶段 Stage</label>
-          <select name="stage" id="stage" required>
-            <option value="" disabled selected>尚未启动 · 考虑中 / Not started · exploring</option>
-            <option value="planning">规划中 · 已立项 / Planning · committed</option>
-            <option value="testing">试水阶段 · 小规模测试 / Testing · pilot phase</option>
-            <option value="scaling">扩张中 · 多国运营 / Scaling · multi-market ops</option>
-            <option value="established">已成熟 · 深度本地化 / Established · localized</option>
-          </select>
-        </div>
-
-        <div class="field full">
-          <label for="contact">联系方式 Contact（手机或微信 / Phone or WeChat）</label>
-          <input type="text" name="contact" id="contact" placeholder="手机号或微信号 / Phone or WeChat ID" required />
-        </div>
-
-        <div class="field full">
-          <label for="brief">简述你的诉求 Brief</label>
-          <textarea name="brief" id="brief" rows="4" placeholder="简述描述目前遇到的出海问题或诉求 / Briefly describe your outbound question or need"></textarea>
-        </div>
-
-      </div>
-
-      <div class="form-submit">
-        <button type="submit" class="btn-submit btn-seal">提交预约 → SUBMIT</button>
-      </div>
-
-    </form>
-  </div>
-
-  <div class="carousel-strip reveal" style="margin-top:36px;">
-    <img src="carousel/carousel-01.webp" alt="出海现场 1" loading="lazy">
-    <img src="carousel/carousel-02.webp" alt="出海现场 2" loading="lazy">
-    <img src="carousel/carousel-03.webp" alt="出海现场 3" loading="lazy">
-    <img src="carousel/carousel-04.webp" alt="出海现场 4" loading="lazy">
-    <img src="carousel/carousel-05.webp" alt="出海现场 5" loading="lazy">
-  </div>
-</section>
 
 
 <footer class="footer" data-depth="0"></footer>
