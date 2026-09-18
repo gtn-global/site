@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beijing Birds | Our Wild Neighbors</title>
+  <style>
+    :root {
+      --ink: #17312d;
+      --muted: #60736e;
+      --cream: #f6f0df;
+      --sand: #ead8b6;
+      --sky: #c9e5e3;
+      --green: #2d6b59;
+      --teal: #147b76;
+      --coral: #dc6f58;
+      --line: rgba(23, 49, 45, .16);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); }
+    a { color: inherit; }
+    .site-nav {
+      position: fixed; z-index: 5; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 5vw; color: white; mix-blend-mode: difference;
+      font: 700 11px/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .brand { text-decoration: none; font-size: 13px; }
+    .nav-links { display: flex; gap: 22px; }
+    .nav-links a { text-decoration: none; opacity: .74; transition: opacity .2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .progress { position: fixed; z-index: 6; top: 0; left: 0; height: 3px; width: 33.33%; background: var(--coral); transition: transform .35s ease; }
+    .page { min-height: 100svh; padding: 10vh 7vw 7vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .page-inner { width: min(1150px, 100%); margin: auto; }
+    .eyebrow { margin: 0 0 22px; color: var(--coral); font: 700 11px/1.2 Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, p { margin-top: 0; }
+    h1 { max-width: 760px; margin-bottom: 18px; font-size: clamp(48px, 7.2vw, 104px); line-height: .93; letter-spacing: -.03em; font-weight: 400; }
+    h2 { margin-bottom: 14px; font-size: clamp(30px, 4vw, 54px); line-height: .98; font-weight: 400; }
+    .subtitle { max-width: 540px; margin-bottom: 28px; font-size: clamp(19px, 2vw, 28px); line-height: 1.2; }
+    .body-copy { max-width: 590px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .hero { color: white; background: linear-gradient(90deg, rgba(20, 55, 53, .82), rgba(20, 55, 53, .24)), url("../member/ops-beijing/beijing.webp") center/cover; }
+    .hero .page-inner { padding-top: 8vh; }
+    .hero h1 { max-width: 680px; }
+    .hero .body-copy { color: rgba(255,255,255,.78); }
+    .hero:after { content: "01"; position: absolute; right: 7vw; bottom: 8vh; color: rgba(255,255,255,.46); font: 700 12px Arial, sans-serif; letter-spacing: .14em; }
+    .point-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 58px; background: rgba(255,255,255,.28); }
+    .point { min-height: 132px; padding: 20px; background: rgba(18, 58, 54, .58); backdrop-filter: blur(8px); }
+    .point strong { display: block; margin-bottom: 12px; font-size: 27px; font-weight: 400; }
+    .point span { display: block; font: 12px/1.45 Arial, sans-serif; color: rgba(255,255,255,.72); }
+    .species { background: var(--sky); }
+    .species .page-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: 7vw; align-items: center; }
+    .species-visual { min-height: 490px; padding: 26px; display: flex; align-items: end; background: linear-gradient(180deg, rgba(38,91,80,.04), rgba(38,91,80,.7)), url("../member/ops-beijing/beijing.webp") center/cover; }
+    .visual-note { max-width: 260px; padding: 18px; background: var(--cream); font-size: 15px; line-height: 1.35; }
+    .species-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 30px; }
+    .species-card { min-height: 138px; padding: 20px; border-top: 2px solid var(--green); background: rgba(246,240,223,.68); }
+    .species-card h3 { margin: 0 0 9px; font-size: 21px; font-weight: 400; }
+    .species-card p { margin: 0; color: var(--muted); font: 12px/1.45 Arial, sans-serif; }
+    .threats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
+    .threats span { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; font: 11px Arial, sans-serif; }
+    .actions { background: var(--teal); color: var(--cream); }
+    .actions .page-inner { display: grid; grid-template-columns: 1fr .9fr; gap: 8vw; align-items: center; }
+    .actions .body-copy { color: rgba(246,240,223,.72); }
+    .checklist { margin: 32px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(246,240,223,.35); }
+    .checklist li { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid rgba(246,240,223,.35); font: 14px/1.35 Arial, sans-serif; }
+    .checklist li:before { content: "✓"; color: #ffc3a7; font-weight: 700; }
+    .cta-panel { padding: 30px; color: var(--ink); background: var(--cream); }
+    .cta-panel h2 { font-size: clamp(30px, 4vw, 47px); }
+    .cta-panel p { color: var(--muted); font: 13px/1.55 Arial, sans-serif; }
+    .button { display: inline-flex; align-items: center; gap: 12px; padding: 14px 18px; color: white; background: var(--coral); text-decoration: none; font: 700 11px Arial, sans-serif; letter-spacing: .07em; text-transform: uppercase; transition: transform .2s, background .2s; }
+    .button:hover { background: #bf5a47; transform: translateY(-2px); }
+    .qr { width: 74px; height: 74px; object-fit: cover; margin-top: 18px; }
+    .page-number { position: absolute; right: 7vw; bottom: 8vh; color: currentColor; opacity: .46; font: 700 12px Arial, sans-serif; letter-spacing: .14em; }
+    @media (max-width: 760px) {
+      .site-nav { padding: 17px 5vw; }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 9px; }
+      .page { min-height: auto; padding: 110px 7vw 80px; }
+      .hero { min-height: 100svh; }
+      .point-grid, .species .page-inner, .actions .page-inner { grid-template-columns: 1fr; }
+      .point-grid { margin-top: 36px; }
+      .point { min-height: auto; }
+      .species-visual { min-height: 300px; }
+      .species-list { gap: 8px; }
+      .species-card { min-height: 120px; padding: 16px; }
+      .actions .page-inner { gap: 40px; }
+      .page-number { bottom: 25px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; } }
+  </style>
+  <link rel="canonical" href="https://gatewaytonew.com/demo/beijing-birds.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beijing Birds | Our Wild Neighbors">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://gatewaytonew.com/demo/beijing-birds.html">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Beijing Birds | Our Wild Neighbors",
+  "description": "",
+  "url": ""
+}
+]
+</script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site-nav">
+    <a class="brand" href="#birds">Beijing / Birds</a>
+    <nav class="nav-links" aria-label="Page navigation">
+      <a class="active" href="#birds">01 Birds</a>
+      <a href="#species">02 Homes</a>
+      <a href="#help">03 Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page hero" id="birds">
+      <div class="page-inner">
+        <p class="eyebrow">A city where migration meets everyday life</p>
+        <h1>Birds of Beijing: Our Wild Neighbors</h1>
+        <p class="subtitle">Look closer. The city is full of wings, routes, and quiet signs of health.</p>
+        <p class="body-copy">Beijing sits on a major bird migration route, so millions of birds live in or pass through the city each year. They control pests, spread seeds, and signal whether our air, water, and green spaces are healthy. Protecting birds means protecting the city we share.</p>
+        <div class="point-grid" aria-label="Key facts">
+          <div class="point"><strong>400+</strong><span>bird species recorded in Beijing</span></div>
+          <div class="point"><strong>4 routes</strong><span>wetlands, parks, rivers, mountains</span></div>
+          <div class="point"><strong>1 city</strong><span>urban life meets wild ecosystems</span></div>
+          <div class="point"><strong>Listen</strong><span>healthy birds reflect a healthier city</span></div>
+        </div>
+      </div>
+      <span class="page-number">01 / 03</span>
+    </section>
+
+    <section class="page species" id="species">
+      <div class="page-inner">
+        <div class="species-visual"><div class="visual-note">From cranes at Miyun Reservoir to swifts above old city buildings, every species needs a place to land.</div></div>
+        <div>
+          <p class="eyebrow">Meet Beijing's feathered residents and visitors</p>
+          <h2>Species, homes, and threats</h2>
+          <p class="body-copy">Beijing's birds depend on wetlands, woodlands, and even urban structures. Habitat loss, pollution, climate shifts, and human disturbance are making survival harder.</p>
+          <div class="species-list">
+            <article class="species-card"><h3>Cranes · swans · egrets</h3><p>Wetlands and reservoirs give these birds food, shelter, and a safe stop during migration.</p></article>
+            <article class="species-card"><h3>Beijing swift</h3><p>Old buildings and open city skies are part of this fast-moving urban bird's home.</p></article>
+            <article class="species-card"><h3>Eagles · warblers</h3><p>Mountain forests provide nesting sites, insects, and the cover small birds need.</p></article>
+            <article class="species-card"><h3>What gets in the way</h3><p>Wetland loss, light pollution, pesticides, and illegal trapping all add pressure.</p></article>
+          </div>
+          <div class="threats" aria-label="Threats"><span>Wetland loss</span><span>Light pollution</span><span>Pesticides</span><span>Illegal trapping</span></div>
+        </div>
+      </div>
+      <span class="page-number">02 / 03</span>
+    </section>
+
+    <section class="page actions" id="help">
+      <div class="page-inner">
+        <div>
+          <p class="eyebrow">Small actions, real impact</p>
+          <h2>Protect birds, together</h2>
+          <p class="body-copy">Bird protection starts with everyday choices. Cleaner habitats, quieter green spaces, and safer buildings all help birds survive and thrive. Residents, students, and visitors can all make a difference.</p>
+          <ul class="checklist">
+            <li>Do not feed, chase, or handle wild birds</li>
+            <li>Keep cats indoors or supervised outdoors</li>
+            <li>Reduce plastic, pesticides, and light pollution</li>
+            <li>Join birdwatching, cleanups, and citizen science</li>
+            <li>Report injured birds or illegal trapping</li>
+          </ul>
+        </div>
+        <aside class="cta-panel">
+          <h2>Make your first sighting count.</h2>
+          <p>Learn one local bird species, then join a Beijing bird survey or cleanup this month.</p>
+          <a class="button" href="mailto:hello@example.com">Join the next survey <span aria-hidden="true">↗</span></a>
+          <p>Contact: Phone or WeChat · Bruce Dong</p>
+          <img class="qr" src="../cta/donglixin_qrcode.webp" alt="Local WeChat contact QR code">
+        </aside>
+      </div>
+      <span class="page-number">03 / 03</span>
+    </section>
+  </main>
+  <script>
+    const pages = [...document.querySelectorAll('.page')];
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const progress = document.querySelector('.progress');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const index = pages.indexOf(entry.target);
+        links.forEach((link, linkIndex) => link.classList.toggle('active', linkIndex === index));
+        progress.style.transform = `translateX(${index * 100}%)`;
+      });
+    }, { threshold: .55 });
+    pages.forEach((page) => observer.observe(page));
+  </script>
+</body>
+</html>

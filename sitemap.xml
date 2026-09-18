@@ -11,7 +11,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/baidu_verify_codeva-vBQIDsI7r2.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31,6 +31,13 @@
   </url>
 
   <url>
+    <loc>https://gatewaytonew.com/demo/beijing-birds.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/ecosystem-index.html</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,7 +46,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/events-index.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -686,7 +693,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -904,6 +911,13 @@
   <url>
     <loc>https://gatewaytonew.com/references/saudi-energy-procurement/</loc>
     <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/reports/xinnengyuan-dianli/</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

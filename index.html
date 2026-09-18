@@ -108,6 +108,18 @@ span.ops-center-flag.flag-kz{
 .carousel-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;margin-top:12px;}
 .carousel-strip img{flex:0 0 auto;height:160px;width:auto;border-radius:10px;object-fit:cover;border:1px solid var(--rule);}
 @media(max-width:640px){.carousel-strip img{height:120px;}}
+/* 出海产业研究报告板块 */
+.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 6px;}
+.report-card{display:flex;flex-direction:column;justify-content:flex-start;border:1px solid var(--rule);border-radius:12px;padding:18px;background:var(--paper-alt);text-decoration:none;color:inherit;min-height:150px;transition:border-color .2s,box-shadow .2s,transform .15s;}
+.report-card:hover{border-color:rgba(0,150,136,.55);box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-2px);}
+.report-card h4{font-size:17px;font-weight:700;margin:0 0 8px;color:var(--ink);}
+.report-card .rc-desc{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0;flex:1;}
+.report-card .rc-cta{margin-top:12px;font-size:13px;font-weight:600;color:var(--seal);}
+.report-card .rc-tag{display:inline-block;font-size:11px;letter-spacing:.5px;color:var(--seal);border:1px solid rgba(0,150,136,.4);border-radius:4px;padding:2px 8px;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;align-self:flex-start;}
+.report-card .rc-tag--wip{color:var(--ink-faint);border-color:var(--rule);}
+.report-card--live{border-color:rgba(0,150,136,.5);background:rgba(0,150,136,.04);}
+@media(max-width:900px){.report-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.report-grid{grid-template-columns:1fr;}}
 </style>
 <script type="application/ld+json">
 {
@@ -206,6 +218,7 @@ span.ops-center-flag.flag-kz{
     <div class="desk-clock"></div>
     <nav class="nav-links">
       <a href="#home" class="active">首页<span class="en">HOME</span></a>
+      <a href="#reports">报告<span class="en">REPORTS</span></a>
       <a href="#method">判断<span class="en">METHOD</span></a>
       <a href="#proof">印证<span class="en">PROOF</span></a>
       <a href="#industry">产业<span class="en">INDUSTRY</span></a>
@@ -224,7 +237,7 @@ span.ops-center-flag.flag-kz{
   <p class="lede reveal">很多企业不是没有海外机会，而是不确定第一个市场该选哪里、第一步该怎么走。国家选错、模式选错、合作伙伴选错，都会变成长期投入和试错成本。海鑫汇帮企业在行动前把选项、风险、成本摊开，给出一个经得住推敲的判断——而不是一场游学或一次论坛。</p>
 
   <div class="reveal" style="margin-top:10px;">
-    <a href="events/interview-05-overseas-chenjunwen/index.html" style="display:inline-block;padding:14px 30px;background:var(--seal);color:#fff;font-weight:700;font-size:16px;border-radius:10px;text-decoration:none;margin-bottom:10px;">先看 28 个市场的真实结论 &rarr;</a>
+    <a href="reports/xinnengyuan-dianli/index.html" style="display:inline-block;padding:16px 34px;background:var(--seal);color:#fff;font-weight:700;font-size:18px;border-radius:10px;text-decoration:none;margin-bottom:10px;box-shadow:0 8px 22px rgba(0,150,136,.25);">查看新能源电力电气出海研究报告 &rarr;</a>
   </div>
 
   <div class="reveal" style="margin-top:32px;">
@@ -241,6 +254,47 @@ span.ops-center-flag.flag-kz{
   </div>
 
 
+</section>
+
+<!-- ============ REPORTS ============ -->
+<section class="section" id="reports">
+  <div class="eyebrow">出海产业研究报告 / INDUSTRY REPORTS</div>
+  <h2 class="headline reveal">六大赛道，先看清再出手</h2>
+  <p class="subline reveal">INDUSTRY REPORTS</p>
+  <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。首份《新能源电力电气出海研究报告》已上线，其余赛道研究进行中。</p>
+  <div class="report-grid reveal">
+    <a class="report-card report-card--live" href="reports/xinnengyuan-dianli/index.html">
+      <span class="rc-tag">已上线</span>
+      <h4>新能源电力电气</h4>
+      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统。一句话结论 + 市场机会 + 真实门槛 + 中国企业案例，完整报告留资解锁。</p>
+      <span class="rc-cta">查看报告 &rarr;</span>
+    </a>
+    <div class="report-card">
+      <span class="rc-tag rc-tag--wip">研究进行中</span>
+      <h4>汽车智能科技</h4>
+      <p class="rc-desc">研究进行中，产业专家：王高歌。</p>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag rc-tag--wip">研究进行中</span>
+      <h4>AI 产业</h4>
+      <p class="rc-desc">研究进行中，产业专家：唐照波 / 张乐。</p>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag rc-tag--wip">研究进行中</span>
+      <h4>消费品牌</h4>
+      <p class="rc-desc">研究进行中，产业专家：招募中。</p>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag rc-tag--wip">研究进行中</span>
+      <h4>跨国资本</h4>
+      <p class="rc-desc">研究进行中，产业专家：赵伟栋。</p>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag rc-tag--wip">研究进行中</span>
+      <h4>国际人才</h4>
+      <p class="rc-desc">研究进行中，产业专家：张成刚。</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ 02 METHOD ============ -->
@@ -348,7 +402,7 @@ span.ops-center-flag.flag-kz{
   <div class="stat-line reveal">
     <div class="stat-item">
       <div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div>
-      <div class="stat-cap">场活动</div>
+      <div class="stat-cap">出海企业调研</div>
     </div>
     <div class="stat-item">
       <div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div>
