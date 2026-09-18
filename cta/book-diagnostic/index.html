@@ -26,6 +26,12 @@
 .field textarea{min-height:96px;resize:vertical;line-height:1.6;}
 .footer{margin-top:60px;}
 @media (max-width:680px){.form-grid{grid-template-columns:1fr;}.subline{white-space:normal;}.section{padding:40px 20px;}}
+.pre-screen{margin-top:26px;padding:22px 24px;border:1px solid var(--gold-line);background:var(--paper-alt);border-radius:8px;}
+.pre-screen .ps-title{font-family:'Noto Serif SC',serif;font-size:17px;margin:0 0 6px;color:var(--ink);}
+.pre-screen .ps-note{font-size:12.5px;color:var(--ink-faint);line-height:1.6;margin:0 0 14px;}
+.pre-screen .ps-list{margin:0;padding-left:20px;}
+.pre-screen .ps-list li{font-size:14px;line-height:1.8;margin:6px 0;color:var(--ink);}
+.pre-screen .ps-cta{margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--seal);}
 </style>
   <link rel="canonical" href="https://gatewaytonew.com/cta/book-diagnostic/">
   <meta property="og:type" content="website">
@@ -87,6 +93,8 @@
     </div>
   </form>
 
+  <div id="preScreen" class="pre-screen" hidden></div>
+
   <div class="book-qr">
     <img src="../donglixin_qrcode.webp" alt="扫码添加董立鑫微信" class="book-qr-img" loading="lazy" width="716" height="715">
     <div class="book-qr-text">
@@ -104,8 +112,46 @@
   var form = document.getElementById('diagnosticForm');
   if(!form) return;
   var msg = document.getElementById('formMsg');
+  var ps = document.getElementById('preScreen');
+
+  function genPreScreen(d){
+    var stageText = {
+      planning: '你处于「规划立项」阶段，最该先验证的是市场假设与合规边界，避免把国内经验直接平移到海外。',
+      testing: '你处于「小规模试水」阶段，核心是先用一个市场、一个渠道、一笔可复制订单跑通单点模型，再谈扩张。',
+      scaling: '你处于「多国扩张」阶段，风险重心从「进不进得去」转向「留不留得住」，要补本地化经营与组织能力。',
+      established: '你已「深度本地化」，核心是把单国经验抽象成可复制的区域乃至全球运营体系。'
+    };
+    var stage = stageText[d.stage] || '你尚未明确出海阶段，建议先做一次准备度自评，把「去不去、去哪」想清楚。';
+    var ind = (d.industry||'').toLowerCase();
+    var bucket = '通用出海';
+    if(/新能源|电力|光伏|储能|锂电|充电|电网|风电|氢能/.test(ind)) bucket='新能源·电力电气';
+    else if(/汽车|智能|电动|自动驾驶|零部件|整车|车联网/.test(ind)) bucket='汽车智能科技';
+    else if(/ai|人工智能|软件|saas|算力|算法|大模型|机器人/.test(ind)) bucket='AI产业';
+    else if(/消费|品牌|零售|美妆|食品|服饰|跨境|电商/.test(ind)) bucket='消费品牌';
+    else if(/资本|投资|金融|基金|并购|vc|pe|财富/.test(ind)) bucket='跨国资本';
+    else if(/人才|人力|招聘|教育|组织|薪酬/.test(ind)) bucket='国际人才';
+    var brief = (d.brief||'').trim();
+    var briefEcho = brief ? ('结合你描述的诉求「' + (brief.length>40?brief.slice(0,40)+'…':brief) + '」') : '结合你所在的行业与当前阶段，';
+    var html = '';
+    html += '<h3 class="ps-title">初步方向判断（基于你填写的信息）</h3>';
+    html += '<p class="ps-note">说明：这是基于你填写信息的初步方向判断，非最终结论。正式判断请以董立鑫 1 对 1 首诊为准。</p>';
+    html += '<ul class="ps-list">';
+    html += '<li><b>最贴近的赛道：</b>从你填写的行业看，最贴近「' + bucket + '」。建议优先参考该赛道的出海研究报告与一线情报。</li>';
+    html += '<li><b>当前阶段重心：</b>' + stage + '</li>';
+    html += '<li><b>建议优先验证：</b>' + briefEcho + '建议先把最高不确定的一项拆成可验证的小假设，用最低成本试一次，再决定是否加码。</li>';
+    html += '</ul>';
+    html += '<p class="ps-cta">如需更深入的判断，下方扫码即可预约董立鑫 1 对 1 首诊（99元/1小时）。</p>';
+    return html;
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function(v,k){ data[k]=v; });
+    ps.innerHTML = genPreScreen(data);
+    ps.hidden = false;
+    ps.scrollIntoView({behavior:'smooth', block:'start'});
     var proxy = form.getAttribute('data-proxy');
     if(!proxy || proxy.indexOf('YOUR_SUBDOMAIN')>-1){ location.href='success.html'; return; }
     var btn = form.querySelector('button[type=submit]');
@@ -113,9 +159,6 @@
     btn.style.opacity = '0.6';
     msg.style.color = '#555';
     msg.textContent = '提交中…';
-    var fd = new FormData(form);
-    var data = {};
-    fd.forEach(function(v,k){ data[k]=v; });
     data.source = 'book-diagnostic';
     fetch(proxy, {
       method:'POST',
@@ -124,7 +167,10 @@
     }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
       .then(function(res){
         if(res.ok && res.j.ok){
-          location.href='success.html';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+          msg.style.color = '#2e7d32';
+          msg.textContent = '✅ 预约已提交，董立鑫会在一个工作日内联系你。';
         } else {
           btn.disabled = false;
           btn.style.opacity = '1';
