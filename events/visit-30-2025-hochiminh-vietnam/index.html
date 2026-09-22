@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -65,6 +65,16 @@
     color: var(--ev-text-secondary);
     text-align: right;
     font-weight: 400;
+  }
+
+  /* ---- 本页图片：按各自原始比例完整展示，不做 16:9 裁切 ---- */
+  .ev-body .ev-hero-img {
+    aspect-ratio: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .ev-body .ev-photos {
+    align-items: flex-start;
   }
 </style>
 </head>
