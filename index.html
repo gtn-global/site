@@ -105,9 +105,11 @@ span.ops-center-flag.flag-kz{
 .lead-label{font-size:10px;letter-spacing:1px;color:rgba(0,150,136,.85);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;}
 .lead-name{font-size:14px;font-weight:600;color:var(--ink);}
 /* 06 底部现场轮播 */
-.carousel-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;margin-top:12px;}
-.carousel-strip img{flex:0 0 auto;height:160px;width:auto;border-radius:10px;object-fit:cover;border:1px solid var(--rule);}
-@media(max-width:640px){.carousel-strip img{height:120px;}}
+.carousel-wrap{margin-top:36px;display:flex;flex-direction:column;gap:12px;}
+.carousel-track{overflow:hidden;width:100%;}
+.carousel-row{display:flex;gap:12px;width:max-content;will-change:transform;}
+.carousel-row img{flex:0 0 auto;height:160px;width:auto;border-radius:10px;object-fit:cover;border:1px solid var(--rule);}
+@media(max-width:640px){.carousel-row img{height:120px;}}
 /* 出海产业研究报告板块 */
 .report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 6px;}
 .report-card{display:flex;flex-direction:column;justify-content:flex-start;border:1px solid var(--rule);border-radius:12px;padding:18px;background:var(--paper-alt);text-decoration:none;color:inherit;min-height:150px;transition:border-color .2s,box-shadow .2s,transform .15s;}
@@ -222,7 +224,8 @@ span.ops-center-flag.flag-kz{
       <a href="#method">判断<span class="en">METHOD</span></a>
       <a href="#proof">印证<span class="en">PROOF</span></a>
       <a href="#industry">产业<span class="en">INDUSTRY</span></a>
-
+
+
       <a href="#region">区域<span class="en">REGION</span></a>
       <a href="#contact">联系<span class="en">CONTACT</span></a>
     </nav>
@@ -244,9 +247,9 @@ span.ops-center-flag.flag-kz{
 <!-- ============ REPORTS ============ -->
 <section class="section" id="reports">
   <div class="eyebrow">出海产业研究报告 / INDUSTRY REPORTS</div>
-  <h2 class="headline reveal">六大赛道，先看清再出手</h2>
+  <h2 class="headline reveal">产业出海，先看清再出手</h2>
   <p class="subline reveal">INDUSTRY REPORTS</p>
-  <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。首份《新能源电力电气出海研究报告》已上线，其余赛道研究进行中。</p>
+  <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。</p>
   <div class="report-grid reveal">
     <a class="report-card report-card--live" href="reports/cleantech/index.html">
       <span class="rc-tag">已上线</span>
@@ -268,20 +271,6 @@ span.ops-center-flag.flag-kz{
 
   </div>
 </section>
-<div class="reveal" style="max-width:1120px;margin:32px auto 0;padding:0 clamp(16px,4vw,28px);">
-    <div class="cta-pair">
-      <div class="cta-block">
-        <div class="cta-question">你现在，准备好出海了吗？</div>
-        <a href="cta/self-test/index.html" class="radar-cta">开始自测</a>
-      </div>
-      <div class="cta-block">
-        <div class="cta-question">不确定问题出在哪里？</div>
-        <a href="cta/book-diagnostic/index.html" class="btn-seal">预约首诊</a>
-      </div>
-    </div>
-  </div>
-
-
 <!-- ============ 02 METHOD ============ -->
 <section class="section" id="method">
   <div class="eyebrow">02 — 我们怎么帮你判断 / METHOD</div>
@@ -907,6 +896,38 @@ span.ops-center-flag.flag-kz{
     </a>
   </div>
 
+
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" data-dir="1">
+      <div class="carousel-row">
+        <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
+        <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
+        <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
+        <img src="carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
+        <img src="carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
+        <img src="carousel/carousel-06.webp" width="2000" height="1187" alt="出海现场 6" loading="lazy">
+        <img src="carousel/carousel-07.webp" width="800" height="382" alt="出海现场 7" loading="lazy">
+        <img src="carousel/carousel-08.webp" width="1920" height="1280" alt="出海现场 8" loading="lazy">
+        <img src="carousel/carousel-09.webp" width="800" height="378" alt="出海现场 9" loading="lazy">
+        <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
+        <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
+      </div>
+    </div>
+    <div class="carousel-track" data-dir="-1">
+      <div class="carousel-row">
+        <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
+        <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
+        <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
+        <img src="carousel/carousel-15.webp" width="800" height="533" alt="出海现场 15" loading="lazy">
+        <img src="carousel/carousel-16.webp" width="800" height="600" alt="出海现场 16" loading="lazy">
+        <img src="carousel/carousel-17.webp" width="800" height="600" alt="出海现场 17" loading="lazy">
+        <img src="carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
+        <img src="carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
+        <img src="carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
+        <img src="carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
+      </div>
+    </div>
+  </div>
 </section><!-- ============ 06 CONTACT ============ -->
 <section class="section" id="contact">
   <div class="eyebrow">06 — 联系 / CONTACT</div>
@@ -961,14 +982,6 @@ span.ops-center-flag.flag-kz{
 
     </form>
   </div>
-
-  <div class="carousel-strip reveal" style="margin-top:36px;">
-    <img src="carousel/carousel-01.webp" alt="出海现场 1" loading="lazy">
-    <img src="carousel/carousel-02.webp" alt="出海现场 2" loading="lazy">
-    <img src="carousel/carousel-03.webp" alt="出海现场 3" loading="lazy">
-    <img src="carousel/carousel-04.webp" alt="出海现场 4" loading="lazy">
-    <img src="carousel/carousel-05.webp" alt="出海现场 5" loading="lazy">
-  </div>
 </section>
 
 
@@ -978,5 +991,47 @@ span.ops-center-flag.flag-kz{
 <footer class="footer" data-depth="0"></footer>
 
 <script src="script.js" defer></script>
+<script>
+(function(){
+  var TICK = 4600, DUR = 1200;
+  var tracks = document.querySelectorAll('.carousel-track');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  Array.prototype.forEach.call(tracks, function(track){
+    var row = track.querySelector('.carousel-row');
+    var base = Array.prototype.slice.call(row.children);
+    var baseCount = base.length;
+    function cloneSet(){ base.forEach(function(n){ row.appendChild(n.cloneNode(true)); }); }
+    function measure(){ return row.children[baseCount].offsetLeft - row.children[0].offsetLeft; }
+    cloneSet();
+    var unit = measure();
+    var guard = 0;
+    while (unit < track.clientWidth + 400 && guard++ < 4){ cloneSet(); unit = measure(); }
+    var dir = track.dataset.dir === '-1' ? -1 : 1;
+    var i = dir === 1 ? 0 : baseCount;
+    var paused = false;
+    function offAt(k){ return row.children[k].offsetLeft - row.children[0].offsetLeft; }
+    function setPos(off, animate){
+      row.style.transition = animate ? 'transform ' + DUR + 'ms cubic-bezier(.35,0,.25,1)' : 'none';
+      row.style.transform = 'translateX(' + (-off) + 'px)';
+    }
+    setPos(offAt(i), false);
+    function tick(){
+      if (paused) return;
+      if (dir === 1){
+        i++;
+        setPos(offAt(i), true);
+        if (i >= baseCount) setTimeout(function(){ i = 0; setPos(0, false); }, DUR);
+      } else {
+        i--;
+        setPos(offAt(i), true);
+        if (i <= 0) setTimeout(function(){ i = baseCount; setPos(offAt(i), false); }, DUR);
+      }
+    }
+    setInterval(tick, TICK);
+    track.addEventListener('mouseenter', function(){ paused = true; });
+    track.addEventListener('mouseleave', function(){ paused = false; });
+  });
+})();
+</script>
 </body>
 </html>
