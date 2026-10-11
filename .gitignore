@@ -44,6 +44,8 @@ CEO_tour_manual/*
 GTN_Global/*
 !GTN_Global/webp/
 !GTN_Global/webp/*
+!GTN_Global/webp-flag/
+!GTN_Global/webp-flag/*
 # 注：carousel 原始图当前仍被线上轮播引用，待 Batch E 替换后再忽略
 
 # 本地预览截图（自检用，不部署）
