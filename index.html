@@ -230,6 +230,12 @@ span.ops-center-flag.flag-kz{
 }
 </script>
   <link rel="canonical" href="https://gatewaytonew.com/">
+  <!-- 数据由 node tools/build-data.mjs 生成；用 <script> 直接加载而非 fetch，保证 file:// 双击打开也能显示 -->
+  <script src="data/marquee.js"></script>
+  <script src="data/filters.js"></script>
+  <script src="data/products.js"></script>
+  <script src="data/calendar.js"></script>
+  <script src="data/index.js"></script>
   <script type="application/ld+json">
 [
 {
@@ -242,14 +248,16 @@ span.ops-center-flag.flag-kz{
 </script>
 </head>
 <body>
+<div id="fileWarn" class="file-warn" hidden>请双击 <b>start-preview.bat</b> 预览</div>
+<script>if(location.protocol==='file:'){var fw=document.getElementById('fileWarn');if(fw)fw.hidden=false;}</script>
 
 <header class="topbar">
   <div class="topbar-inner">
     <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
     <div class="desk-clock"></div>
     <nav class="nav-links">
-      <a href="#selector">产业<span class="en">INDUSTRY</span></a>
-      <a href="#selector">区域<span class="en">REGION</span></a>
+      <a href="#industry">产业<span class="en">INDUSTRY</span></a>
+      <a href="#region">区域<span class="en">REGION</span></a>
       <a href="#offer">产品<span class="en">PRODUCTS</span></a>
       <a href="#proof">内容<span class="en">CONTENT</span></a>
       <a href="#about">关于<span class="en">ABOUT</span></a>
@@ -278,14 +286,14 @@ span.ops-center-flag.flag-kz{
     </div>
   </div>
   <div class="hero-cta reveal">
-    <a class="btn-submit btn-seal" href="cta/self-test/index.html">3 分钟自测 · 1 元</a>
-    <a class="btn-submit btn-seal" href="#contact">预约首诊 · 99 元 / 1 小时</a>
+    <a class="btn-submit btn-seal" href="cta/self-test/index.html">3 分钟自测 <span class="btn-price">· 1 元</span></a>
+    <a class="btn-outline" href="#contact">预约首诊 <span class="btn-price">· 99 元 / 1 小时</span></a>
   </div>
   <script>
   (function(){
     var sel=document.getElementById('selIndustry'), selC=document.getElementById('selCountry'), btn=document.getElementById('selGo');
     if(!sel||!selC||!btn) return;
-    fetch('data/filters.json').then(function(r){return r.json();}).then(function(cfg){
+    var cfg = (window.GTN && window.GTN.filters) || {};
       (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.display||o.name;sel.appendChild(p);});
       var REGION_ORDER = ['东南亚','东亚','南亚','中亚','中东','欧洲','非洲','美洲','其他'];
       var groups = {};
@@ -296,13 +304,195 @@ span.ops-center-flag.flag-kz{
         groups[r].forEach(function(o){ var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;og.appendChild(p); });
         selC.appendChild(og);
       });
-    }).catch(function(e){console.error('filters.json load failed',e);});
+
     btn.addEventListener('click',function(){
-      var i=sel.value,c=selC.value,q=[];
-      if(i)q.push('industry='+encodeURIComponent(i));
-      if(c)q.push('country='+encodeURIComponent(c));
-      location.href='events-index.html'+(q.length?'?'+q.join('&'):'');
+      var i=sel.value,c=selC.value;
+      if(window.GTNDesk && window.GTNDesk.open){ window.GTNDesk.open(i,c); }
     });
+  })();
+  </script>
+
+  <div class="desk" id="decisionDesk" hidden>
+    <div class="desk-head">
+      <div class="desk-title" id="deskTitle"></div>
+      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
+    </div>
+    <div class="desk-modules" id="deskModules"></div>
+    <div class="desk-foot">
+      <button type="button" class="btn-submit btn-seal" id="deskBook">预约该产业首诊</button>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var IDX = (window.GTN && window.GTN.index) || {};
+    var CFG = (window.GTN && window.GTN.filters) || {};
+    var desk = document.getElementById('decisionDesk');
+    var mods = document.getElementById('deskModules');
+    var titleEl = document.getElementById('deskTitle');
+    if(!desk || !mods || !titleEl) return;
+
+    var countryBySlug = {}, industryBySlug = {}, industryByName = {};
+    (CFG.countries||[]).forEach(function(c){ countryBySlug[c.slug]=c; });
+    (CFG.industries||[]).forEach(function(i){ industryBySlug[i.slug]=i; industryByName[String(i.name).replace(/\s/g,'')]=i; });
+
+    var REGION_ALIAS = {'middle-east':'中东','southeast-asia':'东南亚','east-asia':'东亚','south-asia':'南亚','central-asia':'中亚','europe':'欧洲','africa':'非洲','americas':'美洲'};
+    function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+    function norm(s){ return String(s||'').replace(/\s/g,''); }
+
+    var cur = { industry:'', country:'', indName:'', countryName:'', region:'' };
+
+    function resolveTarget(i, c){
+      var indObj = industryBySlug[i];
+      var indName = indObj ? indObj.name : '';
+      var cObj = countryBySlug[c];
+      var countryName = cObj ? cObj.name : '';
+      var region = cObj ? (cObj.region||'') : (REGION_ALIAS[String(c||'').toLowerCase()] || (c||''));
+      return { industry:i||'', country:c||'', indName:indName, countryName:countryName, region:region };
+    }
+
+    function matchEvents(){
+      return (IDX.event||[]).filter(function(e){
+        var okI = !cur.indName || (e.industries||[]).indexOf(cur.indName) >= 0;
+        var okR = (!cur.countryName && !cur.region) ? true
+          : ((cur.countryName && (e.countries||[]).indexOf(cur.countryName)>=0) || (cur.region && (e.regions||[]).indexOf(cur.region)>=0));
+        return okI && okR;
+      }).sort(function(a,b){ return String(b.date||'').localeCompare(String(a.date||'')); });
+    }
+
+    function mod(label, inner){
+      return '<section class="desk-mod"><h4 class="desk-mod-title">'+esc(label)+'</h4>'
+        + (inner || '<p class="desk-empty">这一块正在筹备</p>') + '</section>';
+    }
+
+    function render(){
+      var parts = [];
+      // ① 研究报告
+      var reps = (IDX.report||[]).filter(function(r){ return !cur.indName || r.industry===cur.indName; });
+      parts.push(mod('研究报告', reps.length ? ('<ul class="desk-list">'+reps.map(function(r){
+        var act = r.url ? '<a class="desk-link" href="'+esc(r.url)+'">'+esc(r.action||'查看')+'</a>'
+                        : '<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">登记意向</button>';
+        return '<li><span class="desk-status">'+esc(r.status)+'</span><span class="desk-t">'+esc(r.title)+'</span>'+act+'</li>';
+      }).join('')+'</ul>') : ''));
+      // ② 往期考察与调研
+      var evs = matchEvents();
+      var q = [];
+      if(cur.industry) q.push('industry='+encodeURIComponent(cur.industry));
+      if(cur.country) q.push('country='+encodeURIComponent(cur.country));
+      parts.push(mod('往期考察与调研', evs.length ? ('<ul class="desk-list">'+evs.slice(0,3).map(function(e){
+        return '<li><a class="desk-link" href="'+esc(e.url)+'">'+esc(e.title)+'</a><span class="desk-meta">'+esc(e.typeLabel||'')+' · '+esc(e.year||'')+'</span></li>';
+      }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">查看全部 &rarr;</a>') : ''));
+      // ③ 对口顾问
+      var advs = (IDX.advisor||[]).filter(function(a){ return !cur.indName || (a.industries||[]).indexOf(cur.indName)>=0; });
+      advs = advs.slice().sort(function(a,b){ return (b.isLead?1:0)-(a.isLead?1:0); });
+      parts.push(mod('对口顾问', advs.length ? ('<div class="desk-adv">'+advs.slice(0,4).map(function(a){
+        return '<a class="desk-adv-item" href="'+esc(a.url)+'">'
+          + (a.photo ? '<img src="'+esc(a.photo)+'" alt="" loading="lazy">' : '<span class="desk-adv-ph">'+esc(String(a.name).slice(0,1))+'</span>')
+          + '<span class="desk-adv-name">'+esc(a.name)+'</span>'
+          + (a.one ? '<span class="desk-adv-one">'+esc(a.one)+'</span>' : '') + '</a>';
+      }).join('')+'</div>') : ''));
+      // ④ 区域运营中心
+      var ops = (IDX.ops_center||[]).filter(function(o){
+        return (cur.countryName && o.country===cur.countryName) || (cur.region && o.region===cur.region);
+      });
+      parts.push(mod('区域运营中心', ops.length ? ('<div class="desk-ops">'+ops.map(function(o){
+        return '<a class="desk-ops-item" href="'+esc(o.url)+'"><span class="desk-ops-name">'+esc(o.name)+'</span><span class="desk-meta">'+esc(o.country||o.region||'')+'</span></a>';
+      }).join('')+'</div>') : ''));
+      // ⑤ 下一次相关活动
+      var cal = (IDX.calendar||[]).filter(function(c){ return c.visible !== false && c.status !== 'closed'; });
+      parts.push(mod('下一次相关活动', cal.length ? ('<ul class="desk-list">'+cal.slice(0,3).map(function(c){
+        return '<li><span class="desk-t">'+esc(c.product)+'</span><span class="desk-meta">'+esc(c.date_text||'')+' · '+esc(c.location||'')+'</span></li>';
+      }).join('')+'</ul>') : ''));
+
+      var any = reps.length || evs.length || advs.length || ops.length || cal.length;
+      if(!any){
+        parts.push('<section class="desk-mod desk-mod--form"><p class="desk-empty">这一格还没有现成内容。留下联系方式，我们按「'
+          + esc(cur.indName||'不限产业') + ' × ' + esc(cur.countryName||cur.region||'不限区域')
+          + '」的方向补，并第一时间告诉你。</p><button type="button" class="btn-submit btn-seal" id="deskGrid">登记我的需求</button></section>');
+      }
+      mods.innerHTML = parts.join('');
+
+      var gb = document.getElementById('deskGrid');
+      if(gb) gb.addEventListener('click', function(){
+        (window.openIntent||function(){})((cur.indName||'不限')+' × '+(cur.countryName||cur.region||'不限'), 'grid-interest', '空格子登记');
+      });
+      mods.querySelectorAll('.desk-btn').forEach(function(b){
+        b.addEventListener('click', function(){
+          (window.openIntent||function(){})(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim());
+        });
+      });
+    }
+
+    function writeHash(i, region){
+      try{ history.replaceState(null,'','#cell=industry:'+(i||'all')+';region:'+(region||'all')); }catch(e){}
+    }
+    function readHash(){
+      var m = (location.hash||'').match(/cell=([^&]+)/);
+      if(!m) return null;
+      var out={industry:'',region:''};
+      m[1].split(';').forEach(function(p){
+        var kv=p.split(':');
+        if(kv[0]==='industry') out.industry = (kv[1]==='all'?'':kv[1]);
+        if(kv[0]==='region') out.region = (kv[1]==='all'?'':decodeURIComponent(kv[1]||''));
+      });
+      return out;
+    }
+
+    function open(i, c){
+      cur = resolveTarget(i, c);
+      titleEl.textContent = '决策台 · ' + (cur.indName||'全部产业') + ' × ' + (cur.countryName||cur.region||'全部区域');
+      render();
+      desk.hidden = false;
+      var si=document.getElementById('selIndustry'), sc=document.getElementById('selCountry');
+      if(si && i) si.value = i;
+      if(sc && c && countryBySlug[c]) sc.value = c;
+      writeHash(i, cur.region || c);
+      desk.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    var closeBtn = document.getElementById('deskClose');
+    if(closeBtn) closeBtn.addEventListener('click', function(){
+      desk.hidden = true;
+      try{ history.replaceState(null,'','#'); }catch(e){}
+    });
+
+    var bookBtn = document.getElementById('deskBook');
+    if(bookBtn) bookBtn.addEventListener('click', function(){
+      var f = document.getElementById('diagnosticForm');
+      var contact = document.getElementById('contact');
+      if(f){
+        if(f.industry && cur.indName){
+          for(var k=0;k<f.industry.options.length;k++){
+            if(f.industry.options[k].text===cur.indName || f.industry.options[k].value===cur.indName){
+              f.industry.value = f.industry.options[k].value; break;
+            }
+          }
+        }
+        if(f.brief) f.brief.value = '产业：'+(cur.indName||'不限')+' 区域：'+(cur.countryName||cur.region||'不限');
+      }
+      if(contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+
+    // B4：产业决策情境卡片加「看这个产业的资料」
+    document.querySelectorAll('#situation-accordion .accordion-item').forEach(function(item){
+      var tag = item.querySelector('.tag');
+      var content = item.querySelector('.accordion-content');
+      if(!tag || !content) return;
+      var raw = String(tag.textContent||'').split('·')[0].trim();
+      var ind = industryByName[norm(raw)];
+      if(!ind) return;
+      var b = document.createElement('button');
+      b.type='button';
+      b.className='card-cta desk-open-btn';
+      b.textContent='看这个产业的资料';
+      b.addEventListener('click', function(){ open(ind.slug, cur.country); });
+      content.appendChild(b);
+    });
+
+    window.GTNDesk = { open: open, close: function(){ desk.hidden = true; } };
+
+    var h = readHash();
+    if(h && (h.industry || h.region)) open(h.industry, h.region);
   })();
   </script>
 
@@ -312,8 +502,8 @@ span.ops-center-flag.flag-kz{
     <div class="eyebrow">双向通道 / TWO-WAY CHANNEL</div>
     <h2 class="section-title">走出去，也请进来</h2>
     <div class="marquee" id="marquee">
-      <div class="marquee-row marquee-up"><div class="marquee-track" id="mUp"></div></div>
-      <div class="marquee-row marquee-down"><div class="marquee-track" id="mDown"></div></div>
+      <div class="marquee-row marquee-up"><span class="marquee-label">GO OUT 走出去</span><div class="marquee-track" id="mUp"></div></div>
+      <div class="marquee-row marquee-down"><span class="marquee-label">COME IN 请进来</span><div class="marquee-track" id="mDown"></div></div>
     </div>
   </section>
   <script>
@@ -321,8 +511,8 @@ span.ops-center-flag.flag-kz{
     var up = document.getElementById('mUp');
     var down = document.getElementById('mDown');
     if(up && down){
-      fetch('data/marquee.json').then(function(r){return r.json();}).then(function(cfg){
-        var SPEED = 60; // px/sec 固定，图多时速度不变快
+      var cfg = (window.GTN && window.GTN.marquee) || {};
+        var SPEED = 40; // px/sec 固定，图多时速度不变快
         var CELL = 274; // 260px 宽 + 14px 间距（与 .marquee-cell/.marquee-track 一致）
         function fill(el, items){
           if(!items || !items.length) return;
@@ -333,7 +523,7 @@ span.ops-center-flag.flag-kz{
         }
         fill(up, cfg.up && cfg.up.items);
         fill(down, cfg.down && cfg.down.items);
-      }).catch(function(e){ console.error('marquee.json load failed', e); });
+
     }
   })();
   </script>
@@ -381,7 +571,7 @@ span.ops-center-flag.flag-kz{
 (function(){
   var box = document.getElementById('offerCards');
   if(box){
-    fetch('data/products.json').then(function(r){return r.json();}).then(function(stages){
+    var stages = (window.GTN && window.GTN.products) || [];
       function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
       function itemHtml(it){
         var btn;
@@ -420,7 +610,7 @@ span.ops-center-flag.flag-kz{
           fn(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim());
         });
       });
-    }).catch(function(e){ console.error('products.json load failed', e); });
+
   }
 })();
 </script>
@@ -883,6 +1073,43 @@ span.ops-center-flag.flag-kz{
   <p class="subline reveal">A network built across multiple institutions and partners.</p>
   <p class="lede reveal">企业进入陌生市场时，最缺的不是动力，而是当地可信的合作伙伴、渠道和信息来源——这些资源用来降低进入成本和试错风险。海鑫汇连接当地企业、行业机构与市场资源，帮助企业进入陌生市场时建立可靠合作关系。</p>
 
+  <div class="region-grid reveal" id="regionGrid"></div>
+  <script>
+  (function(){
+    var CFG=(window.GTN&&window.GTN.filters)||{};
+    var IDX=(window.GTN&&window.GTN.index)||{};
+    var grid=document.getElementById('regionGrid');
+    if(!grid||!CFG.countries) return;
+    var ORDER=['东南亚','东亚','南亚','中亚','中东','欧洲','非洲','美洲','其他'];
+    var groups={};
+    CFG.countries.forEach(function(c){ if(c.hidden_in_dropdown) return; var r=c.region||'其他'; (groups[r]=groups[r]||[]).push(c); });
+    function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
+    function countFor(name){ return (IDX.event||[]).filter(function(e){ return (e.countries||[]).indexOf(name)>=0; }).length; }
+    function hasOps(name){ return (IDX.ops_center||[]).some(function(o){ return o.country===name; }); }
+    var html='';
+    ORDER.concat(Object.keys(groups).filter(function(r){return ORDER.indexOf(r)<0;})).forEach(function(r){
+      if(!groups[r]) return;
+      html+='<div class="region-group-title">'+esc(r)+'</div>';
+      groups[r].forEach(function(c){
+        var n=countFor(c.name);
+        html+='<button type="button" class="region-card" data-country="'+esc(c.slug)+'">'
+          +'<span class="region-card-name">'+esc(c.name)+'</span>'
+          +'<span class="region-card-meta">'+(n?(n+' 场考察/活动'):'暂无公开场次')+'</span>'
+          +(hasOps(c.name)?'<span class="region-card-ops">● 有运营中心</span>':'')
+          +'</button>';
+      });
+    });
+    grid.innerHTML=html;
+    grid.querySelectorAll('.region-card').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(!window.GTNDesk||!window.GTNDesk.open) return;
+        var si=document.getElementById('selIndustry');
+        window.GTNDesk.open(si?si.value:'', b.getAttribute('data-country'));
+      });
+    });
+  })();
+  </script>
+
   <div class="ops-head-row reveal">
     <div class="subhead">海鑫汇全球运营中心<span class="en">GLOBAL OPERATIONS CENTER</span></div>
   </div>
@@ -1290,7 +1517,7 @@ span.ops-center-flag.flag-kz{
           + '<div class="cal-cta-row">'+ctaOf(it)+'</div>'
           + '</article>';
       }
-      fetch('data/calendar.json').then(function(r){return r.json();}).then(function(items){
+      var items = (window.GTN && window.GTN.calendar) || [];
         var now = new Date();
         var horizon = new Date(now.getTime() + 90*24*3600*1000);
         function visible(it){
@@ -1321,7 +1548,7 @@ span.ops-center-flag.flag-kz{
         wrap.querySelectorAll('.cal-cta[data-product]').forEach(function(b){
           b.addEventListener('click', function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source') || 'calendar-interest', b.textContent.trim()); });
         });
-      }).catch(function(e){ console.error('calendar.json load failed', e); wrap.innerHTML='<p class="cal-empty">日历加载失败。</p>'; });
+
     }
   })();
   </script>
