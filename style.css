@@ -227,6 +227,27 @@ textarea{resize:vertical;min-height:88px;}
 .form-error{display:block;width:100%;color:#a72b23;font-size:13px;line-height:1.55;margin:12px 0 0;}
 .btn-submit[disabled],.btn-seal[disabled]{opacity:.6;cursor:not-allowed;}
 
+/* 首页产业×区域选择器（1.3） */
+.home-selector{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:14px;background:var(--paper-alt);}
+.selector-title{font-size:18px;font-weight:700;color:var(--ink);margin:0 0 16px;}
+.selector-row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;}
+.selector-field{display:flex;flex-direction:column;font-size:13px;color:var(--ink-soft);gap:6px;flex:1 1 200px;}
+.selector-select{padding:11px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);font-size:14px;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;}
+.hero-cta .btn-submit{flex:0 0 auto;}
+@media(max-width:560px){.selector-row{flex-direction:column;align-items:stretch;}.hero-cta .btn-submit{width:100%;text-align:center;}}
+
+/* events-index 这一格的面板（1.4） */
+.grid-panel{margin:18px 0 8px;padding:20px;border:1px solid var(--seal);border-radius:14px;background:rgba(0,150,136,.05);}
+.grid-panel-title{font-size:18px;font-weight:700;color:var(--ink);margin:0 0 14px;}
+.grid-module{margin-bottom:14px;}
+.grid-module h4{font-size:14px;margin:0 0 8px;color:var(--ink-soft);}
+.grid-empty p{margin:0 0 12px;color:var(--ink-soft);}
+.grid-interest-form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.grid-interest-form input[type=text]{padding:10px 12px;border:1px solid var(--rule);border-radius:8px;min-width:220px;}
+.grid-interest-form .consent{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}
+@media(max-width:560px){.grid-interest-form input[type=text]{min-width:0;width:100%;}}
+
 /* ---------- footer ---------- */
 .footer{padding:32px 24px;text-align:center;font-size:12.5px;color:var(--ink-soft,#5b6470);border-top:1px solid var(--rule,#e5e2db);}
 
