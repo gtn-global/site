@@ -243,6 +243,7 @@ textarea{resize:vertical;min-height:88px;}
 .grid-module{margin-bottom:14px;}
 .grid-module h4{font-size:14px;margin:0 0 8px;color:var(--ink-soft);}
 .grid-empty p{margin:0 0 12px;color:var(--ink-soft);}
+.grid-rep-planning{display:inline-block;margin:0;padding:8px 14px;border:1px dashed var(--seal);border-radius:8px;color:var(--seal);font-size:14px;font-weight:600;background:rgba(0,150,136,.05);}
 .grid-interest-form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
 .grid-interest-form input[type=text]{padding:10px 12px;border:1px solid var(--rule);border-radius:8px;min-width:220px;}
 .grid-interest-form .consent{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}

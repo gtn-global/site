@@ -267,8 +267,8 @@ span.ops-center-flag.flag-kz{
     var sel=document.getElementById('selIndustry'), selC=document.getElementById('selCountry'), btn=document.getElementById('selGo');
     if(!sel||!selC||!btn) return;
     fetch('data/filters.json').then(function(r){return r.json();}).then(function(cfg){
-      (cfg.industries||[]).forEach(function(o){var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;sel.appendChild(p);});
-      (cfg.countries||[]).forEach(function(o){var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;selC.appendChild(p);});
+      (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;sel.appendChild(p);});
+      (cfg.countries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;selC.appendChild(p);});
     }).catch(function(e){console.error('filters.json load failed',e);});
     btn.addEventListener('click',function(){
       var i=sel.value,c=selC.value,q=[];

@@ -6,7 +6,7 @@
     { "slug": "consumer", "name": "消费品牌" },
     { "slug": "capital", "name": "跨国资本" },
     { "slug": "talent", "name": "国际人才" },
-    { "slug": "capital-consumer", "name": "跨国资本 消费品牌" }
+    { "slug": "capital-consumer", "name": "跨国资本 消费品牌", "hidden_in_dropdown": true }
   ],
   "countries": [
     { "slug": "kazakhstan", "name": "哈萨克斯坦" },
@@ -35,11 +35,11 @@
     { "slug": "czech", "name": "捷克" },
     { "slug": "slovakia", "name": "斯洛伐克" },
     { "slug": "korea", "name": "韩国" },
-    { "slug": "china-africa", "name": "中国 非洲" },
-    { "slug": "france-finland", "name": "法国 芬兰" }
+    { "slug": "china-africa", "name": "中国 非洲", "hidden_in_dropdown": true },
+    { "slug": "france-finland", "name": "法国 芬兰", "hidden_in_dropdown": true }
   ],
   "reportMap": {
-    "new-energy": "reports/cleantech/index.html",
-    "auto-tech": "reports/EV/index.html"
+    "new-energy": { "url": "reports/cleantech/index.html", "published": true },
+    "auto-tech": { "url": "reports/EV/index.html", "published": false }
   }
 }
