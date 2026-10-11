@@ -313,12 +313,12 @@
     panel.hidden = false;
     var indObj = (cfg.industries||[]).filter(function(o){return o.slug===slugInd;})[0];
     var ctyObj = (cfg.countries||[]).filter(function(o){return o.slug===slugCty;})[0];
-    var indName = indObj ? indObj.name : '全部产业';
+    var indName = indObj ? (indObj.display || indObj.name) : '全部产业';
     var ctyName = ctyObj ? ctyObj.name : '全部区域';
     var rep = indObj ? ((cfg.reportMap)||{})[indObj.slug] : null;
     var html = '<h3 class="grid-panel-title">你的那一格：'+indName+' × '+ctyName+'</h3>';
     if(rep && rep.published){
-      html += '<div class="grid-module"><h4>对应研究报告</h4><a class="btn-submit btn-seal" href="'+rep.url+'">查看报告（200 元 / 份）</a></div>';
+      html += '<div class="grid-module"><h4>对应研究报告</h4><a class="btn-submit btn-seal" href="cta/book-diagnostic/index.html">留资获取</a></div>';
     } else if(rep && !rep.published){
       html += '<div class="grid-module"><h4>对应研究报告</h4><p class="grid-rep-planning">筹备中 · 登记意向</p></div>';
     }
@@ -326,7 +326,7 @@
       html += '<div class="grid-module grid-empty"><p>这一格的资料正在筹备，留下联系方式，有内容第一时间通知你。</p>'
         + '<form class="grid-interest-form">'
         + '<input type="text" name="contact" placeholder="手机号或微信号" required>'
-        + '<label class="consent"><input type="checkbox" required> 我已阅读并同意隐私说明</label>'
+        + '<label class="consent"><input type="checkbox" required> 我已阅读并同意<a href="privacy.html" target="_blank" rel="noopener">隐私说明</a></label>'
         + '<button type="submit" class="btn-submit btn-seal">提交登记</button>'
         + '<p class="form-error" hidden></p>'
         + '</form></div>';
@@ -374,5 +374,15 @@
   }
 })();
 </script>
+  <script>
+  (function(){
+    var cats = document.querySelectorAll('.event-cat');
+    cats.forEach(function(cat){
+      var n = cat.querySelectorAll('.event-row').length;
+      var span = cat.querySelector('.count');
+      if(span) span.textContent = n + ' 场';
+    });
+  })();
+  </script>
 </body>
 </html>

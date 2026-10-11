@@ -308,6 +308,16 @@ textarea{resize:vertical;min-height:88px;}
 @media(max-width:900px){.offer-cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.offer-cards{grid-template-columns:1fr;}}
 
+/* Batch D：菁英荟 1.8 / CEO tour 1.9 */
+.club-note{font-size:13px;color:var(--ink-faint);margin:8px 0 16px;line-height:1.6;}
+#club .subline{margin:2px 0 10px;}
+.ceo-requirements{margin:10px 0 16px;padding-left:20px;color:var(--ink-soft);font-size:14px;line-height:1.8;}
+.ceo-cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-ghost{background:transparent!important;color:var(--seal)!important;border:1px solid var(--seal)!important;}
+/* 恢复的"出海产业研究报告"板块 与 四张卡之间的分隔 */
+.offer-divider{border:0;border-top:1px solid var(--rule);margin:28px 0 22px;}
+.report-section-inline{margin-top:6px;}
+
 /* ---------- footer ---------- */
 .footer{padding:32px 24px;text-align:center;font-size:12.5px;color:var(--ink-soft,#5b6470);border-top:1px solid var(--rule,#e5e2db);}
 

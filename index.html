@@ -267,8 +267,16 @@ span.ops-center-flag.flag-kz{
     var sel=document.getElementById('selIndustry'), selC=document.getElementById('selCountry'), btn=document.getElementById('selGo');
     if(!sel||!selC||!btn) return;
     fetch('data/filters.json').then(function(r){return r.json();}).then(function(cfg){
-      (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;sel.appendChild(p);});
-      (cfg.countries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;selC.appendChild(p);});
+      (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.display||o.name;sel.appendChild(p);});
+      var REGION_ORDER = ['东南亚','东亚','南亚','中亚','中东','欧洲','非洲','美洲','其他'];
+      var groups = {};
+      (cfg.countries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var r=o.region||'其他'; (groups[r]=groups[r]||[]).push(o); });
+      REGION_ORDER.concat(Object.keys(groups).filter(function(r){return REGION_ORDER.indexOf(r)<0;})).forEach(function(r){
+        if(!groups[r]) return;
+        var og=document.createElement('optgroup'); og.label=r;
+        groups[r].forEach(function(o){ var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;og.appendChild(p); });
+        selC.appendChild(og);
+      });
     }).catch(function(e){console.error('filters.json load failed',e);});
     btn.addEventListener('click',function(){
       var i=sel.value,c=selC.value,q=[];
@@ -295,10 +303,14 @@ span.ops-center-flag.flag-kz{
     var down = document.getElementById('mDown');
     if(up && down){
       fetch('data/marquee.json').then(function(r){return r.json();}).then(function(cfg){
+        var SPEED = 60; // px/sec 固定，图多时速度不变快
+        var CELL = 274; // 260px 宽 + 14px 间距（与 .marquee-cell/.marquee-track 一致）
         function fill(el, items){
           if(!items || !items.length) return;
           var html = items.map(function(it){ return '<div class="marquee-cell"><img src="'+it.img+'" alt="'+(it.alt||'')+'" loading="lazy"></div>'; }).join('');
           el.innerHTML = html + html;
+          var oneCopy = items.length * CELL;
+          el.style.animationDuration = (oneCopy / SPEED) + 's';
         }
         fill(up, cfg.up && cfg.up.items);
         fill(down, cfg.down && cfg.down.items);
@@ -313,7 +325,33 @@ span.ops-center-flag.flag-kz{
   <h2 class="section-title">按你处在哪一步，选对产品</h2>
   <p class="lede">从“还没想清楚”到“亲眼去看”，海鑫汇 GTN 把出海服务拆成四张卡。没有支付链接的，先登记意向，上线即通知。</p>
   <div class="offer-cards" id="offerCards"></div>
-</section>
+  <hr class="offer-divider">
+  <div class="report-section-inline" id="reports">
+    <div class="eyebrow">出海产业研究报告 / INDUSTRY REPORTS</div>
+    <h2 class="headline reveal">产业出海，先看清再出手</h2>
+    <p class="subline reveal">INDUSTRY REPORTS</p>
+    <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。2026 年报告统一以留资获取，暂不收费。</p>
+    <div class="report-grid reveal">
+      <a class="report-card report-card--live" href="reports/cleantech/index.html">
+        <span class="rc-tag">已上线</span>
+        <h4>新能源电力电气</h4>
+        <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统。一句话结论 + 市场机会 + 真实门槛 + 中国企业案例，2026 年完整报告留资解锁，产业专家：张果。</p>
+        <span class="rc-cta">留资获取 &rarr;</span>
+      </a>
+      <a class="report-card report-card--live" href="reports/EV/index.html">
+        <span class="rc-tag">2024 年版已上线</span>
+        <h4>汽车智能科技</h4>
+        <p class="rc-desc">整车出口 · 本地建厂 · 充换电配套 · 海外合规。十大趋势洞察 + 核心市场数据 + 真实门槛 + 中国企业案例，2024 年完整报告留资解锁，产业专家：王高歌。2026 年新版预计 11 月发布。</p>
+        <span class="rc-cta">留资获取（2024 版）&rarr;</span>
+      </a>
+      <div class="report-card">
+        <span class="rc-tag rc-tag--wip">研究进行中</span>
+        <h4>AI 产业</h4>
+        <p class="rc-desc">研究进行中，产业专家：江南。</p>
+      </div>
+    </div>
+  </div>
+  </section>
 <script>
 (function(){
   var box = document.getElementById('offerCards');
@@ -322,7 +360,9 @@ span.ops-center-flag.flag-kz{
       function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
       function itemHtml(it){
         var btn;
-        if(it.cta_type==='calendar'){
+        if(it.cta_type==='anchor'){
+          btn='<a class="btn-submit btn-seal" href="'+esc(it.cta_anchor||'#reports')+'">'+esc(it.cta)+'</a>';
+        } else if(it.cta_type==='calendar'){
           btn='<a class="btn-submit btn-seal" href="#calendar">'+esc(it.cta)+'</a>';
         } else {
           var src = (it.cta_type==='apply') ? 'ceo-tour-company' : 'product-interest';
@@ -1077,6 +1117,41 @@ span.ops-center-flag.flag-kz{
     <div class="cal-wrap" id="calWrap"></div>
   </section>
 
+  <section class="section" id="club">
+    <div class="eyebrow">出海菁英荟 / CLUB</div>
+    <h2 class="section-title">海鑫汇 · 出海菁英荟</h2>
+    <p class="subline">200 元 / 年，交个朋友</p>
+    <p class="lede">加入后，你会进入一个微信群；海鑫汇的活动、考察和研究报告发布，第一时间在群里通知；入会赠送一份已发布的产业出海研究报告（价值 200 元）。</p>
+    <p class="club-note">这是一个轻量的信息与朋友圈，不含线下活动免费、不含顾问服务，也不保证对接或成交。</p>
+    <button type="button" class="btn-submit btn-seal" id="clubJoin">加入</button>
+  </section>
+
+  <section class="section" id="ceo-tour">
+    <div class="eyebrow">CEO tour / 来华产业考察</div>
+    <h2 class="section-title">想让外国 CEO 走进你的工厂？</h2>
+    <p class="lede">本期来华产业考察，征集参访企业。</p>
+    <p class="lede">Gateway To New CEO tour 邀请海外企业家来华做产业考察，走进有出口能力的中国企业。我们按产业和来源国组团，人工筛选参访企业。申请通过后，我们会与你沟通对接服务的内容与费用。名额有限，不保证成交，我们负责把对的人安排在对的现场。</p>
+    <ul class="ceo-requirements">
+      <li>有真实出口业务或出口计划；</li>
+      <li>能提供英文资料；</li>
+      <li>有专人对接。</li>
+    </ul>
+    <div class="ceo-cta-row">
+      <button type="button" class="btn-submit btn-seal" id="ceoTourApply">申请参访</button>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var b=document.getElementById('clubJoin');
+    if(b) b.addEventListener('click', function(){ var fn=window.openIntent||function(){}; fn('海鑫汇·出海菁英荟','club','加入出海菁英荟'); });
+    var a=document.getElementById('ceoTourApply');
+    if(a) a.addEventListener('click', function(){ var fn=window.openIntent||function(){}; fn('CEO tour 参访企业','ceo-tour-company','申请参访企业'); });
+    var m=document.getElementById('ceoTourManual');
+    if(m) m.addEventListener('click', function(){ if(window.openManual) window.openManual(); });
+  })();
+  </script>
+
   <div class="intent-modal" id="intentModal" hidden>
     <div class="intent-backdrop" data-close="1"></div>
     <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
@@ -1089,7 +1164,7 @@ span.ops-center-flag.flag-kz{
         <div class="field"><label for="intentName">姓名（选填）</label><input type="text" name="name" id="intentName" placeholder="您的称呼"></div>
         <div class="field"><label for="intentCompany">公司（选填）</label><input type="text" name="company" id="intentCompany" placeholder="公司名称"></div>
         <div class="field full"><label for="intentContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="intentContact" placeholder="手机号或微信号" required></div>
-        <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意隐私说明</label></div>
+        <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意<a href="privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>
         <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交登记</button></div>
         <p class="form-error" id="intentError" hidden></p>
       </form>
@@ -1160,14 +1235,30 @@ span.ops-center-flag.flag-kz{
       fetch('data/calendar.json').then(function(r){return r.json();}).then(function(items){
         var now = new Date();
         var horizon = new Date(now.getTime() + 90*24*3600*1000);
-        function visible(it){ return it.visible && (it.evergreen || (it.date_start && new Date(it.date_start) <= horizon)); }
+        function visible(it){
+          if(!it.visible) return false;
+          if(/^r-/.test(it.id)) return true; // 研究报告常设，可留资获取
+          if(it.evergreen) return true;
+          var now = new Date();
+          var horizon = new Date(now.getTime() + 90*24*3600*1000);
+          if(it.date_start){
+            var d = new Date(it.date_start);
+            return d >= now && d <= horizon; // 未来 90 天内的具体日期
+          }
+          var m = (it.date_text||'').match(/(\d{4})\s*年\s*(\d{1,2})\s*月/);
+          if(m){
+            var y=+m[1], mo=+m[2];
+            var ms=new Date(y,mo-1,1), me=new Date(y,mo,0,23,59,59);
+            if(it.status==='planning' && me < now){
+              console.warn('该条已过期，请更新：' + it.id + ' (' + it.date_text + ')');
+              return false;
+            }
+            return ms <= horizon; // 仅月份精度：该月与未来 90 天窗口有重叠即显示
+          }
+          return false;
+        }
         var shown = items.filter(visible);
-        var evergreen = shown.filter(function(it){ return it.evergreen; });
-        var timed = shown.filter(function(it){ return !it.evergreen; }).sort(function(a,b){ return new Date(a.date_start)-new Date(b.date_start); });
-        var html = '';
-        if(timed.length){ html += '<h3 class="cal-group">未来 90 天</h3><div class="cal-grid">'+timed.map(card).join('')+'</div>'; }
-        if(evergreen.length){ html += '<h3 class="cal-group">常设</h3><div class="cal-grid">'+evergreen.map(card).join('')+'</div>'; }
-        if(!html){ html = '<p class="cal-empty">未来 90 天内暂无公开行程，留下联系方式获取更新。</p>'; }
+        var html = shown.length ? ('<div class="cal-grid">'+shown.map(card).join('')+'</div>') : '<p class="cal-empty">未来 90 天内暂无公开行程，留下联系方式获取更新。</p>';
         wrap.innerHTML = html;
         wrap.querySelectorAll('.cal-cta[data-product]').forEach(function(b){
           b.addEventListener('click', function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source') || 'calendar-interest', b.textContent.trim()); });
