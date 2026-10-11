@@ -1026,6 +1026,111 @@ span.ops-center-flag.flag-kz{
 
 
 
+  <section class="section" id="calendar">
+    <div class="eyebrow">出海日历 / CALENDAR</div>
+    <h2 class="section-title">未来 90 天，我们的出海行程</h2>
+    <div class="cal-wrap" id="calWrap"></div>
+  </section>
+
+  <div class="intent-modal" id="intentModal" hidden>
+    <div class="intent-backdrop" data-close="1"></div>
+    <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
+      <button class="intent-x" type="button" data-close="1" aria-label="关闭">✕</button>
+      <h3 class="intent-title" id="intentTitle">登记意向</h3>
+      <p class="intent-sub" id="intentSub"></p>
+      <form class="intent-form" id="intentForm">
+        <input type="hidden" name="product" id="intentProduct">
+        <input type="hidden" name="source" id="intentSource">
+        <div class="field"><label for="intentName">姓名（选填）</label><input type="text" name="name" id="intentName" placeholder="您的称呼"></div>
+        <div class="field"><label for="intentCompany">公司（选填）</label><input type="text" name="company" id="intentCompany" placeholder="公司名称"></div>
+        <div class="field full"><label for="intentContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="intentContact" placeholder="手机号或微信号" required></div>
+        <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意隐私说明</label></div>
+        <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交登记</button></div>
+        <p class="form-error" id="intentError" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var modal = document.getElementById('intentModal');
+    var form = document.getElementById('intentForm');
+    var titleEl = document.getElementById('intentTitle');
+    var subEl = document.getElementById('intentSub');
+    var productEl = document.getElementById('intentProduct');
+    var sourceEl = document.getElementById('intentSource');
+    var errEl = document.getElementById('intentError');
+    function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+    function openIntent(product, source, label){
+      productEl.value = product || '';
+      sourceEl.value = source || 'product-interest';
+      titleEl.textContent = label || '登记意向';
+      subEl.textContent = product ? ('意向：' + product) : '';
+      if(errEl){ errEl.hidden = true; errEl.textContent = ''; }
+      var btn = form.querySelector('button[type=submit]'); if(btn){ btn.disabled=false; btn.textContent='提交登记'; }
+      modal.hidden = false;
+    }
+    function closeIntent(){ modal.hidden = true; }
+    if(modal){ modal.addEventListener('click', function(e){ if(e.target.getAttribute('data-close')) closeIntent(); }); }
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal && !modal.hidden) closeIntent(); });
+    if(form) form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+      var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
+      if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+      var d={ name:f.name.value, company:f.company.value, contact:f.contact.value, brief:'意向产品：'+(productEl.value||''), source:sourceEl.value };
+      fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+        .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); if(btn) btn.textContent='已提交，我们会联系你'; })
+        .catch(function(e){ console.error(e); if(errEl){ var cw=window.CONTACT_WECHAT; errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交登记'; } f.dataset.busy=''; });
+    });
+
+    var wrap = document.getElementById('calWrap');
+    if(wrap){
+      var STATUS = { open:'报名中', full:'已满（排队）', planning:'筹备中 · 登记意向', ended:'已结束' };
+      function statusLabel(it){ if(it.status==='few'){ return '仅剩 '+(it.quota_left!=null?it.quota_left:'')+' 席'; } return STATUS[it.status]||it.status; }
+      function ctaSourceFor(type){ return type==='apply' ? 'ceo-tour-company' : 'calendar-interest'; }
+      function ctaOf(it){
+        var type = it.cta_type;
+        if(type==='pay' && !it.cta_url){ type='register_interest'; }
+        var label = it.cta_label || '登记意向';
+        if(type==='register_interest' || type==='contact' || type==='apply'){
+          return '<button type="button" class="btn-submit btn-seal cal-cta" data-product="'+esc(it.product)+'" data-source="'+esc(ctaSourceFor(type))+'">'+esc(label)+'</button>';
+        }
+        if(type==='pay'){ return '<a class="btn-submit btn-seal" href="'+esc(it.cta_url)+'">'+esc(label)+'</a>'; }
+        return '<span class="cal-cta-static">'+esc(label)+'</span>';
+      }
+      function card(it){
+        var meta = []; if(it.date_text) meta.push(it.date_text); if(it.location) meta.push(it.location);
+        var price = it.price_text ? ('<span class="cal-price">'+esc(it.price_text)+'</span>') : '';
+        return '<article class="cal-item cal-'+esc(it.status)+'">'
+          + '<div class="cal-head"><span class="cal-date">'+esc(it.date_text||'')+'</span><span class="cal-status">'+esc(statusLabel(it))+'</span></div>'
+          + '<h4 class="cal-name">'+esc(it.product)+'</h4>'
+          + '<div class="cal-meta">'+meta.map(esc).join(' · ')+'</div>'
+          + price
+          + '<div class="cal-cta-row">'+ctaOf(it)+'</div>'
+          + '</article>';
+      }
+      fetch('data/calendar.json').then(function(r){return r.json();}).then(function(items){
+        var now = new Date();
+        var horizon = new Date(now.getTime() + 90*24*3600*1000);
+        function visible(it){ return it.visible && (it.evergreen || (it.date_start && new Date(it.date_start) <= horizon)); }
+        var shown = items.filter(visible);
+        var evergreen = shown.filter(function(it){ return it.evergreen; });
+        var timed = shown.filter(function(it){ return !it.evergreen; }).sort(function(a,b){ return new Date(a.date_start)-new Date(b.date_start); });
+        var html = '';
+        if(timed.length){ html += '<h3 class="cal-group">未来 90 天</h3><div class="cal-grid">'+timed.map(card).join('')+'</div>'; }
+        if(evergreen.length){ html += '<h3 class="cal-group">常设</h3><div class="cal-grid">'+evergreen.map(card).join('')+'</div>'; }
+        if(!html){ html = '<p class="cal-empty">未来 90 天内暂无公开行程，留下联系方式获取更新。</p>'; }
+        wrap.innerHTML = html;
+        wrap.querySelectorAll('.cal-cta[data-product]').forEach(function(b){
+          b.addEventListener('click', function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source') || 'calendar-interest', b.textContent.trim()); });
+        });
+      }).catch(function(e){ console.error('calendar.json load failed', e); wrap.innerHTML='<p class="cal-empty">日历加载失败。</p>'; });
+    }
+  })();
+  </script>
+
 <footer class="footer" data-depth="0"></footer>
 
 <script src="script.js" defer></script>

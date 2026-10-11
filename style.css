@@ -249,6 +249,37 @@ textarea{resize:vertical;min-height:88px;}
 .grid-interest-form .consent{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}
 @media(max-width:560px){.grid-interest-form input[type=text]{min-width:0;width:100%;}}
 
+/* 出海日历 1.7 */
+.section-title{font-size:26px;line-height:1.25;margin:6px 0 4px;color:var(--ink);}
+.cal-wrap{margin-top:18px;}
+.cal-group{font-size:15px;color:var(--ink-soft);margin:18px 0 10px;}
+.cal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.cal-item{border:1px solid var(--rule);border-radius:12px;padding:16px;background:var(--paper);display:flex;flex-direction:column;}
+.cal-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--ink-faint);}
+.cal-status{padding:2px 8px;border-radius:999px;background:rgba(0,150,136,.1);color:var(--seal);font-weight:600;white-space:nowrap;}
+.cal-item.cal-planning .cal-status{background:rgba(0,0,0,.04);color:var(--ink-soft);}
+.cal-item.cal-full .cal-status{background:#f3e3e0;color:#a72b23;}
+.cal-name{font-size:16px;margin:8px 0 6px;color:var(--ink);}
+.cal-meta{font-size:13px;color:var(--ink-faint);margin-bottom:8px;}
+.cal-price{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+.cal-cta-row{margin-top:auto;}
+.cal-cta-static{font-size:13px;color:var(--ink-faint);}
+.cal-empty{color:var(--ink-soft);}
+@media(max-width:560px){.cal-grid{grid-template-columns:1fr;}}
+
+/* 登记意向弹窗（1.6/1.7 复用） */
+.intent-modal[hidden]{display:none;}
+.intent-modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px;}
+.intent-backdrop{position:absolute;inset:0;background:rgba(8,20,32,.5);}
+.intent-box{position:relative;width:min(440px,92vw);background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+.intent-x{position:absolute;top:12px;right:14px;border:0;background:none;font-size:18px;color:var(--ink-soft);cursor:pointer;}
+.intent-title{font-size:18px;margin:0 0 4px;color:var(--ink);}
+.intent-sub{font-size:13px;color:var(--ink-soft);margin:0 0 14px;}
+.intent-form .field{margin-bottom:10px;}
+.intent-form .field label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:5px;}
+.intent-form .field input[type=text]{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);font-size:14px;box-sizing:border-box;}
+.intent-form .consent{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);}
+
 /* ---------- footer ---------- */
 .footer{padding:32px 24px;text-align:center;font-size:12.5px;color:var(--ink-soft,#5b6470);border-top:1px solid var(--rule,#e5e2db);}
 
