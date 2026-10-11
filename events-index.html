@@ -103,6 +103,9 @@
       </div>
     </div>
   </div>
+  <div class="grid-panel reveal" id="grid-panel" hidden>
+    <div class="grid-panel-inner"></div>
+  </div>
   <div class="category-block reveal" id="tour">
     <div class="category-head">
       <h3>企业游学与产业调研<span class="en">CORPORATE STUDY TOURS &amp; INDUSTRY RESEARCH</span></h3>
@@ -271,10 +274,14 @@
 (function(){
   var country = 'all';
   var industry = 'all';
+  var cfg = null;
   var rows = Array.prototype.slice.call(document.querySelectorAll('.index-table tbody tr'));
   var blocks = Array.prototype.slice.call(document.querySelectorAll('.category-block'));
   var chipWrap = document.getElementById('filter-event-country');
   var indWrap = document.getElementById('filter-event-industry');
+  var panel = document.getElementById('grid-panel');
+  var panelInner = panel ? panel.querySelector('.grid-panel-inner') : null;
+
   function apply(){
     rows.forEach(function(r){
       var ctags = (r.getAttribute('data-country') || '').split(' ');
@@ -289,22 +296,74 @@
       block.style.display = (blockRows.length === 0 || anyVisible) ? '' : 'none';
     });
   }
+  function setChips(){
+    if(chipWrap) chipWrap.querySelectorAll('.chip').forEach(function(x){
+      x.classList.toggle('is-active', x.getAttribute('data-country') === country);
+    });
+    if(indWrap) indWrap.querySelectorAll('.chip').forEach(function(x){
+      x.classList.toggle('is-active', x.getAttribute('data-industry') === industry);
+    });
+  }
+  function slugOf(name, list){ var o=(list||[]).filter(function(x){return x.name===name;})[0]; return o?o.slug:'all'; }
+  function renderPanel(slugInd, slugCty){
+    if(!panel || !panelInner) return;
+    if(slugInd==='all' && slugCty==='all'){ panel.hidden = true; return; }
+    panel.hidden = false;
+    var indObj = (cfg.industries||[]).filter(function(o){return o.slug===slugInd;})[0];
+    var ctyObj = (cfg.countries||[]).filter(function(o){return o.slug===slugCty;})[0];
+    var indName = indObj ? indObj.name : '全部产业';
+    var ctyName = ctyObj ? ctyObj.name : '全部区域';
+    var reportUrl = indObj ? ((cfg.reportMap)||{})[indObj.slug] : null;
+    var html = '<h3 class="grid-panel-title">你的那一格：'+indName+' × '+ctyName+'</h3>';
+    if(reportUrl){
+      html += '<div class="grid-module"><h4>对应研究报告</h4><a class="btn-submit btn-seal" href="'+reportUrl+'">查看报告（200 元 / 份）</a></div>';
+    }
+    html += '<div class="grid-module grid-empty"><p>这一格的资料正在筹备，留下联系方式，有内容第一时间通知你。</p>'
+      + '<form class="grid-interest-form">'
+      + '<input type="text" name="contact" placeholder="手机号或微信号" required>'
+      + '<label class="consent"><input type="checkbox" required> 我已阅读并同意隐私说明</label>'
+      + '<button type="submit" class="btn-submit btn-seal">提交登记</button>'
+      + '<p class="form-error" hidden></p>'
+      + '</form></div>';
+    panelInner.innerHTML = html;
+    var form = panelInner.querySelector('.grid-interest-form');
+    if(form) form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+      var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.textContent='提交中…';}
+      var err=f.querySelector('.form-error'); if(err){err.hidden=true;err.textContent='';}
+      var d={industry: indName==='全部产业'?'':indName, region: ctyName==='全部区域'?'':ctyName, contact:f.contact.value, source:'grid-interest'};
+      fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
+        .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(btn)btn.textContent='已提交，我们会联系你';})
+        .catch(function(e){console.error(e);if(err){var cw=window.CONTACT_WECHAT;err.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):'');err.hidden=false;}if(btn){btn.disabled=false;btn.textContent='提交登记';}f.dataset.busy='';});
+    });
+  }
+
+  var params = new URLSearchParams(location.search);
+  var pInd = params.get('industry') || 'all';
+  var pCty = params.get('country') || 'all';
+  fetch('data/filters.json').then(function(r){return r.json();}).then(function(c){
+    cfg = c;
+    if(pInd!=='all'){ var o=(c.industries||[]).filter(function(x){return x.slug===pInd;})[0]; if(o) industry=o.name; }
+    if(pCty!=='all'){ var o2=(c.countries||[]).filter(function(x){return x.slug===pCty;})[0]; if(o2) country=o2.name; }
+    setChips(); apply(); renderPanel(pInd, pCty);
+  }).catch(function(e){ console.error('filters.json load failed', e); apply(); });
+
   if(chipWrap){
     chipWrap.addEventListener('click', function(e){
       var b = e.target.closest('.chip'); if(!b) return;
       country = b.getAttribute('data-country');
-      chipWrap.querySelectorAll('.chip').forEach(function(x){x.classList.remove('is-active');});
-      b.classList.add('is-active');
-      apply();
+      setChips(); apply();
+      if(cfg) renderPanel(slugOf(country, cfg.countries), slugOf(industry, cfg.industries));
     });
   }
   if(indWrap){
     indWrap.addEventListener('click', function(e){
       var b = e.target.closest('.chip'); if(!b) return;
       industry = b.getAttribute('data-industry');
-      indWrap.querySelectorAll('.chip').forEach(function(x){x.classList.remove('is-active');});
-      b.classList.add('is-active');
-      apply();
+      setChips(); apply();
+      if(cfg) renderPanel(slugOf(country, cfg.countries), slugOf(industry, cfg.industries));
     });
   }
 })();
