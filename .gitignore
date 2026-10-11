@@ -33,3 +33,15 @@ _img_backup/
 
 # Node 依赖（sharp 等本地工具，不进版本库）
 node_modules/
+
+# 原始素材（未经处理，不部署；处理后 webp 在 */webp/）
+CEO_tour/*
+!CEO_tour/webp/
+!CEO_tour/webp/*
+CEO_tour_manual/*
+!CEO_tour_manual/webp/
+!CEO_tour_manual/webp/*
+GTN_Global/*
+!GTN_Global/webp/
+!GTN_Global/webp/*
+# 注：carousel 原始图当前仍被线上轮播引用，待 Batch E 替换后再忽略
