@@ -1081,6 +1081,21 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 .footer-links a{color:var(--ink-soft,#5b6470);text-decoration:none;}
 .footer-links a:hover{color:var(--brass,#8A6D3B);text-decoration:underline;}
 .footer-meta{letter-spacing:1px;opacity:.6;}
+.footer-meta a{color:var(--ink-soft,#5b6470);text-decoration:none;}
+.footer-meta a:hover{text-decoration:underline;}
+.footer-disclosure{font-size:12px;color:var(--ink-soft,#5b6470);margin-bottom:8px;opacity:.85;}
+.carousel-wall{margin-top:48px;}
+.carousel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:18px;}
+.carousel-grid a{display:block;overflow:hidden;border-radius:8px;border:1px solid var(--rule,#e5e2db);}
+.carousel-grid img{width:100%;height:auto;display:block;transition:transform .25s;}
+.carousel-grid a:hover img{transform:scale(1.04);}
+.faq-list{max-width:880px;margin:18px auto 0;}
+.faq-item{border:1px solid var(--rule,#e5e2db);border-radius:10px;margin-bottom:12px;background:var(--paper-alt);overflow:hidden;}
+.faq-item summary{cursor:pointer;padding:16px 18px;font-size:15.5px;font-weight:600;color:var(--ink);list-style:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::before{content:"+";display:inline-block;width:20px;color:var(--seal);font-weight:700;}
+.faq-item[open] summary::before{content:"\2212";}
+.faq-item p{margin:0;padding:0 18px 18px;font-size:14px;line-height:1.7;color:var(--ink-soft);}
 
 /* ============================================================
    移动端统一响应式（≤640px）— 纯 CSS 适配，不闪屏、不损权重

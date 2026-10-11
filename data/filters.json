@@ -1,12 +1,12 @@
 {
   "industries": [
-    { "slug": "new-energy", "name": "新能源", "display": "新能源电力电气" },
-    { "slug": "auto-tech", "name": "汽车智能科技", "display": "新能源车与智慧交通" },
-    { "slug": "ai", "name": "AI产业", "display": "人工智能" },
-    { "slug": "consumer", "name": "消费品牌" },
-    { "slug": "capital", "name": "跨国资本" },
-    { "slug": "talent", "name": "国际人才" },
-    { "slug": "capital-consumer", "name": "跨国资本 消费品牌", "hidden_in_dropdown": true }
+    { "slug": "new-energy", "name": "新能源", "display": "新能源电力电气", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "auto-tech", "name": "汽车智能科技", "display": "新能源车与智慧交通", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "ai", "name": "AI产业", "display": "人工智能", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "consumer", "name": "消费品牌", "display": "消费品牌", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "capital", "name": "跨国资本", "display": "跨国资本", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "talent", "name": "国际人才", "display": "国际人才", "aliases": [], "parent": null, "status": "live", "lead": null },
+    { "slug": "capital-consumer", "name": "跨国资本 消费品牌", "display": "跨国资本 消费品牌", "hidden_in_dropdown": true, "aliases": [], "parent": null, "status": "live", "lead": null }
   ],
   "countries": [
     { "slug": "kazakhstan", "name": "哈萨克斯坦", "region": "中亚" },
