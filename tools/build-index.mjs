@@ -189,8 +189,15 @@ if (exists(memRoot)) {
       return;
     }
     const html = read(file);
-    const nameM = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
-    const name = nameM ? nameM[1].replace(/<[^>]+>/g, '').split('｜')[0].trim() : dir;
+    const nameM = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)
+      || html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)
+      || html.match(/<h4[^>]*>([\s\S]*?)<\/h4>/)
+      || html.match(/<title>([\s\S]*?)<\/title>/);
+    let name = nameM ? nameM[1].replace(/<[^>]+>/g, '').split('｜')[0].trim() : '';
+    if (!name || /^ops-/i.test(name)) {
+      name = dir;
+      toPending('ops_center', { name: dir, url: 'member/' + dir + '/index.html' }, '页面未取到真实姓名，暂用目录名', '—');
+    }
     const photoM = html.match(/<img[^>]+class="[^"]*avatar[^"]*"[^>]+src="([^"]+)"/i) || html.match(/<img[^>]+src="([^"]+)"/);
     const photo = photoM ? normPhoto(photoM[1], 'member/' + dir) : '';
     ops.push({

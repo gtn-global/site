@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T16:24:35.283Z",
+  "generated": "2026-10-11T17:21:54.225Z",
   "event": [
     {
       "id": "TOUR-01",
@@ -1373,7 +1373,7 @@
   "ops_center": [
     {
       "id": "ops-beijing",
-      "name": "ops-beijing",
+      "name": "刘栗铭 · 北京运营中心 — 海鑫汇",
       "url": "member/ops-beijing/index.html",
       "photo": "member/ops-beijing/beijing.webp",
       "country": "中国",
@@ -1382,7 +1382,7 @@
     },
     {
       "id": "ops-hangzhou",
-      "name": "ops-hangzhou",
+      "name": "杭州 运营中心 · Operations Hub — 海鑫汇",
       "url": "member/ops-hangzhou/index.html",
       "photo": "member/ops-hangzhou/hangzhou.webp",
       "country": "中国",
@@ -1391,7 +1391,7 @@
     },
     {
       "id": "ops-japan",
-      "name": "ops-japan",
+      "name": "名城悠真 · 东京运营中心 — 海鑫汇",
       "url": "member/ops-japan/index.html",
       "photo": "member/ops-japan/tokyo.webp",
       "country": "日本",
@@ -1400,7 +1400,7 @@
     },
     {
       "id": "ops-kazakhstan",
-      "name": "ops-kazakhstan",
+      "name": "哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇",
       "url": "member/ops-kazakhstan/index.html",
       "photo": "member/ops-kazakhstan/图片4.webp",
       "country": "哈萨克斯坦",
@@ -1409,7 +1409,7 @@
     },
     {
       "id": "ops-mena",
-      "name": "ops-mena",
+      "name": "PART 01　您一直践行的事业观、价值观",
       "url": "member/ops-mena/index.html",
       "photo": "member/ops-mena/sun-yuaner.webp",
       "country": "",
@@ -1418,7 +1418,7 @@
     },
     {
       "id": "ops-ningbo",
-      "name": "ops-ningbo",
+      "name": "Andy 张东裕 · 宁波运营中心 — 海鑫汇",
       "url": "member/ops-ningbo/index.html",
       "photo": "member/ops-ningbo/ningbo.webp",
       "country": "中国",
@@ -1427,7 +1427,7 @@
     },
     {
       "id": "ops-pakistan",
-      "name": "ops-pakistan",
+      "name": "吕小明 · 巴基斯坦运营中心 — 海鑫汇",
       "url": "member/ops-pakistan/index.html",
       "photo": "member/ops-pakistan/吕晓明.webp",
       "country": "巴基斯坦",
@@ -1436,7 +1436,7 @@
     },
     {
       "id": "ops-shenzhen",
-      "name": "ops-shenzhen",
+      "name": "陈俊文（大麦哥）",
       "url": "member/ops-shenzhen/index.html",
       "photo": "member/ops-shenzhen/chenjunwen.webp",
       "country": "中国",
@@ -1445,7 +1445,7 @@
     },
     {
       "id": "ops-singapore",
-      "name": "ops-singapore",
+      "name": "蔡慧敏 · 新加坡运营中心 — 海鑫汇",
       "url": "member/ops-singapore/index.html",
       "photo": "member/ops-singapore/singapore.webp",
       "country": "新加坡",
@@ -1454,7 +1454,7 @@
     },
     {
       "id": "ops-suzhou",
-      "name": "ops-suzhou",
+      "name": "于溪东 · 苏州运营中心 — 海鑫汇",
       "url": "member/ops-suzhou/index.html",
       "photo": "member/ops-suzhou/suzhou.webp",
       "country": "中国",

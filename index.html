@@ -180,50 +180,50 @@ span.ops-center-flag.flag-kz{
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "海鑫汇是做什么的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我们为中国企业管理层做出海决策诊断：把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。"
+      }
+    },
+    {
+      "@type": "Question",
       "name": "自测和首诊有什么区别？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "自测 3 分钟，给出准备度评分和关键短板；首诊是 1 小时一对一，拆解你的业务，产出书面判断报告。"
+        "text": "自测 1 元，3 分钟，给出出海准备度评分和关键短板。首诊 99 元，1 小时一对一，由董立鑫进行，产出一份简要书面判断报告。"
       }
     },
     {
       "@type": "Question",
-      "name": "研究报告是什么，买了能做什么？",
+      "name": "你们能保证成交或拿到订单吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "按产业整理的出海研究，供你在选市场、选模式前参考；不是对你企业的定制判断，需要定制请做首诊。"
+        "text": "不能。我们提供判断和资源连接，不承诺订单或成交。"
       }
     },
     {
       "@type": "Question",
-      "name": "出海菁英荟是什么，不是什么？",
+      "name": "活动怎么收费？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "是 200 元/年的信息与朋友圈；不是服务合同，不含线下活动免费和顾问服务。"
+        "text": "单场活动 200 元，通常为一个下午加晚宴。具体以日程页为准。"
       }
     },
     {
       "@type": "Question",
-      "name": "出国考察怎么报名、费用多少？",
+      "name": "董立鑫同时担任新加坡世贸职务，和海鑫汇是什么关系？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "按次组团，价格 2–4 万/次，视目的地与人数；点击预约沟通。"
+        "text": "董立鑫同时担任 WTC Singapore 秘书长兼 COO、WTC One Club 秘书长。海鑫汇的付费服务由海鑫汇提供，涉及相关机构的活动，我们会如实标明各方身份。"
       }
     },
     {
       "@type": "Question",
-      "name": "CEO tour 是什么，谁可以申请？",
+      "name": "CEO tour 是什么？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "海外企业家来华的产业考察；有真实出口能力、能提供英文资料、有专人对接的中国企业可申请，经筛选后付费参与。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "我的行业没有对应报告怎么办？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "留下联系方式登记，我们会据此安排后续研究；你也可以直接做首诊。"
+        "text": "邀请外国企业家来华做产业考察，每期一个产业、一个来源国或地区。中国企业可以申请成为参访企业，经筛选后确认。"
       }
     }
   ]
@@ -319,7 +319,7 @@ span.ops-center-flag.flag-kz{
     </div>
     <div class="desk-modules" id="deskModules"></div>
     <div class="desk-foot">
-      <button type="button" class="btn-submit btn-seal" id="deskBook">预约该产业首诊</button>
+      <button type="button" class="btn-submit btn-seal" id="deskBook">预约该产业首诊　99 元</button>
     </div>
   </div>
 
@@ -395,7 +395,7 @@ span.ops-center-flag.flag-kz{
       var ops = (IDX.ops_center||[]).filter(function(o){
         return (cur.countryName && o.country===cur.countryName) || (cur.region && o.region===cur.region);
       });
-      parts.push(mod('区域运营中心', ops.length ? ('<div class="desk-ops">'+ops.map(function(o){
+      parts.push(mod('当地运营中心', ops.length ? ('<div class="desk-ops">'+ops.map(function(o){
         return '<a class="desk-ops-item" href="'+esc(o.url)+'"><span class="desk-ops-name">'+esc(o.name)+'</span><span class="desk-meta">'+esc(o.country||o.region||'')+'</span></a>';
       }).join('')+'</div>') : ''));
       // ⑤ 下一次相关活动
@@ -406,9 +406,8 @@ span.ops-center-flag.flag-kz{
 
       var any = reps.length || evs.length || advs.length || ops.length || cal.length;
       if(!any){
-        parts.push('<section class="desk-mod desk-mod--form"><p class="desk-empty">这一格还没有现成内容。留下联系方式，我们按「'
-          + esc(cur.indName||'不限产业') + ' × ' + esc(cur.countryName||cur.region||'不限区域')
-          + '」的方向补，并第一时间告诉你。</p><button type="button" class="btn-submit btn-seal" id="deskGrid">登记我的需求</button></section>');
+        parts.push('<section class="desk-mod desk-mod--form"><p class="desk-empty">这一格我们正在筹备。登记想看的内容，有进展第一时间通知你。</p>'
+          + '<button type="button" class="btn-submit btn-seal" id="deskGrid">登记想看的内容</button></section>');
       }
       mods.innerHTML = parts.join('');
 
@@ -536,35 +535,35 @@ span.ops-center-flag.flag-kz{
   <div class="offer-cards" id="offerCards"></div>
   <hr class="offer-divider">
   <div class="report-section-inline" id="reports">
-    <div class="eyebrow">出海产业研究报告 / INDUSTRY REPORTS</div>
-    <h2 class="headline reveal">产业出海，先看清再出手</h2>
-    <p class="subline reveal">INDUSTRY REPORTS</p>
-    <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。2026 年报告统一以留资获取，暂不收费。</p>
+    <div class="eyebrow">04 — REPORTS</div>
+    <h2 class="headline reveal">产业出海研究报告</h2>
+    <p class="subline reveal">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
     <div class="report-grid reveal">
       <a class="report-card report-card--live" href="reports/cleantech/index.html">
-        <span class="rc-tag">已上线</span>
+        <span class="rc-tag">已发布 2026.09</span>
         <h4>新能源电力电气</h4>
-        <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统。一句话结论 + 市场机会 + 真实门槛 + 中国企业案例，2026 年完整报告留资解锁，产业专家：张果。</p>
+        <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
         <span class="rc-cta">留资获取 &rarr;</span>
       </a>
-      <div class="report-card report-card--live">
-        <span class="rc-tag">2024 年版已上线</span>
-        <h4>汽车智能科技</h4>
-        <p class="rc-desc">整车出口 · 本地建厂 · 充换电配套 · 海外合规。十大趋势洞察 + 核心市场数据 + 真实门槛 + 中国企业案例，2024 年完整报告留资解锁，产业专家：王高歌。2026 年新版预计 11 月发布。</p>
+      <div class="report-card">
+        <span class="rc-tag rc-tag--wip">预计 2026 年 10 月发布</span>
+        <h4>人工智能</h4>
+        <p class="rc-desc">研究进行中</p>
         <div class="rc-actions">
-          <a class="rc-cta" href="reports/EV/index.html">留资获取（2024 版）&rarr;</a>
-          <button type="button" class="rc-btn" data-product="汽车智能科技（2026 新版）" data-source="product-interest">登记 2026 新版意向</button>
+          <button type="button" class="rc-btn" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button>
         </div>
       </div>
       <div class="report-card">
-        <span class="rc-tag rc-tag--wip">研究进行中</span>
-        <h4>AI 产业</h4>
-        <p class="rc-desc">研究进行中，产业专家：江南。</p>
+        <span class="rc-tag rc-tag--wip">预计 2026 年 11 月发布</span>
+        <h4>新能源车与智慧交通</h4>
+        <p class="rc-desc">2024 版可阅读</p>
         <div class="rc-actions">
-          <button type="button" class="rc-btn" data-product="AI 产业" data-source="product-interest">登记意向</button>
+          <a class="rc-cta" href="reports/EV/index.html">阅读 2024 版 &rarr;</a>
+          <button type="button" class="rc-btn" data-product="新能源车与智慧交通出海研究报告（2026 版）" data-source="product-interest">发布时通知我</button>
         </div>
       </div>
     </div>
+    <p class="report-note">联合新加坡世贸发布。</p>
   </div>
   </section>
 <script>
@@ -735,9 +734,19 @@ span.ops-center-flag.flag-kz{
     </div>
   </div>
 
-  <div class="footprint-wall reveal">
-    <img src="clients/footprints.webp" alt="海鑫汇出海调研足迹" loading="lazy" width="1600" height="639">
-  </div>
+  <div class="client-wall reveal" id="clientWall"></div>
+  <script>
+  (function(){
+    var w = document.getElementById('clientWall');
+    if(!w) return;
+    var s = '';
+    for(var i=1;i<=40;i++){
+      var n = ('0'+i).slice(-2);
+      s += '<img src="clients/wall/client-'+n+'.webp" alt="出海调研足迹 '+i+'" loading="lazy" width="320" height="320">';
+    }
+    w.innerHTML = s;
+  })();
+  </script>
 
   <div class="hub-content reveal">
     <p class="lede">把两年里的真实动作摊开看——我们已经走过 70+ 场活动，覆盖企业游学、论坛、访谈、国际交流、海外考察、沙龙与读书会。下面按类型给你入口：</p>
@@ -804,33 +813,38 @@ span.ops-center-flag.flag-kz{
         <span class="sh-all">查看全部 &rarr;<span class="en">VIEW ALL</span></span>
       </a>
     </div>
-    <div class="carousel-wall reveal">
-      <div class="subhead">往期回顾照片墙<span class="en">FIELD MOMENTS</span></div>
-      <p class="lede">两年一线出海现场——从德国工厂到东南亚展会，点击查看大图。</p>
-      <div class="carousel-grid">
-        <a href="carousel/webp/carousel-01.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-01.webp" alt="出海现场 01" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-02.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-02.webp" alt="出海现场 02" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-03.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-03.webp" alt="出海现场 03" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-04.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-04.webp" alt="出海现场 04" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-05.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-05.webp" alt="出海现场 05" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-06.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-06.webp" alt="出海现场 06" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-07.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-07.webp" alt="出海现场 07" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-08.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-08.webp" alt="出海现场 08" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-09.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-09.webp" alt="出海现场 09" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-10.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-10.webp" alt="出海现场 10" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-11.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-11.webp" alt="出海现场 11" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-12.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-12.webp" alt="出海现场 12" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-13.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-13.webp" alt="出海现场 13" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-14.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-14.webp" alt="出海现场 14" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-15.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-15.webp" alt="出海现场 15" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-16.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-16.webp" alt="出海现场 16" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-17.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-17.webp" alt="出海现场 17" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-18.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-18.webp" alt="出海现场 18" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-19.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-19.webp" alt="出海现场 19" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-20.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-20.webp" alt="出海现场 20" loading="lazy" width="320" height="240"></a>
-        <a href="carousel/webp/carousel-21.webp" target="_blank" rel="noopener"><img src="carousel/webp/carousel-21.webp" alt="出海现场 21" loading="lazy" width="320" height="240"></a>
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" data-dir="1">
+      <div class="carousel-row">
+        <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
+        <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
+        <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
+        <img src="carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
+        <img src="carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
+        <img src="carousel/carousel-06.webp" width="2000" height="1187" alt="出海现场 6" loading="lazy">
+        <img src="carousel/carousel-07.webp" width="800" height="382" alt="出海现场 7" loading="lazy">
+        <img src="carousel/carousel-08.webp" width="1920" height="1280" alt="出海现场 8" loading="lazy">
+        <img src="carousel/carousel-09.webp" width="800" height="378" alt="出海现场 9" loading="lazy">
+        <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
+        <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
       </div>
     </div>
+    <div class="carousel-track" data-dir="-1">
+      <div class="carousel-row">
+        <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
+        <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
+        <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
+        <img src="carousel/carousel-15.webp" width="800" height="533" alt="出海现场 15" loading="lazy">
+        <img src="carousel/carousel-16.webp" width="800" height="600" alt="出海现场 16" loading="lazy">
+        <img src="carousel/carousel-17.webp" width="800" height="600" alt="出海现场 17" loading="lazy">
+        <img src="carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
+        <img src="carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
+        <img src="carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
+        <img src="carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
+      </div>
+    </div>
+  </div>
+
   </div>
 </section>
 
@@ -1304,37 +1318,6 @@ span.ops-center-flag.flag-kz{
   </div>
 
 
-  <div class="carousel-wrap reveal">
-    <div class="carousel-track" data-dir="1">
-      <div class="carousel-row">
-        <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
-        <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
-        <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
-        <img src="carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
-        <img src="carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
-        <img src="carousel/carousel-06.webp" width="2000" height="1187" alt="出海现场 6" loading="lazy">
-        <img src="carousel/carousel-07.webp" width="800" height="382" alt="出海现场 7" loading="lazy">
-        <img src="carousel/carousel-08.webp" width="1920" height="1280" alt="出海现场 8" loading="lazy">
-        <img src="carousel/carousel-09.webp" width="800" height="378" alt="出海现场 9" loading="lazy">
-        <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
-        <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
-      </div>
-    </div>
-    <div class="carousel-track" data-dir="-1">
-      <div class="carousel-row">
-        <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
-        <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
-        <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
-        <img src="carousel/carousel-15.webp" width="800" height="533" alt="出海现场 15" loading="lazy">
-        <img src="carousel/carousel-16.webp" width="800" height="600" alt="出海现场 16" loading="lazy">
-        <img src="carousel/carousel-17.webp" width="800" height="600" alt="出海现场 17" loading="lazy">
-        <img src="carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
-        <img src="carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
-        <img src="carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
-        <img src="carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
-      </div>
-    </div>
-  </div>
 </section><!-- ============ 06 CONTACT ============ -->
 <section class="section" id="contact">
   <div class="eyebrow">06 — 联系 / CONTACT</div>
@@ -1558,12 +1541,12 @@ span.ops-center-flag.flag-kz{
   <h2 class="headline reveal">出海前，先搞清楚这几件事</h2>
   <p class="subline reveal">FREQUENTLY ASKED QUESTIONS</p>
   <div class="faq-list reveal">
-    <details class="faq-item"><summary>自测和首诊有什么区别？</summary><p>自测 3 分钟，给出准备度评分和关键短板；首诊是 1 小时一对一，拆解你的业务，产出书面判断报告。</p></details>
-    <details class="faq-item"><summary>研究报告是什么，买了能做什么？</summary><p>按产业整理的出海研究，供你在选市场、选模式前参考；不是对你企业的定制判断，需要定制请做首诊。</p></details>
-    <details class="faq-item"><summary>出海菁英荟是什么，不是什么？</summary><p>是 200 元/年的信息与朋友圈；不是服务合同，不含线下活动免费和顾问服务。</p></details>
-    <details class="faq-item"><summary>出国考察怎么报名、费用多少？</summary><p>按次组团，价格 2–4 万/次，视目的地与人数；点击预约沟通。</p></details>
-    <details class="faq-item"><summary>CEO tour 是什么，谁可以申请？</summary><p>海外企业家来华的产业考察；有真实出口能力、能提供英文资料、有专人对接的中国企业可申请，经筛选后付费参与。</p></details>
-    <details class="faq-item"><summary>我的行业没有对应报告怎么办？</summary><p>留下联系方式登记，我们会据此安排后续研究；你也可以直接做首诊。</p></details>
+    <details class="faq-item"><summary>海鑫汇是做什么的？</summary><p>我们为中国企业管理层做出海决策诊断：把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。</p></details>
+    <details class="faq-item"><summary>自测和首诊有什么区别？</summary><p>自测 1 元，3 分钟，给出出海准备度评分和关键短板。首诊 99 元，1 小时一对一，由董立鑫进行，产出一份简要书面判断报告。</p></details>
+    <details class="faq-item"><summary>你们能保证成交或拿到订单吗？</summary><p>不能。我们提供判断和资源连接，不承诺订单或成交。</p></details>
+    <details class="faq-item"><summary>活动怎么收费？</summary><p>单场活动 200 元，通常为一个下午加晚宴。具体以日程页为准。</p></details>
+    <details class="faq-item"><summary>董立鑫同时担任新加坡世贸职务，和海鑫汇是什么关系？</summary><p>董立鑫同时担任 WTC Singapore 秘书长兼 COO、WTC One Club 秘书长。海鑫汇的付费服务由海鑫汇提供，涉及相关机构的活动，我们会如实标明各方身份。</p></details>
+    <details class="faq-item"><summary>CEO tour 是什么？</summary><p>邀请外国企业家来华做产业考察，每期一个产业、一个来源国或地区。中国企业可以申请成为参访企业，经筛选后确认。</p></details>
   </div>
 </section>
 
@@ -1574,7 +1557,11 @@ span.ops-center-flag.flag-kz{
 (function(){
   var TICK = 4600, DUR = 1200;
   var tracks = document.querySelectorAll('.carousel-track');
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // 系统开启「减少动态效果」：不自动滚动，改为可手动横向滑动
+    Array.prototype.forEach.call(tracks, function(t){ t.style.overflowX = 'auto'; });
+    return;
+  }
   Array.prototype.forEach.call(tracks, function(track){
     var row = track.querySelector('.carousel-row');
     var base = Array.prototype.slice.call(row.children);

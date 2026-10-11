@@ -302,7 +302,7 @@ const FOOTER_LINKS = [
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
   { label: '新闻报道', href: 'news-index.html' },
-  { label: '隐私说明', href: 'privacy.html' }
+  { label: '隐私政策', href: 'privacy.html' }
 ];
 
 function renderFooter(){
@@ -314,8 +314,8 @@ function renderFooter(){
     '<a href="' + prefix + l.href + '">' + l.label + '</a>'
   ).join(' · ');
   root.innerHTML =
-    '<div class="footer-disclosure">海鑫汇创始人兼任 WTC Singapore 秘书长兼 COO。</div>' +
-    '<div class="footer-brand">&copy; 2026 海鑫汇 Gateway To New (GTN). 版权所有 All rights reserved.</div>' +
+    '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
+    '<div class="footer-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</div>' +
     '<nav class="footer-links">' + linksHtml + '</nav>' +
     '<div class="footer-meta">连接中国优势，走向全球 · 联系：<a href="mailto:hello@gatewaytonew.com">hello@gatewaytonew.com</a></div>';
 }
