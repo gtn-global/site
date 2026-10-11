@@ -1,12 +1,88 @@
 [
-  { "id":"r-energy", "product":"新能源电力电气出海研究报告", "title":"新能源电力电气出海研究报告", "date_start":"2026-09-01", "date_end":"", "date_text":"已发布（2026-09）", "location":"", "price_text":"200 元", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"open", "cta_label":"购买", "cta_type":"pay", "cta_url":"", "visible":true, "evergreen":true, "note":"已发布" },
-  { "id":"r-ai", "product":"人工智能出海研究报告", "title":"人工智能出海研究报告", "date_start":"2026-10-15", "date_end":"", "date_text":"预计 2026 年 10 月发布", "location":"", "price_text":"200 元", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"登记意向", "cta_type":"register_interest", "cta_url":"", "visible":true, "evergreen":false, "note":"预计 2026-10 发布" },
-  { "id":"r-ev", "product":"新能源车与智慧交通出海研究报告", "title":"新能源车与智慧交通出海研究报告", "date_start":"2026-11-15", "date_end":"", "date_text":"预计 2026 年 11 月发布", "location":"", "price_text":"200 元", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"登记意向", "cta_type":"register_interest", "cta_url":"", "visible":true, "evergreen":false, "note":"预计 2026-11 发布" },
-  { "id":"t-jakarta", "product":"海鑫汇全球行 · 雅加达 + 新加坡", "title":"海鑫汇全球行 · 雅加达 + 新加坡", "date_start":"2026-11-15", "date_end":"", "date_text":"2026 年 11 月（日期待定）", "location":"雅加达 + 新加坡", "price_text":"2–4 万 / 次", "price_type":"range", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"登记意向", "cta_type":"register_interest", "cta_url":"", "visible":true, "evergreen":false, "note":"日期待定" },
-  { "id":"w-6800", "product":"出海训练营工作坊", "title":"出海训练营工作坊", "date_start":"2026-12-01", "date_end":"", "date_text":"日期未定", "location":"", "price_text":"6800 元", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"登记意向", "cta_type":"register_interest", "cta_url":"", "visible":false, "evergreen":false, "note":"陈俊文训练营不显示；日期与名额确认后改 true" },
-  { "id":"c-ceo", "product":"GatewayToNew CEO tour 首期", "title":"CEO tour 首期", "date_start":"2026-12-01", "date_end":"", "date_text":"未定", "location":"", "price_text":"参访企业需申请", "price_type":"contact", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"申请参访", "cta_type":"apply", "cta_url":"", "visible":false, "evergreen":false, "note":"有来源国与产业后改 true" },
-  { "id":"e-mba20", "product":"和君商学院出海班 第 20 届", "title":"和君商学院出海班 第 20 届", "date_start":"2027-01-15", "date_end":"", "date_text":"招生简章 2027 年 1 月起发布", "location":"", "price_text":"19800 元 / 年", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"planning", "cta_label":"登记意向", "cta_type":"register_interest", "cta_url":"", "visible":true, "evergreen":false, "note":"超出 90 天窗口，按规则不显示" },
-  { "id":"s-test", "product":"3 分钟自测", "title":"3 分钟自测", "date_start":"2026-10-11", "date_end":"", "date_text":"常设", "location":"", "price_text":"1 元", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"open", "cta_label":"开始", "cta_type":"pay", "cta_url":"", "visible":true, "evergreen":true, "note":"" },
-  { "id":"s-diag", "product":"出海首诊", "title":"出海首诊", "date_start":"2026-10-11", "date_end":"", "date_text":"常设", "location":"", "price_text":"99 元 / 1 小时", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"open", "cta_label":"预约", "cta_type":"pay", "cta_url":"", "visible":true, "evergreen":true, "note":"" },
-  { "id":"g-club", "product":"海鑫汇·出海菁英荟", "title":"海鑫汇·出海菁英荟", "date_start":"2026-10-11", "date_end":"", "date_text":"常设", "location":"", "price_text":"200 元 / 年", "price_type":"fixed", "quota_total":0, "quota_left":null, "status":"open", "cta_label":"加入", "cta_type":"pay", "cta_url":"", "visible":true, "evergreen":true, "note":"" }
+  {
+    "id": "r-energy",
+    "product": "新能源电力电气出海研究报告",
+    "date_start": "2026-09-01",
+    "date_text": "2026 年 9 月（已发布）",
+    "location": "线上 / 留资获取",
+    "status": "open",
+    "cta_type": "pay",
+    "cta_label": "留资获取",
+    "cta_url": "cta/book-diagnostic/index.html",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "r-ai",
+    "product": "AI 产业出海研究报告",
+    "date_start": "2026-10-01",
+    "date_text": "预计 2026 年 10 月",
+    "location": "线上 / 留资获取",
+    "status": "planning",
+    "cta_type": "pay",
+    "cta_label": "筹备中 · 登记意向",
+    "cta_url": "cta/book-diagnostic/index.html",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "r-ev",
+    "product": "汽车智能科技出海研究报告",
+    "date_start": "2026-11-01",
+    "date_text": "预计 2026 年 11 月",
+    "location": "线上 / 留资获取",
+    "status": "planning",
+    "cta_type": "pay",
+    "cta_label": "筹备中 · 登记意向",
+    "cta_url": "cta/book-diagnostic/index.html",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "t-jakarta",
+    "product": "印尼雅加达出海考察团",
+    "date_start": "2026-11-15",
+    "date_text": "2026 年 11 月",
+    "location": "印尼 · 雅加达",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": true,
+    "note": "面向邀请制商会与产业考察团"
+  },
+  {
+    "id": "e-mba20",
+    "product": "和君出海工商管理硕士班（MBA20）",
+    "date_text": "2027年1月起开放招生",
+    "location": "中国 · 北京 / 线上",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "w-6800",
+    "product": "6800 训练营（陈俊文）",
+    "date_text": "时间待确认",
+    "location": "线上",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": false,
+    "note": "陈俊文训练营不显示在日历"
+  },
+  {
+    "id": "c-ceo",
+    "product": "CEO tour 来华产业考察（本期征集参访企业）",
+    "date_text": "时间待确认",
+    "location": "中国 · 多地",
+    "status": "planning",
+    "cta_type": "apply",
+    "cta_label": "申请参访",
+    "price_text": "",
+    "visible": false
+  }
 ]
