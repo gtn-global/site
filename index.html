@@ -122,6 +122,16 @@ span.ops-center-flag.flag-kz{
 .report-card--live{border-color:rgba(0,150,136,.5);background:rgba(0,150,136,.04);}
 @media(max-width:900px){.report-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.report-grid{grid-template-columns:1fr;}}
+
+/* 出海前四个问题：只去掉折叠“效果”，外观完全沿用原手风琴样式；整块可点击跳转对应判断框架页 */
+#decision-accordion .accordion-item{display:block;text-decoration:none;color:inherit;cursor:pointer;}
+/* 内容常驻可见（不再收起），悬停也不再展开 */
+#decision-accordion .accordion-content{max-height:none !important;padding:0 22px 22px !important;overflow:visible !important;}
+/* 去掉悬停残留：+ 图标不再旋转 */
+#decision-accordion .accordion-icon{margin-left:auto;transform:none !important;}
+/* “查看判断框架 →”移到标题后（行内），整块已可点，不再单独成链接 */
+#decision-accordion .accordion-trigger h4{flex:0 1 auto;}
+#decision-accordion .accordion-trigger .card-cta{display:inline;margin:0 0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--seal);text-decoration:none;border-bottom:1px solid var(--seal);padding-bottom:2px;white-space:nowrap;}
 </style>
 <script type="application/ld+json">
 {
@@ -282,50 +292,50 @@ span.ops-center-flag.flag-kz{
     <div class="subhead reveal">出海前，先问自己四个问题<span class="en">FOUR QUESTIONS TO ASK BEFORE YOU GO GLOBAL</span></div>
 
     <div class="accordion-group decision-accordion reveal" id="decision-accordion">
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
-        <span class="tag">IS NOW THE RIGHT TIME?</span>
-        <h4>企业现在适合出海吗？</h4>
+      <a class="accordion-item" href="questions/ready-to-go-global/index.html">
+        <div class="accordion-trigger">
+          <span class="tag">IS NOW THE RIGHT TIME?</span>
+          <h4>企业现在适合出海吗？</h4>
+          <span class="card-cta">查看判断框架 &rarr;</span>
           <span class="accordion-icon">+</span>
-        </button>
+        </div>
         <div class="accordion-content">
           <p>从竞争力、目标市场需求、持续投入能力与进入时机，判断是否已经具备全球化基础。</p>
-          <a class="card-cta" href="questions/ready-to-go-global/index.html">查看判断框架 &rarr;</a>
         </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
+      </a>
+      <a class="accordion-item" href="questions/first-market/index.html">
+        <div class="accordion-trigger">
           <span class="tag">WHERE TO START?</span>
           <h4>第一个海外市场应该选择哪里？</h4>
+          <span class="card-cta">查看判断框架 &rarr;</span>
           <span class="accordion-icon">+</span>
-        </button>
+        </div>
         <div class="accordion-content">
           <p>从产业属性、资源条件、目标市场需求与本地化要求，选定最稳的全球化起点。</p>
-          <a class="card-cta" href="questions/first-market/index.html">查看判断框架 &rarr;</a>
         </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
+      </a>
+      <a class="accordion-item" href="questions/export-or-build/index.html">
+        <div class="accordion-trigger">
           <span class="tag">EXPORT OR BUILD?</span>
           <h4>出口代理还是海外建厂？</h4>
+          <span class="card-cta">查看判断框架 &rarr;</span>
           <span class="accordion-icon">+</span>
-        </button>
+        </div>
         <div class="accordion-content">
           <p>从投入能力、供应链与本地化要求，权衡出口、代理与海外建厂等不同进入方式。</p>
-          <a class="card-cta" href="questions/export-or-build/index.html">查看判断框架 &rarr;</a>
         </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
+      </a>
+      <a class="accordion-item" href="questions/overseas-risks/index.html">
+        <div class="accordion-trigger">
           <span class="tag">WHAT IS THE RISK?</span>
           <h4>海外布局最大的风险是什么？</h4>
+          <span class="card-cta">查看判断框架 &rarr;</span>
           <span class="accordion-icon">+</span>
-        </button>
+        </div>
         <div class="accordion-content">
           <p>从合规、现金流、本地化与组织能力，识别并前置管理全球化过程中的关键风险。</p>
-          <a class="card-cta" href="questions/overseas-risks/index.html">查看判断框架 &rarr;</a>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -867,7 +877,7 @@ span.ops-center-flag.flag-kz{
       <h4>墨西哥驻华大使馆交流</h4>
       <p>推动中国企业进入拉美（墨西哥）市场合作。</p>
     </a>
-    <a class="event-mini" href="events/exchange-09-kazakhstan/index.html">
+    <a class="event-mini" href="events/visit-35-2026-kazakhstan/index.html">
       <h4>哈萨克斯坦国际交流</h4>
       <p>中亚市场考察与中国企业出海合作。</p>
     </a>
