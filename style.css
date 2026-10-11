@@ -1306,3 +1306,31 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
   /* CTA 英文在极窄屏隐藏，避免挤 */
   .radar-cta .en,.btn-seal .en{font-size:8.5px;}
 }
+
+
+/* ===== 第三轮：字号只用 5 个变量 ===== */
+:root{--fs-label:12px;--fs-small:14px;--fs-body:16px;--fs-h2:clamp(26px,3vw,32px);--fs-h1:clamp(34px,5vw,56px);}
+h1{font-size:var(--fs-h1)!important;}
+h2,.section-title{font-size:var(--fs-h2)!important;}
+h3,h4,.subhead,.desk-title{font-size:var(--fs-body)!important;}
+p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta,.report-note,.footer-meta,.footer-disclosure,.desk-empty,.event-mini p,.ops-center-card p{font-size:var(--fs-small);}
+.eyebrow,.rc-tag,.btn-price,.region-card-ops,.desk-status,.subhead .en,.stat-cap{font-size:var(--fs-label);}
+/* ===== 颜色：墨黑 / 暖白 / 品牌红，描边改中性灰 ===== */
+:root{--rule:#e3e0d8;--ink-faint:#8a8781;}
+.report-card:hover,.region-card:hover,.event-mini:hover{border-color:#c9c5bc!important;box-shadow:none!important;}
+.rc-tag,.desk-status,.desk-link,.desk-more,.btn-outline,.card-cta,.rc-cta,.rc-btn,.desk-btn{color:var(--seal);border-color:#d8d4cc;}
+.report-card--live{background:#faf9f6;border-color:#d8d4cc;}
+/* ===== 往期回顾：类型入口压成一行标签 ===== */
+#proof .event-mini-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;}
+#proof .event-mini{border:1px solid var(--rule);border-radius:999px;padding:7px 14px;min-height:0;}
+#proof .event-mini h4{font-size:var(--fs-small);margin:0;}
+#proof .event-mini p{display:none;}
+.visit-line{display:inline-block;margin-top:16px;font-size:var(--fs-small);font-weight:600;color:var(--seal);text-decoration:none;}
+/* ===== 产业情境卡压成一行入口 ===== */
+#situation-accordion{display:flex;flex-wrap:wrap;gap:10px;}
+#situation-accordion .accordion-item{border-radius:16px;padding:8px 14px;min-height:0;}
+#situation-accordion .accordion-trigger{padding:0;}
+#situation-accordion .accordion-trigger p{display:none;}
+#situation-accordion .accordion-content{display:none;}
+#situation-accordion .accordion-item .tag{font-size:var(--fs-label);}
+@media(max-width:640px){#situation-accordion{gap:8px;}}
