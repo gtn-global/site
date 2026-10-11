@@ -281,33 +281,78 @@ span.ops-center-flag.flag-kz{
 
   </section>
 
-<!-- ============ REPORTS ============ -->
-<section class="section" id="offer">
-  <div class="eyebrow">出海产业研究报告 / INDUSTRY REPORTS</div>
-  <h2 class="headline reveal">产业出海，先看清再出手</h2>
-  <p class="subline reveal">INDUSTRY REPORTS</p>
-  <p class="lede reveal">海鑫汇 GTN 把两年一线情报与顾问网络，整理成可按赛道查阅的出海研究报告。</p>
-  <div class="report-grid reveal">
-    <a class="report-card report-card--live" href="reports/cleantech/index.html">
-      <span class="rc-tag">已上线</span>
-      <h4>新能源电力电气</h4>
-      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统。一句话结论 + 市场机会 + 真实门槛 + 中国企业案例，2026年完整报告留资解锁，产业专家：张果。</p>
-      <span class="rc-cta">查看报告 &rarr;</span>
-    </a>
-    <a class="report-card report-card--live" href="reports/EV/index.html">
-      <span class="rc-tag">已上线</span>
-      <h4>汽车智能科技</h4>
-      <p class="rc-desc">整车出口 · 本地建厂 · 充换电配套 · 海外合规。十大趋势洞察 + 核心市场数据 + 真实门槛 + 中国企业案例，2024年完整报告留资解锁，产业专家：王高歌。</p>
-      <span class="rc-cta">查看报告 &rarr;</span>
-    </a>
-    <div class="report-card">
-      <span class="rc-tag rc-tag--wip">研究进行中</span>
-      <h4>AI 产业</h4>
-      <p class="rc-desc">研究进行中，产业专家：江南。</p>
+  <section class="section channels" id="channels">
+    <div class="eyebrow">双向通道 / TWO-WAY CHANNEL</div>
+    <h2 class="section-title">走出去，也请进来</h2>
+    <div class="marquee" id="marquee">
+      <div class="marquee-row marquee-up"><div class="marquee-track" id="mUp"></div></div>
+      <div class="marquee-row marquee-down"><div class="marquee-track" id="mDown"></div></div>
     </div>
+  </section>
+  <script>
+  (function(){
+    var up = document.getElementById('mUp');
+    var down = document.getElementById('mDown');
+    if(up && down){
+      fetch('data/marquee.json').then(function(r){return r.json();}).then(function(cfg){
+        function fill(el, items){
+          if(!items || !items.length) return;
+          var html = items.map(function(it){ return '<div class="marquee-cell"><img src="'+it.img+'" alt="'+(it.alt||'')+'" loading="lazy"></div>'; }).join('');
+          el.innerHTML = html + html;
+        }
+        fill(up, cfg.up && cfg.up.items);
+        fill(down, cfg.down && cfg.down.items);
+      }).catch(function(e){ console.error('marquee.json load failed', e); });
+    }
+  })();
+  </script>
 
-  </div>
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="offer">
+  <div class="eyebrow">产品 / PRODUCTS</div>
+  <h2 class="section-title">按你处在哪一步，选对产品</h2>
+  <p class="lede">从“还没想清楚”到“亲眼去看”，海鑫汇 GTN 把出海服务拆成四张卡。没有支付链接的，先登记意向，上线即通知。</p>
+  <div class="offer-cards" id="offerCards"></div>
 </section>
+<script>
+(function(){
+  var box = document.getElementById('offerCards');
+  if(box){
+    fetch('data/products.json').then(function(r){return r.json();}).then(function(stages){
+      function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+      function itemHtml(it){
+        var btn;
+        if(it.cta_type==='calendar'){
+          btn='<a class="btn-submit btn-seal" href="#calendar">'+esc(it.cta)+'</a>';
+        } else {
+          var src = (it.cta_type==='apply') ? 'ceo-tour-company' : 'product-interest';
+          btn='<button type="button" class="btn-submit btn-seal" data-product="'+esc(it.name)+'" data-source="'+esc(src)+'">'+esc(it.cta)+'</button>';
+        }
+        return '<div class="offer-item">'
+          + '<div class="oi-name">'+esc(it.name)+'</div>'
+          + (it.one?'<div class="oi-one">'+esc(it.one)+'</div>':'')
+          + (it.desc?'<div class="oi-desc">'+esc(it.desc)+'</div>':'')
+          + btn
+          + '</div>';
+      }
+      var html = stages.map(function(st){
+        return '<div class="offer-card">'
+          + '<h3>'+esc(st.stage_label)+'</h3>'
+          + '<div class="offer-stage">'+esc(st.stage)+'</div>'
+          + st.items.map(itemHtml).join('')
+          + '</div>';
+      }).join('');
+      box.innerHTML = html;
+      box.querySelectorAll('button[data-product]').forEach(function(b){
+        b.addEventListener('click', function(){
+          var fn = window.openIntent || function(){};
+          fn(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim());
+        });
+      });
+    }).catch(function(e){ console.error('products.json load failed', e); });
+  }
+})();
+</script>
 <!-- ============ 02 METHOD ============ -->
 <section class="section" id="method">
   <div class="eyebrow">02 — 我们怎么帮你判断 / METHOD</div>
@@ -1071,6 +1116,7 @@ span.ops-center-flag.flag-kz{
       modal.hidden = false;
     }
     function closeIntent(){ modal.hidden = true; }
+    window.openIntent = openIntent;
     if(modal){ modal.addEventListener('click', function(e){ if(e.target.getAttribute('data-close')) closeIntent(); }); }
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal && !modal.hidden) closeIntent(); });
     if(form) form.addEventListener('submit', function(ev){

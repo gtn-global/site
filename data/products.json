@@ -1,0 +1,18 @@
+[
+  { "stage": "clarify", "stage_label": "还没想清楚", "items": [
+    { "name": "3 分钟自测", "one": "1 元", "desc": "出海第一步，先搞清楚自己卡在哪。", "cta": "开始", "cta_type": "pay", "cta_url": "" },
+    { "name": "出海首诊", "one": "99 元 / 1 小时", "desc": "创始人 1 对 1，把选项、风险、成本摊开。", "cta": "预约", "cta_type": "pay", "cta_url": "" },
+    { "name": "产业出海研究报告", "one": "200 元 / 份", "desc": "按产业沉淀的判断，不是游学笔记。", "cta": "登记意向", "cta_type": "register_interest", "cta_url": "" }
+  ]},
+  { "stage": "learn", "stage_label": "想学明白", "items": [
+    { "name": "跨境电商海外达人工作坊", "one": "以日历为准", "desc": "跟着已经跑通的人，学怎么落地。", "cta": "看日历", "cta_type": "calendar", "cta_url": "" },
+    { "name": "和君商学院出海班", "one": "19800 元 / 年", "desc": "体系化出海方法论，一年陪跑。", "cta": "登记意向", "cta_type": "register_interest", "cta_url": "" }
+  ]},
+  { "stage": "circle", "stage_label": "想进圈子", "items": [
+    { "name": "海鑫汇·出海菁英荟", "one": "200 元 / 年", "desc": "放进一个真正在出海的圈子里。", "cta": "加入", "cta_type": "pay", "cta_url": "" }
+  ]},
+  { "stage": "see", "stage_label": "想亲眼去看", "items": [
+    { "name": "海鑫汇全球行", "one": "2–4 万 / 次", "desc": "跟着去海外现场，看真实机会。", "cta": "登记意向", "cta_type": "register_interest", "cta_url": "" },
+    { "name": "GatewayToNew CEO tour", "one": "申请制", "desc": "外国 CEO 来华，反向看懂中国优势。", "cta": "申请参访", "cta_type": "apply", "cta_url": "" }
+  ]}
+]

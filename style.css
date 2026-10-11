@@ -280,6 +280,34 @@ textarea{resize:vertical;min-height:88px;}
 .intent-form .field input[type=text]{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);font-size:14px;box-sizing:border-box;}
 .intent-form .consent{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);}
 
+/* 双向通道 1.5 */
+.channels{overflow:hidden;}
+.marquee{margin-top:18px;display:flex;flex-direction:column;gap:14px;}
+.marquee-row{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:marquee-left 40s linear infinite;}
+.marquee-down .marquee-track{animation:marquee-right 40s linear infinite;}
+.marquee-cell{flex:0 0 auto;width:260px;height:170px;border-radius:12px;overflow:hidden;background:var(--paper-alt);border:1px solid var(--rule);}
+.marquee-cell img{width:100%;height:100%;object-fit:cover;display:block;}
+.marquee-row:hover .marquee-track{animation-play-state:paused;}
+@keyframes marquee-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes marquee-right{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important;}}
+@media(max-width:560px){.marquee-cell{width:200px;height:130px;}}
+
+/* 四张卡 1.6 */
+.offer-cards{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.offer-card{border:1px solid var(--rule);border-radius:14px;padding:18px;background:var(--paper);display:flex;flex-direction:column;}
+.offer-card h3{font-size:18px;margin:0 0 4px;color:var(--ink);}
+.offer-stage{font-size:13px;color:var(--seal);font-weight:600;margin-bottom:12px;}
+.offer-item{border-top:1px solid var(--rule);padding:12px 0;}
+.offer-item:first-child{border-top:0;padding-top:0;}
+.offer-item .oi-name{font-size:15px;font-weight:600;color:var(--ink);}
+.offer-item .oi-one{font-size:13px;color:var(--seal);margin:2px 0;}
+.offer-item .oi-desc{font-size:13px;color:var(--ink-soft);margin:4px 0 10px;line-height:1.5;}
+.offer-item .cal-cta{font-size:13px;}
+@media(max-width:900px){.offer-cards{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.offer-cards{grid-template-columns:1fr;}}
+
 /* ---------- footer ---------- */
 .footer{padding:32px 24px;text-align:center;font-size:12.5px;color:var(--ink-soft,#5b6470);border-top:1px solid var(--rule,#e5e2db);}
 
