@@ -26,7 +26,7 @@ fs.writeFileSync(D('data', 'marquee.json'), JSON.stringify(marquee, null, 2) + '
 console.log('marquee 重建：up(GTN_Global)=' + upFiles.length + '  down(CEO_tour)=' + downFiles.length);
 
 // 2) 生成 data/*.js
-const KEYS = ['marquee', 'filters', 'products', 'calendar', 'index'];
+const KEYS = ['marquee', 'filters', 'products', 'calendar', 'index', 'matrix'];
 const loaded = {};
 for (const key of KEYS) {
   const jsonPath = D('data', key + '.json');

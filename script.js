@@ -297,7 +297,11 @@ syncEventBreakdown();
 
 // ---- 统一 footer：内容只在这里定义一次，所有页面（含三级页）共用 ----
 const FOOTER_LINKS = [
-  { label: '深度诊断', href: 'cta/book-diagnostic/index.html' },
+  { label: '产业出海研究报告', href: 'reports/index.html' },
+  { label: '出海日程', href: 'calendar.html' },
+  { label: '出海菁英荟', href: 'club.html' },
+  { label: '来华产业考察', href: 'ceo-tour.html' },
+  { label: '常见问题', href: 'faq.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
@@ -314,9 +318,11 @@ function renderFooter(){
     '<a href="' + prefix + l.href + '">' + l.label + '</a>'
   ).join(' · ');
   root.innerHTML =
+    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'cta/book-diagnostic/index.html">预约首诊　99 元 / 1 小时</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
     '<div class="footer-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</div>' +
     '<nav class="footer-links">' + linksHtml + '</nav>' +
-    '<div class="footer-meta">连接中国优势，走向全球 · 联系：<a href="mailto:hello@gatewaytonew.com">hello@gatewaytonew.com</a></div>';
+    '<div class="footer-meta">连接中国优势，走向全球 · 联系：<a href="mailto:hello@gatewaytonew.com">hello@gatewaytonew.com</a></div>' +
+    '<div class="footer-note">全球覆盖图为示意图，不作地理或边界依据。</div>';
 }
 renderFooter();

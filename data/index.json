@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T17:21:54.225Z",
+  "generated": "2026-10-11T18:02:07.551Z",
   "event": [
     {
       "id": "TOUR-01",
@@ -1179,57 +1179,84 @@
   ],
   "advisor": [
     {
-      "id": "chen-jiale",
-      "name": "陈佳乐",
-      "url": "experts/chen-jiale/index.html",
-      "photo": "experts/chen-jiale/adv-10.webp",
-      "one": "低空经济与无人机专家 · 海鑫汇专家顾问",
-      "industries": [
-        "汽车智能科技",
-        "国际人才"
-      ],
-      "countries": [],
-      "regions": [],
-      "isLead": false
-    },
-    {
       "id": "donglixin",
       "name": "董立鑫",
+      "role": "中国企业出海决策顾问",
       "url": "experts/donglixin/index.html",
       "photo": "experts/donglixin/donglixin.webp",
-      "one": "海鑫汇 Gateway To New（GTN）创始人兼CEO　·　中国企业全球化与人才连接实践者",
-      "industries": [
-        "AI产业",
-        "消费品牌",
-        "跨国资本",
-        "国际人才"
+      "one": "海鑫汇 Gateway To New 创始人兼CEO，和君咨询合伙人，新加坡世贸秘书长兼首席运营，专注中国企业出海决策咨",
+      "industries": [],
+      "countries": [
+        "新加坡"
       ],
-      "countries": [],
-      "regions": [],
+      "regions": [
+        "东南亚"
+      ],
       "isLead": false
     },
     {
-      "id": "li-guo",
-      "name": "李果",
-      "url": "experts/li-guo/index.html",
-      "photo": "experts/li-guo/adv-09.webp",
-      "one": "人形机器人与AI投融资专家 · 海鑫汇专家顾问",
+      "id": "wang-gaoge",
+      "name": "王高歌",
+      "role": "企业全球化战略顾问",
+      "url": "experts/wang-gaoge/index.html",
+      "photo": "experts/wang-gaoge/adv-02.webp",
+      "one": "专注企业管理咨询与中国企业全球化，具备企业国际化战略与出海咨询服务能力。",
       "industries": [
-        "汽车智能科技",
-        "AI产业",
-        "跨国资本",
-        "国际人才"
+        "汽车智能科技"
       ],
       "countries": [],
       "regions": [],
-      "isLead": false
+      "isLead": true
+    },
+    {
+      "id": "zhao-weidong",
+      "name": "赵伟栋",
+      "role": "企业重组投资顾问",
+      "url": "experts/zhao-weidong/index.html",
+      "photo": "experts/zhao-weidong/adv-03.webp",
+      "one": "专注困境投资与价值创造，具备全球化投资与企业重组的实战能力。",
+      "industries": [
+        "跨国资本"
+      ],
+      "countries": [],
+      "regions": [],
+      "isLead": true
+    },
+    {
+      "id": "zhang-guosheng",
+      "name": "张国胜",
+      "role": "上市公司投资负责人",
+      "url": "experts/zhang-guosheng/index.html",
+      "photo": "experts/zhang-guosheng/adv-04.webp",
+      "one": "专注制造业全球化与企业国际化，具备全球制造布局与供应链出海的实战能力。",
+      "industries": [
+        "新能源"
+      ],
+      "countries": [],
+      "regions": [],
+      "isLead": true
+    },
+    {
+      "id": "zhang-le",
+      "name": "张乐",
+      "role": "上市公司营销总经理",
+      "url": "experts/zhang-le/index.html",
+      "photo": "experts/zhang-le/adv-05.webp",
+      "one": "专注跨境电商增长与企业出海，具备品牌全球化与海外营销的实战能力。",
+      "industries": [
+        "AI产业"
+      ],
+      "countries": [],
+      "regions": [],
+      "isLead": true
     },
     {
       "id": "tang-zhaobo",
       "name": "唐照波",
+      "role": "上市公司董事会秘书",
       "url": "experts/tang-zhaobo/index.html",
       "photo": "experts/tang-zhaobo/adv-06.webp",
-      "one": "宠物品牌全球化专家 · 海鑫汇专家顾问",
+      "one": "专注中国宠物品牌全球化与国际市场实践，具备宠物产业出海的实战经验。",
       "industries": [
         "消费品牌"
       ],
@@ -1240,98 +1267,36 @@
     {
       "id": "tian-guo",
       "name": "田果",
+      "role": "上市公司董事",
       "url": "experts/tian-guo/index.html",
       "photo": "experts/tian-guo/adv-07.webp",
-      "one": "AI硬科技全球化专家 · 海鑫汇专家顾问",
-      "industries": [
-        "汽车智能科技",
-        "AI产业",
-        "消费品牌",
-        "跨国资本",
-        "国际人才"
-      ],
+      "one": "专注AI时代硬科技全球化，具备中国科技企业出海与全球竞争洞察能力。",
+      "industries": [],
       "countries": [],
       "regions": [],
       "isLead": false
-    },
-    {
-      "id": "wang-gaoge",
-      "name": "王高歌",
-      "url": "experts/wang-gaoge/index.html",
-      "photo": "experts/wang-gaoge/adv-02.webp",
-      "one": "和君咨询合伙人 · 企业管理咨询专家 · 海鑫汇专家顾问",
-      "industries": [
-        "汽车智能科技"
-      ],
-      "countries": [],
-      "regions": [],
-      "isLead": true
     },
     {
       "id": "zhang-chenggang",
       "name": "张成刚",
+      "role": "产业与就业研究专家",
       "url": "experts/zhang-chenggang/index.html",
       "photo": "experts/zhang-chenggang/adv-08.webp",
-      "one": "企业全球化战略专家 · 海鑫汇专家顾问",
+      "one": "专注中国企业全球化与工业化发展路径，具备企业国际化战略洞察能力。",
       "industries": [
-        "AI产业",
-        "消费品牌",
-        "跨国资本",
         "国际人才"
-      ],
-      "countries": [],
-      "regions": [],
-      "isLead": false
-    },
-    {
-      "id": "zhang-guanghui",
-      "name": "张光辉",
-      "url": "experts/zhang-guanghui/index.html",
-      "photo": "experts/zhang-guanghui/adv-01.webp",
-      "one": "中教易尔（上海）教育科技有限公司创始人 · 海鑫汇专家顾问",
-      "industries": [
-        "AI产业",
-        "跨国资本",
-        "国际人才"
-      ],
-      "countries": [],
-      "regions": [],
-      "isLead": false
-    },
-    {
-      "id": "zhang-guo",
-      "name": "张果",
-      "url": "experts/zhang-guo/index.html",
-      "photo": "experts/zhang-guo/../../assets/img/logo-primary.svg",
-      "one": "和君咨询业务合伙人 · 电力电气事业部副总经理 · 海鑫汇专家顾问",
-      "industries": [
-        "新能源"
       ],
       "countries": [],
       "regions": [],
       "isLead": true
     },
     {
-      "id": "zhang-guosheng",
-      "name": "张国胜",
-      "url": "experts/zhang-guosheng/index.html",
-      "photo": "experts/zhang-guosheng/adv-04.webp",
-      "one": "制造业全球化专家 · 海鑫汇专家顾问",
-      "industries": [
-        "新能源",
-        "消费品牌",
-        "跨国资本"
-      ],
-      "countries": [],
-      "regions": [],
-      "isLead": false
-    },
-    {
-      "id": "zhang-le",
-      "name": "张乐",
-      "url": "experts/zhang-le/index.html",
-      "photo": "experts/zhang-le/adv-05.webp",
-      "one": "跨境电商增长专家 · 海鑫汇专家顾问",
+      "id": "li-guo",
+      "name": "李果",
+      "role": "AI产业投资顾问",
+      "url": "experts/li-guo/index.html",
+      "photo": "experts/li-guo/adv-09.webp",
+      "one": "专注人形机器人、世界模型与AI投融资趋势，具备AI产业与人才投资洞察能力。",
       "industries": [
         "AI产业"
       ],
@@ -1340,40 +1305,70 @@
       "isLead": true
     },
     {
-      "id": "zhang-yali",
-      "name": "张雅莉",
-      "url": "experts/zhang-yali/index.html",
-      "photo": "experts/zhang-yali/adv-11.webp",
-      "one": "全球财富与家族办公室专家 · 海鑫汇专家顾问",
+      "id": "chen-jiale",
+      "name": "陈佳乐",
+      "role": "低空经济产业顾问",
+      "url": "experts/chen-jiale/index.html",
+      "photo": "experts/chen-jiale/adv-10.webp",
+      "one": "专注低空经济全球化与无人机产业出海，具备低空经济国际合作洞察能力。",
       "industries": [
-        "消费品牌",
-        "跨国资本",
-        "国际人才"
+        "汽车智能科技"
       ],
       "countries": [],
       "regions": [],
-      "isLead": false
+      "isLead": true
     },
     {
-      "id": "zhao-weidong",
-      "name": "赵伟栋",
-      "url": "experts/zhao-weidong/index.html",
-      "photo": "experts/zhao-weidong/adv-03.webp",
-      "one": "北京博雅春芽投资有限公司 · 创始人、董事长　·　投资与价值创造 · 困境企业重整",
+      "id": "zhang-yali",
+      "name": "张雅莉",
+      "role": "财富配置顾问",
+      "url": "experts/zhang-yali/index.html",
+      "photo": "experts/zhang-yali/adv-11.webp",
+      "one": "专注全球财富配置与家族财富传承，具备跨境资产与家族办公室服务实战能力。",
       "industries": [
-        "汽车智能科技",
-        "消费品牌",
         "跨国资本"
       ],
       "countries": [],
       "regions": [],
-      "isLead": false
+      "isLead": true
+    },
+    {
+      "id": "zhang-guanghui",
+      "name": "张光辉",
+      "role": "教育出海战略顾问",
+      "url": "experts/zhang-guanghui/index.html",
+      "photo": "experts/zhang-guanghui/adv-01.webp",
+      "one": "中教易尔（上海）教育科技有限公司创始人，专注教育出海中亚实践与国际教育合作，任和君商学院出海班导师，推动国际教育合作与招",
+      "industries": [
+        "国际人才"
+      ],
+      "countries": [
+        "哈萨克斯坦"
+      ],
+      "regions": [
+        "中亚"
+      ],
+      "isLead": true
+    },
+    {
+      "id": "zhang-guo",
+      "name": "张果",
+      "role": "和君咨询业务合伙人",
+      "url": "experts/zhang-guo/index.html",
+      "photo": "experts/zhang-guo/zhangguo.jpg",
+      "one": "和君咨询业务合伙人、和君电力电气事业部副总经理，专注新能源与电力电气行业的战略规划、商业模式设计与企业数字化转型。",
+      "industries": [
+        "新能源"
+      ],
+      "countries": [],
+      "regions": [],
+      "isLead": true
     }
   ],
   "ops_center": [
     {
       "id": "ops-beijing",
-      "name": "刘栗铭 · 北京运营中心 — 海鑫汇",
+      "name": "刘栗铭",
       "url": "member/ops-beijing/index.html",
       "photo": "member/ops-beijing/beijing.webp",
       "country": "中国",
@@ -1382,7 +1377,7 @@
     },
     {
       "id": "ops-hangzhou",
-      "name": "杭州 运营中心 · Operations Hub — 海鑫汇",
+      "name": "杭州 运营中心",
       "url": "member/ops-hangzhou/index.html",
       "photo": "member/ops-hangzhou/hangzhou.webp",
       "country": "中国",
@@ -1391,7 +1386,7 @@
     },
     {
       "id": "ops-japan",
-      "name": "名城悠真 · 东京运营中心 — 海鑫汇",
+      "name": "名城悠真",
       "url": "member/ops-japan/index.html",
       "photo": "member/ops-japan/tokyo.webp",
       "country": "日本",
@@ -1400,7 +1395,7 @@
     },
     {
       "id": "ops-kazakhstan",
-      "name": "哈萨克斯坦 运营中心 · Operations Hub — 海鑫汇",
+      "name": "哈萨克斯坦 运营中心",
       "url": "member/ops-kazakhstan/index.html",
       "photo": "member/ops-kazakhstan/图片4.webp",
       "country": "哈萨克斯坦",
@@ -1409,7 +1404,7 @@
     },
     {
       "id": "ops-mena",
-      "name": "PART 01　您一直践行的事业观、价值观",
+      "name": "孙圆儿",
       "url": "member/ops-mena/index.html",
       "photo": "member/ops-mena/sun-yuaner.webp",
       "country": "",
@@ -1418,7 +1413,7 @@
     },
     {
       "id": "ops-ningbo",
-      "name": "Andy 张东裕 · 宁波运营中心 — 海鑫汇",
+      "name": "Andy 张东裕",
       "url": "member/ops-ningbo/index.html",
       "photo": "member/ops-ningbo/ningbo.webp",
       "country": "中国",
@@ -1427,7 +1422,7 @@
     },
     {
       "id": "ops-pakistan",
-      "name": "吕小明 · 巴基斯坦运营中心 — 海鑫汇",
+      "name": "吕小明",
       "url": "member/ops-pakistan/index.html",
       "photo": "member/ops-pakistan/吕晓明.webp",
       "country": "巴基斯坦",
@@ -1445,7 +1440,7 @@
     },
     {
       "id": "ops-singapore",
-      "name": "蔡慧敏 · 新加坡运营中心 — 海鑫汇",
+      "name": "蔡慧敏",
       "url": "member/ops-singapore/index.html",
       "photo": "member/ops-singapore/singapore.webp",
       "country": "新加坡",
@@ -1454,12 +1449,21 @@
     },
     {
       "id": "ops-suzhou",
-      "name": "于溪东 · 苏州运营中心 — 海鑫汇",
+      "name": "于溪东",
       "url": "member/ops-suzhou/index.html",
       "photo": "member/ops-suzhou/suzhou.webp",
       "country": "中国",
       "region": "",
       "city": "suzhou"
+    },
+    {
+      "id": "chi-wenjie",
+      "name": "Helen 迟文劼",
+      "url": "member/chi-wenjie/index.html",
+      "photo": "member/chi-wenjie/secretary-general.webp",
+      "country": "中国",
+      "region": "",
+      "city": "chi-wenjie"
     }
   ],
   "calendar": [

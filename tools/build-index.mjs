@@ -39,13 +39,22 @@ const IND_KEYS = {
   国际人才: ['人才', '教育', '留学', '招聘', '组织']
 };
 
-// 链主优先标产业（首页产业手风琴已定）
+// 链主 / 明确归属（按 experts 目录 slug；只有能一眼判断的才写，其余走关键词或进待核对）
 const LEADS = {
   'zhang-guo': '新能源',
+  'zhang-guosheng': '新能源',
   'wang-gaoge': '汽车智能科技',
+  'chen-jiale': '汽车智能科技',
   'zhang-le': 'AI产业',
-  'tang-zhaobo': '消费品牌'
+  'li-guo': 'AI产业',
+  'tang-zhaobo': '消费品牌',
+  'zhao-weidong': '跨国资本',
+  'zhang-yali': '跨国资本',
+  'zhang-guanghui': '国际人才',
+  'zhang-chenggang': '国际人才'
 };
+// 创始人不属于单一产业，不猜标签、也不进待核对
+const NO_INDustry_OK = new Set(['donglixin']);
 
 const pending = []; // 待核对条目
 function toPending(kind, entry, reason, suggest) {
@@ -141,30 +150,82 @@ const reports = [
   { id: 'report-ai', industry: 'AI产业', title: 'AI 产业出海研究报告', status: '研究进行中', version: '', url: '', action: '登记意向' }
 ].map(r => ({ ...r, countries: [], regions: [] }));
 
-// ---------- 3. advisor ----------
+// ---------- 3. advisor：以 advisors-index.html 卡片为准（全量，含未建独立页的） ----------
 const advisors = [];
+const seenAdvisor = new Set();
+const strip = s => String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+function pushAdvisor(o) {
+  if (seenAdvisor.has(o.url)) return;
+  seenAdvisor.add(o.url);
+  advisors.push(o);
+}
+
+// 3.1 从 advisors-index.html 读全部真实卡片（占位卡 Coming Soon 无 href，自动跳过）
+const advIndexFile = D('advisors-index.html');
+let advCardTotal = 0, advCardPlaceholder = 0;
+if (exists(advIndexFile)) {
+  const html = read(advIndexFile);
+  const chunks = html.split(/<a\s[^>]*class="[^"]*ops-card[^"]*"/i).slice(1);
+  for (const chunk of chunks) {
+    advCardTotal++;
+    const seg = chunk.slice(0, chunk.indexOf('</a>') > 0 ? chunk.indexOf('</a>') : 2500);
+    const href = (seg.match(/href="([^"]+)"/) || [])[1] || '';
+    if (!href || !/experts\/[^/]+\/index\.html$/.test(href)) { advCardPlaceholder++; continue; }
+    const dir = href.replace(/^experts\//, '').replace(/\/index\.html$/, '');
+    const name = strip((seg.match(/class="ops-name"[^>]*>([\s\S]*?)<\/div>/) || [])[1]);
+    const role = strip((seg.match(/<h4[^>]*>([\s\S]*?)<\/h4>/) || [])[1]);
+    const bio = strip((seg.match(/class="ops-bio"[^>]*>([\s\S]*?)<\/div>/) || [])[1]);
+    const photo = (seg.match(/<img[^>]+src="([^"]+)"/) || [])[1] || '';
+    const pageFile = D('experts', dir, 'index.html');
+    const pageHtml = exists(pageFile) ? read(pageFile) : '';
+    // 创始人等不归入单一产业的，不猜标签；其余命中超过 2 个产业视为噪声，不猜、进待核对
+    let industries = LEADS[dir] ? [LEADS[dir]]
+      : (NO_INDustry_OK.has(dir) ? [] : guessIndustries(role + ' ' + bio + ' ' + pageHtml));
+    if (!LEADS[dir] && industries.length > 2) industries = [];
+    industries = [...new Set(industries)];
+    const countries = [...new Set(guessCountries(pageHtml || bio))];
+    pushAdvisor({
+      id: dir,
+      name: name || dir,
+      role,
+      url: href,
+      photo: photo ? normPhoto(photo, 'experts/' + dir) : '',
+      one: bio.slice(0, 60),
+      industries,
+      countries,
+      regions: regionsOf(countries),
+      isLead: !!LEADS[dir]
+    });
+    if (!LEADS[dir] && industries.length === 0 && !NO_INDustry_OK.has(dir)) {
+      toPending('advisor', { name: name || dir, url: href }, '卡片与页面均未命中产业关键词', guessIndustries(role + ' ' + bio).join('/') || '—');
+    }
+  }
+}
+
+// 3.2 补漏：experts/ 下有独立页但索引页没卡片的
 const expRoot = D('experts');
 if (exists(expRoot)) {
   fs.readdirSync(expRoot).filter(d => d !== '_demo' && fs.statSync(path.join(expRoot, d)).isDirectory()).forEach(dir => {
     const file = path.join(expRoot, dir, 'index.html');
     if (!exists(file)) return;
+    const url = 'experts/' + dir + '/index.html';
+    if (seenAdvisor.has(url)) return;
     const html = read(file);
     const nameM = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
-    const name = nameM ? nameM[1].replace(/<[^>]+>/g, '').split('｜')[0].trim() : dir;
+    const name = nameM ? strip(nameM[1]).split('｜')[0].trim() : dir;
     const photoM = html.match(/<img[^>]+src="([^"]*(?:avatar|portrait|adv-|zhanguo|wanggao)[^"]*)"/i)
       || html.match(/<img[^>]+class="[^"]*avatar[^"]*"[^>]+src="([^"]+)"/i)
       || html.match(/<img[^>]+src="([^"]+)"/);
-    const photo = photoM ? normPhoto(photoM[1], 'experts/' + dir) : '';
     let industries = LEADS[dir] ? [LEADS[dir]] : guessIndustries(html);
     industries = [...new Set(industries)];
-    const descM = html.match(/<p class="[^"]*(?:lede|subline)[^"]*"[^>]*>([\s\S]*?)<\/p>/);
-    const one = descM ? descM[1].replace(/<[^>]+>/g, '').trim().slice(0, 60) : '';
-    advisors.push({
-      id: dir, name, url: 'experts/' + dir + '/index.html', photo, one,
-      industries, countries: [], regions: [], isLead: !!LEADS[dir]
+    const countries = [...new Set(guessCountries(html))];
+    pushAdvisor({
+      id: dir, name, role: '', url, photo: photoM ? normPhoto(photoM[1], 'experts/' + dir) : '',
+      one: '', industries, countries, regions: regionsOf(countries), isLead: !!LEADS[dir]
     });
-    if (!LEADS[dir] && industries.length === 0) {
-      toPending('advisor', { name, url: 'experts/' + dir + '/index.html' }, '页面内容未命中产业关键词', '—');
+    if (!LEADS[dir] && industries.length === 0 && !NO_INDustry_OK.has(dir)) {
+      toPending('advisor', { name, url }, '页面内容未命中产业关键词', '—');
     }
   });
 }
@@ -189,11 +250,12 @@ if (exists(memRoot)) {
       return;
     }
     const html = read(file);
-    const nameM = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)
+    // 先取 <title>（多数运营中心页没有 h1），再退回 h1/h2/h4
+    const nameM = html.match(/<title>([\s\S]*?)<\/title>/)
+      || html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)
       || html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)
-      || html.match(/<h4[^>]*>([\s\S]*?)<\/h4>/)
-      || html.match(/<title>([\s\S]*?)<\/title>/);
-    let name = nameM ? nameM[1].replace(/<[^>]+>/g, '').split('｜')[0].trim() : '';
+      || html.match(/<h4[^>]*>([\s\S]*?)<\/h4>/);
+    let name = nameM ? nameM[1].replace(/<[^>]+>/g, '').split(/[｜|]/)[0].split('·')[0].split('—')[0].trim() : '';
     if (!name || /^ops-/i.test(name)) {
       name = dir;
       toPending('ops_center', { name: dir, url: 'member/' + dir + '/index.html' }, '页面未取到真实姓名，暂用目录名', '—');
@@ -207,6 +269,26 @@ if (exists(memRoot)) {
     if (!country && !region) {
       toPending('ops_center', { name, url: 'member/' + dir + '/index.html' }, '未识别国家/大区', '—');
     }
+  });
+}
+
+// 4.1 补：非 ops- 前缀但确为运营中心负责人的页面（目前只有迟文劼，运营中心主任兼 CMO）
+const OPS_EXTRA = [{ dir: 'chi-wenjie', country: '中国', region: '' }];
+for (const x of OPS_EXTRA) {
+  const file = D('member', x.dir, 'index.html');
+  if (!exists(file)) continue;
+  const url = 'member/' + x.dir + '/index.html';
+  if (ops.some(o => o.url === url)) continue;
+  const html = read(file);
+  const nameM = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)
+    || html.match(/<h4[^>]*>([\s\S]*?)<\/h4>/)
+    || html.match(/<title>([\s\S]*?)<\/title>/);
+  const raw = nameM ? nameM[1].replace(/<[^>]+>/g, '').split('｜')[0].trim() : '';
+  const name = raw.replace(/\s*·\s*运营中心.*$/, '').trim() || x.dir;
+  const photoM = html.match(/<img[^>]+class="[^"]*avatar[^"]*"[^>]+src="([^"]+)"/i) || html.match(/<img[^>]+src="([^"]+)"/);
+  ops.push({
+    id: x.dir, name, url, photo: photoM ? normPhoto(photoM[1], 'member/' + x.dir) : '',
+    country: x.country, region: x.region, city: x.dir
   });
 }
 
@@ -237,4 +319,5 @@ fs.writeFileSync(D('标签待核对.md'), md, 'utf8');
 
 console.log('index.json 生成完成');
 console.log('  event=' + events.length + '  report=' + reports.length + '  advisor=' + advisors.length + '  ops_center=' + ops.length + '  calendar=' + calendar.length);
+console.log('  顾问索引卡片=' + advCardTotal + '（其中占位无链接=' + advCardPlaceholder + '）；入库顾问=' + advisors.length + '，有头像=' + advisors.filter(a => a.photo).length);
 console.log('标签待核对：' + pending.length + ' 条 → 标签待核对.md');

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海鑫汇 · 出海菁英荟｜海鑫汇 GTN</title>
+<meta name="description" content="海鑫汇·出海菁英荟 200 元/年：加入微信群，活动、考察和研究报告发布第一时间在群里通知，入会赠送一份已发布的产业出海研究报告（任选一份）。">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gatewaytonew.com/club.html">
+<meta property="og:title" content="海鑫汇 · 出海菁英荟｜海鑫汇 GTN">
+<meta property="og:description" content="200 元/年，交个朋友。活动、考察和报告发布第一时间通知，入会赠送一份已发布的产业出海研究报告。">
+<meta property="og:site_name" content="Gateway To New (GTN)">
+<link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://gatewaytonew.com/club.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "海鑫汇 · 出海菁英荟",
+  "url": "https://gatewaytonew.com/club.html",
+  "inLanguage": "zh-CN",
+  "about": {"@type": "Organization", "name": "海鑫汇", "alternateName": ["Gateway To New", "GTN"]}
+}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
+    <div class="desk-clock"></div>
+    <a href="index.html#entries" class="subpage-back">&larr; 返回首页<span class="en">BACK HOME</span></a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="eyebrow">出海菁英荟 / CLUB</div>
+  <h1 class="headline reveal">海鑫汇·出海菁英荟</h1>
+  <p class="subline reveal">200 元/年，交个朋友。</p>
+
+  <ol class="club-points reveal">
+    <li>加入微信群</li>
+    <li>活动、考察和报告发布，第一时间在群里通知</li>
+    <li>入会赠送一份已发布的产业出海研究报告（任选一份）</li>
+  </ol>
+  <p class="club-note">不含线下活动免费，不含顾问服务，不承诺对接或成交。</p>
+
+  <div class="cta-form form-wrap reveal">
+    <h3 class="cta-form-title">加入菁英荟<span class="en">JOIN THE CLUB　200 元 / 年</span></h3>
+    <form id="clubForm" class="contact-form" method="GET" onsubmit="return submitClub(this)">
+      <div class="form-grid">
+        <div class="field">
+          <label for="cbName">姓名 Name</label>
+          <input type="text" name="name" id="cbName" placeholder="您的姓名" required>
+        </div>
+        <div class="field">
+          <label for="cbCompany">公司 Company</label>
+          <input type="text" name="company" id="cbCompany" placeholder="公司名称" required>
+        </div>
+        <div class="field">
+          <label for="cbTitle">职位 Title</label>
+          <input type="text" name="title" id="cbTitle" placeholder="如：总经理 / 海外事业部负责人">
+        </div>
+        <div class="field">
+          <label for="cbIndustry">所属行业 Industry</label>
+          <input type="text" name="industry" id="cbIndustry" placeholder="如：精密制造 / 消费品牌">
+        </div>
+        <div class="field">
+          <label for="cbRegion">意向区域 Region</label>
+          <input type="text" name="region_interest" id="cbRegion" placeholder="如：东南亚 / 欧洲">
+        </div>
+        <div class="field">
+          <label for="cbStage">出海阶段 Stage</label>
+          <select name="stage" id="cbStage">
+            <option value="" disabled selected>请选择</option>
+            <option value="planning">规划中 · 已立项</option>
+            <option value="testing">试水阶段 · 小规模测试</option>
+            <option value="scaling">扩张中 · 多国运营</option>
+            <option value="established">已成熟 · 深度本地化</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="cbContact">联系方式 Contact（必填）</label>
+          <input type="text" name="contact" id="cbContact" placeholder="手机号或微信号" required>
+        </div>
+        <div class="field full">
+          <label class="consent"><input type="checkbox" name="consent" id="cbConsent" required> 我已阅读<a href="privacy.html" target="_blank" rel="noopener">隐私政策</a>，同意海鑫汇使用以上信息，并向我发送活动与报告通知。</label>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-submit btn-seal">加入菁英荟 <span class="btn-price">· 200 元/年</span></button>
+      </div>
+      <p class="form-error" id="cbError" hidden></p>
+      <p class="form-ok" id="cbOk" hidden>已收到，我们会联系你完成入会。</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer" data-depth="0"></footer>
+<script src="script.js" defer></script>
+<script>
+function submitClub(f){
+  if(f.dataset.busy) return false;
+  f.dataset.busy='1';
+  var btn=f.querySelector('button[type=submit]');
+  var err=document.getElementById('cbError'), ok=document.getElementById('cbOk');
+  if(btn){ btn.disabled=true; btn.dataset.label=btn.textContent; btn.textContent='提交中…'; }
+  if(err){ err.hidden=true; err.textContent=''; }
+  if(ok){ ok.hidden=true; }
+  var d={
+    name:f.name.value, company:f.company.value, title:f.title.value, industry:f.industry.value,
+    region_interest:f.region_interest.value, stage:f.stage.value, contact:f.contact.value,
+    consent:f.consent.checked ? 'yes' : 'no',
+    brief:'出海菁英荟入会申请',
+    source:'club'
+  };
+  fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+    .then(function(j){
+      if(!j.ok) throw new Error(j.error||'feishu error');
+      if(ok) ok.hidden=false;
+      if(btn){ btn.textContent='已提交'; btn.disabled=true; }
+      f.dataset.busy='';
+    })
+    .catch(function(e){
+      console.error('提交异常:',e);
+      if(err){ var cw=window.CONTACT_WECHAT; err.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); err.hidden=false; }
+      if(btn){ btn.disabled=false; btn.textContent=btn.dataset.label||'加入菁英荟'; }
+      f.dataset.busy='';
+    });
+  return false;
+}
+</script>
+</body>
+</html>
