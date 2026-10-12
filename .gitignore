@@ -57,6 +57,8 @@ desk-*.png
 full-*.png
 整页-*.png
 verify.mjs
+check-matrix.mjs
+verify-matrix.mjs
 
 # Playwright 浏览器缓存（若落地到仓库内）
 .pw-browsers/

@@ -1,1 +1,1 @@
-window.GTN=window.GTN||{};window.GTN.matrix={"pages":[]};
+window.GTN=window.GTN||{};window.GTN.matrix={"pages":[{"industry":"auto-tech","region":"欧洲","url":"matrix/auto-tech-europe/index.html"},{"industry":"new-energy","region":"欧洲","url":"matrix/new-energy-europe/index.html"},{"industry":"ai","region":"东南亚","url":"matrix/ai-southeast-asia/index.html"},{"industry":"new-energy","region":"中东","url":"matrix/new-energy-middle-east/index.html"}]};

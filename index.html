@@ -552,7 +552,13 @@
   <p class="about-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</p>
   <div class="about-links"><a href="privacy.html">隐私政策</a></div>
   <div class="about-social" id="aboutSocial"></div>
-</section>
+  <p class="hot-combos">热门出海组合：
+    <a href="matrix/auto-tech-europe/index.html">新能源车与智慧交通 × 欧洲</a> ·
+    <a href="matrix/new-energy-europe/index.html">新能源电力电气 × 欧洲</a> ·
+    <a href="matrix/ai-southeast-asia/index.html">人工智能 × 东南亚</a> ·
+    <a href="matrix/new-energy-middle-east/index.html">新能源电力电气 × 中东</a>
+  </p>
+  </section>
 
 <footer class="footer" data-depth="0"></footer>
 
@@ -688,7 +694,7 @@
     return '<div class="desk-mod"><div class="desk-mod-title"><span class="desk-mod-no">'+no+'</span> — '+esc(label)+'</div>'+inner+'</div>';
   }
   function matrixLink(){
-    var hit=(MATRIX.pages||[]).filter(function(p){return p.industry===cur.industry&&p.country===cur.country;})[0];
+    var hit=(MATRIX.pages||[]).filter(function(p){return p.industry===cur.industry&&p.region===cur.region;})[0];
     return hit?'<a href="'+esc(hit.url)+'">本格独立页 &rarr;</a>':'';
   }
   function render(){

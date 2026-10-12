@@ -1469,3 +1469,19 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 .footer-note{margin-top:8px;font-size:var(--fs-label);opacity:.7;}
 .club-points{margin:18px 0 0;padding-left:22px;font-size:var(--fs-body);color:var(--ink);line-height:2;}
 .club-note{font-size:var(--fs-small);color:var(--ink-soft);margin-top:12px;}
+
+/* 矩阵页 / 决策台模块子样式（补齐 style.css 中未含部分） */
+.desk-mod-title{display:flex;align-items:baseline;gap:8px;font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;color:var(--ink);text-transform:uppercase;margin:0 0 8px;}
+.desk-mod-no{color:var(--seal);font-weight:700;}
+.desk-adv-item,.desk-ops-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.desk-adv-item img,.desk-ops-item img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 40px;border:1px solid var(--rule);}
+.desk-adv-ph{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--rule);font-weight:700;color:var(--ink-soft);flex:0 0 40px;}
+.desk-adv-name,.desk-ops-name{font-size:var(--fs-small);font-weight:600;}
+.desk-adv-one{font-size:11px;color:var(--ink-faint);}
+.desk-cell-note{padding:12px 18px;font-size:var(--fs-small);color:var(--ink-soft);border-top:1px solid var(--rule);background:var(--paper-alt);line-height:1.6;}
+.breadcrumb{font-size:var(--fs-small);color:var(--ink-soft);margin:0 0 8px;}
+.breadcrumb a{color:var(--ink-soft);text-decoration:none;}
+.breadcrumb a:hover{color:var(--seal);}
+.hot-combos{margin-top:14px;font-size:var(--fs-small);color:var(--ink-soft);line-height:2.1;}
+.hot-combos a{color:var(--seal);text-decoration:none;margin:0 2px;}
+.hot-combos a:hover{text-decoration:underline;}
