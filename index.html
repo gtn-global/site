@@ -370,7 +370,6 @@
     <div class="report-card">
       <span class="rc-tag">预计 2026 年 11 月发布，2024 版可阅读</span>
       <h4>新能源车与智慧交通</h4>
-      <p class="rc-desc">2024 版可阅读。</p>
       <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
       <div class="rc-actions">
         <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告" data-source="product-interest">发布时通知我</button>
@@ -654,6 +653,8 @@
   (CFG.countries||[]).forEach(function(c){countryBySlug[c.slug]=c;});
   (CFG.industries||[]).forEach(function(i){industryBySlug[i.slug]=i;});
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  // 条目日期只显示「年月」，不显示日；date_start 仅用于排序
+  function monthOnly(t){ if(!t) return ''; var m=String(t).match(/(\d{4})\s*年\s*(\d{1,2})\s*月/); return m ? (m[1]+' 年 '+parseInt(m[2],10)+' 月') : t; }
   var cur={industry:'',country:'',indName:'',countryName:'',region:'',indSlug:''};
   var VARIANTS={
     'new-energy':['新能源电力电气','绿色能源','新能源'],
@@ -681,7 +682,7 @@
       var okI=!cur.indSlug||(e.industries||[]).some(function(x){return acc.has(x);});
       var tagged = (e.industries&&e.industries.length) || (e.countries&&e.countries.length) || (e.regions&&e.regions.length);
       var okR;
-      if(!cur.countryName && !cur.region){ okR = !tagged; }
+      if(!cur.countryName && !cur.region){ okR = cur.indSlug ? true : !tagged; }
       else { okR = (cur.countryName && (e.countries||[]).indexOf(cur.countryName)>=0) || (cur.region && (e.regions||[]).indexOf(cur.region)>=0); }
       return okI&&okR;
     }).sort(function(a,b){
@@ -710,12 +711,13 @@
         return '<li><span class="desk-status">'+tag+'</span><span class="desk-t">'+esc(r.title)+'</span>'+acts+'</li>';
       }).join('')+'</ul><p class="desk-note" style="font-size:11px;color:var(--ink-faint);margin:8px 0 0;">联合新加坡世贸发布 · 200 元/份</p>';
     }
-    // 02 往期考察与调研
-    var evs=matchEvents();
+    // 02 往期考察与调研（最多显示最近 3 条，链接显示真实匹配总数）
+    var evsAll=matchEvents();
+    var evs=evsAll.slice(0,3);
     var q=[]; if(cur.industry)q.push('industry='+encodeURIComponent(cur.industry)); if(cur.country)q.push('country='+encodeURIComponent(cur.country));
-    var eHtml=evs.length?('<ul class="desk-list">'+evs.map(function(e){
+    var eHtml=evsAll.length?('<ul class="desk-list">'+evs.map(function(e){
       return '<li><span class="desk-t">'+esc(e.year||'')+'｜'+(e.countries&&e.countries[0]?esc(e.countries[0]):'')+'｜'+esc(e.title)+'</span></li>';
-    }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">查看这一格的全部考察 &rarr;</a>'):undefined;
+    }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">查看这一格的全部 '+evsAll.length+' 场 &rarr;</a>'):undefined;
     // 03 对口顾问（最多 4 位，链主优先，不加链主标签）
     var advs=(IDX.advisor||[]).filter(function(a){ return a.id!=='donglixin' && (!cur.indSlug||(a.industries||[]).some(function(x){return acc.has(x);})); }).slice().sort(function(a,b){return (b.isLead?1:0)-(a.isLead?1:0);}).slice(0,4);
     var aHtml=advs.length?('<div class="desk-adv">'+advs.map(function(a){
@@ -738,7 +740,7 @@
       return (!c.date_start||c.date_start>=now);
     }).sort(function(a,b){return String(a.date_start||'9999').localeCompare(String(b.date_start||'9999'));}).slice(0,1);
     var cHtml=cal.length?('<ul class="desk-list">'+cal.map(function(c){
-      return '<li><span class="desk-t">'+esc(c.date_text||'')+'　'+esc(c.product)+'</span><span class="desk-status">'+esc(c.status==='planning'?'筹备中 · 登记意向':(c.status||''))+'</span></li>';
+      return '<li><span class="desk-t">'+esc(monthOnly(c.date_text)||'')+'　'+esc(c.product)+'</span><span class="desk-status">'+esc(c.status==='planning'?'筹备中 · 登记意向':(c.status||''))+'</span></li>';
     }).join('')+'</ul><a class="desk-more" href="calendar.html">查看完整日程 &rarr;</a>'):undefined;
 
     left.innerHTML = mod('01','研究报告',rHtml) + mod('02','往期考察与调研',eHtml);
@@ -746,8 +748,8 @@
 
     // 汇总条
     var repWord = reps.some(function(r){return /已发布/.test(r.status||'');}) ? '已发布' : (reps.length?'筹备中':'—');
-    var nextWord = cal.length? (cal[0].date_text||'—') : '—';
-    sumEl.innerHTML = '研究报告（'+repWord+'）｜往期考察 '+evs.length+'｜顾问 '+advs.length+'｜运营中心 '+ops.length+'｜下一次（'+nextWord+'）';
+    var nextWord = cal.length? (monthOnly(cal[0].date_text)||'—') : '—';
+    sumEl.innerHTML = '研究报告（'+repWord+'）｜往期考察 '+evsAll.length+'｜顾问 '+advs.length+'｜运营中心 '+ops.length+'｜下一次（'+nextWord+'）';
 
     // 整格为空 = 没有任何「区域特定内容」（往期考察 / 当地运营中心 / 下一次活动 全为空）
     // 此时仍展示报告与顾问（产业级真实内容），并在汇总条下加一行筹备提示

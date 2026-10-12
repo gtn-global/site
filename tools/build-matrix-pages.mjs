@@ -45,6 +45,8 @@ function indAccept(slug) {
   return s;
 }
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+// 条目日期只显示「年月」，不显示日；date_start 仅用于排序
+const monthOnly = (t) => { if (!t) return ''; const m = String(t).match(/(\d{4})\s*年\s*(\d{1,2})\s*月/); return m ? (m[1] + ' 年 ' + parseInt(m[2], 10) + ' 月') : t; };
 
 function computeCell(slug, region) {
   const acc = indAccept(slug);
@@ -119,11 +121,18 @@ function buildPage(slug, region) {
     : `<p class="desk-empty">这一块正在筹备。</p>`;
 
   const calHtml = c.cal.length
-    ? `<ul class="desk-list">` + c.cal.map(cc => `<li><span class="desk-t">${esc(cc.date_text || '')}　${esc(cc.product)}</span><span class="desk-status">${esc(cc.status === 'planning' ? '筹备中 · 登记意向' : (cc.status || ''))}</span></li>`).join('') + `</ul><a class="desk-more" href="${P}calendar.html">查看完整日程 →</a>`
+    ? `<ul class="desk-list">` + c.cal.map(cc => `<li><span class="desk-t">${esc(monthOnly(cc.date_text) || '')}　${esc(cc.product)}</span><span class="desk-status">${esc(cc.status === 'planning' ? '筹备中 · 登记意向' : (cc.status || ''))}</span></li>`).join('') + `</ul><a class="desk-more" href="${P}calendar.html">查看完整日程 →</a>`
     : `<p class="desk-empty">这一块正在筹备。</p>`;
 
   const repStatus = c.reports.length ? c.reports.map(r => r.status || '').filter(Boolean).join('、') : '筹备中';
-  const description = `海鑫汇（Gateway To New）在${indName} × ${region}方向：共 ${c.reports.length} 份研究报告（${repStatus}），${c.events.length} 场往期考察，${c.advisors.length} 位对口顾问，${c.ops.length} 个当地运营中心。预约该产业首诊 99 元，先做判断再出海。`;
+  // 数量为 0 的项直接省略，避免描述里出现「0 个当地运营中心」等零值
+  const descParts = [];
+  if (c.reports.length) descParts.push(`共 ${c.reports.length} 份研究报告（${repStatus}）`);
+  if (c.events.length) descParts.push(`${c.events.length} 场往期考察`);
+  if (c.advisors.length) descParts.push(`${c.advisors.length} 位对口顾问`);
+  if (c.ops.length) descParts.push(`${c.ops.length} 个当地运营中心`);
+  const descBody = descParts.length ? descParts.join('，') : '正在筹备中';
+  const description = `海鑫汇（Gateway To New）在${indName} × ${region}方向：${descBody}。预约该产业首诊 99 元，先做判断再出海。`;
 
   const breadcrumbLd = JSON.stringify({
     '@context': 'https://schema.org',

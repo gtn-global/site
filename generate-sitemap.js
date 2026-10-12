@@ -22,6 +22,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { checkDataFresh } = require('./tools/check-data-fresh.js');
 
 const ROOT = __dirname;
 const BASE = 'https://gatewaytonew.com';
@@ -352,6 +353,10 @@ ${urlEls.join('\n\n')}
 
   // ===== 自动校验 + 自动修（部署前兜底）=====
   const { issues, autoFixed } = verifyAndAutoFix();
+
+  // 校验 data/*.js 是否由 data/*.json 重新编译（防编译遗漏）；发现问题则并入 issues 拦截部署
+  const freshIssues = checkDataFresh(ROOT);
+  freshIssues.forEach(s => issues.push('data 编译遗漏：' + s));
   if (autoFixed.length) {
     console.log(`\n[verify] 自动修复 ${autoFixed.length} 处：`);
     autoFixed.forEach(s => console.log(`  ✓ ${s}`));

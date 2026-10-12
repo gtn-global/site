@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { checkDataFresh } = require('./tools/check-data-fresh.js');
 
 const ROOT = process.cwd();
 let failures = 0;
@@ -132,6 +133,12 @@ else {
   if (/\.actions a > \.en/.test(su)) ok('success.html: 按钮 .en 有专用对齐规则 .actions a > .en');
   else fail('success.html: 缺少 .actions a > .en 对齐规则');
 }
+
+// ---- 校验 5：data/*.js 是否由 data/*.json 重新编译（防编译遗漏）----
+console.log('\n4) data/*.js 与 data/*.json 一致性（防编译遗漏）');
+const freshIssues = checkDataFresh(ROOT);
+if (freshIssues.length === 0) ok('data/*.js 与对应 data/*.json 一致（已重新编译）');
+else freshIssues.forEach(msg => fail(msg));
 
 // ---- 结论 ----
 console.log('\n=== 结果 ===');

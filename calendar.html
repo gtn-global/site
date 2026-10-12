@@ -61,6 +61,8 @@
   var productEl=document.getElementById('intentProduct'), sourceEl=document.getElementById('intentSource');
   var errEl=document.getElementById('intentError');
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  // 条目日期只显示「年月」，不显示日；date_start 仅用于排序
+  function monthOnly(t){ if(!t) return ''; var m=String(t).match(/(\d{4})\s*年\s*(\d{1,2})\s*月/); return m ? (m[1]+' 年 '+parseInt(m[2],10)+' 月') : t; }
   function openIntent(product, source, label){
     productEl.value=product||''; sourceEl.value=source||'calendar-interest';
     titleEl.textContent=label||'登记意向'; subEl.textContent=product?('意向：'+product):'';
@@ -102,9 +104,9 @@
     return '<span class="cal-cta-static">'+esc(label)+'</span>';
   }
   function card(it){
-    var meta=[]; if(it.date_text) meta.push(it.date_text); if(it.location) meta.push(it.location);
+    var meta=[]; if(it.date_text) meta.push(monthOnly(it.date_text)); if(it.location) meta.push(it.location);
     return '<article class="cal-item cal-'+esc(it.status)+'">'
-      + '<div class="cal-head"><span class="cal-date">'+esc(it.date_text||'')+'</span><span class="cal-status">'+esc(statusLabel(it))+'</span></div>'
+      + '<div class="cal-head"><span class="cal-date">'+esc(monthOnly(it.date_text)||'')+'</span><span class="cal-status">'+esc(statusLabel(it))+'</span></div>'
       + '<h4 class="cal-name">'+esc(it.product)+'</h4>'
       + '<div class="cal-meta">'+meta.map(esc).join(' · ')+'</div>'
       + (it.price_text ? ('<span class="cal-price">'+esc(it.price_text)+'</span>') : '')
