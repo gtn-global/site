@@ -416,7 +416,7 @@ textarea{resize:vertical;min-height:88px;}
 .news-ai{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:rgba(30,37,48,.07);margin-bottom:6px;}
 
 /* ---------- client photo wall (events-index / index single) ---------- */
-.client-wall{margin-top:28px;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;}
+.client-wall{margin-top:28px;display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}
 .client-wall img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
 
 /* 出海足迹整体拼图墙（index 页，企业游学与产业调研上方） */
@@ -1128,7 +1128,7 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 .btn-price{font-size:11px;font-weight:500;opacity:.85;}
 @media(max-width:640px){.desk{padding:16px 14px;}.desk-modules{grid-template-columns:1fr;}.region-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
 /* 照片墙：10 列 × 4 行，无缝紧贴，每格近似方形，静态 */
-.client-wall{margin-top:16px;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;line-height:0;}
+.client-wall{margin-top:16px;display:grid;grid-template-columns:repeat(10,1fr);gap:3px;line-height:0;}
 .client-wall img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
 @media(max-width:900px){.client-wall{grid-template-columns:repeat(10,1fr);}}
 .report-note{margin:10px 0 0;font-size:12px;color:var(--ink-faint,#8a8a8a);}
@@ -1296,7 +1296,7 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 
   /* event-breakdown 极小屏改 2 列 */
   .event-breakdown{grid-template-columns:repeat(2,1fr);}
-  .client-wall{grid-template-columns:repeat(4,1fr);}
+  .client-wall{grid-template-columns:repeat(5,1fr);}
 
   /* 运营中心 2 列，照片再缩 */
   .ops-center-grid{grid-template-columns:repeat(2,1fr);gap:20px 12px;}
