@@ -114,9 +114,13 @@
       "url": "events/exchange-03-france-finland/index.html",
       "industries": [],
       "countries": [
-        "法国 芬兰"
+        "法国 芬兰",
+        "法国",
+        "芬兰"
       ],
-      "regions": []
+      "regions": [
+        "欧洲"
+      ]
     },
     {
       "id": "EXCHANGE-04",
@@ -945,8 +949,12 @@
       "title": "新加坡：中国企业的全球市场七种打法怎么选？",
       "url": "events/interview-06-global-7plays/index.html",
       "industries": [],
-      "countries": [],
-      "regions": []
+      "countries": [
+        "新加坡"
+      ],
+      "regions": [
+        "东南亚"
+      ]
     },
     {
       "id": "INTERVIEW-07",
@@ -1135,44 +1143,42 @@
     {
       "id": "report-new-energy",
       "industry": "新能源",
-      "title": "新能源电力电气出海研究报告",
-      "status": "已上线",
+      "title": "新能源电力电气",
+      "status": "已发布 2026.09",
       "version": "2026 版",
       "url": "reports/cleantech/index.html",
       "action": "留资获取",
-      "countries": [],
-      "regions": []
-    },
-    {
-      "id": "report-auto-tech-2024",
-      "industry": "汽车智能科技",
-      "title": "汽车智能科技出海研究报告（2024 版）",
-      "status": "2024 版已上线",
-      "version": "2024 版",
-      "url": "reports/EV/index.html",
-      "action": "留资获取",
-      "countries": [],
-      "regions": []
-    },
-    {
-      "id": "report-auto-tech-2026",
-      "industry": "汽车智能科技",
-      "title": "汽车智能科技出海研究报告（2026 新版）",
-      "status": "预计 11 月发布",
-      "version": "2026 版",
-      "url": "",
-      "action": "登记意向",
+      "industries": [
+        "new-energy"
+      ],
       "countries": [],
       "regions": []
     },
     {
       "id": "report-ai",
       "industry": "AI产业",
-      "title": "AI 产业出海研究报告",
-      "status": "研究进行中",
+      "title": "人工智能",
+      "status": "预计 2026 年 10 月发布",
       "version": "",
       "url": "",
       "action": "登记意向",
+      "industries": [
+        "ai"
+      ],
+      "countries": [],
+      "regions": []
+    },
+    {
+      "id": "report-auto-tech",
+      "industry": "汽车智能科技",
+      "title": "新能源车与智慧交通",
+      "status": "预计 2026 年 11 月发布，2024 版可阅读",
+      "version": "2026 版",
+      "url": "",
+      "action": "登记意向",
+      "industries": [
+        "auto-tech"
+      ],
       "countries": [],
       "regions": []
     }
@@ -1271,7 +1277,9 @@
       "url": "experts/tian-guo/index.html",
       "photo": "experts/tian-guo/adv-07.webp",
       "one": "专注AI时代硬科技全球化，具备中国科技企业出海与全球竞争洞察能力。",
-      "industries": [],
+      "industries": [
+        "AI产业"
+      ],
       "countries": [],
       "regions": [],
       "isLead": false
@@ -1377,7 +1385,7 @@
     },
     {
       "id": "ops-hangzhou",
-      "name": "杭州 运营中心",
+      "name": "Maggie 柯梦琪",
       "url": "member/ops-hangzhou/index.html",
       "photo": "member/ops-hangzhou/hangzhou.webp",
       "country": "中国",
@@ -1395,7 +1403,7 @@
     },
     {
       "id": "ops-kazakhstan",
-      "name": "哈萨克斯坦 运营中心",
+      "name": "武群威",
       "url": "member/ops-kazakhstan/index.html",
       "photo": "member/ops-kazakhstan/图片4.webp",
       "country": "哈萨克斯坦",
@@ -1422,7 +1430,7 @@
     },
     {
       "id": "ops-pakistan",
-      "name": "吕小明",
+      "name": "吕晓明",
       "url": "member/ops-pakistan/index.html",
       "photo": "member/ops-pakistan/吕晓明.webp",
       "country": "巴基斯坦",
@@ -1476,8 +1484,11 @@
       "status": "open",
       "cta_type": "pay",
       "cta_label": "留资获取",
-      "cta_url": "cta/book-diagnostic/index.html",
+      "cta_url": "reports/cleantech/index.html",
       "price_text": "",
+      "industries": [
+        "new-energy"
+      ],
       "visible": true
     },
     {
@@ -1487,44 +1498,53 @@
       "date_text": "预计 2026 年 10 月",
       "location": "线上 / 留资获取",
       "status": "planning",
-      "cta_type": "pay",
-      "cta_label": "筹备中 · 登记意向",
-      "cta_url": "cta/book-diagnostic/index.html",
+      "cta_type": "register_interest",
+      "cta_label": "登记意向",
+      "cta_url": "",
       "price_text": "",
+      "industries": [
+        "ai"
+      ],
       "visible": true
     },
     {
       "id": "r-ev",
-      "product": "汽车智能科技出海研究报告",
+      "product": "新能源车与智慧交通出海研究报告",
       "date_start": "2026-11-01",
       "date_text": "预计 2026 年 11 月",
       "location": "线上 / 留资获取",
       "status": "planning",
-      "cta_type": "pay",
-      "cta_label": "筹备中 · 登记意向",
-      "cta_url": "cta/book-diagnostic/index.html",
+      "cta_type": "register_interest",
+      "cta_label": "登记意向",
+      "cta_url": "",
       "price_text": "",
+      "industries": [
+        "auto-tech"
+      ],
       "visible": true
     },
     {
       "id": "t-jakarta",
-      "product": "印尼雅加达出海考察团",
+      "product": "海鑫汇全球行 · 雅加达 + 新加坡",
       "date_start": "2026-11-15",
       "date_text": "2026 年 11 月",
-      "location": "印尼 · 雅加达",
-      "status": "planning",
+      "status": "筹备中 · 登记意向",
+      "regions": [
+        "东南亚"
+      ],
       "cta_type": "register_interest",
       "cta_label": "登记意向",
       "price_text": "",
-      "visible": true,
-      "note": "面向邀请制商会与产业考察团"
+      "visible": true
     },
     {
       "id": "e-mba20",
-      "product": "和君出海工商管理硕士班（MBA20）",
-      "date_text": "2027年1月起开放招生",
-      "location": "中国 · 北京 / 线上",
+      "product": "和君商学院出海班 第 20 届招生",
+      "date_text": "2027 年 1 月起",
       "status": "planning",
+      "industries": [
+        "talent"
+      ],
       "cta_type": "register_interest",
       "cta_label": "登记意向",
       "price_text": "",

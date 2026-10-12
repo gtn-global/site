@@ -51,6 +51,13 @@ GTN_Global/*
 # 本地预览截图（自检用，不部署）
 预览截图/
 
+# 决策台验证截图与验证脚本（自检用，不部署）
+verify-*.png
+desk-*.png
+full-*.png
+整页-*.png
+verify.mjs
+
 # Playwright 浏览器缓存（若落地到仓库内）
 .pw-browsers/
 .playwright/

@@ -1,7 +1,7 @@
 {
   "industries": [
     { "slug": "new-energy", "name": "新能源电力电气", "display": "新能源电力电气", "aliases": ["绿色能源", "新能源"], "parent": null, "status": "live", "lead": null },
-    { "slug": "auto-tech", "name": "新能源车与智慧交通", "display": "新能源车与智慧交通", "aliases": ["新能源车", "智慧交通"], "parent": null, "status": "live", "lead": null },
+    { "slug": "auto-tech", "name": "新能源车与智慧交通", "display": "新能源车与智慧交通", "aliases": ["新能源车", "智慧交通", "汽车智能科技"], "parent": null, "status": "live", "lead": null },
     { "slug": "ai", "name": "人工智能", "display": "人工智能", "aliases": ["AI产业", "AI"], "parent": null, "status": "live", "lead": null },
     { "slug": "consumer", "name": "消费品牌", "display": "消费品牌", "aliases": ["消费品牌出海"], "parent": null, "status": "live", "lead": null },
     { "slug": "capital", "name": "跨国资本与并购", "display": "跨国资本与并购", "aliases": ["跨国资本", "并购"], "parent": null, "status": "live", "lead": null },

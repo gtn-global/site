@@ -262,36 +262,19 @@ if(document.fonts && document.fonts.ready){
   }
 })();
 
-// ---- 首页「活动分类计数」自动同步：数字只以 events-index.html 为唯一真源 ----
-// events-index.html 每个分类块 <div class="category-block" id="tour">...<span class="count">N 场 / N EVENTS</span>
-// 改完 events-index.html（增删一行）后，首页数字会自动跟著变，不必再手动改 index.html。
+// ---- 首页「活动分类计数」自动同步：数字只以 data/index.js（window.GTN.index.event）为唯一真源 ----
+// 直接用数据里的活动数组按 type 归类计数，避免 file:// 下 fetch 本地文件报错，也保证与决策台同源。
 function syncEventBreakdown(){
   const wrap = document.querySelector('.event-breakdown');
   if(!wrap) return; // 仅首页有此区块
-  const parse = (html) => {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    const out = {};
-    doc.querySelectorAll('.category-block').forEach(block => {
-      const type = block.id;
-      if(!type) return;
-      const c = block.querySelector('.count');
-      if(c){
-        const m = (c.textContent || '').match(/(\d+)/);
-        if(m) out[type] = m[1];
-      }
-    });
-    return out;
-  };
-  fetch('events-index.html', { cache: 'no-store' })
-    .then(r => r.ok ? r.text() : Promise.reject())
-    .then(html => {
-      const counts = parse(html);
-      wrap.querySelectorAll('a[data-type]').forEach(a => {
-        const n = counts[a.getAttribute('data-type')];
-        if(n) a.querySelector('.n').textContent = n;
-      });
-    })
-    .catch(() => { /* 失败则用 index.html 中的兜底数字，不报错 */ });
+  const idx = (window.GTN && window.GTN.index) || {};
+  const events = idx.event || [];
+  const counts = {};
+  events.forEach(e => { if(e.type) counts[e.type] = (counts[e.type] || 0) + 1; });
+  wrap.querySelectorAll('a[data-type]').forEach(a => {
+    const n = counts[a.getAttribute('data-type')];
+    if(n != null){ const el = a.querySelector('.n'); if(el) el.textContent = n; }
+  });
 }
 syncEventBreakdown();
 
