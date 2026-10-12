@@ -286,7 +286,7 @@ textarea{resize:vertical;min-height:88px;}
 .marquee-row{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
 .marquee-track{display:flex;gap:14px;width:max-content;animation:marquee-left 40s linear infinite;}
 .marquee-down .marquee-track{animation:marquee-right 40s linear infinite;}
-.marquee-cell{flex:0 0 auto;width:260px;height:170px;border-radius:12px;overflow:hidden;background:var(--paper-alt);border:1px solid var(--rule);}
+.marquee-cell{flex:0 0 auto;width:260px;height:140px;border-radius:12px;overflow:hidden;background:var(--paper-alt);border:1px solid var(--rule);}
 .marquee-cell img{width:100%;height:100%;object-fit:cover;display:block;}
 .marquee-row:hover .marquee-track{animation-play-state:paused;}
 @keyframes marquee-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -416,7 +416,7 @@ textarea{resize:vertical;min-height:88px;}
 .news-ai{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:rgba(30,37,48,.07);margin-bottom:6px;}
 
 /* ---------- client photo wall (events-index / index single) ---------- */
-.client-wall{margin-top:42px;display:grid;grid-template-columns:repeat(10,1fr);gap:4px;}
+.client-wall{margin-top:28px;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;}
 .client-wall img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
 
 /* 出海足迹整体拼图墙（index 页，企业游学与产业调研上方） */
@@ -954,7 +954,7 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
   flex-shrink: 0;
   align-items: center;
 }
-/* 间隔用每个 logo 的右外边距实现，保证“一组末尾→二组开头”也是同一间距，无缝不贴脸 */
+/* 间隔用每个 logo 的右外边距实现，保证"一组末尾→二组开头"也是同一间距，无缝不贴脸 */
 #content-hub .marquee-list img {
   height: 28px;
   width: auto;
@@ -1128,24 +1128,24 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 .btn-price{font-size:11px;font-weight:500;opacity:.85;}
 @media(max-width:640px){.desk{padding:16px 14px;}.desk-modules{grid-template-columns:1fr;}.region-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
 /* 照片墙：10 列 × 4 行，无缝紧贴，每格近似方形，静态 */
-.client-wall{margin-top:20px;display:grid;grid-template-columns:repeat(10,1fr);gap:0;line-height:0;}
+.client-wall{margin-top:16px;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;line-height:0;}
 .client-wall img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
-@media(max-width:900px){.client-wall{grid-template-columns:repeat(5,1fr);}}
+@media(max-width:900px){.client-wall{grid-template-columns:repeat(10,1fr);}}
 .report-note{margin:10px 0 0;font-size:12px;color:var(--ink-faint,#8a8a8a);}
 /* ---- 版式收紧 ---- */
-.section{padding-top:56px;padding-bottom:56px;}
-@media(min-width:900px){.section{padding-top:72px;padding-bottom:72px;}}
-@media(max-width:640px){.section{padding-top:40px;padding-bottom:40px;}}
+.section{padding-top:36px;padding-bottom:36px;}
+@media(min-width:900px){.section{padding-top:44px;padding-bottom:44px;}}
+@media(max-width:640px){.section{padding-top:28px;padding-bottom:28px;}}
 .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint,#8a8a8a);}
 .report-card,.region-card,.accordion-item,.event-mini,.faq-item,.desk,.desk-mod,.offer-card{border-radius:16px;box-shadow:none;}
 @media(max-width:640px){.selector-row{gap:10px;}.selector-field{padding:0;}}
 .faq-list{max-width:880px;margin:18px auto 0;}
-.faq-item{border:1px solid var(--rule,#e5e2db);border-radius:10px;margin-bottom:12px;background:var(--paper-alt);overflow:hidden;}
-.faq-item summary{cursor:pointer;padding:16px 18px;font-size:15.5px;font-weight:600;color:var(--ink);list-style:none;}
+.faq-item{border:1px solid var(--rule,#e5e2db);border-radius:10px;margin-bottom:10px;background:var(--paper-alt);overflow:hidden;}
+.faq-item summary{cursor:pointer;padding:12px 16px;font-size:15.5px;font-weight:600;color:var(--ink);list-style:none;}
 .faq-item summary::-webkit-details-marker{display:none;}
 .faq-item summary::before{content:"+";display:inline-block;width:20px;color:var(--seal);font-weight:700;}
 .faq-item[open] summary::before{content:"\2212";}
-.faq-item p{margin:0;padding:0 18px 18px;font-size:14px;line-height:1.7;color:var(--ink-soft);}
+.faq-item p{margin:0;padding:0 16px 14px;font-size:14px;line-height:1.7;color:var(--ink-soft);}
 
 /* ============================================================
    移动端统一响应式（≤640px）— 纯 CSS 适配，不闪屏、不损权重
@@ -1343,7 +1343,7 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 
 /* 圆点世界图 */
 .worldmap{position:relative;margin-top:22px;width:100%;max-width:100%;overflow:visible;}
-.worldmap .map-svg{display:block;width:100%;height:auto;max-height:420px;}
+.worldmap .map-svg{display:block;width:auto;height:320px;max-height:none;margin:0 auto;}
 .map-dots circle{fill:#CFCCC4;opacity:.85;}
 .map-marker{cursor:pointer;}
 .map-marker .map-halo{fill:var(--seal);opacity:.16;}
@@ -1401,7 +1401,13 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 .event-breakdown .type-tag:hover{border-color:var(--seal);color:var(--seal);}
 .carousel-label{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:var(--fs-label);letter-spacing:2px;color:var(--ink-faint);}
 .carousel-label .en{margin-left:6px;}
-.carousel-wrap{margin-top:12px;}
+.carousel-wrap{margin-top:12px;overflow:hidden;}
+.carousel-track{display:flex;flex-wrap:nowrap;gap:14px;width:max-content;will-change:transform;animation:marquee-left 50s linear infinite;}
+.carousel-track[data-dir="-1"]{animation:marquee-right 50s linear infinite;}
+.carousel-row{display:flex;flex-wrap:nowrap;gap:14px;}
+.carousel-row > img{flex:0 0 auto;width:auto;max-width:none;height:200px;border-radius:14px;object-fit:cover;display:block;}
+@media(max-width:640px){.carousel-row > img{height:140px;}}
+@media(prefers-reduced-motion:reduce){.carousel-track{animation:none!important;}}
 
 /* 顾问头像墙 */
 .adv-wall{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;}

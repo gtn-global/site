@@ -305,8 +305,7 @@ const FOOTER_LINKS = [
   { label: '专家顾问', href: 'advisors-index.html' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
-  { label: '新闻报道', href: 'news-index.html' },
-  { label: '隐私政策', href: 'privacy.html' }
+  { label: '新闻报道', href: 'news-index.html' }
 ];
 
 function renderFooter(){
@@ -317,12 +316,20 @@ function renderFooter(){
   const linksHtml = FOOTER_LINKS.map(l =>
     '<a href="' + prefix + l.href + '">' + l.label + '</a>'
   ).join(' · ');
+  const social = (window.GTN && window.GTN.social) || {};
+  const fl = (social.friendlyLinks || []).filter(x => x && x.label && x.url);
+  let extra = fl.map(x => '<a href="' + x.url + '" target="_blank" rel="noopener">' + x.label + '</a>').join(' · ');
+  if(social.wechat) extra += (extra ? '<br>' : '') + '公众号：' + social.wechat;
+  if(social.linkedin) extra += (extra ? '　' : '') + '领英：' + social.linkedin;
+  const socialHtml = extra ? '<div class="footer-social">' + extra + '</div>' : '';
   root.innerHTML =
     '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'cta/book-diagnostic/index.html">预约首诊　99 元 / 1 小时</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
     '<div class="footer-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</div>' +
-    '<nav class="footer-links">' + linksHtml + '</nav>' +
-    '<div class="footer-meta">连接中国优势，走向全球 · 联系：<a href="mailto:hello@gatewaytonew.com">hello@gatewaytonew.com</a></div>' +
+    '<nav class="footer-links">' + linksHtml + ' · <a href="' + prefix + 'privacy.html">隐私政策</a></nav>' +
+    socialHtml +
     '<div class="footer-note">全球覆盖图为示意图，不作地理或边界依据。</div>';
+  const ab = document.getElementById('aboutSocial');
+  if(ab){ ab.innerHTML = extra || '友情链接与社媒账号待公布。'; }
 }
 renderFooter();

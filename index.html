@@ -6,7 +6,6 @@
 <title>海鑫汇 Gateway To New</title>
 <meta name="description" content="海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<!-- Open Graph / 微信分享卡片 -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gatewaytonew.com/">
 <meta property="og:title" content="海鑫汇 Gateway To New · 出海决策台">
@@ -25,137 +24,126 @@
 <meta name="msvalidate.01" content="1C28C7F5DA0E816B70CC5C8F517D7801">
 <link rel="stylesheet" href="style.css">
 <style>
-/* 全球运营中心坐席国旗：圆形→长方形，整体放大 1.5 倍 */
-span.ops-center-flag{width:45px;height:30px;border-radius:0;}
-@media (max-width:640px){
-  span.ops-center-flag{width:36px;height:24px;}
+/* 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区（详见 assets/js 注入） */
+.map-note{font-size:12px;color:var(--ink-faint);margin:10px 0 0;}
+.map-legend{display:inline-flex;align-items:center;gap:6px;margin-right:14px;}
+.lg-dot{width:8px;height:8px;border-radius:50%;background:var(--seal);display:inline-block;}
+/* 决策台 */
+.desk{margin-top:28px;border:1px solid var(--rule);border-radius:16px;background:var(--paper);overflow:hidden;line-height:1.5;}
+.desk-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--rule);}
+.desk-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);}
+.desk-title{font-size:var(--fs-h2)!important;font-weight:700;color:var(--ink);margin:2px 0 4px;line-height:1.2;}
+.desk-summary{font-size:var(--fs-small);color:var(--ink-soft);}
+.desk-close{flex:0 0 auto;min-width:40px;min-height:40px;padding:0 12px;border:1px solid var(--rule);border-radius:14px;background:var(--paper);color:var(--ink);font-size:var(--fs-small);cursor:pointer;}
+.desk-close:hover{border-color:var(--seal);color:var(--seal);}
+.desk-grid{display:grid;grid-template-columns:7fr 5fr;}
+.desk-col{display:flex;flex-direction:column;}
+.desk-col--left{padding:14px 18px;border-right:1px solid var(--rule);}
+.desk-col--right{padding:14px 18px;}
+.desk-mod{padding:5px 0;border:none;border-top:1px solid var(--rule);background:transparent;border-radius:0;}
+.desk-col .desk-mod:first-child{border-top:none;padding-top:0;}
+.desk-mod-title{display:flex;align-items:baseline;gap:10px;font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;color:var(--ink);text-transform:uppercase;margin:0 0 5px;}
+.desk-mod-no{color:var(--seal);font-weight:700;}
+.desk-empty{font-size:var(--fs-small);color:var(--ink-faint);margin:0;}
+.desk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.desk-list li{display:flex;flex-direction:column;gap:3px;}
+.desk-t{font-size:var(--fs-small);color:var(--ink);}
+.desk-status{font-size:11px;color:var(--seal);border:1px solid var(--seal);border-radius:4px;padding:1px 7px;align-self:flex-start;}
+.desk-meta{font-size:11px;color:var(--ink-faint);}
+.desk-link{color:var(--seal);text-decoration:none;font-size:var(--fs-small);font-weight:600;margin-top:2px;}
+.desk-btn{font:inherit;font-size:var(--fs-small);font-weight:600;color:var(--seal);background:none;border:1px solid var(--seal);border-radius:8px;padding:5px 12px;cursor:pointer;align-self:flex-start;}
+.desk-more{display:inline-block;margin-top:10px;font-size:var(--fs-small);color:var(--seal);text-decoration:none;font-weight:600;}
+.desk-adv{display:flex;flex-direction:column;gap:8px;}
+.desk-adv-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.desk-adv-item img,.desk-adv-ph{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 40px;border:1px solid var(--rule);}
+.desk-adv-ph{display:flex;align-items:center;justify-content:center;background:var(--paper-alt);font-weight:700;color:var(--ink-soft);}
+.desk-adv-name{font-size:var(--fs-small);font-weight:600;}
+.desk-adv-one{font-size:11px;color:var(--ink-faint);}
+.desk-ops{display:flex;flex-direction:column;gap:8px;}
+.desk-ops-item{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.desk-ops-item img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 40px;border:1px solid var(--rule);}
+.desk-ops-name{font-size:var(--fs-small);font-weight:600;}
+.desk-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 18px;border-top:1px solid var(--rule);background:var(--paper-alt);}
+.desk-foot .btn-seal{min-height:44px;}
+.desk-cell-link{margin-left:auto;}
+.desk-cell-link a{font-size:var(--fs-small);color:var(--seal);text-decoration:none;font-weight:600;}
+.desk-whole{padding:18px 22px;color:var(--ink-soft);font-size:var(--fs-small);}
+@media(max-width:760px){
+  .desk-grid{grid-template-columns:1fr;}
+  .desk-col--left{border-right:none;border-bottom:1px solid var(--rule);}
 }
-
-/* 修正：中国 / 马来西亚 / 新加坡 / 哈萨克斯坦 国旗为正确图案（SVG 覆盖 style.css 的近似色块） */
-span.ops-center-flag.flag-cn,
-span.ops-center-flag.flag-my,
-span.ops-center-flag.flag-sg,
-span.ops-center-flag.flag-kz{
-  background-color:transparent;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-span.ops-center-flag.flag-cn::after,
-span.ops-center-flag.flag-my::after,
-span.ops-center-flag.flag-kz::after{
-  content:none;display:none;
-}
-
-/* 国旗统一引用 flags/ 目录里现成且正确的标准国旗文件（去掉近似手绘/自绘 SVG） */
-/* ⚠️ 受保护：新加坡 (.flag-sg) 与哈萨克斯坦 (.flag-kz) 国旗统一使用 flags/sg.svg / flags/kz.svg，已被 style.css !important 锁死，禁止改为自绘 SVG 或近似色块。 */
-span.ops-center-flag.flag-cn{ background:transparent url("flags/cn.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-my{ background:transparent url("flags/my.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-jp{ background:transparent url("flags/jp.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-ru{ background:transparent url("flags/ru.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-ae{ background:transparent url("flags/ae.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-pk{ background:transparent url("flags/pk.svg") no-repeat center/cover !important; }
-span.ops-center-flag.flag-sg{
-  background:transparent url("flags/sg.svg") no-repeat center/cover;
-}
-span.ops-center-flag.flag-kz{
-  background:transparent url("flags/kz.svg") no-repeat center/cover;
-}
-/* 行业胶囊词云 */
-.capsule-group{display:flex;flex-wrap:nowrap;gap:10px;margin-bottom:18px;}
-.capsule{display:inline-flex;align-items:center;border:1px solid rgba(0,150,136,.25);border-radius:0;overflow:hidden;background:rgba(0,150,136,.03);}
-.capsule .capsule-cn{padding:9px 10px 9px 15px;font-size:14.5px;font-weight:600;color:var(--ink);background:rgba(0,150,136,.05);}
-.capsule .capsule-en{padding:9px 15px 9px 10px;font-size:11.5px;color:var(--ink);font-family:'IBM Plex Mono',monospace;letter-spacing:.3px;}
-/* 触发按钮内胶囊 / 展开内容内胶囊：小字 + 紧凑间距；默认允许换行，避免平/大屏手机（641–860px）横向溢出 */
-.accordion-trigger .capsule-group,.accordion-content .capsule-group{flex:1 1 auto;margin-bottom:0;gap:4px;flex-wrap:wrap;}
-.accordion-trigger .capsule .capsule-cn,.accordion-content .capsule .capsule-cn{font-size:11.5px;font-weight:600;padding:4px 5px 4px 8px;}
-.accordion-trigger .capsule .capsule-en,.accordion-content .capsule .capsule-en{font-size:10px;padding:4px 8px 4px 5px;color:var(--ink);}
-/* 展开内容内胶囊恢复一点下间距（原内容区无 margin-bottom） */
-.accordion-content .capsule-group{margin-bottom:14px;}
-
-/* 预约表单标题 */
-.cta-form-title{font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.cta-form-title .en{display:block;font-size:11px;font-weight:400;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
-@media(max-width:640px){
-  .cta-form-title{font-size:20px;}
-  .cta-form-title .en{font-size:9px;letter-spacing:1px;}
-}
-.case-tag{display:inline-block;font-size:11px;letter-spacing:.5px;color:var(--ink-faint);border:1px solid var(--rule);border-radius:4px;padding:2px 8px;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;}
-/* 扁平活动卡（产业 / 区域维度，含 03 案例卡，统一尺寸） */
-.event-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:14px 0 6px;}
-.event-mini{display:flex;flex-direction:column;justify-content:flex-start;border:1px solid var(--rule);border-radius:12px;padding:14px 18px;background:var(--paper-alt);text-decoration:none;color:inherit;height:106px;min-height:106px;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .15s;}
-.event-mini:hover{border-color:rgba(0,150,136,.55);box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-2px);}
-.event-mini h4{font-size:15px;font-weight:700;margin:0 0 8px;color:var(--ink);line-height:1.3;}
-.event-mini p{font-size:13px;line-height:1.5;color:var(--ink-soft);margin:0;}
-/* 8 张案例卡统一高度 106px（贴合沙特卡「1 行标题 + 2 行正文」的自然高度） */
-@media(max-width:900px){.event-mini-grid{grid-template-columns:repeat(2,1fr);}}
-/* 企业游学标题行：整行可点击跳转活动总览；中英文同行，右侧「查看全部 →」 */
-.subhead-link{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;text-decoration:none;color:inherit;}
-.subhead-link .sh-title .en{display:inline;margin:0 0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:400;letter-spacing:1.5px;color:var(--ink-faint);}
-.subhead-link .sh-all{font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:500;color:var(--seal);white-space:nowrap;transition:opacity .2s;}
-.subhead-link .sh-all .en{display:inline;margin-left:6px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:400;letter-spacing:1px;}
-.subhead-link:hover .sh-all{opacity:.7;}
-@media(max-width:520px){.event-mini-grid{grid-template-columns:1fr;}}
-/* 产业链主 */
-.industry-lead{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding:8px 10px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-alt);}
-.lead-avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:0 0 38px;border:1.5px solid rgba(0,150,136,.4);display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink-soft);background:#fff;font-size:15px;overflow:hidden;}
-.lead-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-.lead-avatar.placeholder{background:var(--paper-alt);}
-.lead-info{display:flex;flex-direction:column;line-height:1.25;}
-.lead-label{font-size:10px;letter-spacing:1px;color:rgba(0,150,136,.85);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;}
-.lead-name{font-size:14px;font-weight:600;color:var(--ink);}
-/* 06 底部现场轮播 */
-.carousel-wrap{margin-top:36px;display:flex;flex-direction:column;gap:12px;}
-.carousel-track{overflow:hidden;width:100%;}
-.carousel-row{display:flex;gap:12px;width:max-content;will-change:transform;}
-.carousel-row img{flex:0 0 auto;height:160px;width:auto;border-radius:10px;object-fit:cover;border:1px solid var(--rule);}
-@media(max-width:640px){.carousel-row img{height:120px;}}
-/* 出海产业研究报告板块 */
+/* 产业入口行 */
+.industry-entry{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px;}
+.ie-item{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:var(--fs-small);border:1px solid var(--rule);border-radius:14px;padding:6px 12px;}
+.ie-item img{width:24px;height:24px;border-radius:50%;object-fit:cover;}
+.ie-item:hover{border-color:var(--seal);color:var(--seal);}
+/* 双向通道下方两句话入口 */
+.channel-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.channel-link{display:flex;flex-direction:column;gap:6px;border:1px solid var(--rule);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--ink);}
+.channel-link:hover{border-color:var(--seal);}
+.channel-link .cl-q{font-size:var(--fs-small);color:var(--ink-soft);}
+.channel-link .cl-arrow{font-size:var(--fs-small);font-weight:600;color:var(--seal);}
+@media(max-width:640px){.channel-links{grid-template-columns:1fr;}}
+/* 报告三卡 */
 .report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 6px;}
-.report-card{display:flex;flex-direction:column;justify-content:flex-start;border:1px solid var(--rule);border-radius:12px;padding:18px;background:var(--paper-alt);text-decoration:none;color:inherit;min-height:150px;transition:border-color .2s,box-shadow .2s,transform .15s;}
-.report-card:hover{border-color:rgba(0,150,136,.55);box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-2px);}
-.report-card h4{font-size:17px;font-weight:700;margin:0 0 8px;color:var(--ink);}
-.report-card .rc-desc{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0;flex:1;}
-.report-card .rc-cta{margin-top:12px;font-size:13px;font-weight:600;color:var(--seal);text-decoration:none;}
-.report-card .rc-tag{display:inline-block;font-size:11px;letter-spacing:.5px;color:var(--seal);border:1px solid rgba(0,150,136,.4);border-radius:4px;padding:2px 8px;margin-bottom:10px;font-family:'IBM Plex Mono',monospace;align-self:flex-start;}
-.report-card .rc-tag--wip{color:var(--ink-faint);border-color:var(--rule);}
-.report-card--live{border-color:rgba(0,150,136,.5);background:rgba(0,150,136,.04);}
-.report-card .rc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
-.report-card .rc-btn{font:inherit;font-size:13px;font-weight:600;color:var(--seal);background:none;border:1px solid rgba(0,150,136,.5);border-radius:8px;padding:7px 14px;cursor:pointer;transition:background .15s,color .15s;}
-.report-card .rc-btn:hover{background:var(--seal);color:#fff;}
-@media(max-width:900px){.report-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:560px){.report-grid{grid-template-columns:1fr;}}
-
-/* 出海前四个问题：只去掉折叠“效果”，外观完全沿用原手风琴样式；整块可点击跳转对应判断框架页 */
-#decision-accordion .accordion-item{display:block;text-decoration:none;color:inherit;cursor:pointer;}
-/* 内容常驻可见（不再收起），悬停也不再展开 */
-#decision-accordion .accordion-content{max-height:none !important;padding:0 22px 22px !important;overflow:visible !important;}
-/* 去掉悬停残留：+ 图标不再旋转 */
-#decision-accordion .accordion-icon{margin-left:auto;transform:none !important;}
-/* “查看判断框架 →”移到标题后（行内），整块已可点，不再单独成链接 */
-#decision-accordion .accordion-trigger h4{flex:0 1 auto;}
-#decision-accordion .accordion-trigger .card-cta{display:inline;margin:0 0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--seal);text-decoration:none;border-bottom:1px solid var(--seal);padding-bottom:2px;white-space:nowrap;}
+.report-card{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:16px;padding:18px;background:var(--paper);}
+.report-card .rc-tag{font-size:11px;color:var(--seal);border:1px solid var(--seal);border-radius:4px;padding:2px 8px;align-self:flex-start;margin-bottom:8px;}
+.report-card h4{font-size:var(--fs-body);font-weight:700;margin:0 0 8px;color:var(--ink);}
+.report-card .rc-desc{font-size:var(--fs-small);color:var(--ink-soft);margin:0 0 10px;line-height:1.5;flex:1;}
+.report-card .rc-note{font-size:11px;color:var(--ink-faint);margin-bottom:10px;}
+.report-card .rc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;}
+.rc-act{font:inherit;font-size:var(--fs-small);font-weight:600;color:var(--seal);background:none;border:1px solid var(--seal);border-radius:8px;padding:6px 12px;cursor:pointer;text-decoration:none;display:inline-block;}
+.rc-act:hover{background:var(--seal);color:#fff;}
+.report-sub{font-size:11px;color:var(--ink-faint);margin-top:8px;}
+@media(max-width:900px){.report-grid{grid-template-columns:1fr;}}
+/* 日历紧凑列表 */
+.cal-list{margin:16px 0 8px;display:flex;flex-direction:column;gap:10px;}
+.cal-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;border:1px solid var(--rule);border-radius:12px;padding:12px 16px;}
+.cal-time{font-family:'IBM Plex Mono',monospace;font-size:var(--fs-small);color:var(--ink-soft);}
+.cal-name{font-size:var(--fs-body);color:var(--ink);flex:1;min-width:160px;}
+.cal-status{font-size:11px;border-radius:4px;padding:2px 8px;border:1px solid var(--rule);color:var(--ink-soft);}
+.cal-status--planning{color:var(--seal);border-color:var(--seal);}
+.cal-row .rc-act{margin-left:auto;}
+/* 菁英荟 */
+.club-card{border:1px solid var(--rule);border-radius:16px;padding:20px;margin-top:16px;background:var(--paper);}
+.club-points{margin:0 0 10px;padding-left:20px;font-size:var(--fs-small);color:var(--ink);line-height:2;}
+.club-note{font-size:11px;color:var(--ink-faint);margin:0 0 14px;}
+.club-form-wrap{margin-top:14px;border-top:1px solid var(--rule);padding-top:14px;}
+.club-form-wrap summary{cursor:pointer;list-style:none;font-size:var(--fs-body);font-weight:600;color:var(--seal);}
+.club-form-wrap summary::-webkit-details-marker{display:none;}
+/* 顾问墙 */
+.adv-note{font-size:var(--fs-small);color:var(--ink-soft);margin-top:10px;}
+.adv-wall{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;}
+.adv-chip{width:56px;height:56px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:var(--paper-alt);border:1px solid var(--rule);text-decoration:none;}
+.adv-chip img{width:56px;height:56px;object-fit:cover;}
+.adv-ph{font-weight:700;color:var(--ink-soft);}
+@media(max-width:640px){.adv-chip{width:48px;height:48px;}.adv-chip img{width:48px;height:48px;}}
+/* FAQ */
+.faq-list{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid var(--rule);border-radius:12px;background:var(--paper);}
+.faq-item summary{cursor:pointer;padding:14px 18px;font-size:var(--fs-body);font-weight:600;color:var(--ink);}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item p{padding:0 18px 16px;margin:0;font-size:var(--fs-small);color:var(--ink-soft);line-height:1.7;}
+/* 预约首诊 */
+.book-card{border:1px solid var(--rule);border-radius:16px;padding:20px;margin-top:16px;background:var(--paper);}
+/* 关于 */
+.about-block{border-top:1px solid var(--rule);padding-top:24px;margin-top:8px;}
+.about-bio{font-size:var(--fs-small);color:var(--ink-soft);line-height:1.8;max-width:760px;}
+.about-disclosure{font-size:var(--fs-small);color:var(--ink);margin-top:10px;}
+.about-links{margin-top:10px;font-size:var(--fs-small);}
+.about-links a{color:var(--seal);text-decoration:none;margin-right:16px;}
+.about-social{margin-top:8px;font-size:var(--fs-small);color:var(--ink-faint);}
 </style>
 
-  <link rel="canonical" href="https://gatewaytonew.com/">
-  <!-- 数据由 node tools/build-data.mjs 生成；用 <script> 直接加载而非 fetch，保证 file:// 双击打开也能显示 -->
-  <script src="data/marquee.js"></script>
-  <script src="data/filters.js"></script>
-  <script src="data/products.js"></script>
-  <script src="data/calendar.js"></script>
-  <script src="data/index.js"></script>
-  <script src="data/map.js"></script>
-  <script src="data/matrix.js"></script>
-  <script type="application/ld+json">
-[
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Gateway To New (GTN)",
-  "url": "https://gatewaytonew.com/"
-}
-]
-</script>
+<link rel="canonical" href="https://gatewaytonew.com/">
+<script src="data/marquee.js"></script>
+<script src="data/filters.js"></script>
+<script src="data/products.js"></script>
+<script src="data/calendar.js"></script>
+<script src="data/index.js"></script>
+<script src="data/map.js"></script>
+<script src="data/social.js"></script>
+<script src="data/matrix.js"></script>
 </head>
 <body>
 <div id="fileWarn" class="file-warn" hidden>请双击 <b>start-preview.bat</b> 预览</div>
@@ -166,25 +154,23 @@ span.ops-center-flag.flag-kz{
     <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
     <div class="desk-clock"></div>
     <nav class="nav-links">
-      <a href="#home">产业 × 区域<span class="en">DESK</span></a>
-      <a href="#stage">你在哪一步<span class="en">STAGE</span></a>
-      <a href="reports/index.html">报告<span class="en">REPORTS</span></a>
-      <a href="calendar.html">日程<span class="en">CALENDAR</span></a>
-      <a href="club.html">菁英荟<span class="en">CLUB</span></a>
-      <a href="faq.html">常见问题<span class="en">FAQ</span></a>
+      <a href="#selector">产业<span class="en">INDUSTRY</span></a>
+      <a href="#worldMap">区域<span class="en">REGION</span></a>
+      <a href="#stage">产品<span class="en">PRODUCTS</span></a>
+      <a href="#reports">内容<span class="en">CONTENT</span></a>
+      <a href="#about">关于<span class="en">ABOUT</span></a>
     </nav>
   </div>
 </header>
 
+<!-- ===== 01 首屏 ===== -->
 <section class="section" id="home">
   <div class="eyebrow">01 — INDUSTRY × REGION</div>
-  <div class="hero-head reveal">
-    <h1 class="headline">出海要不要走、走哪条路，先想清楚。</h1>
-  </div>
-  <p class="subline reveal">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
-  <p class="hero-en reveal">Decide first. Then go global.</p>
+  <h1 class="headline">出海要不要走、走哪条路，先想清楚。</h1>
+  <p class="subline">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
+  <p class="hero-en">Decide first. Then go global.</p>
 
-  <div class="home-selector reveal" id="selector">
+  <div class="home-selector" id="selector">
     <p class="selector-title">我做［选择产业］，想去［选择区域］　查看 →</p>
     <div class="selector-row">
       <label class="selector-field">产业
@@ -198,300 +184,42 @@ span.ops-center-flag.flag-kz{
     <p class="selector-hint">选完直接展开这一格的报告、往期考察、对口顾问、当地运营中心和下一次活动。</p>
   </div>
 
-  <div class="worldmap reveal" id="worldMap"></div>
+  <div class="worldmap" id="worldMap"></div>
   <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>有内容的国家或地区</span>点红点看这一格。示意图，不作地理或边界依据。</p>
 
-  <div class="hero-cta reveal">
+  <div class="hero-cta">
     <a class="btn-submit btn-seal" href="cta/self-test/index.html">3 分钟出海自测 <span class="btn-price">· 1 元</span></a>
     <a class="btn-outline" href="cta/book-diagnostic/index.html">预约首诊 <span class="btn-price">· 99 元 / 1 小时</span></a>
   </div>
   <p class="hero-note">首诊为 1 小时一对一，由创始人董立鑫亲自进行，产出简要书面判断报告。</p>
 
-  <div class="stat-line reveal">
-    <div class="stat-item">
-      <div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div>
-      <div class="stat-cap">场真实活动</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div>
-      <div class="stat-cap">国家和地区</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span class="stat-count" data-count="1000">1000</span><span class="stat-plus">+</span></div>
-      <div class="stat-cap">人次</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div>
-      <div class="stat-cap">位签约顾问</div>
-    </div>
+  <div class="stat-line">
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">70</span><span class="stat-plus">+</span></div><div class="stat-cap">场真实活动</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">20</span><span class="stat-plus">+</span></div><div class="stat-cap">国家和地区</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">人次</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">30</span><span class="stat-plus">+</span></div><div class="stat-cap">位签约顾问</div></div>
   </div>
+
+  <div class="industry-entry" id="industryEntry"></div>
 
   <div class="desk" id="decisionDesk" hidden>
     <div class="desk-head">
-      <div class="desk-title" id="deskTitle"></div>
+      <div>
+        <div class="desk-kicker">Decision desk · 决策台</div>
+        <h2 class="desk-title" id="deskTitle"></h2>
+        <div class="desk-summary" id="deskSummary"></div>
+      </div>
+      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
     </div>
-    <div class="desk-modules" id="deskModules"></div>
+    <div class="desk-grid">
+      <div class="desk-col desk-col--left" id="deskLeft"></div>
+      <div class="desk-col desk-col--right" id="deskRight"></div>
+    </div>
+    <div class="desk-foot" id="deskFoot"></div>
   </div>
 </section>
 
-<script>
-/* ---------- 选择器：产业 / 区域 ---------- */
-(function(){
-  var sel=document.getElementById('selIndustry'), selC=document.getElementById('selCountry'), btn=document.getElementById('selGo');
-  if(!sel||!selC||!btn) return;
-  var cfg = (window.GTN && window.GTN.filters) || {};
-  (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.display||o.name;sel.appendChild(p);});
-  var REGION_ORDER = ['东南亚','东亚','南亚','中亚','中东','欧洲','非洲','美洲','其他'];
-  var groups = {};
-  (cfg.countries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var r=o.region||'其他'; (groups[r]=groups[r]||[]).push(o); });
-  REGION_ORDER.concat(Object.keys(groups).filter(function(r){return REGION_ORDER.indexOf(r)<0;})).forEach(function(r){
-    if(!groups[r]) return;
-    var og=document.createElement('optgroup'); og.label=r;
-    groups[r].forEach(function(o){ var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;og.appendChild(p); });
-    selC.appendChild(og);
-  });
-  btn.addEventListener('click',function(){
-    if(window.GTNDesk && window.GTNDesk.open){ window.GTNDesk.open(sel.value, selC.value); }
-  });
-})();
-</script>
-
-<script>
-/* ---------- 决策台：产业 × 区域，五个模块 ---------- */
-(function(){
-  var IDX = (window.GTN && window.GTN.index) || {};
-  var CFG = (window.GTN && window.GTN.filters) || {};
-  var MATRIX = (window.GTN && window.GTN.matrix) || { pages: [] };
-  var desk = document.getElementById('decisionDesk');
-  var mods = document.getElementById('deskModules');
-  var titleEl = document.getElementById('deskTitle');
-  var head = desk ? desk.querySelector('.desk-head') : null;
-  if(!desk || !mods || !titleEl) return;
-
-  var countryBySlug = {}, industryBySlug = {}, industryByName = {}, countryByName = {};
-  (CFG.countries||[]).forEach(function(c){ countryBySlug[c.slug]=c; countryByName[c.name]=c; });
-  (CFG.industries||[]).forEach(function(i){ industryBySlug[i.slug]=i; industryByName[String(i.name).replace(/\s/g,'')]=i; });
-
-  var REGION_ALIAS = {'middle-east':'中东','southeast-asia':'东南亚','east-asia':'东亚','south-asia':'南亚','central-asia':'中亚','europe':'欧洲','africa':'非洲','americas':'美洲'};
-  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-
-  var cur = { industry:'', country:'', indName:'', countryName:'', region:'' };
-
-  function resolveTarget(i, c){
-    var indObj = industryBySlug[i];
-    var cObj = countryBySlug[c];
-    return {
-      industry: i||'', country: c||'',
-      indName: indObj ? indObj.name : '',
-      countryName: cObj ? cObj.name : '',
-      region: cObj ? (cObj.region||'') : (REGION_ALIAS[String(c||'').toLowerCase()] || (c||''))
-    };
-  }
-
-  function matchEvents(){
-    return (IDX.event||[]).filter(function(e){
-      var okI = !cur.indName || (e.industries||[]).indexOf(cur.indName) >= 0;
-      var okR = (!cur.countryName && !cur.region) ? true
-        : ((cur.countryName && (e.countries||[]).indexOf(cur.countryName)>=0) || (cur.region && (e.regions||[]).indexOf(cur.region)>=0));
-      return okI && okR;
-    }).sort(function(a,b){ return String(b.date||'').localeCompare(String(a.date||'')); });
-  }
-
-  function mod(label, inner){
-    return '<section class="desk-mod"><h4 class="desk-mod-title">'+esc(label)+'</h4>'
-      + (inner || '<p class="desk-empty">这一块正在筹备。</p>') + '</section>';
-  }
-
-  function matrixLink(){
-    var hit = (MATRIX.pages||[]).filter(function(p){
-      return p.industry === cur.industry && p.country === cur.country;
-    })[0];
-    return hit ? '<a class="desk-more" href="'+esc(hit.url)+'">本格独立页 &rarr;</a>' : '';
-  }
-
-  function render(){
-    var parts = [];
-    // ① 研究报告
-    var reps = (IDX.report||[]).filter(function(r){ return !cur.indName || r.industry===cur.indName; });
-    parts.push(mod('研究报告', reps.length ? ('<ul class="desk-list">'+reps.map(function(r){
-      var act = r.url ? '<a class="desk-link" href="'+esc(r.url)+'">'+esc(r.action||'查看')+'</a>'
-                      : '<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">登记意向</button>';
-      return '<li><span class="desk-status">'+esc(r.status)+'</span><span class="desk-t">'+esc(r.title)+'</span>'+act+'</li>';
-    }).join('')+'</ul>') : ''));
-    // ② 往期考察与调研
-    var evs = matchEvents();
-    var q = [];
-    if(cur.industry) q.push('industry='+encodeURIComponent(cur.industry));
-    if(cur.country) q.push('country='+encodeURIComponent(cur.country));
-    parts.push(mod('往期考察与调研', evs.length ? ('<ul class="desk-list">'+evs.slice(0,3).map(function(e){
-      return '<li><a class="desk-link" href="'+esc(e.url)+'">'+esc(e.title)+'</a><span class="desk-meta">'+esc(e.typeLabel||'')+' · '+esc(e.year||'')+'</span></li>';
-    }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">查看全部 &rarr;</a>') : ''));
-    // ③ 对口顾问（全量，链主优先）
-    var advs = (IDX.advisor||[]).filter(function(a){ return !cur.indName || (a.industries||[]).indexOf(cur.indName)>=0; });
-    advs = advs.slice().sort(function(a,b){ return (b.isLead?1:0)-(a.isLead?1:0); });
-    parts.push(mod('对口顾问', advs.length ? ('<div class="desk-adv">'+advs.map(function(a){
-      return '<a class="desk-adv-item" href="'+esc(a.url)+'">'
-        + (a.photo ? '<img src="'+esc(a.photo)+'" alt="" loading="lazy">' : '<span class="desk-adv-ph">'+esc(String(a.name).slice(0,1))+'</span>')
-        + '<span class="desk-adv-name">'+esc(a.name)+'</span>'
-        + (a.one ? '<span class="desk-adv-one">'+esc(a.one)+'</span>' : '') + '</a>';
-    }).join('')+'</div>') : ''));
-    // ④ 当地运营中心
-    var ops = (IDX.ops_center||[]).filter(function(o){
-      return (cur.countryName && o.country===cur.countryName) || (cur.region && o.region===cur.region);
-    });
-    parts.push(mod('当地运营中心', ops.length ? ('<div class="desk-ops">'+ops.map(function(o){
-      return '<a class="desk-ops-item" href="'+esc(o.url)+'"><span class="desk-ops-name">'+esc(o.name)+'</span><span class="desk-meta">'+esc(o.country||o.region||'')+'</span></a>';
-    }).join('')+'</div><a class="desk-more" href="ecosystem-index.html">进入生态成员页 &rarr;</a>') : ''));
-    // ⑤ 下一次相关活动
-    var cal = (IDX.calendar||[]).filter(function(c){ return c.visible !== false && c.status !== 'closed'; });
-    parts.push(mod('下一次相关活动', cal.length ? ('<ul class="desk-list">'+cal.slice(0,3).map(function(c){
-      return '<li><span class="desk-t">'+esc(c.product)+'</span><span class="desk-meta">'+esc(c.date_text||'')+' · '+esc(c.location||'')+'</span></li>';
-    }).join('')+'</ul><a class="desk-more" href="calendar.html">查看完整日程 &rarr;</a>') : ''));
-
-    var any = reps.length || evs.length || advs.length || ops.length || cal.length;
-    if(!any){
-      parts.push('<section class="desk-mod desk-mod--form"><p class="desk-empty">这一格我们正在筹备。登记想看的内容，有进展第一时间通知你。</p>'
-        + '<button type="button" class="btn-submit btn-seal" id="deskGrid">登记想看的内容</button></section>');
-    } else {
-      parts.push('<div class="desk-cell-link">'+matrixLink()+'</div>');
-    }
-    mods.innerHTML = parts.join('');
-
-    var gb = document.getElementById('deskGrid');
-    if(gb) gb.addEventListener('click', function(){
-      (window.openIntent||function(){})((cur.indName||'不限')+' × '+(cur.countryName||cur.region||'不限'), 'grid-interest', '空格子登记');
-    });
-    mods.querySelectorAll('.desk-btn').forEach(function(b){
-      b.addEventListener('click', function(){
-        (window.openIntent||function(){})(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim());
-      });
-    });
-  }
-
-  function open(i, c){
-    cur = resolveTarget(i, c);
-    titleEl.textContent = '决策台 · ' + (cur.indName||'全部产业') + ' × ' + (cur.countryName||cur.region||'全部区域');
-    // 展开时才渲染「收起 / 预约该产业首诊」两个按钮，收起后移除，避免首屏堆叠入口
-    if(head && !head.querySelector('.desk-close')){
-      var cb=document.createElement('button');
-      cb.type='button'; cb.className='desk-close'; cb.id='deskClose'; cb.textContent='收起 ✕';
-      head.appendChild(cb);
-      cb.addEventListener('click', close);
-    }
-    var foot = desk.querySelector('.desk-foot');
-    if(!foot){
-      foot = document.createElement('div');
-      foot.className = 'desk-foot';
-      var bb = document.createElement('button');
-      bb.type='button'; bb.className='btn-submit btn-seal'; bb.id='deskBook'; bb.textContent='预约该产业首诊　99 元';
-      bb.addEventListener('click', function(){ location.href='cta/book-diagnostic/index.html'; });
-      foot.appendChild(bb);
-      desk.appendChild(foot);
-    }
-    render();
-    desk.hidden = false;
-    var si=document.getElementById('selIndustry'), sc=document.getElementById('selCountry');
-    if(si && i) si.value = i;
-    if(sc && c && countryBySlug[c]) sc.value = c;
-    try{ history.replaceState(null,'','#cell=industry:'+(i||'all')+';region:'+(cur.region || c || 'all')); }catch(e){}
-    if(window.GTNMap && window.GTNMap.highlight) window.GTNMap.highlight(cur.country || '');
-    desk.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function close(){
-    desk.hidden = true;
-    mods.innerHTML = '';
-    var cb = head ? head.querySelector('.desk-close') : null; if(cb) cb.remove();
-    var foot = desk.querySelector('.desk-foot'); if(foot) foot.remove();
-    if(window.GTNMap && window.GTNMap.highlight) window.GTNMap.highlight('');
-    try{ history.replaceState(null,'','#'); }catch(e){}
-  }
-
-  window.GTNDesk = { open: open, close: close };
-
-  var m = (location.hash||'').match(/cell=([^&]+)/);
-  if(m){
-    var out={industry:'',region:''};
-    m[1].split(';').forEach(function(p){
-      var kv=p.split(':');
-      if(kv[0]==='industry') out.industry = (kv[1]==='all'?'':kv[1]);
-      if(kv[0]==='region') out.region = (kv[1]==='all'?'':decodeURIComponent(kv[1]||''));
-    });
-    if(out.industry || out.region) open(out.industry, out.region);
-  }
-})();
-</script>
-
-<script>
-/* ---------- 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区 ---------- */
-(function(){
-  var box = document.getElementById('worldMap');
-  var M = window.GTN && window.GTN.map;
-  if(!box || !M) return;
-  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  var dots = M.dots.map(function(d){ return '<circle cx="'+d[0]+'" cy="'+d[1]+'" r="2.4"></circle>'; }).join('');
-  var marks = M.markers.map(function(m){
-    return '<g class="map-marker" data-slug="'+esc(m.slug)+'" data-region="'+esc(m.region||'')+'" data-name="'+esc(m.name)+'" tabindex="0" role="button" aria-label="'+esc(m.name)+'">'
-      + '<circle class="map-halo" cx="'+m.x+'" cy="'+m.y+'" r="9"></circle>'
-      + '<circle class="map-dot" cx="'+m.x+'" cy="'+m.y+'" r="3.4"></circle>'
-      + '<circle class="map-hit" cx="'+m.x+'" cy="'+m.y+'" r="22"></circle>'
-      + '</g>';
-  }).join('');
-  box.innerHTML = '<svg class="map-svg" viewBox="0 0 '+M.w+' '+M.h+'" preserveAspectRatio="xMidYMid meet" aria-label="全球覆盖示意图（示意，不作地理或边界依据）">'
-    + '<g class="map-dots">'+dots+'</g><g class="map-markers">'+marks+'</g></svg>'
-    + '<div class="map-tip" id="mapTip" hidden></div>';
-
-  var tip = document.getElementById('mapTip');
-  var CFG = (window.GTN && window.GTN.filters) || {};
-  function showTip(name, mx, my){
-    if(!tip) return;
-    tip.textContent = name;
-    tip.hidden = false;
-    tip.style.left = mx + 'px';
-    tip.style.top = my + 'px';
-  }
-  function hideTip(){ if(tip) tip.hidden = true; }
-
-  function slugFor(marker){
-    var slug = marker.getAttribute('data-slug');
-    if(slug) return slug;
-    var reg = marker.getAttribute('data-region');
-    if(!reg) return '';
-    var hit = (CFG.countries||[]).filter(function(c){ return c.region === reg; })[0];
-    return hit ? hit.slug : '';
-  }
-  function highlight(slug){
-    box.querySelectorAll('.map-marker').forEach(function(g){
-      g.classList.toggle('is-active', !!slug && g.getAttribute('data-slug') === slug);
-    });
-  }
-  function pick(marker){
-    var slug = slugFor(marker);
-    var sc = document.getElementById('selCountry');
-    var si = document.getElementById('selIndustry');
-    if(sc && slug) sc.value = slug;
-    highlight(slug);
-    if(window.GTNDesk && window.GTNDesk.open) window.GTNDesk.open(si ? si.value : '', slug);
-  }
-  box.querySelectorAll('.map-marker').forEach(function(g){
-    var dot = g.querySelector('.map-dot');
-    var cx = +dot.getAttribute('cx'), cy = +dot.getAttribute('cy');
-    g.addEventListener('mouseenter', function(){
-      var r = box.getBoundingClientRect();
-      var svg = box.querySelector('.map-svg');
-      var pt = svg.createSVGPoint ? (function(){ var p = svg.createSVGPoint(); p.x = cx; p.y = cy; return p.matrixTransform(svg.getScreenCTM()); })() : null;
-      showTip(g.getAttribute('data-name'), pt ? (pt.x - r.left) : 0, pt ? (pt.y - r.top) : 0);
-    });
-    g.addEventListener('mouseleave', hideTip);
-    g.addEventListener('click', function(){ pick(g); });
-    g.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(g); } });
-  });
-  var sc = document.getElementById('selCountry');
-  if(sc) sc.addEventListener('change', function(){ highlight(sc.value); });
-  window.GTNMap = { highlight: highlight };
-})();
-</script>
-
+<!-- ===== 02 双向通道 ===== -->
 <section class="section channels" id="channels">
   <div class="eyebrow">02 — TWO-WAY GATEWAY</div>
   <h2 class="section-title">连接两个方向</h2>
@@ -500,7 +228,6 @@ span.ops-center-flag.flag-kz{
     <div class="marquee-row marquee-up"><span class="marquee-label">GO OUT 走出去</span><div class="marquee-track" id="mUp"></div></div>
     <div class="marquee-down-wrap">
       <div class="marquee-row marquee-down"><span class="marquee-label">COME IN 请进来</span><div class="marquee-track" id="mDown"></div></div>
-      <button type="button" class="marquee-manual" data-manual-open>查看手册 · English</button>
     </div>
   </div>
   <div class="channel-links">
@@ -509,30 +236,12 @@ span.ops-center-flag.flag-kz{
   </div>
 </section>
 
-<script>
-/* ---------- 双向通道跑马灯：固定 40px/s，图多不变快 ---------- */
-(function(){
-  var up = document.getElementById('mUp');
-  var down = document.getElementById('mDown');
-  if(!up || !down) return;
-  var cfg = (window.GTN && window.GTN.marquee) || {};
-  var SPEED = 40, CELL = 274;
-  function fill(el, items){
-    if(!items || !items.length) return;
-    var html = items.map(function(it){ return '<div class="marquee-cell"><img src="'+it.img+'" alt="'+(it.alt||'')+'" loading="lazy"></div>'; }).join('');
-    el.innerHTML = html + html;
-    el.style.animationDuration = (items.length * CELL / SPEED) + 's';
-  }
-  fill(up, cfg.up && cfg.up.items);
-  fill(down, cfg.down && cfg.down.items);
-})();
-</script>
-
+<!-- ===== 03 你在哪一步 ===== -->
 <section class="section" id="stage">
   <div class="eyebrow">03 — WHERE ARE YOU</div>
   <h2 class="section-title">你现在在哪一步？</h2>
   <p class="subline">不用先选产品，先说说你的处境。</p>
-  <div class="stage-cards reveal">
+  <div class="stage-cards">
     <div class="stage-card">
       <span class="stage-tag">NOT SURE YET</span>
       <h3>还没想清楚</h3>
@@ -576,45 +285,103 @@ span.ops-center-flag.flag-kz{
   </div>
 </section>
 
-<section class="section" id="entries">
-  <div class="eyebrow">04 — REPORTS · CALENDAR · CLUB</div>
-  <h2 class="section-title">报告、日程与菁英荟</h2>
-  <p class="subline">完整内容在各自页面，这里只放入口。</p>
-  <div class="entry-cards reveal">
-    <a class="entry-card" href="reports/index.html">
-      <h3>产业出海研究报告</h3>
-      <p>按赛道整理两年一线情报与顾问网络。单份 200 元。</p>
-      <span class="entry-go">进入报告页 →</span>
-    </a>
-    <a class="entry-card" href="calendar.html">
-      <h3>出海日程</h3>
-      <p>确认过的日程才会出现在这里。</p>
-      <span class="entry-go">查看未来 90 天行程 →</span>
-    </a>
-    <a class="entry-card" href="club.html">
-      <h3>出海菁英荟</h3>
-      <p>200 元/年，交个朋友。</p>
-      <span class="entry-go">加入菁英荟 →</span>
-    </a>
+<!-- ===== 04 产业出海研究报告 ===== -->
+<section class="section" id="reports">
+  <div class="eyebrow">04 — REPORTS</div>
+  <h2 class="section-title">产业出海研究报告</h2>
+  <p class="subline">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
+  <div class="report-grid">
+    <div class="report-card">
+      <span class="rc-tag">已发布 2026.09</span>
+      <h4>新能源电力电气</h4>
+      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><a class="rc-act" href="reports/cleantech/index.html">留资获取</a></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 10 月发布</span>
+      <h4>人工智能</h4>
+      <p class="rc-desc">AI 产业链的出海路径与重点市场。</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 11 月发布</span>
+      <h4>新能源车与智慧交通</h4>
+      <p class="rc-desc">2024 版可阅读。</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions">
+        <a class="rc-act" href="reports/EV/index.html">阅读 2024 版</a>
+        <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告" data-source="product-interest">发布时通知我</button>
+      </div>
+    </div>
   </div>
+  <p class="report-sub">联合新加坡世贸发布。</p>
+</section>
 
-  <div class="industry-row reveal">
-    <span class="ir-label">产业入口</span>
-    <a class="ir-item" href="industries/new-energy/index.html">新能源电力电气</a>
-    <a class="ir-item" href="industries/intelligent-manufacturing/index.html">新能源车与智慧交通</a>
-    <a class="ir-item" href="industries/ai-industry/index.html">人工智能</a>
-    <a class="ir-item" href="industries/consumer-brands/index.html">消费品牌</a>
-    <a class="ir-item" href="industries/cross-border-capital/index.html">跨国资本与并购</a>
-    <a class="ir-item" href="industries/talent-development/index.html">国际人才与职教</a>
+<!-- ===== 05 出海日历 ===== -->
+<section class="section" id="calendar">
+  <div class="eyebrow">05 — CALENDAR</div>
+  <h2 class="section-title">未来 90 天，我们的出海行程</h2>
+  <p class="subline">确认过的日程才会出现在这里。</p>
+  <div class="cal-list" id="calList"></div>
+  <a class="adv-all" href="calendar.html">查看全部日程 →</a>
+</section>
+
+<!-- ===== 06 出海菁英荟 ===== -->
+<section class="section" id="club">
+  <div class="eyebrow">06 — CLUB</div>
+  <h2 class="section-title">海鑫汇·出海菁英荟</h2>
+  <p class="subline">200 元/年，交个朋友。</p>
+  <div class="club-card">
+    <ol class="club-points">
+      <li>加入微信群</li>
+      <li>活动、考察和报告发布，第一时间在群里通知</li>
+      <li>入会赠送一份已发布的产业出海研究报告（任选一份）</li>
+    </ol>
+    <p class="club-note">不含线下活动免费，不含顾问服务，不承诺对接或成交。</p>
+    <details class="club-form-wrap">
+      <summary>加入菁英荟　200 元/年</summary>
+      <form id="clubForm" class="contact-form" method="GET" onsubmit="return submitClub(this)">
+        <div class="form-grid">
+          <div class="field"><label for="cbName">姓名 Name</label><input type="text" name="name" id="cbName" placeholder="您的姓名" required></div>
+          <div class="field"><label for="cbCompany">公司 Company</label><input type="text" name="company" id="cbCompany" placeholder="公司名称" required></div>
+          <div class="field"><label for="cbTitle">职位 Title</label><input type="text" name="title" id="cbTitle" placeholder="如：总经理 / 海外事业部负责人"></div>
+          <div class="field"><label for="cbIndustry">所属行业 Industry</label><input type="text" name="industry" id="cbIndustry" placeholder="如：精密制造 / 消费品牌"></div>
+          <div class="field"><label for="cbRegion">意向区域 Region</label><input type="text" name="region" id="cbRegion" placeholder="如：东南亚 / 欧洲"></div>
+          <div class="field"><label for="cbStage">出海阶段 Stage</label>
+            <select name="stage" id="cbStage">
+              <option value="" disabled selected>请选择</option>
+              <option value="planning">规划中 · 已立项</option>
+              <option value="testing">试水阶段 · 小规模测试</option>
+              <option value="scaling">扩张中 · 多国运营</option>
+              <option value="established">已成熟 · 深度本地化</option>
+            </select>
+          </div>
+          <div class="field full"><label for="cbContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="cbContact" placeholder="手机号或微信号" required></div>
+          <div class="field full"><label class="consent"><input type="checkbox" id="cbConsent" required> 我已阅读隐私政策，同意海鑫汇使用以上信息，并向我发送活动与报告通知。</label></div>
+        </div>
+        <div class="form-submit"><button type="submit" class="btn-submit btn-seal">加入菁英荟 <span class="btn-price">· 200 元/年</span></button></div>
+        <p class="form-error" id="cbError" hidden></p>
+        <p class="form-ok" id="cbOk" hidden>已收到，我们会联系你完成入会。</p>
+      </form>
+    </details>
   </div>
 </section>
 
+<!-- ===== 07 往期回顾 ===== -->
 <section class="section" id="proof">
-  <div class="eyebrow">05 — TRACK RECORD</div>
+  <div class="eyebrow">07 — TRACK RECORD</div>
   <h2 class="section-title">两年，真实走过的记录</h2>
-  <div class="client-wall reveal" id="clientWall"></div>
+  <div class="stat-line">
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">70</span><span class="stat-plus">+</span></div><div class="stat-cap">出海企业调研</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">20</span><span class="stat-plus">+</span></div><div class="stat-cap">国家 · 地区</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">人次</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count">30</span><span class="stat-plus">+</span></div><div class="stat-cap">签约顾问</div></div>
+  </div>
+  <div class="client-wall" id="clientWall"></div>
   <p class="lede proof-one">70+ 场活动，覆盖企业游学、论坛、访谈、国际交流、海外考察、沙龙与读书会。</p>
-  <div class="event-breakdown reveal">
+  <div class="event-breakdown">
     <a class="type-tag" data-type="tour" href="events-index.html#tour">企业游学 <span class="n">5</span></a>
     <a class="type-tag" data-type="forum" href="events-index.html#forum">出海论坛 <span class="n">5</span></a>
     <a class="type-tag" data-type="interview" href="events-index.html#interview">出海访谈 <span class="n">8</span></a>
@@ -626,79 +393,110 @@ span.ops-center-flag.flag-kz{
   </div>
   <a class="visit-line" href="events-index.html#visit">海外考察 2012–2026，36 场　查看全部 →</a>
   <p class="carousel-label">现场 <span class="en">ON THE GROUND</span></p>
-  <div class="carousel-wrap reveal">
-    <div class="carousel-track" data-dir="1">
-      <div class="carousel-row">
-        <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
-        <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
-        <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
-        <img src="carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
-        <img src="carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
-        <img src="carousel/carousel-06.webp" width="2000" height="1187" alt="出海现场 6" loading="lazy">
-        <img src="carousel/carousel-07.webp" width="800" height="382" alt="出海现场 7" loading="lazy">
-        <img src="carousel/carousel-08.webp" width="1920" height="1280" alt="出海现场 8" loading="lazy">
-        <img src="carousel/carousel-09.webp" width="800" height="378" alt="出海现场 9" loading="lazy">
-        <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
-        <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
-      </div>
-    </div>
-    <div class="carousel-track" data-dir="-1">
-      <div class="carousel-row">
-        <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
-        <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
-        <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
-        <img src="carousel/carousel-15.webp" width="800" height="533" alt="出海现场 15" loading="lazy">
-        <img src="carousel/carousel-16.webp" width="800" height="600" alt="出海现场 16" loading="lazy">
-        <img src="carousel/carousel-17.webp" width="800" height="600" alt="出海现场 17" loading="lazy">
-        <img src="carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
-        <img src="carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
-        <img src="carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
-        <img src="carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
-      </div>
-    </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track" data-dir="1"><div class="carousel-row">
+      <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
+      <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
+      <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
+      <img src="carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
+      <img src="carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
+      <img src="carousel/carousel-06.webp" width="2000" height="1187" alt="出海现场 6" loading="lazy">
+      <img src="carousel/carousel-07.webp" width="800" height="382" alt="出海现场 7" loading="lazy">
+      <img src="carousel/carousel-08.webp" width="1920" height="1280" alt="出海现场 8" loading="lazy">
+      <img src="carousel/carousel-09.webp" width="800" height="378" alt="出海现场 9" loading="lazy">
+      <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
+      <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
+    </div></div>
+    <div class="carousel-track" data-dir="-1"><div class="carousel-row">
+      <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
+      <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
+      <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
+      <img src="carousel/carousel-15.webp" width="800" height="533" alt="出海现场 15" loading="lazy">
+      <img src="carousel/carousel-16.webp" width="800" height="600" alt="出海现场 16" loading="lazy">
+      <img src="carousel/carousel-17.webp" width="800" height="600" alt="出海现场 17" loading="lazy">
+      <img src="carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
+      <img src="carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
+      <img src="carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
+      <img src="carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
+    </div></div>
   </div>
 </section>
 
-<script>
-/* ---------- 40 张照片墙 ---------- */
-(function(){
-  var w = document.getElementById('clientWall');
-  if(!w) return;
-  var s = '';
-  for(var i=1;i<=40;i++){
-    var n = ('0'+i).slice(-2);
-    s += '<img src="clients/wall/client-'+n+'.webp" alt="出海调研足迹 '+i+'" loading="lazy" width="320" height="320">';
-  }
-  w.innerHTML = s;
-})();
-</script>
-
+<!-- ===== 08 一线顾问 ===== -->
 <section class="section" id="advisors">
-  <div class="eyebrow">06 — ADVISORS</div>
+  <div class="eyebrow">08 — ADVISORS</div>
   <h2 class="section-title">把判断，交给真正在一线的人</h2>
   <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
-  <div class="adv-wall reveal" id="advWall"></div>
+  <div class="adv-wall" id="advWall"></div>
+  <p class="adv-note">30+ 位产业顾问网络，已公开 13 位，更多陆续上线。</p>
   <a class="adv-all" href="advisors-index.html">查看全部顾问 →</a>
 </section>
 
-<script>
-/* ---------- 顾问头像墙（全量，链主优先） ---------- */
-(function(){
-  var w = document.getElementById('advWall');
-  if(!w) return;
-  var A = ((window.GTN && window.GTN.index && window.GTN.index.advisor) || []).slice()
-    .sort(function(a,b){ return (b.isLead?1:0)-(a.isLead?1:0); });
-  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  w.innerHTML = A.map(function(a){
-    var tip = a.name + (a.one ? '　' + a.one : '');
-    var inner = a.photo
-      ? '<img src="'+esc(a.photo)+'" alt="'+esc(a.name)+'" loading="lazy" width="56" height="56">'
-      : '<span class="adv-ph">'+esc(String(a.name).slice(0,1))+'</span>';
-    return '<a class="adv-chip" href="'+esc(a.url)+'" data-tip="'+esc(tip)+'" title="'+esc(tip)+'" aria-label="'+esc(a.name)+'">'+inner+'</a>';
-  }).join('');
-})();
-</script>
+<!-- ===== 09 常见问题 ===== -->
+<section class="section" id="faq">
+  <div class="eyebrow">09 — FAQ</div>
+  <h2 class="section-title">常见问题</h2>
+  <p class="subline">出海前，先搞清楚这几件事。</p>
+  <div class="faq-list">
+    <details class="faq-item"><summary>海鑫汇是做什么的？</summary><p>我们为中国企业管理层做出海决策诊断：把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。</p></details>
+    <details class="faq-item"><summary>自测和首诊有什么区别？</summary><p>自测 1 元，3 分钟，给出出海准备度评分和关键短板。首诊 99 元，1 小时一对一，由董立鑫进行，产出一份简要书面判断报告。</p></details>
+    <details class="faq-item"><summary>你们能保证成交或拿到订单吗？</summary><p>不能。我们提供判断和资源连接，不承诺订单或成交。</p></details>
+    <details class="faq-item"><summary>活动怎么收费？</summary><p>单场活动 200 元，通常为一个下午加晚宴。具体以日程页为准。</p></details>
+    <details class="faq-item"><summary>董立鑫同时担任新加坡世贸职务，和海鑫汇是什么关系？</summary><p>董立鑫同时担任 WTC Singapore 秘书长兼 COO、WTC One Club 秘书长。海鑫汇的付费服务由海鑫汇提供，涉及相关机构的活动，我们会如实标明各方身份。</p></details>
+    <details class="faq-item"><summary>CEO tour 是什么？</summary><p>邀请外国企业家来华做产业考察，每期一个产业、一个来源国或地区。中国企业可以申请成为参访企业，经筛选后确认。</p></details>
+  </div>
+  <div class="faq-list" style="margin-top:10px;">
+    <details class="faq-item"><summary>出海前先问自己四个问题：企业现在适合出海吗？</summary><p><a href="questions/ready-to-go-global/index.html">查看判断框架 →</a></p></details>
+    <details class="faq-item"><summary>出海前先问自己四个问题：第一个海外市场应该选择哪里？</summary><p><a href="questions/first-market/index.html">查看判断框架 →</a></p></details>
+    <details class="faq-item"><summary>出海前先问自己四个问题：出口代理还是海外建厂？</summary><p><a href="questions/export-or-build/index.html">查看判断框架 →</a></p></details>
+    <details class="faq-item"><summary>出海前先问自己四个问题：海外布局最大的风险是什么？</summary><p><a href="questions/overseas-risks/index.html">查看判断框架 →</a></p></details>
+  </div>
+</section>
 
+<!-- ===== 10 预约首诊 ===== -->
+<section class="section" id="contact">
+  <div class="eyebrow">10 — BOOK</div>
+  <h2 class="section-title">预约首诊</h2>
+  <p class="subline">1 小时一对一，产出简要书面判断报告。99 元。</p>
+  <div class="book-card">
+    <form id="bookForm" class="contact-form" method="GET" onsubmit="return submitBook(this)">
+      <div class="form-grid">
+        <div class="field"><label for="bkName">姓名 Name</label><input type="text" name="name" id="bkName" placeholder="您的姓名" required></div>
+        <div class="field"><label for="bkCompany">公司 Company</label><input type="text" name="company" id="bkCompany" placeholder="公司名称" required></div>
+        <div class="field"><label for="bkIndustry">所属行业 Industry</label><input type="text" name="industry" id="bkIndustry" placeholder="如：精密制造 / 消费品牌"></div>
+        <div class="field"><label for="bkStage">出海阶段 Stage</label>
+          <select name="stage" id="bkStage">
+            <option value="" disabled selected>请选择</option>
+            <option value="planning">规划中 · 已立项</option>
+            <option value="testing">试水阶段 · 小规模测试</option>
+            <option value="scaling">扩张中 · 多国运营</option>
+            <option value="established">已成熟 · 深度本地化</option>
+          </select>
+        </div>
+        <div class="field full"><label for="bkContact">联系方式 Contact（必填）</label><input type="text" name="contact_info" id="bkContact" placeholder="手机号或微信号" required></div>
+        <div class="field full"><label for="bkBrief">想先聊的问题（选填）</label><textarea name="brief" id="bkBrief" rows="3" placeholder="如：想去东南亚，先看哪个市场"></textarea></div>
+        <div class="field full"><label class="consent"><input type="checkbox" id="bkConsent" required> 我已阅读隐私政策，同意海鑫汇使用以上信息与我联系。</label></div>
+      </div>
+      <div class="form-submit"><button type="submit" class="btn-submit btn-seal">预约首诊 <span class="btn-price">· 99 元 / 1 小时</span></button></div>
+      <p class="form-error" id="bkError" hidden></p>
+      <p class="form-ok" id="bkOk" hidden>已收到，我们会在 3 个工作日内与你联系。</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== 关于（导航锚点） ===== -->
+<section class="section about-block" id="about">
+  <div class="eyebrow">ABOUT</div>
+  <h2 class="section-title">关于海鑫汇</h2>
+  <p class="about-bio">海鑫汇（Gateway To New，GTN）由董立鑫创立，为专精特新、科创企业与上市公司的管理层提供出海决策诊断：先判断，再行动。我们连接全球产业专家、真实活动与一线情报，把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。</p>
+  <p class="about-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</p>
+  <div class="about-links"><a href="privacy.html">隐私政策</a></div>
+  <div class="about-social" id="aboutSocial"></div>
+</section>
+
+<footer class="footer" data-depth="0"></footer>
+
+<!-- 登记意向弹窗 -->
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
   <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
@@ -718,96 +516,332 @@ span.ops-center-flag.flag-kz{
   </div>
 </div>
 
-<script>
-/* ---------- 登记意向弹窗 ---------- */
-(function(){
-  var modal = document.getElementById('intentModal');
-  var form = document.getElementById('intentForm');
-  var titleEl = document.getElementById('intentTitle');
-  var subEl = document.getElementById('intentSub');
-  var productEl = document.getElementById('intentProduct');
-  var sourceEl = document.getElementById('intentSource');
-  var errEl = document.getElementById('intentError');
-  if(!modal || !form) return;
-  function openIntent(product, source, label){
-    productEl.value = product || '';
-    sourceEl.value = source || 'product-interest';
-    titleEl.textContent = label || '登记意向';
-    subEl.textContent = product ? ('意向：' + product) : '';
-    if(errEl){ errEl.hidden = true; errEl.textContent = ''; }
-    var btn = form.querySelector('button[type=submit]'); if(btn){ btn.disabled=false; btn.textContent='提交登记'; }
-    modal.hidden = false;
-  }
-  function closeIntent(){ modal.hidden = true; }
-  window.openIntent = openIntent;
-  modal.addEventListener('click', function(e){ if(e.target.getAttribute('data-close')) closeIntent(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !modal.hidden) closeIntent(); });
-  form.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
-    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
-    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
-    var d={ name:f.name.value, company:f.company.value, contact:f.contact.value, brief:'意向产品：'+(productEl.value||''), source:sourceEl.value };
-    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
-      .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
-      .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); if(btn) btn.textContent='已提交，我们会联系你'; })
-      .catch(function(e){ console.error(e); if(errEl){ var cw=window.CONTACT_WECHAT; errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交登记'; } f.dataset.busy=''; });
-  });
-  document.querySelectorAll('button[data-product]').forEach(function(b){
-    b.addEventListener('click', function(){
-      openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim());
-    });
-  });
-})();
-</script>
-
-<footer class="footer" data-depth="0"></footer>
-
 <script src="script.js" defer></script>
 <script src="assets/js/manual-lightbox.js" defer></script>
 <script>
+/* ---------- 选择器：产业 / 区域 + 其他产业（登记想看） ---------- */
 (function(){
-  var TICK = 4600, DUR = 1200;
-  var tracks = document.querySelectorAll('.carousel-track');
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // 系统开启「减少动态效果」：不自动滚动，改为可手动横向滑动
-    Array.prototype.forEach.call(tracks, function(t){ t.style.overflowX = 'auto'; });
+  var sel=document.getElementById('selIndustry'), selC=document.getElementById('selCountry'), btn=document.getElementById('selGo');
+  if(!sel||!selC||!btn) return;
+  var cfg = (window.GTN && window.GTN.filters) || {};
+  (cfg.industries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var p=document.createElement('option');p.value=o.slug;p.textContent=o.display||o.name;sel.appendChild(p); });
+  // 其他产业（登记想看）
+  (cfg.other_industries||[]).forEach(function(o){
+    var p=document.createElement('option'); p.value='other:'+o.name; p.textContent=o.name; sel.appendChild(p);
+  });
+  var REGION_ORDER = ['东南亚','东亚','南亚','中亚','中东','欧洲','非洲','美洲','其他'];
+  var groups = {};
+  (cfg.countries||[]).forEach(function(o){ if(o.hidden_in_dropdown) return; var r=o.region||'其他'; (groups[r]=groups[r]||[]).push(o); });
+  REGION_ORDER.concat(Object.keys(groups).filter(function(r){return REGION_ORDER.indexOf(r)<0;})).forEach(function(r){
+    if(!groups[r]) return;
+    var og=document.createElement('optgroup'); og.label=r;
+    groups[r].forEach(function(o){ var p=document.createElement('option');p.value=o.slug;p.textContent=o.name;og.appendChild(p); });
+    selC.appendChild(og);
+  });
+  btn.addEventListener('click',function(){
+    var v = sel.value;
+    if(v && v.indexOf('other:')===0){
+      var name = v.slice(6);
+      if(window.openIntent) window.openIntent(name, 'industry-vote', '其他产业登记');
+      sel.value=''; return;
+    }
+    if(window.GTNDesk && window.GTNDesk.open){ window.GTNDesk.open(v, selC.value); }
+  });
+})();
+
+/* ---------- 产业入口行：名称 + 链主头像 + 链接 ---------- */
+(function(){
+  var box=document.getElementById('industryEntry');
+  if(!box) return;
+  var IND=(window.GTN&&window.GTN.filters&&window.GTN.filters.industries)||[];
+  var ADV=(window.GTN&&window.GTN.index&&window.GTN.index.advisor)||[];
+  var VARIANTS={
+    'new-energy':['新能源电力电气','绿色能源','新能源'],
+    'auto-tech':['新能源车与智慧交通','新能源车','智慧交通'],
+    'ai':['人工智能','AI产业','AI'],
+    'consumer':['消费品牌','消费品牌出海'],
+    'capital':['跨国资本与并购','跨国资本','并购'],
+    'talent':['国际人才与职教','国际人才','职教']
+  };
+  function indAccept(slug){var s=new Set([slug]);(VARIANTS[slug]||[]).forEach(function(x){s.add(x);});return s;}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  box.innerHTML = IND.filter(function(i){return !i.hidden_in_dropdown;}).map(function(i){
+    var acc=indAccept(i.slug);
+    var lead=(ADV.filter(function(a){return a.isLead && (a.industries||[]).some(function(x){return acc.has(x);});})||[])[0];
+    var av = (lead && lead.photo) ? '<img src="'+esc(lead.photo)+'" alt="">' : '';
+    return '<a class="ie-item" href="industries/'+esc(i.slug)+'/index.html">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
+  }).join('');
+})();
+
+/* ---------- 决策台：产业 × 区域，五个模块，两栏 7:5 ---------- */
+(function(){
+  var IDX = (window.GTN && window.GTN.index) || {};
+  var CFG = (window.GTN && window.GTN.filters) || {};
+  var MATRIX = (window.GTN && window.GTN.matrix) || { pages: [] };
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var desk=document.getElementById('decisionDesk'), left=document.getElementById('deskLeft'), right=document.getElementById('deskRight'), foot=document.getElementById('deskFoot');
+  var titleEl=document.getElementById('deskTitle'), sumEl=document.getElementById('deskSummary'), closeBtn=document.getElementById('deskClose');
+  if(!desk||!left||!right||!foot||!titleEl||!sumEl||!closeBtn) return;
+  var countryBySlug={}, industryBySlug={};
+  (CFG.countries||[]).forEach(function(c){countryBySlug[c.slug]=c;});
+  (CFG.industries||[]).forEach(function(i){industryBySlug[i.slug]=i;});
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var cur={industry:'',country:'',indName:'',countryName:'',region:'',indSlug:''};
+  var VARIANTS={
+    'new-energy':['新能源电力电气','绿色能源','新能源'],
+    'auto-tech':['新能源车与智慧交通','新能源车','智慧交通'],
+    'ai':['人工智能','AI产业','AI'],
+    'consumer':['消费品牌','消费品牌出海'],
+    'capital':['跨国资本与并购','跨国资本','并购'],
+    'talent':['国际人才与职教','国际人才','职教']
+  };
+  function indAccept(slug){
+    var s=new Set([slug]);
+    (VARIANTS[slug]||[]).forEach(function(x){s.add(x);});
+    (CFG.industries||[]).filter(function(i){return i.slug===slug;}).forEach(function(i){ s.add(i.name); (i.aliases||[]).forEach(function(a){s.add(a);}); });
+    return s;
+  }
+  function resolveTarget(i,c){
+    var ind=industryBySlug[i], co=countryBySlug[c];
+    return {industry:i||'',country:c||'',indSlug:i||'',indName:ind?ind.name:'',countryName:co?co.name:'',region:co?(co.region||''):''};
+  }
+  function matchEvents(){
+    var acc = indAccept(cur.indSlug);
+    return (IDX.event||[]).filter(function(e){
+      var okI=!cur.indSlug||(e.industries||[]).some(function(x){return acc.has(x);});
+      var okR=(!cur.countryName&&!cur.region)?true:((cur.countryName&&(e.countries||[]).indexOf(cur.countryName)>=0)||(cur.region&&(e.regions||[]).indexOf(cur.region)>=0)||((e.countries||[]).length===0&&(e.regions||[]).length===0));
+      return okI&&okR;
+    }).sort(function(a,b){return String(b.year||'').localeCompare(String(a.year||''));}).slice(0,3);
+  }
+  function mod(no,label,inner){
+    if(inner===undefined) inner='<p class="desk-empty">这一块正在筹备。</p>';
+    return '<div class="desk-mod"><div class="desk-mod-title"><span class="desk-mod-no">'+no+'</span> — '+esc(label)+'</div>'+inner+'</div>';
+  }
+  function matrixLink(){
+    var hit=(MATRIX.pages||[]).filter(function(p){return p.industry===cur.industry&&p.country===cur.country;})[0];
+    return hit?'<a href="'+esc(hit.url)+'">本格独立页 &rarr;</a>':'';
+  }
+  function render(){
+    var acc=indAccept(cur.indSlug);
+    var reps=(IDX.report||[]).filter(function(r){return !cur.indSlug||acc.has(r.industry);});
+    // 01 研究报告
+    var rHtml;
+    if(reps.length){
+      rHtml='<ul class="desk-list">'+reps.map(function(r){
+        var tag=esc(r.status||'');
+        var acts=[];
+        if(r.industry==='新能源') acts.push('<a class="desk-link" href="reports/cleantech/index.html">留资获取</a>');
+        else if(r.industry==='汽车智能科技'){ acts.push('<a class="desk-link" href="reports/EV/index.html">阅读 2024 版</a>'); acts.push('<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">发布时通知我</button>'); }
+        else acts.push('<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">发布时通知我</button>');
+        return '<li><span class="desk-status">'+tag+'</span><span class="desk-t">'+esc(r.title)+'</span>'+acts.join('')+'</li>';
+      }).join('')+'</ul><p class="desk-note" style="font-size:11px;color:var(--ink-faint);margin:8px 0 0;">联合新加坡世贸发布 · 200 元/份</p>';
+    }
+    // 02 往期考察与调研
+    var evs=matchEvents();
+    var q=[]; if(cur.industry)q.push('industry='+encodeURIComponent(cur.industry)); if(cur.country)q.push('country='+encodeURIComponent(cur.country));
+    var eHtml=evs.length?('<ul class="desk-list">'+evs.map(function(e){
+      return '<li><span class="desk-t">'+esc(e.year||'')+'｜'+(e.countries&&e.countries[0]?esc(e.countries[0]):'')+'｜'+esc(e.title)+'</span></li>';
+    }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">查看这一格的全部考察 &rarr;</a>'):undefined;
+    // 03 对口顾问（最多 4 位，链主优先，不加链主标签）
+    var advs=(IDX.advisor||[]).filter(function(a){return !cur.indSlug||(a.industries||[]).some(function(x){return acc.has(x);});}).slice().sort(function(a,b){return (b.isLead?1:0)-(a.isLead?1:0);}).slice(0,4);
+    var aHtml=advs.length?('<div class="desk-adv">'+advs.map(function(a){
+      var im=a.photo?'<img src="'+esc(a.photo)+'" alt="">':'<span class="desk-adv-ph">'+esc(String(a.name).slice(0,1))+'</span>';
+      return '<a class="desk-adv-item" href="'+esc(a.url)+'">'+im+'<span><span class="desk-adv-name">'+esc(a.name)+'</span>'+(a.one?'<span class="desk-adv-one">'+esc(a.one)+'</span>':'')+'</span></a>';
+    }).join('')+'</div>'):undefined;
+    // 04 当地运营中心
+    var ops=(IDX.ops_center||[]).filter(function(o){return (cur.countryName&&o.country===cur.countryName)||(cur.region&&o.region===cur.region);});
+    var oHtml=ops.length?('<div class="desk-ops">'+ops.map(function(o){
+      var im=o.photo?'<img src="'+esc(o.photo)+'" alt="">':'<span class="desk-adv-ph">'+esc(String(o.name).slice(0,1))+'</span>';
+      return '<a class="desk-ops-item" href="'+esc(o.url)+'">'+im+'<span><span class="desk-adv-name">'+esc(o.name)+'</span><span class="desk-adv-one">'+esc(o.country||o.region||'')+'</span></span></a>';
+    }).join('')+'</div>'):undefined;
+    // 05 下一次相关活动
+    var now=new Date().toISOString().slice(0,10);
+    var cal=(IDX.calendar||[]).filter(function(c){return c.visible!==false&&c.status!=='closed'&&(!c.date_start||c.date_start>=now);}).slice(0,1);
+    var cHtml=cal.length?('<ul class="desk-list">'+cal.map(function(c){
+      return '<li><span class="desk-t">'+esc(c.date_text||'')+'　'+esc(c.product)+'</span><span class="desk-status">'+esc(c.status==='planning'?'筹备中 · 登记意向':(c.status||''))+'</span></li>';
+    }).join('')+'</ul><a class="desk-more" href="calendar.html">查看完整日程 &rarr;</a>'):undefined;
+
+    left.innerHTML = mod('01','研究报告',rHtml) + mod('02','往期考察与调研',eHtml);
+    right.innerHTML = mod('03','对口顾问',aHtml) + mod('04','当地运营中心',oHtml) + mod('05','下一次相关活动',cHtml);
+
+    // 汇总条
+    var repWord = reps.some(function(r){return /已发布/.test(r.status||'');}) ? '已发布' : (reps.length?'筹备中':'—');
+    var nextWord = cal.length? (cal[0].date_text||'—') : '—';
+    sumEl.innerHTML = '研究报告（'+repWord+'）｜往期考察 '+evs.length+'｜顾问 '+advs.length+'｜运营中心 '+ops.length+'｜下一次（'+nextWord+'）';
+
+    // 整格为空（日历为全局信息，不计入空格判定）
+    var any = reps.length||evs.length||advs.length||ops.length;
+    if(!any){
+      left.innerHTML=''; right.innerHTML='';
+      var whole=document.createElement('div'); whole.className='desk-whole'; whole.textContent='这一格我们正在筹备。登记想看的内容，有进展第一时间通知你。';
+      desk.insertBefore(whole, foot);
+    }
+    // 底部操作行
+    foot.innerHTML='';
+    var b1=document.createElement('button'); b1.type='button'; b1.className='btn-submit btn-seal'; b1.textContent='预约该产业首诊　99 元';
+    b1.addEventListener('click',function(){
+      var bf=document.getElementById('bkBrief'); if(bf) bf.value='产业：'+(cur.indName||'不限')+'　区域：'+(cur.countryName||cur.region||'不限');
+      var ct=document.getElementById('contact'); if(ct) ct.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    });
+    var b2=document.createElement('button'); b2.type='button'; b2.className='btn-outline'; b2.id='deskGrid'; b2.textContent='登记想看的内容';
+    b2.addEventListener('click',function(){ (window.openIntent||function(){})((cur.indName||'不限')+' × '+(cur.countryName||cur.region||'不限'),'grid-interest','空格子登记'); });
+    var link=matrixLink();
+    foot.appendChild(b1); foot.appendChild(b2);
+    if(link){ var sp=document.createElement('span'); sp.className='desk-cell-link'; sp.innerHTML=link; foot.appendChild(sp); }
+    // 绑定报告登记按钮
+    desk.querySelectorAll('.desk-btn').forEach(function(b){ b.addEventListener('click',function(){ (window.openIntent||function(){})(b.getAttribute('data-product'),b.getAttribute('data-source')||'product-interest',b.textContent.trim()); }); });
+  }
+  function open(i,c){
+    cur=resolveTarget(i,c);
+    titleEl.textContent='决策台 · '+(cur.indName||'全部产业')+' × '+(cur.countryName||cur.region||'全部区域');
+    render();
+    desk.hidden=false;
+    var si=document.getElementById('selIndustry'), sc=document.getElementById('selCountry');
+    if(si&&i) si.value=i; if(sc&&c&&countryBySlug[c]) sc.value=c;
+    try{ history.replaceState(null,'','#cell=industry:'+(i||'all')+';region:'+(cur.region||c||'all')); }catch(e){}
+    if(window.GTNMap&&window.GTNMap.highlight) window.GTNMap.highlight(cur.country||'');
+    desk.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  }
+  function close(){
+    desk.hidden=true;
+    left.innerHTML=''; right.innerHTML=''; foot.innerHTML='';
+    var w=desk.querySelector('.desk-whole'); if(w) w.remove();
+    if(window.GTNMap&&window.GTNMap.highlight) window.GTNMap.highlight('');
+    try{ history.replaceState(null,'','#'); }catch(e){}
+  }
+  closeBtn.addEventListener('click',close);
+  window.GTNDesk={open:open,close:close};
+  var m=(location.hash||'').match(/cell=([^&]+)/);
+  if(m){
+    var out={industry:'',region:''};
+    m[1].split(';').forEach(function(p){var kv=p.split(':');if(kv[0]==='industry')out.industry=(kv[1]==='all'?'':kv[1]);if(kv[0]==='region')out.region=(kv[1]==='all'?'':decodeURIComponent(kv[1]||''));});
+    if(out.industry||out.region) open(out.industry,out.region);
+  }
+})();
+
+/* ---------- 圆点世界图 ---------- */
+(function(){
+  var box=document.getElementById('worldMap'); var M=window.GTN&&window.GTN.map; if(!box||!M) return;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var dots=M.dots.map(function(d){return '<circle cx="'+d[0]+'" cy="'+d[1]+'" r="2.4"></circle>';}).join('');
+  var marks=M.markers.map(function(m){
+    return '<g class="map-marker" data-slug="'+esc(m.slug)+'" data-region="'+esc(m.region||'')+'" data-name="'+esc(m.name)+'" tabindex="0" role="button" aria-label="'+esc(m.name)+'">'
+      +'<circle class="map-halo" cx="'+m.x+'" cy="'+m.y+'" r="9"></circle>'
+      +'<circle class="map-dot" cx="'+m.x+'" cy="'+m.y+'" r="3.4"></circle>'
+      +'<circle class="map-hit" cx="'+m.x+'" cy="'+m.y+'" r="22"></circle></g>';
+  }).join('');
+  box.innerHTML='<svg class="map-svg" viewBox="0 0 '+M.w+' '+M.h+'" preserveAspectRatio="xMidYMid meet" aria-label="全球覆盖示意图（示意，不作地理或边界依据）"><g class="map-dots">'+dots+'</g><g class="map-markers">'+marks+'</g></svg><div class="map-tip" id="mapTip" hidden></div>';
+  var tip=document.getElementById('mapTip'); var CFG=(window.GTN&&window.GTN.filters)||{};
+  function showTip(name,mx,my){if(!tip)return;tip.textContent=name;tip.hidden=false;tip.style.left=mx+'px';tip.style.top=my+'px';}
+  function hideTip(){if(tip)tip.hidden=true;}
+  function slugFor(marker){var slug=marker.getAttribute('data-slug');if(slug)return slug;var reg=marker.getAttribute('data-region');if(!reg)return '';var hit=(CFG.countries||[]).filter(function(c){return c.region===reg;})[0];return hit?hit.slug:'';}
+  function highlight(slug){box.querySelectorAll('.map-marker').forEach(function(g){g.classList.toggle('is-active',!!slug&&g.getAttribute('data-slug')===slug);});}
+  function pick(marker){var slug=slugFor(marker);var sc=document.getElementById('selCountry');if(sc&&slug)sc.value=slug;highlight(slug);if(window.GTNDesk&&window.GTNDesk.open)window.GTNDesk.open((document.getElementById('selIndustry')||{}).value||'',slug);}
+  box.querySelectorAll('.map-marker').forEach(function(g){
+    var dot=g.querySelector('.map-dot'); var cx=+dot.getAttribute('cx'),cy=+dot.getAttribute('cy');
+    g.addEventListener('mouseenter',function(){var r=box.getBoundingClientRect();var svg=box.querySelector('.map-svg');var pt=svg.createSVGPoint?function(){var p=svg.createSVGPoint();p.x=cx;p.y=cy;return p.matrixTransform(svg.getScreenCTM());}():null;showTip(g.getAttribute('data-name'),pt?(pt.x-r.left):0,pt?(pt.y-r.top):0);});
+    g.addEventListener('mouseleave',hideTip);
+    g.addEventListener('click',function(){pick(g);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(g);}});
+  });
+  var sc=document.getElementById('selCountry'); if(sc)sc.addEventListener('change',function(){highlight(sc.value);});
+  window.GTNMap={highlight:highlight};
+})();
+
+/* ---------- 双向通道跑马灯：固定 40px/s ---------- */
+(function(){
+  var up=document.getElementById('mUp'),down=document.getElementById('mDown'); if(!up||!down)return;
+  var cfg=(window.GTN&&window.GTN.marquee)||{}; var SPEED=40,CELL=274;
+  function fill(el,items){if(!items||!items.length)return;var html=items.map(function(it){return '<div class="marquee-cell"><img src="'+it.img+'" alt="'+(it.alt||'')+'" loading="lazy"></div>';}).join('');el.innerHTML=html+html;el.style.animationDuration=(items.length*CELL/SPEED)+'s';}
+  fill(up,cfg.up&&cfg.up.items); fill(down,cfg.down&&cfg.down.items);
+})();
+
+/* ---------- 40 张照片墙 ---------- */
+(function(){var w=document.getElementById('clientWall');if(!w)return;var s='';for(var i=1;i<=40;i++){var n=('0'+i).slice(-2);s+='<img src="clients/wall/client-'+n+'.webp" alt="出海调研足迹 '+i+'" loading="lazy" width="320" height="320">';}w.innerHTML=s;})();
+
+/* ---------- 顾问头像墙（全量真实顾问） ---------- */
+(function(){
+  var w=document.getElementById('advWall'); if(!w)return;
+  var A=((window.GTN&&window.GTN.index&&window.GTN.index.advisor)||[]).slice().sort(function(a,b){return (b.isLead?1:0)-(a.isLead?1:0);});
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  w.innerHTML=A.map(function(a){
+    var tip=a.name+(a.one?'　'+a.one:'');
+    var inner=a.photo?'<img src="'+esc(a.photo)+'" alt="'+esc(a.name)+'" loading="lazy" width="56" height="56">':'<span class="adv-ph">'+esc(String(a.name).slice(0,1))+'</span>';
+    return '<a class="adv-chip" href="'+esc(a.url)+'" data-tip="'+esc(tip)+'" title="'+esc(tip)+'" aria-label="'+esc(a.name)+'">'+inner+'</a>';
+  }).join('');
+})();
+
+/* ---------- 出海日历（首页最近 3 条） ---------- */
+(function(){
+  var box=document.getElementById('calList'); if(!box)return;
+  var cal=((window.GTN&&window.GTN.index&&window.GTN.index.calendar)||[]).filter(function(c){return c.visible!==false&&c.status!=='closed';});
+  var now=new Date().toISOString().slice(0,10);
+  cal=cal.filter(function(c){return !c.date_start||c.date_start>=now;}).sort(function(a,b){return String(a.date_start||'').localeCompare(String(b.date_start||''));}).slice(0,3);
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  if(!cal.length){ box.innerHTML='<p class="desk-empty">近期暂无确认日程。登记后，有新日程第一时间通知你。</p><button type="button" class="btn-submit btn-seal" onclick="if(window.openIntent)window.openIntent(\'出海行程\',\'calendar-interest\',\'登记意向\')">登记意向</button>'; return; }
+  box.innerHTML=cal.map(function(c){
+    var st=c.status==='planning'?'cal-status--planning':'';
+    var act = (c.cta_type==='register_interest') ? '<button type="button" class="rc-act" data-product="'+esc(c.product)+'" data-source="calendar-interest">'+esc(c.cta_label||'登记意向')+'</button>'
+            : (c.cta_url ? '<a class="rc-act" href="'+esc(c.cta_url)+'">'+esc(c.cta_label||'查看')+'</a>' : '');
+    return '<div class="cal-row"><span class="cal-time">'+esc(c.date_text||'')+'</span><span class="cal-name">'+esc(c.product)+'</span><span class="cal-status '+st+'">'+esc(c.status==='planning'?'筹备中 · 登记意向':(c.status||''))+'</span>'+act+'</div>';
+  }).join('');
+  box.querySelectorAll('.rc-act[data-product]').forEach(function(b){b.addEventListener('click',function(){(window.openIntent||function(){})(b.getAttribute('data-product'),b.getAttribute('data-source')||'calendar-interest',b.textContent.trim());});});
+})();
+
+/* ---------- 登记意向弹窗 ---------- */
+(function(){
+  var modal=document.getElementById('intentModal'),form=document.getElementById('intentForm'),titleEl=document.getElementById('intentTitle'),subEl=document.getElementById('intentSub'),productEl=document.getElementById('intentProduct'),sourceEl=document.getElementById('intentSource'),errEl=document.getElementById('intentError');
+  if(!modal||!form)return;
+  function openIntent(product,source,label){productEl.value=product||'';sourceEl.value=source||'product-interest';titleEl.textContent=label||'登记意向';subEl.textContent=product?('意向：'+product):'';if(errEl){errEl.hidden=true;errEl.textContent='';}var btn=form.querySelector('button[type=submit]');if(btn){btn.disabled=false;btn.textContent='提交登记';}modal.hidden=false;}
+  function closeIntent(){modal.hidden=true;}
+  window.openIntent=openIntent;
+  modal.addEventListener('click',function(e){if(e.target.getAttribute('data-close'))closeIntent();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeIntent();});
+  form.addEventListener('submit',function(ev){ev.preventDefault();var f=this;if(f.dataset.busy)return;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='提交中…';}if(errEl){errEl.hidden=true;errEl.textContent='';}
+    var d={name:f.name.value,company:f.company.value,contact:f.contact.value,brief:'意向产品：'+(productEl.value||''),source:sourceEl.value};
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
+      .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(btn)btn.textContent='已提交，我们会联系你';})
+      .catch(function(e){console.error(e);if(errEl){var cw=window.CONTACT_WECHAT;errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):'');errEl.hidden=false;}if(btn){btn.disabled=false;btn.textContent='提交登记';}f.dataset.busy='';});
+  });
+})();
+
+/* ---------- 报告 / 产品登记按钮（data-product） ---------- */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('button[data-product]').forEach(function(b){
+    b.addEventListener('click',function(){(window.openIntent||function(){})(b.getAttribute('data-product'),b.getAttribute('data-source')||'product-interest',b.textContent.trim());});
+  });
+});
+
+/* ---------- 表单提交：菁英荟 / 预约首诊（沿用 feishu-proxy） ---------- */
+function submitClub(f){if(f.dataset.busy)return false;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');var err=document.getElementById('cbError'),ok=document.getElementById('cbOk');if(btn){btn.disabled=true;btn.dataset.label=btn.textContent;btn.textContent='提交中…';}if(err){err.hidden=true;err.textContent='';}if(ok){ok.hidden=true;}
+  var d={name:f.name.value,company:f.company.value,title:f.title.value,industry:f.industry.value,region:f.region.value,stage:f.stage.value,contact:f.contact.value,
+    brief:['姓名：'+(f.name.value||''),'公司：'+(f.company.value||''),'职位：'+(f.title.value||''),'所属行业：'+(f.industry.value||''),'意向区域：'+(f.region.value||''),'出海阶段：'+(f.stage.value||''),'联系方式：'+(f.contact.value||'')].join('｜'),
+    source:'club'};
+  fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
+    .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(ok)ok.hidden=false;if(btn){btn.textContent='已提交';btn.disabled=true;}f.dataset.busy='';})
+    .catch(function(e){console.error(e);if(err){var cw=window.CONTACT_WECHAT;err.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):'');err.hidden=false;}if(btn){btn.disabled=false;btn.textContent=btn.dataset.label||'加入菁英荟';}f.dataset.busy='';});
+  return false;}
+function submitBook(f){if(f.dataset.busy)return false;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');var err=document.getElementById('bkError'),ok=document.getElementById('bkOk');if(btn){btn.disabled=true;btn.dataset.label=btn.textContent;btn.textContent='提交中…';}if(err){err.hidden=true;err.textContent='';}if(ok){ok.hidden=true;}
+  var d={name:f.name.value,company:f.company.value,industry:f.industry.value,stage:f.stage.value,contact_info:f.contact_info.value,brief:f.brief.value,source:'home-diagnostic'};
+  fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
+    .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(ok)ok.hidden=false;if(btn){btn.textContent='已提交';btn.disabled=true;}f.dataset.busy='';})
+    .catch(function(e){console.error(e);if(err){var cw=window.CONTACT_WECHAT;err.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):'');err.hidden=false;}if(btn){btn.disabled=false;btn.textContent=btn.dataset.label||'预约首诊';}f.dataset.busy='';});
+  return false;}
+
+/* ---------- 跑马灯（现场 ON THE GROUND）：内容复制一份，由 CSS 无限滚动 ---------- */
+(function(){
+  var tracks=document.querySelectorAll('.carousel-track');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    Array.prototype.forEach.call(tracks,function(t){t.style.overflowX='auto';});
     return;
   }
-  Array.prototype.forEach.call(tracks, function(track){
-    var row = track.querySelector('.carousel-row');
-    var base = Array.prototype.slice.call(row.children);
-    var baseCount = base.length;
-    function cloneSet(){ base.forEach(function(n){ row.appendChild(n.cloneNode(true)); }); }
-    function measure(){ return row.children[baseCount].offsetLeft - row.children[0].offsetLeft; }
-    cloneSet();
-    var unit = measure();
-    var guard = 0;
-    while (unit < track.clientWidth + 400 && guard++ < 4){ cloneSet(); unit = measure(); }
-    var dir = track.dataset.dir === '-1' ? -1 : 1;
-    var i = dir === 1 ? 0 : baseCount;
-    var paused = false;
-    function offAt(k){ return row.children[k].offsetLeft - row.children[0].offsetLeft; }
-    function setPos(off, animate){
-      row.style.transition = animate ? 'transform ' + DUR + 'ms cubic-bezier(.35,0,.25,1)' : 'none';
-      row.style.transform = 'translateX(' + (-off) + 'px)';
-    }
-    setPos(offAt(i), false);
-    function tick(){
-      if (paused) return;
-      if (dir === 1){
-        i++;
-        setPos(offAt(i), true);
-        if (i >= baseCount) setTimeout(function(){ i = 0; setPos(0, false); }, DUR);
-      } else {
-        i--;
-        setPos(offAt(i), true);
-        if (i <= 0) setTimeout(function(){ i = baseCount; setPos(offAt(i), false); }, DUR);
-      }
-    }
-    setInterval(tick, TICK);
-    track.addEventListener('mouseenter', function(){ paused = true; });
-    track.addEventListener('mouseleave', function(){ paused = false; });
+  Array.prototype.forEach.call(tracks,function(track){
+    var row=track.querySelector('.carousel-row');
+    if(!row)return;
+    Array.prototype.forEach.call(row.children,function(n){row.appendChild(n.cloneNode(true));});
   });
 })();
 </script>
