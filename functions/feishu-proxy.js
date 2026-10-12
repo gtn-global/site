@@ -70,6 +70,17 @@ async function writeRecord(token, fields) {
   }
 }
 
+// source 显示名映射：'官网首页' 保留以兼容既有飞书视图/筛选；新增来源用中文标签；未知原样透传
+const SRC_LABEL = {
+  'home-diagnostic': '官网首页',
+  'grid-interest': '首页空格子登记',
+  'product-interest': '产品意向登记',
+  'calendar-interest': '日历意向登记',
+  'club': '出海菁英荟',
+  'ceo-tour-company': 'CEO tour 企业申请',
+  'buyer-radar': '买家雷达',
+};
+
 // 表单字段(name/company/industry/stage/contact/brief) → 飞书表字段
 // 飞书表真实列名：name/company/industry/stage/contact_info/brief/submitted_at/source
 function mapRecord(d) {
@@ -81,7 +92,7 @@ function mapRecord(d) {
     contact_info: d.contact || '',
     brief: d.brief || '',
     submitted_at: new Date().toISOString(),
-    source: d.source || '官网首页',
+    source: SRC_LABEL[d.source] || d.source || '官网首页',
   };
 }
 

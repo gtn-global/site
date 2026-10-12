@@ -17,6 +17,27 @@
   </url>
 
   <url>
+    <loc>https://gatewaytonew.com/calendar.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/ceo-tour.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/club.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/cta/book-diagnostic/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,21 +60,21 @@
 
   <url>
     <loc>https://gatewaytonew.com/events-index.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/events/exchange-01-maldives/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/events/exchange-02-sino-africa-jmj/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -95,13 +116,6 @@
 
   <url>
     <loc>https://gatewaytonew.com/events/exchange-08-serbia/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/events/exchange-09-kazakhstan/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -415,14 +429,14 @@
 
   <url>
     <loc>https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/events/visit-02-2012-cologne-heidelberg-germany/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -443,7 +457,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/events/visit-05-2014-fensterbau-germany/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -652,8 +666,8 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events/visit-35-2025-kuala-lumpur-malaysia/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <loc>https://gatewaytonew.com/events/visit-35-2026-kazakhstan/</loc>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -790,6 +804,13 @@
   </url>
 
   <url>
+    <loc>https://gatewaytonew.com/faq.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/googlec337c8b7a58761fe.html</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -798,7 +819,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -812,7 +833,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/industries/consumer-brands/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -833,21 +854,49 @@
 
   <url>
     <loc>https://gatewaytonew.com/industries/new-energy/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/industries/talent-development/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/markets/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/matrix/ai-southeast-asia/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/matrix/auto-tech-europe/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/matrix/new-energy-europe/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/matrix/new-energy-middle-east/</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -903,7 +952,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/member/ops-kazakhstan/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -993,6 +1042,13 @@
   </url>
 
   <url>
+    <loc>https://gatewaytonew.com/privacy.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/questions/export-or-build/</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -1037,6 +1093,27 @@
   <url>
     <loc>https://gatewaytonew.com/reports/cleantech/</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/reports/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/tools/asset-overview/CEO_tour/gallery.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gatewaytonew.com/tools/asset-overview/GTN_Global/gallery.html</loc>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "r-energy",
+    "product": "新能源电力电气出海研究报告",
+    "date_start": "2026-09-01",
+    "date_text": "2026 年 9 月（已发布）",
+    "location": "线上 / 留资获取",
+    "status": "open",
+    "cta_type": "pay",
+    "cta_label": "留资获取",
+    "cta_url": "reports/cleantech/index.html",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "r-ai",
+    "product": "AI 产业出海研究报告",
+    "date_start": "2026-10-01",
+    "date_text": "预计 2026 年 10 月",
+    "location": "线上 / 留资获取",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "cta_url": "",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "r-ev",
+    "product": "新能源车与智慧交通出海研究报告",
+    "date_start": "2026-11-01",
+    "date_text": "预计 2026 年 11 月",
+    "location": "线上 / 留资获取",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "cta_url": "",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "t-jakarta",
+    "product": "海鑫汇全球行 · 雅加达 + 新加坡",
+    "date_start": "2026-11-15",
+    "date_text": "2026 年 11 月",
+    "status": "筹备中 · 登记意向",
+    "regions": ["东南亚"],
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "e-mba20",
+    "product": "和君商学院出海班 第 20 届招生",
+    "date_text": "2027 年 1 月起",
+    "status": "planning",
+    "industries": ["talent"],
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": true
+  },
+  {
+    "id": "w-6800",
+    "product": "6800 训练营（陈俊文）",
+    "date_text": "时间待确认",
+    "location": "线上",
+    "status": "planning",
+    "cta_type": "register_interest",
+    "cta_label": "登记意向",
+    "price_text": "",
+    "visible": false,
+    "note": "陈俊文训练营不显示在日历"
+  },
+  {
+    "id": "c-ceo",
+    "product": "CEO tour 来华产业考察（本期征集参访企业）",
+    "date_text": "时间待确认",
+    "location": "中国 · 多地",
+    "status": "planning",
+    "cta_type": "apply",
+    "cta_label": "申请参访",
+    "price_text": "",
+    "visible": false
+  }
+]

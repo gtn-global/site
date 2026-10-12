@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出海行程与活动日程｜海鑫汇 GTN</title>
+<meta name="description" content="海鑫汇 GTN 出海行程与活动日程：只显示确认过的条目，含时间、名称、类型、状态与报名方式。近期暂无确认日程时，可登记意向，有新日程第一时间通知。">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gatewaytonew.com/calendar.html">
+<meta property="og:title" content="出海行程与活动日程｜海鑫汇 GTN">
+<meta property="og:description" content="确认过的日程才会出现在这里。">
+<meta property="og:site_name" content="Gateway To New (GTN)">
+<link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://gatewaytonew.com/calendar.html">
+<script src="data/calendar.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
+    <div class="desk-clock"></div>
+    <a href="index.html#entries" class="subpage-back">&larr; 返回首页<span class="en">BACK HOME</span></a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="eyebrow">05 — CALENDAR</div>
+  <h1 class="headline reveal">未来 90 天，我们的出海行程</h1>
+  <p class="subline reveal">确认过的日程才会出现在这里。</p>
+  <div class="cal-wrap" id="calWrap"></div>
+  <p class="manual-hint">只显示 data/calendar.json 里已确认的条目；过期自动隐藏。报名与登记请见每条的操作按钮。</p>
+</section>
+
+<div class="intent-modal" id="intentModal" hidden>
+  <div class="intent-backdrop" data-close="1"></div>
+  <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
+    <button class="intent-x" type="button" data-close="1" aria-label="关闭">✕</button>
+    <h3 class="intent-title" id="intentTitle">登记意向</h3>
+    <p class="intent-sub" id="intentSub"></p>
+    <form class="intent-form" id="intentForm">
+      <input type="hidden" name="product" id="intentProduct">
+      <input type="hidden" name="source" id="intentSource">
+      <div class="field"><label for="intentName">姓名（选填）</label><input type="text" name="name" id="intentName" placeholder="您的称呼"></div>
+      <div class="field"><label for="intentCompany">公司（选填）</label><input type="text" name="company" id="intentCompany" placeholder="公司名称"></div>
+      <div class="field full"><label for="intentContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="intentContact" placeholder="手机号或微信号" required></div>
+      <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意<a href="privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>
+      <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交登记</button></div>
+      <p class="form-error" id="intentError" hidden></p>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" data-depth="0"></footer>
+<script src="script.js" defer></script>
+<script>
+(function(){
+  var modal=document.getElementById('intentModal'), form=document.getElementById('intentForm');
+  var titleEl=document.getElementById('intentTitle'), subEl=document.getElementById('intentSub');
+  var productEl=document.getElementById('intentProduct'), sourceEl=document.getElementById('intentSource');
+  var errEl=document.getElementById('intentError');
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  // 条目日期只显示「年月」，不显示日；date_start 仅用于排序
+  function monthOnly(t){ if(!t) return ''; var m=String(t).match(/(\d{4})\s*年\s*(\d{1,2})\s*月/); return m ? (m[1]+' 年 '+parseInt(m[2],10)+' 月') : t; }
+  function openIntent(product, source, label){
+    productEl.value=product||''; sourceEl.value=source||'calendar-interest';
+    titleEl.textContent=label||'登记意向'; subEl.textContent=product?('意向：'+product):'';
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var btn=form.querySelector('button[type=submit]'); if(btn){ btn.disabled=false; btn.textContent='提交登记'; }
+    modal.hidden=false;
+  }
+  window.openIntent=openIntent;
+  modal.addEventListener('click',function(e){ if(e.target.getAttribute('data-close')) modal.hidden=true; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!modal.hidden) modal.hidden=true; });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var d={ name:f.name.value, company:f.company.value, contact:f.contact.value, brief:'意向产品：'+(productEl.value||''), source:sourceEl.value };
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+      .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); if(btn) btn.textContent='已提交，我们会联系你'; f.dataset.busy=''; })
+      .catch(function(e){ console.error(e); if(errEl){ var cw=window.CONTACT_WECHAT; errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交登记'; } f.dataset.busy=''; });
+  });
+
+  var wrap = document.getElementById('calWrap');
+  if(!wrap) return;
+  var STATUS = { open:'报名中', full:'已满，排队', planning:'筹备中，登记意向', few:'仅剩席位', ended:'已结束' };
+  function statusLabel(it){
+    if(it.status==='few'){ return '仅剩 '+(it.quota_left!=null?it.quota_left:'')+' 席'; }
+    return STATUS[it.status]||it.status||'';
+  }
+  function ctaSourceFor(type){ return type==='apply' ? 'ceo-tour-company' : 'calendar-interest'; }
+  function ctaOf(it){
+    var type = it.cta_type;
+    if(type==='pay' && !it.cta_url) type='register_interest';
+    var label = it.cta_label || '登记意向';
+    if(type==='register_interest' || type==='contact' || type==='apply'){
+      return '<button type="button" class="btn-submit btn-seal cal-cta" data-product="'+esc(it.product)+'" data-source="'+esc(ctaSourceFor(type))+'">'+esc(label)+'</button>';
+    }
+    if(type==='pay'){ return '<a class="btn-submit btn-seal" href="'+esc(it.cta_url)+'">'+esc(label)+'</a>'; }
+    return '<span class="cal-cta-static">'+esc(label)+'</span>';
+  }
+  function card(it){
+    var meta=[]; if(it.date_text) meta.push(monthOnly(it.date_text)); if(it.location) meta.push(it.location);
+    return '<article class="cal-item cal-'+esc(it.status)+'">'
+      + '<div class="cal-head"><span class="cal-date">'+esc(monthOnly(it.date_text)||'')+'</span><span class="cal-status">'+esc(statusLabel(it))+'</span></div>'
+      + '<h4 class="cal-name">'+esc(it.product)+'</h4>'
+      + '<div class="cal-meta">'+meta.map(esc).join(' · ')+'</div>'
+      + (it.price_text ? ('<span class="cal-price">'+esc(it.price_text)+'</span>') : '')
+      + '<div class="cal-cta-row">'+ctaOf(it)+'</div></article>';
+  }
+  var items = ((window.GTN && window.GTN.calendar) || []).filter(function(it){ return it.visible !== false; });
+  items.sort(function(a,b){ return String(a.date_start||'').localeCompare(String(b.date_start||'')); });
+  wrap.innerHTML = items.length
+    ? '<div class="cal-grid">'+items.map(card).join('')+'</div>'
+    : '<p class="cal-empty">近期暂无确认日程。登记后，有新日程第一时间通知你。'
+      + '<button type="button" class="btn-submit btn-seal cal-cta" data-product="出海行程通知" data-source="calendar-interest">登记意向</button></p>';
+  wrap.querySelectorAll('.cal-cta[data-product]').forEach(function(b){
+    b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'calendar-interest', b.textContent.trim()); });
+  });
+})();
+</script>
+</body>
+</html>

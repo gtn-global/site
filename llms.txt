@@ -50,6 +50,9 @@
 
 - [海鑫汇专家顾问网络 — 海鑫汇](https://gatewaytonew.com/advisors-index.html)：海鑫汇（海鑫汇 GTN，英文 Gateway To New）专家顾问网络——两期累计签约30+位产业专家与投资人，均为上市公司或知名企业高管，已获授权公开展示。Directory of 30+ signed advisors backing 海鑫汇 Gateway To New's outbound consulting practice.
 - [https://gatewaytonew.com/baidu_verify_codeva-vBQIDsI7r2.html](https://gatewaytonew.com/baidu_verify_codeva-vBQIDsI7r2.html)
+- [出海行程与活动日程｜海鑫汇 GTN](https://gatewaytonew.com/calendar.html)：海鑫汇 GTN 出海行程与活动日程：只显示确认过的条目，含时间、名称、类型、状态与报名方式。近期暂无确认日程时，可登记意向，有新日程第一时间通知。
+- [来华产业考察征集参访企业｜海鑫汇 GTN](https://gatewaytonew.com/ceo-tour.html)：GatewayToNew CEO tour 邀请外国企业家来华做产业考察，每期聚焦一个产业、一个来源国或地区，为期 3–4 天。面向有真实出口能力的中国企业征集参访企业，人工筛选后确认对接服务内容与费用。
+- [海鑫汇 · 出海菁英荟｜海鑫汇 GTN](https://gatewaytonew.com/club.html)：海鑫汇·出海菁英荟 200 元/年：加入微信群，活动、考察和研究报告发布第一时间在群里通知，入会赠送一份已发布的产业出海研究报告（任选一份）。
 - [预约首诊 | 海鑫汇 GTN](https://gatewaytonew.com/cta/book-diagnostic/)：海鑫汇首诊预约——和董立鑫一对一拆解你的业务现状，找到最值得先解决的一个问题。Outbound paid diagnostic booking.
 - [出海健康度自测 · GTN | 海鑫汇](https://gatewaytonew.com/cta/self-test/)：海鑫汇出海健康度自测——五个核心维度、15 道题目，快速判断企业全球化准备度。Outbound readiness self-assessment.
 - [全球生态成员 · Global Ecosystem — 海鑫汇](https://gatewaytonew.com/ecosystem-index.html)：海鑫汇全球生态名录——覆盖日本、马来西亚、新加坡、哈萨克斯坦等地的国际留学生、海外渠道、商协会与运营团队。The Global Talent Ecosystem behind 海鑫汇, spanning talent, channels, and operators across multiple countries.
@@ -62,7 +65,6 @@
 - [菲律宾市场交流｜菲律宾驻华参赞解读投资与商业机会 | 海鑫汇 国际交流](https://gatewaytonew.com/events/exchange-06-philippines/)：海鑫汇国际交流：菲律宾驻华使馆商务参赞 Glenn Peñaranda 解读投资与商业机会。菲律宾贸易投资中心（PTIC-Beijing）推动菲产品出口中国与中国企业赴菲投资，重点面向新能源汽车、数字经济领域。
 - [世界贸易中心协会亮相服贸会｜WTC Singapore 东南亚市场合作与国际交流 | 海鑫汇 国际交流](https://gatewaytonew.com/events/exchange-07-wtca-servicetrade/)：海鑫汇国际交流：北京服贸会世界贸易中心协会（WTCA）专场，东南亚圆桌对话。来自立杰亚洲、星展银行、群核科技、玖字诀的嘉宾，从合规、金融、科技本地化与品牌四个维度解析中国企业出海东南亚。
 - [塞尔维亚市场交流｜中国企业进入欧洲的新机遇 | 海鑫汇 国际交流](https://gatewaytonew.com/events/exchange-08-serbia/)：海鑫汇国际交流：中企出海欧洲实战指南。基于海鑫汇创始人董立鑫走访欧洲十余国、对话17家出海企业的洞察，拆解成本重构、合规升级、人才争夺三大趋势与高频雷区。
-- [哈萨克斯坦国际交流｜中亚市场考察与中国企业出海合作 | 海鑫汇 国际交流](https://gatewaytonew.com/events/exchange-09-kazakhstan/)：海鑫汇国际交流：和君商学院出海班相聚哈萨克斯坦阿拉木图，立足中亚一线市场，解码中企出海中亚全新范式。覆盖美业落地路径、创新营销打法与中亚跳板逻辑。
 - [从“陪跑”到“领跑”——我在和君小镇出海交流会的思考 | 海鑫汇 出海论坛](https://gatewaytonew.com/events/forum-05-hejun-town-chenjunwen/)：第二届海鑫汇出海年会暨和君小镇中国企业出海交流会现场记录。天成集团企业出海国际营销陪跑导师陈俊文（大麦哥）分享对圆桌对话《重构海外用户连接》的思考，以及从“陪跑”到“领跑”的出海观察。
 - [环世物流：中国物流企业如何服务中国企业出海？| 海鑫汇 出海大咖访谈](https://gatewaytonew.com/events/interview-01-global-logistics/)：海鑫汇《出海大咖访谈》第01期：对话环世物流，探讨中国物流与供应链企业如何伴随中国制造与品牌出海，构建全球履约网络与本地化能力。
 - [马来西亚：中国企业的东南亚支点怎么打？| 海鑫汇 出海大咖访谈](https://gatewaytonew.com/events/interview-02-malaysia/)：海鑫汇《出海大咖访谈》第02期：聚焦马来西亚，探讨中国企业如何以马来西亚为东南亚支点，布局制造、贸易与本地化运营。
@@ -106,11 +108,11 @@
 - [走进智谱Z.AI（02513.HK）｜清华系大模型企业GLM系列技术与出海视角｜海鑫汇 Gateway To New](https://gatewaytonew.com/events/tour-05-zhipu/)：海鑫汇GTN联合和勤易专精特新企业家俱乐部走进智谱AI北京总部，解析GLM系列大模型技术进展与中国AI企业全球化路径。
 - [走进博彦科技（002649.SZ）｜AI+数智技术赋能中国企业出海破局｜海鑫汇 Gateway To New](https://gatewaytonew.com/events/tour-07-beyondsoft/)：海鑫汇GTN联合UIBE阿波罗投资俱乐部走进博彦科技全球总部，聚焦AI数智技术赋能、企业出海破局与跨境投资赛道三大议题。
 - [海鑫汇活动总50期｜走进佩蒂股份（300673.SZ）跨境出海专题沙龙 | 海鑫汇 企业游学](https://gatewaytonew.com/events/tour-08-petty-stock/)：和君商学院出海班·海鑫汇总第50期企业游学，6月25日杭州，走进佩蒂股份探讨合规经营、产能布局与AI赋能。
-- [斯图加特·Roto：一个仓库，让我提前十年看到中国物流的未来 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/)：海鑫汇海外产业考察实录：走进德国 Roto 斯图加特总部与自动化仓库，从看产品到看体系，建立判断企业全球化能力的坐标。
+- [2012·斯图加特：一个仓库，让我提前十年看到中国物流的未来 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/)：海鑫汇海外产业考察实录：走进德国 Roto 斯图加特总部与自动化仓库，从看产品到看体系，建立判断企业全球化能力的坐标。
 - [2012 德国行外记：科隆与海德堡的两次停留 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-02-2012-cologne-heidelberg-germany/)：海鑫汇海外考察随笔：2012 年德国之行中，科隆与海德堡两站不是产业考察，而是一次完整国家认知里的历史与教育侧写。
 - [马尔代夫：一个国家把"一岛一酒店"做成了整个经济体的商业模式 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-03-2013-male-maldives/)：马尔代夫：一个国家把
 - [吉隆坡：一座由华人矿工"挖"出来的城市 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-04-2014-kuala-lumpur-malaysia/)：吉隆坡：一座由华人矿工
-- [2014 德国纽伦堡 FENSTERBAU FRONTALE 考察：从德国门窗技术、标准到制造体系 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-05-2014-fensterbau-germany/)：2014 德国纽伦堡 FENSTERBAU FRONTALE 考察：从德国门窗技术、标准到制造体系
+- [2014 德国纽伦堡 FENSTERBAU FRONTALE：从德国技术、标准到制造体系 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-05-2014-fensterbau-germany/)：2014 德国纽伦堡 FENSTERBAU FRONTALE：从德国技术、标准到制造体系
 - [斯图加特：第二次回到诺托，和一座"养马场"长出来的德国工业心脏 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-06-2014-stuttgart-germany/)：斯图加特：第二次回到诺托，和一座
 - [布鲁塞尔：一座总部比首都更多的城市 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-07-2015-brussels-belgium/)：布鲁塞尔：一座总部比首都更多的城市
 - [阿姆斯特丹：一座用风车填海造出来的金融首都 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-08-2015-amsterdam-netherlands/)：阿姆斯特丹：一座用风车填海造出来的金融首都
@@ -140,11 +142,12 @@
 - [新山：一张火车票买不到的，正在被资本买到｜海鑫汇 海外考察](https://gatewaytonew.com/events/visit-32-2025-johor-malaysia/)：海鑫汇赴马来西亚新山（柔佛）产业考察：柔佛-新加坡经济特区（JS-SEZ）一份写到2034年的协议、遍地开花的 AIDC 算力项目，以及那张推迟到2026年才通车、我们没买成的火车票——资本速度与基建速度还没对齐的新兴市场样本。
 - [博彦科技新加坡考察｜中国IT服务企业全球化实践启发 | 海鑫汇 海外考察](https://gatewaytonew.com/events/visit-33-2025-beyondsoft-singapore/)：2025年8月，海鑫汇赴新加坡调研博彦科技（Beyondsoft）新加坡分公司：从IT服务的关税与本地化运营，到知识互动、人货场革新，看中国能力的全球化如何与本土条件融合，演好能力深化与优化的二重奏。
 - [泰国曼谷产业考察｜群核科技（00068.HK）东南亚市场实践研究 | 海鑫汇 海外考察](https://gatewaytonew.com/events/visit-34-2025-coohom-bangkok-thailand/)：2025年8月，海鑫汇赴泰国曼谷调研群核科技（00068.HK）旗下 Coohom 的本地化实践：从知识互动、跨文化融合、泰国发展秘籍，到滚雪球成长与语言问题，看中国空间智能能力如何与泰国本地条件融合，演好能力深化与优化的二重奏。
-- [马来西亚新山市场考察｜东南亚产业与商业机会调研 | 海鑫汇 海外考察](https://gatewaytonew.com/events/visit-35-2025-kuala-lumpur-malaysia/)：从吉隆坡视角看 TikTok 马来西亚的出海实践：1930万用户、TikTok Shop 电商新势力、#JomLokal 本地化计划，以及家居建材家具行业如何借线上流量重塑消费习惯，是中国能力全球化的新进化。
+- [哈萨克斯坦国际交流｜中亚市场考察与中国企业出海合作 | 海鑫汇 国际交流](https://gatewaytonew.com/events/visit-35-2026-kazakhstan/)：海鑫汇国际交流：和君商学院出海班相聚哈萨克斯坦阿拉木图，立足中亚一线市场，解码中企出海中亚全新范式。覆盖美业落地路径、创新营销打法与中亚跳板逻辑。
 - [匈牙利产业考察｜中国企业进入中东欧市场的真实落地路径 | 海鑫汇 海外考察](https://gatewaytonew.com/events/visit-36-2026-budapest-hungary/)：2026年初，海鑫汇扎进匈牙利市场：看仓库、探工厂、聊行家、走边境。从OBI、宜家的零售实验，到SYNERGY、CBRE的本地生态，看懂一个中国品牌如何把匈牙利当作出海欧洲的'首发站'与'运营枢纽'。
 - [中国能力全球化｜TikTok 马来西亚的融合创新之路 | 海鑫汇 考察](https://gatewaytonew.com/events/visit-37-tiktok-malaysia/)：董立鑫从吉隆坡实地视角，分析 TikTok 马来西亚如何将中国短视频与电商技术同本地多元文化深度融合，聚焦家居建材家具出海。
 - [走进伊拉克大使馆｜助力伊拉克战后重建 | 海鑫汇 参访](https://gatewaytonew.com/events/visit-38-iraq-embassy/)：董立鑫拜访伊拉克驻华大使馆，伊拉克驻华大使贝尔瓦利介绍伊中战略伙伴关系、重建机遇与投资环境改革。
 - [中国能力全球化｜胡志明市深度调研报告 | 海鑫汇 调研](https://gatewaytonew.com/events/visit-39-hcmc-vietnam/)：董立鑫 2025 年 8 月于胡志明市的实地深度调研，覆盖电商、消费、跨境、制造与科技出海五大维度。
+- [常见问题 FAQ｜海鑫汇 GTN](https://gatewaytonew.com/faq.html)：海鑫汇 GTN 常见问题：自测与首诊的区别、是否承诺成交、活动收费、创始人身份披露、GatewayToNew CEO tour 是什么。另附出海前先问自己的四个问题。
 - [https://gatewaytonew.com/googlec337c8b7a58761fe.html](https://gatewaytonew.com/googlec337c8b7a58761fe.html)
 - [AI 产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/ai-industry/)：AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
 - [消费品牌国际化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
@@ -153,7 +156,12 @@
 - [新能源产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/new-energy/)：新能源出海最容易踩的坑是“先建厂还是先找渠道”判断错位。海鑫汇结合锂电、光伏、储能领域专家与东南亚、中东运营网络，帮企业理清进入路径与风险优先级。
 - [职业教育与人才发展 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/talent-development/)：企业出海最容易被低估的是人才和组织能力的准备。海鑫汇连接教育出海、外派合规与国际人才培养资源，帮企业在扩张前把组织短板摸清楚。
 - [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
+- [人工智能 × 东南亚 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/ai-southeast-asia/)：海鑫汇（Gateway To New）在人工智能 × 东南亚方向：共 1 份研究报告（预计 2026 年 10 月发布），1 场往期考察，3 位对口顾问，1 个当地运营中心。预约该产业首诊 99 元，先做判断再出海。
+- [新能源车与智慧交通 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/auto-tech-europe/)：海鑫汇（Gateway To New）在新能源车与智慧交通 × 欧洲方向：共 1 份研究报告（预计 2026 年 11 月发布，2024 版可阅读），5 场往期考察，2 位对口顾问。预约该产业首诊 99 元，先做判断再出海。
+- [新能源电力电气 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-europe/)：海鑫汇（Gateway To New）在新能源电力电气 × 欧洲方向：共 1 份研究报告（已发布 2026.09），2 场往期考察，2 位对口顾问。预约该产业首诊 99 元，先做判断再出海。
+- [新能源电力电气 × 中东 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-middle-east/)：海鑫汇（Gateway To New）在新能源电力电气 × 中东方向：共 1 份研究报告（已发布 2026.09），2 位对口顾问，1 个当地运营中心。预约该产业首诊 99 元，先做判断再出海。
 - [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gatewaytonew.com/news-index.html)：海鑫汇与和君集团、学术机构、国际组织的关系型报道，及行业媒体报道，附原文链接。News coverage and event reports on 海鑫汇 and its partners, with original source links.
+- [隐私说明 · 海鑫汇 Gateway To New](https://gatewaytonew.com/privacy.html)
 - [出口代理还是海外建厂？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/export-or-build/)：进入海外市场，未必意味着立刻建厂。海鑫汇 GTN 从投入能力、供应链与本地化要求出发，帮助企业权衡出口、代理与海外建厂等不同进入方式的取舍。
 - [第一个海外市场应该选择哪里？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/first-market/)：选择第一个海外市场，往往比进入多个市场更重要。海鑫汇 GTN 从产业属性、资源条件、目标市场需求与本地化要求出发，帮助企业判断最合适作为全球化起点的区域。
 - [海外布局最大的风险是什么？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/overseas-risks/)：海外布局的风险，往往不在市场本身，而在组织与认知。海鑫汇 GTN 从合规、现金流、本地化与组织能力出发，帮助企业识别并前置管理全球化过程中的关键风险。
@@ -161,6 +169,9 @@
 - [沙特电力公司业务扩张：从设备到EPC，揭秘千亿采购机遇 · 海鑫汇 Gateway To New](https://gatewaytonew.com/references/saudi-energy-procurement/)：原沙特电力公司（SEC）于2026年2月更名为沙特能源公司，业务范围从发电、输配电扩展至建筑工程、储能、水处理、科技研发等领域，为中国企业打开多维度合作窗口。本文梳理其商机规模与供应商注册全流程。
 - [2024中国新能源汽车出海十大趋势洞察｜海鑫汇 Gateway To New](https://gatewaytonew.com/reports/EV/)：《2024中国新能源汽车出海十大趋势洞察——逆势出口环境下的「新四化」》由霞光智库联合和君咨询发布，从差异化、本地化、服务化及合规化四大角度，阐释中国新能源汽车及相关产业出海的十个关键趋势。
 - [中国新能源电力电气出海研究报告｜海鑫汇 Gateway To New](https://gatewaytonew.com/reports/cleantech/)：《中国新能源电力电气出海研究报告》由新加坡世界贸易中心（WTC Singapore）与和君咨询电力电气事业部联合发布，主题「从产品出口到全球生态」。海鑫汇 GTN 基于报告提炼出海决策九段式判断：市场机会、真实门槛、进入方式、成本、风险、进入路径与行业判断。
+- [产业出海研究报告｜海鑫汇 GTN](https://gatewaytonew.com/reports/)：海鑫汇 GTN 产业出海研究报告汇总：按赛道整理两年一线情报与顾问网络。新能源电力电气已发布 2026.09；人工智能预计 2026 年 10 月发布；新能源车与智慧交通预计 2026 年 11 月发布，2024 版可阅读。单份 200 元。
+- [CEO_tour 素材总览](https://gatewaytonew.com/tools/asset-overview/CEO_tour/gallery.html)
+- [GTN_Global 素材总览](https://gatewaytonew.com/tools/asset-overview/GTN_Global/gallery.html)
 
 
 ## 核心页面

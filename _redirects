@@ -52,6 +52,8 @@
 # events 目录 URL 变动 301 重定向
 /events/media-03-hejun-home-summit/*   /events/media-03-hejun-town-summit/:splat   301
 /events/exchange-09-sino-africa-jmj/*   /events-index.html   301
+/events/exchange-09-kazakhstan/*   /events/visit-35-2026-kazakhstan/:splat   301
+/events/visit-35-2025-kuala-lumpur-malaysia/*   /events/visit-32-2025-johor-malaysia/:splat   301
 
 # reports 目录 URL 变动 301 重定向（grid 整目录改名为 cleantech）
 /reports/grid/*    /reports/cleantech/:splat    301

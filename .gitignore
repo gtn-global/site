@@ -10,6 +10,8 @@ Thumbs.db
 # 但 llms.txt / robots.txt 是站点发布所需的机器可读索引与爬虫规则，需保留
 !llms.txt
 !robots.txt
+# tools/README.txt 是构建流程说明，需随仓库提交（不忽略）
+!tools/README.txt
 
 # 设计源文件
 海鑫汇.ai
@@ -33,3 +35,38 @@ _img_backup/
 
 # Node 依赖（sharp 等本地工具，不进版本库）
 node_modules/
+
+# 原始素材（未经处理，不部署；处理后 webp 在 */webp/）
+CEO_tour/*
+!CEO_tour/webp/
+!CEO_tour/webp/*
+CEO_tour_manual/*
+!CEO_tour_manual/webp/
+!CEO_tour_manual/webp/*
+GTN_Global/*
+!GTN_Global/webp/
+!GTN_Global/webp/*
+!GTN_Global/webp-flag/
+!GTN_Global/webp-flag/*
+# 注：carousel 原始图当前仍被线上轮播引用，待 Batch E 替换后再忽略
+
+# 本地预览截图（自检用，不部署）
+预览截图/
+
+# 决策台验证截图与验证脚本（自检用，不部署）
+verify-*.png
+desk-*.png
+full-*.png
+整页-*.png
+verify.mjs
+check-matrix.mjs
+verify-matrix.mjs
+verify-events.mjs
+
+# Playwright 浏览器缓存（若落地到仓库内）
+.pw-browsers/
+.playwright/
+
+# 本地开发依赖清单（仅本机用，站点为纯静态无构建步骤，避免部署时触发 npm install）
+package.json
+package-lock.json
