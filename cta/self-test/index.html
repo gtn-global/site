@@ -82,6 +82,8 @@
 .intent-form{display:flex;flex-direction:column;gap:10px;}
 .intent-form input{padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;}
 .intent-close{position:absolute;top:10px;right:14px;border:none;background:none;font-size:22px;cursor:pointer;color:#999;}
+.intent-consent{display:flex;align-items:center;gap:6px;font-size:13px;color:#555;margin:2px 0;}
+.intent-consent a{color:#b08d2b;}
 </style>
   <link rel="canonical" href="https://gatewaytonew.com/cta/self-test/">
   <meta property="og:type" content="website">
@@ -403,6 +405,7 @@
       <input type="hidden" id="intentProduct" name="product">
       <input type="hidden" id="intentSource" name="source">
       <p id="intentError" class="intent-error" hidden></p>
+      <label class="intent-consent"><input type="checkbox" name="consent" required> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私政策</a></label>
       <button type="submit" class="btn-seal">提交登记</button>
     </form>
   </div>
@@ -418,7 +421,7 @@
   function closeIntent(){modal.hidden=true;}
   modal.addEventListener('click',function(e){if(e.target.getAttribute('data-close'))closeIntent();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeIntent();});
-  form.addEventListener('submit',function(ev){ev.preventDefault();var f=this;if(f.dataset.busy)return;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='提交中…';}if(errEl){errEl.hidden=true;errEl.textContent='';}
+  form.addEventListener('submit',function(ev){ev.preventDefault();var f=this;var cb=f.querySelector('[name=consent]');if(cb&&!cb.checked){if(errEl){errEl.textContent='请先勾选同意隐私政策';errEl.hidden=false;}return;}if(f.dataset.busy)return;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='提交中…';}if(errEl){errEl.hidden=true;errEl.textContent='';}
     var d={name:f.name.value,company:f.company.value,contact:f.contact.value,brief:'意向产品：'+(productEl.value||''),source:sourceEl.value};
     fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
       .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
