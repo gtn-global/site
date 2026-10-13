@@ -617,18 +617,12 @@
   if(!box) return;
   var IND=(window.GTN&&window.GTN.filters&&window.GTN.filters.industries)||[];
   var ADV=(window.GTN&&window.GTN.index&&window.GTN.index.advisor)||[];
-  var VARIANTS={
-    'new-energy':['新能源电力电气','绿色能源','新能源'],
-    'auto-tech':['新能源车与智慧交通','新能源车','智慧交通'],
-    'ai':['人工智能','AI产业','AI'],
-    'consumer':['消费品牌','消费品牌出海'],
-    'capital':['跨国资本与并购','跨国资本','并购'],
-    'talent':['国际人才与职教','国际人才','职教']
-  };
-  function indAccept(slug){var s=new Set([slug]);(VARIANTS[slug]||[]).forEach(function(x){s.add(x);});return s;}
+  // 头像映射改用产业 slug：以 filters 中该产业的 slug/name/display/aliases 构建匹配集合，
+  // 避免写死名称变体与新产业名/顾问 industries 字段脱节（如 auto-tech 的别名「汽车智能科技」）。
+  function indAccept(i){var s=new Set([i.slug, i.name, i.display]);(i.aliases||[]).forEach(function(x){s.add(x);});return s;}
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   box.innerHTML = IND.filter(function(i){return !i.hidden_in_dropdown;}).map(function(i){
-    var acc=indAccept(i.slug);
+    var acc=indAccept(i);
     var lead=(ADV.filter(function(a){return a.isLead && (a.industries||[]).some(function(x){return acc.has(x);});})||[])[0];
     var av = (lead && lead.photo) ? '<img src="'+esc(lead.photo)+'" alt="">' : '';
     return '<a class="ie-item" href="industries/'+esc(i.slug)+'/index.html">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
