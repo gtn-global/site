@@ -89,6 +89,8 @@ function collectPages(dir, relBase, pages) {
       if (/说明.*\.html$/.test(ent.name)) continue;
       // 排除 noindex 的提交成功页等（不应被收录）
       if (/^success\.html$/i.test(ent.name)) continue;
+      // 排除 404.html（Cloudflare Pages 软 404 页，noindex，不应被收录）
+      if (/^404\.html$/i.test(ent.name)) continue;
       // 记录页面（rel 为相对 ROOT 的路径，使用 / 分隔）
       pages.push(rel.split(path.sep).join('/'));
     }
@@ -432,7 +434,10 @@ function verifyAndAutoFix() {
         const src = m[1];
         if (/^(https?:)?\/\//i.test(src)) continue; // 外链跳过
         if (SRC_IGNORE.test(src)) continue; // 已知正常例外
-        const imgAbs = path.resolve(path.dirname(abs), src);
+        // 根绝对路径（/ 开头）从 ROOT 解析，否则会被误判为盘符根路径而误报缺失
+        const imgAbs = src.startsWith('/')
+          ? path.join(ROOT, src.slice(1))
+          : path.resolve(path.dirname(abs), src);
         if (!fs.existsSync(imgAbs)) {
           // member/ 目录下的图片由各运营中心自行提供（内容待补），缺失不阻塞部署
           const imgRel = path.relative(ROOT, imgAbs);
@@ -451,7 +456,10 @@ function verifyAndAutoFix() {
         // 去掉锚点
         const clean = href.split('#')[0];
         if (!clean) continue;
-        const targetAbs = path.resolve(path.dirname(abs), clean);
+        // 同上：href 以 / 开头时从站点根解析
+        const targetAbs = clean.startsWith('/')
+          ? path.join(ROOT, clean.slice(1))
+          : path.resolve(path.dirname(abs), clean);
         if (!fs.existsSync(targetAbs)) {
           issues.push(`链接 404：${path.relative(ROOT, abs)} 链接到 ${href}（文件不存在）`);
         }
