@@ -54,3 +54,8 @@ industries 变空、报告状态不更新）。
   不一致会直接报错退出（见 tools/check-data-fresh.js）。
 - 想故意验证这条检查：把某个 data/*.js 的修改时间改回旧（如 touch -d "yesterday" data/index.js），
   再跑 preflight.js / generate-sitemap.js，应看到 data 编译遗漏报错；恢复只需重跑 build-data.mjs。
+
+------------------------------------------------------------
+附：A2 说明（www → 裸域 301）
+------------------------------------------------------------
+www 到裸域的 301 需要在 Cloudflare 控制台用域名级重定向规则；_redirects 不支持按域名匹配。
