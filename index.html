@@ -372,6 +372,7 @@
       <h4>新能源车与智慧交通</h4>
       <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
       <div class="rc-actions">
+        <a class="rc-act" href="reports/EV/index.html">阅读 2024 版</a>
         <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告" data-source="product-interest">发布时通知我</button>
       </div>
     </div>
@@ -707,7 +708,8 @@
     if(reps.length){
       rHtml='<ul class="desk-list">'+reps.map(function(r){
         var tag=esc(r.status||'');
-        var acts = r.url ? ('<a class="desk-link" href="'+esc(r.url)+'">'+esc(r.action||'查看')+'</a>') : ('<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">发布时通知我</button>');
+        var acts = (r.url ? ('<a class="desk-link" href="'+esc(r.url)+'">'+esc(r.action||'查看')+'</a>') : ('<button type="button" class="desk-btn" data-product="'+esc(r.title)+'" data-source="product-interest">发布时通知我</button>'))
+          + (r.prev_url ? ('<a class="desk-link" href="'+esc(r.prev_url)+'">'+esc(r.prev_label||'阅读往期版')+'</a>') : '');
         return '<li><span class="desk-status">'+tag+'</span><span class="desk-t">'+esc(r.title)+'</span>'+acts+'</li>';
       }).join('')+'</ul><p class="desk-note" style="font-size:11px;color:var(--ink-faint);margin:8px 0 0;">联合新加坡世贸发布 · 200 元/份</p>';
     }

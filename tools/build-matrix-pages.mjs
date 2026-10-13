@@ -90,7 +90,8 @@ function buildPage(slug, region) {
 
   const reportsHtml = c.reports.length
     ? `<ul class="desk-list">` + c.reports.map(r => {
-        const acts = r.url ? `<a class="desk-link" href="${P}${esc(r.url)}">${esc(r.action || '查看')}</a>` : `<span class="desk-status">发布时通知我</span>`;
+        const acts = (r.url ? `<a class="desk-link" href="${P}${esc(r.url)}">${esc(r.action || '查看')}</a>` : `<span class="desk-status">发布时通知我</span>`)
+          + (r.prev_url ? `<a class="desk-link" href="${P}${esc(r.prev_url)}">${esc(r.prev_label || '阅读往期版')}</a>` : '');
         return `<li><span class="desk-status">${esc(r.status || '')}</span><span class="desk-t">${esc(r.title)}</span>${acts}</li>`;
       }).join('') + `</ul>`
     : `<p class="desk-empty">这一块正在筹备。</p>`;

@@ -1176,6 +1176,8 @@
       "version": "2026 版",
       "url": "",
       "action": "登记意向",
+      "prev_url": "reports/EV/index.html",
+      "prev_label": "阅读 2024 版",
       "industries": [
         "auto-tech"
       ],
