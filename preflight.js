@@ -20,6 +20,7 @@ const path = require('path');
 const { checkDataFresh } = require('./tools/check-data-fresh.js');
 
 const ROOT = process.cwd();
+const BASE = 'https://gatewaytonew.com';
 let failures = 0;
 
 function fail(msg) {
@@ -139,6 +140,38 @@ console.log('\n4) data/*.js 与 data/*.json 一致性（防编译遗漏）');
 const freshIssues = checkDataFresh(ROOT);
 if (freshIssues.length === 0) ok('data/*.js 与对应 data/*.json 一致（已重新编译）');
 else freshIssues.forEach(msg => fail(msg));
+
+// ---- 校验 6：sitemap 与 canonical 一致性（A3）----
+console.log('\n5) sitemap 与 canonical 一致性');
+const sitemapPath = path.join(ROOT, 'sitemap.xml');
+if (!fs.existsSync(sitemapPath)) {
+  fail('sitemap.xml 不存在');
+} else {
+  const sm = fs.readFileSync(sitemapPath, 'utf8');
+  const locs = (sm.match(/<loc>([\s\S]*?)<\/loc>/g) || []).map(s => s.replace(/<\/?loc>/g, '').trim());
+  let checked = 0, mismatch = 0;
+  for (const loc of locs) {
+    if (!loc.startsWith(BASE)) continue;
+    const urlPath = loc.slice(BASE.length);
+    let relFile;
+    if (urlPath === '/') relFile = 'index.html';
+    else if (urlPath.endsWith('/')) relFile = urlPath.slice(1) + 'index.html';
+    else if (/\.(html|xml)$/i.test(urlPath)) relFile = urlPath.slice(1); // 验证文件保持原样
+    else relFile = urlPath.slice(1) + '.html'; // 根目录无扩展名页面
+    const abs = path.join(ROOT, relFile);
+    if (!fs.existsSync(abs)) continue; // en 页等跳过
+    const html = fs.readFileSync(abs, 'utf8');
+    const canMatch = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+    if (!canMatch) continue;
+    checked++;
+    const norm = (u) => u.replace(/\/+$/, '');
+    if (norm(canMatch[1]) !== norm(loc)) {
+      mismatch++;
+      fail(`${relFile}: canonical=${canMatch[1]} 但 sitemap=${loc}`);
+    }
+  }
+  if (mismatch === 0) ok(`sitemap 中 ${checked} 个页面 canonical 与 loc 一致`);
+}
 
 // ---- 结论 ----
 console.log('\n=== 结果 ===');

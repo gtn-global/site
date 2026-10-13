@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://gatewaytonew.com/advisors-index.html</loc>
+    <loc>https://gatewaytonew.com/advisors-index</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -17,21 +17,21 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/calendar.html</loc>
+    <loc>https://gatewaytonew.com/calendar</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/ceo-tour.html</loc>
+    <loc>https://gatewaytonew.com/ceo-tour</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/club.html</loc>
+    <loc>https://gatewaytonew.com/club</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -52,14 +52,14 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/ecosystem-index.html</loc>
+    <loc>https://gatewaytonew.com/ecosystem-index</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/events-index.html</loc>
+    <loc>https://gatewaytonew.com/events-index</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -804,7 +804,7 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/faq.html</loc>
+    <loc>https://gatewaytonew.com/faq</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1035,14 +1035,14 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/news-index.html</loc>
+    <loc>https://gatewaytonew.com/news-index</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/privacy.html</loc>
+    <loc>https://gatewaytonew.com/privacy</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

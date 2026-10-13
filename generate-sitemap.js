@@ -50,6 +50,14 @@ function toUrl(relPath) {
   if (p.endsWith('/index.html')) {
     return '/' + p.slice(0, -'index.html'.length); // 去掉 index.html，保留结尾 /
   }
+  // 搜索引擎验证文件：必须保持原 .html/.xml 路径（_redirects 用 200! 强制），不做无扩展名化
+  if (/^(googlec337c8b7a58761fe\.html|BingSiteAuth\.xml|baidu_verify_.+\.html)$/i.test(p)) {
+    return '/' + p;
+  }
+  // 根目录 .html 页面：Cloudflare 会把 /xxx.html 308 到 /xxx，sitemap/canonical 指向最终网址
+  if (!p.includes('/') && p.endsWith('.html')) {
+    return '/' + p.slice(0, -'.html'.length);
+  }
   return '/' + p;
 }
 
