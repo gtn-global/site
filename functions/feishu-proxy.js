@@ -79,6 +79,7 @@ const SRC_LABEL = {
   'club': '出海菁英荟',
   'ceo-tour-company': 'CEO tour 企业申请',
   'buyer-radar': '买家雷达',
+  'industry-vote': '产业投票',
 };
 
 // 表单字段(name/company/industry/stage/contact/brief) → 飞书表字段
