@@ -77,4 +77,4 @@
 # Site-wide migration to the new primary domain gatewaytonew.com (2026-09-03)
 
 # Redirect www to the bare domain: consolidate ranking signals to canonical gatewaytonew.com
-https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301!
+https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
