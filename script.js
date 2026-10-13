@@ -231,7 +231,9 @@ if(document.fonts && document.fonts.ready){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function animate(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var raw = el.getAttribute('data-count');
+    if (raw === null) return; // 无 data-count 时保留 HTML 中的最终数字，绝不归零
+    var target = parseInt(raw, 10) || 0;
     if (reduce) { el.textContent = target; return; }
     var duration = 2000;
     var start = null;
