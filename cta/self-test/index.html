@@ -69,6 +69,21 @@
   .self-test-demo{flex:1 1 auto;position:static;}
   .self-test-methodology{padding:20px;}
 }
+.st-next{margin-top:18px;border-top:1px solid var(--gold-line);padding-top:16px;}
+.st-next-card{background:#fafafa;border:1px solid #eee;border-radius:12px;padding:16px 18px;}
+.st-next-title{font-size:18px;margin:0 0 8px;color:var(--ink);}
+.st-next-body{margin:0 0 14px;color:#444;line-height:1.65;font-size:15px;}
+.st-next-acts{display:flex;gap:10px;flex-wrap:wrap;}
+.intent-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;}
+.intent-box{background:#fff;border-radius:12px;padding:24px 26px;max-width:380px;width:100%;position:relative;}
+.intent-box h3{margin:0 0 4px;font-size:20px;}
+.intent-sub{margin:0 0 16px;color:#666;font-size:14px;}
+.intent-error{color:#c0392b;font-size:13px;margin:8px 0 0;}
+.intent-form{display:flex;flex-direction:column;gap:10px;}
+.intent-form input{padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;}
+.intent-close{position:absolute;top:10px;right:14px;border:none;background:none;font-size:22px;cursor:pointer;color:#999;}
+.intent-consent{display:flex;align-items:center;gap:6px;font-size:13px;color:#555;margin:2px 0;}
+.intent-consent a{color:#b08d2b;}
 </style>
   <link rel="canonical" href="https://gatewaytonew.com/cta/self-test/">
   <meta property="og:type" content="website">
@@ -152,6 +167,7 @@
         <a href="../book-diagnostic/index.html" class="btn-outline">预约首诊，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
         <button type="button" class="btn-seal" id="stRestart">重新测评</button>
       </div>
+      <div class="st-next" id="stNext"></div>
     </div>
   </div>
 </section>
@@ -314,6 +330,36 @@
     return txt;
   }
 
+  function renderNextStep(score){
+    var el = document.getElementById('stNext');
+    if(!el) return;
+    var title, body, mainLabel, mainHref, mainModal=false, mainProduct='',
+        subLabel, subHref, subModal=false, subProduct='';
+    if (score >= 75) {
+      title = '该看具体市场了';
+      body = '你的准备度较高。建议预约首诊确定落地路径；也可以通过海鑫汇全球行到现场看市场。';
+      mainLabel = '预约首诊 · 99 元'; mainHref = '../book-diagnostic/index.html';
+      subLabel = '了解海鑫汇全球行'; subHref = '../../calendar.html';
+    } else if (score >= 50) {
+      title = '可以开始做具体判断了';
+      body = '你已经有一定基础。建议预约首诊，用 1 小时把市场、模式和风险摊开；想系统补课，可以了解出海训练营工作坊。';
+      mainLabel = '预约首诊 · 99 元'; mainHref = '../book-diagnostic/index.html';
+      subLabel = '了解出海训练营工作坊'; subModal = true; subProduct = '出海训练营工作坊';
+    } else {
+      title = '先把基础想清楚';
+      body = '你的出海准备度还在起步阶段。建议先读你所在产业的出海研究报告，再预约首诊，把方向和顺序定下来。';
+      mainLabel = '查看产业出海研究报告'; mainModal = true; mainProduct = '产业出海研究报告（自测结果页）';
+      subLabel = '预约首诊 · 99 元'; subHref = '../book-diagnostic/index.html';
+    }
+    var main = mainModal
+      ? '<button type="button" class="btn-seal" data-source="product-interest"' + (mainProduct ? ' data-product="' + mainProduct + '"' : '') + '>' + mainLabel + '</button>'
+      : '<a href="' + mainHref + '" class="btn-seal">' + mainLabel + '</a>';
+    var sub = subModal
+      ? '<button type="button" class="btn-ghost" data-source="product-interest"' + (subProduct ? ' data-product="' + subProduct + '"' : '') + '>' + subLabel + '</button>'
+      : '<a href="' + subHref + '" class="btn-ghost">' + subLabel + '</a>';
+    el.innerHTML = '<div class="st-next-card"><h4 class="st-next-title">' + title + '</h4><p class="st-next-body">' + body + '</p><div class="st-next-acts">' + main + sub + '</div></div>';
+  }
+
   document.getElementById('stForm').addEventListener('submit', function(e){
     e.preventDefault();
     if(answers.indexOf(0)>-1) return;
@@ -328,6 +374,7 @@
       list.appendChild(li);
     });
     document.getElementById('stAdvice').textContent = advice(t, out);
+    renderNextStep(t);
     document.getElementById('stResult').classList.remove('st-hidden');
     document.getElementById('stResult').scrollIntoView({behavior:'smooth'});
   });
@@ -337,6 +384,7 @@
     document.getElementById('stForm').reset();
     qBox.querySelectorAll('.st-opt').forEach(function(o){o.classList.remove('checked');});
     document.getElementById('stResult').classList.add('st-hidden');
+    var nx = document.getElementById('stNext'); if (nx) nx.innerHTML = '';
     update();
     window.scrollTo({top:0,behavior:'smooth'});
   });
@@ -345,5 +393,43 @@
 })();
 </script>
 
+<div id="intentModal" class="intent-modal" hidden>
+  <div class="intent-box">
+    <button type="button" class="intent-close" data-close aria-label="关闭">×</button>
+    <h3 id="intentTitle">登记意向</h3>
+    <p id="intentSub" class="intent-sub"></p>
+    <form id="intentForm" class="intent-form">
+      <input type="text" name="name" placeholder="姓名" required>
+      <input type="text" name="company" placeholder="公司">
+      <input type="text" name="contact" placeholder="联系方式（微信/手机）" required>
+      <input type="hidden" id="intentProduct" name="product">
+      <input type="hidden" id="intentSource" name="source">
+      <p id="intentError" class="intent-error" hidden></p>
+      <label class="intent-consent"><input type="checkbox" name="consent"> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私政策</a></label>
+      <button type="submit" class="btn-seal">提交登记</button>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('intentModal'),form=document.getElementById('intentForm'),
+      titleEl=document.getElementById('intentTitle'),subEl=document.getElementById('intentSub'),
+      productEl=document.getElementById('intentProduct'),sourceEl=document.getElementById('intentSource'),
+      errEl=document.getElementById('intentError');
+  if(!modal||!form)return;
+  function openIntent(product,source,label){productEl.value=product||'';sourceEl.value=source||'product-interest';titleEl.textContent=label||'登记意向';subEl.textContent=product?('意向：'+product):'';if(errEl){errEl.hidden=true;errEl.textContent='';}var btn=form.querySelector('button[type=submit]');if(btn){btn.disabled=false;btn.textContent='提交登记';}modal.hidden=false;}
+  function closeIntent(){modal.hidden=true;}
+  modal.addEventListener('click',function(e){if(e.target.closest('[data-close]'))closeIntent();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeIntent();});
+  form.addEventListener('submit',function(ev){ev.preventDefault();var f=this;var cb=f.querySelector('[name=consent]');if(cb&&!cb.checked){if(errEl){errEl.textContent='请先勾选同意隐私政策';errEl.hidden=false;}return;}if(f.dataset.busy)return;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='提交中…';}if(errEl){errEl.hidden=true;errEl.textContent='';}
+    var d={name:f.name.value,company:f.company.value,contact:f.contact.value,brief:'意向产品：'+(productEl.value||''),source:sourceEl.value};
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
+      .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(btn)btn.textContent='已提交，我们会联系你';})
+      .catch(function(e){console.error(e);if(errEl){errEl.textContent='提交失败，请稍后重试';errEl.hidden=false;}if(btn){btn.disabled=false;btn.textContent='提交登记';}f.dataset.busy='';});
+  });
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-source]');if(b){(window.openIntent||openIntent)(b.getAttribute('data-product'),b.getAttribute('data-source')||'product-interest',b.textContent.trim());}});
+})();
+</script>
 </body>
 </html>
