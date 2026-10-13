@@ -254,6 +254,7 @@ function injectSeoMeta() {
   for (const rel of unique) {
     const abs = path.join(ROOT, ...rel.split('/'));
     let html = fs.readFileSync(abs, 'utf-8');
+    if (/^404\.html$/i.test(rel)) { skipped++; continue; } // 404 软错误页：不注入 SEO 元标签
     if (/<link\s+rel=["']canonical["']/i.test(html)) { skipped++; continue; }
     const canonical = BASE + encodeUrlPath(toUrl(rel));
     const meta = getPageMeta(html);
