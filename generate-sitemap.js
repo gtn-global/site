@@ -101,6 +101,8 @@ function collectPages(dir, relBase, pages) {
       if (/^success\.html$/i.test(ent.name)) continue;
       // 排除 404.html（Cloudflare Pages 软 404 页，noindex，不应被收录）
       if (/^404\.html$/i.test(ent.name)) continue;
+      // 排除搜索引擎验证文件：不是内容页，且 Cloudflare 会自动 .html→无扩展名 308，无法直接 200
+      if (/^(googlec337c8b7a58761fe\.html|BingSiteAuth\.xml|baidu_verify_.+\.html)$/i.test(ent.name)) continue;
       // 记录页面（rel 为相对 ROOT 的路径，使用 / 分隔）
       pages.push(rel.split(path.sep).join('/'));
     }
