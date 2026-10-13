@@ -70,3 +70,12 @@ verify-events.mjs
 # 本地开发依赖清单（仅本机用，站点为纯静态无构建步骤，避免部署时触发 npm install）
 package.json
 package-lock.json
+
+# 轮播原图：线上实际使用 carousel/*.webp，*.jpg/*.jpeg 原图不入库、不部署
+carousel/*.jpg
+carousel/*.JPG
+carousel/*.jpeg
+carousel/*.JPEG
+
+# 素材总览内部工具页（本地查看用，不部署、不公开）
+tools/asset-overview/
