@@ -447,8 +447,8 @@
   </div>
   <a class="visit-line" href="events-index.html#visit">海外考察 2012–2026，36 场　查看全部 →</a>
   <p class="carousel-label">现场 <span class="en">ON THE GROUND</span></p>
-  <div class="carousel-wrap">
-    <div class="carousel-track" data-dir="1"><div class="carousel-row">
+  <div class="carousel-wrap film">
+    <div class="carousel-track band" data-dir="1"><div class="carousel-row">
       <img src="carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
       <img src="carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
       <img src="carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
@@ -461,7 +461,7 @@
       <img src="carousel/carousel-10.webp" width="800" height="600" alt="出海现场 10" loading="lazy">
       <img src="carousel/carousel-11.webp" width="800" height="450" alt="出海现场 11" loading="lazy">
     </div></div>
-    <div class="carousel-track" data-dir="-1"><div class="carousel-row">
+    <div class="carousel-track band" data-dir="-1"><div class="carousel-row">
       <img src="carousel/carousel-12.webp" width="1706" height="1279" alt="出海现场 12" loading="lazy">
       <img src="carousel/carousel-13.webp" width="800" height="600" alt="出海现场 13" loading="lazy">
       <img src="carousel/carousel-14.webp" width="800" height="600" alt="出海现场 14" loading="lazy">
@@ -929,16 +929,20 @@ function submitBook(f){if(f.dataset.busy)return false;f.dataset.busy='1';var btn
     .catch(function(e){console.error(e);if(err){var cw=window.CONTACT_WECHAT;err.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):'');err.hidden=false;}if(btn){btn.disabled=false;btn.textContent=btn.dataset.label||'预约首诊';}f.dataset.busy='';});
   return false;}
 
-/* ---------- 跑马灯（现场 ON THE GROUND）：内容复制一份，由 CSS 无限滚动 ---------- */
+/* ---------- 跑马灯（现场 ON THE GROUND）：每个 img 包一层 .fr，再复制一份，由 CSS 无限滚动 ---------- */
 (function(){
   var tracks=document.querySelectorAll('.carousel-track');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    Array.prototype.forEach.call(tracks,function(t){t.style.overflowX='auto';});
-    return;
-  }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   Array.prototype.forEach.call(tracks,function(track){
     var row=track.querySelector('.carousel-row');
-    if(!row)return;
+    if(!row) return;
+    // 克隆前先把每个 img 包进 .fr，克隆后循环仍无缝
+    Array.prototype.forEach.call(row.querySelectorAll('img'),function(img){
+      if(img.parentNode.classList && img.parentNode.classList.contains('fr')) return;
+      var fr=document.createElement('div'); fr.className='fr';
+      img.parentNode.insertBefore(fr,img); fr.appendChild(img);
+    });
+    if(reduce){ track.style.overflowX='auto'; return; }
     Array.prototype.forEach.call(row.children,function(n){row.appendChild(n.cloneNode(true));});
   });
 })();

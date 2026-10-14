@@ -194,12 +194,7 @@ a{color:inherit;}
 .ops-head-row .subhead{margin:0;}
 .ops-head-row .btn-subhead{margin:0;flex-shrink:0;transform:translateY(-16px);}
 .ops-head-row .btn-subhead .en{display:inline;margin-left:6px;}
-.event-breakdown{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:18px;}
-.event-breakdown a{background:var(--paper);padding:16px 10px;text-align:center;text-decoration:none;color:inherit;display:block;transition:background .15s;}
-.event-breakdown a:hover{background:var(--seal-soft);}
-.event-breakdown .n{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;line-height:1.1;}
-.event-breakdown .t{font-size:13px;color:var(--ink-soft);margin-top:6px;}
-.event-breakdown .t .en{display:block;font-size:9px;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
+.event-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
 .advisor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
 .advisor-card{border:1px solid var(--rule);background:var(--paper);padding:18px;text-align:center;position:relative;}
 .avatar{width:56px;height:56px;border-radius:50%;border:1px solid var(--rule);object-fit:cover;display:block;margin:0 auto 10px;background:var(--paper-alt);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);}
@@ -1320,7 +1315,7 @@ h3,h4,.subhead,.desk-title{font-size:var(--fs-body)!important;}
 p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta,.report-note,.footer-meta,.footer-disclosure,.desk-empty,.event-mini p,.ops-center-card p{font-size:var(--fs-small);}
 .eyebrow,.rc-tag,.btn-price,.region-card-ops,.desk-status,.subhead .en,.stat-cap{font-size:var(--fs-label);}
 /* ===== 颜色：墨黑 / 暖白 / 品牌红，描边改中性灰 ===== */
-:root{--rule:#e3e0d8;--ink-faint:#8a8781;}
+:root{--rule:#e3e0d8;--ink-faint:#8a8781;--line:#d9d3c9;--mut:#8a8781;--film-bg:#1c1814;--hole-svg:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='14'%3E%3Crect%20x='6'%20y='2'%20width='14'%20height='10'%20rx='2.5'%20fill='%23e9e4db'/%3E%3C/svg%3E");}
 .report-card:hover,.region-card:hover,.event-mini:hover{border-color:#c9c5bc!important;box-shadow:none!important;}
 .rc-tag,.desk-status,.desk-link,.desk-more,.btn-outline,.card-cta,.rc-cta,.rc-btn,.desk-btn{color:var(--seal);border-color:#d8d4cc;}
 .report-card--live{background:#faf9f6;border-color:#d8d4cc;}
@@ -1329,7 +1324,7 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 #proof .event-mini{border:1px solid var(--rule);border-radius:999px;padding:7px 14px;min-height:0;}
 #proof .event-mini h4{font-size:var(--fs-small);margin:0;}
 #proof .event-mini p{display:none;}
-.visit-line{display:inline-block;margin-top:16px;font-size:var(--fs-small);font-weight:600;color:var(--seal);text-decoration:none;}
+.visit-line{display:inline-block;margin-top:14px;font-size:var(--fs-small);font-weight:600;color:var(--seal);text-decoration:none;}
 /* ===== 产业情境卡压成一行入口 ===== */
 #situation-accordion{display:flex;flex-wrap:wrap;gap:10px;}
 #situation-accordion .accordion-item{border-radius:16px;padding:8px 14px;min-height:0;}
@@ -1399,19 +1394,34 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 
 /* 往期回顾：一句话 / 类型标签 / 跑马灯小标 */
 .proof-one{margin-top:18px;font-size:var(--fs-body);}
+/* 类型入口：药丸（透明底，1px 描边，左对齐自然换行） */
 .event-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
-.event-breakdown .type-tag{font-size:var(--fs-small);color:var(--ink-soft);text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:5px 12px;}
-.event-breakdown .type-tag .n{font-family:'IBM Plex Mono',monospace;font-size:var(--fs-label);color:var(--ink-faint);margin-left:4px;}
-.event-breakdown .type-tag:hover{border-color:var(--seal);color:var(--seal);}
+.event-breakdown .type-tag{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;font-size:var(--fs-small);color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;}
+.event-breakdown .type-tag .n{font-family:'IBM Plex Mono',monospace;font-size:var(--fs-label);color:var(--mut);margin-left:8px;}
+.event-breakdown .type-tag:hover{border-color:var(--ink);}
+/* 胶卷放映条（film） */
 .carousel-label{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:var(--fs-label);letter-spacing:2px;color:var(--ink-faint);}
 .carousel-label .en{margin-left:6px;}
-.carousel-wrap{margin-top:12px;overflow:hidden;}
-.carousel-track{display:flex;flex-wrap:nowrap;gap:14px;width:max-content;will-change:transform;animation:marquee-left 50s linear infinite;}
-.carousel-track[data-dir="-1"]{animation:marquee-right 50s linear infinite;}
-.carousel-row{display:flex;flex-wrap:nowrap;gap:14px;}
-.carousel-row > img{flex:0 0 auto;width:auto;max-width:none;height:200px;border-radius:14px;object-fit:cover;display:block;}
-@media(max-width:640px){.carousel-row > img{height:140px;}}
-@media(prefers-reduced-motion:reduce){.carousel-track{animation:none!important;}}
+.film{margin-top:12px;border-radius:10px;overflow:hidden;background:var(--film-bg);}
+.carousel-track{display:flex;flex-wrap:nowrap;gap:0;width:max-content;will-change:transform;animation:marquee-left 90s linear infinite;}
+.carousel-track[data-dir="-1"]{animation:marquee-right 90s linear infinite;}
+.carousel-row{display:flex;flex-wrap:nowrap;gap:0;}
+.fr{flex:0 0 auto;background:var(--film-bg);padding:20px 3px;position:relative;}
+.fr > img{display:block;height:150px;width:auto;max-width:none;border-radius:2px;object-fit:cover;}
+.fr::before,.fr::after{content:"";position:absolute;left:0;right:0;height:14px;background-image:var(--hole-svg);background-size:26px 14px;background-repeat:space no-repeat;}
+.fr::before{top:3px;}
+.fr::after{bottom:3px;}
+.carousel-track[data-dir="-1"] .fr::before{display:none;}
+.carousel-track[data-dir="-1"] .fr{padding-top:8px;}
+.film:hover .carousel-track{animation-play-state:paused;}
+@media(max-width:640px){.fr > img{height:110px;}}
+@media(prefers-reduced-motion:reduce){
+  .carousel-track{animation:none!important;}
+  .band{overflow-x:auto;}
+}
+@media (prefers-color-scheme:dark){
+  :root{--film-bg:#0a0908;--hole-svg:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='14'%3E%3Crect%20x='6'%20y='2'%20width='14'%20height='10'%20rx='2.5'%20fill='%2336312b'/%3E%3C/svg%3E");}
+}
 
 /* 顾问头像墙 */
 .adv-wall{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;}
