@@ -172,5 +172,5 @@
 
 ## 核心页面
 
-- [海鑫汇 Gateway To New](https://gatewaytonew.com/)：海鑫汇出海决策台——面向中国企业的出海决策诊断服务，结合真实活动、签约顾问与每日出海情报。Outbound decision diagnostics for Chinese SMEs, backed by real events, advisors, and market intelligence.
+- [海鑫汇 Gateway To New](https://gatewaytonew.com/)：海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层做出海决策诊断：先判断，再行动。Decision diagnostics for Chinese companies going global.
 
