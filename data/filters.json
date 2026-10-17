@@ -47,6 +47,6 @@
   ],
   "reportMap": {
     "new-energy": { "url": "reports/cleantech/index.html", "published": true },
-    "auto-tech": { "url": "reports/EV/index.html", "published": false }
+    "auto-tech": { "url": "", "published": false }
   }
 }

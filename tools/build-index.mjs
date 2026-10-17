@@ -145,7 +145,7 @@ if (exists(D('events-index.html'))) {
 // ---------- 2. report ----------
 const reports = [
   { id: 'report-new-energy', industry: '新能源', title: '新能源电力电气出海研究报告', status: '已上线', version: '2026 版', url: 'reports/cleantech/index.html', action: '留资获取' },
-  { id: 'report-auto-tech-2024', industry: '汽车智能科技', title: '汽车智能科技出海研究报告（2024 版）', status: '2024 版已上线', version: '2024 版', url: 'reports/EV/index.html', action: '留资获取' },
+  { id: 'report-auto-tech-2024', industry: '汽车智能科技', title: '汽车智能科技出海研究报告', status: '2024 版已上线', version: '2024 版', url: 'reports/EV/index.html', action: '留资获取' },
   { id: 'report-auto-tech-2026', industry: '汽车智能科技', title: '汽车智能科技出海研究报告（2026 新版）', status: '预计 11 月发布', version: '2026 版', url: '', action: '登记意向' },
   { id: 'report-ai', industry: 'AI产业', title: 'AI 产业出海研究报告', status: '研究进行中', version: '', url: '', action: '登记意向' }
 ].map(r => ({ ...r, countries: [], regions: [] }));

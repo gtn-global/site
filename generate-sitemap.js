@@ -101,6 +101,11 @@ function collectPages(dir, relBase, pages) {
       if (/^success\.html$/i.test(ent.name)) continue;
       // 排除 404.html（Cloudflare Pages 软 404 页，noindex，不应被收录）
       if (/^404\.html$/i.test(ent.name)) continue;
+      // 排除带 noindex 的页面（如 reports/EV，保留文件但不在 sitemap/llms 收录；与 verify 同口径）
+      try {
+        const _c = fs.readFileSync(path.join(dir, ent.name), 'utf-8');
+        if (/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(_c)) continue;
+      } catch (e) {}
       // 排除搜索引擎验证文件：不是内容页，且 Cloudflare 会自动 .html→无扩展名 308，无法直接 200
       if (/^(googlec337c8b7a58761fe\.html|BingSiteAuth\.xml|baidu_verify_.+\.html)$/i.test(ent.name)) continue;
       // 记录页面（rel 为相对 ROOT 的路径，使用 / 分隔）
@@ -422,6 +427,9 @@ function verifyAndAutoFix() {
     let content;
     try { content = fs.readFileSync(abs, 'utf-8'); }
     catch (e) { continue; }
+
+    // 跳过 noindex 页面（与 collectPages 同口径，避免校验其链接/占位符）
+    if (/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(content)) continue;
 
     // --- 规则1：禁用旧域名 gtn.me（自动修）---
     if (content.includes(OLD_DOMAIN)) {

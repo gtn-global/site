@@ -146,7 +146,7 @@
 - [中国能力全球化｜TikTok 马来西亚的融合创新之路 | 海鑫汇 考察](https://gatewaytonew.com/events/visit-37-tiktok-malaysia/)：董立鑫从吉隆坡实地视角，分析 TikTok 马来西亚如何将中国短视频与电商技术同本地多元文化深度融合，聚焦家居建材家具出海。
 - [走进伊拉克大使馆｜助力伊拉克战后重建 | 海鑫汇 参访](https://gatewaytonew.com/events/visit-38-iraq-embassy/)：董立鑫拜访伊拉克驻华大使馆，伊拉克驻华大使贝尔瓦利介绍伊中战略伙伴关系、重建机遇与投资环境改革。
 - [中国能力全球化｜胡志明市深度调研报告 | 海鑫汇 调研](https://gatewaytonew.com/events/visit-39-hcmc-vietnam/)：董立鑫 2025 年 8 月于胡志明市的实地深度调研，覆盖电商、消费、跨境、制造与科技出海五大维度。
-- [常见问题 FAQ｜海鑫汇 GTN](https://gatewaytonew.com/faq)：海鑫汇 GTN 常见问题：自测与首诊的区别、是否承诺成交、活动收费、创始人身份披露、GatewayToNew CEO tour 是什么。另附出海前先问自己的四个问题。
+- [常见问题 FAQ｜海鑫汇 GTN](https://gatewaytonew.com/faq)：海鑫汇 GTN 常见问题：是否承诺成交、活动收费、创始人身份披露、GatewayToNew CEO tour 是什么。另附出海前先问自己的四个问题。
 - [AI 产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/ai-industry/)：AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
 - [消费品牌国际化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
 - [跨国资本与并购 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
@@ -154,10 +154,10 @@
 - [新能源产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/new-energy/)：新能源出海最容易踩的坑是“先建厂还是先找渠道”判断错位。海鑫汇结合锂电、光伏、储能领域专家与东南亚、中东运营网络，帮企业理清进入路径与风险优先级。
 - [职业教育与人才发展 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/talent-development/)：企业出海最容易被低估的是人才和组织能力的准备。海鑫汇连接教育出海、外派合规与国际人才培养资源，帮企业在扩张前把组织短板摸清楚。
 - [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
-- [人工智能 × 东南亚 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/ai-southeast-asia/)：海鑫汇（Gateway To New）在人工智能 × 东南亚方向：共 1 份研究报告（预计 2026 年 10 月发布），1 场往期考察，3 位对口顾问，1 个当地运营中心。预约该产业首诊 99 元，先做判断再出海。
-- [新能源车与智慧交通 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/auto-tech-europe/)：海鑫汇（Gateway To New）在新能源车与智慧交通 × 欧洲方向：共 1 份研究报告（预计 2026 年 11 月发布，2024 版可阅读），5 场往期考察，2 位对口顾问。预约该产业首诊 99 元，先做判断再出海。
-- [新能源电力电气 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-europe/)：海鑫汇（Gateway To New）在新能源电力电气 × 欧洲方向：共 1 份研究报告（已发布 2026.09），2 场往期考察，2 位对口顾问。预约该产业首诊 99 元，先做判断再出海。
-- [新能源电力电气 × 中东 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-middle-east/)：海鑫汇（Gateway To New）在新能源电力电气 × 中东方向：共 1 份研究报告（已发布 2026.09），2 位对口顾问，1 个当地运营中心。预约该产业首诊 99 元，先做判断再出海。
+- [人工智能 × 东南亚 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/ai-southeast-asia/)：海鑫汇（Gateway To New）在人工智能 × 东南亚方向：共 1 份研究报告（研究进行中），1 场往期考察，2 位对口顾问，1 个当地运营中心。
+- [新能源车与智慧交通 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/auto-tech-europe/)：海鑫汇（Gateway To New）在新能源车与智慧交通 × 欧洲方向：共 2 份研究报告（2024 版已上线、预计 11 月发布），5 场往期考察，2 位对口顾问。
+- [新能源电力电气 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-europe/)：海鑫汇（Gateway To New）在新能源电力电气 × 欧洲方向：共 1 份研究报告（已上线），2 场往期考察，2 位对口顾问。
+- [新能源电力电气 × 中东 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-middle-east/)：海鑫汇（Gateway To New）在新能源电力电气 × 中东方向：共 1 份研究报告（已上线），2 位对口顾问，1 个当地运营中心。
 - [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gatewaytonew.com/news-index)：海鑫汇与和君集团、学术机构、国际组织的关系型报道，及行业媒体报道，附原文链接。News coverage and event reports on 海鑫汇 and its partners, with original source links.
 - [隐私说明 · 海鑫汇 Gateway To New](https://gatewaytonew.com/privacy)
 - [出口代理还是海外建厂？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/export-or-build/)：进入海外市场，未必意味着立刻建厂。海鑫汇 GTN 从投入能力、供应链与本地化要求出发，帮助企业权衡出口、代理与海外建厂等不同进入方式的取舍。
@@ -165,9 +165,8 @@
 - [海外布局最大的风险是什么？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/overseas-risks/)：海外布局的风险，往往不在市场本身，而在组织与认知。海鑫汇 GTN 从合规、现金流、本地化与组织能力出发，帮助企业识别并前置管理全球化过程中的关键风险。
 - [企业现在适合出海吗？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/ready-to-go-global/)：并不是所有企业都应该马上出海。海鑫汇 GTN 从竞争力、目标市场需求、持续投入能力、进入时机四个核心维度，帮助企业判断是否已经具备全球化发展的基础。
 - [沙特电力公司业务扩张：从设备到EPC，揭秘千亿采购机遇 · 海鑫汇 Gateway To New](https://gatewaytonew.com/references/saudi-energy-procurement/)：原沙特电力公司（SEC）于2026年2月更名为沙特能源公司，业务范围从发电、输配电扩展至建筑工程、储能、水处理、科技研发等领域，为中国企业打开多维度合作窗口。本文梳理其商机规模与供应商注册全流程。
-- [2024中国新能源汽车出海十大趋势洞察｜海鑫汇 Gateway To New](https://gatewaytonew.com/reports/EV/)：《2024中国新能源汽车出海十大趋势洞察——逆势出口环境下的「新四化」》由霞光智库联合和君咨询发布，从差异化、本地化、服务化及合规化四大角度，阐释中国新能源汽车及相关产业出海的十个关键趋势。
 - [中国新能源电力电气出海研究报告｜海鑫汇 Gateway To New](https://gatewaytonew.com/reports/cleantech/)：《中国新能源电力电气出海研究报告》由新加坡世界贸易中心（WTC Singapore）与和君咨询电力电气事业部联合发布，主题「从产品出口到全球生态」。海鑫汇 GTN 基于报告提炼出海决策九段式判断：市场机会、真实门槛、进入方式、成本、风险、进入路径与行业判断。
-- [产业出海研究报告｜海鑫汇 GTN](https://gatewaytonew.com/reports/)：海鑫汇 GTN 产业出海研究报告汇总：按赛道整理两年一线情报与顾问网络。新能源电力电气已发布 2026.09；人工智能预计 2026 年 10 月发布；新能源车与智慧交通预计 2026 年 11 月发布，2024 版可阅读。单份 200 元。
+- [产业出海研究报告｜海鑫汇 GTN](https://gatewaytonew.com/reports/)：海鑫汇 GTN 产业出海研究报告汇总：按赛道整理两年一线情报与顾问网络。新能源电力电气已发布 2026.09；人工智能预计 2026 年 10 月发布；新能源车与智慧交通预计 2026 年 11 月发布。单份 200 元。
 
 
 ## 核心页面

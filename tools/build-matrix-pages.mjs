@@ -133,7 +133,7 @@ function buildPage(slug, region) {
   if (c.advisors.length) descParts.push(`${c.advisors.length} 位对口顾问`);
   if (c.ops.length) descParts.push(`${c.ops.length} 个当地运营中心`);
   const descBody = descParts.length ? descParts.join('，') : '正在筹备中';
-  const description = `海鑫汇（Gateway To New）在${indName} × ${region}方向：${descBody}。预约该产业首诊 99 元，先做判断再出海。`;
+  const description = `海鑫汇（Gateway To New）在${indName} × ${region}方向：${descBody}。`;
 
   const breadcrumbLd = JSON.stringify({
     '@context': 'https://schema.org',
@@ -186,7 +186,7 @@ ${breadcrumbLd}
         ${mod('05', '下一次相关活动', calHtml)}
       </div>
       <div class="desk-foot">
-        <a class="btn-submit btn-seal" href="${P}cta/book-diagnostic/index.html">预约该产业首诊 99 元</a>
+        <a class="btn-submit btn-seal" href="${P}p/project/index.html">提交出海项目</a>
       </div>
     </div>
   </section>

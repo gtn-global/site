@@ -284,7 +284,7 @@ syncEventBreakdown();
 const FOOTER_LINKS = [
   { label: '产业出海研究报告', href: 'reports/index.html' },
   { label: '出海日程', href: 'calendar.html' },
-  { label: '出海菁英荟', href: 'club.html' },
+
   { label: '来华产业考察', href: 'ceo-tour.html' },
   { label: '常见问题', href: 'faq.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
@@ -308,7 +308,7 @@ function renderFooter(){
   if(social.linkedin) extra += (extra ? '　' : '') + '领英：' + social.linkedin;
   const socialHtml = extra ? '<div class="footer-social">' + extra + '</div>' : '';
   root.innerHTML =
-    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'cta/book-diagnostic/index.html">预约首诊　99 元 / 1 小时</a></div>' +
+    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'p/project/index.html">提交出海项目</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
     '<div class="footer-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</div>' +
     '<nav class="footer-links">' + linksHtml + ' · <a href="' + prefix + 'privacy.html">隐私政策</a></nav>' +
