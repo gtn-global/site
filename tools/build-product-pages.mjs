@@ -1,0 +1,192 @@
+// 生成 6 个产品静态页 p/<slug>/index.html
+// 骨架参照 ceo-tour.html（header/footer/script 模式）+ events 深度2页的路径前缀（../../）
+// 价格/按钮只取 data/products.json；海报图与抽取文案仅在对应 webp 已生成时才显示（避免占位泄漏到公开页）
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = process.cwd();
+const products = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'products.json'), 'utf8'));
+const POSTER_DIR = path.join(ROOT, 'assets', 'posters');
+let copy = {};
+try { copy = JSON.parse(fs.readFileSync(path.join(POSTER_DIR, 'poster-copy.json'), 'utf8')); } catch (_) {}
+
+const P_SLUGS = ['chuhaiban', 'trade-growth', 'closed-door', 'online-connect', 'global-trip', 'project'];
+
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+const MODAL = `
+<div class="intent-modal" id="intentModal" hidden>
+  <div class="intent-backdrop" data-close="1"></div>
+  <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
+    <button class="intent-x" type="button" data-close="1" aria-label="关闭">✕</button>
+    <h3 class="intent-title" id="intentTitle">登记意向</h3>
+    <p class="intent-sub" id="intentSub"></p>
+    <form class="intent-form" id="intentForm">
+      <input type="hidden" name="product" id="intentProduct">
+      <input type="hidden" name="source" id="intentSource">
+      <div class="field"><label for="intentName">姓名（选填）</label><input type="text" name="name" id="intentName" placeholder="您的称呼"></div>
+      <div class="field"><label for="intentCompany">公司（选填）</label><input type="text" name="company" id="intentCompany" placeholder="公司名称"></div>
+      <div class="field full"><label for="intentContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="intentContact" placeholder="手机号或微信号" required></div>
+      <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>
+      <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交登记</button></div>
+      <p class="form-error" id="intentError" hidden></p>
+    </form>
+  </div>
+</div>`;
+
+const MODAL_SCRIPT = `
+<script>
+(function(){
+  var modal=document.getElementById('intentModal'), form=document.getElementById('intentForm');
+  var titleEl=document.getElementById('intentTitle'), subEl=document.getElementById('intentSub');
+  var productEl=document.getElementById('intentProduct'), sourceEl=document.getElementById('intentSource');
+  var errEl=document.getElementById('intentError');
+  if(!modal||!form) return;
+  function openIntent(product, source, label){
+    productEl.value=product||''; sourceEl.value=source||'product-interest';
+    titleEl.textContent=label||'登记意向'; subEl.textContent=product?('意向：'+product):'';
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var btn=form.querySelector('button[type=submit]'); if(btn){ btn.disabled=false; btn.textContent='提交登记'; }
+    modal.hidden=false;
+  }
+  window.openIntent=openIntent;
+  modal.addEventListener('click',function(e){ if(e.target.getAttribute('data-close')) modal.hidden=true; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!modal.hidden) modal.hidden=true; });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var d={ name:f.name.value, company:f.company.value, contact:f.contact.value, brief:'意向产品：'+(productEl.value||''), source:sourceEl.value };
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+      .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); if(btn) btn.textContent='已提交，我们会联系你'; f.dataset.busy=''; })
+      .catch(function(e){ console.error(e); if(errEl){ var cw=window.CONTACT_WECHAT; errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交登记'; } f.dataset.busy=''; });
+  });
+  document.querySelectorAll('button[data-product]').forEach(function(b){
+    b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
+  });
+})();
+</script>`;
+
+function pageHTML(p) {
+  const slug = p.slug;
+  const name = p.name;
+  const price = p.price_text || '';
+  const cta = p.cta || '登记意向';
+  const url = 'https://gatewaytonew.com/p/' + slug + '/';
+  const desc = p.desc || name;
+  const webp = path.join(POSTER_DIR, slug + '.webp');
+  const hasPoster = fs.existsSync(webp);
+  const posterImg = hasPoster
+    ? `<figure class="poster-figure"><img src="../../assets/posters/${slug}.webp" alt="${esc(name)}海报" loading="lazy" width="1080" height="1440"></figure>`
+    : '';
+  let copyBlock = '';
+  if (hasPoster && copy[slug]) {
+    const c = copy[slug];
+    const parts = [];
+    if (c.subtitle) parts.push(`<p class="product-sub">${esc(c.subtitle)}</p>`);
+    if (c.oneLiner) parts.push(`<p class="product-oneliner">${esc(c.oneLiner)}</p>`);
+    if (c.points && c.points.length) parts.push('<ul class="product-points">' + c.points.map(t => `<li>${esc(t)}</li>`).join('') + '</ul>');
+    copyBlock = parts.join('\n');
+  }
+
+  const ld = JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'WebPage',
+    name: name + '｜海鑫汇 GTN', description: desc, url
+  });
+
+  let bodyInner, ctaBlock, afterFooter = '';
+  if (slug === 'project') {
+    bodyInner = `
+  <div class="eyebrow">产品 / PRODUCT</div>
+  <h1 class="headline reveal">${esc(name)}</h1>
+  <div class="product-meta">
+    <div class="price">免费 · 申请制 · 按项目报价</div>
+  </div>
+  <p class="product-desc">我们提供判断与资源连接，不承诺订单或成交。每个出海项目按以下三段交付：</p>
+  <ul class="deliverables">
+    <li>国家与城市选择</li>
+    <li>本地伙伴对接</li>
+    <li>政府与园区对接</li>
+  </ul>
+  <div class="product-cta">
+    <a href="#project-form" class="btn-submit btn-seal">提交出海项目</a>
+  </div>
+  <div id="project-form"></div>`;
+    ctaBlock = '';
+    afterFooter = '';
+  } else {
+    bodyInner = `
+  <div class="eyebrow">产品 / PRODUCT</div>
+  <h1 class="headline reveal">${esc(name)}</h1>
+  ${posterImg}
+  ${copyBlock}
+  <div class="product-meta">
+    <div class="price">${esc(price)}</div>
+  </div>
+  <div class="product-cta">
+    <button type="button" class="btn-submit btn-seal" data-product="${esc(name)}" data-source="product-interest">${esc(cta)}</button>
+  </div>`;
+    ctaBlock = MODAL;
+    afterFooter = MODAL_SCRIPT;
+  }
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(name)}｜海鑫汇 GTN</title>
+<meta name="description" content="${esc(desc)}">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${url}">
+<meta property="og:title" content="${esc(name)}｜海鑫汇 GTN">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:site_name" content="Gateway To New (GTN)">
+<link rel="stylesheet" href="../../style.css">
+<link rel="canonical" href="${url}">
+<script type="application/ld+json">
+${ld}
+</script>
+<style>
+.product-meta{max-width:760px;margin:0 auto 8px;text-align:center;}
+.price{font-size:30px;font-weight:700;color:#0A1F44;margin-bottom:6px;}
+.product-cta{text-align:center;margin:18px 0 40px;}
+.product-desc{max-width:680px;margin:14px auto 18px;font-size:16px;line-height:1.7;color:#4A5568;}
+.deliverables{max-width:680px;margin:0 auto 24px;padding-left:20px;font-size:16px;line-height:1.9;color:#0A1F44;}
+.deliverables li{margin:4px 0;}
+.poster-figure{max-width:420px;margin:24px auto;}
+.poster-figure img{width:100%;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(10,31,68,.12);display:block;}
+.product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
+.product-oneliner{text-align:center;font-size:16px;color:#4A5568;margin:6px 0 14px;}
+.product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../../index.html" class="wordmark"><img src="../../assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
+    <div class="desk-clock"></div>
+    <a href="../../index.html#contact" class="subpage-back">&larr; 返回首页<span class="en">BACK TO HOME</span></a>
+  </div>
+</header>
+<section class="section">${bodyInner}
+</section>${ctaBlock}
+<footer class="footer" data-depth="2"></footer>
+<script src="../../script.js" defer></script>${afterFooter}
+</body>
+</html>
+`;
+}
+
+P_SLUGS.forEach(slug => {
+  const p = products.find(x => x.slug === slug);
+  if (!p) { console.log('SKIP (no products.json entry): ' + slug); return; }
+  const dir = path.join(ROOT, 'p', slug);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), pageHTML(p), 'utf8');
+  console.log('wrote p/' + slug + '/index.html');
+});
+console.log('done');
