@@ -7,5 +7,5 @@
   { "slug": "online-connect", "name": "线上连线", "price_text": "免费", "desc": "", "cta": "登记获取链接", "cta_type": "link", "page": "p/online-connect/index.html", "poster": "", "evidence_types": ["interview"] },
   { "slug": "global-trip", "name": "海鑫汇全球行（去海外考察）", "price_text": "2–4 万元/次，视目的地和人数", "desc": "", "cta": "预约沟通", "cta_type": "link", "page": "p/global-trip/index.html", "poster": "", "evidence_types": ["visit"] },
   { "slug": "ceo-tour", "name": "来华产业考察（CEO tour）", "price_text": "申请制，费用面谈", "desc": "", "cta": "提交企业信息", "cta_type": "link", "page": "ceo-tour.html", "poster": "", "evidence_types": ["exchange"] },
-  { "slug": "project", "name": "我有一个出海项目，想聊聊", "price_text": "按项目报价", "desc": "", "cta": "提交出海项目", "cta_type": "link", "page": "p/project/index.html", "poster": "", "evidence_types": [] }
+  { "slug": "project", "name": "我有一个出海项目，想聊聊", "price_text": "免费 · 申请制 · 按项目报价", "desc": "", "cta": "提交出海项目", "cta_type": "link", "page": "p/project/index.html", "poster": "", "evidence_types": [] }
 ]

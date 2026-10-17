@@ -82,12 +82,23 @@ function pageHTML(p) {
     ? `<figure class="poster-figure"><img src="../../assets/posters/${slug}.webp" alt="${esc(name)}海报" loading="lazy" width="1080" height="1440"></figure>`
     : '';
   let copyBlock = '';
-  if (hasPoster && copy[slug]) {
-    const c = copy[slug];
+  const c = copy[slug];
+  if (c) {
+    const isProj = slug === 'project';
+    const keep = (t) => {
+      if (!t) return false;
+      if (/【|】|待填|待确认|待定/.test(t)) return false;          // 占位片段丢弃
+      if (/元|万元/.test(t)) return false;                         // 含价格字样丢弃
+      if (isProj && /周|档|数量|周期|—\d|–\d/.test(t)) return false; // 项目页不显示周期/数量/价格档
+      return true;
+    };
     const parts = [];
-    if (c.subtitle) parts.push(`<p class="product-sub">${esc(c.subtitle)}</p>`);
-    if (c.oneLiner) parts.push(`<p class="product-oneliner">${esc(c.oneLiner)}</p>`);
-    if (c.points && c.points.length) parts.push('<ul class="product-points">' + c.points.map(t => `<li>${esc(t)}</li>`).join('') + '</ul>');
+    if (keep(c.subtitle)) parts.push(`<p class="product-sub">${esc(c.subtitle)}</p>`);
+    if (keep(c.oneLiner)) parts.push(`<p class="product-oneliner">${esc(c.oneLiner)}</p>`);
+    if (c.points && c.points.length) {
+      const lis = c.points.filter(keep).map(t => `<li>${esc(t)}</li>`).join('');
+      if (lis) parts.push('<ul class="product-points">' + lis + '</ul>');
+    }
     copyBlock = parts.join('\n');
   }
 
@@ -102,7 +113,7 @@ function pageHTML(p) {
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">${esc(name)}</h1>
   <div class="product-meta">
-    <div class="price">免费 · 申请制 · 按项目报价</div>
+    <div class="price">${esc(price)}</div>
   </div>
   <p class="product-desc">我们提供判断与资源连接，不承诺订单或成交。每个出海项目按以下三段交付：</p>
   <ul class="deliverables">
