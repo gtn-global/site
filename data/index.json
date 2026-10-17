@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17T18:07:27.159Z",
+  "generated": "2026-10-17T18:36:12.638Z",
   "event": [
     {
       "id": "TOUR-01",
@@ -1147,9 +1147,8 @@
       "id": "report-auto-tech-2024",
       "industry": "汽车智能科技",
       "title": "汽车智能科技出海研究报告",
-      "status": "2024 版已上线",
-      "version": "2024 版",
-      "url": "reports/EV/index.html",
+      "status": "预计 2026 年 11 月发布",
+      "url": "",
       "action": "留资获取",
       "countries": [],
       "regions": []
