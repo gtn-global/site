@@ -78,3 +78,7 @@
 
 # Redirect www to the bare domain: consolidate ranking signals to canonical gatewaytonew.com
 https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
+
+# 下线 cta/book-diagnostic（2026-10）：统一指向 p/project
+/cta/book-diagnostic/   /p/project/   301
+/cta/book-diagnostic/*   /p/project/   301

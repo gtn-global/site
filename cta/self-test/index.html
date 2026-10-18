@@ -164,7 +164,7 @@
         </div>
       </div>
       <div class="st-restart">
-        <a href="../book-diagnostic/index.html" class="btn-outline">预约首诊，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
+        <a href="../../p/project/index.html" class="btn-outline">预约首诊，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
         <button type="button" class="btn-seal" id="stRestart">重新测评</button>
       </div>
       <div class="st-next" id="stNext"></div>
@@ -339,18 +339,18 @@
     if (score >= 75) {
       title = '该看具体市场了';
       body = '你的准备度较高。建议预约首诊确定落地路径；也可以通过海鑫汇全球行到现场看市场。';
-      mainLabel = '预约首诊 · 99 元'; mainHref = '../book-diagnostic/index.html';
+      mainLabel = '预约首诊 · 99 元'; mainHref = '../../p/project/index.html';
       subLabel = '了解海鑫汇全球行'; subHref = '../../calendar.html';
     } else if (score >= 50) {
       title = '可以开始做具体判断了';
       body = '你已经有一定基础。建议预约首诊，用 1 小时把市场、模式和风险摊开；想系统补课，可以了解出海训练营工作坊。';
-      mainLabel = '预约首诊 · 99 元'; mainHref = '../book-diagnostic/index.html';
+      mainLabel = '预约首诊 · 99 元'; mainHref = '../../p/project/index.html';
       subLabel = '了解出海训练营工作坊'; subModal = true; subProduct = '出海训练营工作坊';
     } else {
       title = '先把基础想清楚';
       body = '你的出海准备度还在起步阶段。建议先读你所在产业的出海研究报告，再预约首诊，把方向和顺序定下来。';
       mainLabel = '查看产业出海研究报告'; mainModal = true; mainProduct = '产业出海研究报告（自测结果页）';
-      subLabel = '预约首诊 · 99 元'; subHref = '../book-diagnostic/index.html';
+      subLabel = '预约首诊 · 99 元'; subHref = '../../p/project/index.html';
     }
     var main = mainModal
       ? '<button type="button" class="btn-seal" data-source="product-interest"' + (mainProduct ? ' data-product="' + mainProduct + '"' : '') + '>' + mainLabel + '</button>'
