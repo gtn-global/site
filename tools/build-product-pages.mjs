@@ -81,7 +81,7 @@ const PROJECT_FORM = `
   <div class="field"><label for="pf-ctype">企业类型</label><select id="pf-ctype" name="company_type"><option value="">请选择</option><option value="专精特新">专精特新</option><option value="上市公司">上市公司</option><option value="其他">其他</option></select></div>
   <div class="field"><label for="pf-industry">行业</label><select id="pf-industry" name="industry"><option value="">请选择</option>${industryOpts}</select></div>
   <div class="field"><label for="pf-region">意向区域</label><select id="pf-region" name="region"><option value="">请选择</option>${regionOpts}</select></div>
-  <div class="field"><label for="pf-stage">出海阶段</label><select id="pf-stage" name="stage"><option value="">请选择</option><option value="规划期（想法阶段）">规划期（想法阶段）</option><option value="测试期（小步试水）">测试期（小步试水）</option><option value="扩张期（已有稳定出海业务）">扩张期（已有稳定出海业务）</option><option value="已落地（海外有实体/团队）">已落地（海外有实体/团队）</option></select></div>
+  <div class="field"><label for="pf-stage">出海阶段</label><select id="pf-stage" name="stage"><option value="">请选择</option><option value="planning">规划中 · 已立项</option><option value="testing">试水阶段 · 小规模测试</option><option value="scaling">扩张中 · 多国运营</option><option value="established">已成熟 · 深度本地化</option></select></div>
   <div class="field"><label for="pf-contact">联系方式 *</label><input type="text" id="pf-contact" name="contact" required placeholder="手机号或微信号"></div>
   <div class="field full"><label for="pf-project">想聊的项目（选填）</label><textarea id="pf-project" name="project" rows="4" placeholder="一句话描述你的出海项目"></textarea></div>
   <div class="field full consent"><label class="consent"><input type="checkbox" id="pf-consent" name="consent" required> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>

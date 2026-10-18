@@ -110,7 +110,7 @@ for (const { file, form } of forms) {
 console.log('\n2) 关键 select 选项数');
 const stages = [
   { file: 'p/project/index.html', selectName: 'stage', expect: 4,
-    values: ['规划期（想法阶段）', '测试期（小步试水）', '扩张期（已有稳定出海业务）', '已落地（海外有实体/团队）'] },
+    values: ['planning', 'testing', 'scaling', 'established'] },
 ];
 for (const s of stages) {
   const c = read(s.file);
