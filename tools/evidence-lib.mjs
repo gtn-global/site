@@ -131,6 +131,17 @@ export function blockHTML(slug, rel = '../../') {
   );
 }
 
+// closed-door 拆页：企业游学与产业调研、出海沙龙 两段，各自内部按同一规则排序、分别显示。
+// 统计行（合并计数）与产品页块“最近 3 条”仍由合并排序（eventsForSlug）提供，见 statsText / blockHTML。
+function closedDoorSections(rel) {
+  const tour = sortEvents(events().filter((e) => e.type === 'tour'));
+  const salon = sortEvents(events().filter((e) => e.type === 'salon'));
+  return `<h2 class="evidence-sub">企业游学与产业调研</h2>\n` +
+    tableWrap(tour.map((e) => tableRow(e, rel))) + `\n` +
+    `<h2 class="evidence-sub">出海沙龙</h2>\n` +
+    tableWrap(salon.map((e) => tableRow(e, rel)));
+}
+
 // 拆页完整 HTML（页面内直接写死内容，不依赖 JS 渲染）。
 export function splitPageHTML(slug) {
   const p = getProduct(slug);
@@ -160,6 +171,7 @@ ${ld}
 </script>
 <style>
 .evidence-stat{max-width:820px;margin:6px auto 22px;text-align:center;font-size:18px;color:#0A1F44;font-weight:600;}
+.evidence-sub{max-width:820px;margin:26px auto 10px;font-size:18px;color:#0A1F44;font-weight:700;text-align:center;}
 .back-link{max-width:820px;margin:30px auto 0;}
 .index-table{margin:0 auto;max-width:980px;}
 </style>
@@ -176,7 +188,7 @@ ${ld}
   <div class="eyebrow">实证 / EVIDENCE</div>
   <h1 class="headline reveal">${esc(h1)}</h1>
   <p class="evidence-stat">${esc(stat)}</p>
-${tableHTML(slug, rel)}
+${(slug === 'closed-door' ? closedDoorSections(rel) : tableHTML(slug, rel))}
   <p class="back-link"><a href="${esc(backHref)}">&larr; 返回 ${esc(name)}</a></p>
 </section>
 <footer class="footer" data-depth="2"></footer>
