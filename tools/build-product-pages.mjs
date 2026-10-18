@@ -3,6 +3,7 @@
 // 价格/按钮只取 data/products.json；海报图与抽取文案仅在对应 webp 已生成时才显示（避免占位泄漏到公开页）
 import fs from 'node:fs';
 import path from 'node:path';
+import { blockHTML } from './evidence-lib.mjs';
 
 const ROOT = process.cwd();
 const products = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'products.json'), 'utf8'));
@@ -108,6 +109,8 @@ function pageHTML(p) {
   });
 
   let bodyInner, ctaBlock, afterFooter = '';
+  const evidenceSlugs = ['global-trip', 'closed-door', 'chuhaiban', 'online-connect'];
+  const evidenceBlock = evidenceSlugs.includes(slug) ? blockHTML(slug, '../../') : '';
   if (slug === 'project') {
     bodyInner = `
   <div class="eyebrow">产品 / PRODUCT</div>
@@ -138,7 +141,7 @@ function pageHTML(p) {
   </div>
   <div class="product-cta">
     <button type="button" class="btn-submit btn-seal" data-product="${esc(name)}" data-source="product-interest">${esc(cta)}</button>
-  </div>`;
+  </div>${evidenceBlock}`;
     ctaBlock = MODAL;
     afterFooter = MODAL_SCRIPT;
   }
@@ -197,7 +200,44 @@ P_SLUGS.forEach(slug => {
   if (!p) { console.log('SKIP (no products.json entry): ' + slug); return; }
   const dir = path.join(ROOT, 'p', slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), pageHTML(p), 'utf8');
+  fs.writeFileSync(path.join(dir, 'index.html'), pageHTML(p).replace(/\r\n/g, '\n').replace(/\n/g, '\r\n'), 'utf8');
   console.log('wrote p/' + slug + '/index.html');
 });
+
+// 实证块：ceo-tour.html 与 reports/index.html 用标记幂等注入（不依赖一次性脚本）。
+// 首次运行若标记不存在，则在稳定锚点处插入空标记；其后每次重跑只替换标记之间的内容。
+function applyEvidenceMarkers(fileRel, block) {
+  const f = path.join(ROOT, fileRel);
+  if (!fs.existsSync(f)) { console.log('SKIP (no file): ' + fileRel); return; }
+  let html = fs.readFileSync(f, 'utf8');
+  const EOL = html.includes('\r\n') ? '\r\n' : '\n';
+  const markerRe = /<!-- evidence:start -->[\s\S]*?<!-- evidence:end -->/;
+  if (!markerRe.test(html)) {
+    let inserted = false;
+    if (fileRel === 'ceo-tour.html') {
+      html = html.replace(/(<div class="cta-form form-wrap reveal">[\s\S]*?<\/form>\s*<\/div>)(\s*)(<\/section>)/,
+        (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
+      inserted = true;
+    } else if (fileRel === 'reports/index.html') {
+      html = html.replace(/(<p class="report-note">[\s\S]*?<\/p>)(\s*)(<figure)/,
+        (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
+      inserted = true;
+    }
+    if (!inserted) { console.log('WARN no anchor for markers: ' + fileRel); return; }
+    console.log('inserted evidence markers: ' + fileRel);
+  }
+  html = html.replace(markerRe, '<!-- evidence:start -->' + EOL + block + EOL + '<!-- evidence:end -->');
+  fs.writeFileSync(f, html, 'utf8');
+  console.log('updated evidence block: ' + fileRel);
+}
+
+applyEvidenceMarkers('ceo-tour.html', blockHTML('ceo-tour', ''));
+const EOLR = '\r\n';
+const reportsBlock = '<section class="evidence-block">' + EOLR +
+  '  <h2 class="evidence-title">实证 · 已发布报告</h2>' + EOLR +
+  '  <p class="evidence-stat">新能源电力电气 · 2026.09</p>' + EOLR +
+  '  <p class="evidence-report-link"><a href="cleantech/index.html">查看报告 &rarr;</a></p>' + EOLR +
+  '</section>';
+applyEvidenceMarkers('reports/index.html', reportsBlock);
+
 console.log('done');
