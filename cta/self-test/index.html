@@ -56,15 +56,10 @@
 .self-test-demo{flex:0 0 320px;display:flex;align-items:center;justify-content:center;}
 .self-test-demo img{width:100%;height:100%;object-fit:contain;display:block;}
 
-/* 付费墙 */
-.st-paywall{margin-top:28px;display:flex;gap:22px;align-items:center;padding:22px 24px;background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:8px;}
-.st-paywall-qr{width:130px;height:130px;object-fit:cover;border-radius:6px;flex-shrink:0;}
-.st-paywall-text p{font-size:14.5px;line-height:1.8;color:var(--ink);margin:4px 0;}
-.st-paywall-text strong{color:var(--seal);}
+
 
 @media (max-width:680px){
   .section{padding:40px 20px;}
-  .st-paywall{flex-direction:column;text-align:center;}
   .self-test-methodology-demo{flex-direction:column;gap:20px;}
   .self-test-demo{flex:1 1 auto;position:static;}
   .self-test-methodology{padding:20px;}
@@ -118,7 +113,7 @@
     <div class="eyebrow">自测 · READINESS SELF-TEST</div>
     <h2 class="headline">出海健康度自测</h2>
     <p class="subline">Five dimensions · 15 questions · where you stand.</p>
-    <p class="lede">五个核心维度、15 道题目，快速判断企业当前的全球化准备度。完成后生成五维雷达图与优先行动建议——这只是通用自测，不能替代针对你具体情形的深度诊断。3分钟自测，1元获得你的出海准备度评分 + 关键短板 + 优先级建议。</p>
+    <p class="lede">五个核心维度、15 道题目，快速判断企业当前的全球化准备度。完成后生成五维雷达图与优先行动建议——这只是通用自测，不能替代针对你具体情形的深度诊断。</p>
 
     <div class="self-test-methodology-demo">
       <div class="self-test-methodology">
@@ -156,15 +151,9 @@
       <div class="st-chart"><canvas id="stCanvas" width="420" height="420"></canvas></div>
       <ul class="st-dim-list" id="stDimList"></ul>
       <div class="st-advice" id="stAdvice"></div>
-      <div class="st-paywall">
-        <img src="../donglixin_qrcode.webp" alt="扫码添加董立鑫微信支付1元并获取完整解读" class="st-paywall-qr" loading="lazy" width="716" height="715">
-        <div class="st-paywall-text">
-          <p><strong>支付 1 元，解锁完整解读</strong></p>
-          <p>扫码添加董立鑫微信，支付 1 元后发送你的自测得分截图，即可获取完整五维解读与优先行动建议。</p>
-        </div>
-      </div>
+
       <div class="st-restart">
-        <a href="../../p/project/index.html" class="btn-outline">预约首诊，针对你的情况深入判断 <span class="en">→ BOOK DIAGNOSTIC</span></a>
+        <a href="../../p/project/index.html" class="btn-outline">提交出海项目</a>
         <button type="button" class="btn-seal" id="stRestart">重新测评</button>
       </div>
       <div class="st-next" id="stNext"></div>
@@ -314,7 +303,7 @@
   }
 
   var DIM_ADVICE = {
-    clarity: '建议先明确目标市场的选择逻辑与阶段性路径，避免盲目铺开；可以先预约一次免费首诊，我们帮你梳理决策框架。',
+    clarity: '建议先明确目标市场的选择逻辑与阶段性路径，避免盲目铺开。',
     brand: '品牌在海外市场的认知度是信任的基础——建议从差异化定位和本地化内容入手，逐步建立可信度。',
     acquire: '数字化获客不应只靠一次投放，需要建立可复用的渠道体系和持续的内容机制，才能降低获客成本。',
     org: '团队跨时区、跨文化协作是出海常态，标准化流程和本地人才储备是规模化复制的关键。',
@@ -325,9 +314,9 @@
     var lowestDim = DIMENSIONS.filter(function(d){return d.name===lowest.name;})[0];
     var tip = DIM_ADVICE[lowestDim.key] || '';
     var txt = '综合得分 '+totalScore+'/100。';
-    if(totalScore>=75){ txt += '你的全球化准备度较扎实，重点应放在具体市场的进入路径与落地执行上——建议带着具体决策来预约免费首诊，直接进入深度诊断。'; }
+    if(totalScore>=75){ txt += '你的全球化准备度较扎实，重点应放在具体市场的进入路径与落地执行上。'; }
     else if(totalScore>=50){ txt += '基础已具备，但仍有明显短板。最需要补强的是「'+lowest.name+'」（'+lowest.pct+'/100）：'+tip; }
-    else { txt += '整体准备度尚浅，贸然重资产出海风险较高。核心瓶颈在「'+lowest.name+'」（'+lowest.pct+'/100）：'+tip+' 必要时预约首诊，先判断值不值得、从哪起步。'; }
+    else { txt += '整体准备度尚浅，贸然重资产出海风险较高。核心瓶颈在「'+lowest.name+'」（'+lowest.pct+'/100）：'+tip; }
     return txt;
   }
 
@@ -338,19 +327,19 @@
         subLabel, subHref, subModal=false, subProduct='';
     if (score >= 75) {
       title = '该看具体市场了';
-      body = '你的准备度较高。建议预约首诊确定落地路径；也可以通过海鑫汇全球行到现场看市场。';
-      mainLabel = '预约首诊 · 99 元'; mainHref = '../../p/project/index.html';
+      body = '你的准备度较高。也可以通过海鑫汇全球行到现场看市场。';
+      mainLabel = '提交出海项目'; mainHref = '../../p/project/index.html';
       subLabel = '了解海鑫汇全球行'; subHref = '../../calendar.html';
     } else if (score >= 50) {
       title = '可以开始做具体判断了';
-      body = '你已经有一定基础。建议预约首诊，用 1 小时把市场、模式和风险摊开；想系统补课，可以了解出海训练营工作坊。';
-      mainLabel = '预约首诊 · 99 元'; mainHref = '../../p/project/index.html';
+      body = '你已经有一定基础。想系统补课，可以了解出海训练营工作坊。';
+      mainLabel = '提交出海项目'; mainHref = '../../p/project/index.html';
       subLabel = '了解出海训练营工作坊'; subModal = true; subProduct = '出海训练营工作坊';
     } else {
       title = '先把基础想清楚';
-      body = '你的出海准备度还在起步阶段。建议先读你所在产业的出海研究报告，再预约首诊，把方向和顺序定下来。';
+      body = '你的出海准备度还在起步阶段。建议先读你所在产业的出海研究报告。';
       mainLabel = '查看产业出海研究报告'; mainModal = true; mainProduct = '产业出海研究报告（自测结果页）';
-      subLabel = '预约首诊 · 99 元'; subHref = '../../p/project/index.html';
+      subLabel = '提交出海项目'; subHref = '../../p/project/index.html';
     }
     var main = mainModal
       ? '<button type="button" class="btn-seal" data-source="product-interest"' + (mainProduct ? ' data-product="' + mainProduct + '"' : '') + '>' + mainLabel + '</button>'
