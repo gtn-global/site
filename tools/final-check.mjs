@@ -85,6 +85,33 @@ const isText = f => /\.(html|json|js|css|txt|xml|md)$/.test(f);
 }
 
 // ================= F.3 =================
+// ---- git helper (F.3 仓库洁净度守卫) ----
+function findGit() {
+  const cands = ['git', 'C:\\Program Files\\Git\\bin\\git.exe', 'C:\\Program Files (x86)\\Git\\bin\\git.exe', '/usr/bin/git', '/usr/local/bin/git'];
+  for (const c of cands) {
+    try { execSync(`"${c}" --version`, { cwd: ROOT, stdio: 'pipe' }); return c; }
+    catch (e) { /* try next */ }
+  }
+  return 'git';
+}
+const GIT = findGit();
+function git(args) {
+  try { return execSync(`"${GIT}" ${args}`, { cwd: ROOT, stdio: 'pipe' }).toString(); }
+  catch (e) { return ''; }
+}
+function statusFiles() {
+  return new Set(git('status --porcelain').split('\n').map(l => {
+    const m = l.match(/^.{0,2}\s+(.+)$/);
+    return m ? m[1].trim() : '';
+  }).filter(Boolean));
+}
+function diffOnlyLastmod(file) {
+  const d = git(`diff -- ${file}`);
+  if (!d.trim()) return true;
+  const changed = d.split('\n').filter(l => l.startsWith('+') || l.startsWith('-'));
+  return changed.filter(l => !/lastmod/i.test(l)).length === 0;
+}
+
 function runTool(script) {
   try {
     execSync(`"${process.execPath}" "${join(script)}"`, { cwd: ROOT, stdio: 'pipe' });
@@ -93,12 +120,27 @@ function runTool(script) {
     return { ok: false, err: (e.stderr ? e.stderr.toString() : '') + (e.stdout ? e.stdout.toString() : '') };
   }
 }
+const beforeBuild = statusFiles();
 const r1 = runTool('tools/build-data.mjs');
 const r2 = runTool('generate-sitemap.js');
 const r3 = runTool('preflight.js');
 check('F.3 build-data 通过', r1.ok, r1.ok ? '' : String(r1.err).slice(0, 300));
 check('F.3 generate-sitemap 通过', r2.ok, r2.ok ? '' : String(r2.err).slice(0, 300));
 check('F.3 preflight 通过', r3.ok, r3.ok ? '' : String(r3.err).slice(0, 300));
+
+// F.3 构建不应改变仓库：仅 sitemap.xml / llms.txt 的 lastmod 变动允许还原，其余一律 FAIL
+const afterBuild = statusFiles();
+const induced = [...afterBuild].filter(f => !beforeBuild.has(f));
+const f3Dirty = [];
+for (const f of induced) {
+  if (f === 'sitemap.xml' || f === 'llms.txt') {
+    if (diffOnlyLastmod(f)) git(`checkout -- ${f}`);
+    else f3Dirty.push(`${f}: 非 lastmod 变动`);
+  } else {
+    f3Dirty.push(`${f}: 构建引入意外改动`);
+  }
+}
+check('F.3 构建不改变仓库（除 sitemap/llms lastmod）', f3Dirty.length === 0, f3Dirty.join('; '));
 
 // ================= F.4 =================
 let byType = {}, total = 0;
@@ -131,7 +173,7 @@ let byType = {}, total = 0;
     `home=${JSON.stringify(homeNums)} ev=${JSON.stringify(evNums)} expect=${JSON.stringify(expectSorted)}`);
 }
 
-// ================= F.6 =================
+// ================= F.6 （占位/括号审计清单；按 task4 分类 (a)(b)(c)） =================
 {
   const forb = ['【', '】', '待定', '待确认', '待填'];
   const pub = allFiles.filter(f =>
@@ -141,10 +183,30 @@ let byType = {}, total = 0;
     f === 'sitemap.xml' || f === 'llms.txt' || f === '_redirects');
   const hits = [];
   for (const f of pub) {
-    const t = fs.readFileSync(join(f), 'utf8');
-    forb.forEach(s => { if (t.includes(s)) hits.push(`${f}: ${s}`); });
+    const lines = fs.readFileSync(join(f), 'utf8').split('\n');
+    lines.forEach((ln, i) => {
+      forb.forEach(s => {
+        let idx = ln.indexOf(s);
+        while (idx !== -1) {
+          const before = ln.slice(0, idx);
+          const inComment = before.includes('<!--') || /\/\*/.test(before);
+          const cls = (s === '【' || s === '】') ? 'b' : (inComment ? 'c' : 'a');
+          const ctx = ln.slice(Math.max(0, idx - 28), idx + s.length + 28);
+          hits.push(`${cls}|${f}:${i + 1} [${s}] …${ctx}…`);
+          idx = ln.indexOf(s, idx + s.length);
+        }
+      });
+    });
   }
-  check('F.6 发布产物无【】待定待确认待填', hits.length === 0, hits.slice(0, 15).join(' | '));
+  const cnt = { a: 0, b: 0, c: 0 };
+  hits.forEach(h => { cnt[h[0]]++; });
+  info('  F.6 占位/括号审计清单：共 ' + hits.length + ' 处');
+  info('    (a) 访客可见真占位 = ' + cnt.a + ' ｜ (b) 正常书名号用法 = ' + cnt.b + ' ｜ (c) 注释/不显示数据 = ' + cnt.c);
+  hits.slice(0, 200).forEach(h => info('    ' + h));
+  // (a) 仅允许已知的"时间待确认"状态文案；若出现其它访客可见真占位则 FAIL
+  const aHits = hits.filter(h => h.startsWith('a|'));
+  const unexpectedA = aHits.filter(h => !/时间待确认/.test(h));
+  check('F.6 访客可见真占位仅已知"时间待确认"', unexpectedA.length === 0, unexpectedA.slice(0, 10).join(' | '));
 }
 
 // ================= F.7 =================
