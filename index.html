@@ -521,6 +521,7 @@
   </div>
 </div>
 
+<script src="assets/js/src-track.js" defer></script>
 <script src="script.js" defer></script>
 <script>
 /* ---------- 选择器：产业 / 区域 + 其他产业（登记想看） ---------- */
@@ -834,7 +835,7 @@
   modal.addEventListener('click',function(e){if(e.target.getAttribute('data-close'))closeIntent();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeIntent();});
   form.addEventListener('submit',function(ev){ev.preventDefault();var f=this;if(f.dataset.busy)return;f.dataset.busy='1';var btn=f.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='提交中…';}if(errEl){errEl.hidden=true;errEl.textContent='';}
-    var d={name:f.name.value,company:f.company.value,contact:f.contact.value,brief:'意向产品：'+(productEl.value||''),source:sourceEl.value};
+    var d={name:f.name.value,company:f.company.value,contact:f.contact.value,brief: GTN_SRC_BRIEF('意向产品：'+(productEl.value||'')),source:sourceEl.value};
     fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
       .then(function(r){if(!r.ok)throw new Error('server:'+r.status);return r.json();})
       .then(function(j){if(!j.ok)throw new Error(j.error||'feishu error');if(btn)btn.textContent='已提交，我们会联系你';})

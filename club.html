@@ -99,6 +99,7 @@
 </section>
 
 <footer class="footer" data-depth="0"></footer>
+<script src="assets/js/src-track.js" defer></script>
 <script src="script.js" defer></script>
 <script>
 function submitClub(f){
@@ -113,7 +114,7 @@ function submitClub(f){
     name:f.name.value, company:f.company.value, title:f.title.value, industry:f.industry.value,
     region_interest:f.region_interest.value, stage:f.stage.value, contact:f.contact.value,
     consent:f.consent.checked ? 'yes' : 'no',
-    brief:'出海菁英荟入会申请',
+    brief: GTN_SRC_BRIEF('出海菁英荟入会申请'),
     source:'club'
   };
   fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})

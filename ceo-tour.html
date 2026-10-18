@@ -108,6 +108,7 @@
 
 <footer class="footer" data-depth="0"></footer>
 
+<script src="assets/js/src-track.js" defer></script>
 <script src="script.js" defer></script>
 <script src="assets/js/manual-lightbox.js" defer></script>
 <script>
@@ -123,7 +124,7 @@ function submitCeoTour(f){
     company:f.company.value, industry:f.industry.value, product:f.product.value,
     export_band:f.export_band.value, buyer_target:f.buyer_target.value,
     contact:f.contact.value, consent:f.consent.checked ? 'yes' : 'no',
-    brief:'来华考察参访企业申请：'+(f.buyer_target.value||''),
+    brief: GTN_SRC_BRIEF('来华考察参访企业申请：'+(f.buyer_target.value||''),
     source:'ceo-tour-company'
   };
   fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
