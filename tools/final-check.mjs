@@ -173,40 +173,34 @@ let byType = {}, total = 0;
     `home=${JSON.stringify(homeNums)} ev=${JSON.stringify(evNums)} expect=${JSON.stringify(expectSorted)}`);
 }
 
-// ================= F.6 （占位/括号审计清单；按 task4 分类 (a)(b)(c)） =================
+// ================= F.6 （严格占位/括号审计；task4 收尾，无"已知待确认"豁免） =================
 {
-  const forb = ['【', '】', '待定', '待确认', '待填'];
+  const PLAIN = ['待定', '待确认', '待填', '占位'];
+  const BK_KEYS = ['待', '主题', '日期', '姓名', '身份', '本期', '数量', '范围', '真实数字'];
   const pub = allFiles.filter(f =>
     /\.html$/.test(f) ||
     /^data\/.*\.(json|js)$/.test(f) ||
     (/^assets\//.test(f) && /\.(json|js|css)$/.test(f)) ||
     f === 'sitemap.xml' || f === 'llms.txt' || f === '_redirects');
-  const hits = [];
+  const failsHits = [];
+  let bracketTotal = 0;
   for (const f of pub) {
     const lines = fs.readFileSync(join(f), 'utf8').split('\n');
     lines.forEach((ln, i) => {
-      forb.forEach(s => {
-        let idx = ln.indexOf(s);
-        while (idx !== -1) {
-          const before = ln.slice(0, idx);
-          const inComment = before.includes('<!--') || /\/\*/.test(before);
-          const cls = (s === '【' || s === '】') ? 'b' : (inComment ? 'c' : 'a');
-          const ctx = ln.slice(Math.max(0, idx - 60), idx + s.length + 60);
-          hits.push(`${cls}|${f}:${i + 1} [${s}] …${ctx}…`);
-          idx = ln.indexOf(s, idx + s.length);
-        }
+      PLAIN.forEach(w => {
+        if (ln.includes(w)) failsHits.push(`[明文占位:${w}] ${f}:${i + 1} …${ln.trim().slice(0, 100)}…`);
+      });
+      const m = ln.match(/【([^】]*)】/g);
+      if (m) m.forEach(br => {
+        bracketTotal++;
+        const inner = br.slice(1, -1);
+        if (BK_KEYS.some(k => inner.includes(k))) failsHits.push(`[占位括号:${inner}] ${f}:${i + 1} …${ln.trim().slice(0, 100)}…`);
       });
     });
   }
-  const cnt = { a: 0, b: 0, c: 0 };
-  hits.forEach(h => { cnt[h[0]]++; });
-  info('  F.6 占位/括号审计清单：共 ' + hits.length + ' 处');
-  info('    (a) 访客可见真占位 = ' + cnt.a + ' ｜ (b) 正常书名号用法 = ' + cnt.b + ' ｜ (c) 注释/不显示数据 = ' + cnt.c);
-  hits.slice(0, 200).forEach(h => info('    ' + h));
-  // (a) 仅允许已知的"时间待确认"状态文案；若出现其它访客可见真占位则 FAIL
-  const aHits = hits.filter(h => h.startsWith('a|'));
-  const unexpectedA = aHits.filter(h => !/时间待确认/.test(h));
-  check('F.6 访客可见真占位仅已知"时间待确认"', unexpectedA.length === 0, unexpectedA.slice(0, 10).join(' | '));
+  info('  F.6 占位/括号审计（严格）：命中 ' + failsHits.length + ' 处；正常书名号【】共 ' + bracketTotal + ' 处（仅统计，不计入失败）');
+  failsHits.slice(0, 200).forEach(h => info('    ' + h));
+  check('F.6 发布产物无明文占位（待定/待确认/待填/占位）且无占位括号【…】', failsHits.length === 0, failsHits.slice(0, 12).join(' | '));
 }
 
 // ================= F.7 =================
