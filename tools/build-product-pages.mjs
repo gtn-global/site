@@ -10,10 +10,12 @@ const products = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'products.js
 const POSTER_DIR = path.join(ROOT, 'assets', 'posters');
 let copy = {};
 try { copy = JSON.parse(fs.readFileSync(path.join(POSTER_DIR, 'poster-copy.json'), 'utf8')); } catch (_) {}
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const filters = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'filters.json'), 'utf8'));
+const industryOpts = (filters.industries || []).map(x => `<option value="${esc(x.display)}">${esc(x.display)}</option>`).join('');
+const regionOpts = (filters.countries || []).map(x => `<option value="${esc(x.name)}">${esc(x.name)}</option>`).join('');
 
 const P_SLUGS = ['chuhaiban', 'trade-growth', 'closed-door', 'online-connect', 'global-trip', 'project'];
-
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const MODAL = `
 <div class="intent-modal" id="intentModal" hidden>
@@ -66,6 +68,55 @@ const MODAL_SCRIPT = `
   });
   document.querySelectorAll('button[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
+  });
+})();
+</script>`;
+
+// 出海项目表单（p/project），仅前端，提交走 /feishu-proxy（source=project-inquiry）；新字段拼进 brief。
+const PROJECT_FORM = `
+<form id="projectForm" class="project-form" novalidate>
+  <div class="field"><label for="pf-name">姓名 *</label><input type="text" id="pf-name" name="name" required></div>
+  <div class="field"><label for="pf-company">公司 *</label><input type="text" id="pf-company" name="company" required></div>
+  <div class="field"><label for="pf-title">职位 *</label><input type="text" id="pf-title" name="title" required></div>
+  <div class="field"><label for="pf-ctype">企业类型</label><select id="pf-ctype" name="company_type"><option value="">请选择</option><option value="专精特新">专精特新</option><option value="上市公司">上市公司</option><option value="其他">其他</option></select></div>
+  <div class="field"><label for="pf-industry">行业</label><select id="pf-industry" name="industry"><option value="">请选择</option>${industryOpts}</select></div>
+  <div class="field"><label for="pf-region">意向区域</label><select id="pf-region" name="region"><option value="">请选择</option>${regionOpts}</select></div>
+  <div class="field"><label for="pf-stage">出海阶段</label><select id="pf-stage" name="stage"><option value="">请选择</option><option value="规划期（想法阶段）">规划期（想法阶段）</option><option value="测试期（小步试水）">测试期（小步试水）</option><option value="扩张期（已有稳定出海业务）">扩张期（已有稳定出海业务）</option><option value="已落地（海外有实体/团队）">已落地（海外有实体/团队）</option></select></div>
+  <div class="field"><label for="pf-contact">联系方式 *</label><input type="text" id="pf-contact" name="contact" required placeholder="手机号或微信号"></div>
+  <div class="field full"><label for="pf-project">想聊的项目（选填）</label><textarea id="pf-project" name="project" rows="4" placeholder="一句话描述你的出海项目"></textarea></div>
+  <div class="field full consent"><label class="consent"><input type="checkbox" id="pf-consent" name="consent" required> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>
+  <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交出海项目</button></div>
+  <p class="form-error" id="pf-error" hidden></p>
+</form>`;
+
+const PROJECT_FORM_SCRIPT = `
+<script>
+(function(){
+  var form=document.getElementById('projectForm'); if(!form) return;
+  var errEl=document.getElementById('pf-error');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    if(!f.name.value || !f.company.value || !f.title.value || !f.contact.value || !f.consent.checked){
+      if(errEl){ errEl.textContent='请填写姓名、公司、职位、联系方式，并勾选同意隐私说明'; errEl.hidden=false; }
+      if(btn){ btn.disabled=false; btn.textContent='提交出海项目'; } f.dataset.busy=''; return;
+    }
+    var parts=[];
+    if(f.title.value) parts.push('职位:'+f.title.value);
+    if(f.company_type.value) parts.push('企业类型:'+f.company_type.value);
+    if(f.industry.value) parts.push('行业:'+f.industry.value);
+    if(f.region.value) parts.push('意向区域:'+f.region.value);
+    if(f.stage.value) parts.push('出海阶段:'+f.stage.value);
+    if(f.project.value) parts.push('项目:'+f.project.value);
+    var brief=parts.join('｜');
+    var src=(window.GTN_SRC&&window.GTN_SRC())||''; if(src) brief='[src:'+src+'] '+brief;
+    var d={ name:f.name.value, company:f.company.value, title:f.title.value, company_type:f.company_type.value, industry:f.industry.value, region:f.region.value, stage:f.stage.value, contact:f.contact.value, project:f.project.value, brief:brief, source:'project-inquiry' };
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+      .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); window.location.href='success.html'; })
+      .catch(function(e){ console.error(e); if(errEl){ errEl.textContent='提交失败，请稍后重试'; errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交出海项目'; } f.dataset.busy=''; });
   });
 })();
 </script>`;
@@ -127,9 +178,9 @@ function pageHTML(p) {
   <div class="product-cta">
     <a href="#project-form" class="btn-submit btn-seal">提交出海项目</a>
   </div>
-  <div id="project-form"></div>`;
+  ${PROJECT_FORM}`;
     ctaBlock = '';
-    afterFooter = '';
+    afterFooter = PROJECT_FORM_SCRIPT;
   } else {
     bodyInner = `
   <div class="eyebrow">产品 / PRODUCT</div>
@@ -195,6 +246,46 @@ ${ld}
 `;
 }
 
+function successHTML() {
+  const url = 'https://gatewaytonew.com/p/project/success.html';
+  const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: '提交成功｜海鑫汇 GTN', url });
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提交成功｜海鑫汇 GTN</title>
+<meta name="description" content="出海项目提交成功">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${url}">
+<meta property="og:title" content="提交成功｜海鑫汇 GTN">
+<meta property="og:description" content="出海项目提交成功">
+<meta property="og:site_name" content="Gateway To New (GTN)">
+<link rel="stylesheet" href="../../style.css">
+<link rel="canonical" href="${url}">
+<script type="application/ld+json">${ld}</script>
+<style>
+.success-wrap{max-width:620px;margin:80px auto;text-align:center;padding:0 20px;}
+.success-title{font-size:28px;font-weight:700;color:#0A1F44;margin-bottom:14px;}
+.success-meta{font-size:16px;color:#4A5568;line-height:1.8;margin-bottom:28px;}
+.actions{margin-top:10px;}
+.actions .btn-submit{display:inline-block;}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner"><a href="../../index.html" class="wordmark"><img src="../../assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a></div></header>
+<section class="section"><div class="success-wrap">
+  <h1 class="success-title">提交成功</h1>
+  <p class="success-meta">我们已收到你的出海项目信息，会尽快与你联系，请留意来电或微信。</p>
+  <div class="actions"><a href="../../index.html" class="btn-submit btn-seal">返回首页</a></div>
+</div></section>
+<footer class="footer" data-depth="2"></footer>
+<script src="../../script.js" defer></script>
+</body>
+</html>`;
+}
+
 P_SLUGS.forEach(slug => {
   const p = products.find(x => x.slug === slug);
   if (!p) { console.log('SKIP (no products.json entry): ' + slug); return; }
@@ -202,6 +293,10 @@ P_SLUGS.forEach(slug => {
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), pageHTML(p).replace(/\r\n/g, '\n').replace(/\n/g, '\r\n'), 'utf8');
   console.log('wrote p/' + slug + '/index.html');
+  if (slug === 'project') {
+    fs.writeFileSync(path.join(dir, 'success.html'), successHTML().replace(/\r\n/g, '\n').replace(/\n/g, '\r\n'), 'utf8');
+    console.log('wrote p/project/success.html');
+  }
 });
 
 // 实证块：ceo-tour.html 与 reports/index.html 用标记幂等注入（不依赖一次性脚本）。
