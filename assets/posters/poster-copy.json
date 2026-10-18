@@ -35,14 +35,14 @@
     "tags": []
   },
   "closed-door": {
-    "title": "【主题】",
+    "title": "",
     "subtitle": "",
     "oneLiner": "",
     "points": [],
     "tags": []
   },
   "online-connect": {
-    "title": "【本期主题】",
+    "title": "",
     "subtitle": "",
     "oneLiner": "",
     "points": [],
@@ -65,65 +65,5 @@
     "oneLiner": "",
     "points": [],
     "tags": []
-  },
-  "_discarded": {
-    "self-test": {
-      "price": [
-        "3 分钟，1 元"
-      ],
-      "placeholder": []
-    },
-    "chuhaiban": {
-      "price": [
-        "19800 元 / 年 ｜ 招生简章 2027 年 1 月发布"
-      ],
-      "placeholder": [
-        "课程结构：【待填】",
-        "上课方式与频次：【待填】",
-        "导师与同学：【待填：不超过两句】"
-      ]
-    },
-    "trade-growth": {
-      "price": [
-        "6800 元 / 人 ｜ 日期【待填】｜ 名额【待填：真实数字】"
-      ],
-      "placeholder": [
-        "主题：【待填：本期主题】",
-        "形式：【待填：线下或线上、地点】，1–2 天，小班",
-        "你会带走：【待填：交付物，确认后再写】",
-        "6800 元 / 人 ｜ 日期【待填】｜ 名额【待填：真实数字】"
-      ]
-    },
-    "closed-door": {
-      "price": [],
-      "placeholder": [
-        "【主题】",
-        "【日期、时间、城市与场地】",
-        "名额【待填：真实数字】"
-      ]
-    },
-    "online-connect": {
-      "price": [],
-      "placeholder": [
-        "【本期主题】",
-        "【日期、星期、时间（北京时间）】"
-      ]
-    },
-    "global-trip": {
-      "price": [
-        "3.98 万元 / 人，视目的地和人数 名额有限 ｜ 报名截止【待填】"
-      ],
-      "placeholder": [
-        "3.98 万元 / 人，视目的地和人数 名额有限 ｜ 报名截止【待填】"
-      ]
-    },
-    "project": {
-      "price": [
-        "价格总览：3–8 万元 / 项目"
-      ],
-      "placeholder": [
-        "谁来做：创始人董立鑫 + 对应产业链主【待确认】"
-      ]
-    }
   }
 }

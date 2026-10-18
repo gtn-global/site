@@ -75,7 +75,7 @@ function divItems(html, cls) {
 }
 
 function analyze(html) {
-  const title = h1(html);
+  let title = h1(html); if (PLACEHOLDER.test(title)) title = '';
   const sub = textOf(html, 'sub') || textOf(html, 'subtitle') || textOf(html, 'period') || textOf(html, 'theme-meta') || textOf(html, 'datetime') || textOf(html, 'theme-title') || textOf(html, 'report-name') || '';
   const oneLiner = textOf(html, 'value-line') || '';
   const pointsRaw = [...listItems(html, 'points'), ...listItems(html, 'agenda'), ...divItems(html, 'node-content'), ...divItems(html, 'pkg-desc')];
@@ -130,8 +130,11 @@ async function main() {
   }
   await browser.close();
   const result = { ...copy };
-  if (Object.keys(discarded).length) result._discarded = discarded;
   fs.writeFileSync(path.join(POSTER_DIR, 'poster-copy.json'), JSON.stringify(result, null, 2) + '\n', 'utf8');
+  if (Object.keys(discarded).length) {
+    const lines = Object.entries(discarded).map(([k, v]) => k + ': ' + JSON.stringify(v, null, 2)).join('\n');
+    fs.writeFileSync(path.join(ROOT, 'tools', 'poster-discarded.txt'), lines + '\n', 'utf8');
+  }
   console.log('===== build-posters 输出（每张一行）=====');
   out.forEach(l => console.log(l));
   console.log('===== 已写入 assets/posters/poster-copy.json =====');
