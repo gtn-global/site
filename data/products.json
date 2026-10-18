@@ -1,5 +1,5 @@
 [
-  { "slug": "self-test", "name": "3 分钟出海自测", "price_text": "免费 · 3 分钟", "desc": "", "cta": "开始自测", "cta_type": "link", "page": "cta/self-test/index.html", "poster": "assets/posters/self-test.webp", "evidence_types": [] },
+  { "slug": "self-test", "name": "3 分钟出海自测", "price_text": "免费 · 3 分钟", "desc": "", "cta": "开始自测", "cta_type": "link", "page": "cta/self-test/index.html", "poster": "", "evidence_types": [] },
   { "slug": "reports", "name": "产业出海研究报告", "price_text": "200 元/份", "desc": "", "cta": "留资获取", "cta_type": "link", "page": "reports/index.html", "poster": "assets/posters/reports.webp", "evidence_types": ["report"] },
   { "slug": "chuhaiban", "name": "和君商学院出海班（第 20 届）", "price_text": "19800 元/年", "desc": "", "cta": "登记意向", "cta_type": "link", "page": "p/chuhaiban/index.html", "poster": "", "evidence_types": ["forum"] },
   { "slug": "trade-growth", "name": "外贸业绩增长密码（合作伙伴精选）", "price_text": "1–2 天 · 6800 元/人", "desc": "", "cta": "登记意向", "cta_type": "link", "page": "p/trade-growth/index.html", "poster": "", "evidence_types": [] },
