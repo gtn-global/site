@@ -47,15 +47,15 @@ const isText = f => /\.(html|json|js|css|txt|xml|md)$/.test(f);
     if (!isText(f)) continue;
     const lines = fs.readFileSync(join(f), 'utf8').split('\n');
     lines.forEach((ln, i) => {
-      const tag = f.startsWith('cta/self-test/') ? known : hits;
+      const tag = hits;
       forbidden.forEach(k => { if (ln.includes(k)) tag.push(`${f}:${i + 1} ${k}`); });
       if (re99.test(ln)) tag.push(`${f}:${i + 1} 99元`);
-      if (re1.test(ln) && f.startsWith('cta/self-test/')) known.push(`${f}:${i + 1} 1元`);
+      if (re1.test(ln)) tag.push(`${f}:${i + 1} 1元`);
     });
   }
-  check('F.1 首诊/菁英荟/99元 命中为 0（排除 cta/self-test）', hits.length === 0,
+  check('F.1 首诊/菁英荟/99元 命中为 0（全站严格）', hits.length === 0,
     '非预期命中: ' + JSON.stringify(hits.slice(0, 25)));
-  info(`  [已知待处理 cta/self-test] ${known.length} 处: ` + known.slice(0, 12).join('; '));
+  info('  F.1 已对全站（含 cta/self-test）严格扫描，无豁免');
 
   // "200 元" only in "200 元/份" or "单份 200 元"
   const bad200 = [];
@@ -284,7 +284,7 @@ let byType = {}, total = 0;
 
 // ---- summary ----
 info('');
-info('豁免清单 (EXEMPT): ' + EXEMPT.join(', ') + '；cta/self-test 首诊/99/1元 = 已知待处理（不计入 F.1 失败）');
+info('豁免清单 (EXEMPT): ' + EXEMPT.join(', '));
 info(`==== 总计: ${fails === 0 ? 'ALL PASS' : fails + ' FAIL'} ====`);
 console.log(out.join('\n'));
 process.exit(fails === 0 ? 0 : 1);
