@@ -303,7 +303,7 @@ textarea{resize:vertical;min-height:88px;}
 @media(max-width:900px){.offer-cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.offer-cards{grid-template-columns:1fr;}}
 
-/* Batch D：菁英荟 1.8 / CEO tour 1.9 */
+/* Batch D：会员入口 1.8 / CEO tour 1.9 */
 .club-note{font-size:13px;color:var(--ink-faint);margin:8px 0 16px;line-height:1.6;}
 #club .subline{margin:2px 0 10px;}
 .ceo-requirements{margin:10px 0 16px;padding-left:20px;color:var(--ink-soft);font-size:14px;line-height:1.8;}
@@ -1377,7 +1377,7 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 @media(max-width:900px){.stage-cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.stage-cards{grid-template-columns:1fr;}}
 
-/* 报告 / 日程 / 菁英荟 三张入口卡 */
+/* 报告 / 日程 / 会员 三张入口卡 */
 .entry-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
 .entry-card{border:1px solid var(--rule);border-radius:16px;background:var(--paper);padding:18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;}
 .entry-card:hover{border-color:var(--seal);}
@@ -1477,7 +1477,7 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 .manual-row .btn-outline{min-height:44px;}
 .form-ok{width:100%;color:#2f6b45;font-size:13px;line-height:1.55;margin:12px 0 0;}
 
-/* 页脚按钮 / 免责小字；菁英荟三点 */
+/* 页脚按钮 / 免责小字；会员三点 */
 .footer-cta{margin-bottom:14px;}
 .footer-cta .btn-seal{min-height:44px;}
 .footer-note{margin-top:8px;font-size:var(--fs-label);opacity:.7;}
