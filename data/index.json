@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17T18:48:33.357Z",
+  "generated": "2026-10-18T06:25:08.108Z",
   "event": [
     {
       "id": "TOUR-01",
@@ -1352,6 +1352,20 @@
       "countries": [],
       "regions": [],
       "isLead": true
+    },
+    {
+      "id": "chen-junwen",
+      "name": "陈俊文（大麦哥）",
+      "role": "外贸营销咨询与企业出海实践者",
+      "url": "experts/chen-junwen/index.html",
+      "photo": "experts/chen-junwen/chen-junwen.webp",
+      "one": "深圳狼磨牙营销咨询有限公司创始人，拥有25年外贸行业经历、10年外贸营销咨询经验，累计走访考察31个海外国家市场，长期帮",
+      "industries": [
+        "国际人才"
+      ],
+      "countries": [],
+      "regions": [],
+      "isLead": false
     }
   ],
   "ops_center": [
