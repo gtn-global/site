@@ -58,7 +58,7 @@
     .report-paywall{margin:30px 0;padding:26px;border:1px dashed var(--seal);border-radius:12px;background:rgba(0,150,136,.04);text-align:center;}
     .report-paywall h3{font-size:18px;margin:0 0 8px;color:var(--ink);}
     .report-paywall p{font-size:14px;color:var(--ink-soft);margin:0 0 16px;}
-    .report-cta{display:inline-block;padding:13px 28px;background:var(--seal);color:#fff;font-weight:700;font-size:15px;border-radius:10px;text-decoration:none;}
+    .report-cta{display:inline-block;padding:13px 28px;background:var(--seal);color:#fff;font-weight:700;font-size:15px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;}
     .report-paywall .report-note{font-size:12px;color:var(--ink-faint);margin-top:12px;}
     .report-foot{margin-top:36px;padding-top:18px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint);}
     .report-foot a{color:var(--seal);text-decoration:none;}
@@ -75,6 +75,18 @@
     .report-about{margin-top:34px;padding-top:18px;border-top:2px solid var(--seal);}
     .report-about h3{font-size:17px;margin:0 0 10px;color:var(--ink);}
     .report-about p{font-size:14px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px;}
+    /* 登记意向弹窗（从 reports/index.html 原样搬入，相对路径 ../ 改为 ../../） */
+    .intent-modal[hidden]{display:none;}
+    .intent-modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px;}
+    .intent-backdrop{position:absolute;inset:0;background:rgba(8,20,32,.5);}
+    .intent-box{position:relative;width:min(440px,92vw);background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+    .intent-x{position:absolute;top:12px;right:14px;border:0;background:none;font-size:18px;color:var(--ink-soft);cursor:pointer;}
+    .intent-title{font-size:18px;margin:0 0 4px;color:var(--ink);}
+    .intent-sub{font-size:13px;color:var(--ink-soft);margin:0 0 14px;}
+    .intent-form .field{margin-bottom:10px;}
+    .intent-form .field label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:5px;}
+    .intent-form .field input[type=text]{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);font-size:14px;box-sizing:border-box;}
+    .intent-form .consent{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);}
   </style>
 </head>
 <body>
@@ -176,7 +188,7 @@
     <div class="report-paywall">
       <h3>完整报告 ¥200</h3>
       <p>完整研究报告（¥200）在本页九段式判断之外，进一步包含各赛道市场规模与增速测算、十大标杆案例深度拆解、区域市场进入清单与落地执行模板。提交联系方式后，由海鑫汇 GTN 发送报告全文。</p>
-      <a class="report-cta" href="../../cta/book-diagnostic/index.html">留资解锁全文 &rarr;</a>
+      <button type="button" class="report-cta" data-product="新能源电力电气出海研究报告" data-source="product-interest">留资解锁全文 &rarr;</button>
       <p class="report-note">留资即视为同意海鑫汇 GTN 就出海决策与您联系；全文将于确认后发送。</p>
     </div>
 
@@ -184,5 +196,59 @@
       <a href="../../index.html">&larr; 返回首页</a>
     </div>
   </main>
+
+<div class="intent-modal" id="intentModal" hidden>
+  <div class="intent-backdrop" data-close="1"></div>
+  <div class="intent-box" role="dialog" aria-modal="true" aria-label="登记意向">
+    <button class="intent-x" type="button" data-close="1" aria-label="关闭">✕</button>
+    <h3 class="intent-title" id="intentTitle">登记意向</h3>
+    <p class="intent-sub" id="intentSub"></p>
+    <form class="intent-form" id="intentForm">
+      <input type="hidden" name="product" id="intentProduct">
+      <input type="hidden" name="source" id="intentSource">
+      <div class="field"><label for="intentName">姓名（选填）</label><input type="text" name="name" id="intentName" placeholder="您的称呼"></div>
+      <div class="field"><label for="intentCompany">公司（选填）</label><input type="text" name="company" id="intentCompany" placeholder="公司名称"></div>
+      <div class="field full"><label for="intentContact">联系方式 Contact（必填）</label><input type="text" name="contact" id="intentContact" placeholder="手机号或微信号" required></div>
+      <div class="field full"><label class="consent"><input type="checkbox" id="intentConsent" required> 我已阅读并同意<a href="../../privacy.html" target="_blank" rel="noopener">隐私说明</a></label></div>
+      <div class="form-submit"><button type="submit" class="btn-submit btn-seal">提交登记</button></div>
+      <p class="form-error" id="intentError" hidden></p>
+    </form>
+  </div>
+</div>
+
+<script src="../../assets/js/src-track.js" defer></script>
+<script>
+(function(){
+  var modal=document.getElementById('intentModal'), form=document.getElementById('intentForm');
+  var titleEl=document.getElementById('intentTitle'), subEl=document.getElementById('intentSub');
+  var productEl=document.getElementById('intentProduct'), sourceEl=document.getElementById('intentSource');
+  var errEl=document.getElementById('intentError');
+  if(!modal||!form) return;
+  function openIntent(product, source, label){
+    productEl.value=product||''; sourceEl.value=source||'product-interest';
+    titleEl.textContent=label||'登记意向'; subEl.textContent=product?('意向：'+product):'';
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var btn=form.querySelector('button[type=submit]'); if(btn){ btn.disabled=false; btn.textContent='提交登记'; }
+    modal.hidden=false;
+  }
+  window.openIntent=openIntent;
+  modal.addEventListener('click',function(e){ if(e.target.getAttribute('data-close')) modal.hidden=true; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!modal.hidden) modal.hidden=true; });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this; if(f.dataset.busy) return; f.dataset.busy='1';
+    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='提交中…'; }
+    if(errEl){ errEl.hidden=true; errEl.textContent=''; }
+    var d={ name:f.name.value, company:f.company.value, contact:f.contact.value, brief: GTN_SRC_BRIEF('意向产品：'+(productEl.value||'')), source:sourceEl.value };
+    fetch('/feishu-proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw new Error('server:'+r.status); return r.json(); })
+      .then(function(j){ if(!j.ok) throw new Error(j.error||'feishu error'); if(btn) btn.textContent='已提交，我们会联系你'; f.dataset.busy=''; })
+      .catch(function(e){ console.error(e); if(errEl){ var cw=window.CONTACT_WECHAT; errEl.textContent='提交失败，请稍后重试'+(cw?('，或加微信 '+cw):''); errEl.hidden=false; } if(btn){ btn.disabled=false; btn.textContent='提交登记'; } f.dataset.busy=''; });
+  });
+  document.querySelectorAll('button[data-product]').forEach(function(b){
+    b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
+  });
+})();
+</script>
 </body>
 </html>
