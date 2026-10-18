@@ -116,8 +116,8 @@
   items.sort(function(a,b){ return String(a.date_start||'').localeCompare(String(b.date_start||'')); });
   wrap.innerHTML = items.length
     ? '<div class="cal-grid">'+items.map(card).join('')+'</div>'
-    : '<p class="cal-empty">近期暂无确认日程。登记后，有新日程第一时间通知你。'
-      + '<button type="button" class="btn-submit btn-seal cal-cta" data-product="出海行程通知" data-source="calendar-interest">登记意向</button></p>';
+    : '<p class="cal-empty">近期日程筹备中，'
+      + '<button type="button" class="btn-submit btn-seal cal-cta" data-product="日程通知" data-source="calendar-interest">登记通知</button></p>';
   wrap.querySelectorAll('.cal-cta[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'calendar-interest', b.textContent.trim()); });
   });

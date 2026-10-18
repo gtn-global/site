@@ -438,7 +438,7 @@
   <h2 class="section-title">把判断，交给真正在一线的人</h2>
   <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
   <div class="adv-wall" id="advWall"></div>
-  <p class="adv-note">30+ 位产业顾问网络，已公开 13 位，更多陆续上线。</p>
+  <p class="adv-note">30+ 位产业顾问网络，已公开 14 位，更多陆续上线。</p>
   <a class="adv-all" href="advisors-index.html">查看全部顾问 →</a>
 </section>
 
@@ -814,7 +814,7 @@
   var now=new Date().toISOString().slice(0,10);
   cal=cal.filter(function(c){return !c.date_start||c.date_start>=now;}).sort(function(a,b){return String(a.date_start||'').localeCompare(String(b.date_start||''));}).slice(0,3);
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  if(!cal.length){ box.innerHTML='<p class="desk-empty">近期暂无确认日程。登记后，有新日程第一时间通知你。</p><button type="button" class="btn-submit btn-seal" onclick="if(window.openIntent)window.openIntent(\'出海行程\',\'calendar-interest\',\'登记意向\')">登记意向</button>'; return; }
+  if(!cal.length){ box.innerHTML='<p class="desk-empty">近期日程筹备中，<button type="button" class="btn-submit btn-seal" onclick="if(window.openIntent)window.openIntent(\'日程通知\',\'calendar-interest\',\'登记通知\')">登记通知</button></p>'; return; }
   box.innerHTML=cal.map(function(c){
     var st=c.status==='planning'?'cal-status--planning':'';
     var act = (c.cta_type==='register_interest') ? '<button type="button" class="rc-act" data-product="'+esc(c.product)+'" data-source="calendar-interest">'+esc(c.cta_label||'登记意向')+'</button>'
