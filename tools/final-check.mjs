@@ -191,7 +191,7 @@ let byType = {}, total = 0;
           const before = ln.slice(0, idx);
           const inComment = before.includes('<!--') || /\/\*/.test(before);
           const cls = (s === '【' || s === '】') ? 'b' : (inComment ? 'c' : 'a');
-          const ctx = ln.slice(Math.max(0, idx - 28), idx + s.length + 28);
+          const ctx = ln.slice(Math.max(0, idx - 60), idx + s.length + 60);
           hits.push(`${cls}|${f}:${i + 1} [${s}] …${ctx}…`);
           idx = ln.indexOf(s, idx + s.length);
         }
