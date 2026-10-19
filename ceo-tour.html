@@ -39,10 +39,35 @@
   <h1 class="headline reveal">想让外国 CEO 走进你的工厂？</h1>
   <p class="subline reveal">本期来华产业考察，征集参访企业。</p>
 
-  <div class="manual-row reveal">
-    <button type="button" class="btn-outline" data-manual-open>查看 CEO tour 手册（英文版）</button>
+  <style>
+    .manual-viewer{margin:18px auto 4px;max-width:100%;border:1px solid var(--line,#e3e0d8);border-radius:14px;overflow:hidden;background:var(--card,#fff);box-shadow:0 6px 24px rgba(20,24,31,.06);}
+    .manual-viewer__bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line,#e3e0d8);}
+    .manual-viewer__title{font-weight:600;font-size:15px;color:var(--ink,#1a1d23);}
+    .manual-viewer__count{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft,#6b6f76);}
+    .manual-viewer__stage{position:relative;display:flex;align-items:center;justify-content:center;background:#0f1115;min-height:320px;}
+    .manual-viewer__img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;margin:0 auto;}
+    .manual-viewer__nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .manual-viewer__nav:hover{background:rgba(0,0,0,.65);}
+    .manual-viewer__nav:disabled{opacity:.25;cursor:default;}
+    .manual-viewer__prev{left:10px;}
+    .manual-viewer__next{right:10px;}
+    .manual-viewer__dots{display:flex;gap:8px;justify-content:center;padding:12px;}
+    .manual-viewer__dot{width:9px;height:9px;border-radius:50%;border:none;background:var(--line,#cfccc4);cursor:pointer;padding:0;}
+    .manual-viewer__dot.is-active{background:var(--seal,#b3122b);width:22px;border-radius:5px;}
+  </style>
+  <div class="manual-viewer reveal" id="ceoManual">
+    <div class="manual-viewer__bar">
+      <span class="manual-viewer__title">CEO tour 手册（英文版）</span>
+      <span class="manual-viewer__count" id="manualCount">1 / 6</span>
+    </div>
+    <div class="manual-viewer__stage" id="manualStage">
+      <button type="button" class="manual-viewer__nav manual-viewer__prev" id="manualPrev" aria-label="上一页">‹</button>
+      <img class="manual-viewer__img" id="manualImg" src="CEO_tour_manual/webp/1.webp" alt="CEO tour 手册 第 1 页（英文）">
+      <button type="button" class="manual-viewer__nav manual-viewer__next" id="manualNext" aria-label="下一页">›</button>
+    </div>
+    <div class="manual-viewer__dots" id="manualDots"></div>
+    <p class="manual-hint">手册为英文版，面向外国 CEO。</p>
   </div>
-  <p class="manual-hint">手册为英文版，面向外国 CEO。</p>
 
   <p class="lede reveal">GatewayToNew CEO tour 邀请外国企业家来华做产业考察。每期聚焦一个产业、一个来源国或地区，为期 3–4 天。参访企业需具备真实出口能力、英文资料和专人对接。申请经人工筛选，通过后再确认对接服务内容与费用。合作参访企业会在活动中如实标注，买家联系方式不对外出售。</p>
 
@@ -110,7 +135,43 @@
 
 <script src="assets/js/src-track.js" defer></script>
 <script src="script.js" defer></script>
-<script src="assets/js/manual-lightbox.js" defer></script>
+<script>
+(function(){
+  var base='CEO_tour_manual/webp/', ext='webp', count=6, idx=0;
+  var img=document.getElementById('manualImg'),
+      prev=document.getElementById('manualPrev'),
+      next=document.getElementById('manualNext'),
+      countEl=document.getElementById('manualCount'),
+      dotsWrap=document.getElementById('manualDots'),
+      stage=document.getElementById('manualStage');
+  if(!img||!stage) return;
+  function paint(){
+    img.src=base+(idx+1)+'.'+ext;
+    img.alt='CEO tour 手册 第 '+(idx+1)+' 页（英文）';
+    countEl.textContent=(idx+1)+' / '+count;
+    prev.disabled=idx<=0; next.disabled=idx>=count-1;
+    Array.prototype.forEach.call(dotsWrap.children,function(d,i){ d.classList.toggle('is-active', i===idx); });
+  }
+  function go(i){ if(i<0||i>=count) return; idx=i; paint(); }
+  prev.addEventListener('click',function(){ go(idx-1); });
+  next.addEventListener('click',function(){ go(idx+1); });
+  for(var i=0;i<count;i++){
+    var b=document.createElement('button');
+    b.type='button'; b.className='manual-viewer__dot'; b.setAttribute('aria-label','第 '+(i+1)+' 页');
+    (function(n){ b.addEventListener('click',function(){ go(n); }); })(i);
+    dotsWrap.appendChild(b);
+  }
+  var sx=0,sy=0,active=false;
+  stage.addEventListener('touchstart',function(e){ var t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; active=true; },{passive:true});
+  stage.addEventListener('touchend',function(e){
+    if(!active) return; active=false;
+    var t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy;
+    if(Math.abs(dx)<40||Math.abs(dx)<Math.abs(dy)) return;
+    go(dx<0?idx+1:idx-1);
+  },{passive:true});
+  paint();
+})();
+</script>
 <script>
 function submitCeoTour(f){
   if(f.dataset.busy) return false;

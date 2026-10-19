@@ -28,6 +28,11 @@
 .product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
 .product-oneliner{text-align:center;font-size:16px;color:#4A5568;margin:6px 0 14px;}
 .product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
+.product-banner-click{max-width:860px;margin:8px auto 4px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
+.product-banner-click img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-banner-click:hover{transform:translateY(-2px);}
+.product-banner-click:focus-visible{outline:3px solid #0A1F44;outline-offset:4px;}
+.hero-hint{text-align:center;font-size:14px;color:#4A5568;margin:4px auto 26px;}
 </style>
 </head>
 <body>
@@ -40,7 +45,7 @@
 </header>
 <section class="section">
   <div class="eyebrow">产品 / PRODUCT</div>
-  <h1 class="headline reveal">外贸业绩增长密码（合作伙伴精选）</h1>
+  <h1 class="headline reveal">外贸业绩增长密码<br>（合作伙伴精选）</h1>
   
   <p class="product-oneliner">1–2 天，围绕一个具体的出海课题</p>
   <div class="product-meta">
@@ -49,6 +54,10 @@
   <div class="product-cta">
     <button type="button" class="btn-submit btn-seal" data-product="外贸业绩增长密码（合作伙伴精选）" data-source="product-interest">登记意向</button>
   </div>
+  <figure class="product-banner-click" id="heroIntent" role="button" tabindex="0" aria-label="点击图片登记意向" data-product="外贸业绩增长密码（合作伙伴精选）" data-source="product-interest">
+    <img src="横幅-出海训练营工作坊@2x.png" alt="出海训练营工作坊">
+  </figure>
+  <p class="hero-hint">点击上方图片，登记意向</p>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
@@ -102,6 +111,12 @@
   document.querySelectorAll('button[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
   });
+  var hero=document.getElementById('heroIntent');
+  if(hero){
+    function openFromHero(){ openIntent(hero.getAttribute('data-product'), hero.getAttribute('data-source')||'product-interest', '登记意向'); }
+    hero.addEventListener('click', openFromHero);
+    hero.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFromHero(); } });
+  }
 })();
 </script>
 </body>

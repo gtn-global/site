@@ -28,6 +28,15 @@
 .product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
 .product-oneliner{text-align:center;font-size:16px;color:#4A5568;margin:6px 0 14px;}
 .product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
+.product-figure{max-width:860px;margin:44px auto;}
+.product-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.evidence-recent a{text-decoration:none;}
+.evidence-recent a:hover{text-decoration:none;}
+.product-banner-click{max-width:860px;margin:28px auto 4px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
+.product-banner-click img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-banner-click:hover{transform:translateY(-2px);}
+.product-banner-click:focus-visible{outline:3px solid #0A1F44;outline-offset:4px;}
+.hero-hint{text-align:center;font-size:14px;color:#4A5568;margin:4px auto 26px;}
 </style>
 </head>
 <body>
@@ -41,7 +50,9 @@
 <section class="section">
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">线下闭门小场</h1>
-  
+  <figure class="product-figure">
+    <img src="closed-door.png" alt="线下闭门小场">
+  </figure>
   
   <div class="product-meta">
     <div class="price">费用以每场公布为准</div>
@@ -55,9 +66,21 @@
 <li><a href="../../events/tour-04-neway/index.html">走进纽威股份（603699.SH）｜中国工业阀门龙头企业全球化实践考察</a> <span class="evidence-date">2026-06</span></li>
 <li><a href="../../events/tour-01-peidi/index.html">走进佩蒂股份（300673.SZ）中国宠物食品龙头全球化布局考察｜海鑫汇企业游学</a> <span class="evidence-date">2026-06</span></li>
 <li><a href="../../events/tour-03-manycore/index.html">走进群核科技（00068.HK）｜杭州科技六小龙与AI产业全球化实践考察</a> <span class="evidence-date">2026-05</span></li>
+<li><a href="../../events/tour-05-zhipu/index.html">走进智谱Z.AI（02513.HK）｜清华系大模型企业GLM系列技术与出海视角</a> <span class="evidence-date">2026-04</span></li>
+<li><a href="../../events/tour-07-beyondsoft/index.html">走进博彦科技（002649.SZ）｜AI+数智技术赋能中国企业出海破局</a> <span class="evidence-date">2025-10</span></li>
+<li><a href="../../events/salon-04-pakistan/index.html">北京·中国企业去巴基斯坦怎么落地？南亚市场的机会、门槛与合规要点</a> <span class="evidence-date">2025-12</span></li>
+<li><a href="../../events/salon-09-hejun/index.html">北京·2025 全球市场展望：出海企业的人才战略与区域机会</a> <span class="evidence-date">2025-07</span></li>
+<li><a href="../../events/salon-07-hongkong/index.html">香港·新能源企业出海的资本路径：国际资本市场如何看中国新能源</a> <span class="evidence-date">2025-07</span></li>
+<li><a href="../../events/salon-16-fuzhou/index.html">福州·跨境电商出海联动：企业如何借力平台打通海外市场</a> <span class="evidence-date">2025-03</span></li>
+<li><a href="../../events/salon-15-ganzhou/index.html">赣州·企业出海：家具家居产业如何打开海外渠道</a> <span class="evidence-date">2025-03</span></li>
+<li><a href="../../events/salon-14-hangzhou/index.html">杭州·企业出海：跨境电商与数字贸易的全球化打法</a> <span class="evidence-date">2025-03</span></li>
+<li><a href="../../events/salon-13-ningbo/index.html">宁波·制造企业出海：从代工到自建海外渠道的实战路径</a> <span class="evidence-date">2025-03</span></li>
   </ul>
-  <a class="evidence-more" href="../../evidence/closed-door/index.html">全部 12 场 →</a>
 </section>
+  <figure class="product-banner-click" id="heroIntent" role="button" tabindex="0" aria-label="点击图片申请参加" data-product="线下闭门小场" data-source="product-interest">
+    <img src="横幅-出海闭门小场@2x.png" alt="线下闭门小场">
+  </figure>
+  <p class="hero-hint">点击上方图片，申请参加</p>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
@@ -111,6 +134,12 @@
   document.querySelectorAll('button[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
   });
+  var hero=document.getElementById('heroIntent');
+  if(hero){
+    function openFromHero(){ openIntent(hero.getAttribute('data-product'), hero.getAttribute('data-source')||'product-interest', '申请参加'); }
+    hero.addEventListener('click', openFromHero);
+    hero.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFromHero(); } });
+  }
 })();
 </script>
 </body>

@@ -28,6 +28,15 @@
 .product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
 .product-oneliner{text-align:center;font-size:16px;color:#4A5568;margin:6px 0 14px;}
 .product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
+.product-figure{max-width:860px;margin:40px auto 36px;}
+.product-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-banner-bottom{max-width:860px;margin:40px auto 8px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
+.product-banner-bottom img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-banner-bottom:hover{transform:translateY(-2px);}
+.product-banner-bottom:focus-visible{outline:3px solid #0A1F44;outline-offset:4px;}
+.hero-hint{text-align:center;font-size:14px;color:#4A5568;margin:4px auto 26px;}
+.evidence-recent a{text-decoration:none;}
+.evidence-recent a:hover{text-decoration:none;}
 </style>
 </head>
 <body>
@@ -41,23 +50,33 @@
 <section class="section">
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">线上连线</h1>
-  
-  
-  <div class="product-meta">
-    <div class="price">免费</div>
-  </div>
-  <div class="product-cta">
-    <button type="button" class="btn-submit btn-seal" data-product="线上连线" data-source="product-interest">登记获取链接</button>
-  </div><section class="evidence-block">
+  <figure class="product-figure">
+    <img src="online-connect.png" alt="线上连线">
+  </figure>
+<section class="evidence-block">
   <h2 class="evidence-title">实证 · 出海访谈</h2>
   <p class="evidence-stat">出海访谈 8 期</p>
   <ul class="evidence-recent">
 <li><a href="../../events/interview-05-overseas-chenjunwen/index.html">中国企业出海如何避坑？28个海外市场一线考察的实战结论</a> <span class="evidence-date">2025-10</span></li>
 <li><a href="../../events/interview-07-pakistan/index.html">巴基斯坦：中国企业的南亚支点怎么打？</a> <span class="evidence-date">2025-09</span></li>
 <li><a href="../../events/interview-06-global-7plays/index.html">新加坡：中国企业的全球市场七种打法怎么选？</a> <span class="evidence-date">2025-08</span></li>
+<li><a href="../../events/interview-08-thailand-narrowgate/index.html">泰国：中国企业的东南亚本地化经营怎么落地？</a> <span class="evidence-date">2025-07</span></li>
+<li><a href="../../events/interview-04-angola/index.html">安哥拉：新能源全产业链投资非洲的门槛 报告收录</a> <span class="evidence-date">2025-04</span></li>
+<li><a href="../../events/interview-03-africa/index.html">喀麦隆：中国企业的非洲支点怎么打？</a> <span class="evidence-date">2025-04</span></li>
+<li><a href="../../events/interview-02-malaysia/index.html">马来西亚：中国企业的东南亚支点怎么打？</a> <span class="evidence-date">2025-03</span></li>
+<li><a href="../../events/interview-01-global-logistics/index.html">环世物流：中国物流企业如何服务中国企业出海？</a> <span class="evidence-date">2025-03</span></li>
   </ul>
-  <a class="evidence-more" href="../../evidence/online-connect/index.html">全部 8 期 →</a>
 </section>
+  <figure class="product-banner-bottom" id="heroIntent" role="button" tabindex="0" aria-label="点击图片登记获取链接" data-product="线上连线" data-source="product-interest">
+    <img src="横幅-海鑫汇出海连线@2x.png" alt="海鑫汇出海连线">
+  </figure>
+  <p class="hero-hint">点击上方图片，登记获取链接</p>
+  <div class="product-meta">
+    <div class="price">每周六晚</div>
+  </div>
+  <div class="product-cta">
+    <button type="button" class="btn-submit btn-seal" data-product="线上连线" data-source="product-interest">登记获取链接</button>
+  </div>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
@@ -111,6 +130,12 @@
   document.querySelectorAll('button[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
   });
+  var hero=document.getElementById('heroIntent');
+  if(hero){
+    function openFromHero(){ openIntent(hero.getAttribute('data-product'), hero.getAttribute('data-source')||'product-interest', '登记获取链接'); }
+    hero.addEventListener('click', openFromHero);
+    hero.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFromHero(); } });
+  }
 })();
 </script>
 </body>

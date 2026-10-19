@@ -106,15 +106,15 @@
 - [走进智谱Z.AI（02513.HK）｜清华系大模型企业GLM系列技术与出海视角｜海鑫汇 Gateway To New](https://gatewaytonew.com/events/tour-05-zhipu/)：海鑫汇GTN联合和勤易专精特新企业家俱乐部走进智谱AI北京总部，解析GLM系列大模型技术进展与中国AI企业全球化路径。
 - [走进博彦科技（002649.SZ）｜AI+数智技术赋能中国企业出海破局｜海鑫汇 Gateway To New](https://gatewaytonew.com/events/tour-07-beyondsoft/)：海鑫汇GTN联合UIBE阿波罗投资俱乐部走进博彦科技全球总部，聚焦AI数智技术赋能、企业出海破局与跨境投资赛道三大议题。
 - [海鑫汇活动总50期｜走进佩蒂股份（300673.SZ）跨境出海专题沙龙 | 海鑫汇 企业游学](https://gatewaytonew.com/events/tour-08-petty-stock/)：和君商学院出海班·海鑫汇总第50期企业游学，6月25日杭州，走进佩蒂股份探讨合规经营、产能布局与AI赋能。
-- [2012·斯图加特：一个仓库，让我提前十年看到中国物流的未来 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/)：海鑫汇海外产业考察实录：走进德国 Roto 斯图加特总部与自动化仓库，从看产品到看体系，建立判断企业全球化能力的坐标。
-- [2012 德国行外记：科隆与海德堡的两次停留 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-02-2012-cologne-heidelberg-germany/)：海鑫汇海外考察随笔：2012 年德国之行中，科隆与海德堡两站不是产业考察，而是一次完整国家认知里的历史与教育侧写。
+- [一个德国仓库，让我看见制造业真正的竞争力 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-01-2012-roto-stuttgart-germany/)：海鑫汇海外产业考察实录：在 Roto 斯图加特总部，一个自动化仓库改变了作者对企业竞争力的理解——从看产品，到看支撑企业持续交付的体系能力。
+- [看懂德国，不能只看工厂：科隆与海德堡给我的另一种启发 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-02-2012-cologne-heidelberg-germany/)：2012 年德国之行，纽伦堡展会之外的科隆与海德堡两站，让我看见支撑德国制造的另一种东西：贸易网络、长期建设的能力，以及教育怎么变成产业。
 - [马尔代夫：一个国家把"一岛一酒店"做成了整个经济体的商业模式 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-03-2013-male-maldives/)：马尔代夫：一个国家把
 - [吉隆坡：一座由华人矿工"挖"出来的城市 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-04-2014-kuala-lumpur-malaysia/)：吉隆坡：一座由华人矿工
 - [2014 德国纽伦堡 FENSTERBAU FRONTALE：从德国技术、标准到制造体系 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-05-2014-fensterbau-germany/)：2014 德国纽伦堡 FENSTERBAU FRONTALE：从德国技术、标准到制造体系
 - [斯图加特：第二次回到诺托，和一座"养马场"长出来的德国工业心脏 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-06-2014-stuttgart-germany/)：斯图加特：第二次回到诺托，和一座
 - [布鲁塞尔：一座总部比首都更多的城市 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-07-2015-brussels-belgium/)：布鲁塞尔：一座总部比首都更多的城市
 - [阿姆斯特丹：一座用风车填海造出来的金融首都 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-08-2015-amsterdam-netherlands/)：阿姆斯特丹：一座用风车填海造出来的金融首都
-- [巴黎：一座连"修文物"都做成产业标准的城市 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-09-2015-paris-france/)：巴黎：一座连
+- [巴黎给我的一课：什么该坚守，什么该改变 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-09-2015-paris-france/)：巴黎：一座连
 - [卢森堡：一个国家小到可以一天逛完，却装下了半个欧盟 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-10-2015-luxembourg/)：卢森堡：一个国家小到可以一天逛完，却装下了半个欧盟
 - [冲绳：一个把"海洋"做成产业、把"现金"活成信任的地方 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-11-2015-okinawa-japan/)：冲绳：一个把
 - [2016 年，又一次纽伦堡——诺托之夜，和这座城市的前世今生 | 海鑫汇海外考察](https://gatewaytonew.com/events/visit-12-2016-nuremberg-germany/)：2016 年，又一次纽伦堡——诺托之夜，和这座城市的前世今生
@@ -164,11 +164,18 @@
 - [新能源电力电气 × 中东 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/matrix/new-energy-middle-east/)：海鑫汇（Gateway To New）在新能源电力电气 × 中东方向：共 1 份研究报告（已上线），2 位对口顾问，1 个当地运营中心。
 - [海鑫汇相关新闻报道 · 海鑫汇内容中心](https://gatewaytonew.com/news-index)：海鑫汇与和君集团、学术机构、国际组织的关系型报道，及行业媒体报道，附原文链接。News coverage and event reports on 海鑫汇 and its partners, with original source links.
 - [和君商学院出海班（第 20 届）｜海鑫汇 GTN](https://gatewaytonew.com/p/chuhaiban/)：和君商学院出海班（第 20 届）
+- [和君商学院出海班 第20届 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/chuhaiban/%E5%92%8C%E5%90%9B%E5%95%86%E5%AD%A6%E9%99%A2%E5%87%BA%E6%B5%B7%E7%8F%AD_%E7%AC%AC20%E5%B1%8A_%E6%B5%B7%E6%8A%A5.html)
 - [线下闭门小场｜海鑫汇 GTN](https://gatewaytonew.com/p/closed-door/)：线下闭门小场
+- [海鑫汇·出海沙龙 场次模板 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/closed-door/%E5%87%BA%E6%B5%B7%E6%B2%99%E9%BE%99_%E5%9C%BA%E6%AC%A1%E6%A8%A1%E6%9D%BF_%E6%B5%B7%E6%8A%A5.html)
 - [海鑫汇全球行（去海外考察）｜海鑫汇 GTN](https://gatewaytonew.com/p/global-trip/)：海鑫汇全球行（去海外考察）
 - [线上连线｜海鑫汇 GTN](https://gatewaytonew.com/p/online-connect/)：线上连线
+- [海鑫汇·出海连线 系列模板 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/online-connect/%E5%87%BA%E6%B5%B7%E7%BA%BF%E4%B8%8A%E8%BF%9E%E7%BA%BF_%E7%B3%BB%E5%88%97%E6%A8%A1%E6%9D%BF_%E6%B5%B7%E6%8A%A5.html)
 - [我有一个出海项目，想聊聊｜海鑫汇 GTN](https://gatewaytonew.com/p/project/)：我有一个出海项目，想聊聊
+- [出海决策陪跑 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/project/%E5%87%BA%E6%B5%B7%E5%86%B3%E7%AD%96%E9%99%AA%E8%B7%91_%E6%B5%B7%E6%8A%A5.html)
+- [中国新能源电力电气出海研究报告 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/researchreport/%E4%BA%A7%E4%B8%9A%E5%87%BA%E6%B5%B7%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A_%E7%B3%BB%E5%88%97%E6%B5%B7%E6%8A%A5_B.html)
+- [3分钟出海自测 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/self-testing/3%E5%88%86%E9%92%9F%E5%87%BA%E6%B5%B7%E8%87%AA%E6%B5%8B_%E6%B5%B7%E6%8A%A5.html)
 - [外贸业绩增长密码（合作伙伴精选）｜海鑫汇 GTN](https://gatewaytonew.com/p/trade-growth/)：外贸业绩增长密码（合作伙伴精选）
+- [出海训练营工作坊 | 海鑫汇 Gateway To New](https://gatewaytonew.com/p/trade-growth/%E5%87%BA%E6%B5%B7%E8%AE%AD%E7%BB%83%E8%90%A5%E5%B7%A5%E4%BD%9C%E5%9D%8A_%E6%B5%B7%E6%8A%A5.html)
 - [隐私说明 · 海鑫汇 Gateway To New](https://gatewaytonew.com/privacy)
 - [出口代理还是海外建厂？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/export-or-build/)：进入海外市场，未必意味着立刻建厂。海鑫汇 GTN 从投入能力、供应链与本地化要求出发，帮助企业权衡出口、代理与海外建厂等不同进入方式的取舍。
 - [第一个海外市场应该选择哪里？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/questions/first-market/)：选择第一个海外市场，往往比进入多个市场更重要。海鑫汇 GTN 从产业属性、资源条件、目标市场需求与本地化要求出发，帮助企业判断最合适作为全球化起点的区域。

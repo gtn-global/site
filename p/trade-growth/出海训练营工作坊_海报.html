@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出海训练营工作坊 | 海鑫汇 Gateway To New</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8e4de;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* 海报本体 3:4 = 1080×1440 */
+    .poster {
+      width: 1080px;
+      height: 1440px;
+      background: #F8F5F0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(10, 31, 68, 0.12);
+      display: flex;
+      flex-direction: column;
+      padding: 64px 72px 48px;
+    }
+
+    /* 顶部品牌条 */
+    .brand-bar {
+      font-size: 22px;
+      font-weight: 500;
+      color: #0A1F44;
+      letter-spacing: 0.5px;
+      margin-bottom: 56px;
+    }
+
+    /* 主标题 */
+    .main-title {
+      font-size: 72px;
+      font-weight: 700;
+      color: #0A1F44;
+      line-height: 1.15;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-family: "Songti SC", "SimSun", "Noto Serif SC", serif;
+    }
+
+    /* 一句话价值 */
+    .value-line {
+      font-size: 28px;
+      color: #4A5568;
+      font-weight: 400;
+      margin-bottom: 72px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 要点区 + 几何图形 */
+    .content-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      flex: 1;
+    }
+
+    .points {
+      list-style: none;
+      max-width: 560px;
+    }
+
+    .points li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      font-size: 26px;
+      color: #0A1F44;
+      line-height: 1.45;
+    }
+
+    .points li .dot {
+      width: 18px;
+      height: 18px;
+      background: #C9A227;
+      margin-right: 16px;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* 抽象几何图形 */
+    .geo {
+      width: 280px;
+      height: 280px;
+      position: relative;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .geo .sq {
+      position: absolute;
+      background: #0A1F44;
+    }
+
+    .geo .sq1 { width: 88px; height: 88px; top: 0; left: 48px; }
+    .geo .sq2 { width: 72px; height: 72px; top: 72px; left: 120px; }
+    .geo .sq3 { width: 64px; height: 64px; top: 148px; left: 56px; }
+    .geo .sq4 { width: 56px; height: 56px; top: 168px; left: 152px; }
+    .geo .sq5 { width: 48px; height: 48px; top: 96px; left: 24px; }
+    .geo .gold { width: 52px; height: 52px; top: 16px; right: 16px; background: #C9A227; position: absolute; }
+
+    .geo .line {
+      position: absolute;
+      background: #0A1F44;
+      opacity: 0.35;
+    }
+    .geo .l1 { width: 1px; height: 180px; top: 40px; left: 100px; }
+    .geo .l2 { width: 160px; height: 1px; top: 120px; left: 40px; }
+    .geo .l3 { width: 1px; height: 100px; top: 140px; left: 180px; }
+
+    /* 分隔线 */
+    .divider {
+      height: 1px;
+      background: #0A1F44;
+      opacity: 0.25;
+      margin-bottom: 40px;
+    }
+
+    /* 价格与时间 */
+    .price-row {
+      font-size: 30px;
+      font-weight: 600;
+      color: #0A1F44;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+
+    /* 行动区 */
+    .cta {
+      font-size: 26px;
+      color: #0A1F44;
+      margin-bottom: 48px;
+    }
+
+
+
+    /* 底部固定小字 */
+    .footer {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 36px;
+      font-size: 16px;
+      color: #6B7280;
+      letter-spacing: 0.3px;
+      text-align: left;
+    }
+
+    /* 打印友好 */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .poster {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://gatewaytonew.com/p/trade-growth/%E5%87%BA%E6%B5%B7%E8%AE%AD%E7%BB%83%E8%90%A5%E5%B7%A5%E4%BD%9C%E5%9D%8A_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="出海训练营工作坊 | 海鑫汇 Gateway To New">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://gatewaytonew.com/p/trade-growth/%E5%87%BA%E6%B5%B7%E8%AE%AD%E7%BB%83%E8%90%A5%E5%B7%A5%E4%BD%9C%E5%9D%8A_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "出海训练营工作坊 | 海鑫汇 Gateway To New",
+  "description": "",
+  "url": ""
+}
+]
+</script>
+</head>
+<body>
+  <div class="poster">
+    <!-- 顶部品牌条 -->
+    <div class="brand-bar">海鑫汇 Gateway To New</div>
+
+    <!-- 主标题 -->
+    <h1 class="main-title">出海训练营工作坊</h1>
+
+    <!-- 一句话价值 -->
+    <p class="value-line">1–2 天，围绕一个具体的出海课题</p>
+
+    <!-- 要点 + 几何视觉 -->
+    <div class="content-row">
+      <ul class="points">
+        <li>
+          <span class="dot"></span>
+          <span>主题：【待填：本期主题】</span>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <span>形式：【待填：线下或线上、地点】，1–2 天，小班</span>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <span>你会带走：【待填：交付物，确认后再写】</span>
+        </li>
+      </ul>
+
+      <!-- 抽象拼合方块，象征「把课题拆开、再拼回去」 -->
+      <div class="geo">
+        <div class="sq sq1"></div>
+        <div class="sq sq2"></div>
+        <div class="sq sq3"></div>
+        <div class="sq sq4"></div>
+        <div class="sq sq5"></div>
+        <div class="gold"></div>
+        <div class="line l1"></div>
+        <div class="line l2"></div>
+        <div class="line l3"></div>
+      </div>
+    </div>
+
+    <!-- 分隔线 -->
+    <div class="divider"></div>
+
+    <!-- 价格与时间 -->
+    <div class="price-row">6800 元 / 人 ｜ 日期【待填】｜ 名额【待填：真实数字】</div>
+
+    <!-- 行动区 -->
+    <div class="cta">扫码登记，登记后我们会联系你确认</div>
+
+
+
+
+    <!-- 底部固定小字 -->
+    <div class="footer">
+      海鑫汇 Gateway To New · gatewaytonew.com · 我们提供判断与资源连接，不承诺订单或成交。
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>和君商学院出海班 第20届 | 海鑫汇 Gateway To New</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8e4de;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* 海报本体 1080×1440 */
+    .poster {
+      width: 1080px;
+      height: 1440px;
+      background: #F8F5F0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(10, 31, 68, 0.12);
+      display: flex;
+      flex-direction: column;
+      padding: 64px 72px 48px;
+    }
+
+    /* 顶部品牌条 */
+    .brand-bar {
+      font-size: 22px;
+      font-weight: 500;
+      color: #0A1F44;
+      letter-spacing: 0.5px;
+      margin-bottom: 48px;
+    }
+
+    /* 12个月圆点主视觉 */
+    .months {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 40px;
+      padding: 0 8px;
+    }
+
+    .months .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* 从浅蓝到暖金的渐变 */
+    .months .dot:nth-child(1)  { background: #A8C5D4; }
+    .months .dot:nth-child(2)  { background: #AFC8C8; }
+    .months .dot:nth-child(3)  { background: #B6CBC0; }
+    .months .dot:nth-child(4)  { background: #BECEB5; }
+    .months .dot:nth-child(5)  { background: #C5D1AA; }
+    .months .dot:nth-child(6)  { background: #CCD4A0; }
+    .months .dot:nth-child(7)  { background: #D3D796; }
+    .months .dot:nth-child(8)  { background: #D9D08C; }
+    .months .dot:nth-child(9)  { background: #DFC982; }
+    .months .dot:nth-child(10) { background: #E5C278; }
+    .months .dot:nth-child(11) { background: #EBBC6E; }
+    .months .dot:nth-child(12) { background: #C9A227; }
+
+    /* 主标题 */
+    .main-title {
+      font-size: 64px;
+      font-weight: 700;
+      color: #0A1F44;
+      line-height: 1.15;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-family: "Songti SC", "SimSun", "Noto Serif SC", serif;
+    }
+
+    /* 副标题 */
+    .subtitle {
+      font-size: 26px;
+      color: #4A5568;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 一句话价值 */
+    .value-line {
+      font-size: 28px;
+      color: #0A1F44;
+      font-weight: 500;
+      margin-bottom: 56px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 要点区 */
+    .points {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+
+    .points li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      font-size: 26px;
+      color: #0A1F44;
+      line-height: 1.45;
+      max-width: 780px;
+    }
+
+    .points li .dot {
+      width: 14px;
+      height: 14px;
+      background: #C9A227;
+      margin-right: 16px;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+
+    /* 分隔线 */
+    .divider {
+      height: 1px;
+      background: #0A1F44;
+      opacity: 0.2;
+      margin-bottom: 36px;
+    }
+
+    /* 价格与时间 */
+    .price-row {
+      font-size: 28px;
+      font-weight: 600;
+      color: #0A1F44;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+
+    /* 行动区 */
+    .cta {
+      font-size: 26px;
+      color: #0A1F44;
+      margin-bottom: 20px;
+    }
+
+    /* 创始人注记 */
+    .founder-note {
+      font-size: 18px;
+      color: #6B7280;
+      margin-bottom: 40px;
+    }
+
+
+
+    /* 底部固定小字 */
+    .footer {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 36px;
+      font-size: 16px;
+      color: #6B7280;
+      letter-spacing: 0.3px;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .poster {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://gatewaytonew.com/p/chuhaiban/%E5%92%8C%E5%90%9B%E5%95%86%E5%AD%A6%E9%99%A2%E5%87%BA%E6%B5%B7%E7%8F%AD_%E7%AC%AC20%E5%B1%8A_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="和君商学院出海班 第20届 | 海鑫汇 Gateway To New">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://gatewaytonew.com/p/chuhaiban/%E5%92%8C%E5%90%9B%E5%95%86%E5%AD%A6%E9%99%A2%E5%87%BA%E6%B5%B7%E7%8F%AD_%E7%AC%AC20%E5%B1%8A_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "和君商学院出海班 第20届 | 海鑫汇 Gateway To New",
+  "description": "",
+  "url": ""
+}
+]
+</script>
+</head>
+<body>
+  <div class="poster">
+    <!-- 顶部品牌条 -->
+    <div class="brand-bar">海鑫汇 Gateway To New</div>
+
+    <!-- 12个月圆点主视觉：浅蓝 → 暖金 -->
+    <div class="months">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <!-- 主标题 -->
+    <h1 class="main-title">和君商学院出海班</h1>
+
+    <!-- 副标题 -->
+    <div class="subtitle">第 20 届 · 2027 年 6 月—2028 年 5 月</div>
+
+    <!-- 一句话价值 -->
+    <p class="value-line">一年，系统补完出海这门课</p>
+
+    <!-- 要点区 -->
+    <ul class="points">
+      <li>
+        <span class="dot"></span>
+        <span>课程结构：【待填】</span>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <span>上课方式与频次：【待填】</span>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <span>导师与同学：【待填：不超过两句】</span>
+      </li>
+    </ul>
+
+    <!-- 分隔线 -->
+    <div class="divider"></div>
+
+    <!-- 价格与时间 -->
+    <div class="price-row">19800 元 / 年 ｜ 招生简章 2027 年 1 月发布</div>
+
+    <!-- 行动区 -->
+    <div class="cta">扫码留下联系方式</div>
+
+    <!-- 创始人注记 -->
+    <div class="founder-note">由董立鑫发起</div>
+
+
+
+
+    <!-- 底部固定小字 -->
+    <div class="footer">
+      海鑫汇 Gateway To New · gatewaytonew.com · 我们提供判断与资源连接，不承诺订单或成交。
+    </div>
+  </div>
+</body>
+</html>

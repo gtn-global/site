@@ -23,6 +23,15 @@
 .product-desc{max-width:680px;margin:14px auto 18px;font-size:16px;line-height:1.7;color:#4A5568;}
 .deliverables{max-width:680px;margin:0 auto 24px;padding-left:20px;font-size:16px;line-height:1.9;color:#0A1F44;}
 .deliverables li{margin:4px 0;}
+.product-figure{max-width:860px;margin:46px auto 6px;}
+.product-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.evidence-recent a{text-decoration:none;}
+.evidence-recent a:hover{text-decoration:none;}
+.product-banner-click{max-width:860px;margin:32px auto 8px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
+.product-banner-click img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-banner-click:hover{transform:translateY(-2px);}
+.product-banner-click:focus-visible{outline:3px solid #0A1F44;outline-offset:4px;}
+.hero-hint{text-align:center;font-size:14px;color:#4A5568;margin:4px auto 26px;}
 .poster-figure{max-width:420px;margin:24px auto;}
 .poster-figure img{width:100%;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(10,31,68,.12);display:block;}
 .product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
@@ -41,24 +50,30 @@
 <section class="section">
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">和君商学院出海班（第 20 届）</h1>
-  
+  <figure class="product-figure">
+    <img src="chuhaiban.png" alt="和君商学院出海班（第 20 届）">
+  </figure>
   <p class="product-sub">第 20 届 · 2027 年 6 月—2028 年 5 月</p>
 <p class="product-oneliner">一年，系统补完出海这门课</p>
   <div class="product-meta">
     <div class="price">19800 元/年</div>
   </div>
-  <div class="product-cta">
-    <button type="button" class="btn-submit btn-seal" data-product="和君商学院出海班（第 20 届）" data-source="product-interest">登记意向</button>
-  </div><section class="evidence-block">
+<section class="evidence-block">
   <h2 class="evidence-title">实证 · 出海论坛</h2>
   <p class="evidence-stat">出海论坛 6 场</p>
   <ul class="evidence-recent">
 <li><a href="../../events/media-08-wtc-singapore/index.html">董立鑫协办 2026 年 WTC Singapore 杨帆狮城 焕新启航</a> <span class="evidence-date">2026-07</span></li>
 <li><a href="../../events/forum-05-hejun-town-chenjunwen/index.html">第二届海鑫汇出海年会｜和君小镇丨陈俊文（大麦哥）</a> <span class="evidence-date">2025-11</span></li>
 <li><a href="../../events/media-04-pro-outbound/index.html">第二届海鑫汇出海年会｜和君小镇</a> <span class="evidence-date">2025-11</span></li>
+<li><a href="../../events/media-09-yangpu-gov/index.html">董立鑫协办 2025 年 WTC Singapore 服贸会首秀</a> <span class="evidence-date">2025-09</span></li>
+<li><a href="../../events/exchange-07-wtca-servicetrade/index.html">世界贸易中心协会亮相服贸会｜WTC Singapore 东南亚市场合作与国际交流</a> <span class="evidence-date">2025-09</span></li>
+<li><a href="../../events/media-03-hejun-town-summit/index.html">第一届海鑫汇出海年会｜和君小镇</a> <span class="evidence-date">2024-12</span></li>
   </ul>
-  <a class="evidence-more" href="../../evidence/chuhaiban/index.html">全部 6 场 →</a>
 </section>
+  <figure class="product-banner-click" id="heroIntent" role="button" tabindex="0" aria-label="点击图片登记意向" data-product="和君商学院出海班（第 20 届）" data-source="product-interest">
+    <img src="横幅-和君商学院出海班@2x.png" alt="和君商学院出海班（第 20 届）横幅">
+  </figure>
+  <p class="hero-hint">点击上方图片，登记出海班意向</p>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
@@ -112,6 +127,12 @@
   document.querySelectorAll('button[data-product]').forEach(function(b){
     b.addEventListener('click',function(){ openIntent(b.getAttribute('data-product'), b.getAttribute('data-source')||'product-interest', b.textContent.trim()); });
   });
+  var hero=document.getElementById('heroIntent');
+  if(hero){
+    function openFromHero(){ openIntent(hero.getAttribute('data-product'), hero.getAttribute('data-source')||'product-interest', '登记意向'); }
+    hero.addEventListener('click', openFromHero);
+    hero.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFromHero(); } });
+  }
 })();
 </script>
 </body>
