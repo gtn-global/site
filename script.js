@@ -10,10 +10,10 @@
 //      propagates to every page (no per-HTML hardcoding) ----
 // 国家顺序 / 文案 / 时区都只在这里定义一次。
 const CLOCK_ZONES = [
-  { label: '哈萨克斯坦', tz: 'Asia/Almaty' },
-  { label: '新加坡',     tz: 'Asia/Singapore' },
-  { label: '德国',       tz: 'Europe/Berlin' },
-  { label: '日本',       tz: 'Asia/Tokyo' }
+  { label: 'Kazakhstan', tz: 'Asia/Almaty' },
+  { label: 'Singapore',  tz: 'Asia/Singapore' },
+  { label: 'Germany',    tz: 'Europe/Berlin' },
+  { label: 'Japan',      tz: 'Asia/Tokyo' }
 ];
 
 function renderClocks(){
@@ -271,8 +271,16 @@ function syncEventBreakdown(){
   if(!wrap) return; // 仅首页有此区块
   const idx = (window.GTN && window.GTN.index) || {};
   const events = idx.event || [];
+  // 活动 type → 一级板块（与 events-index.html 分组一致）
+  const TYPE_TO_CAT = {
+    tour: 'industry-research', salon: 'industry-research',
+    interview: 'talk',
+    visit: 'global-trip',
+    forum: 'partners', exchange: 'partners',
+    review: 'history'
+  };
   const counts = {};
-  events.forEach(e => { if(e.type) counts[e.type] = (counts[e.type] || 0) + 1; });
+  events.forEach(e => { const c = TYPE_TO_CAT[e.type]; if(c) counts[c] = (counts[c] || 0) + 1; });
   wrap.querySelectorAll('a[data-type]').forEach(a => {
     const n = counts[a.getAttribute('data-type')];
     if(n != null){ const el = a.querySelector('.n'); if(el) el.textContent = n; }
@@ -285,9 +293,10 @@ const FOOTER_LINKS = [
   { label: '产业出海研究报告', href: 'reports/index.html' },
   { label: '出海日程', href: 'calendar.html' },
 
-  { label: '来华产业考察', href: 'ceo-tour.html' },
+  { label: '全球 CEO 中国行', href: 'p/ceo-tour/' },
   { label: '常见问题', href: 'faq.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
+  { label: '战略合作伙伴与生态', href: 'p/partners/' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
   { label: '新闻报道', href: 'news-index.html' }

@@ -82,3 +82,16 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 # 下线 cta/book-diagnostic（2026-10）：统一指向 p/project
 /cta/book-diagnostic/   /p/project/   301
 /cta/book-diagnostic/*   /p/project/   301
+
+# CEO Tour 旧路径迁移到 p/ceo-tour/（2026-10）：保留旧链接 301 跳转
+/ceo-tour    /p/ceo-tour/    301
+/ceo-tour.html    /p/ceo-tour/    301
+
+# 整合迁移：独立产品页/报告页搬入 p/featured/ 与 p/closed-door/researchreport/（2026-10）
+/p/chuhaiban/    /p/featured/chuhaiban/    301
+/p/chuhaiban/*    /p/featured/chuhaiban/:splat    301
+/p/trade-growth/    /p/featured/trade-growth/    301
+/p/trade-growth/*    /p/featured/trade-growth/:splat    301
+/p/researchreport/    /p/closed-door/researchreport/    301
+/p/researchreport/*    /p/closed-door/researchreport/:splat    301
+/p/project/出海决策陪跑_海报.html    /p/featured/出海决策陪跑_海报.html    301

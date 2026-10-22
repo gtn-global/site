@@ -85,6 +85,21 @@
 .channel-link .cl-q{font-size:var(--fs-small);color:var(--ink-soft);}
 .channel-link .cl-arrow{font-size:var(--fs-small);font-weight:600;color:var(--seal);}
 @media(max-width:640px){.channel-links{grid-template-columns:1fr;}}
+/* 06 TRACK RECORD：圆圈入口（实心圆 + 同色半圈圆弧，上下交替） */
+.tr-circles{display:flex;justify-content:center;flex-wrap:wrap;gap:36px;margin-top:26px;padding:26px 0;}
+.tr-circle{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;aspect-ratio:1;width:clamp(150px,15vw,184px);border-radius:50%;background:linear-gradient(150deg,color-mix(in srgb,var(--c) 78%,#fff),var(--c));color:#fff;font-weight:700;font-size:clamp(17px,1.7vw,21px);line-height:1.3;padding:16px;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;}
+.tr-circle::after{content:"";position:absolute;inset:-18px;border-radius:50%;border:7px solid var(--c);pointer-events:none;}
+.tr-circle:nth-child(odd)::after{clip-path:inset(50% 0 0 0);}
+.tr-circle:nth-child(even)::after{clip-path:inset(0 0 50% 0);}
+.tr-circle:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(30,37,48,.18),0 12px 32px rgba(30,37,48,.12);}
+@media(min-width:768px) and (max-width:1099px){
+  .tr-circles{max-width:660px;margin-left:auto;margin-right:auto;}
+  .tr-circle{width:min(190px,calc((100% - 72px)/3));}
+}
+@media(max-width:767px){
+  .tr-circles{gap:28px;}
+  .tr-circle{width:min(150px,calc((100% - 28px)/2));font-size:13.5px;padding:12px;}
+}
 /* 报告三卡 */
 .report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 6px;}
 .report-card{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:16px;padding:18px;background:var(--paper);}
@@ -290,7 +305,7 @@
   </div>
   <div class="channel-links">
     <a class="channel-link" href="p/global-trip/index.html">想亲眼看看海外市场？<span class="cl-arrow">海鑫汇全球行 →</span></a>
-    <a class="channel-link" href="ceo-tour.html">想让外国 CEO 走进你的工厂？<span class="cl-arrow">本期来华考察征集参访企业 →</span></a>
+    <a class="channel-link" href="p/ceo-tour/index.html">想让外国 CEO 走进你的工厂？<span class="cl-arrow">全球 CEO 中国行 →</span></a>
   </div>
 </section>
 
@@ -309,36 +324,36 @@
         <li><a href="reports/index.html">产业出海研究报告 · 季刊</a></li>
       </ul>
       <div class="stage-imgs">
-        <img src="p/self-testing/横幅-3分钟出海自测.png" alt="3 分钟出海自测横幅">
-        <img src="p/researchreport/横幅-新能源电力电气出海研究报告.png" alt="新能源电力电气出海研究报告横幅">
+        <a href="cta/self-test/index.html" style="display:block;text-decoration:none;"><img src="p/self-testing/横幅-3分钟出海自测.webp" alt="3 分钟出海自测横幅"></a>
+        <a href="reports/index.html" style="display:block;text-decoration:none;"><img src="p/closed-door/researchreport/横幅-新能源电力电气出海研究报告.webp" alt="新能源电力电气出海研究报告横幅"></a>
       </div>
       <a class="btn-submit btn-seal" href="cta/self-test/index.html">开始自测</a>
     </div>
     <div class="stage-card">
       <span class="stage-tag">WANT TO LEARN</span>
       <h3>想学明白</h3>
-      <p class="stage-one">想系统补课，少走弯路。</p>
+      <p class="stage-one">海鑫汇精选，少走弯路。</p>
       <ul class="stage-list">
-        <li><a href="p/chuhaiban/index.html">和君商学院出海班 · 第 20 届</a></li>
-        <li><a href="p/trade-growth/index.html">外贸业绩增长密码 · 伙伴精选</a></li>
+        <li><a href="p/featured/chuhaiban/index.html">和君商学院出海班 · 第 20 届</a></li>
+        <li><a href="p/featured/trade-growth/index.html">外贸业绩增长密码 · 伙伴精选</a></li>
       </ul>
       <div class="stage-imgs">
-        <img src="p/chuhaiban/横幅-和君商学院出海班.png" alt="和君商学院出海班横幅">
-        <img src="p/trade-growth/横幅-出海训练营工作坊.png" alt="出海训练营工作坊横幅">
+        <a href="p/featured/chuhaiban/index.html" style="display:block;text-decoration:none;"><img src="p/featured/chuhaiban/横幅-和君商学院出海班.webp" alt="和君商学院出海班横幅"></a>
+        <a href="p/featured/trade-growth/index.html" style="display:block;text-decoration:none;"><img src="p/featured/trade-growth/横幅-出海训练营工作坊.webp" alt="出海训练营工作坊横幅"></a>
       </div>
-      <a class="btn-submit btn-seal" href="p/chuhaiban/index.html">查看课程</a>
+      <a class="btn-submit btn-seal" href="p/featured/index.html">查看海鑫汇精选</a>
     </div>
     <div class="stage-card">
       <span class="stage-tag">STAY IN THE LOOP</span>
       <h3>想进圈子</h3>
       <p class="stage-one">想第一时间知道活动。</p>
       <ul class="stage-list">
-        <li><a href="p/closed-door/index.html">线下闭门小场 · 每月</a></li>
-        <li><a href="p/online-connect/index.html">线上直播连线 · 每周</a></li>
+        <li><a href="p/closed-door/index.html">产业研究与对接 · 每月</a></li>
+        <li><a href="p/online-connect/index.html">海鑫汇 Talk · 每周</a></li>
       </ul>
       <div class="stage-imgs">
-        <img src="p/closed-door/横幅-出海闭门小场.png" alt="出海闭门小场横幅">
-        <img src="p/online-connect/横幅-海鑫汇出海连线.png" alt="海鑫汇出海连线横幅">
+        <a href="p/closed-door/index.html" style="display:block;text-decoration:none;"><img src="p/closed-door/横幅-出海闭门小场.webp" alt="出海闭门小场横幅"></a>
+        <a href="p/online-connect/index.html" style="display:block;text-decoration:none;"><img src="p/online-connect/横幅-海鑫汇出海连线.webp" alt="海鑫汇出海连线横幅"></a>
       </div>
       <a class="btn-submit btn-seal" href="p/closed-door/index.html">查看活动</a>
     </div>
@@ -348,11 +363,11 @@
       <p class="stage-one">到现场，才看得清。</p>
       <ul class="stage-list">
         <li><a href="p/global-trip/index.html">海鑫汇全球行 · GTN Global</a></li>
-        <li><a href="ceo-tour.html">来华产业考察 · CEO tour</a></li>
+        <li><a href="p/ceo-tour/index.html">全球 CEO 中国行</a></li>
       </ul>
       <div class="stage-imgs">
-        <img src="p/global-trip/横幅-海鑫汇全球行.png" alt="海鑫汇全球行横幅">
-        <img src="p/project/横幅-出海落地陪跑.png" alt="出海落地陪跑横幅">
+        <a href="p/global-trip/index.html" style="display:block;text-decoration:none;"><img src="p/global-trip/横幅-海鑫汇全球行.webp" alt="海鑫汇全球行横幅"></a>
+        <a href="p/ceo-tour/index.html" style="display:block;text-decoration:none;"><img src="p/featured/横幅-出海落地陪跑.webp" alt="出海落地陪跑横幅"></a>
       </div>
       <a class="btn-submit btn-seal" href="p/global-trip/index.html">查看全球行</a>
     </div>
@@ -400,9 +415,9 @@
 
 
 
-<!-- ===== 07 往期回顾 ===== -->
+<!-- ===== 06 往期回顾 ===== -->
 <section class="section" id="proof">
-  <div class="eyebrow">07 — TRACK RECORD</div>
+  <div class="eyebrow">06 — TRACK RECORD</div>
   <h2 class="section-title">两年，真实走过的记录</h2>
   <div class="stat-line">
     <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div><div class="stat-cap">出海企业调研</div></div>
@@ -411,20 +426,17 @@
     <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div><div class="stat-cap">签约顾问</div></div>
   </div>
   <div class="client-wall" id="clientWall"></div>
-  <p class="lede proof-one">70+ 场活动，覆盖企业游学、论坛、访谈、国际交流、海外考察、沙龙与读书会。</p>
-  <!-- counts:start -->
-<div class="event-breakdown">
-    <a class="type-tag" data-type="tour" href="events-index.html#tour">企业游学 <span class="n">5</span></a>
-    <a class="type-tag" data-type="forum" href="events-index.html#forum">出海论坛 <span class="n">6</span></a>
-    <a class="type-tag" data-type="interview" href="events-index.html#interview">出海访谈 <span class="n">8</span></a>
-    <a class="type-tag" data-type="exchange" href="events-index.html#exchange">国际交流 <span class="n">7</span></a>
-    <a class="type-tag" data-type="visit" href="events-index.html#visit">海外考察 <span class="n">36</span></a>
-    <a class="type-tag" data-type="salon" href="events-index.html#salon">出海沙龙 <span class="n">7</span></a>
-    <a class="type-tag" data-type="review" href="events-index.html#review">出海读书会 <span class="n">4</span></a>
-    <a class="type-tag" href="news-index.html">新闻报道</a>
+  <p class="lede proof-one">70+ 场活动，覆盖产业研究与对接、海鑫汇 Talk、海鑫汇全球行、全球 CEO 中国行、战略合作伙伴与生态与历史活动。</p>
+  <!-- 06 入口圆圈:start -->
+  <div class="tr-circles">
+    <a class="tr-circle" style="--c:#16242F" href="p/closed-door/index.html">产业研究<br>与对接</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/ceo-tour/index.html">全球 CEO<br>中国行</a>
+    <a class="tr-circle" style="--c:#4E8497" href="p/global-trip/index.html">海鑫汇<br>全球行</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/featured/index.html">海鑫汇<br>精选</a>
+    <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">海鑫汇<br>Talk</a>
   </div>
-  <!-- counts:end -->
-<a class="visit-line" href="events-index.html#visit">海外考察 2012–2026，36 场　查看全部 →</a>
+  <!-- 06 入口圆圈:end -->
+<a class="visit-line" href="p/global-trip/index.html">海鑫汇全球行 2012–2026，36 场　查看全部 →</a>
   <p class="carousel-label">现场 <span class="en">ON THE GROUND</span></p>
   <div class="carousel-wrap film">
     <div class="carousel-track band" data-dir="1"><div class="carousel-row">
@@ -455,9 +467,9 @@
   </div>
 </section>
 
-<!-- ===== 08 一线顾问 ===== -->
+<!-- ===== 07 一线顾问 ===== -->
 <section class="section" id="advisors">
-  <div class="eyebrow">08 — ADVISORS</div>
+  <div class="eyebrow">07 — ADVISORS</div>
   <h2 class="section-title">把判断，交给真正在一线的人</h2>
   <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
   <div class="adv-wall" id="advWall"></div>
@@ -470,9 +482,9 @@
   <a class="adv-all" href="ecosystem-index.html">查看全部运营 →</a>
 </section>
 
-<!-- ===== 09 常见问题 ===== -->
+<!-- ===== 08 常见问题 ===== -->
 <section class="section" id="faq">
-  <div class="eyebrow">09 — FAQ</div>
+  <div class="eyebrow">08 — FAQ</div>
   <h2 class="section-title">常见问题</h2>
   <p class="subline">出海前，先搞清楚这几件事。</p>
   <div class="faq-list">
@@ -495,9 +507,9 @@
   </div>
 </section>
 
-<!-- ===== 10 出海项目沟通 ===== -->
+<!-- ===== 09 出海项目沟通 ===== -->
 <section class="section" id="contact">
-  <div class="eyebrow">10 — PROJECT</div>
+  <div class="eyebrow">09 — PROJECT</div>
   <h2 class="section-title">我有一个出海项目，想聊聊</h2>
   <p class="subline">免费 · 申请制</p>
   <div class="book-card">
@@ -514,9 +526,11 @@
 <!-- ===== 关于（导航锚点） ===== -->
 <section class="section about-block" id="about">
   <div class="eyebrow">ABOUT</div>
-  <h2 class="section-title">关于海鑫汇</h2>
-  <p class="about-bio">海鑫汇（Gateway To New，GTN）由董立鑫创立，为专精特新、科创企业与上市公司的管理层提供出海决策诊断：先判断，再行动。我们连接全球产业专家、真实活动与一线情报，把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。</p>
-  <p class="about-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</p>
+  <h2 class="section-title">海鑫汇 Gateway To New</h2>
+  <h3>汇聚全球视野，链接时代企业家</h3>
+  <p class="about-bio">海鑫汇（Gateway To New，GTN）是一个面向具有全球视野与国际化抱负的企业家的交流与合作平台。我们汇聚来自不同产业、市场与文化背景的企业家、投资人及行业领袖，通过深度交流、国际考察、思想分享与跨界合作，拓展认知边界，洞察全球趋势，探索跨境商业机遇。</p>
+  <p class="about-bio">我们相信，真正的国际化不仅是业务版图的延伸，更是视野、思维与格局的拓展。海鑫汇致力于连接中国与世界，构建开放、互信、长期共创的企业家网络，让优秀的企业家在交流中相互启发，在连接中发现机遇，在合作中创造价值。</p>
+  <p class="about-bio"><strong>以全球视野拓展认知，以深度连接创造未来。</strong></p>
   <div class="about-links"><a href="privacy.html">隐私政策</a></div>
   <div class="about-social" id="aboutSocial"></div>
   <p class="hot-combos">热门出海组合：

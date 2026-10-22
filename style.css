@@ -69,6 +69,10 @@ a{color:inherit;}
 
 /* ---------- section shell ---------- */
 .section{max-width:1120px;margin:0 auto;padding:52px 28px;}
+/* 锚点跳转时，目标顶部留出 sticky 表头的高度，避免被表头遮住（导航 Industry/Region/Products/Content/About 指向的区块） */
+:target{scroll-margin-top:76px;}
+.section[id]{scroll-margin-top:76px;}
+#selector,#worldMap{scroll-margin-top:76px;}
 .section + .section{border-top:1px solid var(--rule);}
 .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:3px;color:var(--seal);margin-bottom:20px;}
 .headline{font-family:'Noto Serif SC',serif;font-weight:700;font-size:clamp(28px,4vw,44px);line-height:1.4;max-width:820px;}
@@ -1372,10 +1376,12 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 .stage-tag{font-family:'IBM Plex Mono',monospace;font-size:var(--fs-label);letter-spacing:1.5px;color:var(--ink-faint);}
 .stage-card h3{font-family:'Noto Serif SC',serif;font-size:var(--fs-body);}
 .stage-one{font-size:var(--fs-small);color:var(--ink-soft);}
-.stage-list{list-style:none;font-size:var(--fs-small);color:var(--ink-soft);line-height:1.9;}
+.stage-list{list-style:none;font-size:var(--fs-small);color:var(--ink-soft);line-height:1.9;flex:1 0 auto;} /* 撑开剩余空间，使四个卡片的图片块底部对齐 */
 .stage-card .btn-seal,.stage-card .btn-outline{margin-top:auto;align-self:flex-start;min-height:44px;}
 .stage-imgs{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
 .stage-imgs img{width:100%;height:auto;border-radius:8px;object-fit:contain;box-shadow:0 1px 4px rgba(30,37,48,.12);}
+/* WHERE ARE YOU 四个卡片的图片：按原图比例完整显示，不裁切（去掉 cover 固定高度） */
+#stage .stage-imgs img{width:100%;height:auto;object-fit:contain;display:block;}
 @media(max-width:900px){.stage-cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.stage-cards{grid-template-columns:1fr;}}
 
