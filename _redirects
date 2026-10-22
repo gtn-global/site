@@ -95,3 +95,7 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 /p/researchreport/    /p/closed-door/researchreport/    301
 /p/researchreport/*    /p/closed-door/researchreport/:splat    301
 /p/project/出海决策陪跑_海报.html    /p/featured/出海决策陪跑_海报.html    301
+
+# 删除废弃副本 male-maldives，保留页 maldives（2026-10）
+/events/visit-03-2013-male-maldives/    /events/visit-03-2013-maldives/    301
+/events/visit-03-2013-male-maldives/*    /events/visit-03-2013-maldives/:splat    301
