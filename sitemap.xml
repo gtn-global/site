@@ -39,14 +39,14 @@
 
   <url>
     <loc>https://gatewaytonew.com/ecosystem/news-index.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://gatewaytonew.com/events-index</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -842,7 +842,7 @@
     <loc>https://gatewaytonew.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/"/>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -852,7 +852,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gatewaytonew.com/"/>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1104,7 +1104,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/p/featured/chuhaiban/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1125,7 +1125,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/p/featured/trade-growth/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

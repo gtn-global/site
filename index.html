@@ -23,6 +23,7 @@
 <meta name="google-site-verification" content="c337c8b7a58761fe">
 <meta name="msvalidate.01" content="1C28C7F5DA0E816B70CC5C8F517D7801">
 <link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="ecosystem/ecosystem.css">
 <style>
 /* 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区（详见 assets/js 注入） */
 .map-note{font-size:12px;color:var(--ink-faint);margin:10px 0 0;}
@@ -242,59 +243,104 @@
   </div>
 </header>
 
-<!-- ===== 01 首屏 ===== -->
-<section class="section" id="home">
-  <div class="eyebrow">01 — INDUSTRY × REGION</div>
-  <h1 class="headline">出海要不要走、走哪条路，先想清楚。</h1>
-  <p class="subline">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
-  <p class="hero-en">Decide first. Then go global.</p>
+<!-- ===== 新01 WHO WE ARE / 我们是谁（原 ABOUT，移至首位） ===== -->
 
-  <div class="home-selector" id="selector">
-    <div class="selector-row">
-      <span class="selector-lead">我做</span>
-      <label class="selector-field">产业
-        <select id="selIndustry" class="selector-select"><option value="">请选择产业</option></select>
-      </label>
-      <span class="selector-mid">，想去</span>
-      <label class="selector-field">区域
-        <select id="selCountry" class="selector-select"><option value="">请选择区域</option></select>
-      </label>
-      <button type="button" id="selGo" class="btn-submit btn-seal">查看 →</button>
-    </div>
-    <p class="selector-hint">选完直接展开这一格的报告、往期考察、对口顾问、当地运营中心和下一次活动。</p>
+<section class="section about-block" id="about">
+  <div class="eyebrow">WHO WE ARE</div>
+  <h2 class="section-title">我们是谁</h2>
+  <p class="about-bio">海鑫汇（Gateway To New，简称 GTN）是面向国际贸易组织与企业的中国市场及产业合作平台。</p>
+  <p class="about-bio">我们通过中国市场与产业研究、企业及行业专家连接，以及联合简报、圆桌交流和产业参访等项目，帮助国际商业社群更好地了解中国相关产业，发现潜在合作机会，并开展有针对性的跨境交流。</p>
+  <p class="about-bio">海鑫汇提供研究、资源连接和交流机会。具体商业结果取决于每个项目的实际情况，我们不保证订单或交易结果。</p>
+  <div class="about-links"><a href="privacy.html">隐私政策</a></div>
+  <div class="about-social" id="aboutSocial"></div>
+  <p class="hot-combos">热门出海组合：
+    <a href="matrix/auto-tech-europe/index.html">新能源车与智慧交通 × 欧洲</a> ·
+    <a href="matrix/new-energy-europe/index.html">新能源电力电气 × 欧洲</a> ·
+    <a href="matrix/ai-southeast-asia/index.html">人工智能 × 东南亚</a> ·
+    <a href="matrix/new-energy-middle-east/index.html">新能源电力电气 × 中东</a>
+  </p>
+  </section>
+
+
+<!-- ===== 新02 OUR TRACK RECORD / 我们的实践记录（原 06） ===== -->
+
+<section class="section" id="proof">
+  <div class="eyebrow">OUR TRACK RECORD</div>
+  <h2 class="section-title">我们的实践记录</h2>
+  <div class="stat-line">
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div><div class="stat-cap">出海企业调研</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div><div class="stat-cap">国家 · 地区</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="1000">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">人次</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div><div class="stat-cap">签约顾问</div></div>
   </div>
-
-  <div class="worldmap" id="worldMap"></div>
-  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>有内容的国家或地区</span>点红点看这一格。示意图，不作地理或边界依据。</p>
-
-  <div class="desk" id="decisionDesk" hidden>
-    <div class="desk-head">
-      <div>
-        <div class="desk-kicker">Decision desk · 决策台</div>
-        <h2 class="desk-title" id="deskTitle"></h2>
-        <div class="desk-summary" id="deskSummary"></div>
-      </div>
-      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
-    </div>
-    <div class="desk-grid">
-      <div class="desk-col desk-col--left" id="deskLeft"></div>
-      <div class="desk-col desk-col--right" id="deskRight"></div>
-    </div>
-    <div class="desk-foot" id="deskFoot"></div>
+  <div class="client-wall" id="clientWall"></div>
+  <p class="lede proof-one">70+ 场活动，覆盖产业研究与对接、海鑫汇 Talk、海鑫汇全球行、全球 CEO 中国行、战略合作伙伴与生态与历史活动。</p>
+  <!-- 06 入口圆圈:start -->
+  <div class="tr-circles">
+    <a class="tr-circle" style="--c:#16242F" href="p/closed-door/index.html">产业研究<br>与对接</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/ceo-tour/index.html">全球 CEO<br>中国行</a>
+    <a class="tr-circle" style="--c:#4E8497" href="p/global-trip/index.html">海鑫汇<br>全球行</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/featured/index.html">海鑫汇<br>精选</a>
+    <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">海鑫汇<br>Talk</a>
   </div>
-
-  <div class="hero-cta">
-    <a class="btn-submit btn-seal" href="cta/self-test/index.html">开始自测（免费 · 3 分钟）</a>
-    <a class="btn-outline" href="p/project/index.html">我有一个出海项目，想聊聊</a>
-  </div>
-
-
-  <div class="industry-entry" id="industryEntry"></div>
+  <!-- 06 入口圆圈:end -->
+<a class="visit-line" href="events-index.html">海鑫汇全球行 2012–2026，36 场　查看全部 →</a>
 </section>
 
-<!-- ===== 02 双向通道 ===== -->
+
+<!-- ===== 新03 CHINA MARKET & INDUSTRY INTELLIGENCE / 中国市场与产业研究（原 04） ===== -->
+
+<section class="section" id="reports">
+  <div class="eyebrow">CHINA MARKET & INDUSTRY INTELLIGENCE</div>
+  <h2 class="section-title">中国市场与产业研究</h2>
+  <p class="subline">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
+  <div class="report-grid">
+    <div class="report-card">
+      <span class="rc-tag">已发布 2026.09</span>
+      <h4>新能源电力电气</h4>
+      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><a class="rc-act" href="reports/cleantech/index.html">留资获取</a></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 10 月发布</span>
+      <h4>人工智能</h4>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 11 月发布</span>
+      <h4>新能源车与智慧交通</h4>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions">
+        <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告（2026 版）" data-source="product-interest">发布时通知我</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 新04 INDUSTRY ADVISOR NETWORK / 产业顾问网络（原 07） ===== -->
+
+<section class="section" id="advisors">
+  <div class="eyebrow">INDUSTRY ADVISOR NETWORK</div>
+  <h2 class="section-title">产业顾问网络</h2>
+  <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
+  <div class="adv-wall" id="advWall"></div>
+  <p class="adv-note">30+ 位产业顾问网络，已公开 14 位，更多陆续上线。</p>
+  <a class="adv-all" href="advisors-index.html">查看全部顾问 →</a>
+  <!-- 运营团队 -->
+  <h3 class="ops-sub-title">当地运营中心</h3>
+  <p class="subline">落地，交给在当地的人。</p>
+  <div class="adv-wall" id="opsWall"></div>
+  <a class="adv-all" href="ecosystem-index.html">查看全部运营 →</a>
+</section>
+
+
+<!-- ===== 新05 TWO-WAY GATEWAY / 连接两个方向（原 02） ===== -->
+
 <section class="section channels" id="channels">
-  <div class="eyebrow">02 — TWO-WAY GATEWAY</div>
+  <div class="eyebrow">TWO-WAY GATEWAY</div>
   <h2 class="section-title">连接两个方向</h2>
   <p class="subline">带中国企业走出去看，也请外国 CEO 走进来看。</p>
   <div class="marquee" id="marquee">
@@ -309,9 +355,114 @@
   </div>
 </section>
 
-<!-- ===== 03 你在哪一步 ===== -->
+
+<!-- ===== 新06 ECOSYSTEM / 海鑫汇生态（原 10） ===== -->
+
+<section id="ecosystem" class="section eco">
+  <div class="eyebrow">ECOSYSTEM</div>
+  <h2 class="section-title">海鑫汇生态</h2>
+  <p class="subline">携手伙伴，共建出海与来华服务网络</p>
+
+  <div class="eco-honey">
+
+    <a href="ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="海鑫汇与和君咨询">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1" x="118" y="42" text-anchor="middle" font-size="12" font-weight="500">和君</text>
+        <text class="t2" x="90" y="78" text-anchor="middle" font-size="12">海鑫汇与</text>
+        <text class="t1" x="90" y="104" text-anchor="middle" font-size="17" font-weight="500" letter-spacing="1">和君咨询</text>
+        <g transform="translate(0,128)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <a href="ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="海鑫汇与对外经济贸易大学">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">UIBE</text>
+        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">海鑫汇与</text>
+        <text class="t1" x="90" y="95" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">对外经济</text>
+        <text class="t1" x="90" y="116" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">贸易大学</text>
+        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <a href="ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="海鑫汇与新加坡世界贸易中心">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">WTC</text>
+        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">海鑫汇与</text>
+        <text class="t1" x="90" y="95" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">新加坡世界</text>
+        <text class="t1" x="90" y="116" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">贸易中心</text>
+        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <button type="button" class="eco-hex more h-gray" aria-label="更多合作伙伴">
+      <svg viewBox="0 0 110 95" aria-hidden="true">
+        <polygon class="bg" points="27.5,0 82.5,0 110,47.5 82.5,95 27.5,95 0,47.5"/>
+        <circle class="dt" cx="38" cy="47.5" r="3.5"/>
+        <circle class="dt" cx="55" cy="47.5" r="3.5"/>
+        <circle class="dt" cx="72" cy="47.5" r="3.5"/>
+      </svg>
+    </button>
+
+  </div>
+</section>
+
+
+<!-- ===== 新07 INTERNATIONAL MARKET EXPLORATION / 国际市场探索（原 05） ===== -->
+
+<section class="section" id="calendar">
+  <div class="eyebrow">INTERNATIONAL MARKET EXPLORATION</div>
+  <h2 class="section-title">国际市场探索</h2>
+  <p class="subline">确认过的日程才会出现在这里。</p>
+  <div class="cal-list" id="calList"></div>
+  <a class="adv-all" href="calendar.html">查看全部日程 →</a>
+</section>
+
+
+
+
+<!-- ===== 新08 WORK WITH GTN / 如何与海鑫汇合作（原 09） ===== -->
+
+<section class="section" id="contact">
+  <div class="eyebrow">WORK WITH GTN</div>
+  <h2 class="section-title">如何与海鑫汇合作</h2>
+  <p class="subline">免费 · 申请制</p>
+  <div class="book-card">
+    <ul class="stage-list">
+      <li>国家与城市选择</li>
+      <li>本地伙伴对接</li>
+      <li>政府与园区对接</li>
+    </ul>
+    <p class="subline">按项目报价</p>
+    <a class="btn-submit btn-seal" href="p/project/index.html">提交出海项目</a>
+  </div>
+</section>
+
+
+<!-- ===== 新09 WHERE ARE YOU RIGHT NOW? / 你现在在哪一步？（原 03） ===== -->
+
 <section class="section" id="stage">
-  <div class="eyebrow">03 — WHERE ARE YOU</div>
+  <div class="eyebrow">WHERE ARE YOU RIGHT NOW?</div>
   <h2 class="section-title">你现在在哪一步？</h2>
   <p class="subline">不用先选产品，先说说你的处境。</p>
   <div class="stage-cards">
@@ -448,7 +599,9 @@
   </div>
 </section>
 
-<!-- 现场 ON THE GROUND：由 06 TRACK RECORD 移入，置于 03 WHERE ARE YOU 之后 -->
+
+<!-- 现场 ON THE GROUND（无编号，随 新09 产业与区域 移动） -->
+
 <section class="section">
   <p class="carousel-label">现场 <span class="en">ON THE GROUND</span></p>
   <div class="carousel-wrap film">
@@ -480,89 +633,63 @@
   </div>
 </section>
 
-<!-- ===== 04 产业出海研究报告 ===== -->
-<section class="section" id="reports">
-  <div class="eyebrow">04 — REPORTS</div>
-  <h2 class="section-title">产业出海研究报告</h2>
-  <p class="subline">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
-  <div class="report-grid">
-    <div class="report-card">
-      <span class="rc-tag">已发布 2026.09</span>
-      <h4>新能源电力电气</h4>
-      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions"><a class="rc-act" href="reports/cleantech/index.html">留资获取</a></div>
+
+<!-- ===== 新10 INDUSTRY × REGION / 产业与区域（原 01） ===== -->
+
+<section class="section" id="home">
+  <div class="eyebrow">INDUSTRY × REGION</div>
+  <h1 class="headline">产业与区域</h1>
+  <p class="subline">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
+  <p class="hero-en">Decide first. Then go global.</p>
+
+  <div class="home-selector" id="selector">
+    <div class="selector-row">
+      <span class="selector-lead">我做</span>
+      <label class="selector-field">产业
+        <select id="selIndustry" class="selector-select"><option value="">请选择产业</option></select>
+      </label>
+      <span class="selector-mid">，想去</span>
+      <label class="selector-field">区域
+        <select id="selCountry" class="selector-select"><option value="">请选择区域</option></select>
+      </label>
+      <button type="button" id="selGo" class="btn-submit btn-seal">查看 →</button>
     </div>
-    <div class="report-card">
-      <span class="rc-tag">预计 2026 年 10 月发布</span>
-      <h4>人工智能</h4>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button></div>
-    </div>
-    <div class="report-card">
-      <span class="rc-tag">预计 2026 年 11 月发布</span>
-      <h4>新能源车与智慧交通</h4>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions">
-        <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告（2026 版）" data-source="product-interest">发布时通知我</button>
+    <p class="selector-hint">选完直接展开这一格的报告、往期考察、对口顾问、当地运营中心和下一次活动。</p>
+  </div>
+
+  <div class="worldmap" id="worldMap"></div>
+  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>有内容的国家或地区</span>点红点看这一格。示意图，不作地理或边界依据。</p>
+
+  <div class="desk" id="decisionDesk" hidden>
+    <div class="desk-head">
+      <div>
+        <div class="desk-kicker">Decision desk · 决策台</div>
+        <h2 class="desk-title" id="deskTitle"></h2>
+        <div class="desk-summary" id="deskSummary"></div>
       </div>
+      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
     </div>
+    <div class="desk-grid">
+      <div class="desk-col desk-col--left" id="deskLeft"></div>
+      <div class="desk-col desk-col--right" id="deskRight"></div>
+    </div>
+    <div class="desk-foot" id="deskFoot"></div>
   </div>
-</section>
 
-<!-- ===== 05 出海日历 ===== -->
-<section class="section" id="calendar">
-  <div class="eyebrow">05 — CALENDAR</div>
-  <h2 class="section-title">未来 90 天，我们的出海行程</h2>
-  <p class="subline">确认过的日程才会出现在这里。</p>
-  <div class="cal-list" id="calList"></div>
-  <a class="adv-all" href="calendar.html">查看全部日程 →</a>
-</section>
-
-
-
-<!-- ===== 06 往期回顾 ===== -->
-<section class="section" id="proof">
-  <div class="eyebrow">06 — TRACK RECORD</div>
-  <h2 class="section-title">两年，真实走过的记录</h2>
-  <div class="stat-line">
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div><div class="stat-cap">出海企业调研</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div><div class="stat-cap">国家 · 地区</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="1000">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">人次</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div><div class="stat-cap">签约顾问</div></div>
+  <div class="hero-cta">
+    <a class="btn-submit btn-seal" href="cta/self-test/index.html">开始自测（免费 · 3 分钟）</a>
+    <a class="btn-outline" href="p/project/index.html">我有一个出海项目，想聊聊</a>
   </div>
-  <div class="client-wall" id="clientWall"></div>
-  <p class="lede proof-one">70+ 场活动，覆盖产业研究与对接、海鑫汇 Talk、海鑫汇全球行、全球 CEO 中国行、战略合作伙伴与生态与历史活动。</p>
-  <!-- 06 入口圆圈:start -->
-  <div class="tr-circles">
-    <a class="tr-circle" style="--c:#16242F" href="p/closed-door/index.html">产业研究<br>与对接</a>
-    <a class="tr-circle" style="--c:#345E72" href="p/ceo-tour/index.html">全球 CEO<br>中国行</a>
-    <a class="tr-circle" style="--c:#4E8497" href="p/global-trip/index.html">海鑫汇<br>全球行</a>
-    <a class="tr-circle" style="--c:#345E72" href="p/featured/index.html">海鑫汇<br>精选</a>
-    <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">海鑫汇<br>Talk</a>
-  </div>
-  <!-- 06 入口圆圈:end -->
-<a class="visit-line" href="events-index.html">海鑫汇全球行 2012–2026，36 场　查看全部 →</a>
+
+
+  <div class="industry-entry" id="industryEntry"></div>
 </section>
 
-<!-- ===== 07 一线顾问 ===== -->
-<section class="section" id="advisors">
-  <div class="eyebrow">07 — ADVISORS</div>
-  <h2 class="section-title">把判断，交给真正在一线的人</h2>
-  <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
-  <div class="adv-wall" id="advWall"></div>
-  <p class="adv-note">30+ 位产业顾问网络，已公开 14 位，更多陆续上线。</p>
-  <a class="adv-all" href="advisors-index.html">查看全部顾问 →</a>
-  <!-- 运营团队 -->
-  <h3 class="ops-sub-title">当地运营中心</h3>
-  <p class="subline">落地，交给在当地的人。</p>
-  <div class="adv-wall" id="opsWall"></div>
-  <a class="adv-all" href="ecosystem-index.html">查看全部运营 →</a>
-</section>
 
-<!-- ===== 08 常见问题 ===== -->
+<!-- ===== 新11 FAQ / 常见问题（原 08） ===== -->
+
 <section class="section" id="faq">
-  <div class="eyebrow">08 — FAQ</div>
+  <div class="eyebrow">FAQ</div>
   <h2 class="section-title">常见问题</h2>
   <p class="subline">出海前，先搞清楚这几件事。</p>
   <div class="faq-list">
@@ -584,112 +711,6 @@
     </details>
   </div>
 </section>
-
-<!-- ===== 09 出海项目沟通 ===== -->
-<section class="section" id="contact">
-  <div class="eyebrow">09 — PROJECT</div>
-  <h2 class="section-title">我有一个出海项目，想聊聊</h2>
-  <p class="subline">免费 · 申请制</p>
-  <div class="book-card">
-    <ul class="stage-list">
-      <li>国家与城市选择</li>
-      <li>本地伙伴对接</li>
-      <li>政府与园区对接</li>
-    </ul>
-    <p class="subline">按项目报价</p>
-    <a class="btn-submit btn-seal" href="p/project/index.html">提交出海项目</a>
-  </div>
-</section>
-
-<!-- ===== 10 海鑫汇生态 ===== -->
-<link rel="stylesheet" href="ecosystem/ecosystem.css">
-
-<section id="ecosystem" class="section eco">
-  <div class="eyebrow">10 — ECOSYSTEM</div>
-  <h2 class="section-title">海鑫汇生态</h2>
-  <p class="subline">携手伙伴 共建出海与来华服务网络</p>
-
-  <div class="eco-honey">
-
-    <a href="ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="海鑫汇与和君咨询">
-      <svg viewBox="0 0 180 156" aria-hidden="true">
-        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
-        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
-        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
-        <circle class="gc" cx="62" cy="38" r="15"/>
-        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
-        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
-        <circle class="pc" cx="118" cy="38" r="15"/>
-        <text class="t1" x="118" y="42" text-anchor="middle" font-size="12" font-weight="500">和君</text>
-        <text class="t2" x="90" y="78" text-anchor="middle" font-size="12">海鑫汇与</text>
-        <text class="t1" x="90" y="104" text-anchor="middle" font-size="17" font-weight="500" letter-spacing="1">和君咨询</text>
-        <g transform="translate(0,128)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
-      </svg>
-    </a>
-
-    <a href="ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="海鑫汇与对外经济贸易大学">
-      <svg viewBox="0 0 180 156" aria-hidden="true">
-        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
-        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
-        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
-        <circle class="gc" cx="62" cy="38" r="15"/>
-        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
-        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
-        <circle class="pc" cx="118" cy="38" r="15"/>
-        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">UIBE</text>
-        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">海鑫汇与</text>
-        <text class="t1" x="90" y="95" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">对外经济</text>
-        <text class="t1" x="90" y="116" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">贸易大学</text>
-        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
-      </svg>
-    </a>
-
-    <a href="ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="海鑫汇与新加坡世界贸易中心">
-      <svg viewBox="0 0 180 156" aria-hidden="true">
-        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
-        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
-        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
-        <circle class="gc" cx="62" cy="38" r="15"/>
-        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
-        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
-        <circle class="pc" cx="118" cy="38" r="15"/>
-        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">WTC</text>
-        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">海鑫汇与</text>
-        <text class="t1" x="90" y="95" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">新加坡世界</text>
-        <text class="t1" x="90" y="116" text-anchor="middle" font-size="16" font-weight="500" letter-spacing="1">贸易中心</text>
-        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
-      </svg>
-    </a>
-
-    <button type="button" class="eco-hex more h-gray" aria-label="更多合作伙伴">
-      <svg viewBox="0 0 110 95" aria-hidden="true">
-        <polygon class="bg" points="27.5,0 82.5,0 110,47.5 82.5,95 27.5,95 0,47.5"/>
-        <circle class="dt" cx="38" cy="47.5" r="3.5"/>
-        <circle class="dt" cx="55" cy="47.5" r="3.5"/>
-        <circle class="dt" cx="72" cy="47.5" r="3.5"/>
-      </svg>
-    </button>
-
-  </div>
-</section>
-
-<!-- ===== 关于（导航锚点） ===== -->
-<section class="section about-block" id="about">
-  <div class="eyebrow">ABOUT</div>
-  <h2 class="section-title">海鑫汇 Gateway To New</h2>
-  <h3>汇聚全球视野，链接时代企业家</h3>
-  <p class="about-bio">海鑫汇（Gateway To New，GTN）是一个面向具有全球视野与国际化抱负的企业家的交流与合作平台。我们汇聚来自不同产业、市场与文化背景的企业家、投资人及行业领袖，通过深度交流、国际考察、思想分享与跨界合作，拓展认知边界，洞察全球趋势，探索跨境商业机遇。</p>
-  <p class="about-bio">我们相信，真正的国际化不仅是业务版图的延伸，更是视野、思维与格局的拓展。海鑫汇致力于连接中国与世界，构建开放、互信、长期共创的企业家网络，让优秀的企业家在交流中相互启发，在连接中发现机遇，在合作中创造价值。</p>
-  <p class="about-bio"><strong>以全球视野拓展认知，以深度连接创造未来。</strong></p>
-  <div class="about-links"><a href="privacy.html">隐私政策</a></div>
-  <div class="about-social" id="aboutSocial"></div>
-  <p class="hot-combos">热门出海组合：
-    <a href="matrix/auto-tech-europe/index.html">新能源车与智慧交通 × 欧洲</a> ·
-    <a href="matrix/new-energy-europe/index.html">新能源电力电气 × 欧洲</a> ·
-    <a href="matrix/ai-southeast-asia/index.html">人工智能 × 东南亚</a> ·
-    <a href="matrix/new-energy-middle-east/index.html">新能源电力电气 × 中东</a>
-  </p>
-  </section>
 
 <footer class="footer" data-depth="0"></footer>
 

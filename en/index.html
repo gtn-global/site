@@ -24,6 +24,7 @@
 <meta name="google-site-verification" content="c337c8b7a58761fe">
 <meta name="msvalidate.01" content="1C28C7F5DA0E816B70CC5C8F517D7801">
 <link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="ecosystem/ecosystem.css">
 <style>
 /* 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区（详见 assets/js 注入） */
 .map-note{font-size:12px;color:var(--ink-faint);margin:10px 0 0;}
@@ -249,59 +250,105 @@
   </div>
 </header>
 
-<!-- ===== 01 首屏 ===== -->
-<section class="section" id="home">
-  <div class="eyebrow">01 — INDUSTRY × REGION</div>
-  <h1 class="headline">Should you go global — and which path? Think it through first.</h1>
-  <p class="subline">GTN gives the leadership of Chinese "little giant" manufacturers, tech firms and listed companies a going-global decision diagnosis: judge first, then act.</p>
-  <p class="hero-en">Decide first. Then go global.</p>
+<!-- ===== 新01 WHO WE ARE / About（原 ABOUT） ===== -->
 
-  <div class="home-selector" id="selector">
-    <div class="selector-row">
-      <span class="selector-lead">I'm in</span>
-      <label class="selector-field">Industry
-        <select id="selIndustry" class="selector-select"><option value="">Select an industry</option></select>
-      </label>
-      <span class="selector-mid">, and want to go to</span>
-      <label class="selector-field">Region
-        <select id="selCountry" class="selector-select"><option value="">Select a region</option></select>
-      </label>
-      <button type="button" id="selGo" class="btn-submit btn-seal">Explore →</button>
-    </div>
-    <p class="selector-hint">Once selected, this cell expands its report, past visits, matched advisors, local ops center and next event.</p>
+<section class="section about-block" id="about">
+  <div class="eyebrow">WHO WE ARE</div>
+  <h2 class="section-title">Gateway To New</h2>
+  <h3>Gateway To New (GTN) — Your China Market &amp; Industry Partnership Platform</h3>
+  <p class="about-bio">Gateway To New (GTN) connects international business communities with China's industries, companies, and market insights. We help trade organizations and business leaders explore relevant industries, identify potential connections, and develop practical opportunities for cross-border exchange.</p>
+  <p class="about-bio">Our work focuses on three areas: China market and industry intelligence, connections with relevant companies and industry experts, and joint programs that bring business communities together. Through research, industry visits, and structured business dialogue, we aim to make cross-border engagement more informed and productive.</p>
+  <p class="about-bio">GTN provides research, connections, and opportunities for dialogue. Commercial outcomes depend on each project's circumstances, and we do not guarantee orders or transactions.</p>
+  <div class="about-links"><a href="privacy.html">Privacy policy</a></div>
+  <div class="about-social" id="aboutSocial"></div>
+  <p class="hot-combos">Popular going-global combinations:
+    <a href="matrix/auto-tech-europe/index.html">NEVs &amp; smart mobility × Europe</a> ·
+    <a href="matrix/new-energy-europe/index.html">Clean energy &amp; power × Europe</a> ·
+    <a href="matrix/ai-southeast-asia/index.html">AI × Southeast Asia</a> ·
+    <a href="matrix/new-energy-middle-east/index.html">Clean energy &amp; power × Middle East</a>
+  </p>
+  </section>
+
+
+<!-- ===== 新02 OUR TRACK RECORD / Track Record（原 06） ===== -->
+
+<section class="section" id="proof">
+  <div class="eyebrow">OUR TRACK RECORD</div>
+  <h2 class="section-title">Two years of real, on-the-ground records</h2>
+  <div class="stat-line">
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div><div class="stat-cap">Firms researched</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div><div class="stat-cap">Countries · regions</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="1000">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">Participants</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div><div class="stat-cap">Advisors on board</div></div>
   </div>
+  <div class="client-wall" id="clientWall"></div>
+  <p class="lede proof-one">70+ events across industry research &amp; matchmaking, GTN Talk, GTN Global tour, Global CEO China Tour, strategic partners &amp; ecosystem, and past events.</p>
+  <!-- 06 入口圆圈:start -->
+  <div class="tr-circles">
+    <a class="tr-circle" style="--c:#16242F" href="p/closed-door/index.html">Industry research<br>&amp; matchmaking</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/ceo-tour/index.html">Global CEO<br>China Tour</a>
+    <a class="tr-circle" style="--c:#4E8497" href="p/global-trip/index.html">GTN Global<br>tour</a>
+    <a class="tr-circle" style="--c:#345E72" href="p/featured/index.html">GTN<br>Featured</a>
+    <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">GTN<br>Talk</a>
+  </div>
+  <!-- 06 入口圆圈:end -->
+<a class="visit-line" href="p/global-trip/index.html">GTN Global tour 2012–2026, 36 editions · View all →</a>
+  </section>
 
-  <div class="worldmap" id="worldMap"></div>
-  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>Countries &amp; regions with content</span>Click a red dot to view this cell. Schematic only — not a geographic or boundary reference.</p>
 
-  <div class="desk" id="decisionDesk" hidden>
-    <div class="desk-head">
-      <div>
-        <div class="desk-kicker">Decision desk</div>
-        <h2 class="desk-title" id="deskTitle"></h2>
-        <div class="desk-summary" id="deskSummary"></div>
+<!-- ===== 新03 CHINA MARKET & INDUSTRY INTELLIGENCE / Industry Reports（原 04） ===== -->
+
+<section class="section" id="reports">
+  <div class="eyebrow">CHINA MARKET & INDUSTRY INTELLIGENCE</div>
+  <h2 class="section-title">Industry going-global research reports</h2>
+  <p class="subline">Two years of frontline intelligence and advisor networks, organized by sector. ¥200 each; from 2027 we plan a new edition every quarter.</p>
+  <div class="report-grid">
+    <div class="report-card">
+      <span class="rc-tag">Published 2026.09</span>
+      <h4>Clean energy &amp; power</h4>
+      <p class="rc-desc">Li-ion · PV · storage · charging · off-grid</p>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions"><a class="rc-act" href="reports/cleantech/index.html">Get it</a></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">Expected Oct 2026</span>
+      <h4>Artificial intelligence</h4>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">Notify me on release</button></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">Expected Nov 2026</span>
+      <h4>NEVs &amp; smart mobility</h4>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions">
+        <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告（2026 版）" data-source="product-interest">Notify me on release</button>
       </div>
-      <button type="button" class="desk-close" id="deskClose">Collapse ✕</button>
     </div>
-    <div class="desk-grid">
-      <div class="desk-col desk-col--left" id="deskLeft"></div>
-      <div class="desk-col desk-col--right" id="deskRight"></div>
-    </div>
-    <div class="desk-foot" id="deskFoot"></div>
   </div>
-
-  <div class="hero-cta">
-    <a class="btn-submit btn-seal" href="cta/self-test/index.html">Start the self-test (free · 3 min)</a>
-    <a class="btn-outline" href="p/project/index.html">I have a going-global project to discuss</a>
-  </div>
-
-
-  <div class="industry-entry" id="industryEntry"></div>
 </section>
 
-<!-- ===== 02 双向通道 ===== -->
+
+<!-- ===== 新04 INDUSTRY ADVISOR NETWORK / Advisors（原 07） ===== -->
+
+<section class="section" id="advisors">
+  <div class="eyebrow">INDUSTRY ADVISOR NETWORK</div>
+  <h2 class="section-title">Trust the judgment of people who are actually on the ground</h2>
+  <p class="subline">30+ industry advisors from listed companies, cross-border investment and the front lines.</p>
+  <div class="adv-wall" id="advWall"></div>
+  <p class="adv-note">30+ advisor network; 14 public so far, more coming.</p>
+  <a class="adv-all" href="advisors-index.html">View all advisors →</a>
+  <!-- 运营团队 -->
+  <h3 class="ops-sub-title">Local operations centers</h3>
+  <p class="subline">For execution on the ground, trust the locals.</p>
+  <div class="adv-wall" id="opsWall"></div>
+  <a class="adv-all" href="ecosystem-index.html">View all operations →</a>
+</section>
+
+
+<!-- ===== 新05 TWO-WAY GATEWAY / Two-Way Gateway（原 02） ===== -->
+
 <section class="section channels" id="channels">
-  <div class="eyebrow">02 — TWO-WAY GATEWAY</div>
+  <div class="eyebrow">TWO-WAY GATEWAY</div>
   <h2 class="section-title">Two directions, connected</h2>
   <p class="subline">We take Chinese companies out to see the world — and bring foreign CEOs in to see China.</p>
   <div class="marquee" id="marquee">
@@ -316,9 +363,114 @@
   </div>
 </section>
 
-<!-- ===== 03 你在哪一步 ===== -->
+
+<!-- ===== 新06 ECOSYSTEM / The GTN ecosystem（原 10） ===== -->
+
+<section id="ecosystem" class="section eco">
+  <div class="eyebrow">ECOSYSTEM</div>
+  <h2 class="section-title">The GTN ecosystem</h2>
+  <p class="subline">With our partners, we build one service network for going global and coming to China.</p>
+
+  <div class="eco-honey">
+
+    <a href="ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="GTN and Hejun Group">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1" x="118" y="41" text-anchor="middle" font-size="8" font-weight="500">Hejun</text>
+        <text class="t2" x="90" y="78" text-anchor="middle" font-size="12">GTN and</text>
+        <text class="t1" x="90" y="104" text-anchor="middle" font-size="15" font-weight="500">Hejun Group</text>
+        <g transform="translate(0,128)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <a href="ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="GTN and UIBE">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">UIBE</text>
+        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">GTN and</text>
+        <text class="t1" x="90" y="94" text-anchor="middle" font-size="10.5" font-weight="500">University of Intl.</text>
+        <text class="t1" x="90" y="113" text-anchor="middle" font-size="10.5" font-weight="500">Business &amp; Economics</text>
+        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <a href="ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="GTN and WTC Singapore">
+      <svg viewBox="0 0 180 156" aria-hidden="true">
+        <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
+        <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
+        <polygon class="in" points="48.2,5.5 131.8,5.5 173.7,78 131.8,150.5 48.2,150.5 6.3,78"/>
+        <circle class="gc" cx="62" cy="38" r="15"/>
+        <text class="gt serif" x="62" y="42" text-anchor="middle" font-size="11" font-weight="500">GTN</text>
+        <text class="tm" x="90" y="42" text-anchor="middle" font-size="13">×</text>
+        <circle class="pc" cx="118" cy="38" r="15"/>
+        <text class="t1 serif" x="118" y="42" text-anchor="middle" font-size="11" font-weight="500">WTC</text>
+        <text class="t2" x="90" y="74" text-anchor="middle" font-size="12">GTN and</text>
+        <text class="t1" x="90" y="95" text-anchor="middle" font-size="13" font-weight="500">WTC</text>
+        <text class="t1" x="90" y="115" text-anchor="middle" font-size="13" font-weight="500">Singapore</text>
+        <g transform="translate(0,134)"><line class="dl" x1="68" y1="0" x2="82" y2="0"/><polygon class="dm" points="90,-4 94,0 90,4 86,0"/><line class="dl" x1="98" y1="0" x2="112" y2="0"/></g>
+      </svg>
+    </a>
+
+    <button type="button" class="eco-hex more h-gray" aria-label="More partners">
+      <svg viewBox="0 0 110 95" aria-hidden="true">
+        <polygon class="bg" points="27.5,0 82.5,0 110,47.5 82.5,95 27.5,95 0,47.5"/>
+        <circle class="dt" cx="38" cy="47.5" r="3.5"/>
+        <circle class="dt" cx="55" cy="47.5" r="3.5"/>
+        <circle class="dt" cx="72" cy="47.5" r="3.5"/>
+      </svg>
+    </button>
+
+  </div>
+</section>
+
+
+<!-- ===== 新07 UPCOMING PROGRAMS &amp; EVENTS / Calendar（原 05） ===== -->
+
+<section class="section" id="calendar">
+  <div class="eyebrow">UPCOMING PROGRAMS &amp; EVENTS</div>
+  <h2 class="section-title">Our going-global schedule, next 90 days</h2>
+  <p class="subline">Only confirmed dates appear here.</p>
+  <div class="cal-list" id="calList"></div>
+  <a class="adv-all" href="calendar.html">View all dates →</a>
+</section>
+
+
+
+
+<!-- ===== 新08 WORK WITH GTN / Contact（原 09） ===== -->
+
+<section class="section" id="contact">
+  <div class="eyebrow">WORK WITH GTN</div>
+  <h2 class="section-title">I have a going-global project to discuss</h2>
+  <p class="subline">Free · application-based</p>
+  <div class="book-card">
+    <ul class="stage-list">
+      <li>Country &amp; city selection</li>
+      <li>Local partner matchmaking</li>
+      <li>Government &amp; park connections</li>
+    </ul>
+    <p class="subline">Priced per project</p>
+    <a class="btn-submit btn-seal" href="p/project/index.html">Submit a project</a>
+  </div>
+</section>
+
+
+<!-- ===== 新09 WHERE ARE YOU / Where Are You Right Now（原 03） ===== -->
+
 <section class="section" id="stage">
-  <div class="eyebrow">03 — WHERE ARE YOU</div>
+  <div class="eyebrow">WHERE ARE YOU</div>
   <h2 class="section-title">Where are you right now?</h2>
   <p class="subline">No need to pick a product yet — just tell us your situation.</p>
   <div class="stage-cards">
@@ -381,69 +533,10 @@
   </div>
 </section>
 
-<!-- ===== 04 产业出海研究报告 ===== -->
-<section class="section" id="reports">
-  <div class="eyebrow">04 — REPORTS</div>
-  <h2 class="section-title">Industry going-global research reports</h2>
-  <p class="subline">Two years of frontline intelligence and advisor networks, organized by sector. ¥200 each; from 2027 we plan a new edition every quarter.</p>
-  <div class="report-grid">
-    <div class="report-card">
-      <span class="rc-tag">Published 2026.09</span>
-      <h4>Clean energy &amp; power</h4>
-      <p class="rc-desc">Li-ion · PV · storage · charging · off-grid</p>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions"><a class="rc-act" href="reports/cleantech/index.html">Get it</a></div>
-    </div>
-    <div class="report-card">
-      <span class="rc-tag">Expected Oct 2026</span>
-      <h4>Artificial intelligence</h4>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">Notify me on release</button></div>
-    </div>
-    <div class="report-card">
-      <span class="rc-tag">Expected Nov 2026</span>
-      <h4>NEVs &amp; smart mobility</h4>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions">
-        <button type="button" class="rc-act" data-product="新能源车与智慧交通出海研究报告（2026 版）" data-source="product-interest">Notify me on release</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 05 出海日历 ===== -->
-<section class="section" id="calendar">
-  <div class="eyebrow">05 — CALENDAR</div>
-  <h2 class="section-title">Our going-global schedule, next 90 days</h2>
-  <p class="subline">Only confirmed dates appear here.</p>
-  <div class="cal-list" id="calList"></div>
-  <a class="adv-all" href="calendar.html">View all dates →</a>
-</section>
+<!-- ON THE GROUND（无编号，随 新09 Where Are You 移动） -->
 
-
-
-<!-- ===== 06 往期回顾 ===== -->
-<section class="section" id="proof">
-  <div class="eyebrow">06 — TRACK RECORD</div>
-  <h2 class="section-title">Two years of real, on-the-ground records</h2>
-  <div class="stat-line">
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="70">70</span><span class="stat-plus">+</span></div><div class="stat-cap">Firms researched</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="20">20</span><span class="stat-plus">+</span></div><div class="stat-cap">Countries · regions</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="1000">1000</span><span class="stat-plus">+</span></div><div class="stat-cap">Participants</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="stat-count" data-count="30">30</span><span class="stat-plus">+</span></div><div class="stat-cap">Advisors on board</div></div>
-  </div>
-  <div class="client-wall" id="clientWall"></div>
-  <p class="lede proof-one">70+ events across industry research &amp; matchmaking, GTN Talk, GTN Global tour, Global CEO China Tour, strategic partners &amp; ecosystem, and past events.</p>
-  <!-- 06 入口圆圈:start -->
-  <div class="tr-circles">
-    <a class="tr-circle" style="--c:#16242F" href="p/closed-door/index.html">Industry research<br>&amp; matchmaking</a>
-    <a class="tr-circle" style="--c:#345E72" href="p/ceo-tour/index.html">Global CEO<br>China Tour</a>
-    <a class="tr-circle" style="--c:#4E8497" href="p/global-trip/index.html">GTN Global<br>tour</a>
-    <a class="tr-circle" style="--c:#345E72" href="p/featured/index.html">GTN<br>Featured</a>
-    <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">GTN<br>Talk</a>
-  </div>
-  <!-- 06 入口圆圈:end -->
-<a class="visit-line" href="p/global-trip/index.html">GTN Global tour 2012–2026, 36 editions · View all →</a>
+<section class="section">
   <p class="carousel-label">On site <span class="en">ON THE GROUND</span></p>
   <div class="carousel-wrap film">
     <div class="carousel-track band" data-dir="1"><div class="carousel-row">
@@ -474,25 +567,63 @@
   </div>
 </section>
 
-<!-- ===== 07 一线顾问 ===== -->
-<section class="section" id="advisors">
-  <div class="eyebrow">07 — ADVISORS</div>
-  <h2 class="section-title">Trust the judgment of people who are actually on the ground</h2>
-  <p class="subline">30+ industry advisors from listed companies, cross-border investment and the front lines.</p>
-  <div class="adv-wall" id="advWall"></div>
-  <p class="adv-note">30+ advisor network; 14 public so far, more coming.</p>
-  <a class="adv-all" href="advisors-index.html">View all advisors →</a>
-  <!-- 运营团队 -->
-  <h3 class="ops-sub-title">Local operations centers</h3>
-  <p class="subline">For execution on the ground, trust the locals.</p>
-  <div class="adv-wall" id="opsWall"></div>
-  <a class="adv-all" href="ecosystem-index.html">View all operations →</a>
+<!-- ===== 新10 INDUSTRY × REGION / Industry × Region（原 01） ===== -->
+
+<section class="section" id="home">
+  <div class="eyebrow">INDUSTRY × REGION</div>
+  <h1 class="headline">Should you go global — and which path? Think it through first.</h1>
+  <p class="subline">GTN gives the leadership of Chinese "little giant" manufacturers, tech firms and listed companies a going-global decision diagnosis: judge first, then act.</p>
+  <p class="hero-en">Decide first. Then go global.</p>
+
+  <div class="home-selector" id="selector">
+    <div class="selector-row">
+      <span class="selector-lead">I'm in</span>
+      <label class="selector-field">Industry
+        <select id="selIndustry" class="selector-select"><option value="">Select an industry</option></select>
+      </label>
+      <span class="selector-mid">, and want to go to</span>
+      <label class="selector-field">Region
+        <select id="selCountry" class="selector-select"><option value="">Select a region</option></select>
+      </label>
+      <button type="button" id="selGo" class="btn-submit btn-seal">Explore →</button>
+    </div>
+    <p class="selector-hint">Once selected, this cell expands its report, past visits, matched advisors, local ops center and next event.</p>
+  </div>
+
+  <div class="worldmap" id="worldMap"></div>
+  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>Countries &amp; regions with content</span>Click a red dot to view this cell. Schematic only — not a geographic or boundary reference.</p>
+
+  <div class="desk" id="decisionDesk" hidden>
+    <div class="desk-head">
+      <div>
+        <div class="desk-kicker">Decision desk</div>
+        <h2 class="desk-title" id="deskTitle"></h2>
+        <div class="desk-summary" id="deskSummary"></div>
+      </div>
+      <button type="button" class="desk-close" id="deskClose">Collapse ✕</button>
+    </div>
+    <div class="desk-grid">
+      <div class="desk-col desk-col--left" id="deskLeft"></div>
+      <div class="desk-col desk-col--right" id="deskRight"></div>
+    </div>
+    <div class="desk-foot" id="deskFoot"></div>
+  </div>
+
+  <div class="hero-cta">
+    <a class="btn-submit btn-seal" href="cta/self-test/index.html">Start the self-test (free · 3 min)</a>
+    <a class="btn-outline" href="p/project/index.html">I have a going-global project to discuss</a>
+  </div>
+
+
+  <div class="industry-entry" id="industryEntry"></div>
 </section>
 
-<!-- ===== 08 常见问题 ===== -->
+
+<!-- ===== 新11 FAQ / Frequently Asked Questions（原 08） ===== -->
+
 <section class="section" id="faq">
-  <div class="eyebrow">08 — FAQ</div>
-  <h2 class="section-title">FAQ</h2>
+  <div class="eyebrow">FAQ</div>
+  <h2 class="section-title">Frequently asked questions</h2>
   <p class="subline">Get these clear before you go global.</p>
   <div class="faq-list">
     <details class="faq-item"><summary>What does GTN do?</summary><p>We give Chinese management a going-global decision diagnosis: laying out the options, risks and costs of whether, where and how to enter — and offering a judgment you can discuss.</p></details>
@@ -514,39 +645,6 @@
   </div>
 </section>
 
-<!-- ===== 09 出海项目沟通 ===== -->
-<section class="section" id="contact">
-  <div class="eyebrow">09 — PROJECT</div>
-  <h2 class="section-title">I have a going-global project to discuss</h2>
-  <p class="subline">Free · application-based</p>
-  <div class="book-card">
-    <ul class="stage-list">
-      <li>Country &amp; city selection</li>
-      <li>Local partner matchmaking</li>
-      <li>Government &amp; park connections</li>
-    </ul>
-    <p class="subline">Priced per project</p>
-    <a class="btn-submit btn-seal" href="p/project/index.html">Submit a project</a>
-  </div>
-</section>
-
-<!-- ===== 关于（导航锚点） ===== -->
-<section class="section about-block" id="about">
-  <div class="eyebrow">ABOUT</div>
-  <h2 class="section-title">Gateway To New</h2>
-  <h3>Global vision, connecting the entrepreneurs of our era</h3>
-  <p class="about-bio">Gateway To New (GTN) is an exchange and collaboration platform for entrepreneurs with a global vision and international ambition. We bring together entrepreneurs, investors and industry leaders from diverse sectors, markets and cultures — expanding the boundaries of understanding, surfacing global trends and exploring cross-border business opportunities through deep exchange, international visits, idea-sharing and cross-industry cooperation.</p>
-  <p class="about-bio">We believe true internationalization is more than extending a business footprint — it is expanding vision, thinking and perspective. GTN is committed to connecting China and the world, building an open, trust-based, long-term entrepreneur network where outstanding founders inspire each other through exchange, discover opportunities through connection, and create value through cooperation.</p>
-  <p class="about-bio"><strong>Expand insight through a global vision; create the future through deep connection.</strong></p>
-  <div class="about-links"><a href="privacy.html">Privacy policy</a></div>
-  <div class="about-social" id="aboutSocial"></div>
-  <p class="hot-combos">Popular going-global combinations:
-    <a href="matrix/auto-tech-europe/index.html">NEVs &amp; smart mobility × Europe</a> ·
-    <a href="matrix/new-energy-europe/index.html">Clean energy &amp; power × Europe</a> ·
-    <a href="matrix/ai-southeast-asia/index.html">AI × Southeast Asia</a> ·
-    <a href="matrix/new-energy-middle-east/index.html">Clean energy &amp; power × Middle East</a>
-  </p>
-  </section>
 
 <footer class="footer" data-depth="0"></footer>
 
