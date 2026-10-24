@@ -1,0 +1,44 @@
+
+.eco{--eco-ink:var(--ink);--eco-ink2:var(--ink-soft);--eco-ink3:var(--ink-faint)}
+.eco-honey{--eco-w:clamp(130px,24vw,180px);display:flex;align-items:flex-start;justify-content:center;padding:8px 0 24px}
+.eco-hex{flex:none;width:var(--eco-w);height:calc(var(--eco-w)*.8667);margin:0 0 0 calc(var(--eco-w)*-.25);padding:0;border:0;background:none;cursor:pointer;overflow:visible;font:inherit;transition:transform .25s;outline:none}
+.eco-hex:first-child{margin-left:0}
+.eco-hex:nth-child(even){margin-top:calc(var(--eco-w)*.4333)}
+.eco-hex.more{width:calc(var(--eco-w)*.611);height:calc(var(--eco-w)*.528);margin-left:calc(var(--eco-w)*-.0556);margin-top:calc(var(--eco-w)*.6)}
+a.eco-hex{display:block;text-decoration:none;color:inherit}
+.eco-hex svg{display:block;width:100%;height:100%;overflow:visible}
+.eco-hex:is(:hover,:focus-visible){transform:translateY(-5px)}
+.eco-hex.h-blue{--tint:var(--seal-soft);--solid:var(--seal)}
+.eco-hex.h-teal{--tint:#E1F5EE;--solid:#0F6E56}
+.eco-hex.h-purple{--tint:#EEEDFE;--solid:#534AB7}
+.eco-hex.h-gray{--tint:#F1EFE8;--solid:#5F5E5A}
+.eco-hex text{font-family:inherit}
+.eco-hex .serif{font-family:Georgia,"Times New Roman",serif}
+.eco-hex .bg{fill:var(--tint);stroke:var(--solid);stroke-width:3;transition:fill .25s}
+.eco-hex:is(:hover,:focus-visible) .bg{fill:var(--solid)}
+.eco-hex .in{fill:none;stroke:var(--solid);stroke-width:.8;opacity:.5;transition:stroke .25s}
+.eco-hex:is(:hover,:focus-visible) .in{stroke:#fff;opacity:.55}
+.eco-hex .halo{fill:none;stroke:var(--solid);stroke-width:.8;opacity:0;transition:opacity .25s}
+.eco-hex:is(:hover,:focus-visible) .halo{opacity:.6}
+.eco-hex .t1{fill:var(--eco-ink)}
+.eco-hex .t2{fill:var(--eco-ink2)}
+.eco-hex .tm{fill:var(--eco-ink3)}
+.eco-hex:is(:hover,:focus-visible) :is(.t1,.t2,.tm){fill:#fff}
+.eco-hex .gc{fill:var(--solid)}
+.eco-hex .gt{fill:#fff}
+.eco-hex:is(:hover,:focus-visible) .gc{fill:#fff}
+.eco-hex:is(:hover,:focus-visible) .gt{fill:var(--solid)}
+.eco-hex .pc{fill:none;stroke:var(--solid);stroke-width:1.2}
+.eco-hex:is(:hover,:focus-visible) .pc{stroke:#fff}
+.eco-hex .dm{fill:var(--solid);stroke:var(--solid);stroke-width:1}
+.eco-hex .dl{stroke:var(--solid);stroke-width:1}
+.eco-hex:is(:hover,:focus-visible) .dm{fill:#fff;stroke:#fff}
+.eco-hex:is(:hover,:focus-visible) .dl{stroke:#fff}
+.eco-hex .dt{fill:var(--solid);transition:fill .25s}
+.eco-hex:is(:hover,:focus-visible) .dt{fill:#fff}
+.eco-hex.more .bg{stroke-dasharray:6 5;stroke-width:2}
+.eco-hex.more:is(:hover,:focus-visible) .bg{stroke-dasharray:none}
+@media (max-width:640px){
+.eco-honey{--eco-w:clamp(110px,38vw,150px);display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px;justify-items:center;align-items:center}
+.eco-hex,.eco-hex:nth-child(even),.eco-hex.more{margin:0}
+}

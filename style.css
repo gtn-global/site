@@ -1131,6 +1131,32 @@ span.ops-center-flag{position:absolute;bottom:-2px;right:-2px;width:30px;height:
 .client-wall img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
 @media(max-width:900px){.client-wall{grid-template-columns:repeat(10,1fr);}}
 .report-note{margin:10px 0 0;font-size:12px;color:var(--ink-faint,#8a8a8a);}
+
+/* ---- 研究报告卡片网格 + 实证区块（reports / featured 子页共用） ---- */
+.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px;}
+@media(max-width:860px){.report-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.report-grid{grid-template-columns:1fr;}}
+.report-card{border:1px solid var(--rule,#e5e2db);background:var(--paper,#fff);padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:border-color .2s;}
+.report-card h4{font-family:'Noto Serif SC',serif;font-size:18px;color:var(--ink);margin:6px 0 0;line-height:1.4;}
+.report-card .rc-desc{font-size:14px;color:var(--ink-soft);margin:0;}
+.report-card .rc-cta{margin-top:auto;color:var(--seal);font-size:14px;}
+.rc-actions{margin-top:auto;}
+.rc-btn{font:inherit;font-size:13px;color:var(--seal);background:none;border:1px solid var(--seal);border-radius:8px;padding:8px 16px;cursor:pointer;min-height:44px;}
+.rc-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px;color:var(--seal);border:1px solid var(--seal);padding:3px 9px;border-radius:4px;}
+.rc-tag--wip{color:var(--ink-faint,#8a8a8a);border-color:var(--rule,#e5e2db);}
+
+.evidence-block{margin-top:40px;padding-top:28px;border-top:1px solid var(--rule,#e5e2db);}
+.evidence-title{font-family:'Noto Serif SC',serif;font-size:20px;color:var(--ink);margin:0 0 4px;}
+.evidence-stat{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--seal);margin:0 0 16px;}
+.evidence-recent{list-style:none;margin:0;padding:0;}
+.evidence-recent li{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--rule,#e5e2db);font-size:14.5px;line-height:1.6;}
+.evidence-recent li:last-child{border-bottom:none;}
+.evidence-recent a{color:var(--ink);text-decoration:none;}
+.evidence-recent a:hover{color:var(--seal);text-decoration:underline;}
+.evidence-date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint,#8a8a8a);margin-left:auto;}
+.evidence-report-link{margin-top:16px;font-size:14px;}
+.evidence-report-link a{color:var(--seal);text-decoration:none;}
+.evidence-report-link a:hover{text-decoration:underline;}
 /* ---- 版式收紧 ---- */
 .section{padding-top:36px;padding-bottom:36px;}
 @media(min-width:900px){.section{padding-top:44px;padding-bottom:44px;}}
@@ -1384,6 +1410,111 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 #stage .stage-imgs img{width:100%;height:auto;object-fit:contain;display:block;}
 @media(max-width:900px){.stage-cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.stage-cards{grid-template-columns:1fr;}}
+
+/* ===== 03 区块：整行按钮（次级按钮）===== */
+.gtn-btn-list{
+  --gtn-btn-accent: var(--seal, #A72B23);     /* hover 填充色：页面主色 */
+  --gtn-btn-on-accent: #fff;                  /* 填充后文字色 */
+  --gtn-btn-line: var(--rule, #E6E3DD);       /* 默认细边框：页面分割线色 */
+  --gtn-btn-ease: cubic-bezier(.2,.7,.2,1);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.gtn-btn-list li{ margin: 0; padding: 0; list-style: none; }
+
+.gtn-btn-list .gtn-rowbtn{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 12px 20px;
+  border: 1px solid var(--gtn-btn-line);
+  border-radius: 3px;
+  color: inherit;
+  text-decoration: none;          /* 去掉原下划线 */
+  background-image: none;         /* 去掉可能的渐变下划线 */
+  box-shadow: none;
+  transition: color .3s var(--gtn-btn-ease), border-color .3s var(--gtn-btn-ease), transform .15s ease;
+}
+/* 从左向右填充层 */
+.gtn-btn-list .gtn-rowbtn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gtn-btn-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .3s var(--gtn-btn-ease);
+}
+.gtn-btn-list .gtn-rowbtn__text{ display: block; min-width: 0; }
+.gtn-btn-list .gtn-rowbtn__title{
+  display: block;
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: .04em;
+  font-weight: 600;
+}
+.gtn-btn-list .gtn-rowbtn__meta{
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  opacity: .62;                   /* 继承文字色，hover 反色后自动适配 */
+}
+/* 细线箭头 → */
+.gtn-btn-list .gtn-rowbtn__arrow{
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  transition: transform .3s var(--gtn-btn-ease);
+}
+.gtn-btn-list .gtn-rowbtn__arrow::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+@media (hover: hover){
+  .gtn-btn-list .gtn-rowbtn:hover{
+    color: var(--gtn-btn-on-accent);
+    border-color: var(--gtn-btn-accent);
+  }
+  .gtn-btn-list .gtn-rowbtn:hover::before{ transform: scaleX(1); }
+  .gtn-btn-list .gtn-rowbtn:hover .gtn-rowbtn__arrow{ transform: translateX(6px); }
+}
+.gtn-btn-list .gtn-rowbtn:focus-visible{
+  outline: 2px solid var(--gtn-btn-accent);
+  outline-offset: 3px;
+}
+.gtn-btn-list .gtn-rowbtn:active{ transform: translateY(1px); }
+
+@media (max-width: 640px){
+  .gtn-btn-list .gtn-rowbtn{ min-height: 56px; padding: 12px 16px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .gtn-btn-list .gtn-rowbtn,
+  .gtn-btn-list .gtn-rowbtn::before,
+  .gtn-btn-list .gtn-rowbtn__arrow{ transition: none; }
+}
+
 
 /* 报告 / 日程 / 会员 三张入口卡 */
 .entry-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}

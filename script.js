@@ -299,7 +299,7 @@ const FOOTER_LINKS = [
   { label: '战略合作伙伴与生态', href: 'p/partners/' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
-  { label: '新闻报道', href: 'news-index.html' }
+  { label: '新闻报道', href: 'ecosystem/news-index.html' }
 ];
 
 function renderFooter(){
@@ -319,7 +319,6 @@ function renderFooter(){
   root.innerHTML =
     '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'p/project/index.html">提交出海项目</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
-    '<div class="footer-disclosure">创始人董立鑫：和君咨询合伙人；WTC Singapore 秘书长兼 COO；WTC One Club 秘书长。</div>' +
     '<nav class="footer-links">' + linksHtml + ' · <a href="' + prefix + 'privacy.html">隐私政策</a></nav>' +
     socialHtml +
     '<div class="footer-note">全球覆盖图为示意图，不作地理或边界依据。</div>';

@@ -1434,9 +1434,9 @@
     },
     {
       "id": "ops-shenzhen",
-      "name": "陈俊文（大麦哥）",
+      "name": "李妮芳",
       "url": "member/ops-shenzhen/index.html",
-      "photo": "member/ops-shenzhen/chenjunwen.webp",
+      "photo": "member/ops-shenzhen/linifang.png",
       "country": "中国",
       "region": "",
       "city": "shenzhen"
@@ -1467,6 +1467,15 @@
       "country": "中国",
       "region": "",
       "city": "chi-wenjie"
+    },
+    {
+      "id": "ops-us",
+      "name": "刘昀",
+      "url": "member/ops-us/index.html",
+      "photo": "member/ops-us/yun-liu.jpg",
+      "country": "美国",
+      "region": "美洲",
+      "city": "us"
     }
   ],
   "calendar": [
