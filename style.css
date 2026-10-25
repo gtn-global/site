@@ -1557,6 +1557,9 @@ p,.lede,.subline,.rc-desc,.faq-item p,.desk-meta,.desk-adv-one,.region-card-meta
 @media(prefers-reduced-motion:reduce){
   .carousel-track{animation:none!important;}
   .band{overflow-x:auto;}
+/* ON THE GROUND 整块上移贴分隔线：去掉标签 26px 上边距，并收窄本节顶部内边距 */
+.on-ground{padding-top:16px;}
+.on-ground .carousel-label{margin-top:0;}
 }
 @media (prefers-color-scheme:dark){
   :root{--film-bg:#0a0908;--hole-svg:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='14'%3E%3Crect%20x='6'%20y='2'%20width='14'%20height='10'%20rx='2.5'%20fill='%2336312b'/%3E%3C/svg%3E");}
