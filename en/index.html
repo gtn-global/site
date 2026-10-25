@@ -283,7 +283,7 @@
         <div class="nav-drop">
           <span class="drop-group">PROGRAMS &amp; ACTIVITIES</span>
           <a href="calendar.html">Upcoming schedule</a>
-          <a href="../events-index.html">Past events</a>
+          <a href="events-index.html">Past events</a>
           <a href="p/global-trip/index.html">GTN Global tour</a>
           <a href="p/ceo-tour/index.html">Global CEO China Tour</a>
           <a href="p/featured/index.html">Featured programs</a>
@@ -378,7 +378,7 @@
     <a class="tr-circle" style="--c:#16242F" href="p/online-connect/index.html">GTN<br>Talk</a>
   </div>
   <!-- 06 入口圆圈:end -->
-<a class="visit-line" href="../events-index.html">Our 70+ practice records · View all →</a>
+<a class="visit-line" href="events-index.html">Our 70+ practice records · View all →</a>
   </section>
 
 
@@ -917,7 +917,7 @@ document.addEventListener('click', function(e){
     var q=[]; if(cur.industry)q.push('industry='+encodeURIComponent(cur.industry)); if(cur.country)q.push('country='+encodeURIComponent(cur.country));
     var eHtml=evsAll.length?('<ul class="desk-list">'+evs.map(function(e){
       return '<li><span class="desk-t">'+esc(e.year||'')+'｜'+(e.countries&&e.countries[0]?esc(e.countries[0]):'')+'｜'+esc(e.title)+'</span></li>';
-    }).join('')+'</ul><a class="desk-more" href="../events-index.html'+(q.length?'?'+q.join('&'):'')+'">View all '+evsAll.length+' events for this cell &rarr;</a>'):undefined;
+    }).join('')+'</ul><a class="desk-more" href="events-index.html'+(q.length?'?'+q.join('&'):'')+'">View all '+evsAll.length+' events for this cell &rarr;</a>'):undefined;
     // 03 对口顾问（最多 4 位，链主优先，不加链主标签）
     var advs=(IDX.advisor||[]).filter(function(a){ return a.id!=='donglixin' && (!cur.indSlug||(a.industries||[]).some(function(x){return acc.has(x);})); }).slice().sort(function(a,b){return (b.isLead?1:0)-(a.isLead?1:0);}).slice(0,4);
     var aHtml=advs.length?('<div class="desk-adv">'+advs.map(function(a){
