@@ -8,7 +8,7 @@
     "status": "open",
     "cta_type": "pay",
     "cta_label": "留资获取",
-    "cta_url": "reports/cleantech/index.html",
+    "cta_url": "03-research/reports/cleantech/index.html",
     "price_text": "",
     "visible": true
   },

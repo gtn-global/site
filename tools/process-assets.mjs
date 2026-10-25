@@ -102,13 +102,13 @@ async function main() {
   const report = { optimized: {}, overview: {} };
 
   // 1) GTN_Global → 双向通道上排：统一高度 240，单张 ≤80KB
-  const gtnDir = path.join(ROOT, 'GTN_Global');
+  const gtnDir = path.join(ROOT, '05-brand');
   const gtnOut = path.join(gtnDir, 'webp');
   fs.mkdirSync(gtnOut, { recursive: true });
   for (const f of listImages(gtnDir)) {
     const out = path.join(gtnOut, `${baseName(f)}.webp`);
     const sz = await toWebp(path.join(gtnDir, f), out, { height: 240, maxBytes: MAX80 });
-    report.optimized[`GTN_Global/${f}`] = `${(sz / 1024).toFixed(1)}KB`;
+    report.optimized[`05-brand/${f}`] = `${(sz / 1024).toFixed(1)}KB`;
   }
 
   // 1b) CEO_tour → 双向通道下排：统一高度 240（与 GTN_Global 同规格），去 EXIF，≤80KB
@@ -132,7 +132,7 @@ async function main() {
   }
 
   // 2b) carousel → 往期回顾照片墙（Batch E）：只去重、不挑选，统一高度 240，去 EXIF，≤80KB
-  const carDir = path.join(ROOT, 'carousel');
+  const carDir = path.join(ROOT, '05-brand', '05-brand/carousel');
   const carOut = path.join(carDir, 'webp');
   fs.mkdirSync(carOut, { recursive: true });
   const carGroups = {};
@@ -148,8 +148,8 @@ async function main() {
     report.optimized[`carousel/${keep}`] = `${(sz / 1024).toFixed(1)}KB`;
   }
 
-  // 3) 生成 data/marquee.json（上排=GTN_Global/webp，下排=CEO_tour/webp，按文件名排序，全量不挑选）
-  const gtnImgs = listImages(gtnOut).map((f) => ({ img: `GTN_Global/webp/${f}` }));
+  // 3) 生成 data/marquee.json（上排=05-brand/webp，下排=CEO_tour/webp，按文件名排序，全量不挑选）
+  const gtnImgs = listImages(gtnOut).map((f) => ({ img: `05-brand/webp/${f}` }));
   const ceoImgs = listImages(ceoOut).map((f) => ({ img: `CEO_tour/webp/${f}` }));
   const marquee = { up: { label: 'GO OUT · 走出去', items: gtnImgs }, down: { label: 'COME IN · 请进来', items: ceoImgs } };
   fs.writeFileSync(path.join(ROOT, 'data', 'marquee.json'), JSON.stringify(marquee, null, 2) + '\n');
@@ -157,7 +157,7 @@ async function main() {
 
   // 4) 总览缩略图（CEO_tour / carousel 成品已在上面产出，这里仅生成挑选用画廊）
   const overview = {};
-  for (const name of ['GTN_Global', 'CEO_tour', 'carousel']) {
+  for (const name of ['05-brand', 'CEO_tour', '05-brand/carousel']) {
     overview[name] = await makeOverview(path.join(ROOT, name), name);
   }
   report.overview = overview;
@@ -165,7 +165,7 @@ async function main() {
   // 写 markdown + html 画廊
   let md = '# 素材总览（供创始人挑选）\n\n';
   md += '> 双向通道上排 = GTN_Global（挑 10–12 张）；下排 = CEO_tour（挑 10–12 张）；往期回顾照片墙 = carousel（挑 8–12 张）。\n\n';
-  for (const name of ['GTN_Global', 'CEO_tour', 'carousel']) {
+  for (const name of ['05-brand', 'CEO_tour', '05-brand/carousel']) {
     md += `## ${name}（${overview[name].rows.length} 张）\n\n`;
     md += '| # | 原文件名 | 尺寸 | 原体积 | 缩略图 |\n|---|---|---|---|---|\n';
     md += mdGallery(overview[name].rows, overview[name].dups);
@@ -174,7 +174,7 @@ async function main() {
   fs.writeFileSync(path.join(ROOT, 'tools', 'asset-overview', 'index.md'), md);
 
   // HTML 画廊（每个目录一份，便于本地浏览器打开挑选）
-  for (const name of ['GTN_Global', 'CEO_tour', 'carousel']) {
+  for (const name of ['05-brand', 'CEO_tour', '05-brand/carousel']) {
     fs.writeFileSync(
       path.join(ROOT, 'tools', 'asset-overview', name, 'gallery.html'),
       `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">

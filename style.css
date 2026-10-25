@@ -39,7 +39,7 @@ a{color:inherit;}
 
 /* ---------- top bar ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
-.topbar-inner{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.topbar-inner{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:flex-start;gap:20px;flex-wrap:wrap;}
 .wordmark{font-family:'Noto Serif SC',serif;font-weight:700;font-size:19px;letter-spacing:.5px;line-height:1.2;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px;}
 .logo-wordmark{height:26px;width:auto;display:block;}
 .wordmark .sub{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2.5px;color:var(--ink-faint);font-weight:400;margin-top:3px;}
@@ -319,6 +319,9 @@ textarea{resize:vertical;min-height:88px;}
 
 /* ---------- footer ---------- */
 .footer{padding:32px 24px;text-align:center;font-size:12.5px;color:var(--ink-soft,#5b6470);border-top:1px solid var(--rule,#e5e2db);}
+.footer-clock{display:flex;justify-content:center;margin:12px 0 4px;}
+.footer-clock .desk-clock{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 18px;}
+.footer-clock .desk-clock span{font-size:11px;}
 
 /* ---------- index / directory pages (events, advisors) ---------- */
 .back-row{margin-bottom:36px;}

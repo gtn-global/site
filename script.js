@@ -18,23 +18,23 @@ const CLOCK_ZONES = [
 ];
 
 function renderClocks(){
-  const root = document.querySelector('.desk-clock');
-  if(!root) return;
+  const roots = document.querySelectorAll('.desk-clock');
+  if(!roots.length) return;
   const now = new Date();
-
-  // 仅在首次构建 DOM 结构（避免每 30s 重建节点）
-  if(!root.dataset.built){
-    root.innerHTML = CLOCK_ZONES.map((z, i) =>
-      '<span><span class="clk-label">' + z.label + '</span> ' +
-      '<b data-tz="' + z.tz + '">--:--</b></span>'
-    ).join('');
-    root.dataset.built = '1';
-  }
-
-  root.querySelectorAll('b[data-tz]').forEach(b => {
-    b.textContent = new Intl.DateTimeFormat('zh-CN',{
-      timeZone: b.dataset.tz, hour:'2-digit', minute:'2-digit', hour12:false
-    }).format(now);
+  roots.forEach(root => {
+    // 仅在首次构建 DOM 结构（避免每 30s 重建节点）
+    if(!root.dataset.built){
+      root.innerHTML = CLOCK_ZONES.map((z, i) =>
+        '<span><span class="clk-label">' + z.label + '</span> ' +
+        '<b data-tz="' + z.tz + '">--:--</b></span>'
+      ).join('');
+      root.dataset.built = '1';
+    }
+    root.querySelectorAll('b[data-tz]').forEach(b => {
+      b.textContent = new Intl.DateTimeFormat('zh-CN',{
+        timeZone: b.dataset.tz, hour:'2-digit', minute:'2-digit', hour12:false
+      }).format(now);
+    });
   });
 }
 renderClocks();
@@ -291,16 +291,16 @@ syncEventBreakdown();
 
 // ---- 统一 footer：内容只在这里定义一次，所有页面（含三级页）共用 ----
 const FOOTER_LINKS = [
-  { label: '产业出海研究报告', href: 'reports/index.html' },
+  { label: '产业出海研究报告', href: '03-research/reports/index.html' },
   { label: '出海日程', href: 'calendar.html' },
 
-  { label: '全球 CEO 中国行', href: 'p/ceo-tour/' },
+  { label: '全球 CEO 中国行', href: '02-projects/ceo-tour/' },
   { label: '常见问题', href: 'faq.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
-  { label: '战略合作伙伴与生态', href: 'p/partners/' },
+  { label: '战略合作伙伴与生态', href: '02-projects/partners/' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
-  { label: '新闻报道', href: 'ecosystem/news-index.html' }
+  { label: '新闻报道', href: '06-ecosystem/news-index.html' }
 ];
 
 function renderFooter(){
@@ -318,12 +318,14 @@ function renderFooter(){
   if(social.linkedin) extra += (extra ? '　' : '') + '领英：' + social.linkedin;
   const socialHtml = extra ? '<div class="footer-social">' + extra + '</div>' : '';
   root.innerHTML =
-    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + 'p/project/index.html">提交出海项目</a></div>' +
+    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + '02-projects/project/index.html">提交出海项目</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
     '<nav class="footer-links">' + linksHtml + ' · <a href="' + prefix + 'privacy.html">隐私政策</a></nav>' +
+    '<div class="footer-clock"><div class="desk-clock"></div></div>' +
     socialHtml +
     '<div class="footer-note">全球覆盖图为示意图，不作地理或边界依据。</div>';
   const ab = document.getElementById('aboutSocial');
   if(ab){ ab.innerHTML = extra || '友情链接与社媒账号待公布。'; }
 }
 renderFooter();
+renderClocks();

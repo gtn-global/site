@@ -126,7 +126,7 @@ function pageHTML(p) {
   const name = p.name;
   const price = p.price_text || '';
   const cta = p.cta || '登记意向';
-  const url = 'https://gatewaytonew.com/p/' + slug + '/';
+  const url = 'https://gatewaytonew.com/02-projects/' + slug + '/';
   const desc = p.desc || name;
   const webp = path.join(POSTER_DIR, slug + '.webp');
   const hasPoster = fs.existsSync(webp);
@@ -248,7 +248,7 @@ ${ld}
 }
 
 function successHTML() {
-  const url = 'https://gatewaytonew.com/p/project/success.html';
+  const url = 'https://gatewaytonew.com/02-projects/project/success.html';
   const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: '提交成功｜海鑫汇 GTN', url });
   return `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -314,7 +314,7 @@ function applyEvidenceMarkers(fileRel, block) {
       html = html.replace(/(<div class="cta-form form-wrap reveal">[\s\S]*?<\/form>\s*<\/div>)(\s*)(<\/section>)/,
         (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
       inserted = true;
-    } else if (fileRel === 'reports/index.html') {
+    } else if (fileRel === '03-research/reports/index.html') {
       html = html.replace(/(<p class="report-note">[\s\S]*?<\/p>)(\s*)(<figure)/,
         (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
       inserted = true;
@@ -334,6 +334,6 @@ const reportsBlock = '<section class="evidence-block">' + EOLR +
   '  <p class="evidence-stat">新能源电力电气 · 2026.09</p>' + EOLR +
   '  <p class="evidence-report-link"><a href="cleantech/index.html">查看报告 &rarr;</a></p>' + EOLR +
   '</section>';
-applyEvidenceMarkers('reports/index.html', reportsBlock);
+applyEvidenceMarkers('03-research/reports/index.html', reportsBlock);
 
 console.log('done');

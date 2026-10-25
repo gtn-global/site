@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出海决策陪跑 | 海鑫汇 Gateway To New</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e5e1db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* 海报 1080×1440 */
+    .poster {
+      width: 1080px;
+      height: 1440px;
+      background: #F8F5F0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(10, 31, 68, 0.12);
+      display: flex;
+      flex-direction: column;
+      padding: 56px 64px 48px;
+    }
+
+    /* 左上角圆形头像位（空白，留给真实照片） */
+    .avatar-slot {
+      position: absolute;
+      top: 56px;
+      right: 64px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(10, 31, 68, 0.18);
+      background: #FFFFFF;
+      z-index: 2;
+    }
+
+    /* 品牌 */
+    .brand {
+      font-size: 20px;
+      font-weight: 500;
+      color: #0A1F44;
+      letter-spacing: 0.6px;
+      margin-bottom: 44px;
+    }
+
+    /* 主标题 */
+    .title {
+      font-size: 56px;
+      font-weight: 700;
+      color: #0A1F44;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      font-family: "Songti SC", "SimSun", "Noto Serif SC", serif;
+    }
+
+    /* 副标题 */
+    .sub {
+      font-size: 24px;
+      color: #4A5568;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin-bottom: 48px;
+    }
+
+    /* 三级台阶主视觉 */
+    .steps {
+      position: relative;
+      height: 220px;
+      margin-bottom: 48px;
+    }
+
+    .step {
+      position: absolute;
+      bottom: 0;
+      background: #0A1F44;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 16px;
+      color: #F8F5F0;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .step-1 {
+      left: 0;
+      width: 28%;
+      height: 70px;
+      opacity: 0.55;
+    }
+
+    .step-2 {
+      left: 28%;
+      width: 32%;
+      height: 130px;
+      opacity: 0.78;
+    }
+
+    .step-3 {
+      left: 60%;
+      width: 40%;
+      height: 200px;
+      opacity: 1;
+    }
+
+    /* 暖金线从左下向右上延伸 */
+    .gold-line {
+      position: absolute;
+      left: 0;
+      bottom: 70px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #C9A227 0%, rgba(201,162,39,0.3) 100%);
+      transform-origin: left center;
+      transform: rotate(-12deg);
+      z-index: 1;
+    }
+
+    /* 三档卡片 */
+    .packages {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .pkg {
+      background: #FFFFFF;
+      border: 1px solid rgba(10, 31, 68, 0.12);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pkg-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
+    .pkg-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: #0A1F44;
+      letter-spacing: 0.3px;
+    }
+
+    .pkg-price {
+      font-size: 20px;
+      color: #C9A227;
+      font-weight: 500;
+    }
+
+    .pkg-meta {
+      font-size: 18px;
+      color: #6B7280;
+    }
+
+    .pkg-desc {
+      font-size: 19px;
+      color: #0A1F44;
+      line-height: 1.45;
+    }
+
+    /* 分隔线 */
+    .divider {
+      height: 1px;
+      background: rgba(10, 31, 68, 0.12);
+      margin-bottom: 28px;
+    }
+
+    /* 价格总览 + 谁来做 */
+    .summary {
+      font-size: 22px;
+      color: #0A1F44;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .who {
+      font-size: 20px;
+      color: #4A5568;
+      margin-bottom: 36px;
+    }
+
+    /* 行动区 */
+    .cta {
+      font-size: 23px;
+      color: #0A1F44;
+      line-height: 1.5;
+    }
+
+
+
+    /* 底部小字 */
+    .footer {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 32px;
+      font-size: 14px;
+      color: #6B7280;
+      letter-spacing: 0.3px;
+    }
+  </style>
+  <link rel="canonical" href="https://gatewaytonew.com/02-projects/featured/%E5%87%BA%E6%B5%B7%E5%86%B3%E7%AD%96%E9%99%AA%E8%B7%91_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="出海决策陪跑 | 海鑫汇 Gateway To New">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://gatewaytonew.com/02-projects/featured/%E5%87%BA%E6%B5%B7%E5%86%B3%E7%AD%96%E9%99%AA%E8%B7%91_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "出海决策陪跑 | 海鑫汇 Gateway To New",
+  "description": "",
+  "url": ""
+}
+]
+</script>
+</head>
+<body>
+  <div class="poster">
+    <!-- 左上角圆形头像位（空白，请自行放入真实照片） -->
+    <div class="avatar-slot" title="头像位：请自行放入真实照片"></div>
+
+    <div class="brand">海鑫汇 Gateway To New</div>
+
+    <h1 class="title">出海决策陪跑</h1>
+    <div class="sub">4–8 周，把判断走到落地的第一步</div>
+
+    <!-- 三级台阶主视觉 -->
+    <div class="steps">
+      <div class="gold-line"></div>
+      <div class="step step-1">市场选择</div>
+      <div class="step step-2">进入方案</div>
+      <div class="step step-3">落地陪跑</div>
+    </div>
+
+    <!-- 三档结构 -->
+    <div class="packages">
+      <div class="pkg">
+        <div class="pkg-header">
+          <span class="pkg-name">市场选择包</span>
+          <span class="pkg-price">约 3 万</span>
+          <span class="pkg-meta">2–3 周</span>
+        </div>
+        <div class="pkg-desc">目标市场对比、推荐结论、落地路径</div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-header">
+          <span class="pkg-name">进入方案包</span>
+          <span class="pkg-price">约 5 万</span>
+          <span class="pkg-meta">4–6 周</span>
+        </div>
+        <div class="pkg-desc">在上一档基础上，加进入模式、伙伴与渠道清单、风险清单</div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-header">
+          <span class="pkg-name">落地陪跑包</span>
+          <span class="pkg-price">约 8 万</span>
+          <span class="pkg-meta">6–8 周</span>
+        </div>
+        <div class="pkg-desc">在上一档基础上，加对接本地伙伴【待填】、阶段复盘</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="summary">价格总览：3–8 万元 / 项目</div>
+    <div class="who">谁来做：创始人董立鑫 + 对应产业链主【待确认】</div>
+
+    <div class="cta">先预约首诊（99 元），确认适合哪一档</div>
+
+
+    <div class="footer">
+      海鑫汇 Gateway To New · gatewaytonew.com · 我们提供判断与资源连接，不承诺订单或成交。
+    </div>
+  </div>
+</body>
+</html>

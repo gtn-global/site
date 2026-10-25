@@ -8,7 +8,7 @@ const ROOT = process.cwd();
 const SLUGS = ['global-trip', 'closed-door', 'chuhaiban', 'online-connect', 'ceo-tour'];
 
 for (const slug of SLUGS) {
-  const dir = path.join(ROOT, 'evidence', slug);
+  const dir = path.join(ROOT, '05-brand', 'evidence', slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), splitPageHTML(slug), 'utf8');
   console.log('wrote evidence/' + slug + '/index.html');

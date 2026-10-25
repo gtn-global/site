@@ -57,7 +57,7 @@ function secretScan(abs) {
 // ---- 待拷页面/资源清单 ----
 const pages = [
   'index.html', 'style.css', 'script.js',
-  'calendar.html', 'club.html', 'ceo-tour.html', 'reports/index.html', 'faq.html',
+  'calendar.html', 'club.html', 'ceo-tour.html', '03-research/reports/index.html', 'faq.html',
   'matrix/auto-tech-europe/index.html',
   'matrix/new-energy-europe/index.html',
   'matrix/ai-southeast-asia/index.html',

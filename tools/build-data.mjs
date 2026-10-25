@@ -16,10 +16,10 @@ function listWebp(dir) {
 }
 
 // 1) 重建 marquee：上排 GTN_Global 带 -flag 的图（向右），下排 CEO_tour 全部图（向左），不挑选
-const upFiles = listWebp('GTN_Global/webp-flag');
+const upFiles = listWebp('05-brand/webp-flag');
 const downFiles = listWebp('CEO_tour/webp');
 const marquee = {
-  up:   { dir: 'up',   items: upFiles.map((f, i) => ({ img: 'GTN_Global/webp-flag/' + f, alt: '走出去 ' + (i + 1) })) },
+  up:   { dir: 'up',   items: upFiles.map((f, i) => ({ img: '05-brand/webp-flag/' + f, alt: '走出去 ' + (i + 1) })) },
   down: { dir: 'down', items: downFiles.map((f, i) => ({ img: 'CEO_tour/webp/' + f, alt: '请进来 ' + (i + 1) })) }
 };
 fs.writeFileSync(D('data', 'marquee.json'), JSON.stringify(marquee, null, 2) + '\n', 'utf8');

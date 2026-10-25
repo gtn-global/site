@@ -55,7 +55,7 @@ const isText = f => /\.(html|json|js|css|txt|xml|md)$/.test(f);
   }
   check('F.1 首诊/菁英荟/99元 命中为 0（全站严格）', hits.length === 0,
     '非预期命中: ' + JSON.stringify(hits.slice(0, 25)));
-  info('  F.1 已对全站（含 cta/self-test）严格扫描，无豁免');
+  info('  F.1 已对全站（含 08-engage/self-test）严格扫描，无豁免');
 
   // "200 元" only in "200 元/份" or "单份 200 元"
   const bad200 = [];
@@ -77,7 +77,7 @@ const isText = f => /\.(html|json|js|css|txt|xml|md)$/.test(f);
   const re = /阅读\s*2024|2024\s*版/;
   const hits = [];
   for (const f of allFiles) {
-    if (f.startsWith('reports/EV/')) continue;
+    if (f.startsWith('03-research/reports/EV/')) continue;
     if (!isText(f)) continue;
     if (re.test(fs.readFileSync(join(f), 'utf8'))) hits.push(f);
   }
@@ -206,7 +206,7 @@ let byType = {}, total = 0;
 // ================= F.7 =================
 {
   const club = fs.readFileSync(join('club.html'), 'utf8');
-  const ev = fs.readFileSync(join('reports/EV/index.html'), 'utf8');
+  const ev = fs.readFileSync(join('03-research/reports/EV/index.html'), 'utf8');
   const noidxClub = /name="robots"[^>]*content="noindex"/.test(club);
   const noidxEV = /name="robots"[^>]*content="noindex"/.test(ev);
   const linksToClub = [], linksToEV = [];
@@ -214,12 +214,12 @@ let byType = {}, total = 0;
     if (!f.endsWith('.html')) continue;
     const t = fs.readFileSync(join(f), 'utf8');
     if (/<a[^>]+href=["'][^"']*club\.html/.test(t)) linksToClub.push(f);
-    if (/<a[^>]+href=["'][^"']*reports\/EV\b/.test(t)) linksToEV.push(f);
+    if (/<a[^>]+href=["'][^"']*03-research/reports/EV\b/.test(t)) linksToEV.push(f);
   }
   const sm = fs.readFileSync(join('sitemap.xml'), 'utf8');
   const ll = fs.readFileSync(join('llms.txt'), 'utf8');
-  const smBad = sm.includes('club.html') || sm.includes('reports/EV');
-  const llBad = ll.includes('club.html') || ll.includes('reports/EV');
+  const smBad = sm.includes('club.html') || sm.includes('03-research/reports/EV');
+  const llBad = ll.includes('club.html') || ll.includes('03-research/reports/EV');
   check('F.7 club.html & reports/EV/index.html 有 noindex', noidxClub && noidxEV, `club=${noidxClub} ev=${noidxEV}`);
   check('F.7 全站无指向 club.html / reports/EV 的链接', linksToClub.length === 0 && linksToEV.length === 0,
     `club=${linksToClub.join(',')} ev=${linksToEV.join(',')}`);
@@ -236,7 +236,7 @@ let byType = {}, total = 0;
     let priceOk = false, posterOk = false, evOk = false, btnOk = false;
     if (exists) {
       const t = fs.readFileSync(join(p.page), 'utf8');
-      const isP = p.page.startsWith('p/');
+      const isP = p.page.startsWith('02-projects/');
       priceOk = isP ? t.includes(p.price_text) : null; // 价格文字一致仅校验 p/ 页（spec F.8）
       btnOk = /feishu-proxy/.test(t) || /class="btn-submit"/.test(t) || /data-product=/.test(t);
       posterOk = p.poster ? fs.existsSync(join(p.poster)) : true;
@@ -267,17 +267,17 @@ let byType = {}, total = 0;
 
 // ================= F.10 =================
 {
-  const a1 = ['calendar.html', 'ceo-tour.html', 'club.html', 'cta/self-test/index.html',
-    'events-index.html', 'index.html', 'p/chuhaiban/index.html', 'p/closed-door/index.html',
-    'p/global-trip/index.html', 'p/online-connect/index.html', 'p/project/index.html',
-    'p/trade-growth/index.html', 'reports/index.html'];
+  const a1 = ['calendar.html', 'ceo-tour.html', 'club.html', '08-engage/self-test/index.html',
+    'events-index.html', 'index.html', '02-projects/chuhaiban/index.html', '02-projects/closed-door/index.html',
+    '02-projects/global-trip/index.html', '02-projects/online-connect/index.html', '02-projects/project/index.html',
+    '02-projects/trade-growth/index.html', '03-research/reports/index.html'];
   const miss = [];
   for (const pg of a1) {
     const t = fs.readFileSync(join(pg), 'utf8');
     if (!/src-track\.js/.test(t)) miss.push(pg);
   }
-  const pp = fs.existsSync(join('p/project/index.html'));
-  const pps = fs.existsSync(join('p/project/success.html'));
+  const pp = fs.existsSync(join('02-projects/project/index.html'));
+  const pps = fs.existsSync(join('02-projects/project/success.html'));
   check('F.10 src-track 接入全部 A1 页面；p/project 与 success 存在', miss.length === 0 && pp && pps,
     `missing=${miss.join(',')} p/project=${pp} success=${pps}`);
 }

@@ -121,7 +121,7 @@ export function blockHTML(slug, rel = '../../') {
   const lines = latest.map((e) =>
     `<li><a href="${esc(rel + e.url)}">${esc(e.title)}</a> <span class="evidence-date">${esc(e.date)}</span></li>`
   ).join('\n');
-  const more = `<a class="evidence-more" href="${esc(rel + 'evidence/' + slug + '/index.html')}">全部 ${evs.length} ${unit} →</a>`;
+  const more = `<a class="evidence-more" href="${esc(rel + '05-brand/evidence/' + slug + '/index.html')}">全部 ${evs.length} ${unit} →</a>`;
   return crlf(
     `<section class="evidence-block">\n` +
     `  <h2 class="evidence-title">${esc(title)}</h2>\n` +
@@ -154,7 +154,7 @@ export function splitPageHTML(slug) {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: h1 + '｜海鑫汇 GTN',
-    url: 'https://gatewaytonew.com/evidence/' + slug + '/',
+    url: 'https://gatewaytonew.com/05-brand/evidence/' + slug + '/',
   });
   return crlf(`<!DOCTYPE html>
 <html lang="zh-CN">
@@ -165,7 +165,7 @@ export function splitPageHTML(slug) {
 <meta name="description" content="${esc(h1)} · 海鑫汇 GTN 实证记录">
 <link rel="stylesheet" href="${rel}style.css">
 <link rel="stylesheet" href="${rel}events/events.css">
-<link rel="canonical" href="https://gatewaytonew.com/evidence/${slug}/">
+<link rel="canonical" href="https://gatewaytonew.com/05-brand/evidence/${slug}/">
 <script type="application/ld+json">
 ${ld}
 </script>

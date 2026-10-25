@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海鑫汇·出海连线 系列模板 | 海鑫汇 Gateway To New</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e5e1db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* 海报 1080×1440 */
+    .poster {
+      width: 1080px;
+      height: 1440px;
+      background: linear-gradient(165deg, #071628 0%, #0B2545 50%, #0A1F3D 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(7, 22, 40, 0.3);
+      color: #F7F4EF;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 64px 48px;
+    }
+
+    /* 系列名（固定，可改） */
+    .series {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(247, 244, 239, 0.75);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    /* 免费 · 线上（固定） */
+    .free-tag {
+      font-size: 16px;
+      color: #C9A227;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    /* 本期主题（可变） */
+    .theme {
+      font-size: 42px;
+      font-weight: 700;
+      color: #F7F4EF;
+      line-height: 1.25;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      font-family: "Songti SC", "SimSun", "Noto Serif SC", serif;
+    }
+
+    /* 日期时间（可变） */
+    .datetime {
+      font-size: 24px;
+      color: rgba(247, 244, 239, 0.9);
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+
+    /* 平台与时长（可变） */
+    .platform {
+      font-size: 20px;
+      color: rgba(247, 244, 239, 0.7);
+      margin-bottom: 44px;
+    }
+
+    /* 主讲区 */
+    .speaker-section {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 44px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(247, 244, 239, 0.12);
+      border-bottom: 1px solid rgba(247, 244, 239, 0.12);
+    }
+
+    /* 1:1 头像位（空白） */
+    .avatar-slot {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(247, 244, 239, 0.25);
+      background: rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(247, 244, 239, 0.35);
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .speaker-info {
+      flex: 1;
+    }
+
+    .speaker-label {
+      font-size: 14px;
+      color: rgba(247, 244, 239, 0.5);
+      margin-bottom: 6px;
+      letter-spacing: 0.4px;
+    }
+
+    .speaker-name {
+      font-size: 26px;
+      font-weight: 600;
+      color: #F7F4EF;
+      margin-bottom: 4px;
+      letter-spacing: 0.4px;
+    }
+
+    .speaker-title {
+      font-size: 18px;
+      color: rgba(247, 244, 239, 0.7);
+      line-height: 1.4;
+    }
+
+    /* 议程 */
+    .agenda-label {
+      font-size: 15px;
+      color: rgba(247, 244, 239, 0.5);
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .agenda {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+
+    .agenda li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 21px;
+      color: #F7F4EF;
+      line-height: 1.45;
+    }
+
+    .agenda li .num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 162, 39, 0.6);
+      color: #C9A227;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* 主视觉：三个相互衔接的对话气泡 */
+    .bubbles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 48px;
+      height: 100px;
+    }
+
+    .bubble {
+      width: 90px;
+      height: 60px;
+      border-radius: 30px;
+      border: 1.5px solid rgba(201, 162, 39, 0.45);
+      background: rgba(201, 162, 39, 0.06);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bubble:nth-child(2) {
+      margin: 0 -12px;
+      z-index: 1;
+      width: 100px;
+      height: 68px;
+      border-color: rgba(201, 162, 39, 0.7);
+      background: rgba(201, 162, 39, 0.1);
+    }
+
+    .bubble .dot {
+      width: 8px;
+      height: 8px;
+      background: #C9A227;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    .bubble:nth-child(1) .dot { margin-left: -8px; }
+    .bubble:nth-child(2) .dot { }
+    .bubble:nth-child(3) .dot { margin-right: -8px; }
+
+    /* 行动区（固定） */
+    .cta {
+      font-size: 24px;
+      font-weight: 500;
+      color: #C9A227;
+      letter-spacing: 0.4px;
+      margin-top: auto;
+      margin-bottom: 52px;
+    }
+
+
+
+    /* 底部品牌小字（固定） */
+    .footer {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 30px;
+      font-size: 14px;
+      color: rgba(247, 244, 239, 0.4);
+      letter-spacing: 0.3px;
+    }
+  </style>
+  <link rel="canonical" href="https://gatewaytonew.com/02-projects/online-connect/%E5%87%BA%E6%B5%B7%E7%BA%BF%E4%B8%8A%E8%BF%9E%E7%BA%BF_%E7%B3%BB%E5%88%97%E6%A8%A1%E6%9D%BF_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="海鑫汇·出海连线 系列模板 | 海鑫汇 Gateway To New">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://gatewaytonew.com/02-projects/online-connect/%E5%87%BA%E6%B5%B7%E7%BA%BF%E4%B8%8A%E8%BF%9E%E7%BA%BF_%E7%B3%BB%E5%88%97%E6%A8%A1%E6%9D%BF_%E6%B5%B7%E6%8A%A5.html">
+  <meta property="og:site_name" content="Gateway To New (GTN)">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "海鑫汇·出海连线 系列模板 | 海鑫汇 Gateway To New",
+  "description": "",
+  "url": ""
+}
+]
+</script>
+</head>
+<body>
+  <div class="poster">
+    <!-- 系列名（固定，可改） -->
+    <div class="series">海鑫汇 · 出海连线</div>
+    <div class="free-tag">免费 · 线上</div>
+
+    <!-- 本期主题（可变） -->
+    <h1 class="theme">【本期主题】</h1>
+
+    <!-- 日期时间（可变） -->
+    <div class="datetime">【日期、星期、时间（北京时间）】</div>
+
+    <!-- 平台与时长（可变） -->
+    <div class="platform">【平台】｜ 时长【待填】</div>
+
+    <!-- 主讲 / 主持 -->
+    <div class="speaker-section">
+      <div class="avatar-slot">头像位<br>1:1</div>
+      <div class="speaker-info">
+        <div class="speaker-label">主讲 / 主持</div>
+        <div class="speaker-name">【姓名】</div>
+        <div class="speaker-title">【身份】</div>
+      </div>
+    </div>
+
+    <!-- 议程（三行） -->
+    <div class="agenda-label">议程</div>
+    <ul class="agenda">
+      <li>
+        <span class="num">1</span>
+        <span>【议程一】</span>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <span>【议程二】</span>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <span>【议程三】</span>
+      </li>
+    </ul>
+
+    <!-- 主视觉：三个相互衔接的对话气泡（无文字，仅暖金圆点） -->
+    <div class="bubbles">
+      <div class="bubble"><div class="dot"></div></div>
+      <div class="bubble"><div class="dot"></div></div>
+      <div class="bubble"><div class="dot"></div></div>
+    </div>
+
+    <!-- 行动区（固定） -->
+    <div class="cta">扫码登记，获取连线链接</div>
+
+
+    <div class="footer">
+      海鑫汇 Gateway To New · gatewaytonew.com · 我们提供判断与资源连接，不承诺订单或成交。
+    </div>
+  </div>
+</body>
+</html>

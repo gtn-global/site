@@ -47,7 +47,7 @@
 
 # 其他历史重定向
 /experts/experts-demo.html   /   301
-/questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97.html   /questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   301
+/09-diagnose/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97.html   /09-diagnose/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   301
 
 # events 目录 URL 变动 301 重定向
 /events/media-03-hejun-home-summit/*   /events/media-03-hejun-town-summit/:splat   301
@@ -56,18 +56,18 @@
 /events/visit-35-2025-kuala-lumpur-malaysia/*   /events/visit-32-2025-johor-malaysia/:splat   301
 
 # reports 目录 URL 变动 301 重定向（grid 整目录改名为 cleantech）
-/reports/grid/*    /reports/cleantech/:splat    301
-/reports/grid    /reports/cleantech    301
+/03-research/reports/grid/*    /03-research/reports/cleantech/:splat    301
+/03-research/reports/grid    /03-research/reports/cleantech    301
 
 # questions 目录中文文件夹 -> 英文重命名 301 重定向
-/questions/%E5%87%BA%E5%8F%A3%E4%BB%A3%E7%90%86%E8%BF%98%E6%98%AF%E6%B5%B7%E5%A4%96%E5%BB%BA%E5%8E%82/*   /questions/export-or-build/:splat   301
-/questions/出口代理还是海外建厂/*   /questions/export-or-build/:splat   301
-/questions/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%B7%E5%A4%96%E5%B8%82%E5%9C%BA%E5%BA%94%E8%AF%A5%E9%80%89%E6%8B%A9%E5%93%AA%E9%87%8C/   /questions/first-market/   301
-/questions/第一个海外市场应该选择哪里/*   /questions/first-market/:splat   301
-/questions/%E6%B5%B7%E5%A4%96%E5%B8%83%E5%B1%80%E6%9C%80%E5%A4%A7%E7%9A%84%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88/   /questions/overseas-risks/   301
-/questions/海外布局最大的风险是什么/*   /questions/overseas-risks/:splat   301
-/questions/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   /questions/ready-to-go-global/   301
-/questions/企业现在适合出海吗/*   /questions/ready-to-go-global/:splat   301
+/09-diagnose/%E5%87%BA%E5%8F%A3%E4%BB%A3%E7%90%86%E8%BF%98%E6%98%AF%E6%B5%B7%E5%A4%96%E5%BB%BA%E5%8E%82/*   /09-diagnose/export-or-build/:splat   301
+/09-diagnose/出口代理还是海外建厂/*   /09-diagnose/export-or-build/:splat   301
+/09-diagnose/%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B5%B7%E5%A4%96%E5%B8%82%E5%9C%BA%E5%BA%94%E8%AF%A5%E9%80%89%E6%8B%A9%E5%93%AA%E9%87%8C/   /09-diagnose/first-market/   301
+/09-diagnose/第一个海外市场应该选择哪里/*   /09-diagnose/first-market/:splat   301
+/09-diagnose/%E6%B5%B7%E5%A4%96%E5%B8%83%E5%B1%80%E6%9C%80%E5%A4%A7%E7%9A%84%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88/   /09-diagnose/overseas-risks/   301
+/09-diagnose/海外布局最大的风险是什么/*   /09-diagnose/overseas-risks/:splat   301
+/09-diagnose/%E4%BC%81%E4%B8%9A%E7%8E%B0%E5%9C%A8%E9%80%82%E5%90%88%E5%87%BA%E6%B5%B7%E5%90%97/   /09-diagnose/ready-to-go-global/   301
+/09-diagnose/企业现在适合出海吗/*   /09-diagnose/ready-to-go-global/:splat   301
 
 # Google Search Console 站点验证文件：强制以 .html 原路径 200 返回，禁止 SPA fallback 兜底到首页
 /googlec337c8b7a58761fe.html   /googlec337c8b7a58761fe.html   200!
@@ -79,27 +79,262 @@
 # Redirect www to the bare domain: consolidate ranking signals to canonical gatewaytonew.com
 https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 
-# 下线 cta/book-diagnostic（2026-10）：统一指向 p/project
-/cta/book-diagnostic/   /p/project/   301
-/cta/book-diagnostic/*   /p/project/   301
+# 下线 08-engage/book-diagnostic（2026-10）：统一指向 p/project
+/08-engage/book-diagnostic/   /02-projects/project/   301
+/08-engage/book-diagnostic/*   /02-projects/project/   301
 
 # CEO Tour 旧路径迁移到 p/ceo-tour/（2026-10）：保留旧链接 301 跳转
-/ceo-tour    /p/ceo-tour/    301
-/ceo-tour.html    /p/ceo-tour/    301
+/ceo-tour    /02-projects/ceo-tour/    301
+/ceo-tour.html    /02-projects/ceo-tour/    301
 
 # 整合迁移：独立产品页/报告页搬入 p/featured/ 与 p/closed-door/researchreport/（2026-10）
-/p/chuhaiban/    /p/featured/chuhaiban/    301
-/p/chuhaiban/*    /p/featured/chuhaiban/:splat    301
-/p/trade-growth/    /p/featured/trade-growth/    301
-/p/trade-growth/*    /p/featured/trade-growth/:splat    301
-/p/researchreport/    /p/closed-door/researchreport/    301
-/p/researchreport/*    /p/closed-door/researchreport/:splat    301
-/p/project/出海决策陪跑_海报.html    /p/featured/出海决策陪跑_海报.html    301
+/02-projects/chuhaiban/    /02-projects/featured/chuhaiban/    301
+/02-projects/chuhaiban/*    /02-projects/featured/chuhaiban/:splat    301
+/02-projects/trade-growth/    /02-projects/featured/trade-growth/    301
+/02-projects/trade-growth/*    /02-projects/featured/trade-growth/:splat    301
+/02-projects/researchreport/    /02-projects/closed-door/researchreport/    301
+/02-projects/researchreport/*    /02-projects/closed-door/researchreport/:splat    301
+/02-projects/project/出海决策陪跑_海报.html    /02-projects/featured/出海决策陪跑_海报.html    301
 
 # 删除废弃副本 male-maldives，保留页 maldives（2026-10）
 /events/visit-03-2013-male-maldives/    /events/visit-03-2013-maldives/    301
 /events/visit-03-2013-male-maldives/*    /events/visit-03-2013-maldives/:splat    301
 
-# 新闻总览页迁入 ecosystem/（2026-10）：旧根路径 301 兜底
-/news-index    /ecosystem/news-index.html    301
-/news-index.html    /ecosystem/news-index.html    301
+# 新闻总览页迁入 06-ecosystem/（2026-10）：旧根路径 301 兜底
+/news-index    /06-ecosystem/news-index.html    301
+/news-index.html    /06-ecosystem/news-index.html    301
+
+
+# 大目录重构 301（2026-10）：GTN_Global/carousel/clients -> 05-brand；p -> 02-projects；reports/references -> 03-research；cta -> 08-engage。
+# 含全部移动文件的精确 301 + 整段搬走子路径的目录级 301，防止老网址 404 掉权重。
+/p/ceo-tour/*   /02-projects/ceo-tour/:splat   301
+/p/closed-door/*   /02-projects/closed-door/:splat   301
+/p/featured/*   /02-projects/featured/:splat   301
+/p/global-trip/*   /02-projects/global-trip/:splat   301
+/p/online-connect/*   /02-projects/online-connect/:splat   301
+/p/partners/*   /02-projects/partners/:splat   301
+/p/project/*   /02-projects/project/:splat   301
+/p/self-testing/*   /02-projects/self-testing/:splat   301
+/references/saudi-energy-procurement/*   /03-research/references/:splat   301
+/reports/EV/*   /03-research/reports/:splat   301
+/reports/cleantech/*   /03-research/reports/:splat   301
+/carousel/webp/*   /05-brand/carousel/:splat   301
+/clients/wall/*   /05-brand/clients/:splat   301
+/GTN_Global/webp-flag/*   /05-brand/webp-flag/:splat   301
+/GTN_Global/webp/*   /05-brand/webp/:splat   301
+/cta/self-test/*   /08-engage/self-test/:splat   301
+/p/ceo-tour/index.html   /02-projects/ceo-tour/index.html   301
+/p/closed-door/closed-door.png   /02-projects/closed-door/closed-door.png   301
+/p/closed-door/closed-door.webp   /02-projects/closed-door/closed-door.webp   301
+/p/closed-door/index.html   /02-projects/closed-door/index.html   301
+/p/closed-door/researchreport/Weixin Image_20260910131254_91_6962.jpg   /02-projects/closed-door/researchreport/Weixin Image_20260910131254_91_6962.jpg   301
+/p/closed-door/researchreport/Weixin Image_20260910131254_91_6962.webp   /02-projects/closed-door/researchreport/Weixin Image_20260910131254_91_6962.webp   301
+/p/closed-door/researchreport/researchreport_launch_bg_v2.png   /02-projects/closed-door/researchreport/researchreport_launch_bg_v2.png   301
+/p/closed-door/researchreport/researchreport_launch_bg_v2.webp   /02-projects/closed-door/researchreport/researchreport_launch_bg_v2.webp   301
+/p/closed-door/researchreport/产业出海研究报告_系列海报_B.html   /02-projects/closed-door/researchreport/产业出海研究报告_系列海报_B.html   301
+/p/closed-door/researchreport/横幅-新能源电力电气出海研究报告.png   /02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.png   301
+/p/closed-door/researchreport/横幅-新能源电力电气出海研究报告.webp   /02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.webp   301
+/p/closed-door/researchreport/横幅-新能源电力电气出海研究报告@2x.png   /02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告@2x.png   301
+/p/closed-door/researchreport/横幅-新能源电力电气出海研究报告@2x.webp   /02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告@2x.webp   301
+/p/closed-door/出海沙龙_场次模板_海报.html   /02-projects/closed-door/出海沙龙_场次模板_海报.html   301
+/p/closed-door/横幅-出海闭门小场.png   /02-projects/closed-door/横幅-出海闭门小场.png   301
+/p/closed-door/横幅-出海闭门小场.webp   /02-projects/closed-door/横幅-出海闭门小场.webp   301
+/p/closed-door/横幅-出海闭门小场@2x.png   /02-projects/closed-door/横幅-出海闭门小场@2x.png   301
+/p/closed-door/横幅-出海闭门小场@2x.webp   /02-projects/closed-door/横幅-出海闭门小场@2x.webp   301
+/p/featured/chuhaiban/chuhaiban.png   /02-projects/featured/chuhaiban/chuhaiban.png   301
+/p/featured/chuhaiban/chuhaiban.webp   /02-projects/featured/chuhaiban/chuhaiban.webp   301
+/p/featured/chuhaiban/index.html   /02-projects/featured/chuhaiban/index.html   301
+/p/featured/chuhaiban/和君商学院出海班_第20届_海报.html   /02-projects/featured/chuhaiban/和君商学院出海班_第20届_海报.html   301
+/p/featured/chuhaiban/横幅-和君商学院出海班.png   /02-projects/featured/chuhaiban/横幅-和君商学院出海班.png   301
+/p/featured/chuhaiban/横幅-和君商学院出海班.webp   /02-projects/featured/chuhaiban/横幅-和君商学院出海班.webp   301
+/p/featured/chuhaiban/横幅-和君商学院出海班@2x.png   /02-projects/featured/chuhaiban/横幅-和君商学院出海班@2x.png   301
+/p/featured/chuhaiban/横幅-和君商学院出海班@2x.webp   /02-projects/featured/chuhaiban/横幅-和君商学院出海班@2x.webp   301
+/p/featured/index.html   /02-projects/featured/index.html   301
+/p/featured/trade-growth/index.html   /02-projects/featured/trade-growth/index.html   301
+/p/featured/trade-growth/出海训练营工作坊_海报.html   /02-projects/featured/trade-growth/出海训练营工作坊_海报.html   301
+/p/featured/trade-growth/横幅-出海训练营工作坊.png   /02-projects/featured/trade-growth/横幅-出海训练营工作坊.png   301
+/p/featured/trade-growth/横幅-出海训练营工作坊.webp   /02-projects/featured/trade-growth/横幅-出海训练营工作坊.webp   301
+/p/featured/trade-growth/横幅-出海训练营工作坊@2x.png   /02-projects/featured/trade-growth/横幅-出海训练营工作坊@2x.png   301
+/p/featured/trade-growth/横幅-出海训练营工作坊@2x.webp   /02-projects/featured/trade-growth/横幅-出海训练营工作坊@2x.webp   301
+/p/featured/出海决策陪跑_海报.html   /02-projects/featured/出海决策陪跑_海报.html   301
+/p/featured/横幅-出海落地陪跑.png   /02-projects/featured/横幅-出海落地陪跑.png   301
+/p/featured/横幅-出海落地陪跑.webp   /02-projects/featured/横幅-出海落地陪跑.webp   301
+/p/featured/横幅-出海落地陪跑@2x.png   /02-projects/featured/横幅-出海落地陪跑@2x.png   301
+/p/featured/横幅-出海落地陪跑@2x.webp   /02-projects/featured/横幅-出海落地陪跑@2x.webp   301
+/p/global-trip/global-trip-2.jpg   /02-projects/global-trip/global-trip-2.jpg   301
+/p/global-trip/global-trip-2.webp   /02-projects/global-trip/global-trip-2.webp   301
+/p/global-trip/global-trip.png   /02-projects/global-trip/global-trip.png   301
+/p/global-trip/global-trip.webp   /02-projects/global-trip/global-trip.webp   301
+/p/global-trip/index.html   /02-projects/global-trip/index.html   301
+/p/global-trip/横幅-海鑫汇全球行.png   /02-projects/global-trip/横幅-海鑫汇全球行.png   301
+/p/global-trip/横幅-海鑫汇全球行.webp   /02-projects/global-trip/横幅-海鑫汇全球行.webp   301
+/p/global-trip/横幅-海鑫汇全球行@2x.png   /02-projects/global-trip/横幅-海鑫汇全球行@2x.png   301
+/p/global-trip/横幅-海鑫汇全球行@2x.webp   /02-projects/global-trip/横幅-海鑫汇全球行@2x.webp   301
+/p/online-connect/index.html   /02-projects/online-connect/index.html   301
+/p/online-connect/online-connect.png   /02-projects/online-connect/online-connect.png   301
+/p/online-connect/online-connect.webp   /02-projects/online-connect/online-connect.webp   301
+/p/online-connect/出海线上连线_系列模板_海报.html   /02-projects/online-connect/出海线上连线_系列模板_海报.html   301
+/p/online-connect/横幅-海鑫汇出海连线.png   /02-projects/online-connect/横幅-海鑫汇出海连线.png   301
+/p/online-connect/横幅-海鑫汇出海连线.webp   /02-projects/online-connect/横幅-海鑫汇出海连线.webp   301
+/p/online-connect/横幅-海鑫汇出海连线@2x.png   /02-projects/online-connect/横幅-海鑫汇出海连线@2x.png   301
+/p/online-connect/横幅-海鑫汇出海连线@2x.webp   /02-projects/online-connect/横幅-海鑫汇出海连线@2x.webp   301
+/p/partners/index.html   /02-projects/partners/index.html   301
+/p/project/index.html   /02-projects/project/index.html   301
+/p/project/success.html   /02-projects/project/success.html   301
+/p/self-testing/3分钟出海自测_海报.html   /02-projects/self-testing/3分钟出海自测_海报.html   301
+/p/self-testing/横幅-3分钟出海自测.png   /02-projects/self-testing/横幅-3分钟出海自测.png   301
+/p/self-testing/横幅-3分钟出海自测.webp   /02-projects/self-testing/横幅-3分钟出海自测.webp   301
+/p/self-testing/横幅-3分钟出海自测@2x.png   /02-projects/self-testing/横幅-3分钟出海自测@2x.png   301
+/p/self-testing/横幅-3分钟出海自测@2x.webp   /02-projects/self-testing/横幅-3分钟出海自测@2x.webp   301
+/references/saudi-energy-procurement/index.html   /03-research/references/saudi-energy-procurement/index.html   301
+/references/saudi-energy-procurement/saudi-energy-procurement.png   /03-research/references/saudi-energy-procurement/saudi-energy-procurement.png   301
+/references/saudi-energy-procurement/saudi-energy-procurement.webp   /03-research/references/saudi-energy-procurement/saudi-energy-procurement.webp   301
+/reports/EV/1.jpg   /03-research/reports/EV/1.jpg   301
+/reports/EV/2.jpg   /03-research/reports/EV/2.jpg   301
+/reports/EV/hero.png   /03-research/reports/EV/hero.png   301
+/reports/EV/index.html   /03-research/reports/EV/index.html   301
+/reports/cleantech/index.html   /03-research/reports/cleantech/index.html   301
+/reports/cleantech/pic-14.webp   /03-research/reports/cleantech/pic-14.webp   301
+/reports/index.html   /03-research/reports/index.html   301
+/carousel/carousel-01.webp   /05-brand/carousel/carousel-01.webp   301
+/carousel/carousel-02.webp   /05-brand/carousel/carousel-02.webp   301
+/carousel/carousel-03.webp   /05-brand/carousel/carousel-03.webp   301
+/carousel/carousel-04.webp   /05-brand/carousel/carousel-04.webp   301
+/carousel/carousel-05.webp   /05-brand/carousel/carousel-05.webp   301
+/carousel/carousel-06.webp   /05-brand/carousel/carousel-06.webp   301
+/carousel/carousel-07.webp   /05-brand/carousel/carousel-07.webp   301
+/carousel/carousel-08.webp   /05-brand/carousel/carousel-08.webp   301
+/carousel/carousel-09.webp   /05-brand/carousel/carousel-09.webp   301
+/carousel/carousel-10.webp   /05-brand/carousel/carousel-10.webp   301
+/carousel/carousel-11.webp   /05-brand/carousel/carousel-11.webp   301
+/carousel/carousel-12.webp   /05-brand/carousel/carousel-12.webp   301
+/carousel/carousel-13.webp   /05-brand/carousel/carousel-13.webp   301
+/carousel/carousel-14.webp   /05-brand/carousel/carousel-14.webp   301
+/carousel/carousel-15.webp   /05-brand/carousel/carousel-15.webp   301
+/carousel/carousel-16.webp   /05-brand/carousel/carousel-16.webp   301
+/carousel/carousel-17.webp   /05-brand/carousel/carousel-17.webp   301
+/carousel/carousel-18.webp   /05-brand/carousel/carousel-18.webp   301
+/carousel/carousel-19.webp   /05-brand/carousel/carousel-19.webp   301
+/carousel/carousel-20.webp   /05-brand/carousel/carousel-20.webp   301
+/carousel/carousel-21.webp   /05-brand/carousel/carousel-21.webp   301
+/carousel/webp/carousel-01.webp   /05-brand/carousel/webp/carousel-01.webp   301
+/carousel/webp/carousel-02.webp   /05-brand/carousel/webp/carousel-02.webp   301
+/carousel/webp/carousel-03.webp   /05-brand/carousel/webp/carousel-03.webp   301
+/carousel/webp/carousel-04.webp   /05-brand/carousel/webp/carousel-04.webp   301
+/carousel/webp/carousel-05.webp   /05-brand/carousel/webp/carousel-05.webp   301
+/carousel/webp/carousel-06.webp   /05-brand/carousel/webp/carousel-06.webp   301
+/carousel/webp/carousel-07.webp   /05-brand/carousel/webp/carousel-07.webp   301
+/carousel/webp/carousel-08.webp   /05-brand/carousel/webp/carousel-08.webp   301
+/carousel/webp/carousel-09.webp   /05-brand/carousel/webp/carousel-09.webp   301
+/carousel/webp/carousel-10.webp   /05-brand/carousel/webp/carousel-10.webp   301
+/carousel/webp/carousel-11.webp   /05-brand/carousel/webp/carousel-11.webp   301
+/carousel/webp/carousel-12.webp   /05-brand/carousel/webp/carousel-12.webp   301
+/carousel/webp/carousel-13.webp   /05-brand/carousel/webp/carousel-13.webp   301
+/carousel/webp/carousel-14.webp   /05-brand/carousel/webp/carousel-14.webp   301
+/carousel/webp/carousel-15.webp   /05-brand/carousel/webp/carousel-15.webp   301
+/carousel/webp/carousel-16.webp   /05-brand/carousel/webp/carousel-16.webp   301
+/carousel/webp/carousel-17.webp   /05-brand/carousel/webp/carousel-17.webp   301
+/carousel/webp/carousel-18.webp   /05-brand/carousel/webp/carousel-18.webp   301
+/carousel/webp/carousel-19.webp   /05-brand/carousel/webp/carousel-19.webp   301
+/carousel/webp/carousel-20.webp   /05-brand/carousel/webp/carousel-20.webp   301
+/carousel/webp/carousel-21.webp   /05-brand/carousel/webp/carousel-21.webp   301
+/clients/footprints.webp   /05-brand/clients/footprints.webp   301
+/clients/wall/client-01.webp   /05-brand/clients/wall/client-01.webp   301
+/clients/wall/client-02.webp   /05-brand/clients/wall/client-02.webp   301
+/clients/wall/client-03.webp   /05-brand/clients/wall/client-03.webp   301
+/clients/wall/client-04.webp   /05-brand/clients/wall/client-04.webp   301
+/clients/wall/client-05.webp   /05-brand/clients/wall/client-05.webp   301
+/clients/wall/client-06.webp   /05-brand/clients/wall/client-06.webp   301
+/clients/wall/client-07.webp   /05-brand/clients/wall/client-07.webp   301
+/clients/wall/client-08.webp   /05-brand/clients/wall/client-08.webp   301
+/clients/wall/client-09.webp   /05-brand/clients/wall/client-09.webp   301
+/clients/wall/client-10.webp   /05-brand/clients/wall/client-10.webp   301
+/clients/wall/client-11.webp   /05-brand/clients/wall/client-11.webp   301
+/clients/wall/client-12.webp   /05-brand/clients/wall/client-12.webp   301
+/clients/wall/client-13.webp   /05-brand/clients/wall/client-13.webp   301
+/clients/wall/client-14.webp   /05-brand/clients/wall/client-14.webp   301
+/clients/wall/client-15.webp   /05-brand/clients/wall/client-15.webp   301
+/clients/wall/client-16.webp   /05-brand/clients/wall/client-16.webp   301
+/clients/wall/client-17.webp   /05-brand/clients/wall/client-17.webp   301
+/clients/wall/client-18.webp   /05-brand/clients/wall/client-18.webp   301
+/clients/wall/client-19.webp   /05-brand/clients/wall/client-19.webp   301
+/clients/wall/client-20.webp   /05-brand/clients/wall/client-20.webp   301
+/clients/wall/client-21.webp   /05-brand/clients/wall/client-21.webp   301
+/clients/wall/client-22.webp   /05-brand/clients/wall/client-22.webp   301
+/clients/wall/client-23.webp   /05-brand/clients/wall/client-23.webp   301
+/clients/wall/client-24.webp   /05-brand/clients/wall/client-24.webp   301
+/clients/wall/client-25.webp   /05-brand/clients/wall/client-25.webp   301
+/clients/wall/client-26.webp   /05-brand/clients/wall/client-26.webp   301
+/clients/wall/client-27.webp   /05-brand/clients/wall/client-27.webp   301
+/clients/wall/client-28.webp   /05-brand/clients/wall/client-28.webp   301
+/clients/wall/client-29.webp   /05-brand/clients/wall/client-29.webp   301
+/clients/wall/client-30.webp   /05-brand/clients/wall/client-30.webp   301
+/clients/wall/client-31.webp   /05-brand/clients/wall/client-31.webp   301
+/clients/wall/client-32.webp   /05-brand/clients/wall/client-32.webp   301
+/clients/wall/client-33.webp   /05-brand/clients/wall/client-33.webp   301
+/clients/wall/client-34.webp   /05-brand/clients/wall/client-34.webp   301
+/clients/wall/client-35.webp   /05-brand/clients/wall/client-35.webp   301
+/clients/wall/client-36.webp   /05-brand/clients/wall/client-36.webp   301
+/clients/wall/client-37.webp   /05-brand/clients/wall/client-37.webp   301
+/clients/wall/client-38.webp   /05-brand/clients/wall/client-38.webp   301
+/clients/wall/client-39.webp   /05-brand/clients/wall/client-39.webp   301
+/clients/wall/client-40.webp   /05-brand/clients/wall/client-40.webp   301
+/evidence/ceo-tour/index.html   /05-brand/evidence/ceo-tour/index.html   301
+/evidence/chuhaiban/index.html   /05-brand/evidence/chuhaiban/index.html   301
+/evidence/closed-door/index.html   /05-brand/evidence/closed-door/index.html   301
+/evidence/global-trip/index.html   /05-brand/evidence/global-trip/index.html   301
+/evidence/online-connect/index.html   /05-brand/evidence/online-connect/index.html   301
+/GTN_Global/webp-flag/visit-01-2012-roto-stuttgart-germany-flag.webp   /05-brand/webp-flag/visit-01-2012-roto-stuttgart-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-02-2012-cologne-heidelberg-germany-flag.webp   /05-brand/webp-flag/visit-02-2012-cologne-heidelberg-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-06-2014-stuttgart-germany-flag.webp   /05-brand/webp-flag/visit-06-2014-stuttgart-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-07-2015-brussels-belgium-flag.webp   /05-brand/webp-flag/visit-07-2015-brussels-belgium-flag.webp   301
+/GTN_Global/webp-flag/visit-07-2015-brussels-belgium2-flag.webp   /05-brand/webp-flag/visit-07-2015-brussels-belgium2-flag.webp   301
+/GTN_Global/webp-flag/visit-11-2015-okinawa-japan-flag.webp   /05-brand/webp-flag/visit-11-2015-okinawa-japan-flag.webp   301
+/GTN_Global/webp-flag/visit-12-2016-nuremberg-germany-flag.webp   /05-brand/webp-flag/visit-12-2016-nuremberg-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-14-2016-bosch-stuttgart-germany-flag.webp   /05-brand/webp-flag/visit-14-2016-bosch-stuttgart-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-16-2016-roto-stuttgart-germany-flag.webp   /05-brand/webp-flag/visit-16-2016-roto-stuttgart-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-18-2017-vienna-austria-flag.webp   /05-brand/webp-flag/visit-18-2017-vienna-austria-flag.webp   301
+/GTN_Global/webp-flag/visit-23-2017-bratislava-slovakia-flag.webp   /05-brand/webp-flag/visit-23-2017-bratislava-slovakia-flag.webp   301
+/GTN_Global/webp-flag/visit-26-2018-nuremberg-germany-flag.webp   /05-brand/webp-flag/visit-26-2018-nuremberg-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-28-2018-stuttgart-germany-flag.webp   /05-brand/webp-flag/visit-28-2018-stuttgart-germany-flag.webp   301
+/GTN_Global/webp-flag/visit-30-2025-hochiminh-vietnam-flag.webp   /05-brand/webp-flag/visit-30-2025-hochiminh-vietnam-flag.webp   301
+/GTN_Global/webp-flag/visit-31-2025-tiktok-kuala-lumpur-malaysia-flag.webp   /05-brand/webp-flag/visit-31-2025-tiktok-kuala-lumpur-malaysia-flag.webp   301
+/GTN_Global/webp-flag/visit-32-2025-johor-malaysia-flag.webp   /05-brand/webp-flag/visit-32-2025-johor-malaysia-flag.webp   301
+/GTN_Global/webp-flag/visit-33-2025-beyondsoft-singapore-flag.webp   /05-brand/webp-flag/visit-33-2025-beyondsoft-singapore-flag.webp   301
+/GTN_Global/webp-flag/visit-34-2025-coohom-bangkok-thailand01-hero-flag.webp   /05-brand/webp-flag/visit-34-2025-coohom-bangkok-thailand01-hero-flag.webp   301
+/GTN_Global/webp-flag/visit-34-2025-coohom-bangkok-thailand02-flag.webp   /05-brand/webp-flag/visit-34-2025-coohom-bangkok-thailand02-flag.webp   301
+/GTN_Global/webp/visit-01-2012-roto-stuttgart-germany.webp   /05-brand/webp/visit-01-2012-roto-stuttgart-germany.webp   301
+/GTN_Global/webp/visit-02-2012-cologne-heidelberg-germany-flag.jpg   /05-brand/webp/visit-02-2012-cologne-heidelberg-germany-flag.jpg   301
+/GTN_Global/webp/visit-02-2012-cologne-heidelberg-germany.webp   /05-brand/webp/visit-02-2012-cologne-heidelberg-germany.webp   301
+/GTN_Global/webp/visit-05-2014-fensterbau-germany-flag.jpg   /05-brand/webp/visit-05-2014-fensterbau-germany-flag.jpg   301
+/GTN_Global/webp/visit-05-2014-fensterbau-germany.webp   /05-brand/webp/visit-05-2014-fensterbau-germany.webp   301
+/GTN_Global/webp/visit-06-2014-stuttgart-germany.webp   /05-brand/webp/visit-06-2014-stuttgart-germany.webp   301
+/GTN_Global/webp/visit-07-2015-brussels-belgium-flag.jpg   /05-brand/webp/visit-07-2015-brussels-belgium-flag.jpg   301
+/GTN_Global/webp/visit-07-2015-brussels-belgium.webp   /05-brand/webp/visit-07-2015-brussels-belgium.webp   301
+/GTN_Global/webp/visit-07-2015-brussels-belgium2-flag.jpg   /05-brand/webp/visit-07-2015-brussels-belgium2-flag.jpg   301
+/GTN_Global/webp/visit-07-2015-brussels-belgium2.webp   /05-brand/webp/visit-07-2015-brussels-belgium2.webp   301
+/GTN_Global/webp/visit-11-2015-okinawa-japan.webp   /05-brand/webp/visit-11-2015-okinawa-japan.webp   301
+/GTN_Global/webp/visit-12-2016-nuremberg-germany.webp   /05-brand/webp/visit-12-2016-nuremberg-germany.webp   301
+/GTN_Global/webp/visit-14-2016-bosch-stuttgart-germany.webp   /05-brand/webp/visit-14-2016-bosch-stuttgart-germany.webp   301
+/GTN_Global/webp/visit-16-2016-roto-stuttgart-germany.webp   /05-brand/webp/visit-16-2016-roto-stuttgart-germany.webp   301
+/GTN_Global/webp/visit-18-2017-vienna-austria.webp   /05-brand/webp/visit-18-2017-vienna-austria.webp   301
+/GTN_Global/webp/visit-23-2017-bratislava-slovakia.webp   /05-brand/webp/visit-23-2017-bratislava-slovakia.webp   301
+/GTN_Global/webp/visit-26-2018-nuremberg-germany.webp   /05-brand/webp/visit-26-2018-nuremberg-germany.webp   301
+/GTN_Global/webp/visit-28-2018-stuttgart-germany.webp   /05-brand/webp/visit-28-2018-stuttgart-germany.webp   301
+/GTN_Global/webp/visit-30-2025-hochiminh-vietnam.webp   /05-brand/webp/visit-30-2025-hochiminh-vietnam.webp   301
+/GTN_Global/webp/visit-31-2025-tiktok-kuala-lumpur-malaysia.webp   /05-brand/webp/visit-31-2025-tiktok-kuala-lumpur-malaysia.webp   301
+/GTN_Global/webp/visit-32-2025-johor-malaysia.webp   /05-brand/webp/visit-32-2025-johor-malaysia.webp   301
+/GTN_Global/webp/visit-33-2025-beyondsoft-singapore.png   /05-brand/webp/visit-33-2025-beyondsoft-singapore.png   301
+/GTN_Global/webp/visit-33-2025-beyondsoft-singapore.webp   /05-brand/webp/visit-33-2025-beyondsoft-singapore.webp   301
+/GTN_Global/webp/visit-34-2025-coohom-bangkok-thailand01-hero.webp   /05-brand/webp/visit-34-2025-coohom-bangkok-thailand01-hero.webp   301
+/GTN_Global/webp/visit-34-2025-coohom-bangkok-thailand02.webp   /05-brand/webp/visit-34-2025-coohom-bangkok-thailand02.webp   301
+/ecosystem/ecosystem.css   /06-ecosystem/ecosystem.css   301
+/ecosystem/news-index.html   /06-ecosystem/news-index.html   301
+/cta/donglixin_qrcode.webp   /08-engage/donglixin_qrcode.webp   301
+/cta/self-test-radar-demo.svg   /08-engage/self-test-radar-demo.svg   301
+/cta/self-test/index.html   /08-engage/self-test/index.html   301
+/cta/self-test/self-test-radar-demo.svg   /08-engage/self-test/self-test-radar-demo.svg   301
+/questions/export-or-build/index.html   /09-diagnose/export-or-build/index.html   301
+/questions/first-market/index.html   /09-diagnose/first-market/index.html   301
+/questions/overseas-risks/index.html   /09-diagnose/overseas-risks/index.html   301
+/questions/ready-to-go-global/index.html   /09-diagnose/ready-to-go-global/index.html   301

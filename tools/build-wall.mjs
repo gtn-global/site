@@ -1,4 +1,4 @@
-// 照片墙源图：_img_backup/clients/footprints/source/client-01~40.png
+// 照片墙源图：_img_backup/05-brand/clients/footprints/source/client-01~40.png
 // 转为正方形 webp 放到 clients/wall/（该目录不被 .gitignore 忽略，可随站发布）
 // 用法：node tools/build-wall.mjs
 import sharp from 'sharp';
@@ -7,7 +7,7 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, '_img_backup', 'clients', 'footprints', 'source');
-const OUT = path.join(ROOT, 'clients', 'wall');
+const OUT = path.join(ROOT, '05-brand', 'clients', 'wall');
 
 if (!fs.existsSync(SRC)) {
   console.error('未找到源图目录：' + SRC);

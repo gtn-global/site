@@ -109,7 +109,7 @@ for (const { file, form } of forms) {
 // ---- 校验 3：指定 select 的选项数 ----
 console.log('\n2) 关键 select 选项数');
 const stages = [
-  { file: 'p/project/index.html', selectName: 'stage', expect: 4,
+  { file: '02-projects/project/index.html', selectName: 'stage', expect: 4,
     values: ['planning', 'testing', 'scaling', 'established'] },
 ];
 for (const s of stages) {
@@ -125,8 +125,8 @@ for (const s of stages) {
 
 // ---- 校验 4：success 页按钮 .en 对齐不被污染 ----
 console.log('\n3) success 页按钮英文对齐');
-const su = read('p/project/success.html');
-if (su === null) fail('p/project/success.html 不存在');
+const su = read('02-projects/project/success.html');
+if (su === null) fail('02-projects/project/success.html 不存在');
 else {
   if (/\.success-wrap \.en\{display:block\}/.test(su))
     fail('success.html: 存在 .success-wrap .en{display:block} → 会污染按钮内 .en 导致不对齐');
