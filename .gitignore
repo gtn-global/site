@@ -79,3 +79,8 @@ carousel/*.JPEG
 
 # 素材总览内部工具页（本地查看用，不部署、不公开）
 tools/asset-overview/
+
+# 本地备份与预览（自检/回退用，不部署）
+*.bak*
+*_backup/
+preview/
