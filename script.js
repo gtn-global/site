@@ -11,6 +11,7 @@
 // 国家顺序 / 文案 / 时区都只在这里定义一次。
 const CLOCK_ZONES = [
   { label: 'Kazakhstan', tz: 'Asia/Almaty' },
+  { label: 'United States', tz: 'America/New_York' },
   { label: 'Singapore',  tz: 'Asia/Singapore' },
   { label: 'Germany',    tz: 'Europe/Berlin' },
   { label: 'Japan',      tz: 'Asia/Tokyo' }
