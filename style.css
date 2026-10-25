@@ -1683,3 +1683,6 @@ section[id]{scroll-margin-top:96px;}
 .sub-cat .category-head h4{margin:0;font-size:15px;color:var(--ink);}
 .sub-cat .category-head h4 .en{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--ink-faint);margin-left:6px;text-transform:uppercase;}
 .sub-cat .category-head .count{font-size:11px;color:var(--ink-faint);}
+
+/* 首页首屏"产业与区域"大标题与 section 标题字号统一为 32px */
+#home .headline{font-size:32px!important;}
