@@ -1676,3 +1676,10 @@ section[id]{scroll-margin-top:96px;}
   .nav-drop .drop-group{padding:6px 2px 2px;}
   .nav-drop a{padding:8px 2px;font-size:13px;color:var(--ink-soft);text-decoration:none;white-space:normal;}
 }
+
+/* ============ events-index 战略伙伴子分类 ============ */
+.sub-cat{margin-top:22px;}
+.sub-cat .category-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 8px;padding-bottom:6px;border-bottom:1px dashed var(--rule);}
+.sub-cat .category-head h4{margin:0;font-size:15px;color:var(--ink);}
+.sub-cat .category-head h4 .en{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--ink-faint);margin-left:6px;text-transform:uppercase;}
+.sub-cat .category-head .count{font-size:11px;color:var(--ink-faint);}
