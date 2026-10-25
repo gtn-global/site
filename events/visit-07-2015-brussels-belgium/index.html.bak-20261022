@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>布鲁塞尔最强的权力，未必在欧盟大楼里</title>
+
+<meta name="description" content="一座人口不足 120 万的城市，聚集了欧盟、北约与强大的工会力量。布鲁塞尔真正值得观察的，不只是总部，而是权力如何在城市中分布。">
+
+<link rel="canonical" href="https://gatewaytonew.com/events/visit-07-2015-brussels-belgium/">
+
+<link rel="stylesheet" href="../events.css">
+
+
+
+<!-- 结构化数据：Event schema -->
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "Event",
+
+  "name": "布鲁塞尔最强的权力，未必在欧盟大楼里",
+
+  "description": "一座人口不足 120 万的城市，聚集了欧盟、北约与强大的工会力量。布鲁塞尔真正值得观察的，不只是总部，而是权力如何在城市中分布。",
+
+  "startDate": "2015",
+
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+
+  "eventStatus": "https://schema.org/EventCompleted",
+
+  "location": { "@type": "Place", "name": "比利时 · 布鲁塞尔" },
+
+  "organizer": { "@type": "Organization", "name": "海鑫汇 Gateway To New", "url": "https://gatewaytonew.com/" },
+
+  "performer": { "@type": "Person", "name": "董立鑫", "url": "https://gatewaytonew.com/experts/donglixin/" }
+
+}
+
+</script>
+
+
+
+<style>
+
+  .ev-body blockquote {
+
+    margin: 24px 0;
+
+    padding: 14px 20px;
+
+    border-left: 3px solid var(--ev-accent);
+
+    background: var(--ev-bg-subtle);
+
+    border-radius: 0 4px 4px 0;
+
+    font-size: 15px;
+
+    color: var(--ev-text-primary);
+
+  }
+
+  .ev-body blockquote p { margin: 0 0 8px; }
+
+  .ev-body blockquote p:last-child { margin: 0; }
+
+</style>
+
+<style>
+
+  .ev-hero-photo { margin: 0 0 16px; }
+
+  .ev-hero-photo img { width:100%; height:auto; aspect-ratio:5/2; object-fit:cover; border-radius:6px; display:block; background:#fafaf8; }
+
+  .ev-photo-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 0 32px; }
+
+  .ev-photo-grid img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:6px; display:block; background:#fafaf8; }
+
+
+
+  /* ---- 金句引语块（GTN 金句集）---- */
+
+  .ev-body blockquote.ev-quote {
+
+    margin: 32px 0;
+
+    padding: 18px 22px;
+
+    background: var(--ev-accent-bg);
+
+    border-left: 3px solid var(--ev-accent);
+
+    border-radius: 0 4px 4px 0;
+
+  }
+
+  .ev-body blockquote.ev-quote .ev-quote__text {
+
+    margin: 0 0 10px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    line-height: 1.7;
+
+    color: var(--ev-text-primary);
+
+  }
+
+  .ev-body blockquote.ev-quote .ev-quote__text::before {
+
+    content: "\300C";
+
+    color: var(--ev-accent);
+
+    opacity: .4;
+
+    margin-right: 1px;
+
+  }
+
+  .ev-body blockquote.ev-quote .ev-quote__text::after {
+
+    content: "\300D";
+
+    color: var(--ev-accent);
+
+    opacity: .4;
+
+    margin-left: 1px;
+
+  }
+
+  .ev-body blockquote.ev-quote .ev-quote__attr {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    color: var(--ev-text-secondary);
+
+    text-align: right;
+
+    font-weight: 400;
+
+  }
+
+</style>
+
+</head>
+
+<body class="ev-page">
+
+
+
+<nav class="ev-nav">
+
+  <div class="ev-nav__top">
+
+    <a class="ev-nav__logo" href="../../index.html">
+
+      <img src="../../assets/img/logo-primary.svg" alt="海鑫汇 GATEWAY TO NEW" loading="lazy">
+
+      GATEWAY TO NEW
+
+    </a>
+
+    <button class="ev-nav__toggle" aria-label="展开导航菜单" aria-expanded="false">菜单</button>
+
+  </div>
+
+  <div class="ev-nav__links">
+
+    <a href="../../index.html#home">首页 HOME</a>
+
+    <a href="../../index.html#reports">报告 REPORTS</a>
+
+    <a href="../../index.html#method">判断 METHOD</a>
+
+    <a href="../../index.html#proof">印证 PROOF</a>
+
+    <a href="../../index.html#industry">产业 INDUSTRY</a>
+
+    <a href="../../index.html#region">区域 REGION</a>
+
+    <a href="../../index.html#contact">联系 CONTACT</a>
+
+  </div>
+
+</nav>
+
+
+
+<main class="ev-main">
+
+
+
+  <a class="ev-back" href="../../events-index.html">← 返回 70+ 活动全记录</a>
+
+
+
+  <div class="ev-eyebrow">
+
+    <span class="ev-eyebrow__code">VISIT-07</span>
+
+    <span class="ev-eyebrow__cat">海外产业考察 · FIELD VISIT</span>
+
+  </div>
+
+
+
+  <h1 class="ev-title">布鲁塞尔最强的权力，未必在欧盟大楼里</h1>
+
+  <p class="ev-subtitle">Brussels — Where Power Extends Beyond Headquarters</p>
+
+
+
+  <div class="ev-meta">
+
+    <span class="ev-meta__item"><span class="ev-meta__label">日期</span> 2015 年</span>
+
+    <span class="ev-meta__item"><span class="ev-meta__label">地点</span> 比利时 · 布鲁塞尔</span>
+
+    <span class="ev-meta__item"><span class="ev-meta__label">类型</span> 海外产业考察</span>
+
+  </div>
+
+
+
+  <div class="ev-body">
+
+
+
+    <p>多年前到布鲁塞尔，印象最深的不是某一栋楼，而是这座城市强烈的反差：一边是中世纪的窄楼老巷，一边是欧洲最密集的权力办公区。</p>
+
+    <p>它有巧克力、啤酒和游客熟悉的广场；也有欧盟委员会、欧洲理事会和北约总部。更重要的是，它还有一股经常被外来者低估的力量——工会。</p>
+
+    <p>布鲁塞尔告诉我：看一座城市，不能只看地标，更要看谁真正能够影响它的日常运转。</p>
+
+    <figure class="ev-hero-photo">
+      <img src="photos/hero.webp" alt="现场主照片" loading="lazy" width="1600" height="900">
+    </figure>
+
+
+
+    <h2>从大广场开始，看见布鲁塞尔的另一面</h2>
+
+    <p>布鲁塞尔市区以中央大街为界，分为上城和下城。沿着街道往下走，便到了著名的大广场（Grand-Place）。</p>
+
+    <p>广场四周是两三层高的老楼，窄窄地挤在一起。哥特式与文艺复兴式立面交错，与市政厅尖塔形成鲜明对照。大广场建于 12 世纪，1998 年被列入联合国教科文组织世界文化遗产名录；雨果曾称它为"世界上最美丽的广场"。</p>
+
+    <p>广场北面不远，是布鲁塞尔最出名的城市符号之一——尿尿小童（Manneken Pis）。这座半米高的铜像背后，有小男孩浇灭敌人导火索、救下全城的传说。</p>
+
+    <p>一个欧洲政治中心，最广为人知的雕塑，却是一个带着恶作剧意味的小孩。这种反差，很布鲁塞尔。</p>
+
+    <p>巧克力和啤酒也是如此。满街的巧克力店、餐厅里的精酿啤酒，让这座"欧洲首都"保留着非常日常、非常接地气的一面。</p>
+
+
+
+        <img src="photos/EU-1.webp" alt="现场照片" loading="lazy" width="1200" height="900" style="width:100%;height:auto;border-radius:6px;display:block;margin:0 0 32px;background:#fafaf8;">
+
+        <img src="photos/EU-2.webp" alt="现场照片" loading="lazy" width="1200" height="900" style="width:100%;height:auto;border-radius:6px;display:block;margin:0 0 32px;background:#fafaf8;">
+
+
+
+<h2>真正的分量，在舒曼区</h2>
+
+    <p>如果说老城展示的是布鲁塞尔的历史，那么舒曼区（Schuman）展示的，是它今天的分量。</p>
+
+    <p>欧盟委员会、欧洲理事会总部都在这里；布鲁塞尔同时也是北约总部所在地。对于一座人口不足 120 万的城市而言，同时承载欧盟和北约两个重要组织的总部，意味着它被称作"欧洲首都"，并不只是一个象征性的说法。</p>
+
+    <p>这里坐着的，是实际参与决策的机构。</p>
+
+    <p>城市另一端的海塞尔公园，则有另一座著名地标——原子球塔。它为 1958 年布鲁塞尔世博会而建，由 9 个直径 18 米的不锈钢球体组成，象征被放大 1650 亿倍的铁晶体结构。</p>
+
+    <p>大广场、舒曼区、原子球塔，构成了我对布鲁塞尔的几层记忆：历史、制度与工业想象，叠在同一座城市里。</p>
+
+
+
+        <div class="ev-photo-grid">
+
+      <img src="photos/20140330_175501.webp" alt="现场照片 3" loading="lazy" width="1200" height="900">
+
+      <img src="photos/20140330_175650.webp" alt="现场照片 4" loading="lazy" width="1200" height="900">
+
+    </div>
+
+<h2>工会，是这座城市另一种总部</h2>
+
+    <p>在布鲁塞尔待的那几天，能明显感受到：这里的工会不是摆设。</p>
+
+    <p>比利时有三大工会联盟：比利时劳工总联盟（FGTB/ABVV）、基督教工会联盟（CSC/ACV）和比利时自由工会总联盟（CGSLB/ACLVB）。它们在劳资议题中拥有真实的谈判能力和社会动员能力。</p>
+
+    <p>当养老金改革、物价上涨等议题出现时，罢工可能影响机场、铁路和公共交通。对来自中国的观察者而言，这种力量感非常直接：企业决策并不只是管理层的内部事务，工会同样能够坐上谈判桌，也能够影响整个社会的运行节奏。</p>
+
+    <p>布鲁塞尔不只是欧盟和北约的总部，也是欧洲劳资博弈的前线之一。</p>
+
+
+
+    <blockquote class="ev-quote">
+
+      <p class="ev-quote__text">一个国家最强的权力，未必挂在写字楼门口的牌子上，也可能握在能让整座城市停摆的工会手里。</p>
+
+      <p class="ev-quote__attr">——董立鑫 海鑫汇创始人兼执行总裁，新加坡世贸秘书长兼首席运营官</p>
+
+    </blockquote>
+
+
+
+    <h2>下一站：把 WTC 网络再接上一站</h2>
+
+    <p>这趟布鲁塞尔之行已经过去很多年。未来再访，我希望把布鲁塞尔世界贸易中心加入行程。</p>
+
+    <p>从新加坡 WTC 到布鲁塞尔 WTC，背后是一张全球世界贸易中心网络（World Trade Centers Association）的图谱。海鑫汇过去已在服贸会上与 WTC Singapore 有过协办合作；如果未来能把布鲁塞尔这一站串联起来，这条线就能从东南亚延伸至欧洲。</p>
+
+    <p>它的价值，不只是又去了一座欧洲城市。</p>
+
+    <p>更重要的是，把一次次独立的考察，连接成一张正在形成的全球网络地图。</p>
+
+    <h2>GTN 判断视角</h2>
+
+    <p>一座城市、一个市场的权力结构，往往比表面上的几栋总部大楼更复杂。</p>
+
+    <p>布鲁塞尔的启发在于：制度机构、商业网络与劳资力量，可能同时决定一座城市的运行方式。真正有效的产业观察，不能只看谁在楼里办公，更要看谁能够影响规则、谈判与日常秩序。</p>
+
+
+
+  </div>
+
+
+
+  <p class="ev-source">
+
+    本文整理自董立鑫（Bruce Dong）海外产业考察记录，首发于海鑫汇。
+
+  </p>
+
+
+
+  <div class="ev-related">
+
+    <div class="ev-related__group">
+
+      <div class="ev-related__label">相关专家 · EXPERTS</div>
+
+      <div class="ev-person-row">
+
+        <img class="ev-avatar-img" src="../../experts/donglixin/donglixin.webp" alt="董立鑫" loading="lazy" width="948" height="948">
+
+        <a href="../../experts/donglixin/index.html" class="ev-person-link">
+
+          <span class="ev-person-name">董立鑫 Bruce Dong</span>
+
+          <span class="ev-person-tag">FOUNDER</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="ev-cta">
+
+    <span class="ev-cta__text">我有一个出海项目，想聊聊。免费 · 申请制。</span>
+
+    <a class="ev-cta__btn" href="../../p/project/index.html">提交出海项目 &rarr;</a>
+
+  </div>
+
+
+
+</main>
+
+
+
+<footer class="footer" data-depth="2"></footer>
+
+
+
+<script src="../events.js"></script>
+
+<script src="../../script.js"></script>
+
+
+
+</body>
+
+</html>

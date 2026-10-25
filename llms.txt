@@ -1,4 +1,4 @@
-# 海鑫汇（海鑫汇 GTN · Gateway To New）
+﻿# 海鑫汇（海鑫汇 GTN · Gateway To New）
 
 > 海鑫汇（英文 Gateway To New，简称 GTN），是面向中国企业出海的决策咨询与全球化人才服务机构。两期累计签约 30+ 位专家顾问，均为上市公司或知名企业高管，均已获公开展示授权。业务覆盖出海决策咨询、跨境电商、制造业全球化、AI 硬科技、低空经济、教育出海、投资与财富配置等领域。运营节点：哈萨克斯坦（KZ）· 新加坡（SG）· 德国（DE）。
 
@@ -158,7 +158,7 @@
 - [AI 产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/ai-industry/)：AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
 - [消费品牌国际化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
 - [跨国资本与并购 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
-- [智能制造全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/intelligent-manufacturing/)：智能制造企业出海，从产品出口到建立海外市场与本地服务能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外客户与区域资源。
+- [智能制造全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/smart-manufacturing/)：智能制造企业出海，从产品出口到建立海外市场与本地服务能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外客户与区域资源。
 - [新能源产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/new-energy/)：新能源出海最容易踩的坑是“先建厂还是先找渠道”判断错位。海鑫汇结合锂电、光伏、储能领域专家与东南亚、中东运营网络，帮企业理清进入路径与风险优先级。
 - [职业教育与人才发展 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/talent-development/)：企业出海最容易被低估的是人才和组织能力的准备。海鑫汇连接教育出海、外派合规与国际人才培养资源，帮企业在扩张前把组织短板摸清楚。
 - [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
