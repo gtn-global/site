@@ -26,6 +26,8 @@
 <link rel="stylesheet" href="style.css?v=17">
 <link rel="stylesheet" href="ecosystem/ecosystem.css">
 <style>
+/* 英文导航：一级项为完整英文短语，桌面端压缩字号与间距，避免挤压品牌标识 */
+@media(min-width:901px){.nav-links{gap:16px;font-size:12.5px;}}
 /* 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区（详见 assets/js 注入） */
 .map-note{font-size:12px;color:var(--ink-faint);margin:10px 0 0;}
 .map-legend{display:inline-flex;align-items:center;gap:6px;margin-right:14px;}
@@ -237,18 +239,110 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="Gateway To New" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">Connecting China's strengths, going global</span></span></a>
+    <a href="en/index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="Gateway To New" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">Connecting China's strengths, going global</span></span></a>
     <div class="desk-clock"></div>
-    <nav class="nav-links">
-      <a href="#selector">Industry</a>
-      <a href="#worldMap">Region</a>
-      <a href="#stage">Products</a>
-      <a href="#reports">Content</a>
-      <a href="#about">About</a>
+    <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="primary-nav">
+      <div class="nav-item is-active"><span class="nav-row"><a href="en/index.html" class="nav-top">Home</a></span></div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#about" class="nav-top">About GTN</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand About GTN submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">ABOUT GTN</span>
+          <a href="#about">Who we are</a>
+          <a href="#proof">Track record</a>
+          <a href="#advisors">Advisor network</a>
+          <a href="experts/donglixin/index.html">Founder — Dong Lixin</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">Solutions</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Solutions submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">SERVICES</span>
+          <a href="cta/self-test/index.html">Going-global self-test</a>
+          <a href="p/project/index.html">Discuss a project</a>
+          <a href="p/closed-door/index.html">Closed-door sessions</a>
+          <a href="p/ceo-tour/index.html">Global CEO China Tour</a>
+          <a href="p/global-trip/index.html">GTN Global tour</a>
+          <a href="p/online-connect/index.html">Online connect</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">Industries &amp; Markets</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Industries and Markets submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
+          <a href="#home">Industry × region</a>
+          <a href="markets/index.html">Markets</a>
+          <a href="industries/ai-industry/index.html">AI</a>
+          <a href="industries/new-energy/index.html">New energy</a>
+          <a href="industries/intelligent-manufacturing/index.html">Intelligent manufacturing</a>
+          <a href="industries/consumer-brands/index.html">Consumer brands</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#calendar" class="nav-top">Programs &amp; Activities</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Programs and Activities submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">PROGRAMS &amp; ACTIVITIES</span>
+          <a href="calendar.html">Upcoming schedule</a>
+          <a href="events-index.html">Past events</a>
+          <a href="p/global-trip/index.html">GTN Global tour</a>
+          <a href="p/ceo-tour/index.html">Global CEO China Tour</a>
+          <a href="p/featured/index.html">Featured programs</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">Research &amp; Insights</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Research and Insights submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
+          <a href="reports/index.html">Reports</a>
+          <a href="questions/ready-to-go-global/index.html">Readiness self-check</a>
+          <a href="questions/first-market/index.html">Choosing a first market</a>
+          <a href="questions/export-or-build/index.html">Export or build locally</a>
+          <a href="questions/overseas-risks/index.html">Overseas risks</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="en/ecosystem-index.html" class="nav-top">Ecosystem</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Ecosystem submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">ECOSYSTEM</span>
+          <a href="en/ecosystem-index.html">Global ecosystem members</a>
+          <a href="ecosystem/news-index.html">Partner coverage</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#contact" class="nav-top">Contact</a></span></div>
     </nav>
     <div class="lang-switch" aria-label="Language"><a href="index.html" hreflang="zh-CN" lang="zh-CN">CN</a><span>|</span><b aria-current="true">EN</b></div>
   </div>
 </header>
+<script>
+/* Nav interaction: mobile drawer open/close, submenu expand, auto-close on link click */
+(function(){
+  var nav=document.getElementById('primary-nav');
+  var toggle=document.querySelector('.nav-toggle');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.nav-caret'),function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var item=btn.closest('.nav-item');
+      var drop=item?item.querySelector('.nav-drop'):null;
+      if(!drop)return;
+      var open=drop.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.nav-links a'),function(a){
+    a.addEventListener('click',function(){
+      if(nav)nav.classList.remove('open');
+      if(toggle)toggle.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
 
 <!-- ===== 新01 WHO WE ARE / About（原 ABOUT） ===== -->
 
@@ -373,7 +467,7 @@
 
   <div class="eco-honey">
 
-    <a href="ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="GTN and Hejun Group">
+    <a href="en/ecosystem-index.html" class="eco-hex h-blue" aria-label="GTN and Hejun Group">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
         <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
@@ -389,7 +483,7 @@
       </svg>
     </a>
 
-    <a href="ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="GTN and UIBE">
+    <a href="en/ecosystem-index.html" class="eco-hex h-teal" aria-label="GTN and UIBE">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
         <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
@@ -406,7 +500,7 @@
       </svg>
     </a>
 
-    <a href="ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="GTN and WTC Singapore">
+    <a href="en/ecosystem-index.html" class="eco-hex h-purple" aria-label="GTN and WTC Singapore">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <polygon class="halo" points="41.9,-5.5 138.2,-5.5 186.3,78 138.2,161.5 41.9,161.5 -6.3,78"/>
         <polygon class="bg" points="45,0 135,0 180,78 135,156 45,156 0,78"/>

@@ -232,16 +232,108 @@
   <div class="topbar-inner">
     <a href="index.html" class="wordmark"><img src="assets/img/logo-primary.svg" alt="海鑫汇" class="logo-wordmark" fetchpriority="high"><span class="wm-text"><span class="sub">GATEWAY TO NEW</span><span class="slogan">连接中国优势，走向全球</span></span></a>
     <div class="desk-clock"></div>
-    <nav class="nav-links">
-      <a href="#selector">产业<span class="en">INDUSTRY</span></a>
-      <a href="#worldMap">区域<span class="en">REGION</span></a>
-      <a href="#stage">产品<span class="en">PRODUCTS</span></a>
-      <a href="#reports">内容<span class="en">CONTENT</span></a>
-      <a href="#about">关于<span class="en">ABOUT</span></a>
+    <button type="button" class="nav-toggle" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="primary-nav">
+      <div class="nav-item is-active"><span class="nav-row"><a href="index.html" class="nav-top">首页<span class="en">HOME</span></a></span></div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#about" class="nav-top">关于海鑫汇<span class="en">ABOUT</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「关于海鑫汇」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">ABOUT GTN</span>
+          <a href="#about">我们是谁</a>
+          <a href="#proof">实践记录</a>
+          <a href="#advisors">产业顾问网络</a>
+          <a href="experts/donglixin/index.html">创始人 董立鑫</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">解决方案<span class="en">SOLUTIONS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「解决方案」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">SERVICES</span>
+          <a href="cta/self-test/index.html">出海决策自测</a>
+          <a href="p/project/index.html">出海项目沟通</a>
+          <a href="p/closed-door/index.html">产业闭门研讨</a>
+          <a href="p/ceo-tour/index.html">全球 CEO 中国行</a>
+          <a href="p/global-trip/index.html">海鑫汇全球行</a>
+          <a href="p/online-connect/index.html">出海连线</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">产业与市场<span class="en">MARKETS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「产业与市场」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
+          <a href="#home">产业 × 区域</a>
+          <a href="markets/index.html">区域市场</a>
+          <a href="industries/ai-industry/index.html">人工智能</a>
+          <a href="industries/new-energy/index.html">新能源</a>
+          <a href="industries/intelligent-manufacturing/index.html">智能制造</a>
+          <a href="industries/consumer-brands/index.html">消费品牌</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#calendar" class="nav-top">项目与活动<span class="en">PROGRAMS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「项目与活动」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">PROGRAMS &amp; ACTIVITIES</span>
+          <a href="calendar.html">近期日程</a>
+          <a href="events-index.html">往期活动</a>
+          <a href="p/global-trip/index.html">海鑫汇全球行</a>
+          <a href="p/ceo-tour/index.html">全球 CEO 中国行</a>
+          <a href="p/featured/index.html">海鑫汇精选</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">研究与洞察<span class="en">RESEARCH</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「研究与洞察」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
+          <a href="reports/index.html">研究报告</a>
+          <a href="questions/ready-to-go-global/index.html">出海准备度自测</a>
+          <a href="questions/first-market/index.html">首个市场选哪里</a>
+          <a href="questions/export-or-build/index.html">出口还是建厂</a>
+          <a href="questions/overseas-risks/index.html">海外风险</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="ecosystem-index.html" class="nav-top">合作生态<span class="en">ECOSYSTEM</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「合作生态」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">ECOSYSTEM</span>
+          <a href="ecosystem-index.html">全球生态成员</a>
+          <a href="ecosystem/news-index.html">合作伙伴动态</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#contact" class="nav-top">联系我们<span class="en">CONTACT</span></a></span></div>
     </nav>
     <div class="lang-switch" aria-label="Language"><b aria-current="true">CN</b><span>|</span><a href="en/index.html" hreflang="en" lang="en">EN</a></div>
   </div>
 </header>
+<script>
+/* 导航交互：移动端抽屉展开/关闭，二级菜单展开，点击链接后自动收起 */
+(function(){
+  var nav=document.getElementById('primary-nav');
+  var toggle=document.querySelector('.nav-toggle');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.nav-caret'),function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var item=btn.closest('.nav-item');
+      var drop=item?item.querySelector('.nav-drop'):null;
+      if(!drop)return;
+      var open=drop.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.nav-links a'),function(a){
+    a.addEventListener('click',function(){
+      if(nav)nav.classList.remove('open');
+      if(toggle)toggle.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
 
 <!-- ===== 新01 WHO WE ARE / 我们是谁（原 ABOUT，移至首位） ===== -->
 
