@@ -345,3 +345,6 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 
 # matrix 并入 03-research（2026-10）：保留旧 URL 301
 /matrix/*    /03-research/matrix/:splat    301
+
+# markets 并入 03-research（2026-10）：保留旧 URL 301
+/markets/*    /03-research/markets/:splat    301

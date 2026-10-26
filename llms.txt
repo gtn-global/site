@@ -66,6 +66,7 @@
 - [战略合作伙伴与生态｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/partners/)：海鑫汇战略合作伙伴与生态，展示和君、WTC Singapore 等战略合作机构，承接联合举办的论坛、年会、项目和资源合作。
 - [我有一个出海项目，想聊聊｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/project/)：我有一个出海项目，想聊聊
 - [3分钟出海自测 | 海鑫汇 Gateway To New](https://gatewaytonew.com/02-projects/self-testing/3%E5%88%86%E9%92%9F%E5%87%BA%E6%B5%B7%E8%87%AA%E6%B5%8B_%E6%B5%B7%E6%8A%A5.html)
+- [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/03-research/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
 - [人工智能 × 东南亚 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/03-research/matrix/ai-southeast-asia/)：海鑫汇（Gateway To New）在人工智能 × 东南亚方向：共 1 份研究报告（研究进行中），1 场往期考察，2 位对口顾问，1 个当地运营中心。
 - [新能源车与智慧交通 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/03-research/matrix/auto-tech-europe/)：海鑫汇（Gateway To New）在新能源车与智慧交通 × 欧洲方向：共 1 份研究报告（预计 11 月发布），5 场往期考察，2 位对口顾问。
 - [新能源电力电气 × 欧洲 出海｜海鑫汇 Gateway To New](https://gatewaytonew.com/03-research/matrix/new-energy-europe/)：海鑫汇（Gateway To New）在新能源电力电气 × 欧洲方向：共 1 份研究报告（已上线），2 场往期考察，2 位对口顾问。
@@ -188,7 +189,6 @@
 - [新能源产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/new-energy/)：新能源出海最容易踩的坑是“先建厂还是先找渠道”判断错位。海鑫汇结合锂电、光伏、储能领域专家与东南亚、中东运营网络，帮企业理清进入路径与风险优先级。
 - [智能制造全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/smart-manufacturing/)：智能制造企业出海，从产品出口到建立海外市场与本地服务能力。海鑫汇 GTN 帮助企业判断全球化路径、连接海外客户与区域资源。
 - [职业教育与人才发展 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/talent-development/)：企业出海最容易被低估的是人才和组织能力的准备。海鑫汇连接教育出海、外派合规与国际人才培养资源，帮企业在扩张前把组织短板摸清楚。
-- [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
 - [隐私说明 · 海鑫汇 Gateway To New](https://gatewaytonew.com/privacy)
 
 
