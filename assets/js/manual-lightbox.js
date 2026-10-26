@@ -4,7 +4,7 @@
  * 用途：点击任意一个带 data-manual-open 的元素，全屏弹层逐页看图。
  * 手册目录与页数只在这个文件里定义一次，页面不写死图片路径：
  *   页面用法：  <button type="button" data-manual-open>查看 CEO tour 手册（英文版）</button>
- *   可选覆盖：  data-manual-base=".../CEO_tour_manual/webp/"  data-manual-count="6"
+ *   可选覆盖：  data-manual-base=".../manual/webp/"  data-manual-count="6"
  *               data-manual-title="CEO tour 手册（英文版）"
  * 行为：不自动翻页、不自动播放；← → 翻页；Esc 关闭；点遮罩关闭；
  *       手机左右滑动翻页；打开时加载当前页并预加载前后各一页；
@@ -15,7 +15,7 @@
   'use strict';
 
   var DEFAULTS = {
-    base: 'CEO_tour_manual/webp/',   // 相对当前页面的目录
+    base: 'manual/webp/',   // 相对当前页面的目录
     count: 6,                        // 页数
     ext: 'webp',                     // 扩展名
     title: 'CEO tour 手册（英文版）',

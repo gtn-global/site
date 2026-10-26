@@ -61,7 +61,7 @@
     </div>
     <div class="manual-viewer__stage" id="manualStage">
       <button type="button" class="manual-viewer__nav manual-viewer__prev" id="manualPrev" aria-label="上一页">‹</button>
-      <img class="manual-viewer__img" id="manualImg" src="../../CEO_tour_manual/webp/1.webp" alt="CEO tour 手册 第 1 页（英文）">
+      <img class="manual-viewer__img" id="manualImg" src="manual/webp/1.webp" alt="CEO tour 手册 第 1 页（英文）">
       <button type="button" class="manual-viewer__nav manual-viewer__next" id="manualNext" aria-label="下一页">›</button>
     </div>
     <div class="manual-viewer__dots" id="manualDots"></div>
@@ -120,9 +120,75 @@
 <section class="evidence-block">
   <h2 class="evidence-title">全球 CEO 中国行</h2>
   <p class="evidence-stat">现正征集参访企业</p>
-  <p class="evidence-recent" style="list-style:none;">本期聚焦一个产业、一个来源国或地区，邀请海外 CEO 与企业家走进有出口能力的中国企业。相关使馆、商协会与机构合作记录，见 <a href="../../events-index.html#partners">战略合作伙伴与生态 →</a></p>
+  <p class="evidence-recent" style="list-style:none;">本期聚焦一个产业、一个来源国或地区，邀请海外 CEO 与企业家走进有出口能力的中国企业。</p>
 </section>
 <!-- evidence:end -->
+
+<!-- ===== 拟定行程参考 ===== -->
+<div id="itinerary" style="margin-top:56px;">
+  <style>
+    .ctr-group{margin-top:26px;}
+    .ctr-group:first-of-type{margin-top:18px;}
+    .ctr-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--ink);}
+    .ctr-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:11px 4px;border-bottom:1px solid var(--rule);}
+    .ctr-row:hover{background:var(--paper-alt);}
+    .ctr-name{font-size:15px;font-weight:600;color:var(--ink);}
+    .ctr-en{font-size:12.5px;color:var(--ink-soft);}
+    .ctr-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-faint);border:1px solid var(--rule);border-radius:999px;padding:2px 9px;white-space:nowrap;}
+    .ctr-note{margin-top:16px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
+    @media (max-width:560px){
+      .ctr-name{font-size:14px;}
+      .ctr-en{font-size:11.5px;}
+      .ctr-row{padding:10px 2px;}
+      .ctr-group{margin-top:22px;}
+    }
+  </style>
+  <div class="category-head">
+    <h3>拟定行程参考</h3>
+    <span class="count">共 3 组 · 11 家</span>
+  </div>
+
+  <div class="ctr-group">
+    <div class="category-head">
+      <h3>新能源电力电气</h3>
+      <span class="count">共 4 家</span>
+    </div>
+    <ul class="ctr-list">
+      <li class="ctr-row"><span class="ctr-name">隆基绿能</span><span class="ctr-en">LONGi Green Energy Technology Co., Ltd.</span></li>
+      <li class="ctr-row"><span class="ctr-name">晶科能源</span><span class="ctr-en">JinkoSolar Holding Co., Ltd.</span></li>
+      <li class="ctr-row"><span class="ctr-name">阳光电源</span><span class="ctr-en">Sungrow Power Supply Co., Ltd.</span></li>
+      <li class="ctr-row"><span class="ctr-name">固德威</span><span class="ctr-en">GoodWe Technologies Co., Ltd.</span></li>
+    </ul>
+  </div>
+
+  <div class="ctr-group">
+    <div class="category-head">
+      <h3>人工智能</h3>
+      <span class="count">共 2 家</span>
+    </div>
+    <ul class="ctr-list">
+      <li class="ctr-row"><span class="ctr-name">联想</span><span class="ctr-en">Lenovo Group Limited</span></li>
+      <li class="ctr-row"><span class="ctr-name">字节跳动</span><span class="ctr-en">ByteDance Ltd.</span></li>
+    </ul>
+  </div>
+
+  <div class="ctr-group">
+    <div class="category-head">
+      <h3>新能源汽车 · 机器人 · 低空无人机 · 半导体</h3>
+      <span class="count">共 5 家</span>
+    </div>
+    <ul class="ctr-list">
+      <li class="ctr-row"><span class="ctr-name">吉利汽车</span><span class="ctr-en">Geely Automobile Holdings Limited</span><span class="ctr-tag">新能源汽车</span></li>
+      <li class="ctr-row"><span class="ctr-name">小鹏汽车</span><span class="ctr-en">XPeng Inc.</span><span class="ctr-tag">新能源汽车</span><span class="ctr-tag">智能驾驶</span><span class="ctr-tag">机器人</span></li>
+      <li class="ctr-row"><span class="ctr-name">亿航智能</span><span class="ctr-en">EHang Holdings Limited</span><span class="ctr-tag">低空无人机</span><span class="ctr-tag">eVTOL</span></li>
+      <li class="ctr-row"><span class="ctr-name">格芯</span><span class="ctr-en">GlobalFoundries Inc.</span><span class="ctr-tag">半导体</span></li>
+      <li class="ctr-row"><span class="ctr-name">联华电子</span><span class="ctr-en">United Microelectronics Corporation (UMC)</span><span class="ctr-tag">半导体</span></li>
+    </ul>
+  </div>
+
+  <p class="ctr-note">以上名单为拟定参考，最终行程以实际邀约为准。</p>
+</div>
+
 </section>
 
 <footer class="footer" data-depth="2"></footer>
@@ -131,7 +197,7 @@
 <script src="../../script.js" defer></script>
 <script>
 (function(){
-  var base='../../CEO_tour_manual/webp/', ext='webp', count=6, idx=0;
+  var base='manual/webp/', ext='webp', count=6, idx=0;
   var img=document.getElementById('manualImg'),
       prev=document.getElementById('manualPrev'),
       next=document.getElementById('manualNext'),
