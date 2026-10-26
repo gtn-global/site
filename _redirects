@@ -342,3 +342,6 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 /questions/first-market/index.html   /09-diagnose/first-market/index.html   301
 /questions/overseas-risks/index.html   /09-diagnose/overseas-risks/index.html   301
 /questions/ready-to-go-global/index.html   /09-diagnose/ready-to-go-global/index.html   301
+
+# matrix 并入 03-research（2026-10）：保留旧 URL 301
+/matrix/*    /03-research/matrix/:splat    301
