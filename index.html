@@ -148,12 +148,12 @@
 .about-links a{color:var(--seal);text-decoration:none;margin-right:16px;}
 .about-social{margin-top:8px;font-size:var(--fs-small);color:var(--ink-faint);}
 /* 01 WHO WE ARE 首屏：左文 + 右横置圆角方形视频（上下与左栏对齐） */
-.about-hero{display:flex;gap:48px;align-items:stretch;margin-top:4px;}
+.about-hero{display:flex;gap:48px;align-items:flex-start;margin-top:4px;}
 .about-hero-left{flex:1 1 54%;min-width:0;}
 .about-hero-right{flex:1 1 46%;display:flex;justify-content:center;}
 .about-gif{display:block;max-width:600px;margin-bottom:14px;}
 .about-gif img{display:block;width:100%;height:auto;background:transparent;}
-.about-video{width:100%;height:100%;border-radius:16px;overflow:hidden;border:1px solid var(--rule);background:#0d1526;box-shadow:0 10px 30px rgba(10,31,68,.14);}
+.about-video{width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--rule);background:#0d1526;box-shadow:0 10px 30px rgba(10,31,68,.14);}
 .about-video video{width:100%;height:100%;object-fit:cover;display:block;}
 .about-cta{display:inline-flex;align-items:center;gap:14px;background:var(--seal);color:#fff;text-decoration:none;padding:10px 24px;border-radius:999px;font-weight:700;margin-top:6px;}
 .about-cta .en{font-size:12px;opacity:.9;font-weight:600;letter-spacing:.5px;}
@@ -352,9 +352,9 @@
 <!-- ===== 01 WHO WE ARE / 我们是谁（首页首屏，移至首位） ===== -->
 
 <section class="section about-block" id="about">
+  <div class="eyebrow">01 — WHO WE ARE</div>
   <div class="about-hero">
     <div class="about-hero-left">
-      <div class="eyebrow">01 — WHO WE ARE</div>
       <span class="about-gif"><img src="01-about/slogen.gif" alt="连接中国优势，GLOBALLY"></span>
       <p class="about-bio">海鑫汇（Gateway To New，简称 GTN）是一家立足新加坡的国际产业合作与企业全球化服务平台，专注服务年营收约 2,000 万至 2 亿元人民币、具有国际化发展潜力的中国成长型企业，重点覆盖专精特新、科技创新与先进制造领域。</p>
       <p class="about-bio">GTN 依托新加坡的国际商业网络，整合产业研究、海外市场信息、专业顾问及国际商业资源，帮助中国企业研判目标市场、规划出海路径、对接当地产业伙伴、投资者与商业渠道，将国际化发展战略转化为实际合作机会。</p>
