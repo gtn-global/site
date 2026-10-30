@@ -318,7 +318,7 @@ function renderFooter(){
   if(social.linkedin) extra += (extra ? '　' : '') + '领英：' + social.linkedin;
   const socialHtml = extra ? '<div class="footer-social">' + extra + '</div>' : '';
   root.innerHTML =
-    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + prefix + '02-projects/project/index.html">提交出海项目</a></div>' +
+    '<div class="footer-cta"><a class="btn-submit btn-seal" href="' + (document.documentElement.lang === 'en' ? prefix + '02-projects/project/en/' : prefix + '02-projects/project/index.html') + '">' + (document.documentElement.lang === 'en' ? 'Submit a project' : '提交出海项目') + '</a></div>' +
     '<div class="footer-brand">海鑫汇 Gateway To New（GTN）　gatewaytonew.com</div>' +
     '<nav class="footer-links">' + linksHtml + ' · <a href="' + prefix + 'privacy.html">隐私政策</a></nav>' +
     '<div class="footer-clock"><div class="desk-clock"></div></div>' +
