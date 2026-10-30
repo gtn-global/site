@@ -30,6 +30,8 @@
 .product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
 .product-figure{max-width:860px;margin:46px auto 6px;}
 .product-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.poster-embed{max-width:860px;margin:46px auto 6px;}
+.poster-embed iframe{width:100%;height:1100px;border:0;border-radius:12px;display:block;background:#0d1526;box-shadow:0 10px 30px rgba(10,31,68,.14);}
 .evidence-block{margin-top:36px;}
 .product-banner-bottom{max-width:860px;margin:40px auto 8px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
 .product-banner-bottom img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
@@ -51,7 +53,7 @@
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">海鑫汇全球行</h1>
   <figure class="product-figure">
-    <img src="global-trip.webp" alt="海鑫汇全球行">
+    <img src="global-trip.opt.webp" alt="海鑫汇全球行">
   </figure>
 <section class="evidence-block">
   <h2 class="evidence-title">实证 · 海外考察</h2>
@@ -107,9 +109,9 @@
   <div class="product-cta">
     <button type="button" class="btn-submit btn-seal" data-product="海鑫汇全球行" data-source="product-interest">预约沟通</button>
   </div>
-  <figure class="product-figure">
-    <img src="global-trip-2.webp" alt="海鑫汇全球行">
-  </figure>
+  <div class="poster-embed">
+    <iframe id="tripPoster" src="global-trip-2.html" title="雅加达深潜·新加坡升维 — ASEAN 企业家出海考察之旅" loading="lazy" scrolling="no"></iframe>
+  </div>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
@@ -169,6 +171,26 @@
     hero.addEventListener('click', openFromHero);
     hero.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openFromHero(); } });
   }
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('tripPoster');
+  if(!f) return;
+  function setH(h){ if(h&&h>300){ f.style.height=h+'px'; } }
+  function local(){
+    try{
+      var d=f.contentDocument; if(!d||!d.body) return;
+      var m=d.querySelector('main.poster')||d.body, r=m.getBoundingClientRect();
+      setH(Math.ceil(r.height+r.top));
+    }catch(e){}
+  }
+  window.addEventListener('message',function(e){
+    if(e.source!==f.contentWindow) return;
+    if(e.data&&e.data.type==='gtn-poster-height'){ setH(e.data.height); }
+  });
+  f.addEventListener('load',function(){ local(); setTimeout(local,300); });
+  window.addEventListener('resize',function(){ setTimeout(local,150); });
 })();
 </script>
 </body>

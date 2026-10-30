@@ -25,6 +25,7 @@
 .deliverables li{margin:4px 0;}
 .product-figure{max-width:860px;margin:46px auto 6px;}
 .product-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 10px 30px rgba(10,31,68,.14);display:block;}
+.product-divider{border:none;border-top:1px solid var(--rule);max-width:860px;margin:44px auto 0;}
 .evidence-recent a{text-decoration:none;}
 .evidence-recent a:hover{text-decoration:none;}
 .product-banner-click{max-width:860px;margin:32px auto 8px;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
@@ -37,6 +38,20 @@
 .product-sub{text-align:center;font-size:18px;color:#4A5568;margin:8px 0;}
 .product-oneliner{text-align:center;font-size:16px;color:#4A5568;margin:6px 0 14px;}
 .product-points{max-width:680px;margin:0 auto 20px;padding-left:22px;font-size:16px;line-height:1.8;color:#0A1F44;}
+.g18-block{margin-top:40px;}
+.g18-title{font-family:'Noto Serif SC',serif;font-size:22px;color:var(--ink);margin:0 0 18px;}
+
+.g18-subline{font-family:'Source Serif 4',serif;font-style:italic;color:var(--ink-soft);font-size:17px;margin-top:12px;max-width:980px;white-space:nowrap;}
+.g18-eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;}
+.g18-eco-card{border:1px solid var(--rule);background:var(--paper);padding:22px;display:block;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s;}
+.g18-eco-card:hover{border-color:var(--seal);box-shadow:var(--shadow);}
+.g18-eco-flag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--seal);letter-spacing:.5px;}
+.g18-eco-type{display:block;font-size:11px;color:var(--ink-faint);margin:6px 0 10px;}
+.g18-eco-card h4{font-family:'Noto Serif SC',serif;font-size:16px;line-height:1.5;}
+.g18-eco-sub{font-size:12.5px;color:var(--ink-soft);margin-top:8px;}
+.g18-eco-card .g18-ext-link{display:inline-block;margin-top:14px;color:var(--seal);font-size:12.5px;}
+@media (max-width:900px){.g18-eco-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.g18-eco-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -49,9 +64,10 @@
 <section class="section">
   <div class="eyebrow">产品 / PRODUCT</div>
   <h1 class="headline reveal">和君商学院出海班（第 20 届）</h1>
-  <figure class="product-figure">
-    <img src="chuhaiban.webp" alt="和君商学院出海班（第 20 届）">
+  <figure class="product-banner-click" id="heroIntent" role="button" tabindex="0" aria-label="点击图片登记意向" data-product="和君商学院出海班（第 20 届）" data-source="product-interest">
+    <img src="横幅-和君商学院出海班@2x.webp" alt="和君商学院出海班（第 20 届）横幅">
   </figure>
+  <p class="hero-hint">点击上方图片，登记出海班意向</p>
   <p class="product-sub">第 20 届 · 2027 年 6 月—2028 年 5 月</p>
 <p class="product-oneliner">一年，系统补完出海这门课</p>
   <div class="product-meta">
@@ -69,10 +85,84 @@
 <li><a href="../../../events/media-03-hejun-town-summit/index.html">第一届海鑫汇出海年会｜和君小镇</a> <span class="evidence-date">2024-12</span></li>
   </ul>
 </section>
-  <figure class="product-banner-click" id="heroIntent" role="button" tabindex="0" aria-label="点击图片登记意向" data-product="和君商学院出海班（第 20 届）" data-source="product-interest">
-    <img src="横幅-和君商学院出海班@2x.webp" alt="和君商学院出海班（第 20 届）横幅">
-  </figure>
-  <p class="hero-hint">点击上方图片，登记出海班意向</p>
+<hr class="product-divider">
+<figure class="product-figure">
+  <img src="chuhaiban.opt.webp" alt="和君商学院出海班（第 20 届）">
+</figure>
+<section class="g18-block">
+  <h2 class="g18-title">第18届 · 和君商学院出海班</h2>
+  <p class="g18-subline" style="font-size:14.5px;color:var(--ink-soft,#5b6470);line-height:1.6;max-width:720px;">围绕企业全球化战略、海外市场探索与企业家成长，连接企业家资源与国际化实践。</p>
+  <div class="g18-eco-grid reveal" id="eco-grid">
+    <a class="g18-eco-card" data-fill="ECO-01" data-country="美国" data-type="国际留学生" href="../../../member/li-nifang/index.html">
+      <span class="g18-eco-flag">🇺🇸🇲🇽 美国·墨西哥</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>李妮芳</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-02" data-country="荷兰" data-type="国际留学生" href="../../../member/yu-xidong/index.html">
+      <span class="g18-eco-flag">🇳🇱 荷兰</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>于溪东</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-03" data-country="英国" data-type="国际留学生" href="../../../member/gao-jiahui/index.html">
+      <span class="g18-eco-flag">🇬🇧 英国</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>高佳晖</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-04" data-country="英国" data-type="国际留学生" href="../../../member/liu-liming/index.html">
+      <span class="g18-eco-flag">🇬🇧 英国</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>刘栗铭</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-05" data-country="德国" data-type="国际留学生" href="../../../member/zhang-ruoyi/index.html">
+      <span class="g18-eco-flag">🇩🇪 德国</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>张若一</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-06" data-country="哈萨克斯坦" data-type="国际留学生" href="../../../member/zhang-liang/index.html">
+      <span class="g18-eco-flag">🇰🇿 哈萨克斯坦</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>张立昂</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-07" data-country="美国" data-type="国际留学生" href="../../../member/qian-tianyi/index.html">
+      <span class="g18-eco-flag">🇺🇸 美国</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>钱天漪</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+    <a class="g18-eco-card" data-fill="ECO-08" data-country="哈萨克斯坦" data-type="国际留学生" href="../../../member/wu-qunwei/index.html">
+      <span class="g18-eco-flag">🇰🇿 哈萨克斯坦</span>
+      <span class="g18-eco-type">和君商学院出海班</span>
+      <h4>武群威</h4>
+      <p class="g18-eco-sub">GTN Go Beyond Program</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+  </div>
+</section>
+<section class="g18-block">
+  <h2 class="g18-title">第19届 · 和君商学院出海班</h2>
+  <div class="g18-eco-grid reveal" id="eco-grid-19">
+    <a class="g18-eco-card" data-fill="ECO-19" data-country="中国" data-type="运营中心" href="https://gatewaytonew.com/member/ops-hangzhou/" target="_blank" rel="noopener">
+      <span class="g18-eco-flag">🇨🇳 中国·杭州</span>
+      <span class="g18-eco-type">杭州运营中心</span>
+      <h4>柯梦琪</h4>
+      <p class="g18-eco-sub">GNT 杭州运营中心</p>
+      <span class="g18-ext-link">查看详情 View &#8599;</span>
+    </a>
+  </div>
+</section>
 </section>
 <div class="intent-modal" id="intentModal" hidden>
   <div class="intent-backdrop" data-close="1"></div>
