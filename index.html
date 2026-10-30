@@ -147,6 +147,22 @@
 .about-links{margin-top:10px;font-size:var(--fs-small);}
 .about-links a{color:var(--seal);text-decoration:none;margin-right:16px;}
 .about-social{margin-top:8px;font-size:var(--fs-small);color:var(--ink-faint);}
+/* 01 WHO WE ARE 首屏：左文 + 右横置圆角方形视频 */
+.about-hero{display:flex;gap:48px;align-items:center;margin-top:4px;}
+.about-hero-left{flex:1 1 54%;min-width:0;}
+.about-hero-right{flex:1 1 46%;display:flex;justify-content:center;}
+.about-title-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:2px 0 6px;}
+.about-gif{flex:0 0 auto;max-width:300px;}
+.about-gif img{display:block;width:100%;height:auto;background:transparent;}
+.about-video{width:100%;max-width:520px;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--rule);background:#0d1526;box-shadow:0 10px 30px rgba(10,31,68,.14);}
+.about-video video{width:100%;height:100%;object-fit:cover;display:block;}
+.about-cta{display:inline-flex;align-items:center;gap:14px;background:var(--seal);color:#fff;text-decoration:none;padding:14px 26px;border-radius:12px;font-weight:700;margin-top:6px;}
+.about-cta .en{font-size:12px;opacity:.9;font-weight:600;letter-spacing:.5px;}
+.about-cta .arrow{font-size:18px;}
+@media(max-width:760px){
+  .about-hero{flex-direction:column-reverse;gap:24px;}
+  .about-video{max-width:100%;}
+}
 .lang-switch{margin-left:22px;display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--ink-faint);flex:0 0 auto;}.lang-switch a{color:var(--ink-soft);text-decoration:none;padding:4px 2px;}.lang-switch a:hover{color:var(--seal);}.lang-switch b{color:var(--seal);padding:4px 2px;border-bottom:2px solid var(--seal);}
 </style>
 
@@ -334,14 +350,24 @@
 })();
 </script>
 
-<!-- ===== 新01 WHO WE ARE / 我们是谁（原 ABOUT，移至首位） ===== -->
+<!-- ===== 01 WHO WE ARE / 我们是谁（首页首屏，移至首位） ===== -->
 
 <section class="section about-block" id="about">
-  <div class="eyebrow">01 — WHO WE ARE</div>
-  <h2 class="section-title">我们是谁</h2>
-  <p class="about-bio">海鑫汇（Gateway To New，简称 GTN）是连接中国企业、产业资源与国际商业社群的跨境产业合作平台，致力于推动中国与全球市场之间的交流、连接与合作。</p>
-  <p class="about-bio">我们主要开展三方面工作：产业研究与商业信息服务、企业及行业专家资源连接，以及促进商业社群互动的联合项目。通过产业研究、企业参访、行业简报、圆桌交流及专题对话等形式，帮助国际贸易组织与企业了解相关产业、寻找潜在合作伙伴，并探索跨境合作机会。</p>
-  <p class="about-bio">海鑫汇提供研究、资源连接和交流机会。具体商业结果取决于每个项目的实际情况，我们不保证订单或交易结果。</p>
+  <div class="about-hero">
+    <div class="about-hero-left">
+      <div class="eyebrow">01 — WHO WE ARE</div>
+      <div class="about-title-row">
+        <h2 class="section-title">我们是谁</h2>
+        <span class="about-gif"><img src="01-about/slogen.gif" alt="连接中国优势，GLOBALLY"></span>
+      </div>
+      <p class="about-bio">海鑫汇（Gateway To New，简称 GTN）是一家立足新加坡的国际产业合作与企业全球化服务平台，专注服务年营收约 2,000 万至 2 亿元人民币、具有国际化发展潜力的中国成长型企业，重点覆盖专精特新、科技创新与先进制造领域。</p>
+      <p class="about-bio">GTN 依托新加坡的国际商业网络，整合产业研究、海外市场信息、专业顾问及国际商业资源，帮助中国企业研判目标市场、规划出海路径、对接当地产业伙伴、投资者与商业渠道，将国际化发展战略转化为实际合作机会。</p>
+      <a class="about-cta" href="#contact">UNLOCK YOUR GLOBAL POTENTIAL <span class="en">开启你的全球机遇</span> <span class="arrow">→</span></a>
+    </div>
+    <div class="about-hero-right">
+      <div class="about-video"><video src="01-about/vedio-compressed.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+  </div>
 </section>
 
 
