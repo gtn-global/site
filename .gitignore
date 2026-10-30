@@ -84,3 +84,6 @@ tools/asset-overview/
 *.bak*
 *_backup/
 preview/
+
+# 未压缩源视频：超 Cloudflare Pages 25MiB 单文件上限，不部署（仅本地保留，线上用 vedio-compressed.mp4）
+/01-about/vedio.mp4
