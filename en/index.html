@@ -151,18 +151,19 @@
 .about-links a{color:var(--seal);text-decoration:none;margin-right:16px;}
 .about-social{margin-top:8px;font-size:var(--fs-small);color:var(--ink-faint);}
 .lang-switch{margin-left:22px;display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--ink-faint);flex:0 0 auto;}.lang-switch a{color:var(--ink-soft);text-decoration:none;padding:4px 2px;}.lang-switch a:hover{color:var(--seal);}.lang-switch b{color:var(--seal);padding:4px 2px;border-bottom:2px solid var(--seal);}
-/* 01 WHO WE ARE 首屏：左文 + 右横置圆角方形视频（顶部与 GIF 对齐） */
-.about-hero{display:flex;gap:48px;align-items:flex-start;margin-top:4px;}
-.about-hero-left{flex:1 1 54%;min-width:0;}
-.about-hero-right{flex:1 1 46%;display:flex;justify-content:center;}
-.about-gif{display:block;max-width:600px;margin-bottom:14px;}
+/* 01 WHO WE ARE 首屏：GIF 占左上，文字与视频下排并排，视频顶对齐首段文字 */
+.about-hero{display:grid;grid-template-columns:54% 46%;column-gap:48px;row-gap:14px;align-items:start;margin-top:4px;}
+.about-gif{grid-column:1;grid-row:1;display:block;max-width:600px;}
 .about-gif img{display:block;width:100%;height:auto;background:transparent;}
+.about-hero-left{grid-column:1;grid-row:2;min-width:0;}
+.about-hero-right{grid-column:2;grid-row:2;display:flex;justify-content:center;}
 .about-video{width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--rule);background:#0d1526;box-shadow:0 10px 30px rgba(10,31,68,.14);}
 .about-video video{width:100%;height:100%;object-fit:cover;display:block;}
 .about-cta{display:inline-flex;align-items:center;gap:14px;background:var(--seal);color:#fff;text-decoration:none;padding:10px 24px;border-radius:999px;font-weight:700;margin-top:6px;}
 .about-cta .arrow{font-size:18px;}
 @media(max-width:760px){
-  .about-hero{flex-direction:column-reverse;gap:24px;}
+  .about-hero{grid-template-columns:1fr;row-gap:24px;}
+  .about-gif,.about-hero-left,.about-hero-right{grid-column:1;grid-row:auto;}
   .about-video{aspect-ratio:16/10;}
 }
 </style>
@@ -362,8 +363,8 @@
 <section class="section about-block" id="about">
   <div class="eyebrow">01 — WHO WE ARE</div>
   <div class="about-hero">
+    <span class="about-gif"><img src="01-about/slogen.gif" alt="Connecting China's strengths, GLOBALLY"></span>
     <div class="about-hero-left">
-      <span class="about-gif"><img src="01-about/slogen.gif" alt="Connecting China's strengths, GLOBALLY"></span>
       <p class="about-bio">Gateway To New (GTN) is a Singapore-based platform connecting Chinese industries with global markets through research, business networks and cross-border partnerships.</p>
       <p class="about-bio">We work with growth-oriented Chinese companies, typically with annual revenues of RMB 20 million to RMB 200 million, particularly in advanced manufacturing, technology and innovation-driven sectors. We collaborate with international trade organisations, industry associations, business networks, investors and local partners to exchange market intelligence, identify business opportunities and facilitate cross-border connections.</p>
       <p class="about-bio">Through our network in China and internationally, GTN supports two-way market engagement — helping Chinese companies expand overseas while enabling international partners to explore opportunities in China and develop meaningful business collaborations.</p>
