@@ -295,7 +295,7 @@ const FOOTER_LINKS = [
   { label: '出海日程', href: 'calendar.html' },
 
   { label: '全球 CEO 中国行', href: '02-projects/ceo-tour/' },
-  { label: '常见问题', href: 'faq.html' },
+  { label: '常见问题', href: '01-about/faq/index.html' },
   { label: '专家顾问', href: 'advisors-index.html' },
   { label: '战略合作伙伴与生态', href: '02-projects/partners/' },
   { label: '全球生态', href: 'ecosystem-index.html' },

@@ -3,6 +3,13 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://gatewaytonew.com/01-about/faq/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/01-about/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -18,7 +25,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/02-projects/closed-door/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,7 +46,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/02-projects/featured/chuhaiban/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -95,7 +102,7 @@
 
   <url>
     <loc>https://gatewaytonew.com/02-projects/global-trip/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -122,8 +129,20 @@
   </url>
 
   <url>
+    <loc>https://gatewaytonew.com/02-projects/project/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/02-projects/project/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/02-projects/project/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gatewaytonew.com/02-projects/project/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/02-projects/project/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/02-projects/project/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gatewaytonew.com/02-projects/project/"/>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -277,13 +296,6 @@
 
   <url>
     <loc>https://gatewaytonew.com/calendar</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://gatewaytonew.com/ceo-tour</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1056,17 +1068,10 @@
   </url>
 
   <url>
-    <loc>https://gatewaytonew.com/faq</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://gatewaytonew.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/"/>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1076,7 +1081,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://gatewaytonew.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://gatewaytonew.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gatewaytonew.com/"/>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

@@ -250,6 +250,9 @@ textarea{resize:vertical;min-height:88px;}
 
 /* 出海日历 1.7 */
 .section-title{font-size:26px;line-height:1.25;margin:6px 0 4px;color:var(--ink);}
+.about-block .section-title{margin-bottom:18px;}
+.about-block .about-bio{margin:0 0 16px;}
+.about-block .about-bio:last-child{margin-bottom:0;}
 .cal-wrap{margin-top:18px;}
 .cal-group{font-size:15px;color:var(--ink-soft);margin:18px 0 10px;}
 .cal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}

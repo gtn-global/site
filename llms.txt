@@ -50,6 +50,7 @@
 
 ## 核心页面
 
+- [常见问题 FAQ｜海鑫汇 GTN](https://gatewaytonew.com/01-about/faq/)：海鑫汇 GTN 常见问题：是否承诺成交、活动收费、创始人身份披露、GatewayToNew CEO tour 是什么。另附出海前先问自己的四个问题。
 - [关于海鑫汇｜Gateway To New (GTN)](https://gatewaytonew.com/01-about/)：海鑫汇 Gateway To New（GTN）——连接中国优势，走向全球。专家网络、产业网络与知识中枢。
 - [全球 CEO 中国行（来华产业考察）｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/ceo-tour/)：全球 CEO 中国行邀请外国企业家来华做产业考察，每期聚焦一个产业、一个来源国或地区，为期 3–4 天。面向有真实出口能力的中国企业征集参访企业，人工筛选后确认对接服务内容与费用。
 - [产业研究与对接｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/closed-door/)：产业研究与对接
@@ -67,6 +68,7 @@
 - [海鑫汇 Talk｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/online-connect/)：海鑫汇 Talk
 - [海鑫汇·出海连线 系列模板 | 海鑫汇 Gateway To New](https://gatewaytonew.com/02-projects/online-connect/%E5%87%BA%E6%B5%B7%E7%BA%BF%E4%B8%8A%E8%BF%9E%E7%BA%BF_%E7%B3%BB%E5%88%97%E6%A8%A1%E6%9D%BF_%E6%B5%B7%E6%8A%A5.html)
 - [战略合作伙伴与生态｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/partners/)：海鑫汇战略合作伙伴与生态，展示和君、WTC Singapore 等战略合作机构，承接联合举办的论坛、年会、项目和资源合作。
+- [I have an overseas expansion project to discuss | Gateway To New (GTN)](https://gatewaytonew.com/02-projects/project/en/)：I have an overseas expansion project to discuss
 - [我有一个出海项目，想聊聊｜海鑫汇 GTN](https://gatewaytonew.com/02-projects/project/)：我有一个出海项目，想聊聊
 - [3分钟出海自测 | 海鑫汇 Gateway To New](https://gatewaytonew.com/02-projects/self-testing/3%E5%88%86%E9%92%9F%E5%87%BA%E6%B5%B7%E8%87%AA%E6%B5%8B_%E6%B5%B7%E6%8A%A5.html)
 - [全球市场矩阵 · 产业×市场 / Industry × Market Matrix — 海鑫汇 Gateway To New](https://gatewaytonew.com/03-research/markets/)：海鑫汇 GTN 产业×市场矩阵：按产业与海外市场交叉索引真实活动、运营中心与考察案例，覆盖 AI、智能制造、新能源、消费品牌、跨国资本与人才发展在全球市场的落地实践。
@@ -90,7 +92,6 @@
 - [企业现在适合出海吗？ · 海鑫汇 Gateway To New](https://gatewaytonew.com/09-diagnose/ready-to-go-global/)：并不是所有企业都应该马上出海。海鑫汇 GTN 从竞争力、目标市场需求、持续投入能力、进入时机四个核心维度，帮助企业判断是否已经具备全球化发展的基础。
 - [海鑫汇专家顾问网络 — 海鑫汇](https://gatewaytonew.com/advisors-index)：海鑫汇（海鑫汇 GTN，英文 Gateway To New）专家顾问网络——两期累计签约30+位产业专家与投资人，均为上市公司或知名企业高管，已获授权公开展示。Directory of 30+ signed advisors backing 海鑫汇 Gateway To New's outbound consulting practice.
 - [出海行程与活动日程｜海鑫汇 GTN](https://gatewaytonew.com/calendar)：海鑫汇 GTN 出海行程与活动日程：只显示确认过的条目，含时间、名称、类型、状态与报名方式。近期暂无确认日程时，可登记意向，有新日程第一时间通知。
-- [来华产业考察征集参访企业｜海鑫汇 GTN](https://gatewaytonew.com/ceo-tour)：GatewayToNew CEO tour 邀请外国企业家来华做产业考察，每期聚焦一个产业、一个来源国或地区，为期 3–4 天。面向有真实出口能力的中国企业征集参访企业，人工筛选后确认对接服务内容与费用。
 - [全球生态成员 · Global Ecosystem — 海鑫汇](https://gatewaytonew.com/ecosystem-index)：海鑫汇全球生态名录——覆盖日本、马来西亚、新加坡、哈萨克斯坦等地的国际留学生、海外渠道、商协会与运营团队。The Global Talent Ecosystem behind 海鑫汇, spanning talent, channels, and operators across multiple countries.
 - [Global Ecosystem Members — Gateway To New (GTN)](https://gatewaytonew.com/en/ecosystem-index.html)：GTN's global ecosystem directory: operations hubs, partners and program members across China, Japan, Singapore, Kazakhstan, the Middle East, Pakistan, the United States and Europe.
 - [Gateway To New (GTN) · Overseas Expansion Decision Desk](https://gatewaytonew.com/en/)：Gateway To New (GTN) connects China's companies and industry strengths with global business communities through industry insights, business connections, and cross-border collaboration.
@@ -185,7 +186,6 @@
 - [中国能力全球化｜TikTok 马来西亚的融合创新之路 | 海鑫汇 考察](https://gatewaytonew.com/events/visit-37-tiktok-malaysia/)：董立鑫从吉隆坡实地视角，分析 TikTok 马来西亚如何将中国短视频与电商技术同本地多元文化深度融合，聚焦家居建材家具出海。
 - [走进伊拉克大使馆｜助力伊拉克战后重建 | 海鑫汇 参访](https://gatewaytonew.com/events/visit-38-iraq-embassy/)：董立鑫拜访伊拉克驻华大使馆，伊拉克驻华大使贝尔瓦利介绍伊中战略伙伴关系、重建机遇与投资环境改革。
 - [中国能力全球化｜胡志明市深度调研报告 | 海鑫汇 调研](https://gatewaytonew.com/events/visit-39-hcmc-vietnam/)：董立鑫 2025 年 8 月于胡志明市的实地深度调研，覆盖电商、消费、跨境、制造与科技出海五大维度。
-- [常见问题 FAQ｜海鑫汇 GTN](https://gatewaytonew.com/faq)：海鑫汇 GTN 常见问题：是否承诺成交、活动收费、创始人身份披露、GatewayToNew CEO tour 是什么。另附出海前先问自己的四个问题。
 - [AI 产业全球化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/ai-industry/)：AI 产业出海——从算力基建、空间智能到大模型 Token，带动中国 AI 供应链走向海外。海鑫汇 GTN 帮助企业判断全球化路径、连接海外产业与区域资源。
 - [消费品牌国际化 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/consumer-brands/)：消费品牌出海，从把产品卖出去到让品牌留下来。海鑫汇 GTN 帮助企业判断海外市场、理解消费者、进行品牌本地化，连接跨境电商与品牌全球化专家资源。
 - [跨国资本与并购 · 海鑫汇 Gateway To New](https://gatewaytonew.com/industries/cross-border-capital/)：企业全球化进入资本与资源配置阶段，从跨境投资、并购到投后整合。海鑫汇 GTN 帮助企业判断战略目标、识别标的、连接全球产业与资本资源。
