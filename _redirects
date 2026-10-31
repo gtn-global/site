@@ -4,6 +4,8 @@
 /faq.html    /01-about/faq/   301
 /club    /08-engage/club/   301
 /club.html    /08-engage/club/   301
+# === 探针：放在文件顶部，验证是否为"规则数量/位置上限"（验证后删除）===
+/__t123    /01-about/faq/   301
 # member 目录中文文件夹 -> 英文重命名 301 重定向
 
 /member/%E8%BF%9F%E6%96%87%E5%8A%BC/   /member/chi-wenjie/   301
@@ -351,6 +353,4 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 
 # markets 并入 03-research（2026-10）：保留旧 URL 301
 /markets/*    /03-research/markets/:splat    301
-# === 探针：定位解析中断点（验证后删除）===
-/__t123    /01-about/faq/   301
 
