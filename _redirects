@@ -351,4 +351,6 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 
 # markets 并入 03-research（2026-10）：保留旧 URL 301
 /markets/*    /03-research/markets/:splat    301
+# === 探针：定位解析中断点（验证后删除）===
+/__t123    /01-about/faq/   301
 
