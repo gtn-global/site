@@ -1,4 +1,9 @@
 # Netlify 301 redirects (permanent).
+# 根目录散落页归位（2026-10-30）：/faq /club 旧根路径 301 -> 新位置（置顶，避开下方含空格路径导致 Cloudflare 解析中断）
+/faq    /01-about/faq/   301
+/faq.html    /01-about/faq/   301
+/club    /08-engage/club/   301
+/club.html    /08-engage/club/   301
 # member 目录中文文件夹 -> 英文重命名 301 重定向
 
 /member/%E8%BF%9F%E6%96%87%E5%8A%BC/   /member/chi-wenjie/   301
@@ -349,10 +354,3 @@ https://www.gatewaytonew.com/*    https://gatewaytonew.com/:splat    301
 # markets 并入 03-research（2026-10）：保留旧 URL 301
 /markets/*    /03-research/markets/:splat    301
 
-# 根目录散落页归位（2026-10-30）：旧根路径 301 兜底，保 SEO 权重
-/faq    /01-about/faq/   301
-/faq.html   /01-about/faq/   301
-/club    /08-engage/club/   301
-/club.html   /08-engage/club/   301
-/ceo-tour    /02-projects/ceo-tour/   301
-/ceo-tour.html   /02-projects/ceo-tour/   301
