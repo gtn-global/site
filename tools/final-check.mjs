@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -77,7 +77,7 @@ const isText = f => /\.(html|json|js|css|txt|xml|md)$/.test(f);
   const re = /阅读\s*2024|2024\s*版/;
   const hits = [];
   for (const f of allFiles) {
-    if (f.startsWith('03-research/reports/EV/')) continue;
+    if (f.startsWith('09-research/reports/EV/')) continue;
     if (!isText(f)) continue;
     if (re.test(fs.readFileSync(join(f), 'utf8'))) hits.push(f);
   }
@@ -206,7 +206,7 @@ let byType = {}, total = 0;
 // ================= F.7 =================
 {
   const club = fs.readFileSync(join('club.html'), 'utf8');
-  const ev = fs.readFileSync(join('03-research/reports/EV/index.html'), 'utf8');
+  const ev = fs.readFileSync(join('09-research/reports/EV/index.html'), 'utf8');
   const noidxClub = /name="robots"[^>]*content="noindex"/.test(club);
   const noidxEV = /name="robots"[^>]*content="noindex"/.test(ev);
   const linksToClub = [], linksToEV = [];
@@ -214,12 +214,12 @@ let byType = {}, total = 0;
     if (!f.endsWith('.html')) continue;
     const t = fs.readFileSync(join(f), 'utf8');
     if (/<a[^>]+href=["'][^"']*club\.html/.test(t)) linksToClub.push(f);
-    if (/<a[^>]+href=["'][^"']*03-research/reports/EV\b/.test(t)) linksToEV.push(f);
+    if (/<a[^>]+href=["'][^"']*09-research/reports/EV\b/.test(t)) linksToEV.push(f);
   }
   const sm = fs.readFileSync(join('sitemap.xml'), 'utf8');
   const ll = fs.readFileSync(join('llms.txt'), 'utf8');
-  const smBad = sm.includes('club.html') || sm.includes('03-research/reports/EV');
-  const llBad = ll.includes('club.html') || ll.includes('03-research/reports/EV');
+  const smBad = sm.includes('club.html') || sm.includes('09-research/reports/EV');
+  const llBad = ll.includes('club.html') || ll.includes('09-research/reports/EV');
   check('F.7 club.html & reports/EV/index.html 有 noindex', noidxClub && noidxEV, `club=${noidxClub} ev=${noidxEV}`);
   check('F.7 全站无指向 club.html / reports/EV 的链接', linksToClub.length === 0 && linksToEV.length === 0,
     `club=${linksToClub.join(',')} ev=${linksToEV.join(',')}`);
@@ -270,7 +270,7 @@ let byType = {}, total = 0;
   const a1 = ['calendar.html', 'ceo-tour.html', 'club.html', '08-engage/self-test/index.html',
     'events-index.html', 'index.html', '02-projects/chuhaiban/index.html', '02-projects/closed-door/index.html',
     '02-projects/global-trip/index.html', '02-projects/online-connect/index.html', '02-projects/project/index.html',
-    '02-projects/trade-growth/index.html', '03-research/reports/index.html'];
+    '02-projects/trade-growth/index.html', '09-research/reports/index.html'];
   const miss = [];
   for (const pg of a1) {
     const t = fs.readFileSync(join(pg), 'utf8');

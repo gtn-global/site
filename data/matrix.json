@@ -1,24 +1,24 @@
-{
+﻿{
   "pages": [
     {
       "industry": "auto-tech",
       "region": "欧洲",
-      "url": "03-research/matrix/auto-tech-europe/index.html"
+      "url": "09-research/matrix/auto-tech-europe/index.html"
     },
     {
       "industry": "new-energy",
       "region": "欧洲",
-      "url": "03-research/matrix/new-energy-europe/index.html"
+      "url": "09-research/matrix/new-energy-europe/index.html"
     },
     {
       "industry": "ai",
       "region": "东南亚",
-      "url": "03-research/matrix/ai-southeast-asia/index.html"
+      "url": "09-research/matrix/ai-southeast-asia/index.html"
     },
     {
       "industry": "new-energy",
       "region": "中东",
-      "url": "03-research/matrix/new-energy-middle-east/index.html"
+      "url": "09-research/matrix/new-energy-middle-east/index.html"
     }
   ]
 }

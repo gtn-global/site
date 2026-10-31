@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * 自动生成 sitemap.xml 与 llms.txt（零依赖，仅使用 Node 内置模块）
  *
@@ -34,7 +34,7 @@ const SKIP_DIRS = new Set([
   '_demo', // 各板块的样板/模板页，不是真实页面，永不收录
   // 素材总览内部工具页：仅本地查看，已 git rm --cached（不部署），扫文件系统时须显式跳过
   'asset-overview',
-  '_backup', // 备份目录（如 06-ecosystem/_backup），含 before-move/bak 旧稿，永不收录、不部署
+  '_backup', // 备份目录（如 07-ecosystem/_backup），含 before-move/bak 旧稿，永不收录、不部署
   ]);
 
 // 这些扩展名不是页面，跳过

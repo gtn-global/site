@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <base href="../">
@@ -24,7 +24,7 @@
 <meta name="google-site-verification" content="c337c8b7a58761fe">
 <meta name="msvalidate.01" content="1C28C7F5DA0E816B70CC5C8F517D7801">
 <link rel="stylesheet" href="style.css?v=17">
-<link rel="stylesheet" href="06-ecosystem/ecosystem.css">
+<link rel="stylesheet" href="07-ecosystem/ecosystem.css">
 <style>
 /* 英文导航：一级项为完整英文短语，桌面端压缩字号与间距，避免挤压品牌标识 */
 @media(min-width:901px){.nav-links{gap:16px;font-size:12.5px;}}
@@ -82,6 +82,7 @@
 .ie-item{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:var(--fs-small);border:1px solid var(--rule);border-radius:14px;padding:6px 12px;}
 .ie-item img{width:24px;height:24px;border-radius:50%;object-fit:cover;}
 .ie-item:hover{border-color:var(--seal);color:var(--seal);}
+#industryEntry{display:none;}
 /* 双向通道下方两句话入口 */
 .channel-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
 .channel-link{display:flex;flex-direction:column;gap:6px;border:1px solid var(--rule);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--ink);}
@@ -270,7 +271,7 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">Solutions</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Solutions submenu">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#proof" class="nav-top">Solutions</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Solutions submenu">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">SERVICES</span>
           <a href="08-engage/self-test/index.html">Going-global self-test</a>
@@ -282,19 +283,18 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">Industries &amp; Markets</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Industries and Markets submenu">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">Research &amp; Insights</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Research and Insights submenu">▾</button></span>
         <div class="nav-drop">
-          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
-          <a href="#home">Industry × region</a>
-          <a href="03-research/markets/index.html">Markets</a>
-          <a href="industries/ai-industry/index.html">Artificial intelligence</a>
-          <a href="industries/new-energy/index.html">New energy</a>
-          <a href="industries/smart-manufacturing/index.html">SMART MANUFACTURING</a>
-          <a href="industries/consumer-brands/index.html">Consumer brands</a>
+          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
+          <a href="09-research/reports/index.html">Reports</a>
+          <a href="03-diagnose/ready-to-go-global/index.html">Readiness self-check</a>
+          <a href="03-diagnose/first-market/index.html">Choosing a first market</a>
+          <a href="03-diagnose/export-or-build/index.html">Export or build locally</a>
+          <a href="03-diagnose/overseas-risks/index.html">Overseas risks</a>
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#calendar" class="nav-top">Programs &amp; Activities</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Programs and Activities submenu">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#channels" class="nav-top">Programs &amp; Activities</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Programs and Activities submenu">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">PROGRAMS &amp; ACTIVITIES</span>
           <a href="calendar.html">Upcoming schedule</a>
@@ -305,26 +305,27 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">Research &amp; Insights</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Research and Insights submenu">▾</button></span>
-        <div class="nav-drop">
-          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
-          <a href="03-research/reports/index.html">Reports</a>
-          <a href="09-diagnose/ready-to-go-global/index.html">Readiness self-check</a>
-          <a href="09-diagnose/first-market/index.html">Choosing a first market</a>
-          <a href="09-diagnose/export-or-build/index.html">Export or build locally</a>
-          <a href="09-diagnose/overseas-risks/index.html">Overseas risks</a>
-        </div>
-      </div>
-
-      <div class="nav-item"><span class="nav-row"><a href="en/ecosystem-index.html" class="nav-top">Ecosystem</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Ecosystem submenu">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#ecosystem" class="nav-top">Ecosystem</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Ecosystem submenu">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">ECOSYSTEM</span>
           <a href="en/ecosystem-index.html">Global ecosystem members</a>
-          <a href="../06-ecosystem/news-index.html">Partner coverage</a>
+          <a href="../07-ecosystem/news-index.html">Partner coverage</a>
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#contact" class="nav-top">Contact</a></span></div>
+      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">Industries &amp; Markets</a><button type="button" class="nav-caret" aria-expanded="false" aria-label="Expand Industries and Markets submenu">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
+          <a href="#home">Industry × region</a>
+          <a href="09-research/markets/index.html">Markets</a>
+          <a href="industries/ai-industry/index.html">Artificial intelligence</a>
+          <a href="industries/new-energy/index.html">New energy</a>
+          <a href="industries/smart-manufacturing/index.html">SMART MANUFACTURING</a>
+          <a href="industries/consumer-brands/index.html">Consumer brands</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">Contact</a></span></div>
     </nav>
   </div>
 </header>
@@ -403,37 +404,62 @@
   </section>
 
 
-<!-- ===== 新03 CHINA MARKET & INDUSTRY INTELLIGENCE / Industry Reports（原 04） ===== -->
+<!-- ===== 新03 INDUSTRY × REGION / Industry × Region（原 01） ===== -->
 
-<section class="section" id="reports">
-  <div class="eyebrow">03 — CHINA MARKET & INDUSTRY INTELLIGENCE</div>
-  <h2 class="section-title">Industry going-global research reports</h2>
-  <p class="subline">Two years of frontline intelligence and advisor networks, organized by sector. ¥200 each; from 2027 we plan a new edition every quarter.</p>
-  <div class="report-grid">
-    <div class="report-card">
-      <span class="rc-tag">Published 2026.09</span>
-      <h4>Clean energy &amp; power</h4>
-      <p class="rc-desc">Li-ion · PV · storage · charging · off-grid</p>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions"><a class="rc-act" href="03-research/reports/cleantech/index.html">Get it</a></div>
+<section class="section" id="home">
+  <div class="eyebrow">03 — INDUSTRY × REGION</div>
+  <h1 class="headline">Should you go global — and which path? Think it through first.</h1>
+  <p class="subline">GTN gives the leadership of Chinese "little giant" manufacturers, tech firms and listed companies a going-global decision diagnosis: judge first, then act.</p>
+  <p class="hero-en">Decide first. Then go global.</p>
+
+  <div class="home-selector" id="selector">
+    <div class="selector-row">
+      <span class="selector-lead">I'm in</span>
+      <label class="selector-field">Industry
+        <select id="selIndustry" class="selector-select"><option value="">Select an industry</option></select>
+      </label>
+      <span class="selector-mid">, and want to go to</span>
+      <label class="selector-field">Region
+        <select id="selCountry" class="selector-select"><option value="">Select a region</option></select>
+      </label>
+      <button type="button" id="selGo" class="btn-submit btn-seal">Explore →</button>
     </div>
-    <div class="report-card">
-      <span class="rc-tag">Expected Oct 2026</span>
-      <h4>Artificial intelligence</h4>
-      <p class="rc-desc">AI power · AI cooling · Compute infrastructure · LLM token going-global</p>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">Notify me on release</button></div>
-    </div>
-    <div class="report-card">
-      <span class="rc-tag">Expected Nov 2026</span>
-      <h4>Smart manufacturing</h4>
-      <p class="rc-desc">New energy vehicles · Robotics · Low-altitude drones · Semiconductors</p>
-      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
-      <div class="rc-actions">
-        <button type="button" class="rc-act" data-product="智能制造出海研究报告（2026 版）" data-source="product-interest">Notify me on release</button>
-      </div>
-    </div>
+    <p class="selector-hint">Once selected, this cell expands its report, past visits, matched advisors, local ops center and next event.</p>
   </div>
+
+  <div class="worldmap" id="worldMap"></div>
+  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>Countries &amp; regions with content</span>Click a red dot to view this cell. Schematic only — not a geographic or boundary reference.</p>
+
+  <p class="hot-combos">Popular going-global combinations:
+    <a href="09-research/matrix/auto-tech-europe/index.html">NEVs &amp; smart mobility × Europe</a> ·
+    <a href="09-research/matrix/new-energy-europe/index.html">Clean energy &amp; power × Europe</a> ·
+    <a href="09-research/matrix/ai-southeast-asia/index.html">AI × Southeast Asia</a> ·
+    <a href="09-research/matrix/new-energy-middle-east/index.html">Clean energy &amp; power × Middle East</a>
+  </p>
+
+  <div class="desk" id="decisionDesk" hidden>
+    <div class="desk-head">
+      <div>
+        <div class="desk-kicker">Decision desk</div>
+        <h2 class="desk-title" id="deskTitle"></h2>
+        <div class="desk-summary" id="deskSummary"></div>
+      </div>
+      <button type="button" class="desk-close" id="deskClose">Collapse ✕</button>
+    </div>
+    <div class="desk-grid">
+      <div class="desk-col desk-col--left" id="deskLeft"></div>
+      <div class="desk-col desk-col--right" id="deskRight"></div>
+    </div>
+    <div class="desk-foot" id="deskFoot"></div>
+  </div>
+
+  <div class="hero-cta">
+    <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">Start the self-test (free · 3 min)</a>
+    <a class="btn-outline" href="02-projects/project/en/">I have a going-global project to discuss</a>
+  </div>
+
+
+  <div class="industry-entry" id="industryEntry"></div>
 </section>
 
 
@@ -473,39 +499,50 @@
 </section>
 
 
-<!-- ===== 新06 ECOSYSTEM / The GTN ecosystem（原 10） ===== -->
+<!-- ===== 新06 UPCOMING PROGRAMS &amp; EVENTS / Calendar（原 05） ===== -->
+
+<section class="section" id="calendar">
+  <div class="eyebrow">06 — UPCOMING PROGRAMS &amp; EVENTS</div>
+  <h2 class="section-title">Our going-global schedule, next 90 days</h2>
+  <p class="subline">Only confirmed dates appear here.</p>
+  <div class="cal-list" id="calList"></div>
+  <a class="adv-all" href="calendar.html">View all dates →</a>
+</section>
+
+
+<!-- ===== 新07 ECOSYSTEM / The GTN ecosystem（原 10） ===== -->
 
 <section id="ecosystem" class="section eco">
-  <div class="eyebrow">06 — ECOSYSTEM</div>
+  <div class="eyebrow">07 — ECOSYSTEM</div>
   <h2 class="section-title">The GTN ecosystem</h2>
   <p class="subline">With our partners, we build one service network for going global and coming to China.</p>
 
   <div class="eco-honey">
 
-    <a href="06-ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="GTN and Hejun Group">
+    <a href="07-ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="GTN and Hejun Group">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="enHex1"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-hejun-consulting.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex1)"/>
+        <image href="07-ecosystem/with-hejun-consulting.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex1)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
         <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="14" font-weight="600">Hejun Group</text>
       </svg>
     </a>
 
-    <a href="06-ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="GTN and UIBE">
+    <a href="07-ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="GTN and UIBE">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="enHex2"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-uibe-sie.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex2)"/>
+        <image href="07-ecosystem/with-uibe-sie.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex2)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
         <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="16" font-weight="600">UIBE</text>
       </svg>
     </a>
 
-    <a href="06-ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="GTN and WTC Singapore">
+    <a href="07-ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="GTN and World Trade Center Singapore">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="enHex3"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-WTC-Singapore.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex3)"/>
+        <image href="07-ecosystem/with-WTC-Singapore.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#enHex3)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
-        <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="13" font-weight="600">WTC Singapore</text>
+        <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="13" font-weight="600">World Trade Center Singapore</text>
       </svg>
     </a>
 
@@ -523,43 +560,57 @@
   <div class="eco-links about-links">
     <strong>Friendly links:</strong>
     <a href="https://www.hejun.com" target="_blank" rel="noopener">Hejun</a>
-    <a href="https://www.wtcasg.org" target="_blank" rel="noopener">WTC Singapore</a>
+    <a href="https://www.wtcasg.org" target="_blank" rel="noopener">World Trade Center Singapore</a>
     <a href="https://www.uibe.edu.cn/" target="_blank" rel="noopener">University of International Business and Economics (UIBE)</a>
+  </div>
+  <div class="eco-links about-links">
+    <strong>Related news:</strong>
+    <a href="07-ecosystem/news-index.html">Learn more</a>
   </div>
   <p class="eco-social-note about-bio">Follow us on <a href="https://www.linkedin.com/company/gatewaytonew" target="_blank" rel="noopener">LinkedIn</a></p>
 
 </section>
 
 
-<!-- ===== 新07 UPCOMING PROGRAMS &amp; EVENTS / Calendar（原 05） ===== -->
-
-<section class="section" id="calendar">
-  <div class="eyebrow">07 — UPCOMING PROGRAMS &amp; EVENTS</div>
-  <h2 class="section-title">Our going-global schedule, next 90 days</h2>
-  <p class="subline">Only confirmed dates appear here.</p>
-  <div class="cal-list" id="calList"></div>
-  <a class="adv-all" href="calendar.html">View all dates →</a>
-</section>
 
 
+<!-- ===== 新08 CHINA MARKET & INDUSTRY INTELLIGENCE / Industry Reports（原 04） ===== -->
 
-
-<!-- ===== 新08 WORK WITH GTN / Contact（原 09） ===== -->
-
-<section class="section" id="contact">
-  <div class="eyebrow">08 — WORK WITH GTN</div>
-  <h2 class="section-title">I have a going-global project to discuss</h2>
-  <p class="subline">Free · application-based</p>
-  <div class="book-card">
-    <ul class="stage-list">
-      <li>Country &amp; city selection</li>
-      <li>Local partner matchmaking</li>
-      <li>Government &amp; park connections</li>
-    </ul>
-    <p class="subline">Priced per project</p>
-    <a class="btn-submit btn-seal" href="02-projects/project/en/">Submit a project</a>
+<section class="section" id="reports">
+  <div class="eyebrow">08 — CHINA MARKET & INDUSTRY INTELLIGENCE</div>
+  <h2 class="section-title">Industry going-global research reports</h2>
+  <p class="subline">Two years of frontline intelligence and advisor networks, organized by sector. ¥200 each; from 2027 we plan a new edition every quarter.</p>
+  <div class="report-grid">
+    <div class="report-card">
+      <span class="rc-tag">Published 2026.09</span>
+      <h4>Clean energy &amp; power</h4>
+      <p class="rc-desc">Li-ion · PV · storage · charging · off-grid</p>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions"><a class="rc-act" href="09-research/reports/cleantech/index.html">Get it</a></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">Expected Oct 2026</span>
+      <h4>Artificial intelligence</h4>
+      <p class="rc-desc">AI power · AI cooling · Compute infrastructure · LLM token going-global</p>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">Notify me on release</button></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">Expected Nov 2026</span>
+      <h4>Smart manufacturing</h4>
+      <p class="rc-desc">New energy vehicles · Robotics · Low-altitude drones · Semiconductors</p>
+      <p class="rc-note">Co-published with WTC Singapore · ¥200/report</p>
+      <div class="rc-actions">
+        <button type="button" class="rc-act" data-product="智能制造出海研究报告（2026 版）" data-source="product-interest">Notify me on release</button>
+      </div>
+    </div>
   </div>
 </section>
+
+
+<!-- ===== 新09 WORK WITH GTN / Contact（原 09） ===== -->
+
+
 
 
 <!-- ===== 新09 WHERE ARE YOU / Where Are You Right Now（原 03） ===== -->
@@ -579,11 +630,11 @@
       <p class="stage-one">Not sure whether to go global, or where to start.</p>
       <ul class="stage-list">
         <li><a href="08-engage/self-test/index.html">Going-global self-test</a></li>
-        <li><a href="03-research/reports/index.html">Industry going-global report</a></li>
+        <li><a href="09-research/reports/index.html">Industry going-global report</a></li>
       </ul>
       <div class="stage-imgs">
         <a href="08-engage/self-test/index.html" style="display:block;text-decoration:none;"><img src="02-projects/self-testing/横幅-3分钟出海自测.png" alt="3-minute self-test banner"></a>
-        <a href="03-research/reports/index.html" style="display:block;text-decoration:none;"><img src="02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.png" alt="Clean energy report banner"></a>
+        <a href="09-research/reports/index.html" style="display:block;text-decoration:none;"><img src="02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.png" alt="Clean energy report banner"></a>
       </div>
       <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">Start the test</a>
     </div>
@@ -662,90 +713,7 @@
   </div>
 </section>
 
-<!-- ===== 新10 INDUSTRY × REGION / Industry × Region（原 01） ===== -->
 
-<section class="section" id="home">
-  <div class="eyebrow">10 — INDUSTRY × REGION</div>
-  <h1 class="headline">Should you go global — and which path? Think it through first.</h1>
-  <p class="subline">GTN gives the leadership of Chinese "little giant" manufacturers, tech firms and listed companies a going-global decision diagnosis: judge first, then act.</p>
-  <p class="hero-en">Decide first. Then go global.</p>
-
-  <div class="home-selector" id="selector">
-    <div class="selector-row">
-      <span class="selector-lead">I'm in</span>
-      <label class="selector-field">Industry
-        <select id="selIndustry" class="selector-select"><option value="">Select an industry</option></select>
-      </label>
-      <span class="selector-mid">, and want to go to</span>
-      <label class="selector-field">Region
-        <select id="selCountry" class="selector-select"><option value="">Select a region</option></select>
-      </label>
-      <button type="button" id="selGo" class="btn-submit btn-seal">Explore →</button>
-    </div>
-    <p class="selector-hint">Once selected, this cell expands its report, past visits, matched advisors, local ops center and next event.</p>
-  </div>
-
-  <div class="worldmap" id="worldMap"></div>
-  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>Countries &amp; regions with content</span>Click a red dot to view this cell. Schematic only — not a geographic or boundary reference.</p>
-
-  <p class="hot-combos">Popular going-global combinations:
-    <a href="03-research/matrix/auto-tech-europe/index.html">NEVs &amp; smart mobility × Europe</a> ·
-    <a href="03-research/matrix/new-energy-europe/index.html">Clean energy &amp; power × Europe</a> ·
-    <a href="03-research/matrix/ai-southeast-asia/index.html">AI × Southeast Asia</a> ·
-    <a href="03-research/matrix/new-energy-middle-east/index.html">Clean energy &amp; power × Middle East</a>
-  </p>
-
-  <div class="desk" id="decisionDesk" hidden>
-    <div class="desk-head">
-      <div>
-        <div class="desk-kicker">Decision desk</div>
-        <h2 class="desk-title" id="deskTitle"></h2>
-        <div class="desk-summary" id="deskSummary"></div>
-      </div>
-      <button type="button" class="desk-close" id="deskClose">Collapse ✕</button>
-    </div>
-    <div class="desk-grid">
-      <div class="desk-col desk-col--left" id="deskLeft"></div>
-      <div class="desk-col desk-col--right" id="deskRight"></div>
-    </div>
-    <div class="desk-foot" id="deskFoot"></div>
-  </div>
-
-  <div class="hero-cta">
-    <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">Start the self-test (free · 3 min)</a>
-    <a class="btn-outline" href="02-projects/project/en/">I have a going-global project to discuss</a>
-  </div>
-
-
-  <div class="industry-entry" id="industryEntry"></div>
-</section>
-
-
-<!-- ===== 新11 FAQ / Frequently Asked Questions（原 08） ===== -->
-
-<section class="section" id="faq">
-  <div class="eyebrow">11 — FAQ</div>
-  <h2 class="section-title">Frequently asked questions</h2>
-  <p class="subline">Get these clear before you go global.</p>
-  <div class="faq-list">
-    <details class="faq-item"><summary>What does GTN do?</summary><p>We give Chinese management a going-global decision diagnosis: laying out the options, risks and costs of whether, where and how to enter — and offering a judgment you can discuss.</p></details>
-
-    <details class="faq-item"><summary>Can you guarantee deals or orders?</summary><p>No. We provide judgment and connections, not promises of orders or deals.</p></details>
-    <details class="faq-item"><summary>How are events priced?</summary><p>See the schedule page and each event page for specifics.</p></details>
-    <details class="faq-item"><summary>Dong Lixin also serves at WTC Singapore — what's his relation to GTN?</summary><p>Dong Lixin also serves as Secretary-General &amp; COO of WTC Singapore and Secretary-General of WTC One Club. GTN's paid services are provided by GTN; where events involve partner institutions, we clearly state each party's role.</p></details>
-    <details class="faq-item"><summary>What is the Global CEO China Tour?</summary><p>We invite foreign entrepreneurs to China for industry visits — one sector and one source country/region per edition. Chinese companies may apply to be host companies and are confirmed after screening.</p></details>
-  </div>
-  <div class="faq-list" style="margin-top:10px;">
-    <details class="faq-item faq-group"><summary>Four questions to ask yourself before going global</summary>
-      <ul class="faq-sublist">
-        <li><a href="09-diagnose/ready-to-go-global/index.html">Is our company ready to go global now?</a></li>
-        <li><a href="09-diagnose/first-market/index.html">Which should be our first overseas market?</a></li>
-        <li><a href="09-diagnose/export-or-build/index.html">Export via agents or build overseas?</a></li>
-        <li><a href="09-diagnose/overseas-risks/index.html">What's the biggest risk in going global?</a></li>
-      </ul>
-    </details>
-  </div>
-</section>
 
 
 <footer class="footer" data-depth="0"></footer>

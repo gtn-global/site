@@ -1,4 +1,4 @@
-{
+﻿{
   "industries": [
     { "slug": "new-energy", "name": "新能源电力电气", "display": "新能源电力电气", "aliases": ["绿色能源", "新能源"], "parent": null, "status": "live", "lead": null },
     { "slug": "auto-tech", "name": "智能制造", "display": "智能制造", "aliases": ["新能源车", "智慧交通", "汽车智能科技"], "parent": null, "status": "live", "lead": null },
@@ -46,7 +46,7 @@
     { "slug": "france-finland", "name": "法国 芬兰", "hidden_in_dropdown": true }
   ],
   "reportMap": {
-    "new-energy": { "url": "03-research/reports/cleantech/index.html", "published": true },
+    "new-energy": { "url": "09-research/reports/cleantech/index.html", "published": true },
     "auto-tech": { "url": "", "published": false }
   }
 }

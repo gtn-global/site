@@ -1,4 +1,4 @@
-{
+﻿{
   "generated": "2026-10-18T13:18:51.557Z",
   "event": [
     {
@@ -1138,7 +1138,7 @@
       "title": "新能源电力电气出海研究报告",
       "status": "已上线",
       "version": "2026 版",
-      "url": "03-research/reports/cleantech/index.html",
+      "url": "09-research/reports/cleantech/index.html",
       "action": "留资获取",
       "countries": [],
       "regions": []
@@ -1488,7 +1488,7 @@
       "status": "open",
       "cta_type": "pay",
       "cta_label": "留资获取",
-      "cta_url": "03-research/reports/cleantech/index.html",
+      "cta_url": "09-research/reports/cleantech/index.html",
       "price_text": "",
       "visible": true
     },

@@ -1,4 +1,4 @@
-// 生成统一内容索引 data/index.json（再经 node tools/build-data.mjs 产出 index.js）
+﻿// 生成统一内容索引 data/index.json（再经 node tools/build-data.mjs 产出 index.js）
 // 用法：node tools/build-index.mjs
 import fs from 'node:fs';
 import path from 'node:path';
@@ -144,7 +144,7 @@ if (exists(D('events-index.html'))) {
 
 // ---------- 2. report ----------
 const reports = [
-  { id: 'report-new-energy', industry: '新能源', title: '新能源电力电气出海研究报告', status: '已上线', version: '2026 版', url: '03-research/reports/cleantech/index.html', action: '留资获取' },
+  { id: 'report-new-energy', industry: '新能源', title: '新能源电力电气出海研究报告', status: '已上线', version: '2026 版', url: '09-research/reports/cleantech/index.html', action: '留资获取' },
   { id: 'report-auto-tech-2026', industry: '汽车智能科技', title: '汽车智能科技出海研究报告（2026 新版）', status: '预计 11 月发布', version: '2026 版', url: '', action: '登记意向' },
   { id: 'report-ai', industry: 'AI产业', title: 'AI 产业出海研究报告', status: '研究进行中', version: '', url: '', action: '登记意向' }
 ].map(r => ({ ...r, countries: [], regions: [] }));

@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // 海鑫汇 Global Expansion Desk — shared behavior
 // Used by: index.html / events-index.html / advisors-index.html
 // Defensive: every block checks the element exists before acting,
@@ -291,7 +291,7 @@ syncEventBreakdown();
 
 // ---- 统一 footer：内容只在这里定义一次，所有页面（含三级页）共用 ----
 const FOOTER_LINKS = [
-  { label: '产业出海研究报告', href: '03-research/reports/index.html' },
+  { label: '产业出海研究报告', href: '09-research/reports/index.html' },
   { label: '出海日程', href: 'calendar.html' },
 
   { label: '全球 CEO 中国行', href: '02-projects/ceo-tour/' },
@@ -300,7 +300,7 @@ const FOOTER_LINKS = [
   { label: '战略合作伙伴与生态', href: '02-projects/partners/' },
   { label: '全球生态', href: 'ecosystem-index.html' },
   { label: '出海调研', href: 'events-index.html' },
-  { label: '新闻报道', href: '06-ecosystem/news-index.html' }
+  { label: '新闻报道', href: '07-ecosystem/news-index.html' }
 ];
 
 function renderFooter(){

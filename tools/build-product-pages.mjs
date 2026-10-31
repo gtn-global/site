@@ -1,4 +1,4 @@
-// 生成 6 个产品静态页 p/<slug>/index.html
+﻿// 生成 6 个产品静态页 p/<slug>/index.html
 // 骨架参照 ceo-tour.html（header/footer/script 模式）+ events 深度2页的路径前缀（../../）
 // 价格/按钮只取 data/products.json；海报图与抽取文案仅在对应 webp 已生成时才显示（避免占位泄漏到公开页）
 import fs from 'node:fs';
@@ -314,7 +314,7 @@ function applyEvidenceMarkers(fileRel, block) {
       html = html.replace(/(<div class="cta-form form-wrap reveal">[\s\S]*?<\/form>\s*<\/div>)(\s*)(<\/section>)/,
         (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
       inserted = true;
-    } else if (fileRel === '03-research/reports/index.html') {
+    } else if (fileRel === '09-research/reports/index.html') {
       html = html.replace(/(<p class="report-note">[\s\S]*?<\/p>)(\s*)(<figure)/,
         (m, g1, g2, g3) => g1 + g2 + '<!-- evidence:start -->' + EOL + '<!-- evidence:end -->' + EOL + g3);
       inserted = true;
@@ -334,6 +334,6 @@ const reportsBlock = '<section class="evidence-block">' + EOLR +
   '  <p class="evidence-stat">新能源电力电气 · 2026.09</p>' + EOLR +
   '  <p class="evidence-report-link"><a href="cleantech/index.html">查看报告 &rarr;</a></p>' + EOLR +
   '</section>';
-applyEvidenceMarkers('03-research/reports/index.html', reportsBlock);
+applyEvidenceMarkers('09-research/reports/index.html', reportsBlock);
 
 console.log('done');

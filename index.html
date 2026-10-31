@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="c337c8b7a58761fe">
 <meta name="msvalidate.01" content="1C28C7F5DA0E816B70CC5C8F517D7801">
 <link rel="stylesheet" href="style.css?v=17">
-<link rel="stylesheet" href="06-ecosystem/ecosystem.css">
+<link rel="stylesheet" href="07-ecosystem/ecosystem.css">
 <style>
 /* 圆点世界图：灰点为陆地示意，红点为有内容的国家或地区（详见 assets/js 注入） */
 .map-note{font-size:12px;color:var(--ink-faint);margin:10px 0 0;}
@@ -79,6 +79,7 @@
 .ie-item{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:var(--fs-small);border:1px solid var(--rule);border-radius:14px;padding:6px 12px;}
 .ie-item img{width:24px;height:24px;border-radius:50%;object-fit:cover;}
 .ie-item:hover{border-color:var(--seal);color:var(--seal);}
+#industryEntry{display:none;}
 /* 双向通道下方两句话入口 */
 .channel-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
 .channel-link{display:flex;flex-direction:column;gap:6px;border:1px solid var(--rule);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--ink);}
@@ -261,7 +262,7 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">解决方案<span class="en">SOLUTIONS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「解决方案」子菜单">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#proof" class="nav-top">解决方案<span class="en">SOLUTIONS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「解决方案」子菜单">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">SERVICES</span>
           <a href="08-engage/self-test/index.html">出海决策自测</a>
@@ -273,19 +274,18 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">产业与市场<span class="en">MARKETS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「产业与市场」子菜单">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#home" class="nav-top">研究与洞察<span class="en">RESEARCH</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「研究与洞察」子菜单">▾</button></span>
         <div class="nav-drop">
-          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
-          <a href="#home">产业 × 区域</a>
-          <a href="03-research/markets/index.html">区域市场</a>
-          <a href="industries/ai-industry/index.html">人工智能</a>
-          <a href="industries/new-energy/index.html">新能源</a>
-          <a href="industries/smart-manufacturing/index.html">智能制造</a>
-          <a href="industries/consumer-brands/index.html">消费品牌</a>
+          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
+          <a href="09-research/reports/index.html">研究报告</a>
+          <a href="03-diagnose/ready-to-go-global/index.html">出海准备度自测</a>
+          <a href="03-diagnose/first-market/index.html">首个市场选哪里</a>
+          <a href="03-diagnose/export-or-build/index.html">出口还是建厂</a>
+          <a href="03-diagnose/overseas-risks/index.html">海外风险</a>
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#calendar" class="nav-top">项目与活动<span class="en">PROGRAMS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「项目与活动」子菜单">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#channels" class="nav-top">项目与活动<span class="en">PROGRAMS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「项目与活动」子菜单">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">PROGRAMS &amp; ACTIVITIES</span>
           <a href="calendar.html">近期日程</a>
@@ -296,26 +296,27 @@
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">研究与洞察<span class="en">RESEARCH</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「研究与洞察」子菜单">▾</button></span>
-        <div class="nav-drop">
-          <span class="drop-group">RESEARCH &amp; INSIGHTS</span>
-          <a href="03-research/reports/index.html">研究报告</a>
-          <a href="09-diagnose/ready-to-go-global/index.html">出海准备度自测</a>
-          <a href="09-diagnose/first-market/index.html">首个市场选哪里</a>
-          <a href="09-diagnose/export-or-build/index.html">出口还是建厂</a>
-          <a href="09-diagnose/overseas-risks/index.html">海外风险</a>
-        </div>
-      </div>
-
-      <div class="nav-item"><span class="nav-row"><a href="ecosystem-index.html" class="nav-top">合作生态<span class="en">ECOSYSTEM</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「合作生态」子菜单">▾</button></span>
+      <div class="nav-item"><span class="nav-row"><a href="#ecosystem" class="nav-top">合作生态<span class="en">ECOSYSTEM</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「合作生态」子菜单">▾</button></span>
         <div class="nav-drop">
           <span class="drop-group">ECOSYSTEM</span>
           <a href="ecosystem-index.html">全球生态成员</a>
-          <a href="06-ecosystem/news-index.html">合作伙伴动态</a>
+          <a href="07-ecosystem/news-index.html">合作伙伴动态</a>
         </div>
       </div>
 
-      <div class="nav-item"><span class="nav-row"><a href="#contact" class="nav-top">联系我们<span class="en">CONTACT</span></a></span></div>
+      <div class="nav-item"><span class="nav-row"><a href="#reports" class="nav-top">产业与市场<span class="en">MARKETS</span></a><button type="button" class="nav-caret" aria-expanded="false" aria-label="展开「产业与市场」子菜单">▾</button></span>
+        <div class="nav-drop">
+          <span class="drop-group">INDUSTRIES &amp; MARKETS</span>
+          <a href="#home">产业 × 区域</a>
+          <a href="09-research/markets/index.html">区域市场</a>
+          <a href="industries/ai-industry/index.html">人工智能</a>
+          <a href="industries/new-energy/index.html">新能源</a>
+          <a href="industries/smart-manufacturing/index.html">智能制造</a>
+          <a href="industries/consumer-brands/index.html">消费品牌</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-row"><a href="#stage" class="nav-top">联系我们<span class="en">CONTACT</span></a></span></div>
     </nav>
   </div>
 </header>
@@ -393,37 +394,62 @@
 </section>
 
 
-<!-- ===== 新03 CHINA MARKET & INDUSTRY INTELLIGENCE / 中国市场与产业研究（原 04） ===== -->
+<!-- ===== 新03 INDUSTRY × REGION / 产业与区域（原 01） ===== -->
 
-<section class="section" id="reports">
-  <div class="eyebrow">03 — CHINA MARKET & INDUSTRY INTELLIGENCE</div>
-  <h2 class="section-title">中国市场与产业研究</h2>
-  <p class="subline">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
-  <div class="report-grid">
-    <div class="report-card">
-      <span class="rc-tag">已发布 2026.09</span>
-      <h4>新能源电力电气</h4>
-      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions"><a class="rc-act" href="03-research/reports/cleantech/index.html">留资获取</a></div>
+<section class="section" id="home">
+  <div class="eyebrow">03 — INDUSTRY × REGION</div>
+  <h1 class="headline">产业与区域</h1>
+  <p class="subline">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
+  <p class="hero-en">Decide first. Then go global.</p>
+
+  <div class="home-selector" id="selector">
+    <div class="selector-row">
+      <span class="selector-lead">我做</span>
+      <label class="selector-field">产业
+        <select id="selIndustry" class="selector-select"><option value="">请选择产业</option></select>
+      </label>
+      <span class="selector-mid">，想去</span>
+      <label class="selector-field">区域
+        <select id="selCountry" class="selector-select"><option value="">请选择区域</option></select>
+      </label>
+      <button type="button" id="selGo" class="btn-submit btn-seal">查看 →</button>
     </div>
-    <div class="report-card">
-      <span class="rc-tag">预计 2026 年 10 月发布</span>
-      <h4>人工智能</h4>
-      <p class="rc-desc">AI电源 · AI制冷 · 算力基础设施 · 大模型 Token 出海</p>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button></div>
-    </div>
-    <div class="report-card">
-      <span class="rc-tag">预计 2026 年 11 月发布</span>
-      <h4>智能制造</h4>
-      <p class="rc-desc">新能源汽车 · 机器人 · 低空无人机 · 半导体</p>
-      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
-      <div class="rc-actions">
-        <button type="button" class="rc-act" data-product="智能制造出海研究报告（2026 版）" data-source="product-interest">发布时通知我</button>
-      </div>
-    </div>
+    <p class="selector-hint">选完直接展开这一格的报告、往期考察、对口顾问、当地运营中心和下一次活动。</p>
   </div>
+
+  <div class="worldmap" id="worldMap"></div>
+  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>有内容的国家或地区</span>点红点看这一格。示意图，不作地理或边界依据。</p>
+
+  <p class="hot-combos">热门出海组合：
+    <a href="09-research/matrix/auto-tech-europe/index.html">新能源车与智慧交通 × 欧洲</a> ·
+    <a href="09-research/matrix/new-energy-europe/index.html">新能源电力电气 × 欧洲</a> ·
+    <a href="09-research/matrix/ai-southeast-asia/index.html">人工智能 × 东南亚</a> ·
+    <a href="09-research/matrix/new-energy-middle-east/index.html">新能源电力电气 × 中东</a>
+  </p>
+
+  <div class="desk" id="decisionDesk" hidden>
+    <div class="desk-head">
+      <div>
+        <div class="desk-kicker">Decision desk · 决策台</div>
+        <h2 class="desk-title" id="deskTitle"></h2>
+        <div class="desk-summary" id="deskSummary"></div>
+      </div>
+      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
+    </div>
+    <div class="desk-grid">
+      <div class="desk-col desk-col--left" id="deskLeft"></div>
+      <div class="desk-col desk-col--right" id="deskRight"></div>
+    </div>
+    <div class="desk-foot" id="deskFoot"></div>
+  </div>
+
+  <div class="hero-cta">
+    <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">开始自测（免费 · 3 分钟）</a>
+    <a class="btn-outline" href="02-projects/project/index.html">我有一个出海项目，想聊聊</a>
+  </div>
+
+
+  <div class="industry-entry" id="industryEntry"></div>
 </section>
 
 
@@ -463,37 +489,48 @@
 </section>
 
 
-<!-- ===== 新06 ECOSYSTEM / 海鑫汇生态（原 10） ===== -->
+<!-- ===== 新06 INTERNATIONAL MARKET EXPLORATION / 国际市场探索（原 05） ===== -->
+
+<section class="section" id="calendar">
+  <div class="eyebrow">06 — INTERNATIONAL MARKET EXPLORATION</div>
+  <h2 class="section-title">国际市场探索</h2>
+  <p class="subline">确认过的日程才会出现在这里。</p>
+  <div class="cal-list" id="calList"></div>
+  <a class="adv-all" href="calendar.html">查看全部日程 →</a>
+</section>
+
+
+<!-- ===== 新07 ECOSYSTEM / 海鑫汇生态（原 10） ===== -->
 
 <section id="ecosystem" class="section eco">
-  <div class="eyebrow">06 — ECOSYSTEM</div>
+  <div class="eyebrow">07 — ECOSYSTEM</div>
   <h2 class="section-title">海鑫汇生态</h2>
   <p class="subline">携手伙伴，共建出海与来华服务网络</p>
 
   <div class="eco-honey">
 
-    <a href="06-ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="海鑫汇与和君咨询（生态伙伴）">
+    <a href="07-ecosystem/news-index.html#hejun" class="eco-hex h-blue" aria-label="海鑫汇与和君咨询（生态伙伴）">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="ecoHex1"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-hejun-consulting.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex1)"/>
+        <image href="07-ecosystem/with-hejun-consulting.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex1)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
         <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="15" font-weight="600">和君咨询</text>
       </svg>
     </a>
 
-    <a href="06-ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="海鑫汇与对外经济贸易大学（生态伙伴）">
+    <a href="07-ecosystem/news-index.html#academic" class="eco-hex h-teal" aria-label="海鑫汇与对外经济贸易大学（生态伙伴）">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="ecoHex2"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-uibe-sie.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex2)"/>
+        <image href="07-ecosystem/with-uibe-sie.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex2)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
         <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="14" font-weight="600">对外经济贸易大学</text>
       </svg>
     </a>
 
-    <a href="06-ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="海鑫汇与新加坡世界贸易中心（生态伙伴）">
+    <a href="07-ecosystem/news-index.html#wtca" class="eco-hex h-purple" aria-label="海鑫汇与新加坡世界贸易中心（生态伙伴）">
       <svg viewBox="0 0 180 156" aria-hidden="true">
         <defs><clipPath id="ecoHex3"><polygon points="45,0 135,0 180,78 135,156 45,156 0,78"/></clipPath></defs>
-        <image href="06-ecosystem/with-WTC-Singapore.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex3)"/>
+        <image href="07-ecosystem/with-WTC-Singapore.webp" x="0" y="0" width="180" height="156" preserveAspectRatio="xMidYMid slice" clip-path="url(#ecoHex3)"/>
         <polygon class="photo-veil" points="45,0 135,0 180,78 135,156 45,156 0,78"/>
         <text class="ph-name" x="90" y="84" text-anchor="middle" font-size="14" font-weight="600">新加坡世界贸易中心</text>
       </svg>
@@ -516,38 +553,47 @@
     <a href="https://www.wtcasg.org" target="_blank" rel="noopener">新加坡世界贸易中心</a>
     <a href="https://www.uibe.edu.cn/" target="_blank" rel="noopener">对外经济贸易大学</a>
   </div>
+  <div class="eco-links about-links">
+    <strong>相关新闻：</strong>
+    <a href="07-ecosystem/news-index.html">点击了解详情</a>
+  </div>
 
 
 </section>
 
 
-<!-- ===== 新07 INTERNATIONAL MARKET EXPLORATION / 国际市场探索（原 05） ===== -->
-
-<section class="section" id="calendar">
-  <div class="eyebrow">07 — INTERNATIONAL MARKET EXPLORATION</div>
-  <h2 class="section-title">国际市场探索</h2>
-  <p class="subline">确认过的日程才会出现在这里。</p>
-  <div class="cal-list" id="calList"></div>
-  <a class="adv-all" href="calendar.html">查看全部日程 →</a>
-</section>
 
 
+<!-- ===== 新08 CHINA MARKET & INDUSTRY INTELLIGENCE / 中国市场与产业研究（原 04） ===== -->
 
-
-<!-- ===== 新08 WORK WITH GTN / 如何与海鑫汇合作（原 09） ===== -->
-
-<section class="section" id="contact">
-  <div class="eyebrow">08 — WORK WITH GTN</div>
-  <h2 class="section-title">如何与海鑫汇合作</h2>
-  <p class="subline">免费 · 申请制</p>
-  <div class="book-card">
-    <ul class="stage-list">
-      <li>国家与城市选择</li>
-      <li>本地伙伴对接</li>
-      <li>政府与园区对接</li>
-    </ul>
-    <p class="subline">按项目报价</p>
-    <a class="btn-submit btn-seal" href="02-projects/project/index.html">提交出海项目</a>
+<section class="section" id="reports">
+  <div class="eyebrow">08 — CHINA MARKET & INDUSTRY INTELLIGENCE</div>
+  <h2 class="section-title">中国市场与产业研究</h2>
+  <p class="subline">按赛道整理两年一线情报与顾问网络。单份 200 元，2027 年起计划每季度更新一期。</p>
+  <div class="report-grid">
+    <div class="report-card">
+      <span class="rc-tag">已发布 2026.09</span>
+      <h4>新能源电力电气</h4>
+      <p class="rc-desc">锂电 · 光伏 · 储能 · 充电设施 · 离网系统</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><a class="rc-act" href="09-research/reports/cleantech/index.html">留资获取</a></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 10 月发布</span>
+      <h4>人工智能</h4>
+      <p class="rc-desc">AI电源 · AI制冷 · 算力基础设施 · 大模型 Token 出海</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions"><button type="button" class="rc-act" data-product="人工智能出海研究报告" data-source="product-interest">发布时通知我</button></div>
+    </div>
+    <div class="report-card">
+      <span class="rc-tag">预计 2026 年 11 月发布</span>
+      <h4>智能制造</h4>
+      <p class="rc-desc">新能源汽车 · 机器人 · 低空无人机 · 半导体</p>
+      <p class="rc-note">联合新加坡世贸发布 · 200 元/份</p>
+      <div class="rc-actions">
+        <button type="button" class="rc-act" data-product="智能制造出海研究报告（2026 版）" data-source="product-interest">发布时通知我</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -602,7 +648,7 @@
       </div>
       <ul class="gtn-btn-list">
         <li>
-          <a class="gtn-rowbtn" href="03-research/reports/index.html">
+          <a class="gtn-rowbtn" href="09-research/reports/index.html">
             <span class="gtn-rowbtn__text">
               <span class="gtn-rowbtn__title">产业出海研究报告</span>
             </span>
@@ -611,7 +657,7 @@
         </li>
       </ul>
       <div class="stage-imgs">
-        <a href="03-research/reports/index.html" style="display:block;text-decoration:none;"><img src="02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.webp" alt="新能源电力电气出海研究报告横幅"></a>
+        <a href="09-research/reports/index.html" style="display:block;text-decoration:none;"><img src="02-projects/closed-door/researchreport/横幅-新能源电力电气出海研究报告.webp" alt="新能源电力电气出海研究报告横幅"></a>
       </div>
       <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">开始自测</a>
     </div>
@@ -747,90 +793,7 @@
 </section>
 
 
-<!-- ===== 新10 INDUSTRY × REGION / 产业与区域（原 01） ===== -->
 
-<section class="section" id="home">
-  <div class="eyebrow">10 — INDUSTRY × REGION</div>
-  <h1 class="headline">产业与区域</h1>
-  <p class="subline">海鑫汇 GTN 为专精特新、科创企业和上市公司的管理层，做出海决策诊断：先判断，再行动。</p>
-  <p class="hero-en">Decide first. Then go global.</p>
-
-  <div class="home-selector" id="selector">
-    <div class="selector-row">
-      <span class="selector-lead">我做</span>
-      <label class="selector-field">产业
-        <select id="selIndustry" class="selector-select"><option value="">请选择产业</option></select>
-      </label>
-      <span class="selector-mid">，想去</span>
-      <label class="selector-field">区域
-        <select id="selCountry" class="selector-select"><option value="">请选择区域</option></select>
-      </label>
-      <button type="button" id="selGo" class="btn-submit btn-seal">查看 →</button>
-    </div>
-    <p class="selector-hint">选完直接展开这一格的报告、往期考察、对口顾问、当地运营中心和下一次活动。</p>
-  </div>
-
-  <div class="worldmap" id="worldMap"></div>
-  <p class="map-note"><span class="map-legend"><span class="lg-dot"></span>有内容的国家或地区</span>点红点看这一格。示意图，不作地理或边界依据。</p>
-
-  <p class="hot-combos">热门出海组合：
-    <a href="03-research/matrix/auto-tech-europe/index.html">新能源车与智慧交通 × 欧洲</a> ·
-    <a href="03-research/matrix/new-energy-europe/index.html">新能源电力电气 × 欧洲</a> ·
-    <a href="03-research/matrix/ai-southeast-asia/index.html">人工智能 × 东南亚</a> ·
-    <a href="03-research/matrix/new-energy-middle-east/index.html">新能源电力电气 × 中东</a>
-  </p>
-
-  <div class="desk" id="decisionDesk" hidden>
-    <div class="desk-head">
-      <div>
-        <div class="desk-kicker">Decision desk · 决策台</div>
-        <h2 class="desk-title" id="deskTitle"></h2>
-        <div class="desk-summary" id="deskSummary"></div>
-      </div>
-      <button type="button" class="desk-close" id="deskClose">收起 ✕</button>
-    </div>
-    <div class="desk-grid">
-      <div class="desk-col desk-col--left" id="deskLeft"></div>
-      <div class="desk-col desk-col--right" id="deskRight"></div>
-    </div>
-    <div class="desk-foot" id="deskFoot"></div>
-  </div>
-
-  <div class="hero-cta">
-    <a class="btn-submit btn-seal" href="08-engage/self-test/index.html">开始自测（免费 · 3 分钟）</a>
-    <a class="btn-outline" href="02-projects/project/index.html">我有一个出海项目，想聊聊</a>
-  </div>
-
-
-  <div class="industry-entry" id="industryEntry"></div>
-</section>
-
-
-<!-- ===== 新11 FAQ / 常见问题（原 08） ===== -->
-
-<section class="section" id="faq">
-  <div class="eyebrow">11 — FAQ</div>
-  <h2 class="section-title">常见问题</h2>
-  <p class="subline">出海前，先搞清楚这几件事。</p>
-  <div class="faq-list">
-    <details class="faq-item"><summary>海鑫汇是做什么的？</summary><p>我们为中国企业管理层做出海决策诊断：把去不去、去哪里、怎么进入的选项、风险和成本摊开，给出可以讨论的判断。</p></details>
-
-    <details class="faq-item"><summary>你们能保证成交或拿到订单吗？</summary><p>不能。我们提供判断和资源连接，不承诺订单或成交。</p></details>
-    <details class="faq-item"><summary>活动怎么收费？</summary><p>具体以日程页和各活动页为准。</p></details>
-    <details class="faq-item"><summary>董立鑫同时担任新加坡世贸职务，和海鑫汇是什么关系？</summary><p>董立鑫同时担任 WTC Singapore 秘书长兼 COO、WTC One Club 秘书长。海鑫汇的付费服务由海鑫汇提供，涉及相关机构的活动，我们会如实标明各方身份。</p></details>
-    <details class="faq-item"><summary>CEO tour 是什么？</summary><p>邀请外国企业家来华做产业考察，每期一个产业、一个来源国或地区。中国企业可以申请成为参访企业，经筛选后确认。</p></details>
-  </div>
-  <div class="faq-list" style="margin-top:10px;">
-    <details class="faq-item faq-group"><summary>出海前先问自己四个问题</summary>
-      <ul class="faq-sublist">
-        <li><a href="09-diagnose/ready-to-go-global/index.html">企业现在适合出海吗？</a></li>
-        <li><a href="09-diagnose/first-market/index.html">第一个海外市场应该选择哪里？</a></li>
-        <li><a href="09-diagnose/export-or-build/index.html">出口代理还是海外建厂？</a></li>
-        <li><a href="09-diagnose/overseas-risks/index.html">海外布局最大的风险是什么？</a></li>
-      </ul>
-    </details>
-  </div>
-</section>
 
 <footer class="footer" data-depth="0"></footer>
 
