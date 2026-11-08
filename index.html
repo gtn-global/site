@@ -460,8 +460,9 @@
   <h2 class="section-title">产业顾问网络</h2>
   <p class="subline">30+ 位产业顾问，来自上市公司、跨国投资与产业一线。</p>
   <div class="adv-wall" id="advWall"></div>
-  <p class="adv-note">30+ 位产业顾问网络，已公开 14 位，更多陆续上线。</p>
   <a class="adv-all" href="advisors-index.html">查看全部顾问 →</a>
+  &nbsp;&nbsp;
+  <a class="adv-all" href="brucedong.html">董立鑫 · 主讲课程 →</a>
   <!-- 运营团队 -->
   <h3 class="ops-sub-title">当地运营中心</h3>
   <p class="subline">落地，交给在当地的人。</p>
@@ -776,7 +777,7 @@
   <div class="carousel-wrap film">
     <div class="carousel-track band" data-dir="1"><div class="carousel-row">
       <img src="05-brand/carousel/carousel-01.webp" width="800" height="600" alt="出海现场 1" loading="lazy">
-      <img src="05-brand/carousel/carousel-02.webp" width="800" height="600" alt="出海现场 2" loading="lazy">
+      <img src="05-brand/carousel/carousel-02.jpg" width="800" height="600" alt="出海现场 2" loading="lazy">
       <img src="05-brand/carousel/carousel-03.webp" width="800" height="396" alt="出海现场 3" loading="lazy">
       <img src="05-brand/carousel/carousel-04.webp" width="2000" height="1123" alt="出海现场 4" loading="lazy">
       <img src="05-brand/carousel/carousel-05.webp" width="2000" height="1123" alt="出海现场 5" loading="lazy">
@@ -797,7 +798,7 @@
       <img src="05-brand/carousel/carousel-18.webp" width="800" height="600" alt="出海现场 18" loading="lazy">
       <img src="05-brand/carousel/carousel-19.webp" width="800" height="600" alt="出海现场 19" loading="lazy">
       <img src="05-brand/carousel/carousel-20.webp" width="800" height="600" alt="出海现场 20" loading="lazy">
-      <img src="05-brand/carousel/carousel-21.webp" width="800" height="496" alt="出海现场 21" loading="lazy">
+      <img src="05-brand/carousel/carousel-21.jpg" width="800" height="496" alt="出海现场 21" loading="lazy">
     </div></div>
   </div>
 </section>
@@ -877,7 +878,7 @@
     var acc=indAccept(i);
     var lead=(ADV.filter(function(a){return a.isLead && (a.industries||[]).some(function(x){return acc.has(x);});})||[])[0];
     var av = (lead && lead.photo) ? '<img src="'+esc(lead.photo)+'" alt="">' : '';
-    return '<a class="ie-item" href="industries/'+esc(i.slug)+'/index.html">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
+    return '<a class="ie-item" href="events-index.html?industry='+esc(i.slug)+'">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
   }).join('');
 })();
 

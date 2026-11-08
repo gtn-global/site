@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env node
-/**
+﻿/**
+ * 运行方式：node generate-sitemap.js
  * 自动生成 sitemap.xml 与 llms.txt（零依赖，仅使用 Node 内置模块）
  *
  * 运行方式（在仓库根目录执行）：

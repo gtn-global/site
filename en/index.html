@@ -801,7 +801,7 @@ document.addEventListener('click', function(e){
     var acc=indAccept(i);
     var lead=(ADV.filter(function(a){return a.isLead && (a.industries||[]).some(function(x){return acc.has(x);});})||[])[0];
     var av = (lead && lead.photo) ? '<img src="'+esc(lead.photo)+'" alt="">' : '';
-    return '<a class="ie-item" href="industries/'+esc(i.slug)+'/index.html">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
+    return '<a class="ie-item" href="events-index.html?industry='+esc(i.slug)+'">'+av+'<span>'+esc(i.display||i.name)+'</span></a>';
   }).join('');
 })();
 
