@@ -41,6 +41,6 @@
     { "slug": "france-finland", "name": "法国 芬兰", "hidden_in_dropdown": true }
   ],
   "reportMap": {
-    "new-energy": { "url": "09-research/reports/cleantech/index.html", "published": true }
+    "new-energy": { "url": "07-research/reports/cleantech/index.html", "published": true }
   }
 }
