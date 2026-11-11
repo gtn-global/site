@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>刘昀 · 美国运营中心 — 海鑫汇</title>
-<meta name="description" content="刘昀（Dr. Yun Liu），海鑫汇联合创始人、美国运营中心负责人，普渡大学西北分校机械工程系副教授，致力于促进中美企业合作与技术创新商业化。">
+<meta name="description" content="刘昀（Dr. Yun Liu），海鑫汇联合创始人、美国运营中心负责人，普渡大学西北分校机械工程系副教授。美国运营中心设在芝加哥麦考密克会展中心，为中国制造商对接美国及全球买家，提供展会代表、展后跟进与法务合规支持。">
 <link rel="stylesheet" href="../../style.css">
 <style>
   /* ── 内容统一容器 ── */
@@ -30,16 +30,49 @@
   .footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin: 32px 0 24px; font-size: 13px; }
   .footer-links a { color: var(--brass, #8A6D3B); text-decoration: none; letter-spacing: .5px; transition: opacity .2s; }
   .footer-links a:hover { opacity: .75; }
+
+  /* ── 列表式区块（服务方式 / 合作优势） ── */
+  .feature-list { list-style: none; margin: 4px 0 0; padding: 0; overflow: hidden; }
+  .feature-list li { display: flex; gap: 14px; padding: 12px 0; align-items: flex-start; }
+  .feature-list li + li { border-top: 0.5px solid rgba(138,109,59,.12); }
+  .feature-list .f-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--brass, #8A6D3B); color: #fff; font-family: 'Noto Serif SC', serif; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .feature-list .f-text { flex: 1; min-width: 0; }
+  .feature-list .f-title { font-weight: 600; color: var(--ink, #1E2530); font-size: 14px; }
+  .feature-list .f-desc { color: var(--ink-soft, #5b6470); line-height: 1.8; font-size: 13.5px; margin-top: 2px; }
+
+  /* ── 步骤流程 ── */
+  .step-list { list-style: none; counter-reset: step; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .step-list li { position: relative; flex: 1 1 200px; padding: 14px 16px 14px 44px; border: 1px solid rgba(138,109,59,.22); border-radius: 8px; background: rgba(255,255,255,.03); color: var(--ink, #1E2530); font-size: 13.5px; line-height: 1.6; }
+  .step-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 12px; top: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--brass, #8A6D3B); color: #fff; font-family: 'Noto Serif SC', serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+
+  /* ── 联系方式 ── */
+  .contact-box .contact-list { list-style: none; margin: 12px 0 0; padding: 0; }
+  .contact-box .contact-list li { display: flex; gap: 10px; padding: 6px 0; font-size: 14px; color: var(--ink-soft, #5b6470); }
+  .contact-box .contact-list .c-key { flex-shrink: 0; width: 84px; color: var(--brass, #8A6D3B); font-weight: 600; }
+  .contact-box .contact-list a { color: var(--brass, #8A6D3B); text-decoration: none; }
+  .contact-box .contact-list a:hover { text-decoration: underline; }
+
+  /* ── 宣传单图片：通栏横幅 ── */
+  .flyer-banner { margin: 6px 0 16px; }
+  .flyer-banner img { width: 100%; max-width: 760px; display: block; border-radius: 10px; border: 1px solid rgba(138,109,59,.3); box-shadow: 0 2px 12px rgba(30,37,48,.12); }
+  .flyer-banner figcaption { margin-top: 8px; font-size: 12px; color: var(--ink-soft, #5b6470); letter-spacing: .5px; }
+
+  /* ── 宣传单图片：区块右侧浮动 ── */
+  .sec-img { float: right; width: 300px; max-width: 45%; margin: 4px 0 14px 24px; }
+  .sec-img img { width: 100%; display: block; border-radius: 10px; border: 1px solid rgba(138,109,59,.3); box-shadow: 0 2px 12px rgba(30,37,48,.12); }
+  .sec-img figcaption { margin-top: 8px; font-size: 12px; color: var(--ink-soft, #5b6470); text-align: center; letter-spacing: .5px; }
+
   @media (max-width: 640px) {
     .identity-row { flex-direction: column; align-items: flex-start; gap: 14px; }
     .identity-row .cta-col { align-self: stretch; }
     .identity-row .cta-btn { display: block; text-align: center; }
+    .sec-img { float: none; width: 100%; max-width: 420px; margin: 0 auto 16px; }
   }
 </style>
 <link rel="canonical" href="https://gatewaytonew.com/member/ops-us/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="刘昀 · 美国运营中心 — 海鑫汇">
-<meta property="og:description" content="刘昀（Dr. Yun Liu），海鑫汇联合创始人、美国运营中心负责人，普渡大学西北分校机械工程系副教授，致力于促进中美企业合作与技术创新商业化。">
+<meta property="og:description" content="刘昀（Dr. Yun Liu），海鑫汇联合创始人、美国运营中心负责人。美国运营中心设在芝加哥麦考密克会展中心，为中国制造商对接美国及全球买家，提供展会代表、展后跟进与法务合规支持。">
 <meta property="og:url" content="https://gatewaytonew.com/member/ops-us/">
 <meta property="og:site_name" content="Gateway To New (GTN)">
 <meta name="twitter:card" content="summary_large_image">
@@ -84,7 +117,7 @@
         <span class="name">刘昀（Dr. Yun Liu）</span>
         <img class="flag-icon" src="../../flags/us.svg" alt="美国" loading="lazy">
       </div>
-      <div class="meta-line">海鑫汇 · 联合创始人、美国运营中心负责人</div>
+      <div class="meta-line">海鑫汇 · 联合创始人、美国运营中心负责人 · 美国伊利诺伊州芝加哥</div>
       <div class="meta-line" style="font-size:12px;font-style:italic;margin-top:2px;">Associate Professor of Mechanical Engineering, Purdue University Northwest</div>
     </div>
     <div class="cta-col">
@@ -100,6 +133,77 @@
         <p>在学术之外，他积极投身创业、技术商业化与国际贸易。作为芝加哥国际贸易俱乐部（International Trade Club of Chicago）成员，他致力于促进中美企业之间的合作，连接技术创新与商业机会，推动互利共赢的国际合作。</p>
         <p lang="en">Dr. Yun Liu is an Associate Professor of Mechanical Engineering at Purdue University Northwest, an engineering researcher, and an entrepreneur. He earned his Ph.D. from Purdue University and specializes in experimental fluid mechanics, aerodynamics, and supersonic flow. His research has been supported by the National Science Foundation and published in leading scientific journals.</p>
         <p lang="en">Beyond academia, Dr. Liu actively pursues entrepreneurship, technology commercialization, and international trade. As a member of the International Trade Club of Chicago, he seeks to foster business partnerships between the United States and China, connecting technological innovation with commercial opportunities and promoting mutually beneficial international collaboration.</p>
+      </div>
+    </div>
+
+    <!-- 运营基地 / BASE -->
+    <div class="block-sec">
+      <div class="block-label">运营基地 · BASE</div>
+      <figure class="flyer-banner">
+        <img src="mccormick-hall.jpg" alt="麦考密克会展中心 McCormick Place 展馆内景" loading="lazy">
+        <figcaption>麦考密克会展中心 · McCormick Place, Chicago, USA</figcaption>
+      </figure>
+      <div class="block-body">
+        <p>美国运营中心设在芝加哥（Chicago, Illinois），依托全球规模最大的会展场馆之一——麦考密克会展中心（McCormick Place），对接汇聚于此的美国及全球买家。</p>
+        <p>芝加哥是美国第三大城市，也是重要的制造业、商业与展会中心。我们的专业团队在展会现场代表您的企业与产品，帮助中国制造商低成本、高效率地触达北美市场。</p>
+        <p lang="en">Chicago is the 3rd-largest U.S. city and a major manufacturing, business and trade-show hub. McCormick Place draws U.S. and international buyers, and our professional team represents your company and products on the show floor.</p>
+      </div>
+    </div>
+
+    <!-- 服务方式 / HOW WE CONNECT YOU TO BUYERS -->
+    <div class="block-sec">
+      <div class="block-label">服务方式 · HOW WE CONNECT</div>
+      <figure class="sec-img">
+        <img src="trade-show-floor.jpg" alt="展会现场人流" loading="lazy">
+        <figcaption>展会现场 · On the show floor</figcaption>
+      </figure>
+      <ul class="feature-list">
+        <li><span class="f-num">1</span><div class="f-text"><div class="f-title">展会现场代表</div><div class="f-desc">专业团队在展会现场代表您的企业与产品，直接面向买家展示。</div></div></li>
+        <li><span class="f-num">2</span><div class="f-text"><div class="f-title">建立互信</div><div class="f-desc">助力买卖双方建立信任与信心，消除跨国合作的信息壁垒。</div></div></li>
+        <li><span class="f-num">3</span><div class="f-text"><div class="f-title">展后跟进</div><div class="f-desc">展后持续跟进潜在买家，推动意向转化为实际成交。</div></div></li>
+        <li><span class="f-num">4</span><div class="f-text"><div class="f-title">法务支持</div><div class="f-desc">法务团队支持合同、清关、样品与合规，降低交易风险。</div></div></li>
+      </ul>
+    </div>
+
+    <!-- 合作优势 / WHY WORK WITH US -->
+    <div class="block-sec">
+      <div class="block-label">合作优势 · WHY US</div>
+      <figure class="sec-img">
+        <img src="booth-welcome.jpg" alt="展会现场展位接待" loading="lazy">
+        <figcaption>展位接待 · Welcome to Chicago</figcaption>
+      </figure>
+      <ul class="feature-list">
+        <li><span class="f-num">1</span><div class="f-text"><div class="f-title">本地买家，面对面</div><div class="f-desc">身处美国第三大城市、制造业与商业中心，面对面接触并持续跟进分销商、零售商与承包商等本地买家。</div></div></li>
+        <li><span class="f-num">2</span><div class="f-text"><div class="f-title">专业团队，全球触达</div><div class="f-desc">作为芝加哥国际贸易俱乐部（International Trade Club of Chicago）会员，具备国际商务经验与技能，助您对接海外买家。</div></div></li>
+        <li><span class="f-num">3</span><div class="f-text"><div class="f-title">美国注册服务公司</div><div class="f-desc">致力于促进美国买家与中国制造商的互信与长期合作，法务团队协助降低交易风险。</div></div></li>
+        <li><span class="f-num">4</span><div class="f-text"><div class="f-title">低成本、高便利</div><div class="f-desc">为中国制造商提供低成本、高便利的服务，展会后持续跟进买家、促成交易，您只需付出更少精力。</div></div></li>
+      </ul>
+    </div>
+
+    <!-- 合作流程 / HOW IT WORKS -->
+    <div class="block-sec">
+      <div class="block-label">合作流程 · HOW IT WORKS</div>
+      <ol class="step-list">
+        <li>提供产品资料与样品</li>
+        <li>我们在展会上展示您的产品与企业</li>
+        <li>展后跟进潜在买家</li>
+        <li>建立互信，促成交易</li>
+      </ol>
+    </div>
+
+    <!-- 联系方式 / CONTACT -->
+    <div class="block-sec">
+      <div class="block-label">联系方式 · CONTACT</div>
+      <div class="block-body contact-box">
+        <p>我们负责繁琐环节，让您低成本、轻松对接美国买家。</p>
+        <ul class="contact-list">
+          <li><span class="c-key">公司</span> TECH010 LLC（美国注册服务公司）</li>
+          <li><span class="c-key">销售负责人</span> Tom Liu</li>
+          <li><span class="c-key">邮箱</span> <a href="mailto:tech010com@gmail.com">tech010com@gmail.com</a></li>
+          <li><span class="c-key">微信</span> Flow-visualization</li>
+          <li><span class="c-key">电话</span> <a href="tel:+19309934528">+1 930-993-4528</a></li>
+          <li><span class="c-key">地址</span> Chicago, Illinois, USA</li>
+        </ul>
       </div>
     </div>
 
